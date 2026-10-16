@@ -7,7 +7,7 @@ persistent
 log.txt
 errors.txt
 traceback.txt
-*.pyc
+Source/**/*.pyc
 Source/game/**/*.rpyc
 Source/.renpy-agent/
 Source/testing/
