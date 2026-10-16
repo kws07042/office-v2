@@ -1,0 +1,40 @@
+{
+  "runtime_version": "0.10.0-ria-expressions",
+  "planning_revision": "2.80",
+  "master_reference": "../character-art-kit-v1/assets/ria/master/ria_master_v001.png",
+  "runtime_copy": "game/images/characters/ria/ui_master_v2.png",
+  "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca",
+  "source_changed": false,
+  "portrait_crop": [
+    190,
+    40,
+    630,
+    850
+  ],
+  "portrait_zoom": 0.95,
+  "face_reference_crop": [
+    340,
+    110,
+    320,
+    320
+  ],
+  "generated_patch_size": [
+    1254,
+    1254
+  ],
+  "displayed_patch_size": [
+    320,
+    320
+  ],
+  "feature_masks": [
+    "features_mask.svg",
+    "shy_features_mask.svg"
+  ],
+  "body_regenerated": false,
+  "source_master_hand_errors_fixed": false,
+  "new_poses_generated": false,
+  "r02_expression_cues": 20,
+  "old_master_excluded_from_build": true,
+  "new_art_tool": "built-in image_gen",
+  "pose_and_motion_scope": "Expression changes implemented. Hand-reaching, side-view, walking and seated artwork not implemented."
+}

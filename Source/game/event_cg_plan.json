@@ -1,0 +1,799 @@
+{
+  "planning_revision": "2.79",
+  "runtime_version": "0.9.1-clear-ui",
+  "decision": "Intro base + intro expression + 3 main asset slots; after dialogue reuses intro base",
+  "events_per_heroine": 3,
+  "base_cg_per_event": 3,
+  "third_event_alternatives": [
+    "home",
+    "cosplay"
+  ],
+  "target_display_changes_per_event": 5,
+  "runtime_status": "ria_slots_connected_images_pending_other_routes_unimplemented",
+  "sets": [
+    {
+      "heroine": "ria",
+      "name": "강리아",
+      "event": "R07",
+      "outfit": "casual",
+      "category": "adult_event_main_cg",
+      "runtime_connected": true,
+      "base_cg": [
+        {
+          "id": "ria_R07_casual_base01",
+          "planned_path": "images/event_cg/ria/r07_casual_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R07_casual_base02",
+          "planned_path": "images/event_cg/ria/r07_casual_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R07_casual_base03",
+          "planned_path": "images/event_cg/ria/r07_casual_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "ria_R07_casual_base01",
+        "ria_R07_casual_base02",
+        "ria_R07_casual_base03"
+      ],
+      "intro_cg": {
+        "id": "ria_R07_casual_intro",
+        "planned_path": "images/events/ria/r07_casual_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "ria_R07_casual_intro_shy",
+        "base_id": "ria_R07_casual_intro",
+        "planned_path": "images/events/ria/r07_casual_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "ria_R07_casual_intro",
+        "ria_R07_casual_intro_shy",
+        "ria_R07_casual_base01",
+        "ria_R07_casual_base02",
+        "ria_R07_casual_base03"
+      ]
+    },
+    {
+      "heroine": "ria",
+      "name": "강리아",
+      "event": "R12",
+      "outfit": "special",
+      "category": "adult_event_main_cg",
+      "runtime_connected": true,
+      "base_cg": [
+        {
+          "id": "ria_R12_special_base01",
+          "planned_path": "images/event_cg/ria/r12_special_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R12_special_base02",
+          "planned_path": "images/event_cg/ria/r12_special_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R12_special_base03",
+          "planned_path": "images/event_cg/ria/r12_special_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "ria_R12_special_base01",
+        "ria_R12_special_base02",
+        "ria_R12_special_base03"
+      ],
+      "intro_cg": {
+        "id": "ria_R12_special_intro",
+        "planned_path": "images/events/ria/r12_special_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "ria_R12_special_intro_shy",
+        "base_id": "ria_R12_special_intro",
+        "planned_path": "images/events/ria/r12_special_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "ria_R12_special_intro",
+        "ria_R12_special_intro_shy",
+        "ria_R12_special_base01",
+        "ria_R12_special_base02",
+        "ria_R12_special_base03"
+      ]
+    },
+    {
+      "heroine": "ria",
+      "name": "강리아",
+      "event": "R15",
+      "outfit": "home",
+      "category": "adult_event_main_cg",
+      "runtime_connected": true,
+      "base_cg": [
+        {
+          "id": "ria_R15_home_base01",
+          "planned_path": "images/event_cg/ria/r15_home_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R15_home_base02",
+          "planned_path": "images/event_cg/ria/r15_home_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R15_home_base03",
+          "planned_path": "images/event_cg/ria/r15_home_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "ria_R15_home_base01",
+        "ria_R15_home_base02",
+        "ria_R15_home_base03"
+      ],
+      "intro_cg": {
+        "id": "ria_R15_home_intro",
+        "planned_path": "images/events/ria/r15_home_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "ria_R15_home_intro_shy",
+        "base_id": "ria_R15_home_intro",
+        "planned_path": "images/events/ria/r15_home_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "ria_R15_home_intro",
+        "ria_R15_home_intro_shy",
+        "ria_R15_home_base01",
+        "ria_R15_home_base02",
+        "ria_R15_home_base03"
+      ]
+    },
+    {
+      "heroine": "ria",
+      "name": "강리아",
+      "event": "R15",
+      "outfit": "cosplay",
+      "category": "adult_event_main_cg",
+      "runtime_connected": true,
+      "base_cg": [
+        {
+          "id": "ria_R15_cosplay_base01",
+          "planned_path": "images/event_cg/ria/r15_cosplay_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R15_cosplay_base02",
+          "planned_path": "images/event_cg/ria/r15_cosplay_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "ria_R15_cosplay_base03",
+          "planned_path": "images/event_cg/ria/r15_cosplay_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "ria_R15_cosplay_base01",
+        "ria_R15_cosplay_base02",
+        "ria_R15_cosplay_base03"
+      ],
+      "intro_cg": {
+        "id": "ria_R15_cosplay_intro",
+        "planned_path": "images/events/ria/r15_cosplay_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "ria_R15_cosplay_intro_shy",
+        "base_id": "ria_R15_cosplay_intro",
+        "planned_path": "images/events/ria/r15_cosplay_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "ria_R15_cosplay_intro",
+        "ria_R15_cosplay_intro_shy",
+        "ria_R15_cosplay_base01",
+        "ria_R15_cosplay_base02",
+        "ria_R15_cosplay_base03"
+      ]
+    },
+    {
+      "heroine": "jihyun",
+      "name": "백지현",
+      "event": "R07",
+      "outfit": "casual",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "jihyun_R07_casual_base01",
+          "planned_path": "images/event_cg/jihyun/r07_casual_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R07_casual_base02",
+          "planned_path": "images/event_cg/jihyun/r07_casual_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R07_casual_base03",
+          "planned_path": "images/event_cg/jihyun/r07_casual_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "jihyun_R07_casual_base01",
+        "jihyun_R07_casual_base02",
+        "jihyun_R07_casual_base03"
+      ],
+      "intro_cg": {
+        "id": "jihyun_R07_casual_intro",
+        "planned_path": "images/events/jihyun/r07_casual_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "jihyun_R07_casual_intro_shy",
+        "base_id": "jihyun_R07_casual_intro",
+        "planned_path": "images/events/jihyun/r07_casual_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "jihyun_R07_casual_intro",
+        "jihyun_R07_casual_intro_shy",
+        "jihyun_R07_casual_base01",
+        "jihyun_R07_casual_base02",
+        "jihyun_R07_casual_base03"
+      ]
+    },
+    {
+      "heroine": "jihyun",
+      "name": "백지현",
+      "event": "R12",
+      "outfit": "special",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "jihyun_R12_special_base01",
+          "planned_path": "images/event_cg/jihyun/r12_special_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R12_special_base02",
+          "planned_path": "images/event_cg/jihyun/r12_special_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R12_special_base03",
+          "planned_path": "images/event_cg/jihyun/r12_special_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "jihyun_R12_special_base01",
+        "jihyun_R12_special_base02",
+        "jihyun_R12_special_base03"
+      ],
+      "intro_cg": {
+        "id": "jihyun_R12_special_intro",
+        "planned_path": "images/events/jihyun/r12_special_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "jihyun_R12_special_intro_shy",
+        "base_id": "jihyun_R12_special_intro",
+        "planned_path": "images/events/jihyun/r12_special_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "jihyun_R12_special_intro",
+        "jihyun_R12_special_intro_shy",
+        "jihyun_R12_special_base01",
+        "jihyun_R12_special_base02",
+        "jihyun_R12_special_base03"
+      ]
+    },
+    {
+      "heroine": "jihyun",
+      "name": "백지현",
+      "event": "R15",
+      "outfit": "home",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "jihyun_R15_home_base01",
+          "planned_path": "images/event_cg/jihyun/r15_home_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R15_home_base02",
+          "planned_path": "images/event_cg/jihyun/r15_home_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R15_home_base03",
+          "planned_path": "images/event_cg/jihyun/r15_home_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "jihyun_R15_home_base01",
+        "jihyun_R15_home_base02",
+        "jihyun_R15_home_base03"
+      ],
+      "intro_cg": {
+        "id": "jihyun_R15_home_intro",
+        "planned_path": "images/events/jihyun/r15_home_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "jihyun_R15_home_intro_shy",
+        "base_id": "jihyun_R15_home_intro",
+        "planned_path": "images/events/jihyun/r15_home_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "jihyun_R15_home_intro",
+        "jihyun_R15_home_intro_shy",
+        "jihyun_R15_home_base01",
+        "jihyun_R15_home_base02",
+        "jihyun_R15_home_base03"
+      ]
+    },
+    {
+      "heroine": "jihyun",
+      "name": "백지현",
+      "event": "R15",
+      "outfit": "cosplay",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "jihyun_R15_cosplay_base01",
+          "planned_path": "images/event_cg/jihyun/r15_cosplay_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R15_cosplay_base02",
+          "planned_path": "images/event_cg/jihyun/r15_cosplay_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "jihyun_R15_cosplay_base03",
+          "planned_path": "images/event_cg/jihyun/r15_cosplay_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "jihyun_R15_cosplay_base01",
+        "jihyun_R15_cosplay_base02",
+        "jihyun_R15_cosplay_base03"
+      ],
+      "intro_cg": {
+        "id": "jihyun_R15_cosplay_intro",
+        "planned_path": "images/events/jihyun/r15_cosplay_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "jihyun_R15_cosplay_intro_shy",
+        "base_id": "jihyun_R15_cosplay_intro",
+        "planned_path": "images/events/jihyun/r15_cosplay_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "jihyun_R15_cosplay_intro",
+        "jihyun_R15_cosplay_intro_shy",
+        "jihyun_R15_cosplay_base01",
+        "jihyun_R15_cosplay_base02",
+        "jihyun_R15_cosplay_base03"
+      ]
+    },
+    {
+      "heroine": "yujin",
+      "name": "차유진",
+      "event": "R07",
+      "outfit": "casual",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "yujin_R07_casual_base01",
+          "planned_path": "images/event_cg/yujin/r07_casual_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R07_casual_base02",
+          "planned_path": "images/event_cg/yujin/r07_casual_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R07_casual_base03",
+          "planned_path": "images/event_cg/yujin/r07_casual_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "yujin_R07_casual_base01",
+        "yujin_R07_casual_base02",
+        "yujin_R07_casual_base03"
+      ],
+      "intro_cg": {
+        "id": "yujin_R07_casual_intro",
+        "planned_path": "images/events/yujin/r07_casual_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "yujin_R07_casual_intro_shy",
+        "base_id": "yujin_R07_casual_intro",
+        "planned_path": "images/events/yujin/r07_casual_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "yujin_R07_casual_intro",
+        "yujin_R07_casual_intro_shy",
+        "yujin_R07_casual_base01",
+        "yujin_R07_casual_base02",
+        "yujin_R07_casual_base03"
+      ]
+    },
+    {
+      "heroine": "yujin",
+      "name": "차유진",
+      "event": "R12",
+      "outfit": "special",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "yujin_R12_special_base01",
+          "planned_path": "images/event_cg/yujin/r12_special_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R12_special_base02",
+          "planned_path": "images/event_cg/yujin/r12_special_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R12_special_base03",
+          "planned_path": "images/event_cg/yujin/r12_special_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "yujin_R12_special_base01",
+        "yujin_R12_special_base02",
+        "yujin_R12_special_base03"
+      ],
+      "intro_cg": {
+        "id": "yujin_R12_special_intro",
+        "planned_path": "images/events/yujin/r12_special_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "yujin_R12_special_intro_shy",
+        "base_id": "yujin_R12_special_intro",
+        "planned_path": "images/events/yujin/r12_special_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "yujin_R12_special_intro",
+        "yujin_R12_special_intro_shy",
+        "yujin_R12_special_base01",
+        "yujin_R12_special_base02",
+        "yujin_R12_special_base03"
+      ]
+    },
+    {
+      "heroine": "yujin",
+      "name": "차유진",
+      "event": "R15",
+      "outfit": "home",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "yujin_R15_home_base01",
+          "planned_path": "images/event_cg/yujin/r15_home_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R15_home_base02",
+          "planned_path": "images/event_cg/yujin/r15_home_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R15_home_base03",
+          "planned_path": "images/event_cg/yujin/r15_home_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "yujin_R15_home_base01",
+        "yujin_R15_home_base02",
+        "yujin_R15_home_base03"
+      ],
+      "intro_cg": {
+        "id": "yujin_R15_home_intro",
+        "planned_path": "images/events/yujin/r15_home_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "yujin_R15_home_intro_shy",
+        "base_id": "yujin_R15_home_intro",
+        "planned_path": "images/events/yujin/r15_home_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "yujin_R15_home_intro",
+        "yujin_R15_home_intro_shy",
+        "yujin_R15_home_base01",
+        "yujin_R15_home_base02",
+        "yujin_R15_home_base03"
+      ]
+    },
+    {
+      "heroine": "yujin",
+      "name": "차유진",
+      "event": "R15",
+      "outfit": "cosplay",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "yujin_R15_cosplay_base01",
+          "planned_path": "images/event_cg/yujin/r15_cosplay_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R15_cosplay_base02",
+          "planned_path": "images/event_cg/yujin/r15_cosplay_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "yujin_R15_cosplay_base03",
+          "planned_path": "images/event_cg/yujin/r15_cosplay_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "yujin_R15_cosplay_base01",
+        "yujin_R15_cosplay_base02",
+        "yujin_R15_cosplay_base03"
+      ],
+      "intro_cg": {
+        "id": "yujin_R15_cosplay_intro",
+        "planned_path": "images/events/yujin/r15_cosplay_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "yujin_R15_cosplay_intro_shy",
+        "base_id": "yujin_R15_cosplay_intro",
+        "planned_path": "images/events/yujin/r15_cosplay_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "yujin_R15_cosplay_intro",
+        "yujin_R15_cosplay_intro_shy",
+        "yujin_R15_cosplay_base01",
+        "yujin_R15_cosplay_base02",
+        "yujin_R15_cosplay_base03"
+      ]
+    },
+    {
+      "heroine": "seoyun",
+      "name": "한서윤",
+      "event": "R07",
+      "outfit": "casual",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "seoyun_R07_casual_base01",
+          "planned_path": "images/event_cg/seoyun/r07_casual_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R07_casual_base02",
+          "planned_path": "images/event_cg/seoyun/r07_casual_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R07_casual_base03",
+          "planned_path": "images/event_cg/seoyun/r07_casual_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "seoyun_R07_casual_base01",
+        "seoyun_R07_casual_base02",
+        "seoyun_R07_casual_base03"
+      ],
+      "intro_cg": {
+        "id": "seoyun_R07_casual_intro",
+        "planned_path": "images/events/seoyun/r07_casual_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "seoyun_R07_casual_intro_shy",
+        "base_id": "seoyun_R07_casual_intro",
+        "planned_path": "images/events/seoyun/r07_casual_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "seoyun_R07_casual_intro",
+        "seoyun_R07_casual_intro_shy",
+        "seoyun_R07_casual_base01",
+        "seoyun_R07_casual_base02",
+        "seoyun_R07_casual_base03"
+      ]
+    },
+    {
+      "heroine": "seoyun",
+      "name": "한서윤",
+      "event": "R12",
+      "outfit": "special",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "seoyun_R12_special_base01",
+          "planned_path": "images/event_cg/seoyun/r12_special_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R12_special_base02",
+          "planned_path": "images/event_cg/seoyun/r12_special_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R12_special_base03",
+          "planned_path": "images/event_cg/seoyun/r12_special_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "seoyun_R12_special_base01",
+        "seoyun_R12_special_base02",
+        "seoyun_R12_special_base03"
+      ],
+      "intro_cg": {
+        "id": "seoyun_R12_special_intro",
+        "planned_path": "images/events/seoyun/r12_special_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "seoyun_R12_special_intro_shy",
+        "base_id": "seoyun_R12_special_intro",
+        "planned_path": "images/events/seoyun/r12_special_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "seoyun_R12_special_intro",
+        "seoyun_R12_special_intro_shy",
+        "seoyun_R12_special_base01",
+        "seoyun_R12_special_base02",
+        "seoyun_R12_special_base03"
+      ]
+    },
+    {
+      "heroine": "seoyun",
+      "name": "한서윤",
+      "event": "R15",
+      "outfit": "home",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "seoyun_R15_home_base01",
+          "planned_path": "images/event_cg/seoyun/r15_home_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R15_home_base02",
+          "planned_path": "images/event_cg/seoyun/r15_home_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R15_home_base03",
+          "planned_path": "images/event_cg/seoyun/r15_home_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "seoyun_R15_home_base01",
+        "seoyun_R15_home_base02",
+        "seoyun_R15_home_base03"
+      ],
+      "intro_cg": {
+        "id": "seoyun_R15_home_intro",
+        "planned_path": "images/events/seoyun/r15_home_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "seoyun_R15_home_intro_shy",
+        "base_id": "seoyun_R15_home_intro",
+        "planned_path": "images/events/seoyun/r15_home_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "seoyun_R15_home_intro",
+        "seoyun_R15_home_intro_shy",
+        "seoyun_R15_home_base01",
+        "seoyun_R15_home_base02",
+        "seoyun_R15_home_base03"
+      ]
+    },
+    {
+      "heroine": "seoyun",
+      "name": "한서윤",
+      "event": "R15",
+      "outfit": "cosplay",
+      "category": "adult_event_main_cg",
+      "runtime_connected": false,
+      "base_cg": [
+        {
+          "id": "seoyun_R15_cosplay_base01",
+          "planned_path": "images/event_cg/seoyun/r15_cosplay_base01.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R15_cosplay_base02",
+          "planned_path": "images/event_cg/seoyun/r15_cosplay_base02.png",
+          "status": "not_supplied"
+        },
+        {
+          "id": "seoyun_R15_cosplay_base03",
+          "planned_path": "images/event_cg/seoyun/r15_cosplay_base03.png",
+          "status": "not_supplied"
+        }
+      ],
+      "expression_variants": [],
+      "display_order_proposal": [
+        "seoyun_R15_cosplay_base01",
+        "seoyun_R15_cosplay_base02",
+        "seoyun_R15_cosplay_base03"
+      ],
+      "intro_cg": {
+        "id": "seoyun_R15_cosplay_intro",
+        "planned_path": "images/events/seoyun/r15_cosplay_intro.png",
+        "status": "not_supplied"
+      },
+      "intro_expression": {
+        "id": "seoyun_R15_cosplay_intro_shy",
+        "base_id": "seoyun_R15_cosplay_intro",
+        "planned_path": "images/events/seoyun/r15_cosplay_intro_shy.png",
+        "status": "not_supplied"
+      },
+      "event_asset_order": [
+        "seoyun_R15_cosplay_intro",
+        "seoyun_R15_cosplay_intro_shy",
+        "seoyun_R15_cosplay_base01",
+        "seoyun_R15_cosplay_base02",
+        "seoyun_R15_cosplay_base03"
+      ]
+    }
+  ]
+}

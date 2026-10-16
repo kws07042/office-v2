@@ -1,0 +1,79 @@
+{
+  "schema_version": 2,
+  "assets": [
+    {
+      "character": "ria",
+      "expression": "base",
+      "runtime_path": "game\\images\\characters\\ria\\ui_master_v2.png",
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca",
+      "size": [
+        993,
+        1584
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 1164435,
+      "reference": "../character-art-kit-v1/assets/ria/master/ria_master_v001.png",
+      "generator": "user-selected master",
+      "model": null,
+      "prompt": null,
+      "selection_status": "prototype_runtime_selected",
+      "usage": "shared unchanged base"
+    },
+    {
+      "character": "ria",
+      "expression": "smile",
+      "runtime_path": "game\\images\\characters\\ria\\expressions\\smile.png",
+      "sha256": "c8f14c05a573ef7d10228e1a6930feb078811de6209310bd683aa74a7ce3f267",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 263872,
+      "reference": "../character-art-kit-v1/assets/ria/master/ria_master_v001.png",
+      "generator": "built-in image_gen",
+      "model": null,
+      "prompt": "story/ria_expression_prompts_v1.md#smile",
+      "selection_status": "prototype_runtime_selected",
+      "usage": "masked facial features only"
+    },
+    {
+      "character": "ria",
+      "expression": "shy",
+      "runtime_path": "game\\images\\characters\\ria\\expressions\\shy.png",
+      "sha256": "de2c21a602996c3beb1da3a290c8eed2f7b6562995688e746286c314b0092ef3",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 285382,
+      "reference": "../character-art-kit-v1/assets/ria/master/ria_master_v001.png",
+      "generator": "built-in image_gen",
+      "model": null,
+      "prompt": "story/ria_expression_prompts_v1.md#shy",
+      "selection_status": "prototype_runtime_selected",
+      "usage": "masked facial features only"
+    },
+    {
+      "character": "ria",
+      "expression": "serious",
+      "runtime_path": "game\\images\\characters\\ria\\expressions\\serious.png",
+      "sha256": "fe9c643a7f7bcc36a481ba54977eb5ad43ad563bc652bc31ecffbc408f6d864a",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 281702,
+      "reference": "../character-art-kit-v1/assets/ria/master/ria_master_v001.png",
+      "generator": "built-in image_gen",
+      "model": null,
+      "prompt": "story/ria_expression_prompts_v1.md#serious",
+      "selection_status": "prototype_runtime_selected",
+      "usage": "masked facial features only"
+    }
+  ],
+  "runtime_version": "0.10.0-ria-expressions",
+  "note": "Original body pixels and baseline shared. Mouth/eyes/brows only; shy adds cheek blush. No whole-face recolor; poses and final backgrounds remain separate work."
+}

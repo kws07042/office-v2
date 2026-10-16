@@ -1,0 +1,18 @@
+# Local play data and caches
+**/saves/
+**/cache/
+**/__pycache__/
+*.save
+persistent
+log.txt
+errors.txt
+traceback.txt
+*.pyc
+Source/game/**/*.rpyc
+Source/.renpy-agent/
+Source/testing/
+Source/tests/
+.env
+.env.*
+*.pem
+*.key

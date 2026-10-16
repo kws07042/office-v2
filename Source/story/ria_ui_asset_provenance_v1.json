@@ -1,0 +1,20 @@
+{
+  "source": "C:\\Users\\user\\Documents\\ChatGPT\\미연시v2 2\\outputs\\assets\\ria\\upscaled\\master.png",
+  "runtime_copy": "game/images/characters/ria/ui_master.png",
+  "sha256": "6634a135b51169e314268a581ff7cec6f439eac8597bbd7b33f940d607f7ee65",
+  "source_changed": false,
+  "usage": "temporary_ui_layout_only",
+  "crop_source_pixels": [
+    560,
+    0,
+    960,
+    1700
+  ],
+  "display_zoom": 0.47,
+  "issues": [
+    "원본 귀걸이가 남아 있어 최종 귀걸이 없음 기준 미충족",
+    "머리·귀 주변 알파 잔여와 원본 상단 경계는 최종 자산 검수 필요"
+  ],
+  "no_new_character_art": true,
+  "display_revision": "0.9.1-clear-ui"
+}
