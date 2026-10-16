@@ -16,3 +16,4 @@ Source/tests/
 .env.*
 *.pem
 *.key
+!Windows/lib/python3.12/certifi/cacert.pem
