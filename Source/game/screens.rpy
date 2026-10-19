@@ -45,6 +45,8 @@ screen cream_stage():
         add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
         if cream_ria_visible():
             add "ria ui bust" xalign 0.5 ypos 28
+        elif cream_yujin_visible():
+            add "yujin ui bust" xalign 0.5 ypos 50
 
 screen cream_heart(fraction):
     fixed:
@@ -63,7 +65,7 @@ screen story_header():
                 spacing 6
                 text chapter size 19 color "#705684" xmaximum 355
                 text location size 14 color "#857885" xmaximum 355
-        $ focus = cream_focus if cream_focus in affinity else "ria"
+        $ focus = active_route if active_route in affinity else (cream_focus if cream_focus in affinity else "ria")
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
             xpos 955 ypos 22 xsize 297 padding (17, 13)
@@ -73,7 +75,7 @@ screen story_header():
                 hbox:
                     spacing 13
                     text person_name size 17 color "#705684"
-                    text (cream_relation_name() if focus == "ria" else "만남 기록") size 14 color "#948494"
+                    text cream_relation_name(focus) size 14 color "#948494"
                 hbox:
                     spacing 6
                     for index in range(5):
@@ -145,7 +147,10 @@ screen main_menu():
             null height 12
             textbutton "처음부터 읽기" action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()] id "start_button" xsize 490
             textbutton "이어 읽기" action ShowMenu("load") xsize 490
-            textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" xsize 490
+            hbox:
+                spacing 14
+                textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" xsize 238 text_size 20
+                textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" xsize 238 text_size 20
             hbox:
                 spacing 14
                 textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" xsize 238 text_size 20
@@ -155,7 +160,15 @@ screen main_menu():
                 textbutton "설정" action ShowMenu("preferences") xsize 238
                 if not renpy.variant("web"):
                     textbutton "종료" action Quit(confirm=False) xsize 238
-            text "공통·리아 루트 개발판 · 배경과 연출은 제작 중" size 15 color "#9c8f98"
+            text "네 히로인 전체 대본 · 아트 준비 중" size 15 color "#9c8f98"
+    textbutton "지현 전체 대본 확인":
+        id "jihyun_preview_button"
+        xpos 730 ypos 545 xsize 430
+        action Start("jihyun_early_preview")
+    textbutton "서윤 전체 대본 확인":
+        id "seoyun_preview_button"
+        xpos 730 ypos 610 xsize 430
+        action Start("seoyun_preview")
 
 screen quick_menu():
     zorder 100
@@ -210,6 +223,7 @@ screen preferences():
             bar value Preference("text speed") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
             textbutton "글자 즉시 표시" action Preference("text speed", 0)
             textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
+            text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#796d82" line_spacing 4 xmaximum 620
             textbutton "돌아가기" action Return()
             if not main_menu:
                 textbutton "처음 화면" action MainMenu(confirm=True)

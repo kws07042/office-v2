@@ -41,5 +41,134 @@
         "images/event_cg/ria/r15_cosplay_base03.png"
       ]
     }
+  },
+  "yujin_r07": {
+    "title": "둘이 선택한 속도",
+    "variants": {
+      "casual": [
+        "images/events/yujin/r07_casual_intro.png",
+        "images/events/yujin/r07_casual_intro_shy.png",
+        "images/event_cg/yujin/r07_casual_base01.png",
+        "images/event_cg/yujin/r07_casual_base02.png",
+        "images/event_cg/yujin/r07_casual_base03.png"
+      ]
+    }
+  },
+  "yujin_r12": {
+    "title": "먼저 잡은 재회",
+    "variants": {
+      "special": [
+        "images/events/yujin/r12_special_intro.png",
+        "images/events/yujin/r12_special_intro_shy.png",
+        "images/event_cg/yujin/r12_special_base01.png",
+        "images/event_cg/yujin/r12_special_base02.png",
+        "images/event_cg/yujin/r12_special_base03.png"
+      ]
+    }
+  },
+  "yujin_r15": {
+    "title": "다음에도 제가 말할게요",
+    "variants": {
+      "home": [
+        "images/events/yujin/r15_home_intro.png",
+        "images/events/yujin/r15_home_intro_shy.png",
+        "images/event_cg/yujin/r15_home_base01.png",
+        "images/event_cg/yujin/r15_home_base02.png",
+        "images/event_cg/yujin/r15_home_base03.png"
+      ],
+      "cosplay": [
+        "images/events/yujin/r15_cosplay_intro.png",
+        "images/events/yujin/r15_cosplay_intro_shy.png",
+        "images/event_cg/yujin/r15_cosplay_base01.png",
+        "images/event_cg/yujin/r15_cosplay_base02.png",
+        "images/event_cg/yujin/r15_cosplay_base03.png"
+      ]
+    }
+  },
+  "jihyun_r07": {
+    "title": "부탁해도 되는 저녁",
+    "variants": {
+      "casual": [
+        "images/events/jihyun/r07_casual_intro.png",
+        "images/events/jihyun/r07_casual_intro_shy.png",
+        "images/event_cg/jihyun/r07_casual_base01.png",
+        "images/event_cg/jihyun/r07_casual_base02.png",
+        "images/event_cg/jihyun/r07_casual_base03.png"
+      ]
+    }
+  },
+  "jihyun_r12": {
+    "title": "일정표에 남긴 자리",
+    "variants": {
+      "special": [
+        "images/events/jihyun/r12_special_intro.png",
+        "images/events/jihyun/r12_special_intro_shy.png",
+        "images/event_cg/jihyun/r12_special_base01.png",
+        "images/event_cg/jihyun/r12_special_base02.png",
+        "images/event_cg/jihyun/r12_special_base03.png"
+      ]
+    }
+  },
+  "jihyun_r15": {
+    "title": "같은 편의 다른 의견",
+    "variants": {
+      "home": [
+        "images/events/jihyun/r15_home_intro.png",
+        "images/events/jihyun/r15_home_intro_shy.png",
+        "images/event_cg/jihyun/r15_home_base01.png",
+        "images/event_cg/jihyun/r15_home_base02.png",
+        "images/event_cg/jihyun/r15_home_base03.png"
+      ],
+      "cosplay": [
+        "images/events/jihyun/r15_cosplay_intro.png",
+        "images/events/jihyun/r15_cosplay_intro_shy.png",
+        "images/event_cg/jihyun/r15_cosplay_base01.png",
+        "images/event_cg/jihyun/r15_cosplay_base02.png",
+        "images/event_cg/jihyun/r15_cosplay_base03.png"
+      ]
+    }
+  },
+  "seoyun_r07": {
+    "title": "농담을 멈춘 저녁",
+    "variants": {
+      "casual": [
+        "images/events/seoyun/r07_casual_intro.png",
+        "images/events/seoyun/r07_casual_intro_shy.png",
+        "images/event_cg/seoyun/r07_casual_base01.png",
+        "images/event_cg/seoyun/r07_casual_base02.png",
+        "images/event_cg/seoyun/r07_casual_base03.png"
+      ]
+    }
+  },
+  "seoyun_r12": {
+    "title": "이번엔 날짜까지 말할게",
+    "variants": {
+      "special": [
+        "images/events/seoyun/r12_special_intro.png",
+        "images/events/seoyun/r12_special_intro_shy.png",
+        "images/event_cg/seoyun/r12_special_base01.png",
+        "images/event_cg/seoyun/r12_special_base02.png",
+        "images/event_cg/seoyun/r12_special_base03.png"
+      ]
+    }
+  },
+  "seoyun_r15": {
+    "title": "다음 금요일은 우리 약속",
+    "variants": {
+      "home": [
+        "images/events/seoyun/r15_home_intro.png",
+        "images/events/seoyun/r15_home_intro_shy.png",
+        "images/event_cg/seoyun/r15_home_base01.png",
+        "images/event_cg/seoyun/r15_home_base02.png",
+        "images/event_cg/seoyun/r15_home_base03.png"
+      ],
+      "cosplay": [
+        "images/events/seoyun/r15_cosplay_intro.png",
+        "images/events/seoyun/r15_cosplay_intro_shy.png",
+        "images/event_cg/seoyun/r15_cosplay_base01.png",
+        "images/event_cg/seoyun/r15_cosplay_base02.png",
+        "images/event_cg/seoyun/r15_cosplay_base03.png"
+      ]
+    }
   }
 }

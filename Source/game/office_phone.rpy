@@ -4,6 +4,7 @@ default phone_read_ids = []
 default phone_photo_opened = []
 default phone_photo_previews = []
 default phone_context = None
+default phone_active_contact = "ria"
 default persistent.phone_typing_enabled = True
 
 init python:
@@ -14,7 +15,7 @@ init python:
         rows = renpy.store.phone_threads.get(contact, [])
         if any(row["id"] == mid for row in rows):
             return
-        row = {"id": mid, "sender": sender, "text": text, "media": media}
+        row = {"id": mid, "sender": sender, "text": text, "media": media, "moment": renpy.store.location.split(" · ")[0]}
         renpy.store.phone_threads = dict(renpy.store.phone_threads, **{contact: rows + [row]})
         phone_mark_read(contact)
 
@@ -80,7 +81,9 @@ screen office_phone_archive():
         use office_phone_contents(None, False, True)
 
 screen office_phone_contents(replies, waiting, archive):
-    default selected = "ria"
+    default selected = phone_active_contact
+    if not archive and not replies:
+        key "dismiss" action Return("next")
     style_prefix "phone"
     add Solid("#e9edf4")
     frame:
@@ -90,9 +93,9 @@ screen office_phone_contents(replies, waiting, archive):
         xpos 48 ypos 36 xsize 1184 ysize 76 padding (0, 0)
         background phone_surface("soft")
     text "퇴근 후, 우리" xpos 66 ypos 43 size 27 font "fonts/GowunDodum-Regular.ttf" color "#29364c"
-    text ("개인 메시지 · 대화 기록" if archive else "개인 메시지 · 일요일 아침") xpos 66 ypos 80 size 15 color "#626d81"
+    text ("개인 메시지 · 대화 기록" if archive else ("개인 메시지 · " + location.split(" · ")[0])) xpos 66 ypos 80 size 15 color "#626d81"
     hbox:
-        xpos 650 ypos 55 spacing 8
+        xpos 1214 xanchor 1.0 ypos 55 spacing 8
         if not archive:
             textbutton "되돌리기" action Rollback() text_size 17 padding (14, 9)
         textbutton "저장" action ShowMenu("save") text_size 17 padding (14, 9)
@@ -122,7 +125,7 @@ screen office_phone_contents(replies, waiting, archive):
                             text ("새 메시지 " + str(phone_unread(contact))) size 14 color "#965f89"
 
     text phone_names(selected) xpos 347 ypos 128 size 26 font "fonts/GowunDodum-Regular.ttf" color "#29364c"
-    text ("교제 중 · 오늘의 대화" if selected == "ria" and dating else "대화 기록") xpos 463 ypos 137 size 15 color "#626d81"
+    text ("교제 중 · 개인 대화" if selected == active_route and dating else ("함께 확인한 동료 연락" if any(row["sender"] == "ria_shared" for row in phone_threads.get(selected, [])) else "개인 대화")) xpos 463 ypos 137 size 15 color "#626d81"
     add Solid("#dce2ed") xpos 347 ypos 169 xsize 851 ysize 1
     viewport:
         id "phone_messages"
@@ -137,14 +140,19 @@ screen office_phone_contents(replies, waiting, archive):
             xsize 823 spacing 13
             if not phone_threads.get(selected):
                 text "아직 주고받은 메시지가 없어요." size 20 color "#626d81"
+            $ previous_moment = None
             for row in phone_threads.get(selected, []):
+                $ moment = row.get("moment", "이전 대화")
+                if moment != previous_moment:
+                    text moment size 13 color "#626d81" xalign 0.5
+                $ previous_moment = moment
                 frame:
-                    xalign (1.0 if row["sender"] == "dohyun" else 0.0)
+                    xalign (1.0 if row["sender"] in ("dohyun", "ria_shared") else 0.0)
                     xmaximum 630 padding (17, 12)
-                    background phone_surface("mine" if row["sender"] == "dohyun" else "peer")
+                    background phone_surface("mine" if row["sender"] in ("dohyun", "ria_shared") else "peer")
                     vbox:
                         spacing 7
-                        text ("나" if row["sender"] == "dohyun" else phone_names(selected)) size 13 color "#70619b"
+                        text ("리아 · 함께 보낸 메시지" if row["sender"] == "ria_shared" else ("나" if row["sender"] == "dohyun" else phone_names(selected))) size 13 color "#70619b"
                         text row["text"] substitute False size 20 xmaximum 585 line_spacing 4 color "#29364c"
                         if row.get("media"):
                             $ media = row["media"]
@@ -170,11 +178,11 @@ screen office_phone_contents(replies, waiting, archive):
                 id "phone_archive_photo"
                 xpos 357 ypos 597 text_size 18 padding (14, 9)
                 action [Function(phone_note_photo, photos[-1]), Show("office_phone_photo", media=photos[-1])]
-    elif selected != "ria":
-        text "리아와 나누던 대화가 기다리고 있어요." xpos 357 ypos 518 size 20 color "#626d81"
-        textbutton "리아 대화로 돌아가기" xpos 357 ypos 568 action SetLocalVariable("selected", "ria") text_size 20
+    elif selected != phone_active_contact:
+        text (phone_names(phone_active_contact) + " 대화가 기다리고 있어요.") xpos 357 ypos 518 size 20 color "#626d81"
+        textbutton "진행 중인 대화로 돌아가기" xpos 357 ypos 568 action SetLocalVariable("selected", phone_active_contact) text_size 20
     elif waiting:
-        text "강리아 님이 입력 중…" xpos 357 ypos 519 size 20 color "#70619b"
+        text (phone_names(phone_active_contact) + " 님이 입력 중…") xpos 357 ypos 519 size 20 color "#70619b"
         textbutton "바로 보기" id "phone_next" xpos 1011 ypos 568 action Return("next") text_size 19
     elif replies:
         vbox:
@@ -213,10 +221,11 @@ screen office_phone_photo(media):
                         text "빈 자리는 사진 감상 완료로 기록하지 않습니다." size 17 color "#626d81"
             textbutton "대화로 돌아가기" id "phone_photo_close" action Hide("office_phone_photo") text_size 20 xalign 0.5
 
-label phone_deliver(mid, sender, body, media=None, important=False):
+label phone_deliver(mid, sender, body, media=None, important=False, contact="ria"):
+    $ phone_active_contact = contact
     if important and persistent.phone_typing_enabled and not getattr(_preferences, "reduced_motion", False) and not renpy.is_skipping():
         call screen office_phone(waiting=True)
-    $ phone_add(mid, sender, body, media)
+    $ phone_add(mid, sender, body, media, contact)
     call screen office_phone
     return
 
@@ -234,7 +243,7 @@ label ria_r08_phone_conversation:
     $ phone_context = "r08_response"
     if memory["ria_r08_reply"] == "miss":
         call phone_deliver("r08_reply", "dohyun", ri("기록 정리 중인데, 벌써 보고 싶네.", "기록 정리 중인데, 벌써 보고 싶네요."))
-        call phone_deliver("r08_answer", "ria", ri("...그렇게 보내면 나 자꾸 휴대폰 보는데!", "...그렇게 보내시면 저 자꾸 휴대폰 보는데요!"), important=True)
+        call phone_deliver("r08_answer", "ria", ri("방금 세 번 읽었어. 네가 보낸 거 한 줄 맞지? 휴대폰 탓인가~", "방금 세 번 읽었어요. 보내신 거 한 줄 맞죠? 휴대폰 탓인가 봐요~"), important=True)
         call phone_deliver("r08_followup", "dohyun", ri("답은 나중에 해도 돼. 그냥 먼저 말하고 싶었어.", "답은 나중에 하셔도 돼요. 그냥 먼저 말하고 싶었어요."))
         call phone_deliver("r08_answer_2", "ria", ri("응. 나도 보고 싶어. 이건 지금 답할래 :)", "네. 저도 보고 싶어요. 이건 지금 답할래요 :)"), important=True)
     elif memory["ria_r08_reply"] == "evening":
@@ -247,7 +256,7 @@ label ria_r08_phone_conversation:
         call phone_deliver("r08_reply", "dohyun", ri("어제 나란히 앉아 있던 거 생각났어. 별말 안 해도 좋더라.", "어제 나란히 앉아 있던 거 생각났어요. 별말 안 해도 좋더라고요."))
         call phone_deliver("r08_answer", "ria", ri("나도! 사실 조용해질 때 무슨 얘기할지 찾고 있었는데~", "저도요! 사실 조용해질 때 무슨 얘기할지 찾고 있었는데요~"))
         call phone_deliver("r08_followup", "dohyun", ri("그런 순간은 얘기 찾지 말고 다음에도 같이 있자.", "그런 순간은 얘기 찾지 말고 다음에도 같이 있어요."))
-        call phone_deliver("r08_answer_2", "ria", ri("좋아 :) 다음엔 덜 바쁘게 생각할게.", "좋아요 :) 다음엔 덜 바쁘게 생각할게요."), important=True)
+        call phone_deliver("r08_answer_2", "ria", ri("좋아 :) 다음엔 조용해졌다고 말 찾느라 컵만 돌리지는 않을게~", "좋아요 :) 다음엔 조용해졌다고 말 찾느라 컵만 돌리지는 않을게요~"), important=True)
     if memory.get("ria_o01_status") == "completed":
         call phone_deliver("r08_lunch", "ria", ri("참, 오늘 점심은 나도 국수! 지난번 네 거 보고 생각났어.", "참, 오늘 점심은 저도 국수요! 지난번 드시는 거 보고 생각났어요."))
         call phone_deliver("r08_lunch_reply", "dohyun", ri("오늘 메뉴 맞히기였으면 틀릴 뻔했네.", "오늘 메뉴 맞히기였으면 틀릴 뻔했네요."))
@@ -268,3 +277,11 @@ label office_phone_preview:
     menu:
         "처음 화면으로":
             return
+
+label ria_disclosure_phone:
+    call phone_deliver("ria_disclosure_1", "ria_shared", "언니, 나 도현 씨랑 사귀어. 우리 둘이 같이 알려 주고 싶어서 보냈어! 다른 사람들한테는 아직 말하지 말아 줘~", contact="seoyun")
+    call phone_deliver("ria_disclosure_2", "seoyun", "축하해~ 두 사람 이름이 한 문장에 있으니까 좋네. 다른 사람들한테는 내가 먼저 얘기 안 할게.", contact="seoyun", important=True)
+    call phone_deliver("ria_disclosure_3", "seoyun", "리아야, 데이트 일정까지 캠페인처럼 꽉 채우진 말고. 도현 씨도 즐거운 저녁 보내요 :)", contact="seoyun")
+    call phone_deliver("ria_disclosure_4", "dohyun", "서윤 씨, 감사합니다. 오늘은 저녁만 같이 만들려고요.", contact="seoyun")
+    $ phone_active_contact = "ria"
+    return

@@ -1,0 +1,45 @@
+{
+  "ria_r07": {
+    "title": "첫 번째 밤",
+    "variants": {
+      "casual": [
+        "images/events/ria/r07_casual_intro.png",
+        "images/events/ria/r07_casual_intro_shy.png",
+        "images/event_cg/ria/r07_casual_base01.png",
+        "images/event_cg/ria/r07_casual_base02.png",
+        "images/event_cg/ria/r07_casual_base03.png"
+      ]
+    }
+  },
+  "ria_r12": {
+    "title": "기다린 재회",
+    "variants": {
+      "special": [
+        "images/events/ria/r12_special_intro.png",
+        "images/events/ria/r12_special_intro_shy.png",
+        "images/event_cg/ria/r12_special_base01.png",
+        "images/event_cg/ria/r12_special_base02.png",
+        "images/event_cg/ria/r12_special_base03.png"
+      ]
+    }
+  },
+  "ria_r15": {
+    "title": "편안해진 사이",
+    "variants": {
+      "home": [
+        "images/events/ria/r15_home_intro.png",
+        "images/events/ria/r15_home_intro_shy.png",
+        "images/event_cg/ria/r15_home_base01.png",
+        "images/event_cg/ria/r15_home_base02.png",
+        "images/event_cg/ria/r15_home_base03.png"
+      ],
+      "cosplay": [
+        "images/events/ria/r15_cosplay_intro.png",
+        "images/events/ria/r15_cosplay_intro_shy.png",
+        "images/event_cg/ria/r15_cosplay_base01.png",
+        "images/event_cg/ria/r15_cosplay_base02.png",
+        "images/event_cg/ria/r15_cosplay_base03.png"
+      ]
+    }
+  }
+}

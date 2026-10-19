@@ -2,6 +2,12 @@
 init python:
     ria16_fixture = {}
 
+    def route_phone_test_reply():
+        replies = renpy.get_screen("office_phone").scope["replies"]
+        value = replies[-1][0] if phone_fixture.get("preferred_reply") == "small_memory" else replies[0][0]
+        return "phone_reply_" + value
+
+
     def ria16_final_menu():
         screen = renpy.get_screen("choice")
         return bool(screen and any("수록 구간을 마쳤습니다" in i.caption for i in screen.scope["items"]))
@@ -98,17 +104,19 @@ testsuite ria16:
         run Start("test_ria16_entry")
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval memory["ria_conflict"] == "open"
         if eval case == 0:
@@ -116,17 +124,19 @@ testsuite ria16:
         click expression ["기다리며 속상했던 마음과 늦은 연락을 솔직히 말한다.", "늦어질 것을 알았을 때 연락하기로 한 약속을 짚는다.", "속상하지만 다음에 즐거운 데이트로 보상해 달라며 넘긴다."][case % 3] until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval trust_ria == 2
         assert eval affinity["ria"] == 63
@@ -137,17 +147,19 @@ testsuite ria16:
             click expression ("즐거운 보상보다 먼저 변경 연락이 필요하다고 정정한다." if (case // 3) & 1 else "괜찮은 척했지만 기다리는 시간이 아쉬웠다고 말한다.") until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             assert eval "ria_r14_clarification" in memory
         else:
@@ -159,33 +171,37 @@ testsuite ria16:
         click "함께 바꿔 보자고 말한다 — 교제를 계속한다." until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval memory["ria_conflict"] == "discussing"
         click expression ("토요일 오후 시간을 비워 두기 전에 금요일에 시각을 함께 확정한다." if (case // 3) & 2 else "네 시부터 다섯 시 반까지, 짧고 확실한 만남을 정한다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval chapter.startswith("리아 R15")
         assert eval memory["ria_conflict"] == "resolved"
@@ -198,50 +214,56 @@ testsuite ria16:
         click expression ("주마다 각자 일정을 먼저 보고 만날 날을 함께 고른다." if (case // 3) & 4 else "일주일에 한 번, 짧게라도 만날 저녁을 함께 정한다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval memory["ria_r15_future_agreed"] is True
         assert eval memory["ria_r15_future_plan"] == ("plan_together" if (case // 3) & 4 else "weekly_evening")
         click expression ("나도 함께 있고 싶다고 답한다 — 친밀한 장면으로 이어짐." if (case // 3) & 4 else "오늘은 차를 마시고 집에 돌아가 쉬겠다고 말한다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         if eval (case // 3) & 4:
             click expression ("코스프레 의상을 함께 골라 보고 싶다고 말한다." if (case // 3) & 1 else "지금의 편한 생활복이 좋다고 말한다.") until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             assert eval memory["ria_r15_outfit"] == ("cosplay" if (case // 3) & 1 else "home")
         else:
@@ -252,17 +274,19 @@ testsuite ria16:
             click "본편 계속 — 프로젝트 마무리로" until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             assert eval memory["ria_o03_status"] == "skipped"
             assert eval "ria_o03_rest" not in memory
@@ -270,49 +294,55 @@ testsuite ria16:
             click "잠깐 만나기 — 쉬는 날의 준비물 (선택 일상)" until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             click expression ("노트 한 장을 같이 보고, 한 줄씩 감상을 붙인다." if (case // 3) & 1 else "각자 노트와 지도를 보며 같은 자리에 느긋하게 앉는다.") until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if eval ((case // 3) & 12) and (case // 3) % 4 != 2:
                 assert eval chapter.startswith("리아 O03")
                 click expression ["나도 노트보다 리아가 더 궁금하다며 짧게 받아친다.", "웃으며 다음 장을 같이 보자고 말한다.", "그런 장난은 아직 민망하다며 줄여 달라고 말한다."][case % 3] until not screen "choice"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
                 if screen "event_cut":
                     click id "cut_next" until not screen "event_cut"
                     advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                     if screen "office_phone":
-                        click id "phone_next" until eval phone_context == "r08_reply"
-                        click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                        click id "phone_next" until not screen "office_phone"
+                        click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                        if screen "office_phone":
+                            click id route_phone_test_reply()
+                            click id "phone_next" until not screen "office_phone"
                         advance until screen "choice"
                 assert eval memory["ria_o03_teasing_seen"] is True
                 assert eval memory["ria_private_teasing_mode"] == ["comfortable", "light", "stop"][case % 3]
@@ -326,17 +356,19 @@ testsuite ria16:
         click expression ("서로의 일을 지키면서 오래 만나고 싶다고 말한다." if (case // 3) & 1 else "아무것도 준비하지 않은 날에도 계속 만나고 싶다고 말한다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval chapter.startswith("리아 E01")
         assert eval memory["ria_route_completed"] is True
@@ -348,17 +380,19 @@ testsuite ria16:
         click expression ("처음 가 보는 길을 다음에 하나만 찾아보자고 제안한다." if (case // 3) & 8 else "익숙한 곳을 다시 찾는 다음 산책을 제안한다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval ("ria_e01_recalled_place" in memory) == ((case // 3) % 4 == 1 and not ((case // 3) & 8))
         assert eval "ria_e01_intimacy" not in memory
@@ -377,17 +411,19 @@ testsuite ria16:
             click "익숙한 곳을 다시 찾는 다음 산책을 제안한다." until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             assert eval "ria_e01_intimacy" not in memory
             assert eval affinity["ria"] == 90
@@ -401,17 +437,19 @@ testsuite ria16:
             click "연애를 마치고 싶다고 분명히 말한다 — 관계 종료 대화로 이어짐." until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             assert eval ending == "ria_relationship_closed"
             assert eval dating is False
@@ -431,17 +469,19 @@ testsuite ria16:
         run Start("test_ria16_guard")
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
-            click id "phone_next" until eval phone_context == "r08_reply"
-            click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-            click id "phone_next" until not screen "office_phone"
+            click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+            if screen "office_phone":
+                click id route_phone_test_reply()
+                click id "phone_next" until not screen "office_phone"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
         assert eval memory == {}
         assert eval completed == []
@@ -459,1364 +499,1525 @@ testsuite ria16_flow:
 
     testcase full_route:
         parameter route = ["ria", "deferred", "close", "colleague", "decline", "no_epilogue", "cosplay", "third"]
+        $ phone_fixture["preferred_reply"] = "small_memory" if route == "third" else "miss"
         click id "start_button" until not screen "main_menu"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
-                click id "phone_next" until eval phone_context == "r08_reply"
-                click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                click id "phone_next" until not screen "office_phone"
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id route_phone_test_reply()
+                    click id "phone_next" until not screen "office_phone"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
                 advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
                 if screen "office_phone":
-                    click id "phone_next" until eval phone_context == "r08_reply"
-                    click id ("phone_reply_small_memory" if route == "third" else "phone_reply_miss")
-                    click id "phone_next" until not screen "office_phone"
+                    click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                    if screen "office_phone":
+                        click id route_phone_test_reply()
+                        click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
             if not eval ria16_final_menu():
                 click expression ria16_flow_caption(route) until not screen "choice"

@@ -2,9 +2,12 @@
 define d = Character("도현", callback=renpy.curry(cream_note_speaker)("dohyun"))
 define r = Character("강리아", callback=renpy.curry(cream_note_speaker)("ria"))
 define j = Character("백지현", callback=renpy.curry(cream_note_speaker)("jihyun"))
+define jn = Character("지현 · 속마음", callback=renpy.curry(cream_note_speaker)("jihyun"))
 define y = Character("차유진", callback=renpy.curry(cream_note_speaker)("yujin"))
 define s = Character("한서윤", callback=renpy.curry(cream_note_speaker)("seoyun"))
 define dn = Character("도현 · 속마음", callback=renpy.curry(cream_note_speaker)("dohyun"))
+define yn = Character("유진 · 속마음", callback=renpy.curry(cream_note_speaker)("yujin"))
+
 define rn = Character("리아 · 속마음", callback=renpy.curry(cream_note_speaker)("ria"))
 define msgd = Character("도현 · 보낸 메시지", callback=renpy.curry(cream_note_speaker)("message"))
 define msgr = Character("리아 · 답장", callback=renpy.curry(cream_note_speaker)("message"))
@@ -59,8 +62,8 @@ init python:
 
 label start:
     scene bg plain
-    "대본 개발판 · 공통 C01~C08과 리아 R01~R16, 선택 일상 O01~O03·후일담 E01을 읽을 수 있습니다."
-    "배경·이벤트 CG·음성은 제작 중입니다. 다른 세 개인 루트는 선택을 확인한 뒤 시험판을 마칩니다."
+    "대본 개발판 · 공통 C01~C08, 네 히로인의 개인 대본을 읽을 수 있습니다."
+    "최종 배경·표정·이벤트 CG·영상·음성은 제작 중입니다. 실제 플레이 길이와 대사의 통합 편집도 남아 있습니다."
     call c01
     call c02
     call c03
@@ -98,7 +101,13 @@ label start:
                         "본편 결말에서 마치기 — 후일담은 이번에 읽지 않음":
                             $ remember("ria_epilogue_skipped")
             $ chapter = "리아 · 수록 구간 종료"
-            "이번 개발판의 리아 이야기는 여기까지입니다. 그림·음성·최종 UI와 다른 세 개인 루트는 준비 중입니다."
+            "이번 개발판의 리아 이야기는 여기까지입니다. 유진·지현·서윤 대본도 수록되어 있으며, 최종 그림·음성·UI와 전체 읽기 편집은 준비 중입니다."
+    elif active_route == "yujin":
+        call yujin_early_route(full_route=True)
+    elif active_route == "jihyun":
+        call jihyun_early_route(full_route=True)
+    elif active_route == "seoyun":
+        call seoyun_route
     elif active_route == "colleague":
         call end_common
     else:
@@ -118,6 +127,8 @@ label end_common:
     d "현장에서는 사람들이 어디서 멈추는지 볼게요."
     if active_route == "ria":
         r "[ri('이번엔 내가 옆에서 같이 볼게.', '이번엔 제가 옆에서 같이 볼게요.')]"
+    elif active_route == "yujin":
+        y "다음 시안도 실제로 읽히는지 같이 봐 주세요. 처음 본 감상부터 듣고 싶어요."
     else:
         r "[ri('첫날 생각나네. 이번엔 의자도 있어.', '첫날 생각나네요. 이번엔 의자도 있어요.')]"
     "회의가 끝나자 하나둘 자리를 정리했다. 누군가는 더 남고, 누군가는 먼저 퇴근했다."

@@ -1,6 +1,6 @@
 {
-  "planning_revision": "2.79",
-  "runtime_version": "0.9.1-clear-ui",
+  "planning_revision": "2.91",
+  "runtime_version": "0.19.0-all-routes-text",
   "decision": "Intro base + intro expression + 3 main asset slots; after dialogue reuses intro base",
   "events_per_heroine": 3,
   "base_cg_per_event": 3,
@@ -9,7 +9,7 @@
     "cosplay"
   ],
   "target_display_changes_per_event": 5,
-  "runtime_status": "ria_slots_connected_images_pending_other_routes_unimplemented",
+  "runtime_status": "four_heroine_event_slots_connected_all_final_images_pending",
   "sets": [
     {
       "heroine": "ria",
@@ -213,7 +213,7 @@
       "event": "R07",
       "outfit": "casual",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "jihyun_R07_casual_base01",
@@ -262,7 +262,7 @@
       "event": "R12",
       "outfit": "special",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "jihyun_R12_special_base01",
@@ -311,7 +311,7 @@
       "event": "R15",
       "outfit": "home",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "jihyun_R15_home_base01",
@@ -360,7 +360,7 @@
       "event": "R15",
       "outfit": "cosplay",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "jihyun_R15_cosplay_base01",
@@ -409,7 +409,7 @@
       "event": "R07",
       "outfit": "casual",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "yujin_R07_casual_base01",
@@ -458,7 +458,7 @@
       "event": "R12",
       "outfit": "special",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "yujin_R12_special_base01",
@@ -507,7 +507,7 @@
       "event": "R15",
       "outfit": "home",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "yujin_R15_home_base01",
@@ -556,7 +556,7 @@
       "event": "R15",
       "outfit": "cosplay",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "yujin_R15_cosplay_base01",
@@ -605,7 +605,7 @@
       "event": "R07",
       "outfit": "casual",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "seoyun_R07_casual_base01",
@@ -654,7 +654,7 @@
       "event": "R12",
       "outfit": "special",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "seoyun_R12_special_base01",
@@ -703,7 +703,7 @@
       "event": "R15",
       "outfit": "home",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "seoyun_R15_home_base01",
@@ -752,7 +752,7 @@
       "event": "R15",
       "outfit": "cosplay",
       "category": "adult_event_main_cg",
-      "runtime_connected": false,
+      "runtime_connected": true,
       "base_cg": [
         {
           "id": "seoyun_R15_cosplay_base01",

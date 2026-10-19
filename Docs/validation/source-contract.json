@@ -1,0 +1,279 @@
+{
+  "version": "0.21.0-immersive-dialogue",
+  "changed_files": [
+    "common.rpy",
+    "jihyun_optional.rpy",
+    "jihyun_r01_r04.rpy",
+    "jihyun_r05_r12.rpy",
+    "jihyun_r13_e01.rpy",
+    "options.rpy",
+    "ria_r02_r04.rpy",
+    "ria_r05_r08.rpy",
+    "ria_r09_r12.rpy",
+    "ria_r13_e01.rpy",
+    "seoyun_optional.rpy",
+    "seoyun_r01_r04.rpy",
+    "seoyun_r05_r12.rpy",
+    "seoyun_r13_e01.rpy",
+    "yujin_optional.rpy",
+    "yujin_r01_r04.rpy",
+    "yujin_r05_r08.rpy",
+    "yujin_r09_r12.rpy",
+    "yujin_r13_e01.rpy",
+    "office_phone.rpy"
+  ],
+  "changed_scene_blocks": 62,
+  "scenes": [
+    {
+      "file": "common.rpy",
+      "label": "c02"
+    },
+    {
+      "file": "common.rpy",
+      "label": "c03"
+    },
+    {
+      "file": "common.rpy",
+      "label": "c04"
+    },
+    {
+      "file": "common.rpy",
+      "label": "c05"
+    },
+    {
+      "file": "common.rpy",
+      "label": "c06"
+    },
+    {
+      "file": "common.rpy",
+      "label": "c07"
+    },
+    {
+      "file": "jihyun_optional.rpy",
+      "label": "jihyun_o01"
+    },
+    {
+      "file": "jihyun_optional.rpy",
+      "label": "jihyun_o02"
+    },
+    {
+      "file": "jihyun_r01_r04.rpy",
+      "label": "jihyun_r01"
+    },
+    {
+      "file": "jihyun_r01_r04.rpy",
+      "label": "jihyun_r02"
+    },
+    {
+      "file": "jihyun_r01_r04.rpy",
+      "label": "jihyun_r03"
+    },
+    {
+      "file": "jihyun_r05_r12.rpy",
+      "label": "jihyun_r05"
+    },
+    {
+      "file": "jihyun_r05_r12.rpy",
+      "label": "jihyun_r06"
+    },
+    {
+      "file": "jihyun_r05_r12.rpy",
+      "label": "jihyun_r07"
+    },
+    {
+      "file": "jihyun_r05_r12.rpy",
+      "label": "jihyun_r08"
+    },
+    {
+      "file": "jihyun_r05_r12.rpy",
+      "label": "jihyun_r10"
+    },
+    {
+      "file": "jihyun_r05_r12.rpy",
+      "label": "jihyun_r11"
+    },
+    {
+      "file": "jihyun_r13_e01.rpy",
+      "label": "jihyun_r13"
+    },
+    {
+      "file": "jihyun_r13_e01.rpy",
+      "label": "jihyun_r15"
+    },
+    {
+      "file": "jihyun_r13_e01.rpy",
+      "label": "jihyun_r16"
+    },
+    {
+      "file": "jihyun_r13_e01.rpy",
+      "label": "jihyun_e01"
+    },
+    {
+      "file": "ria_r02_r04.rpy",
+      "label": "ria_r02"
+    },
+    {
+      "file": "ria_r02_r04.rpy",
+      "label": "ria_r03"
+    },
+    {
+      "file": "ria_r05_r08.rpy",
+      "label": "ria_r05"
+    },
+    {
+      "file": "ria_r05_r08.rpy",
+      "label": "ria_r06"
+    },
+    {
+      "file": "ria_r09_r12.rpy",
+      "label": "ria_r10"
+    },
+    {
+      "file": "ria_r09_r12.rpy",
+      "label": "ria_o02"
+    },
+    {
+      "file": "ria_r09_r12.rpy",
+      "label": "ria_r11"
+    },
+    {
+      "file": "ria_r13_e01.rpy",
+      "label": "ria_r15"
+    },
+    {
+      "file": "ria_r13_e01.rpy",
+      "label": "ria_o03"
+    },
+    {
+      "file": "ria_r13_e01.rpy",
+      "label": "ria_r16"
+    },
+    {
+      "file": "ria_r13_e01.rpy",
+      "label": "ria_e01"
+    },
+    {
+      "file": "seoyun_optional.rpy",
+      "label": "seoyun_o01"
+    },
+    {
+      "file": "seoyun_optional.rpy",
+      "label": "seoyun_o02"
+    },
+    {
+      "file": "seoyun_r01_r04.rpy",
+      "label": "seoyun_r01"
+    },
+    {
+      "file": "seoyun_r01_r04.rpy",
+      "label": "seoyun_r02"
+    },
+    {
+      "file": "seoyun_r01_r04.rpy",
+      "label": "seoyun_r03"
+    },
+    {
+      "file": "seoyun_r05_r12.rpy",
+      "label": "seoyun_r05"
+    },
+    {
+      "file": "seoyun_r05_r12.rpy",
+      "label": "seoyun_r06"
+    },
+    {
+      "file": "seoyun_r05_r12.rpy",
+      "label": "seoyun_r08"
+    },
+    {
+      "file": "seoyun_r05_r12.rpy",
+      "label": "seoyun_r09"
+    },
+    {
+      "file": "seoyun_r05_r12.rpy",
+      "label": "seoyun_r10"
+    },
+    {
+      "file": "seoyun_r05_r12.rpy",
+      "label": "seoyun_r11"
+    },
+    {
+      "file": "seoyun_r13_e01.rpy",
+      "label": "seoyun_r13"
+    },
+    {
+      "file": "seoyun_r13_e01.rpy",
+      "label": "seoyun_r14"
+    },
+    {
+      "file": "seoyun_r13_e01.rpy",
+      "label": "seoyun_r15"
+    },
+    {
+      "file": "seoyun_r13_e01.rpy",
+      "label": "seoyun_r16"
+    },
+    {
+      "file": "seoyun_r13_e01.rpy",
+      "label": "seoyun_e01"
+    },
+    {
+      "file": "yujin_optional.rpy",
+      "label": "yujin_o01"
+    },
+    {
+      "file": "yujin_optional.rpy",
+      "label": "yujin_o02"
+    },
+    {
+      "file": "yujin_r01_r04.rpy",
+      "label": "yujin_r02"
+    },
+    {
+      "file": "yujin_r01_r04.rpy",
+      "label": "yujin_r03"
+    },
+    {
+      "file": "yujin_r05_r08.rpy",
+      "label": "yujin_r05"
+    },
+    {
+      "file": "yujin_r05_r08.rpy",
+      "label": "yujin_r06"
+    },
+    {
+      "file": "yujin_r05_r08.rpy",
+      "label": "yujin_r08"
+    },
+    {
+      "file": "yujin_r09_r12.rpy",
+      "label": "yujin_r10"
+    },
+    {
+      "file": "yujin_r09_r12.rpy",
+      "label": "yujin_r11"
+    },
+    {
+      "file": "yujin_r13_e01.rpy",
+      "label": "yujin_r13"
+    },
+    {
+      "file": "yujin_r13_e01.rpy",
+      "label": "yujin_r15"
+    },
+    {
+      "file": "yujin_r13_e01.rpy",
+      "label": "yujin_r16"
+    },
+    {
+      "file": "yujin_r13_e01.rpy",
+      "label": "yujin_e01"
+    },
+    {
+      "file": "office_phone.rpy",
+      "label": "ria_r08_phone_conversation"
+    }
+  ],
+  "net_source_characters": 5330,
+  "branches_choices_flags_awards_unchanged": true,
+  "phone_ids_contacts_attachments_timing_unchanged": true
+}

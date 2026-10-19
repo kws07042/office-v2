@@ -70,7 +70,7 @@ screen event_cut(event_id, variant, cursor):
                 spacing 15
                 text beat["title"] size 30 color "#e4c397" substitute False
                 text beat["narration"] size 23 color "#bac4d8" substitute False
-                text ("리아  " + ri(*beat["ria"])) size 26 substitute False
+                text (phone_names(event_id.split("_")[0]) + "  " + (beat["heroine"] if "heroine" in beat else ri(*beat["ria"]))) size 26 substitute False
                 text ("도현  " + ri(*beat["dohyun"])) size 26 substitute False
                 if not has_art:
                     text ("표정 변화 자리 · 그림 준비 중" if expression else "장면 대본 미리보기 · 그림 준비 중") size 18 color "#8d9bb5"

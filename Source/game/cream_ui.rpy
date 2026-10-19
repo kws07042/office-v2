@@ -51,7 +51,27 @@ init -10 python:
         choice = renpy.get_screen("choice")
         return not choice or len(choice.scope.get("items", [])) <= 3
 
-    def cream_relation_name():
+    def cream_yujin_visible():
+        if renpy.store.cream_focus != "yujin":
+            return False
+        if "도현의 집" in renpy.store.location and "유진" not in renpy.store.location:
+            return False
+        if any(word in renpy.store.location for word in ("메시지", "각자의", "연락")):
+            return False
+        choice = renpy.get_screen("choice")
+        return not choice or len(choice.scope.get("items", [])) <= 3
+
+    def cream_relation_name(person="ria"):
+        if person == "seoyun":
+            if renpy.store.dating and renpy.store.active_route == "seoyun":
+                return "약속 조율 중" if renpy.store.memory.get("seoyun_conflict") in ("open", "discussing", "agreed_pending_action") else "교제 중"
+            return "동료로 지내는 중" if renpy.store.memory.get("seoyun_relationship_declined") or renpy.store.memory.get("seoyun_relationship_closed") else "알아가는 중"
+        if person == "jihyun":
+            if renpy.store.dating and renpy.store.active_route == "jihyun":
+                return "약속 조율 중" if renpy.store.memory.get("jihyun_conflict") in ("open", "agreed_pending_action") else "교제 중"
+            return "동료로 지내는 중" if renpy.store.memory.get("jihyun_relationship_declined") or renpy.store.memory.get("jihyun_relationship_closed") else "알아가는 중"
+        if person == "yujin":
+            return "교제 중" if renpy.store.dating and renpy.store.active_route == "yujin" else ("동료로 지내는 중" if renpy.store.memory.get("yujin_relationship_declined") or renpy.store.memory.get("yujin_relationship_closed") else "알아가는 중")
         if renpy.store.dating and renpy.store.active_route == "ria":
             return "약속 조율 중" if renpy.store.memory.get("ria_conflict") in ("open", "discussing", "agreed") else "교제 중"
         if renpy.store.memory.get("ria_relationship_closed"):
@@ -62,6 +82,7 @@ init -10 python:
         return any(renpy.get_screen(name) for name in ("save", "load", "history", "preferences"))
 
 image ria ui bust = DynamicDisplayable(ria_portrait_display)
+image yujin ui bust = Transform(Crop((230, 0, 570, 850), "images/characters/yujin/ui_temp_v001.png"), zoom=1.0)
 
 label cream_preview_start:
     $ cream_preview_active = True

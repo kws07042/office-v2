@@ -1,7 +1,7 @@
 init -2 python:
     gui.init(1280, 720)
 define config.name = "퇴근 후, 우리 — 대본 시험판"
-define config.version = "0.11.1-office-round"
+define config.version = "0.21.0-immersive-dialogue"
 define config.save_directory = "afterwork-us-script-prototype-v1"
 define config.window = "auto"
 define config.check_conflicting_properties = True

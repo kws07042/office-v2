@@ -1,0 +1,74 @@
+{
+  "version": "0.21.0-immersive-dialogue",
+  "native_status": "passed",
+  "native_cases": 214,
+  "native_assertions": 4318,
+  "suites": [
+    {
+      "suite": "full_editorial_checks",
+      "cases": 14,
+      "assertions": 92
+    },
+    {
+      "suite": "common_romance",
+      "cases": 21,
+      "assertions": 339
+    },
+    {
+      "suite": "ria16_flow",
+      "cases": 8,
+      "assertions": 99
+    },
+    {
+      "suite": "yujin_early_checks",
+      "cases": 17,
+      "assertions": 246
+    },
+    {
+      "suite": "yujin08_checks",
+      "cases": 12,
+      "assertions": 233
+    },
+    {
+      "suite": "yujin12_checks",
+      "cases": 28,
+      "assertions": 851
+    },
+    {
+      "suite": "yujin_final_checks",
+      "cases": 28,
+      "assertions": 641
+    },
+    {
+      "suite": "jihyun04_checks",
+      "cases": 17,
+      "assertions": 386
+    },
+    {
+      "suite": "jihyun_final_checks",
+      "cases": 17,
+      "assertions": 491
+    },
+    {
+      "suite": "seoyun_checks",
+      "cases": 26,
+      "assertions": 700
+    },
+    {
+      "suite": "office_phone_checks",
+      "cases": 17,
+      "assertions": 210
+    },
+    {
+      "suite": "review_continuity_checks",
+      "cases": 9,
+      "assertions": 30
+    }
+  ],
+  "scene_blocks_rewritten": 62,
+  "game_files_verified": 54,
+  "images_changed": 0,
+  "rigging_changed": false,
+  "saves_removed": 0,
+  "github_updated": false
+}

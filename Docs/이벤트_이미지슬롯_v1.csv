@@ -1,0 +1,29 @@
+﻿event,outfit,page,kind,image
+R07,casual,1,intro,ria_R07_casual_intro
+R07,casual,2,intro,ria_R07_casual_intro
+R07,casual,3,intro,ria_R07_casual_intro -> ria_R07_casual_intro_shy
+R07,casual,4,main,ria_R07_casual_base01
+R07,casual,5,main,ria_R07_casual_base02
+R07,casual,6,main,ria_R07_casual_base03
+R07,casual,7,after,ria_R07_casual_intro
+R12,special,1,intro,ria_R12_special_intro
+R12,special,2,intro,ria_R12_special_intro
+R12,special,3,intro,ria_R12_special_intro -> ria_R12_special_intro_shy
+R12,special,4,main,ria_R12_special_base01
+R12,special,5,main,ria_R12_special_base02
+R12,special,6,main,ria_R12_special_base03
+R12,special,7,after,ria_R12_special_intro
+R15,home,1,intro,ria_R15_home_intro
+R15,home,2,intro,ria_R15_home_intro
+R15,home,3,intro,ria_R15_home_intro -> ria_R15_home_intro_shy
+R15,home,4,main,ria_R15_home_base01
+R15,home,5,main,ria_R15_home_base02
+R15,home,6,main,ria_R15_home_base03
+R15,home,7,after,ria_R15_home_intro
+R15,cosplay,1,intro,ria_R15_cosplay_intro
+R15,cosplay,2,intro,ria_R15_cosplay_intro
+R15,cosplay,3,intro,ria_R15_cosplay_intro -> ria_R15_cosplay_intro_shy
+R15,cosplay,4,main,ria_R15_cosplay_base01
+R15,cosplay,5,main,ria_R15_cosplay_base02
+R15,cosplay,6,main,ria_R15_cosplay_base03
+R15,cosplay,7,after,ria_R15_cosplay_intro

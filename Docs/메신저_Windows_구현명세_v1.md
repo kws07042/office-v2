@@ -1,3 +1,5 @@
+> **현재 구현: 0.12.0-route-phone / v2.83**. R08 외 리아 루트의 기존 문자 구간도 연결했다. 최신 적용 범위·기억·날짜 기록·R12 귀가 분기는 office_phone_route_v3.md / 리아_메신저_본편연결_v3.md를 따른다. 아래 0.11.x 설명은 초기 메신저 구현 이력이다.
+
 # Windows 메신저 구현 — 0.11.1-office-round / 기획 v2.82
 
 ## 구현 범위
@@ -37,3 +39,6 @@ phone_threads / phone_read_ids / phone_photo_opened / phone_photo_previews / pho
 - 별도 음향, 실제 식탁 사진, 타 히로인 대본은 이번 디자인 변경의 완료 항목이 아니다.
 
 글꼴 출처: https://github.com/google/fonts/tree/main/ofl/gowundodum · https://github.com/orioncactus/pretendard/tree/v1.3.9
+
+## 2026-10-19 버튼 정렬
+상단 도구 묶음은 xpos 1214 / xanchor 1.0으로 헤더 오른쪽에 정렬한다. 본편·기록 화면 공통. 기존 메신저 검사 17개·210 assertion 통과.

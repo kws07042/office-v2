@@ -1,0 +1,288 @@
+# 서윤 실제 구현 대본 — seoyun_r01_r04.rpy
+
+```renpy
+# Seoyun is a 32-year-old colleague. Final art/voice production is deferred.
+define sn = Character("서윤 · 속마음", callback=renpy.curry(cream_note_speaker)("seoyun"))
+default seoyun_prepared = False
+
+label seoyun_r01:
+    $ active_route = "seoyun"
+    $ cream_focus = "seoyun"
+    $ chapter = "서윤 R01 · 언제 한번 말고 오늘"
+    $ location = "다음 주 수요일 오후 · 개인 메시지"
+    call phone_deliver("seoyun_r01_invite", "seoyun", "언제 한번 보자는 말, 오늘 써도 돼? 저녁 일곱 시 회사 앞 작은 카페. 네 시간은 어때?", contact="seoyun", important=True)
+    call phone_deliver("seoyun_r01_accept", "dohyun", "좋아요. 일곱 시에 갈게요. 오늘은 제가 질문할 차례죠?", contact="seoyun")
+    call phone_deliver("seoyun_r01_confirm", "seoyun", "응~ 오늘은 연락 담당 말고 한서윤으로 갈게. 회사 앞 카페에서 봐.", contact="seoyun")
+    $ remember("seoyun_r01_appointment", "수요일 저녁 일곱 시, 회사 앞 카페")
+    $ location = "같은 수요일 저녁 일곱 시 · 회사 앞 카페"
+    if memory.get("seoyun_intro") == "humor":
+        s "첫날엔 농담 받아치고도 질문은 놓치지 않더라. 오늘도 그 순서야?"
+        d "오늘은 대답부터 듣고 웃어 볼까 하는데요."
+    elif memory.get("seoyun_intro") == "clarify":
+        s "오늘도 제목이랑 본문부터 나눌 거야?"
+        d "오늘 제목은 따로 만나서 좋다는 거요. 본문은 지금부터 들어 보려고요."
+    elif memory.get("seoyun_intro") == "draft":
+        s "첫날 초안 읽어 주던 자신감, 아직 있어?"
+        d "네. 오늘은 업무 답장 말고 제 질문으로요."
+    else:
+        s "오늘은 답장 대신 질문을 기다리는 쪽이네. 이 자리 좀 낯설다~"
+        d "저는 따로 불러 주신 게 반가운데요."
+    if memory.get("c07_seoyun_next_question"):
+        s "저번 카페에선 오 분만 더 앉자고 했지. 오늘은 시간 조금 더 남겨 뒀어."
+    menu:
+        "평소에도 사람을 궁금해하는 편인지 묻는다.":
+            d "질문하실 때 상대 얘기를 진짜 기다리시는 것 같아요. 평소에도 그러세요?"
+            s "일할 땐 대답이 필요해서. 오늘은 다음 말이 궁금해서. 조금 다른데?"
+            $ remember("seoyun_r01_topic", "curiosity")
+        "혼자 쉬는 날에는 어떤 속도로 지내는지 묻는다.":
+            d "답장 안 기다리는 날은 뭐 하세요? 서윤 씨 쉬는 얘기 듣고 싶어요."
+            s "책 몇 장 읽고, 같은 데 다시 읽고. 진도보다는 멈춘 데가 기억나더라."
+            $ remember("seoyun_r01_topic", "rest")
+        "일이 없어도 나를 따로 만나고 싶었던 건지 직접 묻는다.":
+            d "오늘 업무가 하나도 없어도 저 부르셨을까요? 저는 그랬을 것 같아서요."
+            s "...첫 질문부터 꽤 오래 남게 하네. 응. 그러고 싶었어."
+            $ remember("seoyun_r01_topic", "direct")
+    s "토요일엔 내 단골 북카페 가 볼래? 두 시에 서점 입구에서. 거긴 질문이 좀 느려져도 괜찮거든."
+    d "좋아요. 대답 빨리 끝내고 보내실 건 아니죠?"
+    s "지금은 붙잡는 쪽이잖아~ 토요일 두 시, 기억해 줘."
+    $ remember("seoyun_r02_appointment", "토요일 오후 두 시, 단골 서점 입구")
+    $ award_once("seoyun_R01", "seoyun", 4)
+    return
+
+label seoyun_r02:
+    $ chapter = "서윤 R02 · 누나도 말을 고를 때"
+    $ location = "토요일 오후 두 시 · 단골 서점과 북카페"
+    if c06_person == "seoyun" and c06_topic == "weekend":
+        s "네가 숫자 적어 준 책갈피, 오늘도 가져왔어. 진도 검사 안 하기로 했지?"
+        d "네. 대신 잘 쉬셨는지 물어보기로 했죠."
+    elif c06_person == "seoyun" and c06_topic == "place":
+        d "같이 오면 서로 다른 책부터 집겠다고 했잖아요. 오늘은 직접 보겠네요."
+        s "응. 제목 보고 웃는지부터 볼까?"
+    elif c06_person == "seoyun" and c06_topic == "today":
+        d "오늘도 책보다 다음 질문이 궁금해지게 해 볼게요."
+        s "그 말 기억하는구나. 나도 오늘은 덮고 들을 시간 있어."
+    else:
+        s "여긴 책 권했다고 독후감 검사 안 해. 마음에 안 들면 다른 선반 가면 되고."
+    "서윤이 얇은 산문집 『느린 모퉁이』를 꺼냈다. 책장 사이에 얇은 종이 책갈피가 끼워져 있었다."
+    s "이건 끝나는 날보다 돌아가는 길 얘기가 많아. 다 못 읽은 날에도 펼치기 좋고."
+    d "서윤 씨는 좋아하는 사람 앞에서도 이렇게 말을 잘 고르세요?"
+    "서윤이 책장을 넘기던 손을 멈췄다. 이번에는 바로 농담이 따라오지 않았다."
+    menu:
+        "바로 답하지 않아도 된다며 기다린다.":
+            d "지금 대답 안 나오셔도 돼요. 물어보고 싶어서 물은 거예요."
+            s "...그럼 조금 기다려 줘. 대답을 아예 안 하고 싶은 건 아니야."
+            $ remember("seoyun_r02_response", "wait")
+        "나는 관심이 있어서 직접 묻고 있다고 먼저 말한다.":
+            d "저는 서윤 씨를 더 알고 싶어서 물었어요. 장난으로 물은 건 아니고요."
+            s "이렇게 먼저 말하면 내가 도망갈 틈이 없네. ...도망가고 싶다는 뜻은 아니고."
+            $ remember("seoyun_r02_response", "my_interest")
+        "능숙하게 답하려 애쓰지 않아도 궁금한 마음은 같다고 한다.":
+            d "멋있게 답 안 하셔도 돼요. 잠깐 고민하시는 것도 서윤 씨 얘기잖아요."
+            s "그런 것까지 듣겠다고 하니까 더 고르게 되는데? 좋다는 뜻이야."
+            $ remember("seoyun_r02_response", "unfinished")
+    if not memory.get("booklet_known_seoyun"):
+        d "저는 요즘 동네 사진하고 짧은 글 모아서 작은 기록집 만들고 있어요. 아직은 메모가 더 많고요."
+        s "그럼 처음 보는 사람한테도 하나 들려줄래? 잘 정리한 것 말고 네가 멈춘 순간이 궁금해."
+        $ remember("seoyun_booklet_introduced")
+    else:
+        s "다음에는 네가 남긴 것도 하나 들려줄래? 기록집 얘기 아니어도, 네가 멈춘 순간 하나."
+    d "좋아요. 다음 수요일 일곱 시에 이 카페에서요. 하나 가져올게요."
+    menu:
+        "퇴근길에 눈길이 멈춘 장소 사진 한 장을 가져오겠다고 한다.":
+            d "사진 한 장 찍어 올게요. 왜 멈췄는지는 제가 말하고요."
+            s "좋아. 사진 밖의 말도 기다릴게."
+            $ remember("seoyun_promise", "photo")
+        "집으로 돌아가며 들은 소리를 한 줄로 써 오겠다고 한다.":
+            d "한 줄 써 올게요. 제목 잘 뽑으려고 멋부리지 않고요."
+            s "응. 내 감상도 짧게만 해 달라고 미리 정하진 마~"
+            $ remember("seoyun_promise", "sound")
+        "아무것도 만들지 않은 쉬는 시간을 말로 들려주겠다고 한다.":
+            d "아무것도 안 한 시간도 하나 가져올게요. 말로요."
+            s "그것도 좋지. 그 시간은 내가 사진으로 보여 달라고 못 하겠네."
+            $ remember("seoyun_promise", "rest")
+    $ remember("seoyun_recommended_book", "느린 모퉁이")
+    $ remember("seoyun_r03_appointment", "다음 수요일 저녁 일곱 시, 같은 북카페")
+    $ award_once("seoyun_R02", "seoyun", 7)
+    return
+
+label seoyun_r03:
+    $ chapter = "서윤 R03 · 네가 기억했던 약속"
+    $ location = "약속한 수요일 저녁 일곱 시 · 같은 북카페"
+    if memory["seoyun_promise"] == "photo":
+        "도현이 전날 퇴근길에 찍은 계단 사진을 보여 줬다. 저녁 빛이 난간 끝에만 남아 있었다."
+        d "여기서 멈췄어요. 다 내려갔다가 빛 때문에 다시 돌아왔고요."
+        s "네가 돌아선 순간이 사진 밖에 있었네. 그 말까지 가져왔구나."
+        $ remember("seoyun_promise_kept", "직접 찍은 난간 끝의 저녁 빛 사진과 멈춘 이유")
+    elif memory["seoyun_promise"] == "sound":
+        "도현은 전날 돌아가는 길에 써 둔 한 줄을 보여 줬다."
+        d "‘문 닫는 소리가 나면, 이 골목도 집으로 간다.’ 이 문장이요."
+        s "가게 문은 닫혔는데 사람 발소리는 이어질 것 같네. 나 지금 그 길 조금 궁금해."
+        $ remember("seoyun_promise_kept", "직접 쓴 골목 문 닫는 소리 한 줄")
+    else:
+        d "어제는 소파에 앉아서 창밖만 봤어요. 폰도 멀리 두고요. 무슨 결과물 가져와야 하나 싶다가 그냥 쉬었어요."
+        s "응. 그 얘기를 오늘 들려준 걸로 약속 지켰어. 비어 있던 시간을 시험 보러 온 건 아니니까."
+        $ remember("seoyun_promise_kept", "휴대폰을 내려놓고 창밖 보며 쉰 실제 시간 이야기")
+    if memory["seoyun_r02_response"] == "wait":
+        s "지난번에 기다려 달라고 했지. 좋아하는 사람 앞에서는 나도 잘 말하고 싶어서 늦어져. 오늘은 그 대답부터 할게."
+    elif memory["seoyun_r02_response"] == "my_interest":
+        s "네가 관심 있어서 묻는다고 했잖아. 나도 그래서 오늘 옷 한 번 더 골랐어. 책만 보러 온 건 아니고."
+    else:
+        s "멋있게 답 안 해도 듣겠다고 했지. 그럼 오늘은 덜 고른 말로. 너 오는 거 기다렸어."
+    menu:
+        "다음 대답을 기다릴 사람이 있다는 게 좋았다고 한다.":
+            d "보여 줄 사람 생각하면서 골랐어요. 다음 질문도 듣고 싶었고요."
+            s "그럼 다음에도 물어볼게. 대신 나도 대답하면서."
+            $ remember("seoyun_r03_meaning", "waiting_reader")
+        "가볍게 꺼낸 약속이라도 함께 정했으니 지키고 싶었다고 한다.":
+            d "짧게 나온 말이어도 둘이 정한 거니까요. 제가 지키고 싶은 약속이었어요."
+            s "...응. 나도 그 무게로 들을게."
+            $ remember("seoyun_r03_meaning", "small_promise")
+        "오늘은 서윤을 만나러 왔다는 말을 먼저 한다.":
+            d "가져온 것 보여 드리러 온 것도 맞는데요. 제일 큰 이유는 서윤 씨 보고 싶어서예요."
+            s "다 듣고도 그 말에 제일 오래 멈추네, 나."
+            $ remember("seoyun_r03_meaning", "meet_you")
+    s "금요일 저녁 일곱 시에도 만날래? 이 카페에서. 그땐 내가 먼저 하고 싶은 말이 있어."
+    d "네. 금요일 일곱 시요. 준비물 없이 서윤 씨 얘기 들으러 올게요."
+    $ remember("seoyun_core_understanding")
+    $ remember("seoyun_r04_appointment", "금요일 저녁 일곱 시, 북카페")
+    s "오늘 인사할 때 잠깐 안아도 돼? 그냥 장난으로 팔 벌리는 건 말고."
+    menu:
+        "나도 그러고 싶다고 답하고 짧게 안는다.":
+            d "네. 저도요."
+            "둘은 짧게 안고 떨어졌다. 서윤은 다음 말을 농담으로 바꾸지 않았다."
+            s "오늘 와 줘서 좋았어. 금요일에도 보고 싶어."
+            $ remember("seoyun_r03_affection", "hug")
+        "오늘은 손을 잡고 인사하고 싶다고 한다.":
+            d "오늘은 손잡고 인사할래요. 금요일에도 보고 싶어요."
+            "서윤이 내민 손을 잠깐 잡았다."
+            s "응. 오늘 대답도 그렇게 기억할게."
+            $ remember("seoyun_r03_affection", "hand")
+        "접촉 대신 오늘 반가웠다는 말을 분명히 전한다.":
+            d "오늘은 말로 할게요. 만나서 좋았고, 다음에도 오고 싶어요."
+            s "나도 보고 싶었어. 그 말까지 농담으로 받진 말아 줘~"
+            $ remember("seoyun_r03_affection", "words")
+    $ location = "같은 수요일 밤 · 서윤의 집 — 서윤 시점"
+    "서윤은 금요일 일곱 시 옆에 도현의 이름을 적었다. ‘언제 한번’은 적지 않았다."
+    sn "가볍게 말하는 건 쉬운데. 이번에는 가볍게 들리지 않았으면 좋겠네."
+    $ award_once("seoyun_R03", "seoyun", 8)
+    return
+
+label seoyun_r04:
+    if not memory.get("seoyun_core_understanding"):
+        return
+    $ chapter = "서윤 R04 · 그 말은 농담으로 하지 마"
+    $ location = "금요일 저녁 일곱 시 · 약속한 북카페"
+    s "오늘은 내가 먼저 말할게. 좋아해. 너랑 연애하고 싶어."
+    "서윤은 컵을 내려놓고 도현을 보았다. 웃으며 다음 화제로 넘기지 않았다."
+    s "장난처럼 대답 피할 자리 만들고 싶지 않았어. 네 마음을 듣고 싶어."
+    while not dating and not memory.get("seoyun_relationship_declined"):
+        menu:
+            "나도 좋아하며, 연인으로 만나고 싶다고 답한다.":
+                d "저도 좋아해요. 서윤 씨랑 연인으로 만나고 싶어요. 오늘 대답은 농담 아니에요."
+                s "응. 나도 그 말 그대로 듣고 싶었어."
+                $ dating = True
+                $ remember("seoyun_confession_accepted")
+                $ award_once("seoyun_R04", "seoyun", 5)
+            "좋아하는 마음과 첫 연애의 서툼을 조금 더 말한다." if not seoyun_prepared:
+                d "좋아하는 마음은 분명해요. 저는 첫 연애라서, 장난인지 진심인지 혼자 정리하다 늦게 말할 수도 있을 것 같아요."
+                s "그땐 물어봐 줘. 나도 농담으로 들리게 말했으면 다시 말할게. 다 알아듣는 사람을 만나고 싶은 건 아니니까."
+                d "네. 저도 먼저 보고 싶다고 말할게요. 다음 대답을 혼자 정해 두지 않고요."
+                $ seoyun_prepared = True
+                $ remember("seoyun_prepared_conversation")
+            "이번 회차는 연애를 시작하지 않고 동료로 지낸다 — 동료 결말 확인.":
+                menu:
+                    "동료로 지내겠다는 뜻을 확인한다.":
+                        d "저는 연인으로 만나겠다는 답은 못 드리겠어요. 동료로 지내고 싶어요."
+                        s "알겠어. 마음 말한 걸 장난이었다고 바꾸진 않을게. 네 대답도 그대로 들을게."
+                        $ remember("seoyun_relationship_declined")
+                        call end_common
+                        return
+                    "결정을 취소하고 마음을 다시 고른다.":
+                        pass
+                    "서윤이 원하는 관계를 듣고 다시 답한다.":
+                        s "일 없는 날에도 너랑 만나고 싶어. 다음 날짜를 같이 고르는 연인으로. 그래도 같은 대답을 해 달라는 강요는 아니야."
+    if not seoyun_prepared:
+        d "저는 첫 연애예요. 좋아한다는 말 먼저 하려고 했는데, 오늘은 답부터 하게 됐네요."
+        s "먼저 들어서 좋았던 쪽도 좀 남겨 줘~ 나도 지금 꽤 긴장했어."
+    s "교제 얘기는 처음엔 둘만 알자. 다른 사람한테 말할 땐 같이 정하고."
+    $ remember("seoyun_publicity", "private")
+    menu:
+        "토요일에는 서윤의 단골 북카페를 더 둘러보고 싶다고 한다.":
+            d "내일은 그 책 있는 선반을 더 보고 싶어요. 서윤 씨랑요."
+            s "응. 토요일 두 시에 만나자. 이제 단골 자리 하나 뺏기는 건가~"
+            $ remember("seoyun_next_date_plan", "bookcafe")
+        "토요일에는 내가 궁금한 강변 길로 초대하고 싶다고 한다.":
+            d "내일 두 시에 강변 입구 어때요? 이번엔 제가 궁금한 길 같이 걸어요."
+            s "좋아. 이번엔 내가 따라가 볼게. 두 시에 강변 입구."
+            $ remember("seoyun_next_date_plan", "walk")
+        "서점에서 만난 뒤 둘이 그날 걷고 싶은 길을 고르자고 한다.":
+            d "내일 두 시에 서점에서 만나고, 걷고 싶은 길은 그때 같이 골라요."
+            s "좋아. 오늘 대답 얻었다고 내일 취향까지 다 알아낸 건 아니니까."
+            $ remember("seoyun_next_date_plan", "both")
+    s "지금 입맞춤해도 돼? 좋아한다는 말 다음에 하고 싶었던 거야."
+    menu:
+        "같은 마음이라고 답하고 가까이 다가간다.":
+            d "네. 저도 그러고 싶어요."
+            "짧게 입맞춤한 뒤 서윤이 도현을 다시 보았다. 이번에는 도현도 시선을 먼저 피하지 않았다."
+            s "...농담은 좀 나중에 해야겠다. 지금은 다시 보고 싶어져서."
+            $ first_kiss = True
+            $ remember("seoyun_first_kiss", "R04")
+            $ remember("seoyun_r04_affection", "kiss")
+        "오늘은 손을 잡고 조금 더 앉아 있고 싶다고 한다.":
+            d "오늘은 손잡고 더 앉아 있을래요. 먼저 말씀해 주신 건 좋았어요."
+            "서윤이 손을 내밀었다. 둘은 카페가 조금 조용해질 때까지 더 머물렀다."
+            $ remember("seoyun_r04_affection", "hand")
+        "입맞춤은 다음으로 두고, 오늘은 말로 마음을 더 전한다.":
+            d "오늘은 좋아한다는 말 조금 더 하고 싶어요. 입맞춤은 다음으로 둘래요."
+            s "응. 그럼 오늘은 듣는 쪽 좀 욕심낼게."
+            $ remember("seoyun_r04_affection", "words")
+    $ remember("seoyun_r04_complete")
+    return
+
+label seoyun_route:
+    $ active_route = "seoyun"
+    $ cream_focus = "seoyun"
+    $ phone_active_contact = "seoyun"
+    call seoyun_r01
+    call seoyun_r02
+    call seoyun_r03
+    call seoyun_r04
+    if not dating or not memory.get("seoyun_r04_complete"):
+        return
+    call seoyun_r05
+    call seoyun_o01_offer
+    call seoyun_r06
+    call seoyun_r07
+    call seoyun_r08
+    call seoyun_r09
+    call seoyun_r10
+    call seoyun_o02_offer
+    call seoyun_r10_after
+    call seoyun_r11
+    call seoyun_r12
+    call seoyun_r13
+    call seoyun_r14
+    if dating and memory.get("seoyun_conflict") == "resolved":
+        call seoyun_r15
+        call seoyun_o03_offer
+        call seoyun_r16
+        if memory.get("seoyun_route_completed"):
+            menu:
+                "후일담 읽기 — 약 반년 뒤, 날짜가 있는 다음":
+                    call seoyun_e01
+                "본편 결말에서 마치기 — 후일담은 이번에 읽지 않음":
+                    $ remember("seoyun_epilogue_skipped")
+                "다음에도 보고 싶다고 말하고 후일담 읽기":
+                    d "다음에도 제가 먼저 만나자고 할게요."
+                    s "응. 다음 날짜도 내 대답도 같이 들으면서."
+                    $ remember("seoyun_epilogue_bridge")
+                    call seoyun_e01
+    return
+
+label seoyun_preview:
+    $ cream_preview_active = False
+    "서윤 전체 대본 확인입니다. 공통의 세부 선택 기억 없이 시작합니다. 최종 그림·영상·음성은 준비 중입니다."
+    call seoyun_route
+    return
+
+```
