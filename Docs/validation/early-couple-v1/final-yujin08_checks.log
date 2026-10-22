@@ -1,0 +1,226 @@
+2026-10-21 05:04:08 UTC
+Windows-11-10.0.26200-SP0
+Ren'Py 8.5.3.26051504
+
+Early init took 51 ms
+Loading error handling took 38 ms
+Loading script took 549 ms
+Loading save slot metadata took 45 ms
+Loading persistent took 0 ms
+Set script version to: None (alternate path)
+Running init code took 66 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 16 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 70 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 219 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 8 ms
+Save screen analysis took 12 ms
+Save pyanalysis took 0 ms
+Save bytecode took 54 ms
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.yujin08_checks
+[rpytest] [log] - global.yujin08_checks
+
+[rpytest] Starting test run
+[rpytest] Platform:      Windows-11-10.0.26200-SP0
+[rpytest] Python:        3.12.7
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  0.34.0-early-couple
+
+[rpytest] [exc] + global
+Running _start took 12 ms
+Interface start took 564 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 522.25'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 144, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
+Maximum texture size: 4096x4096
+[rpytest] [exc]   + yujin08_checks
+[rpytest] [exc]     - branches_and_real_memories(case=0)
+[rpytest] [exc]     - branches_and_real_memories(case=0) (2.761 s)
+Cleaning stores took 0 ms
+Load screen analysis took 26 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - branches_and_real_memories(case=1)
+[rpytest] [exc]     - branches_and_real_memories(case=1) (1.598 s)
+Cleaning stores took 1 ms
+Load screen analysis took 25 ms
+Analyze screens took 1 ms
+Running _start took 2 ms
+[rpytest] [exc]     - branches_and_real_memories(case=2)
+[rpytest] [exc]     - branches_and_real_memories(case=2) (1.579 s)
+Cleaning stores took 1 ms
+Load screen analysis took 16 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - branches_and_real_memories(case=3)
+[rpytest] [exc]     - branches_and_real_memories(case=3) (1.724 s)
+Cleaning stores took 1 ms
+Load screen analysis took 22 ms
+Analyze screens took 0 ms
+Running _start took 2 ms
+[rpytest] [exc]     - branches_and_real_memories(case=4)
+[rpytest] [exc]     - branches_and_real_memories(case=4) (1.623 s)
+Cleaning stores took 0 ms
+Load screen analysis took 16 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - branches_and_real_memories(case=5)
+[rpytest] [exc]     - branches_and_real_memories(case=5) (1.659 s)
+Cleaning stores took 0 ms
+Load screen analysis took 15 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - branches_and_real_memories(case=6)
+[rpytest] [exc]     - branches_and_real_memories(case=6) (1.732 s)
+Cleaning stores took 0 ms
+Load screen analysis took 15 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - branches_and_real_memories(case=7)
+[rpytest] [exc]     - branches_and_real_memories(case=7) (1.422 s)
+Cleaning stores took 0 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - branches_and_real_memories(case=8)
+[rpytest] [exc]     - branches_and_real_memories(case=8) (1.486 s)
+Cleaning stores took 0 ms
+Load screen analysis took 17 ms
+Analyze screens took 0 ms
+Running _start took 2 ms
+[rpytest] [exc]     - branches_and_real_memories(case=9)
+[rpytest] [exc]     - branches_and_real_memories(case=9) (1.758 s)
+Cleaning stores took 0 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Running _start took 3 ms
+[rpytest] [exc]     - branches_and_real_memories(case=10)
+[rpytest] [exc]     - branches_and_real_memories(case=10) (1.681 s)
+Cleaning stores took 0 ms
+Load screen analysis took 15 ms
+Analyze screens took 0 ms
+Running _start took 2 ms
+[rpytest] [exc]     - branches_and_real_memories(case=11)
+[rpytest] [exc]     - branches_and_real_memories(case=11) (1.482 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (23.237 s)
+[rpytest]   PASSED  yujin08_checks       - (21.746 s)
+[rpytest]     PASSED  branches_and_real_memories(case=0) - (2.761 s)
+[rpytest]     PASSED  branches_and_real_memories(case=1) - (1.598 s)
+[rpytest]     PASSED  branches_and_real_memories(case=2) - (1.579 s)
+[rpytest]     PASSED  branches_and_real_memories(case=3) - (1.724 s)
+[rpytest]     PASSED  branches_and_real_memories(case=4) - (1.623 s)
+[rpytest]     PASSED  branches_and_real_memories(case=5) - (1.659 s)
+[rpytest]     PASSED  branches_and_real_memories(case=6) - (1.732 s)
+[rpytest]     PASSED  branches_and_real_memories(case=7) - (1.422 s)
+[rpytest]     PASSED  branches_and_real_memories(case=8) - (1.486 s)
+[rpytest]     PASSED  branches_and_real_memories(case=9) - (1.758 s)
+[rpytest]     PASSED  branches_and_real_memories(case=10) - (1.681 s)
+[rpytest]     PASSED  branches_and_real_memories(case=11) - (1.482 s)
+[rpytest]   NOT RUN yujin12_checks      
+[rpytest]     NOT RUN real_support_and_relationship(case=0)
+[rpytest]     NOT RUN real_support_and_relationship(case=1)
+[rpytest]     NOT RUN real_support_and_relationship(case=2)
+[rpytest]     NOT RUN real_support_and_relationship(case=3)
+[rpytest]     NOT RUN real_support_and_relationship(case=4)
+[rpytest]     NOT RUN real_support_and_relationship(case=5)
+[rpytest]     NOT RUN real_support_and_relationship(case=6)
+[rpytest]     NOT RUN real_support_and_relationship(case=7)
+[rpytest]     NOT RUN real_support_and_relationship(case=8)
+[rpytest]     NOT RUN real_support_and_relationship(case=9)
+[rpytest]     NOT RUN real_support_and_relationship(case=10)
+[rpytest]     NOT RUN real_support_and_relationship(case=11)
+[rpytest]     NOT RUN real_support_and_relationship(case=12)
+[rpytest]     NOT RUN real_support_and_relationship(case=13)
+[rpytest]     NOT RUN real_support_and_relationship(case=14)
+[rpytest]     NOT RUN real_support_and_relationship(case=15)
+[rpytest]     NOT RUN real_support_and_relationship(case=16)
+[rpytest]     NOT RUN real_support_and_relationship(case=17)
+[rpytest]     NOT RUN real_support_and_relationship(case=18)
+[rpytest]     NOT RUN real_support_and_relationship(case=19)
+[rpytest]     NOT RUN real_support_and_relationship(case=20)
+[rpytest]     NOT RUN real_support_and_relationship(case=21)
+[rpytest]     NOT RUN real_support_and_relationship(case=22)
+[rpytest]     NOT RUN real_support_and_relationship(case=23)
+[rpytest]     NOT RUN real_support_and_relationship(case=24)
+[rpytest]     NOT RUN real_support_and_relationship(case=25)
+[rpytest]     NOT RUN real_support_and_relationship(case=26)
+[rpytest]     NOT RUN real_support_and_relationship(case=27)
+[rpytest]   NOT RUN yujin_final_checks  
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=0)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=1)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=2)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=3)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=4)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=5)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=6)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=7)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=8)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=9)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=10)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=11)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=12)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=13)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=14)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=15)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=16)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=17)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=18)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=19)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=20)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=21)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=22)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=23)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=24)
+[rpytest]     NOT RUN close_or_reconsider(response=0)
+[rpytest]     NOT RUN close_or_reconsider(response=1)
+[rpytest]     NOT RUN close_or_reconsider(response=2)
+[rpytest]   NOT RUN yujin_early_checks  
+[rpytest]     NOT RUN representative_branches(case=0)
+[rpytest]     NOT RUN representative_branches(case=1)
+[rpytest]     NOT RUN representative_branches(case=2)
+[rpytest]     NOT RUN representative_branches(case=3)
+[rpytest]     NOT RUN representative_branches(case=4)
+[rpytest]     NOT RUN representative_branches(case=5)
+[rpytest]     NOT RUN representative_branches(case=6)
+[rpytest]     NOT RUN representative_branches(case=7)
+[rpytest]     NOT RUN representative_branches(case=8)
+[rpytest]     NOT RUN representative_branches(case=9)
+[rpytest]     NOT RUN representative_branches(case=10)
+[rpytest]     NOT RUN representative_branches(case=11)
+[rpytest]     NOT RUN save_load_changes_real_touch_memory
+[rpytest]     NOT RUN main_menu_preview   
+[rpytest]     NOT RUN common_to_yujin_route(epilogue=0)
+[rpytest]     NOT RUN common_to_yujin_route(epilogue=1)
+[rpytest]     NOT RUN common_to_yujin_route(epilogue=2)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:    29 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |    24 skipped |     3 not run
+[rpytest] Test cases :   448 |    12 passed |     0 xfailed |     0 failed |     0 xpassed |   436 skipped |     0 not run
+[rpytest] Test hooks :    13 |    13 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :   233 |   233 passed |     0 xfailed |     0 failed |     0 xpassed | 
+
+[rpytest] Time: 23.239 s
+[rpytest] Status: PASSED 
+

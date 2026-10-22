@@ -211,7 +211,7 @@ testsuite ria16:
         assert eval affinity["ria"] == 71
         assert eval memory["ria_r15_booklet_photo_taken"] is True
         assert eval ("오늘 처음" in memory["ria_r15_booklet_photo"]) == ((case // 3) % 4 == 3)
-        click expression ("주마다 각자 일정을 먼저 보고 만날 날을 함께 고른다." if (case // 3) & 4 else "일주일에 한 번, 짧게라도 만날 저녁을 함께 정한다.") until not screen "choice"
+        click expression ("다음 주에도 같이 먹자며, 가능한 저녁은 나중에 골라 보내기로 한다." if (case // 3) & 4 else "오늘 가게를 다음 주 저녁에도 같이 오자고 초대한다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
             click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))

@@ -1,0 +1,11 @@
+{
+  "version": "0.32.0-dialogue-clarity",
+  "backup": "C:\\Users\\user\\Desktop\\건\\오피스 V2\\개발자료\\이전버전_0.31.0_대사이해도편집전",
+  "verified_writes": 186,
+  "native_cases": 96,
+  "assertions": 1907,
+  "runtime_matches_tested": true,
+  "images_audio_rigging_changed": false,
+  "saves_removed": 0,
+  "github_updated": false
+}

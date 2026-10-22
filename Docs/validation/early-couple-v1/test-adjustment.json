@@ -1,0 +1,6 @@
+{
+  "file": "yujin08_tests.rpy",
+  "old": "assert eval (\"아침에 커튼\" in phone_threads[\"yujin\"][-1][\"text\"]) == (case % 3 == 0)",
+  "new": "assert eval (\"커튼\" in phone_threads[\"yujin\"][-1][\"text\"]) == (memory.get(\"yujin_r07_pace\") == \"shared\")",
+  "reason": "본문 문자열 변경 뒤 공유 아침과 커튼 메시지의 일치 조건을 유지; 통과 기준 삭제 아님"
+}

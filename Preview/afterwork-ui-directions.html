@@ -1,0 +1,225 @@
+<div id="afterwork-ui-directions">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&amp;display=swap">
+  <style>
+    #afterwork-ui-directions{width:100%;min-width:0}
+    #afterwork-ui-directions .au-stage{min-height:735px;padding:8px 0 20px;box-sizing:border-box}
+    #afterwork-ui-directions .au-preview-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding-right:100px}
+    #afterwork-ui-directions .au-product{--au-ink:light-dark(#32364a,#eef0f9);--au-muted:light-dark(#656978,#b9c2d4);--au-paper:light-dark(#fffdf8,#222b3f);--au-soft:light-dark(#f4f0fb,#31364e);--au-line:light-dark(#d9d3e6,#596078);--au-accent:light-dark(#78629e,#c7b3ee);--au-on-accent:light-dark(#ffffff,#201d33);--au-sky:light-dark(#e1e4f3,#28314e);--au-wall:light-dark(#f1eee9,#182139);--au-radius:24px;--au-text-size:21px;position:relative;isolation:isolate;min-height:580px;overflow:hidden;background:var(--au-wall);color:var(--au-ink);font-family:'Pretendard','Malgun Gothic',sans-serif;border-radius:14px;box-sizing:border-box}
+    #afterwork-ui-directions .au-product.navy{--au-ink:light-dark(#ecf1fa,#ecf1fa);--au-muted:light-dark(#bdc8da,#bdc8da);--au-paper:light-dark(#222d45,#222d45);--au-soft:light-dark(#2e3b56,#2e3b56);--au-line:light-dark(#52617a,#52617a);--au-accent:light-dark(#c6b5ef,#c6b5ef);--au-on-accent:light-dark(#252d45,#252d45);--au-sky:light-dark(#374465,#374465);--au-wall:light-dark(#1c283f,#1c283f);--au-radius:12px}
+    #afterwork-ui-directions .au-product.peach{--au-ink:light-dark(#57403e,#f2e3df);--au-muted:light-dark(#7d6560,#d4b9b0);--au-paper:light-dark(#fffaf0,#342a31);--au-soft:light-dark(#fae7df,#49363c);--au-line:light-dark(#d7b7a8,#886865);--au-accent:light-dark(#a55664,#f1bac0);--au-on-accent:light-dark(#fff9f4,#38252c);--au-sky:light-dark(#f4d9c2,#634251);--au-wall:light-dark(#f5e9d8,#2d2535);--au-radius:10px}
+    #afterwork-ui-directions .au-product *{box-sizing:border-box}
+    #afterwork-ui-directions .au-product{color-scheme:light}
+    #afterwork-ui-directions .au-product button,#afterwork-ui-directions .au-product input{font:inherit}
+    #afterwork-ui-directions .au-product button{color:inherit}
+    #afterwork-ui-directions .au-product button:focus-visible{outline:3px solid var(--au-accent);outline-offset:3px}
+    #afterwork-ui-directions .au-product [hidden]{display:none!important}
+    #afterwork-ui-directions .au-room{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(130deg,color-mix(in srgb,var(--au-paper) 45%,transparent),transparent 62%),var(--au-wall)}
+    #afterwork-ui-directions .au-window{position:absolute;left:9%;top:12%;width:54%;height:50%;border:8px solid color-mix(in srgb,var(--au-line) 44%,var(--au-paper));background:linear-gradient(180deg,var(--au-sky),color-mix(in srgb,var(--au-paper) 75%,var(--au-sky)));box-shadow:20px 16px 0 color-mix(in srgb,var(--au-line) 14%,transparent)}
+    #afterwork-ui-directions .au-window:before{content:"";position:absolute;left:47%;top:0;bottom:0;width:6px;background:color-mix(in srgb,var(--au-line) 44%,var(--au-paper))}
+    #afterwork-ui-directions .au-city{position:absolute;bottom:0;left:0;right:0;height:34%;opacity:.32;background:linear-gradient(90deg,transparent 5%,var(--au-line) 5% 16%,transparent 16% 21%,var(--au-line) 21% 38%,transparent 38% 48%,var(--au-line) 48% 60%,transparent 60% 74%,var(--au-line) 74% 89%,transparent 89%)}
+    #afterwork-ui-directions .au-desk{position:absolute;top:63%;left:4%;width:69%;height:4%;background:color-mix(in srgb,var(--au-line) 42%,var(--au-paper));border-radius:4px;box-shadow:0 12px 0 color-mix(in srgb,var(--au-line) 15%,transparent)}
+    #afterwork-ui-directions .au-plant{position:absolute;right:10%;top:38%;height:130px;width:78px;opacity:.26;background:radial-gradient(ellipse at 28% 35%,var(--au-accent) 0 25%,transparent 26%),radial-gradient(ellipse at 76% 16%,var(--au-accent) 0 23%,transparent 24%),linear-gradient(90deg,transparent 45%,var(--au-accent) 46% 51%,transparent 52%)}
+    #afterwork-ui-directions .au-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:24px 28px;position:relative;z-index:1}
+    #afterwork-ui-directions .au-place{font-size:13px;color:var(--au-muted);margin-top:7px}
+    #afterwork-ui-directions .au-brand{font-family:'Gowun Dodum','Pretendard',sans-serif;font-size:18px;letter-spacing:.03em}
+    #afterwork-ui-directions .au-status{display:flex;align-items:center;gap:15px;padding:10px 13px;border-radius:30px;background:var(--au-paper);font-size:13px}
+    #afterwork-ui-directions .au-hearts{display:flex;gap:3px;color:var(--au-accent)}
+    #afterwork-ui-directions .au-hearts span{opacity:.25}
+    #afterwork-ui-directions .au-mini{display:inline-flex;gap:7px;align-items:center;border:0;background:transparent;padding:4px;font-size:13px;min-height:30px;border-radius:8px}
+    #afterwork-ui-directions .au-mini:hover{background:var(--au-soft)}
+    #afterwork-ui-directions .au-story{min-height:462px;display:flex;flex-direction:column;justify-content:flex-end;padding:14px 28px 24px;gap:15px}
+    #afterwork-ui-directions .au-choices{display:flex;gap:10px;align-self:center;width:min(760px,100%)}
+    #afterwork-ui-directions .au-choice{flex:1;min-width:0;text-align:left;border:1px solid var(--au-line);border-radius:var(--au-radius);padding:15px 18px;background:var(--au-paper);font-size:16px;line-height:1.55;min-height:62px;box-shadow:0 6px 20px color-mix(in srgb,var(--au-ink) 6%,transparent)}
+    #afterwork-ui-directions .au-choice:hover{background:var(--au-soft);border-color:var(--au-accent)}
+    #afterwork-ui-directions .au-dialogue{position:relative;background:var(--au-paper);border:1px solid var(--au-line);border-radius:var(--au-radius);min-height:156px;padding:31px 30px 18px;box-shadow:0 12px 36px color-mix(in srgb,var(--au-ink) 8%,transparent)}
+    #afterwork-ui-directions .au-speaker{position:absolute;top:-18px;left:28px;background:var(--au-accent);color:var(--au-on-accent);padding:9px 25px;border-radius:25px;font-family:'Gowun Dodum','Pretendard',sans-serif;font-size:17px}
+    #afterwork-ui-directions .au-line-text{font-size:var(--au-text-size);line-height:1.7;min-height:48px;overflow-wrap:anywhere;margin:8px 0 16px}
+    #afterwork-ui-directions .au-footer{display:flex;justify-content:flex-end;align-items:center;gap:16px;flex-wrap:wrap;color:var(--au-muted);font-size:12px}
+    #afterwork-ui-directions .au-footer button{background:none;border:0;padding:4px 1px;min-height:30px}
+    #afterwork-ui-directions .au-footer button:hover{color:var(--au-accent)}
+    #afterwork-ui-directions .navy .au-status{background:var(--au-soft);border-radius:9px}
+    #afterwork-ui-directions .navy .au-top{padding:22px 30px;border-bottom:1px solid color-mix(in srgb,var(--au-line) 45%,transparent)}
+    #afterwork-ui-directions .navy .au-story{padding:0;gap:20px;min-height:467px}
+    #afterwork-ui-directions .navy .au-choices{align-self:flex-start;flex-direction:column;width:65%;margin:0 30px}
+    #afterwork-ui-directions .navy .au-choice{border-radius:8px;border-left:3px solid var(--au-accent);padding:12px 18px;min-height:50px}
+    #afterwork-ui-directions .navy .au-dialogue{border-radius:0;border-width:1px 0 0;background:color-mix(in srgb,var(--au-paper) 97%,var(--au-sky));padding:20px 34px 16px;box-shadow:none}
+    #afterwork-ui-directions .navy .au-speaker{position:static;display:inline-block;padding:0;background:none;color:var(--au-accent);font-size:17px;letter-spacing:.12em}
+    #afterwork-ui-directions .navy .au-line-text{margin:14px 0 13px}
+    #afterwork-ui-directions .peach .au-status{border-radius:8px;background:var(--au-paper);border-bottom:2px solid var(--au-line)}
+    #afterwork-ui-directions .peach .au-dialogue{margin-top:4px;border-radius:5px;border:0;border-top:3px solid var(--au-accent);padding:27px 28px 17px 155px;box-shadow:8px 8px 0 color-mix(in srgb,var(--au-line) 35%,transparent)}
+    #afterwork-ui-directions .peach .au-speaker{left:22px;top:27px;background:var(--au-soft);color:var(--au-accent);border-radius:4px;padding:15px 18px;writing-mode:horizontal-tb}
+    #afterwork-ui-directions .peach .au-choice{border:0;border-bottom:2px solid var(--au-line);border-radius:5px;box-shadow:4px 4px 0 color-mix(in srgb,var(--au-line) 26%,transparent)}
+    #afterwork-ui-directions .au-chat-view{position:relative;padding:8px 28px 30px;min-height:465px}
+    #afterwork-ui-directions .au-chat{display:grid;grid-template-columns:160px minmax(0,1fr);background:var(--au-paper);border:1px solid var(--au-line);border-radius:var(--au-radius);overflow:hidden;min-height:438px;box-shadow:0 14px 36px color-mix(in srgb,var(--au-ink) 8%,transparent)}
+    #afterwork-ui-directions .au-contacts{background:var(--au-soft);padding:17px 12px;border-right:1px solid var(--au-line);display:flex;flex-direction:column;gap:7px}
+    #afterwork-ui-directions .au-contact{display:flex;align-items:center;gap:10px;padding:11px 10px;text-align:left;background:none;border:0;border-radius:13px;min-height:46px;font-family:'Gowun Dodum','Pretendard',sans-serif;font-size:15px}
+    #afterwork-ui-directions .au-contact[aria-pressed=true]{background:var(--au-paper);color:var(--au-accent)}
+    #afterwork-ui-directions .au-avatar{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--au-paper);color:var(--au-accent);font-size:13px}
+    #afterwork-ui-directions .au-chat-main{min-width:0;padding:21px 24px;display:flex;flex-direction:column;gap:13px}
+    #afterwork-ui-directions .au-chat-heading{display:flex;gap:12px;justify-content:space-between;align-items:center;border-bottom:1px solid var(--au-line);padding-bottom:15px}
+    #afterwork-ui-directions .au-chat-person{font-family:'Gowun Dodum','Pretendard',sans-serif;font-size:20px}
+    #afterwork-ui-directions .au-time{font-size:12px;color:var(--au-muted)}
+    #afterwork-ui-directions .au-thread{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:130px}
+    #afterwork-ui-directions .au-bubble{border-radius:16px 16px 16px 5px;background:var(--au-soft);padding:12px 15px;max-width:90%;font-size:17px;line-height:1.6;overflow-wrap:anywhere}
+    #afterwork-ui-directions .au-bubble.mine{background:var(--au-accent);color:var(--au-on-accent);border-radius:16px 16px 5px 16px;align-self:flex-end}
+    #afterwork-ui-directions .au-typing{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--au-muted)}
+    #afterwork-ui-directions .au-replies{display:flex;gap:8px;margin-top:auto}
+    #afterwork-ui-directions .au-reply{flex:1;border:1px solid var(--au-line);border-radius:12px;padding:12px;background:var(--au-paper);text-align:left;font-size:15px;line-height:1.5;min-height:50px}
+    #afterwork-ui-directions .au-reply:hover{background:var(--au-soft)}
+    #afterwork-ui-directions .au-photo{position:relative;overflow:hidden;width:145px;height:80px;border-radius:12px;border:0;background:linear-gradient(150deg,var(--au-sky) 0 47%,var(--au-soft) 48% 70%,var(--au-accent) 71%);margin-top:8px;display:flex;align-items:flex-end;padding:9px;box-shadow:inset 0 0 0 1px var(--au-line);color:var(--au-ink);font-size:12px}
+    #afterwork-ui-directions .au-photo span{background:var(--au-paper);padding:3px 6px;border-radius:4px}
+    #afterwork-ui-directions .navy .au-chat{grid-template-columns:115px minmax(0,1fr);border-radius:10px}
+    #afterwork-ui-directions .navy .au-contact{flex-direction:column;gap:5px;text-align:center;font-size:13px;border-radius:8px}
+    #afterwork-ui-directions .navy .au-avatar{width:34px;height:34px;border-radius:9px}
+    #afterwork-ui-directions .navy .au-bubble,#afterwork-ui-directions .navy .au-reply{border-radius:8px}
+    #afterwork-ui-directions .peach .au-chat{border-radius:5px;box-shadow:8px 8px 0 color-mix(in srgb,var(--au-line) 32%,transparent);border-top:3px solid var(--au-accent)}
+    #afterwork-ui-directions .peach .au-contact{border-radius:4px;border-bottom:1px solid var(--au-line)}
+    #afterwork-ui-directions .peach .au-bubble{border-radius:4px;border-bottom:2px solid var(--au-line)}
+    #afterwork-ui-directions .peach .au-reply{border-radius:4px}
+    #afterwork-ui-directions .au-menu-view{min-height:462px;padding:35px 9% 36px;position:relative}
+    #afterwork-ui-directions .au-menu-title{font-family:'Gowun Dodum','Pretendard',sans-serif;font-size:52px;line-height:1.2;font-weight:400;letter-spacing:.04em;margin:22px 0 14px}
+    #afterwork-ui-directions .au-menu-tag{color:var(--au-muted);font-size:17px;letter-spacing:.04em;margin-bottom:26px}
+    #afterwork-ui-directions .au-menu-buttons{display:flex;flex-direction:column;gap:9px;width:230px}
+    #afterwork-ui-directions .au-menu-button{padding:13px 22px;border:1px solid var(--au-line);background:var(--au-paper);border-radius:18px;text-align:left;min-height:48px;font-size:16px}
+    #afterwork-ui-directions .au-menu-button:first-child{background:var(--au-accent);color:var(--au-on-accent);border-color:var(--au-accent)}
+    #afterwork-ui-directions .au-menu-button:hover{transform:translateX(3px)}
+    #afterwork-ui-directions .navy .au-menu-view{display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:center}
+    #afterwork-ui-directions .navy .au-menu-title{font-size:43px;max-width:250px}
+    #afterwork-ui-directions .navy .au-menu-buttons{padding:22px;background:var(--au-paper);border:1px solid var(--au-line);border-radius:10px;width:100%}
+    #afterwork-ui-directions .navy .au-menu-button{border-radius:6px}
+    #afterwork-ui-directions .peach .au-menu-view{text-align:center}
+    #afterwork-ui-directions .peach .au-menu-buttons{margin:auto;width:280px;display:grid;grid-template-columns:1fr 1fr}
+    #afterwork-ui-directions .peach .au-menu-button{border-radius:5px;text-align:center;border-bottom:2px solid var(--au-line)}
+    #afterwork-ui-directions .au-save-view{padding:12px 28px 28px;min-height:463px;background:var(--au-paper)}
+    #afterwork-ui-directions .au-save-title{font-family:'Gowun Dodum','Pretendard',sans-serif;font-size:26px;font-weight:400;margin:14px 0 20px;word-break:keep-all}
+    #afterwork-ui-directions .au-slots{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    #afterwork-ui-directions .au-slot{display:flex;align-items:center;text-align:left;gap:17px;border:1px solid var(--au-line);background:var(--au-paper);border-radius:var(--au-radius);padding:18px;min-height:130px}
+    #afterwork-ui-directions .au-slot[aria-pressed=true]{background:var(--au-soft);border-color:var(--au-accent)}
+    #afterwork-ui-directions .au-slot-thumb{width:83px;height:75px;flex-shrink:0;border-radius:10px;background:linear-gradient(130deg,var(--au-sky) 0 52%,var(--au-soft) 53%);display:grid;place-items:center;color:var(--au-accent);font-size:26px;font-family:'Gowun Dodum',sans-serif}
+    #afterwork-ui-directions .au-slot-copy{min-width:0;font-size:15px;line-height:1.55}
+    #afterwork-ui-directions .au-slot-copy small{display:block;color:var(--au-muted);font-size:12px;margin-top:7px}
+    #afterwork-ui-directions .au-save-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+    #afterwork-ui-directions .au-action{background:var(--au-accent);color:var(--au-on-accent)!important;border:0;border-radius:12px;padding:12px 24px;min-height:44px;font-size:15px}
+    #afterwork-ui-directions .navy .au-slot{border-radius:8px;background:var(--au-soft);border-left:3px solid var(--au-line)}
+    #afterwork-ui-directions .peach .au-slot{border-radius:4px;border-bottom:3px solid var(--au-line)}
+    #afterwork-ui-directions .au-overlay{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;padding:25px;background:color-mix(in srgb,var(--au-ink) 38%,transparent)}
+    #afterwork-ui-directions .au-modal{background:var(--au-paper);border:1px solid var(--au-line);border-radius:var(--au-radius);padding:27px;width:min(530px,100%);box-shadow:0 18px 60px color-mix(in srgb,var(--au-ink) 20%,transparent)}
+    #afterwork-ui-directions .au-modal h3{font-family:'Gowun Dodum',sans-serif;font-weight:400;font-size:22px;margin:0 0 18px}
+    #afterwork-ui-directions .au-setting-row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:18px 0;font-size:16px}
+    #afterwork-ui-directions .au-setting-row input[type=range]{width:180px;accent-color:var(--au-accent)}
+    #afterwork-ui-directions .au-setting-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--au-accent)}
+    #afterwork-ui-directions .au-large-photo{height:220px;border-radius:12px;background:linear-gradient(150deg,var(--au-sky) 0 47%,var(--au-soft) 48% 70%,var(--au-accent) 71%);margin-bottom:18px}
+    #afterwork-ui-directions .au-feedback{position:relative;text-align:center;color:var(--au-muted);font-size:13px;min-height:19px;padding:0 15px 12px}
+    @media(max-width:620px){
+      #afterwork-ui-directions .au-stage{min-height:960px}
+      #afterwork-ui-directions .au-product{min-height:735px;border-radius:8px}
+      #afterwork-ui-directions .au-top{padding:18px 15px;gap:10px;flex-wrap:wrap}
+      #afterwork-ui-directions .au-status{gap:9px;font-size:12px}
+      #afterwork-ui-directions .au-story{min-height:620px;padding:12px 15px 20px}
+      #afterwork-ui-directions .au-choices{flex-direction:column}
+      #afterwork-ui-directions .au-dialogue{padding:28px 19px 15px}
+      #afterwork-ui-directions .au-line-text{font-size:max(18px,calc(var(--au-text-size) - 2px))}
+      #afterwork-ui-directions .au-footer{gap:12px;justify-content:center}
+      #afterwork-ui-directions .navy .au-story{min-height:620px}
+      #afterwork-ui-directions .navy .au-choices{width:calc(100% - 30px);margin:0 15px}
+      #afterwork-ui-directions .navy .au-dialogue{padding:20px 19px 16px}
+      #afterwork-ui-directions .peach .au-dialogue{padding:26px 19px 15px}
+      #afterwork-ui-directions .peach .au-speaker{position:static;display:inline-block;padding:7px 12px}
+      #afterwork-ui-directions .au-chat-view{padding:4px 12px 22px}
+      #afterwork-ui-directions .au-chat,#afterwork-ui-directions .navy .au-chat{grid-template-columns:1fr;min-height:570px}
+      #afterwork-ui-directions .au-contacts{display:grid;grid-template-columns:1fr 1fr;border-right:0;border-bottom:1px solid var(--au-line);padding:9px;gap:4px}
+      #afterwork-ui-directions .au-contact,#afterwork-ui-directions .navy .au-contact{flex-direction:row;gap:7px;padding:8px;font-size:14px}
+      #afterwork-ui-directions .au-chat-main{padding:17px 13px}
+      #afterwork-ui-directions .au-replies{flex-direction:column}
+      #afterwork-ui-directions .au-bubble{font-size:16px}
+      #afterwork-ui-directions .au-menu-title,#afterwork-ui-directions .navy .au-menu-title{font-size:35px}
+      #afterwork-ui-directions .au-menu-view{padding:35px 24px;min-height:565px}
+      #afterwork-ui-directions .navy .au-menu-view{display:flex;flex-direction:column;gap:5px;align-items:stretch}
+      #afterwork-ui-directions .peach .au-menu-buttons{width:100%;max-width:280px}
+      #afterwork-ui-directions .au-save-view{padding:10px 15px 24px;min-height:600px}
+      #afterwork-ui-directions .au-slots{grid-template-columns:1fr;gap:10px}
+      #afterwork-ui-directions .au-slot{min-height:93px;padding:13px;gap:13px}
+      #afterwork-ui-directions .au-slot-thumb{width:63px;height:58px}
+    }
+    @media(pointer:coarse){#afterwork-ui-directions .au-mini,#afterwork-ui-directions .au-footer button{min-height:44px}#afterwork-ui-directions .au-footer{gap:9px}}
+    @media(prefers-reduced-motion:reduce){#afterwork-ui-directions .au-menu-button:hover{transform:none}}
+  </style>
+  <div class="viz-carousel" aria-label="퇴근 후 우리 게임 UI 세 시안" data-previous-label="이전 시안" data-next-label="다음 시안">
+    <section class="au-stage" data-variant="크림 라운드" aria-label="크림 라운드 시안">
+      <div class="au-preview-controls"><span class="text-small">화면 보기</span><button class="btn" type="button" data-view="story" aria-pressed="true">대사</button><button class="btn" type="button" data-view="chat" aria-pressed="false">메신저</button><button class="btn" type="button" data-view="menu" aria-pressed="false">메뉴</button><button class="btn" type="button" data-view="save" aria-pressed="false">저장</button></div>
+      <div class="au-product cream" data-design="cream" aria-label="크림 라운드 게임 화면"></div>
+    </section>
+    <section class="au-stage" data-variant="네이비 글라스" aria-label="네이비 글라스 시안" hidden>
+      <div class="au-preview-controls"><span class="text-small">화면 보기</span><button class="btn" type="button" data-view="story" aria-pressed="true">대사</button><button class="btn" type="button" data-view="chat" aria-pressed="false">메신저</button><button class="btn" type="button" data-view="menu" aria-pressed="false">메뉴</button><button class="btn" type="button" data-view="save" aria-pressed="false">저장</button></div>
+      <div class="au-product navy" data-design="navy" aria-label="네이비 글라스 게임 화면"></div>
+    </section>
+    <section class="au-stage" data-variant="살구 레터" aria-label="살구 레터 시안" hidden>
+      <div class="au-preview-controls"><span class="text-small">화면 보기</span><button class="btn" type="button" data-view="story" aria-pressed="true">대사</button><button class="btn" type="button" data-view="chat" aria-pressed="false">메신저</button><button class="btn" type="button" data-view="menu" aria-pressed="false">메뉴</button><button class="btn" type="button" data-view="save" aria-pressed="false">저장</button></div>
+      <div class="au-product peach" data-design="peach" aria-label="살구 레터 게임 화면"></div>
+    </section>
+  </div>
+  <script>
+  (()=>{
+    const root=document.getElementById('afterwork-ui-directions');
+    const people={ria:{name:'강리아',initial:'리',line:'오늘은 그냥 같이 걸을까?',reply:'좋아. 오늘은 네 얘기 더 듣고 싶어.',reaction:'나도. 그래서 먼저 물어봤어.'},jihyun:{name:'백지현',initial:'지',line:'오늘 저녁에는 일 얘기 말고. 시간 있어?',reply:'있어. 같이 저녁 먹자.',reaction:'좋아. 오늘은 천천히 이야기하자.'},yujin:{name:'차유진',initial:'유',line:'같이 듣고 싶은 곡이 있어요. 시간 괜찮으세요?',reply:'좋아요. 어떤 곡인지 궁금해요.',reaction:'듣고 나서 어떤 느낌인지 알려 주세요.'},seoyun:{name:'한서윤',initial:'서',line:'언제 한번 말고, 오늘. 시간 어때?',reply:'좋아. 오늘 같이 걷자.',reaction:'좋아. 이번엔 날짜까지 정한 약속이네.'}};
+    const saved=window.openai?.widgetState?.privateContent?.directions||{};
+    const states={};const renderers={};
+    const persist=()=>window.openai?.setWidgetState?.({modelContent:{designStates:Object.fromEntries(Object.entries(states).map(([id,s])=>[id,{screen:s.screen,textSize:s.textSize}]))},privateContent:{directions:states}})?.catch(()=>{});
+    const icon=name=>`<i data-lucide="${name}" aria-hidden="true"></i>`;
+    const icons=()=>globalThis.lucide?.createIcons?.({attrs:{width:16,height:16}});
+    root.querySelectorAll('.au-product').forEach(ui=>{
+      const id=ui.dataset.design;const stage=ui.closest('.au-stage');const old=saved[id]||{};
+      const state={screen:['story','chat','menu','save'].includes(old.screen)?old.screen:'story',person:people[old.person]?old.person:'ria',sent:old.sent===true,replyIndex:old.replyIndex===1?1:0,choiceIndex:old.choiceIndex===0||old.choiceIndex===1?old.choiceIndex:null,textSize:Number.isFinite(old.textSize)&&old.textSize>=18&&old.textSize<=26?old.textSize:21,radius:Number.isFinite(old.radius)?old.radius:(id==='cream'?24:id==='navy'?12:10),softLabels:old.softLabels!==false,reduceMotion:old.reduceMotion===true};
+      states[id]=state;let timer=null;
+      ui.innerHTML=`<div class="au-room" aria-hidden="true"><div class="au-window"><div class="au-city"></div></div><div class="au-desk"></div><div class="au-plant"></div></div>
+      <header class="au-top"><div><div class="au-brand">퇴근 후, 우리</div><div class="au-place">금요일 퇴근길 · 18:40</div></div><div class="au-status"><span class="au-hearts" aria-label="호감도 다섯 칸 중 세 칸">♥♥♥<span>♡♡</span></span><span>썸</span><button class="au-mini cursor-interaction" data-go="chat" aria-label="메신저 열기" type="button">${icon('mail')}<span>메시지</span></button></div></header>
+      <main class="au-story" data-pane="story"><div class="au-choices"><button class="au-choice cursor-interaction" data-choice="0" type="button">그럼 내가 아는 네가 하나 더 생기는 거지.</button><button class="au-choice cursor-interaction" data-choice="1" type="button">걷면서 얘기 좀 더 하자.</button></div><div class="au-dialogue"><div class="au-speaker">강리아</div><div class="au-line-text" aria-live="polite">회사에서 보는 거랑 많이 다르면?</div><nav class="au-footer" aria-label="대사 조작"><button class="cursor-interaction" data-dialog="history" type="button">기록</button><button class="cursor-interaction" data-dialog="auto" type="button">자동</button><button class="cursor-interaction" data-dialog="skip" type="button">스킵</button><button class="cursor-interaction" data-go="save" type="button">저장</button><button class="cursor-interaction" data-overlay="settings" type="button">설정</button><button class="cursor-interaction" data-go="menu" type="button">메뉴</button></nav></div></main>
+      <section class="au-chat-view" data-pane="chat" hidden><div class="au-chat"><nav class="au-contacts" aria-label="연락처">${Object.entries(people).map(([key,p])=>`<button class="au-contact cursor-interaction" data-person="${key}" type="button" aria-pressed="${key===state.person}"><span class="au-avatar">${p.initial}</span>${p.name}</button>`).join('')}</nav><div class="au-chat-main"><div class="au-chat-heading"><div><div class="au-chat-person">강리아</div><div class="au-time">개인 메시지 · 오늘 20:18</div></div><button class="au-mini cursor-interaction" data-go="story" type="button" aria-label="메신저 닫기">${icon('x')}<span>닫기</span></button></div><div class="au-thread" aria-live="polite"><div class="au-bubble au-received"></div><div class="au-bubble"><span>다음엔 이 길도 같이 가 보자.</span><button class="au-photo cursor-interaction" data-overlay="photo" type="button" aria-label="산책길 첨부 확대"><span>초여름 산책길 ${icon('expand')}</span></button></div><div class="au-bubble mine" hidden></div><div class="au-typing" hidden><span>입력 중…</span><button class="au-mini cursor-interaction" data-skip-typing type="button">바로 보기</button></div><div class="au-bubble au-reaction" hidden></div></div><div class="au-replies"><button class="au-reply cursor-interaction" data-reply="0" type="button"></button><button class="au-reply cursor-interaction" data-reply="1" type="button">장소는 내가 골라 봐도 돼?</button></div></div></div></section>
+      <section class="au-menu-view" data-pane="menu" hidden><div><h2 class="au-menu-title">퇴근 후, 우리</h2><div class="au-menu-tag">우리의 이야기는, 퇴근 후부터.</div></div><nav class="au-menu-buttons" aria-label="시작 메뉴"><button class="au-menu-button cursor-interaction" data-go="story" type="button">처음 시작</button><button class="au-menu-button cursor-interaction" data-go="save" type="button">이어하기</button><button class="au-menu-button cursor-interaction" data-overlay="settings" type="button">설정</button><button class="au-menu-button cursor-interaction" data-overlay="exit" type="button">종료</button></nav></section>
+      <section class="au-save-view" data-pane="save" hidden><h2 class="au-save-title">어느 순간부터 이어갈까요?</h2><div class="au-slots"><button class="au-slot cursor-interaction" data-slot="0" type="button" aria-pressed="true"><span class="au-slot-thumb">리</span><span class="au-slot-copy">리아 · 네가 말했던 자리<small>금요일 저녁 · 카페<br>10.14 · 18:42</small></span></button><button class="au-slot cursor-interaction" data-slot="1" type="button" aria-pressed="false"><span class="au-slot-thumb">우</span><span class="au-slot-copy">다음 약속의 상대<small>공통 구간 · 퇴근길<br>10.14 · 17:36</small></span></button><button class="au-slot cursor-interaction" data-slot="2" type="button" aria-pressed="false"><span class="au-slot-thumb">＋</span><span class="au-slot-copy">비어 있는 슬롯<small>새로운 순간을 남겨 주세요.</small></span></button><button class="au-slot cursor-interaction" data-slot="3" type="button" aria-pressed="false"><span class="au-slot-thumb">＋</span><span class="au-slot-copy">비어 있는 슬롯<small>새로운 순간을 남겨 주세요.</small></span></button></div><div class="au-save-bottom"><button class="au-mini cursor-interaction" data-go="story" type="button">${icon('arrow-left')} 돌아가기</button><button class="au-action cursor-interaction" data-go="story" type="button">선택한 순간 이어하기</button></div></section>
+      <div class="au-feedback" aria-live="polite"></div><div class="au-overlay" hidden role="dialog" aria-modal="true" aria-label="미리보기 대화상자"><div class="au-modal"></div></div>`;
+      const q=s=>ui.querySelector(s);
+      function render(){
+        ui.style.setProperty('--au-text-size',state.textSize+'px');
+        ui.style.setProperty('--au-radius',state.radius+'px');
+        q('.au-top').hidden=state.screen==='menu';
+        ui.querySelectorAll('[data-pane]').forEach(p=>p.hidden=p.dataset.pane!==state.screen);
+        stage.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===state.screen)));
+        q('.au-chat-person').textContent=people[state.person].name;
+        q('.au-received').textContent=people[state.person].line;
+        q('.au-thread .au-bubble:nth-child(2) > span').textContent=state.person==='yujin'?'다음엔 이 길도 같이 가요.':'다음엔 이 길도 같이 가 보자.';
+        q('.au-place').textContent=state.screen==='chat'?'퇴근 후 개인 메시지 · 20:18':state.screen==='save'?'우리의 이야기 · 저장된 순간':'금요일 퇴근길 · 18:40';
+        q('[data-reply="0"]').textContent=people[state.person].reply;
+        q('[data-reply="1"]').textContent=state.person==='yujin'?'저도 추천하고 싶은 곡이 있어요.':'장소는 내가 골라 봐도 돼?';
+        ui.querySelectorAll('[data-person]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.person===state.person)));
+        q('.au-bubble.mine').hidden=!state.sent;
+        q('.au-reaction').hidden=!state.sent;
+        ui.querySelectorAll('[data-reply]').forEach(b=>b.hidden=state.sent);
+        q('.au-bubble.mine').textContent=state.replyIndex===0?people[state.person].reply:q('[data-reply="1"]').textContent;
+        q('.au-reaction').textContent=state.replyIndex===0?people[state.person].reaction:(state.person==='yujin'?'그러면 서로 한 곡씩 추천해요.':'좋아. 이번에는 네가 제안해 줘.');
+        q('.au-line-text').textContent=state.choiceIndex===0?'그렇게 말하니까… 조금 기대하게 되네.':state.choiceIndex===1?'좋아. 오늘은 천천히 가자.':'회사에서 보는 거랑 많이 다르면?';
+        ui.querySelectorAll('.au-brand,.au-speaker,.au-chat-person,.au-menu-title,.au-save-title').forEach(e=>e.style.fontFamily=state.softLabels?"'Gowun Dodum','Pretendard',sans-serif":"'Pretendard',sans-serif");
+      }
+      renderers[id]=render;render();
+      function cancel(){clearTimeout(timer);timer=null;q('.au-typing').hidden=true;}
+      function go(screen){cancel();state.screen=screen;q('.au-overlay').hidden=true;q('.au-feedback').textContent='';render();persist();}
+      function finishReply(){cancel();state.sent=true;render();persist();}
+      stage.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+      ui.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+      ui.querySelectorAll('[data-person]').forEach(b=>b.addEventListener('click',()=>{cancel();state.person=b.dataset.person;state.sent=false;render();persist();}));
+      ui.querySelectorAll('[data-choice]').forEach(b=>b.addEventListener('click',()=>{state.choiceIndex=Number(b.dataset.choice);render();persist();}));
+      ui.querySelectorAll('[data-reply]').forEach(b=>b.addEventListener('click',()=>{cancel();state.replyIndex=Number(b.dataset.reply);q('.au-bubble.mine').textContent=b.textContent;q('.au-bubble.mine').hidden=false;ui.querySelectorAll('[data-reply]').forEach(e=>e.hidden=true);q('.au-typing').hidden=false;timer=setTimeout(finishReply,state.reduceMotion?0:900);}));
+      q('[data-skip-typing]').addEventListener('click',finishReply);
+      ui.querySelectorAll('[data-slot]').forEach(b=>b.addEventListener('click',()=>ui.querySelectorAll('[data-slot]').forEach(e=>e.setAttribute('aria-pressed',String(e===b)))));
+      function overlay(kind){cancel();const modal=q('.au-modal');if(kind==='settings'){modal.innerHTML=`<h3>편하게 읽을 수 있도록</h3><label class="au-setting-row">글자 크기 <input type="range" min="18" max="26" value="${state.textSize}" aria-label="게임 대사 글자 크기"></label><label class="au-setting-row">효과 줄이기 <input type="checkbox" ${state.reduceMotion?'checked':''}></label><button class="au-action cursor-interaction" data-close type="button">돌아가기</button>`;modal.querySelector('input[type=range]').addEventListener('input',e=>{state.textSize=Number(e.target.value);render();persist();});modal.querySelector('input[type=checkbox]').addEventListener('change',e=>{state.reduceMotion=e.target.checked;persist();});}else if(kind==='photo'){modal.innerHTML='<h3>초여름 산책길</h3><div class="au-large-photo" aria-label="사진 확대 배치 예시"></div><button class="au-action cursor-interaction" data-close type="button">대화로 돌아가기</button>';}else{modal.innerHTML='<h3>오늘 이야기는 여기까지?</h3><button class="au-action cursor-interaction" data-close type="button">계속 이야기하기</button>';}modal.querySelector('[data-close]').addEventListener('click',()=>{q('.au-overlay').hidden=true;});q('.au-overlay').hidden=false;icons();}
+      ui.querySelectorAll('[data-overlay]').forEach(b=>b.addEventListener('click',()=>overlay(b.dataset.overlay)));
+      ui.querySelectorAll('[data-dialog]').forEach(b=>b.addEventListener('click',()=>{q('.au-feedback').textContent=b.dataset.dialog==='history'?'강리아: 회사에서 보는 거랑 많이 다르면?':b.dataset.dialog==='auto'?'자동 진행 표시 예시':'다음 대사로 이동하는 조작 예시';}));
+      ui.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!q('.au-overlay').hidden){q('.au-overlay').hidden=true;return;}if(state.screen!=='story')go('story');}});
+      if(globalThis.Tweak){const tweak=new Tweak({container:ui,onChange:render});tweak.addSlider(state,'textSize',{label:'대사 글자 크기',min:18,max:26,unit:'px',reference:'au.textSize'});tweak.addSlider(state,'radius',{label:'둥근 정도',min:4,max:30,unit:'px',reference:'au.radius'});tweak.addToggle(state,'softLabels',{label:'부드러운 이름표 글꼴'});}
+    });
+    icons();
+    window.addEventListener('openai:set_globals',e=>{const next=e.detail?.globals?.widgetState?.privateContent?.directions;if(!next)return;for(const[id,value]of Object.entries(next)){if(!states[id])continue;if(['story','chat','menu','save'].includes(value.screen))states[id].screen=value.screen;if(Number.isFinite(value.textSize)&&value.textSize>=18&&value.textSize<=26)states[id].textSize=value.textSize;renderers[id]();}});
+  })();
+  </script>
+</div>

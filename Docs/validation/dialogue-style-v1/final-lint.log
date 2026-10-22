@@ -1,0 +1,14 @@
+Command: ["C:\\Users\\user\\.codex\\visualizations\\2026\\10\\12\\01a12db5-b05d-7c23-ad3f-9b287a883bdd\\renpy-cache\\sdk\\8.5.3\\lib\\py3-windows-x86_64\\python.exe", "C:\\Users\\user\\.codex\\visualizations\\2026\\10\\12\\01a12db5-b05d-7c23-ad3f-9b287a883bdd\\renpy-cache\\sdk\\8.5.3\\renpy.py", "C:\\Users\\user\\.codex\\visualizations\\2026\\10\\12\\01a12db5-b05d-7c23-ad3f-9b287a883bdd\\afterwork-prototype", "lint", "--error-code"]
+﻿Ren'Py 8.5.3.26051504 lint report, generated at: Wed Oct 21 14:23:36 2026
+
+
+Statistics:
+
+The game contains 3,289 dialogue blocks, containing 35,782 words and 140,234
+characters, for an average of 10.9 words and 43 characters per block.
+
+The game contains 183 menus, 3 images, and 22 screens.
+
+
+Lint is not a substitute for thorough testing. Remember to update Ren'Py
+before releasing. New releases fix bugs and improve compatibility.

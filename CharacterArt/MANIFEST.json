@@ -1,0 +1,82 @@
+{
+  "revision": "v3-with-ria-expression-runtime",
+  "date": "2026-10-15",
+  "files": {
+    "assets/ria/master/ria_master_v001.json": {
+      "sha256": "6214d3ab716577b08f798b930a7320556e58b55b474cd9183f04e96dc49e245d",
+      "bytes": 1037
+    },
+    "assets/ria/master/ria_master_v001.png": {
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca",
+      "bytes": 774146
+    },
+    "assets/ria/master/ria_master_v001.qa.md": {
+      "sha256": "8a910d299dfdff9060c1fbc293799b190245ef04c80f552232f7b69bc690add4",
+      "bytes": 1775
+    },
+    "assets/ria/records/cleanup_report.json": {
+      "sha256": "1b5e176f4211748e5d03292354070167770e011941d6e3032d9fbe214f103ab6",
+      "bytes": 10480
+    },
+    "assets/ria/records/README.md": {
+      "sha256": "24c67dc55bd39362990a769e31c9442939c825b249adf8d0a5eff14260f011d3",
+      "bytes": 302
+    },
+    "assets/ria/records/superseded_text_records.json": {
+      "sha256": "90fcb7307f4dde72823c6906ed0ad2ec56510afd33bc0b7ad0e8559a43dd21b3",
+      "bytes": 30778
+    },
+    "assets/yujin/records/superseded_design_proposal.md": {
+      "sha256": "48ef1306cc4a1cb583ca9d58963a8fa23a0ef9186b32f2dab95fbbd7fa8bc18a",
+      "bytes": 5083
+    },
+    "assets/yujin/reference_v001/reference_manifest.json": {
+      "sha256": "1f07bae5fcca85cefe20fe15967edea5e9f9e63e1823b9dbd14a18a2f7b22d99",
+      "bytes": 1163
+    },
+    "assets/yujin/reference_v001/yujin_reference_v001.png": {
+      "sha256": "ce62752f6e9d31b14043716424bd56587e5e1e32801f2f18b08dba6ba7a21306",
+      "bytes": 901573
+    },
+    "assets/yujin/reference_v001/yujin_reference_v001.qa.md": {
+      "sha256": "c39b628e4bb0354637ad432deab6b95d7d598f1d595458b4338440b154189cd6",
+      "bytes": 3422
+    },
+    "character_art_00_README.md": {
+      "sha256": "c95305c83fc9216c89d3efd4e198a23da6f916a7a826dd4d864c3ae4c218ecb4",
+      "bytes": 3024
+    },
+    "character_art_01_COMMON.md": {
+      "sha256": "a263c06a20193d301ad52c76d42ae4851567d09705dfee3155ed93b4a35c572f",
+      "bytes": 6082
+    },
+    "character_art_02_RIA.md": {
+      "sha256": "58cb1b8755b5bab6246cf54db82e4d24fa0e0cecd0b49723d56805a526dcc9ac",
+      "bytes": 6396
+    },
+    "character_art_03_JIHYUN.md": {
+      "sha256": "4918de934bb883c5ebbc2e211507a6b546df7e96c142e491f414b8136734cdff",
+      "bytes": 4553
+    },
+    "character_art_04_YUJIN.md": {
+      "sha256": "64dab089d385c32e35650ae0c64eaa2d249b6d1dd392f571929eb4a8313d6c5d",
+      "bytes": 6579
+    },
+    "character_art_05_SEOYUN.md": {
+      "sha256": "f07c5ed0404278567a91263a4ccc00ce0cc102584460e6617cde10d94bc1e0ad",
+      "bytes": 4298
+    },
+    "character_art_06_PROMPT.md": {
+      "sha256": "72b0383931b67ed591d034d40bfa4f0d21568656e2e13ca4b0567a7379bf007b",
+      "bytes": 5490
+    },
+    "character_art_07_QA.md": {
+      "sha256": "1aa4ed1c57bde28bbeb474a8037ee47331a46b36116039963808a7960f980018",
+      "bytes": 3318
+    },
+    "character_art_TRANSFER.txt": {
+      "sha256": "c1df271361d180de4bedfc6c364feac29252dead1bfc05aef05480d7eea6cd9c",
+      "bytes": 1051
+    }
+  }
+}

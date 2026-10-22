@@ -34,6 +34,20 @@ init -10 python:
         }
         return CreamRoundedPanel(*palette[kind])
 
+    def cream_speaker_color(who, history=False):
+        # Light fills over artwork; darker companions on the cream history panel.
+        palette = {
+            "강리아": ("#ffe0a3", "#93600f"), "리아": ("#ffe0a3", "#93600f"),
+            "백지현": ("#bde7ff", "#32668e"), "지현": ("#bde7ff", "#32668e"),
+            "차유진": ("#ffc9dc", "#98516c"), "유진": ("#ffc9dc", "#98516c"),
+            "한서윤": ("#ddc5ff", "#78549a"), "서윤": ("#ddc5ff", "#78549a"),
+        }
+        name = (who or "").split(" · ", 1)[0]
+        return palette.get(name, ("#fffdf8", "#705684"))[1 if history else 0]
+
+    def cream_speaker_outline(who):
+        return "#573f70" if cream_speaker_color(who) == "#fffdf8" else cream_speaker_color(who, history=True)
+
     def cream_note_speaker(person, event, **kwargs):
         if event == "begin" and person not in ("dohyun", "narrator"):
             renpy.store.cream_focus = person

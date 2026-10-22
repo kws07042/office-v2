@@ -234,8 +234,11 @@ label ria_r08_phone_conversation:
     if memory.get("ria_r07_intimacy") != "shared":
         call phone_deliver("r08_morning_1", "ria", ri("일어났어? 나는 빵 먹는 중~ 오늘 추천 코스는 식탁!", "일어나셨어요? 저는 빵 먹는 중이에요~ 오늘 추천 코스는 식탁!"))
         call phone_deliver("r08_morning_2", "dohyun", ri("나도 이제 아침 먹으려고. 어제 차 잘 마셨어.", "저도 이제 아침 먹으려고요. 어제 차 잘 마셨어요."))
-        call phone_deliver("r08_morning_3", "ria", ri("응! 별일 없어도 연락해도 된다고 했잖아. 바로 해 봤지~", "네! 별일 없어도 연락해도 된다고 하셨잖아요. 바로 해 봤죠~"))
-    call phone_deliver("r08_photo", "ria", ri("오늘의 추천 코스 인증~ 빵은 내가 골랐어!", "오늘의 추천 코스 인증~ 빵은 제가 골랐어요!"), media="ria_r08_breakfast")
+        call phone_deliver("r08_morning_3", "ria", ri("응! 별일은 없는데 네 생각이 나서. 오늘은 내가 먼저~", "네! 별일은 없는데 도현 씨 생각이 나서요. 오늘은 제가 먼저예요~"))
+    if memory.get("ria_r07_intimacy") == "shared":
+        call phone_deliver("r08_photo", "ria", ri("아침 사진 이제 보내네~ 잘 구운 쪽 줬으니까 다음엔 네가 골라 줘!", "아침 사진 이제 보내네요~ 잘 구운 쪽 드렸으니까 다음엔 도현 씨가 골라 주세요!"), media="ria_r08_breakfast")
+    else:
+        call phone_deliver("r08_photo", "ria", ri("오늘의 추천 코스 인증~ 빵은 내가 골랐어!", "오늘의 추천 코스 인증~ 빵은 제가 골랐어요!"), media="ria_r08_breakfast")
     call phone_deliver("r08_question", "ria", ri("오늘 뭐 해? 나는 빨래 돌리고 나면 특별한 일 없어.", "오늘 뭐 하세요? 저는 빨래 돌리고 나면 특별한 일 없어요."))
     $ phone_context = "r08_reply"
     call screen office_phone(replies=[("miss", "보고 싶다고 짧게 답한다."), ("evening", "오늘 할 일을 나누고 저녁 연락을 제안한다."), ("small_memory", "어제 좋았던 작은 순간을 하나 골라 보낸다.")])
@@ -255,7 +258,7 @@ label ria_r08_phone_conversation:
         $ remember("choice_third_r08_reply")
         call phone_deliver("r08_reply", "dohyun", ri("어제 나란히 앉아 있던 거 생각났어. 별말 안 해도 좋더라.", "어제 나란히 앉아 있던 거 생각났어요. 별말 안 해도 좋더라고요."))
         call phone_deliver("r08_answer", "ria", ri("나도! 사실 조용해질 때 무슨 얘기할지 찾고 있었는데~", "저도요! 사실 조용해질 때 무슨 얘기할지 찾고 있었는데요~"))
-        call phone_deliver("r08_followup", "dohyun", ri("그런 순간은 얘기 찾지 말고 다음에도 같이 있자.", "그런 순간은 얘기 찾지 말고 다음에도 같이 있어요."))
+        call phone_deliver("r08_followup", "dohyun", ri("나도 컵만 봤어. 먼저 눈 마주치면 무슨 말 할지 까먹어서.", "저도 컵만 봤어요. 먼저 눈 마주치면 무슨 말 할지 까먹어서요."))
         call phone_deliver("r08_answer_2", "ria", ri("좋아 :) 다음엔 조용해졌다고 말 찾느라 컵만 돌리지는 않을게~", "좋아요 :) 다음엔 조용해졌다고 말 찾느라 컵만 돌리지는 않을게요~"), important=True)
     if memory.get("ria_o01_status") == "completed":
         call phone_deliver("r08_lunch", "ria", ri("참, 오늘 점심은 나도 국수! 지난번 네 거 보고 생각났어.", "참, 오늘 점심은 저도 국수요! 지난번 드시는 거 보고 생각났어요."))

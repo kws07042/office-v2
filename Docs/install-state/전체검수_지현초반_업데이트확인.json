@@ -1,0 +1,13 @@
+{
+  "Version": "0.17.0-review-jihyun-r04",
+  "Target": "C:\\Users\\user\\Desktop\\건\\오피스 V2",
+  "VerifiedWrites": 66,
+  "Backup": "C:\\Users\\user\\Desktop\\건\\오피스 V2\\개발자료\\이전버전_0.16.0_전체검수_지현초반적용전",
+  "CharacterAssetsChanged": 0,
+  "RiggingFilesChanged": 0,
+  "SaveFilesRemoved": 0,
+  "GameProcessesTerminated": 0,
+  "AuditCases": 184,
+  "SourceCases": 32,
+  "NativeCases": 57
+}

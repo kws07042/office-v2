@@ -2,13 +2,13 @@
 define d = Character("도현", callback=renpy.curry(cream_note_speaker)("dohyun"))
 define r = Character("강리아", callback=renpy.curry(cream_note_speaker)("ria"))
 define j = Character("백지현", callback=renpy.curry(cream_note_speaker)("jihyun"))
-define jn = Character("지현 · 속마음", callback=renpy.curry(cream_note_speaker)("jihyun"))
+define jn = Character("백지현", what_prefix="『", what_suffix="』", callback=renpy.curry(cream_note_speaker)("jihyun"))
 define y = Character("차유진", callback=renpy.curry(cream_note_speaker)("yujin"))
 define s = Character("한서윤", callback=renpy.curry(cream_note_speaker)("seoyun"))
-define dn = Character("도현 · 속마음", callback=renpy.curry(cream_note_speaker)("dohyun"))
-define yn = Character("유진 · 속마음", callback=renpy.curry(cream_note_speaker)("yujin"))
+define dn = Character("도현", what_prefix="『", what_suffix="』", callback=renpy.curry(cream_note_speaker)("dohyun"))
+define yn = Character("차유진", what_prefix="『", what_suffix="』", callback=renpy.curry(cream_note_speaker)("yujin"))
 
-define rn = Character("리아 · 속마음", callback=renpy.curry(cream_note_speaker)("ria"))
+define rn = Character("강리아", what_prefix="『", what_suffix="』", callback=renpy.curry(cream_note_speaker)("ria"))
 define msgd = Character("도현 · 보낸 메시지", callback=renpy.curry(cream_note_speaker)("message"))
 define msgr = Character("리아 · 답장", callback=renpy.curry(cream_note_speaker)("message"))
 

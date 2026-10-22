@@ -12,8 +12,6 @@ init python:
         captions = [renpy.substitute(x.caption) for x in renpy.get_screen("choice").scope["items"]]
         if chapter.startswith("C08"):
             return next(x for x in captions if x.startswith("차유진과"))
-        if captions[0].startswith("후일담 읽기"):
-            return captions[yujin_fixture.get("epilogue", 0)]
         return captions[0]
 
 label test_yujin_entry:
@@ -135,1116 +133,274 @@ testsuite yujin_early_checks:
         screenshot "yujin-preview-entry.png"
 
     testcase common_to_yujin_route:
-        parameter epilogue = list(range(3))
-        $ yujin_fixture["epilogue"] = epilogue
         run Start()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
                     click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
-                click expression yujin_test_common_choice()
-        if not eval yujin_test_menu_end():
-            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
-            if screen "office_phone":
-                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
-                if screen "office_phone":
-                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
-                    click id "phone_next" until not screen "office_phone"
-            elif screen "event_cut":
-                click id "cut_next" until not screen "event_cut"
-            elif not eval yujin_test_menu_end():
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
         assert eval yujin_test_menu_end()
         assert eval active_route == "yujin"
-        assert eval bool(memory.get("yujin_epilogue_completed")) == (epilogue != 1)
+        assert eval memory.get("yujin_r04_complete")
         assert eval memory.get("yujin_intro") == "flow"
-        assert eval "yujin_R16" in completed and "ria_R01" not in completed
+        assert eval "yujin_R04" in completed and "ria_R01" not in completed
         assert eval dating
-        assert eval ending == "yujin_good"
+        assert eval ending == "yujin_early_segment_complete"
 
     teardown:
         exit

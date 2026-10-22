@@ -1,0 +1,632 @@
+2026-10-21 05:14:42 UTC
+Windows-11-10.0.26200-SP0
+Ren'Py 8.5.3.26051504
+
+Early init took 44 ms
+Loading error handling took 38 ms
+Loading script took 514 ms
+Loading save slot metadata took 37 ms
+Loading persistent took 14 ms
+Set script version to: None (alternate path)
+Running init code took 64 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 5 ms
+Backing up script files to 'C:\\Users\\user\\AppData\\Roaming/RenPy/backups\\native-early-couple-v1':
+Dump and make backups took 88 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 81 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 245 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 8 ms
+Save screen analysis took 9 ms
+Save pyanalysis took 0 ms
+Save bytecode took 44 ms
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.early_couple_talk_checks
+[rpytest] [log] - global.early_couple_talk_checks
+
+[rpytest] Starting test run
+[rpytest] Platform:      Windows-11-10.0.26200-SP0
+[rpytest] Python:        3.12.7
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  0.34.0-early-couple
+
+[rpytest] [exc] + global
+Running _start took 11 ms
+Interface start took 491 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 522.25'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 144, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
+Maximum texture size: 4096x4096
+[rpytest] [exc]   + early_couple_talk_checks
+[rpytest] [exc]     - talk_then_return_and_reply(case=0)
+[rpytest] [exc]     - talk_then_return_and_reply(case=0) (1.012 s)
+Cleaning stores took 0 ms
+Load screen analysis took 21 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - talk_then_return_and_reply(case=1)
+[rpytest] [exc]     - talk_then_return_and_reply(case=1) (0.735 s)
+Cleaning stores took 0 ms
+Load screen analysis took 20 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - talk_then_return_and_reply(case=2)
+[rpytest] [exc]     - talk_then_return_and_reply(case=2) (0.773 s)
+Cleaning stores took 0 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - talk_then_return_and_reply(case=3)
+[rpytest] [exc]     - talk_then_return_and_reply(case=3) (0.692 s)
+Cleaning stores took 1 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - talk_then_return_and_reply(case=4)
+[rpytest] [exc]     - talk_then_return_and_reply(case=4) (0.740 s)
+Cleaning stores took 0 ms
+Load screen analysis took 21 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+[rpytest] [exc]     - talk_then_return_and_reply(case=5)
+[rpytest] [exc]     - talk_then_return_and_reply(case=5) (0.962 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (6.664 s)
+[rpytest]   PASSED  early_couple_talk_checks - (5.351 s)
+[rpytest]     PASSED  talk_then_return_and_reply(case=0) - (1.012 s)
+[rpytest]     PASSED  talk_then_return_and_reply(case=1) - (0.735 s)
+[rpytest]     PASSED  talk_then_return_and_reply(case=2) - (0.773 s)
+[rpytest]     PASSED  talk_then_return_and_reply(case=3) - (0.692 s)
+[rpytest]     PASSED  talk_then_return_and_reply(case=4) - (0.740 s)
+[rpytest]     PASSED  talk_then_return_and_reply(case=5) - (0.962 s)
+[rpytest]   NOT RUN editorial_checks    
+[rpytest]     NOT RUN r02_join_keeps_selected_cafe(case=0)
+[rpytest]     NOT RUN r02_join_keeps_selected_cafe(case=1)
+[rpytest]     NOT RUN r02_join_keeps_selected_cafe(case=2)
+[rpytest]     NOT RUN r02_join_keeps_selected_cafe(case=3)
+[rpytest]     NOT RUN r02_join_keeps_selected_cafe(case=4)
+[rpytest]     NOT RUN r02_join_keeps_selected_cafe(case=5)
+[rpytest]     NOT RUN quiet_plan_has_distinct_payoff(case=0)
+[rpytest]     NOT RUN quiet_plan_has_distinct_payoff(case=1)
+[rpytest]     NOT RUN quiet_plan_has_distinct_payoff(case=2)
+[rpytest]     NOT RUN quiet_plan_has_distinct_payoff(case=3)
+[rpytest]     NOT RUN r15_deferred_has_no_invented_title(informal=False)
+[rpytest]     NOT RUN r15_deferred_has_no_invented_title(informal=True)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=0)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=1)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=2)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=3)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=4)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=5)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=6)
+[rpytest]     NOT RUN epilogue_recalls_only_completed_choice(case=7)
+[rpytest]   NOT RUN five_asset_checks   
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=0)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=1)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=2)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=3)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=4)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=5)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=6)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=7)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=8)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=9)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=10)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=11)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=12)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=13)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=14)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=15)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=16)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=17)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=18)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=19)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=20)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=21)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=22)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=23)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=24)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=25)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=26)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=27)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=28)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=29)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=30)
+[rpytest]     NOT RUN four_sets_two_speech_styles(case=31)
+[rpytest]     NOT RUN skip_without_forced_wait(reached=False)
+[rpytest]     NOT RUN skip_without_forced_wait(reached=True)
+[rpytest]   NOT RUN five_asset_fixture_checks
+[rpytest]     NOT RUN synthetic_intro_and_three_main_images
+[rpytest]   NOT RUN full_editorial_checks
+[rpytest]     NOT RUN optional_before_departure(case=0)
+[rpytest]     NOT RUN optional_before_departure(case=1)
+[rpytest]     NOT RUN optional_before_departure(case=2)
+[rpytest]     NOT RUN optional_before_departure(case=3)
+[rpytest]     NOT RUN optional_before_departure(case=4)
+[rpytest]     NOT RUN optional_before_departure(case=5)
+[rpytest]     NOT RUN optional_before_departure(case=6)
+[rpytest]     NOT RUN optional_before_departure(case=7)
+[rpytest]     NOT RUN optional_before_departure(case=8)
+[rpytest]     NOT RUN short_contact_after_sunday_or_monday(case=0)
+[rpytest]     NOT RUN short_contact_after_sunday_or_monday(case=1)
+[rpytest]     NOT RUN relationship_confirmation_and_reconsideration(case=0)
+[rpytest]     NOT RUN relationship_confirmation_and_reconsideration(case=1)
+[rpytest]     NOT RUN relationship_confirmation_and_reconsideration(case=2)
+[rpytest]   NOT RUN integrated_story_checks
+[rpytest]     NOT RUN opening_through_epilogue(case=0)
+[rpytest]     NOT RUN opening_through_epilogue(case=1)
+[rpytest]     NOT RUN opening_through_epilogue(case=2)
+[rpytest]     NOT RUN opening_through_epilogue(case=3)
+[rpytest]     NOT RUN opening_through_epilogue(case=4)
+[rpytest]     NOT RUN opening_through_epilogue(case=5)
+[rpytest]     NOT RUN opening_through_epilogue(case=6)
+[rpytest]     NOT RUN opening_through_epilogue(case=7)
+[rpytest]   NOT RUN jihyun_final_checks 
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=0)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=1)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=2)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=3)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=4)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=5)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=6)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=7)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=8)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=9)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=10)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=11)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=12)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=13)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=14)
+[rpytest]     NOT RUN full_route_choices_and_actual_memories(case=15)
+[rpytest]     NOT RUN no_unearned_finale  
+[rpytest]   NOT RUN jihyun04_checks     
+[rpytest]     NOT RUN early_choices_and_consent(case=0)
+[rpytest]     NOT RUN early_choices_and_consent(case=1)
+[rpytest]     NOT RUN early_choices_and_consent(case=2)
+[rpytest]     NOT RUN early_choices_and_consent(case=3)
+[rpytest]     NOT RUN early_choices_and_consent(case=4)
+[rpytest]     NOT RUN early_choices_and_consent(case=5)
+[rpytest]     NOT RUN early_choices_and_consent(case=6)
+[rpytest]     NOT RUN early_choices_and_consent(case=7)
+[rpytest]     NOT RUN early_choices_and_consent(case=8)
+[rpytest]     NOT RUN early_choices_and_consent(case=9)
+[rpytest]     NOT RUN early_choices_and_consent(case=10)
+[rpytest]     NOT RUN early_choices_and_consent(case=11)
+[rpytest]     NOT RUN early_choices_and_consent(case=12)
+[rpytest]     NOT RUN early_choices_and_consent(case=13)
+[rpytest]     NOT RUN early_choices_and_consent(case=14)
+[rpytest]     NOT RUN preview_entry       
+[rpytest]     NOT RUN common_to_jihyun    
+[rpytest]   NOT RUN marriage_disclosure_checks
+[rpytest]     NOT RUN choose_after_facts(leave=False)
+[rpytest]     NOT RUN choose_after_facts(leave=True)
+[rpytest]   NOT RUN office_phone_checks 
+[rpytest]     NOT RUN branches_and_speech_styles(case=0)
+[rpytest]     NOT RUN branches_and_speech_styles(case=1)
+[rpytest]     NOT RUN branches_and_speech_styles(case=2)
+[rpytest]     NOT RUN branches_and_speech_styles(case=3)
+[rpytest]     NOT RUN branches_and_speech_styles(case=4)
+[rpytest]     NOT RUN branches_and_speech_styles(case=5)
+[rpytest]     NOT RUN branches_and_speech_styles(case=6)
+[rpytest]     NOT RUN branches_and_speech_styles(case=7)
+[rpytest]     NOT RUN branches_and_speech_styles(case=8)
+[rpytest]     NOT RUN branches_and_speech_styles(case=9)
+[rpytest]     NOT RUN branches_and_speech_styles(case=10)
+[rpytest]     NOT RUN branches_and_speech_styles(case=11)
+[rpytest]     NOT RUN save_load_and_photo_placeholder
+[rpytest]     NOT RUN rollback_replaces_reply
+[rpytest]     NOT RUN typing_and_disabled_option
+[rpytest]     NOT RUN actual_photo_loader 
+[rpytest]     NOT RUN main_menu_preview_and_archive
+[rpytest]   NOT RUN opening_review      
+[rpytest]     NOT RUN common_to_four_confessions(case=0)
+[rpytest]     NOT RUN common_to_four_confessions(case=1)
+[rpytest]     NOT RUN common_to_four_confessions(case=2)
+[rpytest]     NOT RUN common_to_four_confessions(case=3)
+[rpytest]     NOT RUN common_to_four_confessions(case=4)
+[rpytest]     NOT RUN common_to_four_confessions(case=5)
+[rpytest]     NOT RUN common_to_four_confessions(case=6)
+[rpytest]     NOT RUN common_to_four_confessions(case=7)
+[rpytest]     NOT RUN common_to_four_confessions(case=8)
+[rpytest]     NOT RUN common_to_four_confessions(case=9)
+[rpytest]     NOT RUN common_to_four_confessions(case=10)
+[rpytest]     NOT RUN common_to_four_confessions(case=11)
+[rpytest]     NOT RUN rest_path_has_no_written_prop(choice=0)
+[rpytest]     NOT RUN rest_path_has_no_written_prop(choice=1)
+[rpytest]     NOT RUN rest_path_has_no_written_prop(choice=2)
+[rpytest]   NOT RUN review_continuity_checks
+[rpytest]     NOT RUN ria_actual_support_recalled(case=0)
+[rpytest]     NOT RUN ria_actual_support_recalled(case=1)
+[rpytest]     NOT RUN ria_actual_support_recalled(case=2)
+[rpytest]     NOT RUN ria_actual_support_recalled(case=3)
+[rpytest]     NOT RUN ria_actual_support_recalled(case=4)
+[rpytest]     NOT RUN ria_actual_support_recalled(case=5)
+[rpytest]     NOT RUN yujin_selected_role_recalled(plan=0)
+[rpytest]     NOT RUN yujin_selected_role_recalled(plan=1)
+[rpytest]     NOT RUN yujin_selected_role_recalled(plan=2)
+[rpytest]   NOT RUN ria08               
+[rpytest]     NOT RUN branch_and_restore(case=0)
+[rpytest]     NOT RUN branch_and_restore(case=1)
+[rpytest]     NOT RUN branch_and_restore(case=2)
+[rpytest]     NOT RUN branch_and_restore(case=3)
+[rpytest]     NOT RUN branch_and_restore(case=4)
+[rpytest]     NOT RUN branch_and_restore(case=5)
+[rpytest]     NOT RUN branch_and_restore(case=6)
+[rpytest]     NOT RUN branch_and_restore(case=7)
+[rpytest]     NOT RUN branch_and_restore(case=8)
+[rpytest]     NOT RUN branch_and_restore(case=9)
+[rpytest]     NOT RUN branch_and_restore(case=10)
+[rpytest]     NOT RUN branch_and_restore(case=11)
+[rpytest]     NOT RUN branch_and_restore(case=12)
+[rpytest]     NOT RUN branch_and_restore(case=13)
+[rpytest]     NOT RUN branch_and_restore(case=14)
+[rpytest]     NOT RUN branch_and_restore(case=15)
+[rpytest]     NOT RUN not_dating_guard    
+[rpytest]   NOT RUN ria12               
+[rpytest]     NOT RUN branch_and_restore(case=0)
+[rpytest]     NOT RUN branch_and_restore(case=1)
+[rpytest]     NOT RUN branch_and_restore(case=2)
+[rpytest]     NOT RUN branch_and_restore(case=3)
+[rpytest]     NOT RUN branch_and_restore(case=4)
+[rpytest]     NOT RUN branch_and_restore(case=5)
+[rpytest]     NOT RUN branch_and_restore(case=6)
+[rpytest]     NOT RUN branch_and_restore(case=7)
+[rpytest]     NOT RUN branch_and_restore(case=8)
+[rpytest]     NOT RUN branch_and_restore(case=9)
+[rpytest]     NOT RUN branch_and_restore(case=10)
+[rpytest]     NOT RUN branch_and_restore(case=11)
+[rpytest]     NOT RUN branch_and_restore(case=12)
+[rpytest]     NOT RUN branch_and_restore(case=13)
+[rpytest]     NOT RUN branch_and_restore(case=14)
+[rpytest]     NOT RUN branch_and_restore(case=15)
+[rpytest]     NOT RUN branch_and_restore(case=16)
+[rpytest]     NOT RUN branch_and_restore(case=17)
+[rpytest]     NOT RUN branch_and_restore(case=18)
+[rpytest]     NOT RUN branch_and_restore(case=19)
+[rpytest]     NOT RUN branch_and_restore(case=20)
+[rpytest]     NOT RUN branch_and_restore(case=21)
+[rpytest]     NOT RUN branch_and_restore(case=22)
+[rpytest]     NOT RUN branch_and_restore(case=23)
+[rpytest]     NOT RUN branch_and_restore(case=24)
+[rpytest]     NOT RUN branch_and_restore(case=25)
+[rpytest]     NOT RUN branch_and_restore(case=26)
+[rpytest]     NOT RUN branch_and_restore(case=27)
+[rpytest]     NOT RUN branch_and_restore(case=28)
+[rpytest]     NOT RUN branch_and_restore(case=29)
+[rpytest]     NOT RUN branch_and_restore(case=30)
+[rpytest]     NOT RUN branch_and_restore(case=31)
+[rpytest]     NOT RUN guard(case=0)       
+[rpytest]     NOT RUN guard(case=1)       
+[rpytest]   NOT RUN ria16               
+[rpytest]     NOT RUN recovery_and_memories(case=0)
+[rpytest]     NOT RUN recovery_and_memories(case=1)
+[rpytest]     NOT RUN recovery_and_memories(case=2)
+[rpytest]     NOT RUN recovery_and_memories(case=3)
+[rpytest]     NOT RUN recovery_and_memories(case=4)
+[rpytest]     NOT RUN recovery_and_memories(case=5)
+[rpytest]     NOT RUN recovery_and_memories(case=6)
+[rpytest]     NOT RUN recovery_and_memories(case=7)
+[rpytest]     NOT RUN recovery_and_memories(case=8)
+[rpytest]     NOT RUN recovery_and_memories(case=9)
+[rpytest]     NOT RUN recovery_and_memories(case=10)
+[rpytest]     NOT RUN recovery_and_memories(case=11)
+[rpytest]     NOT RUN recovery_and_memories(case=12)
+[rpytest]     NOT RUN recovery_and_memories(case=13)
+[rpytest]     NOT RUN recovery_and_memories(case=14)
+[rpytest]     NOT RUN recovery_and_memories(case=15)
+[rpytest]     NOT RUN recovery_and_memories(case=16)
+[rpytest]     NOT RUN recovery_and_memories(case=17)
+[rpytest]     NOT RUN recovery_and_memories(case=18)
+[rpytest]     NOT RUN recovery_and_memories(case=19)
+[rpytest]     NOT RUN recovery_and_memories(case=20)
+[rpytest]     NOT RUN recovery_and_memories(case=21)
+[rpytest]     NOT RUN recovery_and_memories(case=22)
+[rpytest]     NOT RUN recovery_and_memories(case=23)
+[rpytest]     NOT RUN recovery_and_memories(case=24)
+[rpytest]     NOT RUN recovery_and_memories(case=25)
+[rpytest]     NOT RUN recovery_and_memories(case=26)
+[rpytest]     NOT RUN recovery_and_memories(case=27)
+[rpytest]     NOT RUN recovery_and_memories(case=28)
+[rpytest]     NOT RUN recovery_and_memories(case=29)
+[rpytest]     NOT RUN recovery_and_memories(case=30)
+[rpytest]     NOT RUN recovery_and_memories(case=31)
+[rpytest]     NOT RUN recovery_and_memories(case=32)
+[rpytest]     NOT RUN recovery_and_memories(case=33)
+[rpytest]     NOT RUN recovery_and_memories(case=34)
+[rpytest]     NOT RUN recovery_and_memories(case=35)
+[rpytest]     NOT RUN recovery_and_memories(case=36)
+[rpytest]     NOT RUN recovery_and_memories(case=37)
+[rpytest]     NOT RUN recovery_and_memories(case=38)
+[rpytest]     NOT RUN recovery_and_memories(case=39)
+[rpytest]     NOT RUN recovery_and_memories(case=40)
+[rpytest]     NOT RUN recovery_and_memories(case=41)
+[rpytest]     NOT RUN recovery_and_memories(case=42)
+[rpytest]     NOT RUN recovery_and_memories(case=43)
+[rpytest]     NOT RUN recovery_and_memories(case=44)
+[rpytest]     NOT RUN recovery_and_memories(case=45)
+[rpytest]     NOT RUN recovery_and_memories(case=46)
+[rpytest]     NOT RUN recovery_and_memories(case=47)
+[rpytest]     NOT RUN guards(guard=0)     
+[rpytest]     NOT RUN guards(guard=1)     
+[rpytest]     NOT RUN guards(guard=2)     
+[rpytest]   NOT RUN ria16_flow          
+[rpytest]     NOT RUN full_route(route='ria')
+[rpytest]     NOT RUN full_route(route='deferred')
+[rpytest]     NOT RUN full_route(route='close')
+[rpytest]     NOT RUN full_route(route='colleague')
+[rpytest]     NOT RUN full_route(route='decline')
+[rpytest]     NOT RUN full_route(route='no_epilogue')
+[rpytest]     NOT RUN full_route(route='cosplay')
+[rpytest]     NOT RUN full_route(route='third')
+[rpytest]   NOT RUN ria_expression_checks
+[rpytest]     NOT RUN expression_day_and_night(mode='day')
+[rpytest]     NOT RUN expression_day_and_night(mode='night')
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=0)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=1)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=2)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=3)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=4)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=5)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=6)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=7)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=8)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=9)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=10)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=11)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=12)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=13)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=14)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=15)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=16)
+[rpytest]     NOT RUN real_r02_all_choices_both_speech_styles(case=17)
+[rpytest]     NOT RUN save_restores_expression
+[rpytest]     NOT RUN main_menu_entry     
+[rpytest]   NOT RUN route_phone_checks  
+[rpytest]     NOT RUN migrated_story_messages(case=0)
+[rpytest]     NOT RUN migrated_story_messages(case=1)
+[rpytest]     NOT RUN migrated_story_messages(case=2)
+[rpytest]     NOT RUN migrated_story_messages(case=3)
+[rpytest]     NOT RUN migrated_story_messages(case=4)
+[rpytest]     NOT RUN migrated_story_messages(case=5)
+[rpytest]     NOT RUN migrated_story_messages(case=6)
+[rpytest]     NOT RUN migrated_story_messages(case=7)
+[rpytest]     NOT RUN migrated_story_messages(case=8)
+[rpytest]     NOT RUN migrated_story_messages(case=9)
+[rpytest]     NOT RUN migrated_story_messages(case=10)
+[rpytest]     NOT RUN migrated_story_messages(case=11)
+[rpytest]     NOT RUN save_load_and_deduplication
+[rpytest]     NOT RUN next_morning_reply_paths(answer='fixed')
+[rpytest]     NOT RUN next_morning_reply_paths(answer='hope_early')
+[rpytest]     NOT RUN next_morning_reply_paths(answer='clarify')
+[rpytest]     NOT RUN shared_disclosure_has_own_contact
+[rpytest]   NOT RUN seoyun_checks       
+[rpytest]     NOT RUN full_choices_and_relationships(case=0)
+[rpytest]     NOT RUN full_choices_and_relationships(case=1)
+[rpytest]     NOT RUN full_choices_and_relationships(case=2)
+[rpytest]     NOT RUN full_choices_and_relationships(case=3)
+[rpytest]     NOT RUN full_choices_and_relationships(case=4)
+[rpytest]     NOT RUN full_choices_and_relationships(case=5)
+[rpytest]     NOT RUN full_choices_and_relationships(case=6)
+[rpytest]     NOT RUN full_choices_and_relationships(case=7)
+[rpytest]     NOT RUN full_choices_and_relationships(case=8)
+[rpytest]     NOT RUN full_choices_and_relationships(case=9)
+[rpytest]     NOT RUN full_choices_and_relationships(case=10)
+[rpytest]     NOT RUN full_choices_and_relationships(case=11)
+[rpytest]     NOT RUN full_choices_and_relationships(case=12)
+[rpytest]     NOT RUN full_choices_and_relationships(case=13)
+[rpytest]     NOT RUN full_choices_and_relationships(case=14)
+[rpytest]     NOT RUN full_choices_and_relationships(case=15)
+[rpytest]     NOT RUN full_choices_and_relationships(case=16)
+[rpytest]     NOT RUN full_choices_and_relationships(case=17)
+[rpytest]     NOT RUN full_choices_and_relationships(case=18)
+[rpytest]     NOT RUN full_choices_and_relationships(case=19)
+[rpytest]     NOT RUN full_choices_and_relationships(case=20)
+[rpytest]     NOT RUN no_unearned_finale  
+[rpytest]     NOT RUN preview_entry       
+[rpytest]     NOT RUN common_to_seoyun(epilogue=0)
+[rpytest]     NOT RUN common_to_seoyun(epilogue=1)
+[rpytest]     NOT RUN common_to_seoyun(epilogue=2)
+[rpytest]   NOT RUN windows_smoke       
+[rpytest]     NOT RUN startup_and_save_restore
+[rpytest]   NOT RUN common_romance      
+[rpytest]     NOT RUN pair_memory(person='ria', topic='today', second='ria', method='verify', informal=True)
+[rpytest]     NOT RUN pair_memory(person='ria', topic='weekend', second='ria', method='coordinate', informal=False)
+[rpytest]     NOT RUN pair_memory(person='ria', topic='place', second='ria', method='try', informal=True)
+[rpytest]     NOT RUN pair_memory(person='jihyun', topic='today', second='jihyun', method='verify', informal=False)
+[rpytest]     NOT RUN pair_memory(person='jihyun', topic='weekend', second='jihyun', method='coordinate', informal=False)
+[rpytest]     NOT RUN pair_memory(person='jihyun', topic='place', second='jihyun', method='try', informal=False)
+[rpytest]     NOT RUN pair_memory(person='yujin', topic='today', second='yujin', method='verify', informal=False)
+[rpytest]     NOT RUN pair_memory(person='yujin', topic='weekend', second='yujin', method='coordinate', informal=False)
+[rpytest]     NOT RUN pair_memory(person='yujin', topic='place', second='yujin', method='try', informal=False)
+[rpytest]     NOT RUN pair_memory(person='seoyun', topic='today', second='seoyun', method='verify', informal=False)
+[rpytest]     NOT RUN pair_memory(person='seoyun', topic='weekend', second='seoyun', method='coordinate', informal=False)
+[rpytest]     NOT RUN pair_memory(person='seoyun', topic='place', second='seoyun', method='try', informal=False)
+[rpytest]     NOT RUN pair_memory(person='ria', topic='today', second='jihyun', method='try', informal=False)
+[rpytest]     NOT RUN pair_memory(person='jihyun', topic='weekend', second='yujin', method='verify', informal=False)
+[rpytest]     NOT RUN pair_memory(person='yujin', topic='place', second='seoyun', method='coordinate', informal=False)
+[rpytest]     NOT RUN pair_memory(person='seoyun', topic='today', second='ria', method='try', informal=True)
+[rpytest]     NOT RUN legacy_does_not_invent_personal_memory(person='ria')
+[rpytest]     NOT RUN legacy_does_not_invent_personal_memory(person='jihyun')
+[rpytest]     NOT RUN legacy_does_not_invent_personal_memory(person='yujin')
+[rpytest]     NOT RUN legacy_does_not_invent_personal_memory(person='seoyun')
+[rpytest]     NOT RUN complete_common_and_save_restore
+[rpytest]   NOT RUN three_choice_checks 
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=0)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=1)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=2)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=3)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=4)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=5)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=6)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=7)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=8)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=9)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=10)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=11)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=12)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=13)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=14)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=15)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=16)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=17)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=18)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=19)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=20)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=21)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=22)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=23)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=24)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=25)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=26)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=27)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=30)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=31)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=32)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=33)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=34)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=35)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=36)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=37)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=38)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=39)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=40)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=41)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=42)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=43)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=44)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=45)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=46)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=47)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=48)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=49)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=50)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=51)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=52)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=53)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=54)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=55)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=56)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=57)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=58)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=59)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=60)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=61)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=62)
+[rpytest]     NOT RUN every_new_choice_both_speech_styles(case=63)
+[rpytest]   NOT RUN yujin08_checks      
+[rpytest]     NOT RUN branches_and_real_memories(case=0)
+[rpytest]     NOT RUN branches_and_real_memories(case=1)
+[rpytest]     NOT RUN branches_and_real_memories(case=2)
+[rpytest]     NOT RUN branches_and_real_memories(case=3)
+[rpytest]     NOT RUN branches_and_real_memories(case=4)
+[rpytest]     NOT RUN branches_and_real_memories(case=5)
+[rpytest]     NOT RUN branches_and_real_memories(case=6)
+[rpytest]     NOT RUN branches_and_real_memories(case=7)
+[rpytest]     NOT RUN branches_and_real_memories(case=8)
+[rpytest]     NOT RUN branches_and_real_memories(case=9)
+[rpytest]     NOT RUN branches_and_real_memories(case=10)
+[rpytest]     NOT RUN branches_and_real_memories(case=11)
+[rpytest]   NOT RUN yujin12_checks      
+[rpytest]     NOT RUN real_support_and_relationship(case=0)
+[rpytest]     NOT RUN real_support_and_relationship(case=1)
+[rpytest]     NOT RUN real_support_and_relationship(case=2)
+[rpytest]     NOT RUN real_support_and_relationship(case=3)
+[rpytest]     NOT RUN real_support_and_relationship(case=4)
+[rpytest]     NOT RUN real_support_and_relationship(case=5)
+[rpytest]     NOT RUN real_support_and_relationship(case=6)
+[rpytest]     NOT RUN real_support_and_relationship(case=7)
+[rpytest]     NOT RUN real_support_and_relationship(case=8)
+[rpytest]     NOT RUN real_support_and_relationship(case=9)
+[rpytest]     NOT RUN real_support_and_relationship(case=10)
+[rpytest]     NOT RUN real_support_and_relationship(case=11)
+[rpytest]     NOT RUN real_support_and_relationship(case=12)
+[rpytest]     NOT RUN real_support_and_relationship(case=13)
+[rpytest]     NOT RUN real_support_and_relationship(case=14)
+[rpytest]     NOT RUN real_support_and_relationship(case=15)
+[rpytest]     NOT RUN real_support_and_relationship(case=16)
+[rpytest]     NOT RUN real_support_and_relationship(case=17)
+[rpytest]     NOT RUN real_support_and_relationship(case=18)
+[rpytest]     NOT RUN real_support_and_relationship(case=19)
+[rpytest]     NOT RUN real_support_and_relationship(case=20)
+[rpytest]     NOT RUN real_support_and_relationship(case=21)
+[rpytest]     NOT RUN real_support_and_relationship(case=22)
+[rpytest]     NOT RUN real_support_and_relationship(case=23)
+[rpytest]     NOT RUN real_support_and_relationship(case=24)
+[rpytest]     NOT RUN real_support_and_relationship(case=25)
+[rpytest]     NOT RUN real_support_and_relationship(case=26)
+[rpytest]     NOT RUN real_support_and_relationship(case=27)
+[rpytest]   NOT RUN yujin_final_checks  
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=0)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=1)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=2)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=3)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=4)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=5)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=6)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=7)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=8)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=9)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=10)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=11)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=12)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=13)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=14)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=15)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=16)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=17)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=18)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=19)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=20)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=21)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=22)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=23)
+[rpytest]     NOT RUN supported_finale_and_optional_memories(case=24)
+[rpytest]     NOT RUN close_or_reconsider(response=0)
+[rpytest]     NOT RUN close_or_reconsider(response=1)
+[rpytest]     NOT RUN close_or_reconsider(response=2)
+[rpytest]   NOT RUN yujin_early_checks  
+[rpytest]     NOT RUN representative_branches(case=0)
+[rpytest]     NOT RUN representative_branches(case=1)
+[rpytest]     NOT RUN representative_branches(case=2)
+[rpytest]     NOT RUN representative_branches(case=3)
+[rpytest]     NOT RUN representative_branches(case=4)
+[rpytest]     NOT RUN representative_branches(case=5)
+[rpytest]     NOT RUN representative_branches(case=6)
+[rpytest]     NOT RUN representative_branches(case=7)
+[rpytest]     NOT RUN representative_branches(case=8)
+[rpytest]     NOT RUN representative_branches(case=9)
+[rpytest]     NOT RUN representative_branches(case=10)
+[rpytest]     NOT RUN representative_branches(case=11)
+[rpytest]     NOT RUN save_load_changes_real_touch_memory
+[rpytest]     NOT RUN main_menu_preview   
+[rpytest]     NOT RUN common_to_yujin_route(epilogue=0)
+[rpytest]     NOT RUN common_to_yujin_route(epilogue=1)
+[rpytest]     NOT RUN common_to_yujin_route(epilogue=2)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:    30 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     3 skipped |    25 not run
+[rpytest] Test cases :    29 |     6 passed |     0 xfailed |     0 failed |     0 xpassed |    23 skipped |     0 not run
+[rpytest] Test hooks :     7 |     7 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :    60 |    60 passed |     0 xfailed |     0 failed |     0 xpassed | 
+
+[rpytest] Time: 6.665 s
+[rpytest] Status: PASSED 
+

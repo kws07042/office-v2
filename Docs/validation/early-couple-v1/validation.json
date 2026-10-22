@@ -1,0 +1,43 @@
+{
+  "version": "0.34.0-early-couple",
+  "native_status": "passed",
+  "native_cases": 86,
+  "native_assertions": 2026,
+  "suites": [
+    {
+      "suite": "ria08",
+      "cases": 17,
+      "assertions": 421
+    },
+    {
+      "suite": "yujin08_checks",
+      "cases": 12,
+      "assertions": 233
+    },
+    {
+      "suite": "jihyun_final_checks",
+      "cases": 17,
+      "assertions": 491
+    },
+    {
+      "suite": "seoyun_checks",
+      "cases": 26,
+      "assertions": 738
+    },
+    {
+      "suite": "integrated_story_checks",
+      "cases": 8,
+      "assertions": 83
+    },
+    {
+      "suite": "early_couple_talk_checks",
+      "cases": 6,
+      "assertions": 60
+    }
+  ],
+  "state_and_choice_flow_unchanged": true,
+  "representative_traces": 8,
+  "human_fun_measured": false,
+  "initial_failure": "Old exact phrase assertion in Yujin shared-morning message; updated to compare curtain reference against shared memory; rerun passed",
+  "revision_note": "Individual branch/save suites passed before final wording polish in Ria meal ordering, Jihyun jam banter and Yujin question premise. Final integrated eight paths rerun after polish. State writes and menu/event structure unchanged."
+}

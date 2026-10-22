@@ -1,0 +1,54 @@
+{
+  "character": "차유진",
+  "id": "yujin",
+  "status": "user_provided_provisional_visual_reference",
+  "received_date": "2026-10-15",
+  "source_filename": "codex-clipboard-307e416d-62e2-494d-9e7e-4d84e56cf856.png",
+  "preserved_file": "yujin_reference_v001.png",
+  "sha256": "ce62752f6e9d31b14043716424bd56587e5e1e32801f2f18b08dba6ba7a21306",
+  "bytes": 901573,
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "byte_identical_to_upload": true,
+  "image_edit_performed": false,
+  "runtime_applied": false,
+  "final_game_sprite_approved": false,
+  "reference_scope": [
+    "face",
+    "hair",
+    "ivory_side_bow",
+    "pink_blouse",
+    "ivory_wrap_skirt",
+    "beige_bow_shoes"
+  ],
+  "observed_front_blouse_buttons": 5,
+  "not_locked": [
+    "ambiguous_hand_anatomy",
+    "nail_edges",
+    "cutout_residue"
+  ],
+  "alpha_check": {
+    "alpha_minmax": [
+      0,
+      254
+    ],
+    "transparent": 1111360,
+    "low_alpha_1_15": 21379,
+    "opaque": 0,
+    "alpha_bbox": [
+      23,
+      12,
+      996,
+      1536
+    ],
+    "core_bbox": [
+      258,
+      15,
+      800,
+      1529
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+from pathlib import Path
+import re,json,shutil,difflib
+P=Path(__file__).resolve().parents[1];S=P.parent;proof=P/'testing/balance-v1';H=S/'afterwork-balance-handoff-v1'
+for d in ('docs','source/game','validation','screenshots'):(H/d).mkdir(parents=True,exist_ok=True)
+changed=json.loads((proof/'changed-files.json').read_text(encoding='utf-8'))
+def structure(t):return [x.rstrip() for x in t.splitlines() if x.strip() and not re.match(r'^\s*(?:[a-z]+\s+)?"',x) and not x.startswith('define config.version')]
+scenes=[]
+for n in changed:
+ before=(proof/(n+'.before')).read_text(encoding='utf-8');after=(P/'game'/n).read_text(encoding='utf-8');assert structure(before)==structure(after),n
+ positions=list(re.finditer(r'^label (\w+)(?:\(|:)',before,re.M))
+ for i,m in enumerate(positions):
+  old=before[m.start():positions[i+1].start() if i+1<len(positions) else len(before)]
+  new=re.search(r'^label '+m[1]+r'(?:\(|:)',after,re.M);end=after.find('\nlabel ',new.start()+1);body=after[new.start():end if end>=0 else len(after)]
+  if old.rstrip()!=body.rstrip():scenes.append({'file':n,'label':m[1]})
+ shutil.copy2(P/'game'/n,H/'source/game'/n)
+ (H/'validation'/(n+'.diff')).write_text(''.join(difflib.unified_diff(before.splitlines(True),after.splitlines(True),fromfile=n+' 0.22',tofile=n+' 0.23')),encoding='utf-8')
+contract={'version':'0.23.0-route-balance','changed_files':changed,'changed_scene_blocks':len(scenes),'scenes':scenes,'control_flow_choices_flags_awards_unchanged':True,'images_changed':0}
+(proof/'source-contract.json').write_text(json.dumps(contract,ensure_ascii=False,indent=2),encoding='utf-8');shutil.copy2(proof/'source-contract.json',H/'validation/source-contract.json')
+source=(P/'tools/prepare_full_editorial_handoff.py').read_text(encoding='utf-8')
+exec(compile(source[source.index('groups='):source.index('\nprefix=')].replace('0.20.0','0.23.0'),'current_dialogue_documents','exec'))
+md='''# 히로인 초반 분량 균형 편집 — 0.23.0 / 기획 v2.96
+
+2026-10-20. 이번 작업 범위는 공통을 제외한 R01~R04의 체감 격차다. 전체 R01~E01 완주 시간을 같은 길이로 맞춘 작업이 아니다. 새 사건·장소·CG·음성·선택지·보상은 추가하지 않았다. 친밀한 본장면의 생략·자리 표시도 유지한다.
+
+## 리아 — 재미있는 중심을 남기고 반복을 압축
+
+R02의 지도 목록/식당을 다음 후보로 남긴다는 대화를 한 번으로 합쳤다. 미완성 메모를 보여도 되는지·완성 검사는 아닌지 거듭 확인하던 부분도 줄였다. 실제로 메모를 가져오겠다는 약속, 제목 세 개 장난과 다음 날 먼저 연락하겠다는 말은 남겼다. 카페 경로의 코스 총평은 지도와 리아 중 누구 덕인지 주고받는 두 줄로 줄였다.
+
+R03은 손잡은 날의 속도 확인과 오늘도 느긋하게 있겠다는 반복을 줄였다. 어느 제목이 궁금한지 묻는 단계를 합치고, 다음 코스에 쉬는 자리를 넣겠다는 말도 한 번으로 정리했다. 사용자가 선택했던 R02의 짧은 직구, 빈 컵 장난, 달력 약속을 자꾸 보게 된다는 말, 실제 금요일 약속과 첫 애정 표현 분기는 유지했다. 반말·존댓말을 둘 다 편집했다.
+
+## 지현 — 짧은 데이트에도 놀이의 결과를 남김
+
+R02의 세 선택에 별도 반응을 넣었다. 차를 마시는 경로는 뜨거운 첫 모금 앞에서 두 사람 모두 기다리게 된다. 산책은 기대한 길 대신 작은 벤치를 발견해 지현이 자기 점수라고 우기는 장난으로 이어진다. 서점은 도현이 고른 비스듬한 책을 지현이 세우자 도현은 덜 궁금해지고 지현은 오히려 내용이 궁금해진다. 지현의 단정함과 사적 고집을 행동으로 보여 준다. 책 구매는 발생하지 않고 따뜻한 차·네 시 귀가는 유지한다.
+
+## 유진 — 같은 그림을 봐도 자기 취향을 남김
+
+R02에서 유진의 순서를 따르면 유진은 도현의 감상에 동의하면서도 자신은 왼쪽 그림이 더 좋다고 고집한다. 창가 경로는 노트 화살표를 다 그리지 않고 직접 다시 보러 가고, 머무는 경로는 그림 속에서 각자 앉고 싶은 자리를 고른다. 손잡기 전에 함께 본 경험이 더 생기지만, 손을 잡거나 미루는 선택은 여전히 별개다. 이 장난을 모든 장면의 공식으로 확대하지 않는다.
+
+## 서윤 — 다음 약속만 잡지 않고 지금 함께 머묾
+
+R01은 서윤이 도현의 커피 취향을 잘못 짚고 자신의 잔에 설탕을 넣는 대화로 이어진다. 그날 주문의 취향이지 도현이 평생 단것/쓴것 중 하나만 좋아한다는 새 고정 설정이 아니다. 관찰을 잘하는 사람도 상대를 다 읽지는 못한다. 토요일 초대는 ‘더 질문할 기회’라는 설명 대신 직접 꺼내 보여 주고 싶은 책에 연결한다.
+
+R02는 기다리는 선택에서 나란히 같은 문단을 읽고 웃는 곳이 어긋난다. 관심을 직구로 말하면 책 뒤에 숨을지 말지 장난이 오가고, 능숙하지 않아도 괜찮다는 선택에는 못 찾았던 문단을 이번엔 찾는 작은 승부가 생긴다. 기다려 달라는 답을 고른 경우 서윤의 연애 대답을 미리 확정하지 않았다.
+
+R03의 세 약속도 다르게 받는다. 사진은 확대하면 원래 남기고 싶던 느낌이 달라지는 걸 둘이 직접 보고, 글은 같은 문장을 읽는 호흡 차이로 웃고, 휴식은 창밖을 보다가 서로의 시선을 알아챈다. 이후 같은 책의 한 문단을 같이 읽는 시간이 생긴다. 새 정식 사건·미니게임·CG가 아니라 기존 북카페 만남 안의 대화와 지문이다. 책을 읽는 지문이나 목소리 얘기가 실제 새 녹음·표정·리깅 제작을 뜻하지는 않는다.
+
+서윤 R03의 휴식 경로에는 종이 메모/사진을 가져왔다고 쓰지 않는다. 기존 휴대폰·책의 위치도 재검토해, 이미 손댄 책을 가방에서 다시 꺼내는 중복 지문을 버렸다. 실제 포옹·손·말 인사 선택은 그대로 유지한다.
+
+## 판정 기준
+
+글자 수를 정확히 같게 맞추지 않는다. 한쪽에만 질문과 대답이 쌓이거나 다음 만남으로 바로 넘어가는 공백을 줄이는 것이 목적이다. 이전과 같은 네 루트×세 연결 경로의 실제 표시 기록에서 공통을 빼고 대사·지문·메신저를 센다. 새 비교표는 ‘히로인_초반분량_수정전후_v1.md’를 본다. 자동 클릭 시간은 독서 시간으로 쓰지 않는다. 실제 재미는 편집자의 판단과 독자 반응을 구분한다.
+
+이번에는 초반을 다듬었으므로 전체 루트 분량이 균등하다는 결론을 내리지 않는다. 후반 기록집 소재의 반복, 최종 표정·몸짓 연출, 사람의 실제 읽기 시간은 별도 검증이 남아 있다.
+'''
+(H/'docs/히로인_초반분량_균형편집_v1.md').write_text(md,encoding='utf-8');(P/'story/early_route_balance_v1.md').write_text(md,encoding='utf-8')
+installed=Path('C:/Users/user/Desktop/건/오피스 V2/개발자료/docs')
+prefix='''> 현행 갱신: 기획 v2.96 / Windows 0.23.0-route-balance — 2026-10-20
+> 리아 R02~R03 반복 설명을 압축하고, 지현·유진 R02의 실제 활동 반응과 서윤 R01~R03의 함께 머무는 대화를 보강했다. 현행은 ‘히로인_초반분량_균형편집_v1.md’, ‘히로인_초반분량_수정전후_v1.md’와 각 인물의 ‘검수후_현행대본.md’를 우선한다.
+> 사건 수·선택·호감도·교제·애정 표현 조건·기억·CG 계획은 유지했다. 새 그림·녹음·동작 자산은 만들지 않았다. 초반의 대표 경로 비교이며 전체 루트 길이/실제 재미/고백60~90분 달성을 보증한 것은 아니다.
+
+'''
+for n in ('퇴근 후 우리_v2_통합 기획서.md','퇴근 후 우리_95개 사건 명세_v1.md','기획_질문및결정대장.md','게임개발_완료까지_전체작업계획_v1.md','퇴근 후 우리_캐릭터 보강 및 게임 시스템 설계안.md','대사_감정기호와메신저이모티콘_기준_v1.md'):
+ (H/'docs'/n).write_text(prefix+(installed/n).read_text(encoding='utf-8-sig'),encoding='utf-8')
+guide='''퇴근 후, 우리 — Windows 초반 균형 편집판 0.23.0-route-balance
+
+afterwork_script_prototype.exe 실행. 공통 C08에서 인물을 고르거나 시작 화면에서 개인 대본을 확인합니다.
+리아 초반의 반복은 줄이고, 지현·유진의 취향 반응과 서윤의 함께 보내는 대화를 보강했습니다.
+개발자료/docs/히로인_초반분량_균형편집_v1.md 및 히로인_초반분량_수정전후_v1.md를 참고하세요.
+사건·선택·교제 조건·CG 계획·기존 그림·리깅·저장은 유지했습니다. 친밀한 본장면은 기존 생략·자리 표시입니다.
+수치 비교는 같은12개 대표 초반 경로의 표시 분량이며, 전체 루트 완주 시간이나 실제 독자의 읽기 시간은 아닙니다.
+현재89개 텍스트 슬롯. 별도 업무 미니6개·최종 아트·음향·영상·Steam 기능은 별도 제작 범위입니다.
+'''
+(P/'WINDOWS-README.txt').write_text(guide,encoding='utf-8');(H/'시작안내.txt').write_text(guide,encoding='utf-8')
+shutil.copy2(P/'testing/opening-v1/reading-profile.json',proof/'baseline-reading-profile.json')
+print(json.dumps(contract,ensure_ascii=False))

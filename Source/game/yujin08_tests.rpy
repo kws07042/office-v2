@@ -57,7 +57,7 @@ testsuite yujin08_checks:
         assert eval memory["yujin_r07_pace"] == ["shared","deferred","talk"][case % 3]
         assert eval bool(memory.get("yujin_r08_morning_shared")) == (case % 3 == 0)
         assert eval not cream_yujin_visible()
-        assert eval ("아침에 커튼" in phone_threads["yujin"][-1]["text"]) == (case % 3 == 0)
+        assert eval ("커튼" in phone_threads["yujin"][-1]["text"]) == (memory.get("yujin_r07_pace") == "shared")
         click id "phone_next" until eval phone_context == "yujin_r08_reply"
         assert eval ("생각해 보시고" in phone_threads["yujin"][-1]["text"]) == ((case + 1) % 3 == 1)
         if eval case == 0:

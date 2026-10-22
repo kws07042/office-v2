@@ -1,0 +1,18 @@
+{
+  "Version": "0.11.0-office-phone",
+  "Destination": "C:\\Users\\user\\Desktop\\건\\오피스 V2",
+  "ChangedFiles": 39,
+  "VerifiedFiles": 39,
+  "RuntimeCodeAllowlist": [
+    "office_phone.rpyc",
+    "screens.rpyc",
+    "ria_r05_r08.rpyc",
+    "options.rpyc"
+  ],
+  "CharacterOrRiggingFilesChanged": 0,
+  "SaveFilesRemoved": 0,
+  "GameProcessesTerminated": 0,
+  "Backup": "C:\\Users\\user\\Desktop\\건\\오피스 V2\\개발자료\\이전버전_0.10.0_메신저적용전",
+  "FinalPackageCases": 25,
+  "FinalPackageAssertions": 259
+}

@@ -46,7 +46,7 @@ testsuite editorial_checks:
         if eval case < 2:
             click expression ri("문 앞 구경은 여기까지 하고, 대안 같이 찾아보자.", "문 앞 구경은 여기까지 하고, 대안 같이 찾아볼까요?")
         elif eval case < 4:
-            click "내가 가까운 곳을 하나 찾아볼게. 다음 후보는 네가 골라 줘."
+            click "가까운 곳을 찾아보고 다음 후보는 리아에게 부탁한다."
         else:
             click expression ri("여긴 다음에 다시 오자. 오늘은 잠깐만 같이 걷고.", "여긴 다음에 다시 와요. 오늘은 잠깐만 같이 걸을까요?")
         advance until screen "choice"

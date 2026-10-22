@@ -1,0 +1,7 @@
+{
+  "version": "0.34.1-dialogue-style",
+  "native_status": "passed",
+  "native_cases": 8,
+  "native_assertions": 32,
+  "scope": "Name colors, inner-voice brackets, history; no full story replay this patch"
+}

@@ -104,8 +104,8 @@ screen cream_dialogue_panel(who, what, use_substitution=True):
             id "who"
             xpos 76 ypos 490
             size 22
-            color "#fffdf8"
-            outlines [(2, "#573f70", 0, 0)]
+            color cream_speaker_color(who)
+            outlines [(2, cream_speaker_outline(who), 0, 0)]
         add Solid("#ccb8e3c0") xpos 76 ypos 526 xsize 180 ysize 1
 
 screen say(who, what):
@@ -273,7 +273,7 @@ screen history():
                     xsize 1070 spacing 14
                     for entry in _history_list:
                         if entry.who:
-                            text entry.who size 19 color "#9576a6"
+                            text entry.who size 19 color cream_speaker_color(entry.who, history=True)
                         text entry.what size 24 substitute False
             textbutton "돌아가기" action Return()
 

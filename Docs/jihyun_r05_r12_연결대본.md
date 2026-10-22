@@ -1,3 +1,6 @@
+> 현행 갱신: 기획 v3.07 / Windows 0.34.0-early-couple — 2026-10-21
+> R05~R08의 교제 변화를 실제 식사·호칭·취향·장난으로 편집했다. R07의 동기와 R08의 실제 선택 기억을 연결한다. 교제초반_편집보고서_v1.md와 실행 소스를 우선한다. 사건 수·핵심 분기·기억·CG 계획·인물 설정은 유지한다. 아래 구버전 갱신은 이력이다.
+
 # 지현 구현 대본 — jihyun_r05_r12.rpy
 
 ```renpy
@@ -21,17 +24,17 @@ label jihyun_r05:
     menu:
         "일요일 오전엔 사진을 고르고, 저녁 여섯 시에 통화하자고 한다.":
             d "기록집에 넣을 사진 골라 볼게요. 저녁 여섯 시에 서로 뭐 했는지 들려줘요."
-            j "좋아. 결과물 검사 말고 얘기 듣는 시간."
+            j "응. 난 조립하다 부품 못 찾았다고 전화할 수도 있어."
             $ remember("jihyun_personal_slot", "일요일 오전 사진 고르기")
             $ remember("jihyun_shared_slot", "일요일 저녁 여섯 시 통화")
         "일요일 오후엔 글을 쓰고, 저녁 일곱 시에 통화하자고 한다.":
             d "오후에 한 줄씩 써 보고 싶어요. 저녁 일곱 시에는 통화 괜찮으세요?"
-            j "응. 잘 안 써졌다는 얘기도 해 줘. 쓴 것만 보내지 말고."
+            j "응. 한 줄만 와도 읽어 볼게. 나도 조립 끝내긴 어려울 것 같거든."
             $ remember("jihyun_personal_slot", "일요일 오후 짧은 글 쓰기")
             $ remember("jihyun_shared_slot", "일요일 저녁 일곱 시 통화")
         "일요일엔 푹 쉬고, 월요일 퇴근 후 여섯 시 반에 만나자고 한다.":
             d "내일은 아무것도 안 정하고 쉬고 싶어요. 월요일 여섯 시 반에 저녁 같이 먹어요."
-            j "그래. 아무것도 안 하는 칸도 지켜 보자."
+            j "좋아. 월요일엔 잘 잤는지만 물어볼게. 오래 잔 사람 얘기, 좀 부럽겠네."
             $ remember("jihyun_personal_slot", "일요일 계획 없이 쉬기")
             $ remember("jihyun_shared_slot", "월요일 퇴근 후 여섯 시 반 저녁")
     "카페를 나와 강변을 조금 걸었다. 지현이 발걸음을 늦추고 도현 쪽으로 몸을 돌렸다."
@@ -52,7 +55,7 @@ label jihyun_r05:
             $ remember("jihyun_r05_affection", "hand")
         "입맞춤은 다음으로 두고, 지금은 나란히 걷자고 한다.":
             d "지금은 나란히 걷는 게 좋아요. 다음에도 먼저 말씀해 주세요."
-            j "알겠어. 다음 기회까지 혼자 결론 내리진 않을게."
+            j "응. 그럼 조금 더 걷자. 저 다리까지는 가 보고 싶어."
             $ remember("jihyun_r05_affection", "walk")
     $ award_once("jihyun_R05", "jihyun", 4)
     return
@@ -104,7 +107,9 @@ label jihyun_r06:
             $ remember("jihyun_affection_scope", "private_place")
         "그때마다 편한지 짧게 말하며 속도를 맞추고 싶다고 한다.":
             d "괜찮을 때도 제가 먼저 말해 볼게요. 마음 바뀌면 그것도 말하고요."
-            j "좋아. 그럼 나도 듣기만 하지 않고 말할게. 오늘 보고 싶었다고."
+            j "그럼 지금 하나 물을게. 밥 먹고 카페에서는 옆에 앉아도 돼?"
+            d "네. 그건 좋아요."
+            j "응. 그 자리로 봐 뒀어."
             $ remember("jihyun_affection_scope", "say_each_time")
     $ award_once("jihyun_R06", "jihyun", 6)
     return
@@ -116,8 +121,15 @@ label jihyun_r07:
     $ location = "토요일 저녁 · 지현의 집"
     "저녁을 먹고 지현이 집에 두고 온 작은 조립품을 보러 갔다. 지현은 평소 입던 사복 그대로 찻잔 두 개를 꺼냈다."
     j "완성은 아니야. 창틀 붙인 것만 봐도 재밌더라고."
-    d "[memory['jihyun_private_name']], 그럼 오늘은 창틀부터요. 다음에 바뀐 것도 알아볼 수 있겠네요."
-    j "...다음 얘기 먼저 하니까 오늘 부탁하기가 조금 쉬워지네."
+    d "[memory['jihyun_private_name']], 여기 창틀은 일부러 비뚤게 하셨어요?"
+    j "...아니. 똑바로 했다고 생각했는데."
+    "지현이 조립품을 돌려 봤다. 도현이 기울여 보던 고개를 바로 세우자 창틀도 반듯해졌다."
+    d "제 쪽이 비뚤었네요. 죄송해요."
+    j "벌써 뜯을 뻔했잖아. 반듯하게 보고 칭찬 한번 해 줘."
+    d "잘 만드셨어요. 그런데 저는 이거 보여 주실 때가 더 좋은데요. 좋아하는 거 설명하시는 얼굴이요."
+    j "...그건 고개 똑바로 하고 말한 거지?"
+    "도현이 고개를 끄덕였다. 지현은 조립품을 옆으로 옮기고 도현과 마주 앉았다."
+    j "오늘은 이거 다 보여 주면 핑계가 없어질 줄 알았어. 좀 더 있으라고 할 핑계."
     j "오늘은 여기서 같이 밤을 보내고 싶어. 도현아, 너는 어때?"
     call jihyun_private_evening("r07", "casual")
     $ award_once("jihyun_R07", "jihyun", 0)
@@ -142,7 +154,15 @@ label jihyun_private_evening(slot, outfit):
         "마음을 조금 더 나눈 뒤 오늘은 각자 쉬자고 한다.":
             d "같이 있고 싶은 마음은 있어요. 오늘은 그 얘기를 조금 더 하고 돌아갈래요."
             j "응. 긴장한 것도 말해 줘. 나도 오늘은 잘하려고 말 고르는 중이었어."
-            "둘은 서로 기대했던 순간과 다음에도 하고 싶은 일을 나눴다. 도현은 늦지 않게 귀가했다."
+            if slot == "r07":
+                d "수요일에 물 따라 달라고 하셨을 때요. 또 이름 불러 주실까 봐 기다렸어요."
+                j "그럼 그때 더 불러 볼걸. 나는 너무 좋아하는 티 낼까 봐 참았는데."
+                d "이미 들켰어요."
+                j "네가 기다린 것도 지금 들켰고. ...도현아."
+                "도현이 대답하자 지현은 이번엔 다른 용건을 찾지 않고 웃었다."
+            else:
+                "둘은 서로 기대했던 순간과 다음에도 하고 싶은 일을 나눴다."
+            "도현은 늦지 않게 귀가했다."
             $ remember("jihyun_" + slot + "_pace", "talk")
     return
 
@@ -152,8 +172,14 @@ label jihyun_r08:
     $ chapter = "지현 R08 · 평소처럼, 조금 다르게"
     if memory.get("jihyun_r07_pace") == "shared":
         $ location = "일요일 아침 · 지현의 집"
-        "지현이 먼저 깨어 빵을 굽다가 도현에게 접시를 부탁했다. 아침을 함께 먹고 도현은 집으로 돌아갔다."
-        j "다음엔 내가 접시 들게. 빵 굽는 취향도 좀 알고 싶어."
+        "지현이 빵을 굽는 동안 도현은 접시 두 개를 꺼냈다. 지현이 꺼내 둔 잼 병을 보고 자기 쪽으로 먼저 당겼다."
+        d "저는 잼 넉넉하게요."
+        j "나는 끝에 조금만. 너무 달면 빵 맛이 안 나잖아."
+        d "그럼 제 건 제가 바를게요. 빵 맛은 다음 조각에서 찾고요~"
+        "각자 빵에 잼을 발랐다. 도현의 빵을 보던 지현이 자기 것에도 잼을 더 얹었다."
+        d "빵 맛 안 난다면서요."
+        j "...네 건 맛있어 보여서."
+        "아침을 마치고 도현은 자기 집으로 돌아갔다."
         $ remember("jihyun_r08_shared_morning")
     $ location = "월요일 오후 · 온빛브랜딩 회의실"
     j "이 수치는 원본 확인 전까지 보류하자. 방향이 맞는 것과 근거가 있는 건 따로 봐야 해."
@@ -162,9 +188,9 @@ label jihyun_r08:
     if memory.get("jihyun_r07_pace") == "shared":
         call phone_deliver("jihyun_r08_memory", "jihyun", "어제 아침에 같이 접시 놓던 거 생각났어. 오늘은 나 혼자 꺼내려니 하나 더 찾게 되네.", contact="jihyun")
     elif memory.get("jihyun_r07_pace") == "talk":
-        call phone_deliver("jihyun_r08_memory", "jihyun", "토요일에 긴장한 얘기까지 들려줘서 좋았어. 나도 다 아는 척 안 하고 말할 수 있었고.", contact="jihyun")
+        call phone_deliver("jihyun_r08_memory", "jihyun", "토요일에 이름 한 번 더 불렀을 때 네 대답, 오늘도 생각나. 물 달라는 얘기는 아니야~", contact="jihyun")
     else:
-        call phone_deliver("jihyun_r08_memory", "jihyun", "토요일에 보여 준 창틀, 오늘 보니까 같이 보던 시간이 먼저 생각나. 집에서는 잘 쉬었어?", contact="jihyun")
+        call phone_deliver("jihyun_r08_memory", "jihyun", "창틀은 그대로 뒀어. 오늘 다시 봐도 반듯해 :) 집에선 잘 쉬었어?", contact="jihyun")
     call phone_deliver("jihyun_r08_request", "jihyun", "업무 말고 부탁 하나. 다음 수요일 저녁에 같이 먹고 싶어. 일곱 시 괜찮아?", contact="jihyun", important=True)
     $ phone_context = "jihyun_r08_reply"
     call screen office_phone(replies=[("restaurant", "좋다고 답하고 조용한 식당을 내가 찾아보겠다고 한다."), ("menu", "좋다고 답하고 지현이 먹고 싶은 메뉴를 묻는다."), ("affection", "좋다고 답하고 나도 보고 싶었다고 먼저 표현한다.")])
@@ -172,7 +198,7 @@ label jihyun_r08:
     $ phone_context = None
     if memory["jihyun_r08_reply"] == "restaurant":
         call phone_deliver("jihyun_r08_reply", "dohyun", "좋아요. 조용한 식당 제가 찾아볼게요. 일곱 시에 봐요.", contact="jihyun")
-        call phone_deliver("jihyun_r08_confirm", "jihyun", "응. 식당 찾는 동안 나도 네가 좋아할 메뉴 하나 생각해 둘게. 수요일 일곱 시에 봐.", contact="jihyun")
+        call phone_deliver("jihyun_r08_confirm", "jihyun", "좋아. 이번엔 간판 큰 데로 부탁해. 네 냅킨 카페만큼 클 필요는 없고~ 수요일 일곱 시!", contact="jihyun")
     elif memory["jihyun_r08_reply"] == "menu":
         call phone_deliver("jihyun_r08_reply", "dohyun", "일곱 시 괜찮아요. 이번엔 먼저 먹고 싶은 걸 말씀해 주세요.", contact="jihyun")
         call phone_deliver("jihyun_r08_confirm", "jihyun", "그럼 따뜻한 국수. 결정 맡기는 척하고 고르기 어려운 건 아니야~ 수요일 일곱 시에 봐.", contact="jihyun")

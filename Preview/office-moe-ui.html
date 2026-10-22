@@ -1,0 +1,134 @@
+<div id="office-moe-ui">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&amp;display=swap">
+  <style>
+    #office-moe-ui .preview-stage{min-height:680px;padding:22px 12px;box-sizing:border-box}
+    #office-moe-ui .dm-product{--surface:light-dark(#fcfcff,#202a3b);--soft:light-dark(#f1f3f8,#2b3649);--ink:light-dark(#29364c,#edf1f9);--quiet:light-dark(#626d81,#b6c0d2);--line:light-dark(#dce2ed,#445168);--violet:light-dark(#70619b,#d1baf3);--bubble:light-dark(#f0eaf8,#39425b);--mine:light-dark(#e8eef6,#324861);--label-font:'Gowun Dodum','Pretendard',sans-serif;--body-size:18px;--roundness:18px;background:var(--surface);color:var(--ink);font-family:'Pretendard','Malgun Gothic',sans-serif;border:1px solid var(--line);border-radius:20px;max-width:650px;margin:auto;overflow:hidden;box-shadow:0 10px 30px light-dark(#25395412,#00000025);box-sizing:border-box}
+    #office-moe-ui .product-head{padding:17px 108px 16px 20px;background:var(--soft)}
+    #office-moe-ui .product-title{font-family:var(--label-font);font-size:21px;font-weight:400;letter-spacing:.02em}
+    #office-moe-ui .product-sub{font-size:12px;color:var(--quiet);margin-top:5px}
+    #office-moe-ui .product-toolbar{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--line)}
+    #office-moe-ui button{font:inherit;color:inherit}
+    #office-moe-ui .mini-control{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font-size:13px;min-height:38px}
+    #office-moe-ui .chat-layout{display:grid;grid-template-columns:148px minmax(0,1fr)}
+    #office-moe-ui .contact-list{padding:18px 10px;border-right:1px solid var(--line);background:var(--soft);display:flex;flex-direction:column;gap:8px}
+    #office-moe-ui .contact{border:0;background:transparent;text-align:left;padding:12px 10px;border-radius:var(--roundness);min-height:44px;font-family:var(--label-font);font-size:17px}
+    #office-moe-ui .contact[aria-pressed=true]{background:var(--surface);box-shadow:0 1px 5px light-dark(#283c5715,#00000022);color:var(--violet)}
+    #office-moe-ui .chat-panel{padding:18px 20px 20px;min-width:0}
+    #office-moe-ui .chat-name{display:flex;align-items:center;gap:7px;font-family:var(--label-font);font-size:19px}
+    #office-moe-ui .chat-name i{color:var(--violet)}
+    #office-moe-ui .chat-date{font-size:12px;color:var(--quiet);margin:8px 0 18px}
+    #office-moe-ui .thread{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:162px}
+    #office-moe-ui .message{font-size:var(--body-size);line-height:1.6;background:var(--bubble);padding:12px 15px;border-radius:var(--roundness);max-width:90%;box-sizing:border-box;overflow-wrap:anywhere}
+    #office-moe-ui .message.mine{align-self:flex-end;background:var(--mine)}
+    #office-moe-ui .typing{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--quiet);font-size:13px;max-width:100%}
+    #office-moe-ui .typing[hidden]{display:none}
+    #office-moe-ui .typing-skip{background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:12px;padding:8px 10px;min-height:36px}
+    #office-moe-ui .message[hidden],#office-moe-ui .chat-layout[hidden]{display:none}
+    #office-moe-ui .reply-area{display:flex;flex-direction:column;gap:8px;margin-top:19px}
+    #office-moe-ui .reply{background:var(--surface);border:1px solid var(--line);border-radius:var(--roundness);text-align:left;padding:12px 14px;font-size:15px;line-height:1.45;min-height:44px;overflow-wrap:anywhere}
+    #office-moe-ui .reply:hover{background:var(--soft)}
+    #office-moe-ui .reply:disabled{color:var(--quiet);opacity:.8}
+    #office-moe-ui .dialogue-panel{margin:0 14px 14px;padding:17px 18px;background:var(--soft);border-radius:var(--roundness)}
+    #office-moe-ui .speaker{font-family:var(--label-font);color:var(--violet);font-size:18px;margin-bottom:8px}
+    #office-moe-ui .dialogue-text{font-size:var(--body-size);line-height:1.6;overflow-wrap:anywhere}
+    #office-moe-ui .game-footer{padding:0 18px 15px;color:var(--quiet);font-size:12px;display:flex;gap:14px;flex-wrap:wrap}
+    #office-moe-ui .compact-product{max-width:430px}
+    #office-moe-ui .compact-product .chat-layout{display:flex;flex-direction:column}
+    #office-moe-ui .dm-product .chat-layout[hidden]{display:none!important}
+    #office-moe-ui .compact-product .contact-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-right:0;border-bottom:1px solid var(--line);padding:10px;gap:2px}
+    #office-moe-ui .compact-product .contact{text-align:center;padding:10px 2px;font-size:15px}
+    #office-moe-ui .compact-product .message{max-width:88%}
+    @media(max-width:560px){#office-moe-ui .preview-stage{min-height:790px;padding:16px 0}#office-moe-ui .chat-layout{grid-template-columns:1fr}#office-moe-ui .contact-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-right:0;border-bottom:1px solid var(--line);padding:10px;gap:2px}#office-moe-ui .contact{text-align:center;font-size:15px;padding:10px 2px}#office-moe-ui .chat-panel{padding:17px 14px}#office-moe-ui .product-head{padding-left:16px}#office-moe-ui .dialogue-panel{margin:0 10px 12px;padding:15px}}
+    @media(pointer:coarse){#office-moe-ui .mini-control,#office-moe-ui .typing-skip{min-height:44px}}
+  </style>
+  <div class="viz-carousel viz-dotted-background" aria-label="오피스와 모에를 결합한 UI 배치 비교" data-previous-label="이전 배치" data-next-label="다음 배치">
+    <section class="preview-stage" data-variant="오피스 라운드" aria-label="오피스 라운드 배치">
+      <div class="dm-product" id="office-moe-wide" aria-label="오피스 라운드 글꼴과 모서리">
+        <div class="product-head"><div class="product-title">퇴근 후, 우리</div><div class="product-sub">개인 메시지 · 디자인 샘플</div></div>
+        <div class="product-toolbar"><button class="mini-control history cursor-interaction" type="button">대화 기록</button><button class="mini-control toggle-chat cursor-interaction" type="button">메신저 닫기</button></div>
+        <div class="chat-layout"><nav class="contact-list" aria-label="연락처"><button class="contact cursor-interaction" data-person="ria" aria-pressed="true" type="button">강리아</button><button class="contact cursor-interaction" data-person="jihyun" aria-pressed="false" type="button">백지현</button><button class="contact cursor-interaction" data-person="yujin" aria-pressed="false" type="button">차유진</button><button class="contact cursor-interaction" data-person="seoyun" aria-pressed="false" type="button">한서윤</button></nav>
+          <div class="chat-panel"><div class="chat-name"><span class="person-name">강리아</span><i data-lucide="heart" aria-hidden="true"></i></div><div class="chat-date">오늘 · 20:18</div><div class="thread" aria-live="polite"><div class="message received">오늘은 그냥 같이 걸을까?</div><div class="message mine" hidden></div><div class="message reaction" hidden></div></div><div class="reply-area"><button class="reply cursor-interaction" type="button" data-reply="0">좋아. 오늘은 네 얘기 더 듣고 싶어.</button><button class="reply cursor-interaction" type="button" data-reply="1">장소는 내가 골라 봐도 돼?</button></div></div>
+        </div>
+        <div class="dialogue-panel"><div class="speaker">리아</div><div class="dialogue-text">“특별한 데 안 가도 돼. 오늘은 그냥 너랑 있으면 좋겠어.”</div></div><div class="game-footer"><span>로그</span><span>자동</span><span>스킵</span><span>저장</span></div>
+      </div>
+    </section>
+    <section class="preview-stage" data-variant="대화 집중" aria-label="대화 집중 배치" hidden>
+      <div class="dm-product compact-product" id="office-moe-compact" aria-label="대화 집중 글꼴과 모서리">
+        <div class="product-head"><div class="product-title">퇴근 후, 우리</div><div class="product-sub">개인 메시지 · 디자인 샘플</div></div>
+        <div class="product-toolbar"><button class="mini-control history cursor-interaction" type="button">대화 기록</button><button class="mini-control toggle-chat cursor-interaction" type="button">메신저 닫기</button></div>
+        <div class="chat-layout"><nav class="contact-list" aria-label="연락처"><button class="contact cursor-interaction" data-person="ria" aria-pressed="true" type="button">강리아</button><button class="contact cursor-interaction" data-person="jihyun" aria-pressed="false" type="button">백지현</button><button class="contact cursor-interaction" data-person="yujin" aria-pressed="false" type="button">차유진</button><button class="contact cursor-interaction" data-person="seoyun" aria-pressed="false" type="button">한서윤</button></nav>
+          <div class="chat-panel"><div class="chat-name"><span class="person-name">강리아</span><i data-lucide="heart" aria-hidden="true"></i></div><div class="chat-date">오늘 · 20:18</div><div class="thread" aria-live="polite"><div class="message received">오늘은 그냥 같이 걸을까?</div><div class="message mine" hidden></div><div class="message reaction" hidden></div></div><div class="reply-area"><button class="reply cursor-interaction" type="button" data-reply="0">좋아. 오늘은 네 얘기 더 듣고 싶어.</button><button class="reply cursor-interaction" type="button" data-reply="1">장소는 내가 골라 봐도 돼?</button></div></div>
+        </div>
+        <div class="dialogue-panel"><div class="speaker">리아</div><div class="dialogue-text">“특별한 데 안 가도 돼. 오늘은 그냥 너랑 있으면 좋겠어.”</div></div><div class="game-footer"><span>로그</span><span>자동</span><span>스킵</span><span>저장</span></div>
+      </div>
+    </section>
+  </div>
+  <script>
+  (()=>{
+    const root=document.getElementById('office-moe-ui');
+    const people={
+      ria:{name:'강리아',short:'리아',line:'오늘은 그냥 같이 걸을까?',past:'다음에는 네가 추천하는 길도 가 보자.',dialogue:'“특별한 데 안 가도 돼. 오늘은 그냥 너랑 있으면 좋겠어.”',replies:['좋아. 오늘은 네 얘기 더 듣고 싶어.','장소는 내가 골라 봐도 돼?'],responses:['나도. 그래서 먼저 물어봤어.','응. 네가 좋아하는 곳도 알고 싶어.']},
+      jihyun:{name:'백지현',short:'지현',line:'오늘 저녁에는 일 얘기 말고. 시간 있어?',past:'내일은 내 일정만 정해 둘게. 네 시간도 알려 줘.',dialogue:'“오늘은 해결해 달라는 말 아니야. 잠깐 같이 있어 달라는 거야.”',replies:['있어. 같이 저녁 먹자.','좋아. 오늘은 내가 먼저 제안할게.'],responses:['좋아. 날짜도 같이 정하자.','그럼 네가 고른 곳부터 들어 볼게.']},
+      yujin:{name:'차유진',short:'유진',line:'같이 듣고 싶은 곡이 있어요. 시간 괜찮으세요?',past:'다음에는 도현 씨가 추천하는 곡도 듣고 싶어요.',dialogue:'“조금 부끄럽기는 해요. 그래도 오늘은 제가 먼저 물어보고 싶었어요.”',replies:['좋아요. 어떤 곡인지 궁금해요.','저도 추천하고 싶은 곡이 있어요.'],responses:['듣고 나서 어떤 느낌인지 알려 주세요.','그러면 서로 한 곡씩 추천해요.']},
+      seoyun:{name:'한서윤',short:'서윤',line:'언제 한번 말고, 오늘. 시간 어때?',past:'다음 금요일, 기억해 둬. 이번에는 날짜까지 말했어.',dialogue:'“이번엔 그냥 한 말 아니야. 너랑 걷고 싶어서 물어본 거야.”',replies:['좋아. 오늘 같이 걷자.','이번엔 내가 좋아하는 길로 가 볼까?'],responses:['좋아. 오늘은 날짜까지 정한 약속이네.','좋네. 네가 고른 길도 궁금했어.']}
+    };
+    const saved=window.openai?.widgetState?.privateContent?.mockStates||{};
+    const states={};
+    const renders={};
+    const cancelTimers={};
+    const save=()=>window.openai?.setWidgetState?.({privateContent:{mockStates:states}})?.catch(()=>{});
+    root.querySelectorAll('.dm-product').forEach(ui=>{
+      const prior=saved[ui.id]||{};
+      const state={person:people[prior.person]?prior.person:'ria',reply:Number.isInteger(prior.reply)&&prior.reply>=0&&prior.reply<=1?prior.reply:null,history:prior.history===true,closed:prior.closed===true,bodySize:Number.isFinite(prior.bodySize)&&prior.bodySize>=16&&prior.bodySize<=22?prior.bodySize:18,roundness:Number.isFinite(prior.roundness)&&prior.roundness>=8&&prior.roundness<=24?prior.roundness:18,softLabels:prior.softLabels!==false};
+      states[ui.id]=state;
+      const q=s=>ui.querySelector(s);
+      let waiting=false;
+      let replyTimer=null;
+      const writing=document.createElement('div');
+      writing.className='typing';
+      writing.hidden=true;
+      const writingLabel=document.createElement('span');
+      const showNow=document.createElement('button');
+      showNow.className='typing-skip cursor-interaction';
+      showNow.type='button';
+      showNow.textContent='바로 보기';
+      writing.append(writingLabel,showNow);
+      q('.thread').insertBefore(writing,q('.reaction'));
+      function cancelWaiting(){if(replyTimer!==null)clearTimeout(replyTimer);replyTimer=null;waiting=false;}
+      function finishWaiting(){cancelWaiting();render();save();}
+      cancelTimers[ui.id]=cancelWaiting;
+      showNow.addEventListener('click',finishWaiting);
+      function render(){
+        const p=people[state.person];
+        ui.style.setProperty('--body-size',state.bodySize+'px');
+        ui.style.setProperty('--roundness',state.roundness+'px');
+        ui.style.setProperty('--label-font',state.softLabels?"'Gowun Dodum','Pretendard',sans-serif":"'Pretendard',sans-serif");
+        q('.person-name').textContent=p.name;
+        q('.speaker').textContent=p.short;
+        q('.dialogue-text').textContent=p.dialogue;
+        q('.chat-layout').hidden=state.closed;
+        q('.toggle-chat').textContent=state.closed?'메시지 보기':'메신저 닫기';
+        q('.history').textContent=state.history?'현재 대화':'대화 기록';
+        q('.chat-date').textContent=state.history?'지난 대화 · 읽기 전용 샘플':'오늘 · 20:18';
+        q('.received').textContent=state.history?p.past:p.line;
+        q('.mine').hidden=state.history||state.reply===null;
+        q('.reaction').hidden=state.history||state.reply===null||waiting;
+        writing.hidden=!waiting||state.history||state.closed;
+        writingLabel.textContent=p.short+' 입력 중…';
+        if(state.reply!==null){q('.mine').textContent=p.replies[state.reply];q('.reaction').textContent=p.responses[state.reply];}
+        ui.querySelectorAll('[data-person]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.person===state.person)));
+        ui.querySelectorAll('[data-reply]').forEach(b=>{b.textContent=p.replies[Number(b.dataset.reply)];b.disabled=state.history||state.reply!==null;});
+      }
+      ui.querySelectorAll('[data-person]').forEach(b=>b.addEventListener('click',()=>{cancelWaiting();state.person=b.dataset.person;state.reply=null;state.history=false;render();save();}));
+      ui.querySelectorAll('[data-reply]').forEach(b=>b.addEventListener('click',()=>{cancelWaiting();state.reply=Number(b.dataset.reply);waiting=true;render();save();replyTimer=setTimeout(finishWaiting,900);}));
+      q('.history').addEventListener('click',()=>{state.history=!state.history;state.closed=false;render();save();});
+      q('.toggle-chat').addEventListener('click',()=>{state.closed=!state.closed;render();save();});
+      renders[ui.id]=render;
+      render();
+      if(globalThis.Tweak){const tweak=new Tweak({container:ui,onChange:render});tweak.addSlider(state,'bodySize',{label:'본문 글자 크기',min:16,max:22,unit:'px'});tweak.addSlider(state,'roundness',{label:'말풍선의 둥근 정도',min:8,max:24,unit:'px'});tweak.addToggle(state,'softLabels',{label:'이름표의 부드러운 글꼴'});}
+    });
+    window.addEventListener('openai:set_globals',event=>{const incoming=event.detail?.globals?.widgetState?.privateContent?.mockStates;if(!incoming)return;for(const [key,value] of Object.entries(incoming)){if(states[key]&&people[value.person]){const s=states[key];const nextReply=Number.isInteger(value.reply)&&value.reply>=0&&value.reply<=1?value.reply:null;if(s.person!==value.person||s.reply!==nextReply)cancelTimers[key]();s.person=value.person;s.reply=nextReply;s.history=value.history===true;s.closed=value.closed===true;if(Number.isFinite(value.bodySize)&&value.bodySize>=16&&value.bodySize<=22)s.bodySize=value.bodySize;if(Number.isFinite(value.roundness)&&value.roundness>=8&&value.roundness<=24)s.roundness=value.roundness;s.softLabels=value.softLabels!==false;renders[key]();}}});
+  })();
+  </script>
+</div>
