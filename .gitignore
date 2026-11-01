@@ -17,3 +17,21 @@ Source/tests/
 *.pem
 *.key
 !Windows/lib/python3.12/certifi/cacert.pem
+
+# Local signing keys, account exports and credentials
+**/tokens/
+security_keys.txt
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+credentials-*.json
+client_secret*.json
+token.json
+oauth-token*.json
+recovery-codes*.txt
+backup-codes*.txt
+Login Data*
+Cookies*
+Local State
