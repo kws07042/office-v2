@@ -72,6 +72,7 @@ label start:
     call c06
     call c07
     call c08
+    call work_mini_first
     if active_route == "ria":
         call ria_r01
         call ria_r02
@@ -83,6 +84,7 @@ label start:
             call ria_r06
             call ria_r07
             call ria_r08
+            call work_mini_second
             call ria_r09
             call ria_r10
             call ria_o02_offer
@@ -118,6 +120,7 @@ label start:
             return
 
 label end_common:
+    call work_mini_second
     $ chapter = "END_COMMON · 좋은 동료로, 우리"
     $ location = "온빛브랜딩 · 몇 주 뒤"
     "각자의 일정이 조금씩 익숙해질 무렵, 캠페인 시안의 첫 검토가 끝났다."
