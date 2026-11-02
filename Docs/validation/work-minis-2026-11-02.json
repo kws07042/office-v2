@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-02",
+  "version": "0.35.0-work-minis",
+  "story_source_commit": "e1114ce2a089c9970d4a8201e0d936fc31c4f770",
+  "tested_commit": "d29957fc295326ed1c4a868b33a1036e735c91da",
+  "test_run": 41373163484,
+  "cases": 57,
+  "assertions": 937,
+  "suites": [
+    {
+      "name": "work_mini_checks",
+      "cases": 28,
+      "assertions": 478
+    },
+    {
+      "name": "common_romance",
+      "cases": 21,
+      "assertions": 344
+    },
+    {
+      "name": "integrated_story_checks",
+      "cases": 8,
+      "assertions": 115
+    }
+  ],
+  "package_commit": "01cfd7700674433cc866f78c3f95aeffc8c3e9d0",
+  "package_run": 41374301915,
+  "package_run_story_tests": "skipped: Source/game unchanged; see tested_commit and test_run",
+  "sdk_sha256": "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45",
+  "package": {
+    "file": "afterwork_script_prototype-0.35.0-work-minis-win.zip",
+    "sha256": "75f35c0e9c38a12f95c1d6516814730aadab6f0fc43c4b3ffc755dff06269ed7",
+    "bytes": 43519556,
+    "files": 1570,
+    "fresh_sdk": "8.5.3",
+    "new_work_script": true,
+    "tests_bridge_saves_excluded": true,
+    "windows_executable_run": false
+  },
+  "artifact_id": 13110093221,
+  "artifact_expires": "2026-11-09"
+}
