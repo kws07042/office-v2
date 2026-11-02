@@ -153,5 +153,6 @@
     "polish-jihyun-event-address.png"
   ],
   "human_reading_time_measured": false,
-  "windows_exe_run": false
+  "windows_exe_run": false,
+  "legacy_suite_notes": "editorial_tests.rpy contains pre-existing outdated menu/history expectations; not run in this validation set."
 }
