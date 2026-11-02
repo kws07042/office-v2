@@ -256,7 +256,7 @@ label yujin_r08:
         $ remember("yujin_r08_morning_shared")
     $ location = "같은 일요일 오후 · 각자의 집, 개인 메시지"
     if memory.get("yujin_r07_pace") == "shared":
-        call phone_deliver("yujin_r08_memory", "yujin", "커튼 아직 그대로예요. 아까 옮겨 앉으신 쪽만 그늘이네요. 저도 그쪽에서 먹고 있어요 :)", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "커튼 아직 그대로예요. 점심도 아침에 옮겨 앉은 쪽에서 먹었어요. 그늘보다 빈자리가 먼저 보이네요 :)", contact="yujin")
     elif memory.get("yujin_r07_pace") == "talk":
         call phone_deliver("yujin_r08_memory", "yujin", "어제 두 접시로 먹자고 한 거요. 잘한 것 같아요. 제 매운맛까지 드시면 아까웠을 거예요~", contact="yujin")
     else:

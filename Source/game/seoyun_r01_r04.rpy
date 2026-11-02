@@ -1,5 +1,5 @@
 # Seoyun is a 32-year-old colleague. Final art/voice production is deferred.
-define sn = Character("서윤 · 속마음", callback=renpy.curry(cream_note_speaker)("seoyun"))
+define sn = Character("한서윤", what_prefix="『", what_suffix="』", callback=renpy.curry(cream_note_speaker)("seoyun"))
 default seoyun_prepared = False
 
 label seoyun_r01:
@@ -177,7 +177,7 @@ label seoyun_r03:
         s "응. 네가 옆에서 얘기해 줘야 하잖아. 그건 사진만 보는 것보다 좋고."
         $ remember("seoyun_promise_kept", "직접 찍은 난간 끝의 저녁 빛 사진과 멈춘 이유")
     elif memory["seoyun_promise"] == "sound":
-        "도현은 전날 돌아가는 길에 써 둔 한 줄을 보여 줬다."
+        "도현은 휴대폰 메모장에 전날 돌아가는 길에 써 둔 한 줄을 보여 줬다."
         d "‘문 닫는 소리가 나면, 이 골목도 집으로 간다.’ 이 문장이요."
         s "가게 문은 닫혔는데 사람 발소리는 이어질 것 같네. 나 지금 그 길 조금 궁금해."
         "서윤이 문장을 한 번 소리 내 읽었다. 도현이 듣다가 마지막 구절에서 고개를 살짝 기울인다."
