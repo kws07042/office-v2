@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-02",
+  "repository": "kws07042/office-v2",
+  "status": "current_selected_art_uploaded",
+  "runtime_installed": false,
+  "notes": [
+    "최신 선택본만 포함. 수정 전 이미지는 목록에서 제외.",
+    "CG는 배경 포함 평면 PNG. 파츠별 입상 PNG/PSD는 미제작."
+  ],
+  "current_jihyun_master": "CharacterArt/assets/jihyun/master/jihyun_master_lace_alpha_v005.png",
+  "assets": [
+    {
+      "heroine": "jihyun",
+      "scene": "R10",
+      "action": "미니어처 조립",
+      "path": "CharacterArt/assets/jihyun/cg/jihyun_r10_miniature_v005.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1992135,
+      "sha256": "b36456a34ac364d16564bfbc5b1baa1e13b140c0bdb56c968e720316cb7b9ed5",
+      "git_blob_sha": "31843927dc0780c7a14962cf4398a3b18106e532"
+    },
+    {
+      "heroine": "jihyun",
+      "scene": "R11",
+      "action": "카드게임",
+      "path": "CharacterArt/assets/jihyun/cg/jihyun_r11_cards_v007.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1884451,
+      "sha256": "acfc594f8f1f305396ed97023b6de93f00d363c7919d6b1493bb32f61b80140a",
+      "git_blob_sha": "a4dc22bb28f767b4f596dffbcc87a4ed3997557c"
+    },
+    {
+      "heroine": "ria",
+      "scene": "R07",
+      "action": "우산 건네기",
+      "path": "CharacterArt/assets/ria/cg/ria_r07_umbrella_v005.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2182737,
+      "sha256": "b1cb1e88194d6f2efadc36b45b8bb5b6af405b2194aac3326693c62b79129169",
+      "git_blob_sha": "f89f0fc73aecb93161b9a3920fc2942d7af7c2bf"
+    },
+    {
+      "heroine": "ria",
+      "scene": "R11",
+      "action": "함께 요리",
+      "path": "CharacterArt/assets/ria/cg/ria_r11_cooking_v002.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2348484,
+      "sha256": "005d45212fea9a9e626b0732b62032f94d38b15088dea9c9665aaf1c612082ad",
+      "git_blob_sha": "e57fe701a916ee1947673b10cc48ea3356c983e7"
+    },
+    {
+      "heroine": "seoyun",
+      "scene": "R02/O01",
+      "action": "함께 독서",
+      "path": "CharacterArt/assets/seoyun/cg/seoyun_r02_reading_v003.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2096611,
+      "sha256": "dcb5aae2067b5407ad1d17feeac307ec53361a9d1d44468c57f01333fead8448",
+      "git_blob_sha": "53f6ecffbceccd7f847d5e1b1b79887cbf61f731"
+    },
+    {
+      "heroine": "seoyun",
+      "scene": "R13",
+      "action": "반지 공개",
+      "path": "CharacterArt/assets/seoyun/cg/seoyun_r13_ring_v003.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2089173,
+      "sha256": "9d37d7fdc99e719932ebb36ce8fe4fce995c17aa15c998e922eaa4951cd99d8c",
+      "git_blob_sha": "b577f0f33fc29b4b5bc1007b49c7591fdd431360"
+    },
+    {
+      "heroine": "yujin",
+      "scene": "O02",
+      "action": "컵 스케치",
+      "path": "CharacterArt/assets/yujin/cg/yujin_o02_sketch_v001.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2157022,
+      "sha256": "1ccb9895755dd185020763b4d21ee1e5da83f572c00337563b40e946c7228c28",
+      "git_blob_sha": "84aa28853b1b7204fe67e5f7e5e9e3c7946a2b11"
+    },
+    {
+      "heroine": "yujin",
+      "scene": "R02",
+      "action": "전시 감상",
+      "path": "CharacterArt/assets/yujin/cg/yujin_r02_gallery_v001.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2015167,
+      "sha256": "2112c829ed558489aebfaa38b742adc91a31dcf7c90ace0186650912a8ecc531",
+      "git_blob_sha": "587bdd1bf6812faa606b913a8a80635fd83cd9b3"
+    },
+    {
+      "heroine": "jihyun",
+      "scene": "master",
+      "action": "레이스 가장자리·알파 정리 마스터",
+      "path": "CharacterArt/assets/jihyun/master/jihyun_master_lace_alpha_v005.png",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1364435,
+      "sha256": "5bf05df69bf275a611f438073199d7f98dd37dad7b122e5385f14c4795ed4341",
+      "git_blob_sha": "4627f1f0aea946a1f697c815246e89302ad93243"
+    }
+  ],
+  "decisions": {
+    "standing_art": "레이어별 제작",
+    "backgrounds": "히로인과 같은 2D 애니메이션 작화",
+    "dohyun_visibility": "상호작용에 손·팔 허용",
+    "jihyun_underlayer": "업무복 블라우스 안쪽에 짙은 회색 레이스 가장자리 조금 노출",
+    "card_orientation": "손에 든 패는 플레이어 시점에서 뒷면, 공개·낸 카드는 앞면"
+  },
+  "validation": {
+    "master_alpha": "RGB 원본 동일. 알파만 직접 수정, 흰색·남색 배경 검수",
+    "cg_native_size": "1672×941; 1920×1080 변환·인게임 가림 검수는 별도",
+    "game_execution": "이번 업로드에서 게임 실행·회귀 테스트 없음"
+  }
+}

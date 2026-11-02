@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-22",
-  "note": "Current files including new candidate art. MANIFEST.json is retained as an older packaging record. Candidate images are not all approved or installed.",
+  "date": "2026-11-02",
+  "note": "Current assets include the latest selected 8 scene CGs and the Jihyun lace/alpha-cleaned master uploaded on 2026-11-02. Previous source references remain preserved. Image uploads do not imply runtime installation or completed layer-separated sprites.",
   "sha256": {
     "character_art_00_README.md": "c95305c83fc9216c89d3efd4e198a23da6f916a7a826dd4d864c3ae4c218ecb4",
-    "character_art_01_COMMON.md": "a263c06a20193d301ad52c76d42ae4851567d09705dfee3155ed93b4a35c572f",
+    "character_art_01_COMMON.md": "c29f3cd11668d15b80de0094dc62ce995d856e2dcdfd0cd583799ed7e5594b1f",
     "character_art_02_RIA.md": "58cb1b8755b5bab6246cf54db82e4d24fa0e0cecd0b49723d56805a526dcc9ac",
-    "character_art_03_JIHYUN.md": "32344c3040bfb6c7bbe28f05d31ee7b22b66ac89fc54131385d07558f4c51e5f",
+    "character_art_03_JIHYUN.md": "7602d8a96b6ed32e12e68bf01d5fc4b5ef277a7ff455138b09135135b9d06a67",
     "character_art_04_YUJIN.md": "64dab089d385c32e35650ae0c64eaa2d249b6d1dd392f571929eb4a8313d6c5d",
     "character_art_05_SEOYUN.md": "5a266b828a878c0eadcd52ca5115242142c4515efa7fc9305654ccfda515456c",
     "character_art_06_PROMPT.md": "72b0383931b67ed591d034d40bfa4f0d21568656e2e13ca4b0567a7379bf007b",
@@ -41,6 +41,20 @@
     "assets/yujin/records/superseded_design_proposal.md": "48ef1306cc4a1cb583ca9d58963a8fa23a0ef9186b32f2dab95fbbd7fa8bc18a",
     "assets/yujin/reference_v001/reference_manifest.json": "1f07bae5fcca85cefe20fe15967edea5e9f9e63e1823b9dbd14a18a2f7b22d99",
     "assets/yujin/reference_v001/yujin_reference_v001.png": "ce62752f6e9d31b14043716424bd56587e5e1e32801f2f18b08dba6ba7a21306",
-    "assets/yujin/reference_v001/yujin_reference_v001.qa.md": "c39b628e4bb0354637ad432deab6b95d7d598f1d595458b4338440b154189cd6"
-  }
+    "assets/yujin/reference_v001/yujin_reference_v001.qa.md": "c39b628e4bb0354637ad432deab6b95d7d598f1d595458b4338440b154189cd6",
+    "assets/jihyun/cg/jihyun_r10_miniature_v005.png": "b36456a34ac364d16564bfbc5b1baa1e13b140c0bdb56c968e720316cb7b9ed5",
+    "assets/jihyun/cg/jihyun_r11_cards_v007.png": "acfc594f8f1f305396ed97023b6de93f00d363c7919d6b1493bb32f61b80140a",
+    "assets/ria/cg/ria_r07_umbrella_v005.png": "b1cb1e88194d6f2efadc36b45b8bb5b6af405b2194aac3326693c62b79129169",
+    "assets/ria/cg/ria_r11_cooking_v002.png": "005d45212fea9a9e626b0732b62032f94d38b15088dea9c9665aaf1c612082ad",
+    "assets/seoyun/cg/seoyun_r02_reading_v003.png": "dcb5aae2067b5407ad1d17feeac307ec53361a9d1d44468c57f01333fead8448",
+    "assets/seoyun/cg/seoyun_r13_ring_v003.png": "9d37d7fdc99e719932ebb36ce8fe4fce995c17aa15c998e922eaa4951cd99d8c",
+    "assets/yujin/cg/yujin_o02_sketch_v001.png": "1ccb9895755dd185020763b4d21ee1e5da83f572c00337563b40e946c7228c28",
+    "assets/yujin/cg/yujin_r02_gallery_v001.png": "2112c829ed558489aebfaa38b742adc91a31dcf7c90ace0186650912a8ecc531",
+    "assets/jihyun/master/jihyun_master_lace_alpha_v005.png": "5bf05df69bf275a611f438073199d7f98dd37dad7b122e5385f14c4795ed4341",
+    "CG_CURRENT.json": "e587145527c86203a88c6077f90d48a03b5fa892568e38e10f8a39a3d740fc5c",
+    "CG_CURRENT.md": "32f31f359e4b6a06a30869790a00ff51574fcd07279a914ea36f8c5227994759",
+    "character_art_08_LAYERS.md": "f9f62ec8b6d626f497d23e8f4ee4328a19127dfa0a6f2dfd2ffdbbabf10a459b"
+  },
+  "current_cg_manifest": "CG_CURRENT.json",
+  "current_jihyun_master": "assets/jihyun/master/jihyun_master_lace_alpha_v005.png"
 }
