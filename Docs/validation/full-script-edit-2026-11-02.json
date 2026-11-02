@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-02",
+  "version": "0.35.1-full-script-edit",
+  "merged_pr": 2,
+  "merged_sha": "7d04db1e7f04ae089951ad3db8aba3e84a5712be",
+  "story_source_sha": "94d279caafa018c5cf653977d05c47a050caa6e3",
+  "source_test_run": 41380516100,
+  "source_jobs": {
+    "targeted": 125070252568,
+    "full": 125070252505
+  },
+  "native": {
+    "cases": 133,
+    "assertions": 1896,
+    "suites": {
+      "script_polish_checks": {
+        "cases": 23,
+        "assertions": 179,
+        "assertionTotal": 179,
+        "status": "passed"
+      },
+      "work_mini_checks": {
+        "cases": 28,
+        "assertions": 478,
+        "assertionTotal": 478,
+        "status": "passed"
+      },
+      "common_romance": {
+        "cases": 21,
+        "assertions": 344,
+        "assertionTotal": 344,
+        "status": "passed"
+      },
+      "review_continuity_checks": {
+        "cases": 9,
+        "assertions": 30,
+        "assertionTotal": 30,
+        "status": "passed"
+      },
+      "full_editorial_checks": {
+        "cases": 14,
+        "assertions": 92,
+        "assertionTotal": 92,
+        "status": "passed"
+      },
+      "yujin_final_checks": {
+        "cases": 28,
+        "assertions": 641,
+        "assertionTotal": 641,
+        "status": "passed"
+      },
+      "integrated_story_checks": {
+        "cases": 8,
+        "assertions": 115,
+        "assertionTotal": 115,
+        "status": "passed"
+      },
+      "marriage_disclosure_checks": {
+        "cases": 2,
+        "assertions": 17,
+        "assertionTotal": 17,
+        "status": "passed"
+      }
+    }
+  },
+  "contract": {
+    "baseline": "7d04db1e7f04ae089951ad3db8aba3e84a5712be",
+    "runtime_files_compared": 30,
+    "changed_runtime_files": [
+      "Source/game/common.rpy",
+      "Source/game/jihyun_r05_r12.rpy",
+      "Source/game/jihyun_r13_e01.rpy",
+      "Source/game/options.rpy",
+      "Source/game/ria_r09_r12.rpy",
+      "Source/game/ria_r13_e01.rpy",
+      "Source/game/seoyun_r01_r04.rpy",
+      "Source/game/seoyun_r05_r12.rpy",
+      "Source/game/work_minis.rpy",
+      "Source/game/yujin_optional.rpy",
+      "Source/game/yujin_r05_r08.rpy",
+      "Source/game/yujin_r09_r12.rpy",
+      "Source/game/yujin_r13_e01.rpy"
+    ],
+    "slots": 95,
+    "state_writes_rewards_calls_menu_choices_preserved": true,
+    "existing_condition_texts_preserved": true,
+    "new_conditions_only_select_dialogue": true,
+    "event_ids": 12,
+    "event_variants": 16,
+    "event_beats": 64,
+    "event_fields_changed": [
+      [
+        "jihyun_r15",
+        "home",
+        1,
+        "dohyun"
+      ],
+      [
+        "jihyun_r15",
+        "home",
+        1,
+        "heroine"
+      ],
+      [
+        "seoyun_r12",
+        "special",
+        3,
+        "heroine"
+      ],
+      [
+        "yujin_r12",
+        "special",
+        3,
+        "heroine"
+      ]
+    ],
+    "reserved_main_placeholders_preserved": true,
+    "asset_plans_preserved": true,
+    "source_sha256": {
+      "Source/game/common.rpy": "35f6f75d994e800361fb7bd9c11674d2524def07c3eeb108c08872c2d5fc3a89",
+      "Source/game/jihyun_r05_r12.rpy": "16997b117769f08ce133d0bcb4b1d04f5c77967b91a46a45d573ec3c9e62623b",
+      "Source/game/jihyun_r13_e01.rpy": "5adbf4df46c8c609bb69e51c73875ea0c0cbcd4a1999ae9ef486b00b92d5da61",
+      "Source/game/options.rpy": "65704637aa1dad251ffcb63d982f5ef9cbb8e7f9e956d3274506b47664ae277a",
+      "Source/game/ria_r09_r12.rpy": "ea3bbfae919b5aaee60c4772197a38511d65784e41536cba994a6db76435c4db",
+      "Source/game/ria_r13_e01.rpy": "bde049bbabdd3dcce927d3e2c9e42e35a20c7e7429b42b2474ab5d7de8d11175",
+      "Source/game/seoyun_r01_r04.rpy": "31df35a80f3359727bc2ab328f31ff8fe6610d649717fa1f3b3cd68f7516a3da",
+      "Source/game/seoyun_r05_r12.rpy": "94f28f8762ad2573d38209aac33b565546f806f5c582b6ca6562eab676e04719",
+      "Source/game/work_minis.rpy": "4247eebc820440ebb605f53d7a39cdf5eccb949e954d7cc3bcbda1667fcc9f68",
+      "Source/game/yujin_optional.rpy": "22f1625fdc594ce55e08eeaa7800cba110cd164ab4f8e6a889b57552f3a62c23",
+      "Source/game/yujin_r05_r08.rpy": "151d0bb2799fa02f6f5f5988188463827d3ba9e9656b91c304150f9cec02f899",
+      "Source/game/yujin_r09_r12.rpy": "12bce35112556fe2249232c31478da302f5e4f26f02cc69c807cdaa97ed6fd9a",
+      "Source/game/yujin_r13_e01.rpy": "01a36510be3500fbecd9ce6a12281a73c90efccb159094924244e1ab348ea3b3",
+      "Source/game/event_story.json": "cb0144cec48980a2e54dcd5f1a3c4a6647aefd6031f5186fceef61abb649ce54"
+    },
+    "limits": "Text/structure comparison plus targeted native tests; not a proof of every branch combination."
+  },
+  "package_run": 41381012240,
+  "package_source_sha": "a82566a710bbb3bfc472a848a1725e31b8fb3928",
+  "package": {
+    "source_commit": "a82566a710bbb3bfc472a848a1725e31b8fb3928",
+    "file": "afterwork_script_prototype-0.35.1-full-script-edit-win.zip",
+    "sha256": "a965c198148a78b9ae624190990eddd0611e71258b5377da3bbae90b1674c41c",
+    "bytes": 43549341,
+    "files": 1570,
+    "official_sdk": "8.5.3",
+    "game_scripts_and_executable_present": true,
+    "project_development_files_and_saves_excluded": true,
+    "windows_executable_run": false
+  },
+  "package_artifact": 13112859292,
+  "screenshots_reviewed": [
+    "polish-seoyun-thought.png",
+    "polish-jihyun-event-address.png"
+  ],
+  "human_reading_time_measured": false,
+  "windows_exe_run": false,
+  "legacy_suite_notes": "editorial_tests.rpy contains pre-existing outdated menu/history expectations; not run in this validation set."
+}
