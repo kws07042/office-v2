@@ -1,0 +1,1381 @@
+{
+  "target": "b6cfe9358e55deb5f0606d1c9a4ce7360dbbd39d",
+  "head": "90e89779969ca9f7e9312d4c1709aa74fb82820c",
+  "commits": [
+    "90e89779969ca9f7e9312d4c1709aa74fb82820c",
+    "18c1f4b263899131d5575394a7e4fb50099e746a",
+    "fa93e99278896f5a1494d8511e1a6f91346c74fc",
+    "b6cfe9358e55deb5f0606d1c9a4ce7360dbbd39d",
+    "713f9c12a00ff48d02812cee0dad132e946a9432",
+    "059bc15bd08513091a4c3f912047553435fea5ec",
+    "eab41a005a6cce4649721af40a6d0e3ebcc87bd9",
+    "a2ef28a572f9d536a6ffc1d1ef106ededcdac5bf"
+  ],
+  "current_files": 1814,
+  "reachable_unique_blobs": 1920,
+  "historical_bytes": 125788464,
+  "current_bytes": 157594652,
+  "sdk_url": "https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.zip",
+  "sdk_sha256": "ff57648f9c04f27e381c48af6d8e3ee3cdec296bed4d3831f47f09b0a71b505e",
+  "sdk_match_files": 1149,
+  "compiled_unique_objects": 1055,
+  "nonregular_entries": [],
+  "limitations": [
+    "Static inspection is not proof of absence of malware.",
+    "No project/native code was executed.",
+    "Secret rules do not cover every credential.",
+    "Cloud account/host incident forensics and deleted/unreachable Git objects are outside scope.",
+    "Compiled/source semantic correspondence is not established by string scanning."
+  ],
+  "unmatched_runtime_files": 126,
+  "secret_hits": 17,
+  "parse_errors": 5,
+  "suspicious_pickle_globals": 4,
+  "clamav": {
+    "engine": "1.5.4",
+    "known_signatures": 3628245,
+    "scanned_files": 1920,
+    "infected_files": 0,
+    "exit_code": 0
+  },
+  "defender": {
+    "status": "failed_to_run",
+    "reason": "The remote procedure call failed"
+  },
+  "native": [
+    {
+      "path": "Windows/afterwork_script_prototype.exe",
+      "sha256": "8dabd499909d27f919ef1bb1bc863aba87e36d6e969b462471cc881653a374d0",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/renpy.exe",
+        "renpy-8.5.3-sdk/renpy.exe"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/d3dcompiler_47.dll",
+      "sha256": "44422e6936dc72b7ac5ed16bb8bcae164b7554513e52efb66a3e942cec328a47",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/d3dcompiler_47.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/libEGL.dll",
+      "sha256": "b20c1e14e42da55c13dad3c23a5060ca086eaf5b18b12ef5c60cd7e80276a9f2",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/libEGL.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/libGLESv2.dll",
+      "sha256": "2d171e91e1fe7205b76dd69ba9f7ddce7910283a5a5111c09c84f5db8c795a74",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/libGLESv2.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/libpython3.12.dll",
+      "sha256": "e964c5a8decf29db4cff43f5eb268f711b8a89e83375b44c14e6fcc2171d5e18",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/libpython3.12.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/librenpython.dll",
+      "sha256": "36c48e7659c78a2223b4f69467eaeada71b995fd381a56264bf370fe67ddd757",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/librenpython.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/libwinpthread-1.dll",
+      "sha256": "eb5c64566c2935ff0709cf248d2036fa87acfb862ff722f7017a48fdc571bd3b",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/libwinpthread-1.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/nvdrs.dll",
+      "sha256": "fafe690e81b0d2f00b20087def27970e285573a1d24429a901ee07ae1bd72001",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/nvdrs.dll"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/python.exe",
+      "sha256": "7c220ddbc41821a2c15199449fed09c0717e928f1d31abf0af7011c211d153a0",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/python.exe"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/pythonw.exe",
+      "sha256": "170d9b63a64f3eeb786e56838ac9a4e13dcebe2a8bc9b8b4693a986552537c0b",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/pythonw.exe"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/zsync.exe",
+      "sha256": "dbc39d1d4ddc8c744e7840a294f906920c532adc0dc9e69f7664a91b55b2ff77",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/zsync.exe"
+      ]
+    },
+    {
+      "path": "Windows/lib/py3-windows-x86_64/zsyncmake.exe",
+      "sha256": "bb9c90f996a54a6c697f41a7897eb924e90e18a07746b612bcb5e034892f260f",
+      "sdk_matches": [
+        "renpy-8.5.3-sdk/lib/py3-windows-x86_64/zsyncmake.exe"
+      ]
+    }
+  ],
+  "game_source_projection": [
+    {
+      "path": "Windows/game/common.rpyc",
+      "source": "Source/game/common.rpy",
+      "snippets": 176,
+      "matched": 176,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/core.rpyc",
+      "source": "Source/game/core.rpy",
+      "snippets": 98,
+      "matched": 98,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/cream_ui.rpyc",
+      "source": "Source/game/cream_ui.rpy",
+      "snippets": 44,
+      "matched": 44,
+      "unmatched": [],
+      "indicators": [
+        "network"
+      ]
+    },
+    {
+      "path": "Windows/game/event_cg_slots.rpyc",
+      "source": "Source/game/event_cg_slots.rpy",
+      "snippets": 6,
+      "matched": 6,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/event_sequence.rpyc",
+      "source": "Source/game/event_sequence.rpy",
+      "snippets": 56,
+      "matched": 56,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/jihyun_optional.rpyc",
+      "source": "Source/game/jihyun_optional.rpy",
+      "snippets": 54,
+      "matched": 54,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/jihyun_r01_r04.rpyc",
+      "source": "Source/game/jihyun_r01_r04.rpy",
+      "snippets": 122,
+      "matched": 122,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/jihyun_r05_r12.rpyc",
+      "source": "Source/game/jihyun_r05_r12.rpy",
+      "snippets": 158,
+      "matched": 158,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/jihyun_r13_e01.rpyc",
+      "source": "Source/game/jihyun_r13_e01.rpy",
+      "snippets": 110,
+      "matched": 110,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/office_phone.rpyc",
+      "source": "Source/game/office_phone.rpy",
+      "snippets": 64,
+      "matched": 60,
+      "unmatched": [
+        {
+          "slot": 2,
+          "matched": false,
+          "sha256": "431cc52624094268ddfb130c650015014f0c2883bec81630fde29867f7d04660",
+          "preview": "value, caption  = _sl2_i"
+        },
+        {
+          "slot": 2,
+          "matched": false,
+          "sha256": "dfc7ae77c1481e2d73c3aa0afe899b50f119af62053fb2d592eb5bdb77a07394",
+          "preview": "contact, name, initial  = _sl2_i"
+        }
+      ],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/options.rpyc",
+      "source": "Source/game/options.rpy",
+      "snippets": 28,
+      "matched": 28,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/renpy_agent.rpyc",
+      "source": "Source/game/renpy_agent.rpy",
+      "snippets": 4,
+      "matched": 4,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/ria_expressions.rpyc",
+      "source": "Source/game/ria_expressions.rpy",
+      "snippets": 48,
+      "matched": 48,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/ria_r01.rpyc",
+      "source": "Source/game/ria_r01.rpy",
+      "snippets": 16,
+      "matched": 16,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/ria_r02_r04.rpyc",
+      "source": "Source/game/ria_r02_r04.rpy",
+      "snippets": 138,
+      "matched": 138,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/ria_r05_r08.rpyc",
+      "source": "Source/game/ria_r05_r08.rpy",
+      "snippets": 128,
+      "matched": 128,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/ria_r09_r12.rpyc",
+      "source": "Source/game/ria_r09_r12.rpy",
+      "snippets": 212,
+      "matched": 212,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/ria_r13_e01.rpyc",
+      "source": "Source/game/ria_r13_e01.rpy",
+      "snippets": 244,
+      "matched": 244,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/screens.rpyc",
+      "source": "Source/game/screens.rpy",
+      "snippets": 10,
+      "matched": 10,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/script.rpyc",
+      "source": "Source/game/script.rpy",
+      "snippets": 0,
+      "matched": 0,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/seoyun_optional.rpyc",
+      "source": "Source/game/seoyun_optional.rpy",
+      "snippets": 56,
+      "matched": 56,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/seoyun_r01_r04.rpyc",
+      "source": "Source/game/seoyun_r01_r04.rpy",
+      "snippets": 128,
+      "matched": 128,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/seoyun_r05_r12.rpyc",
+      "source": "Source/game/seoyun_r05_r12.rpy",
+      "snippets": 156,
+      "matched": 156,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/seoyun_r13_e01.rpyc",
+      "source": "Source/game/seoyun_r13_e01.rpy",
+      "snippets": 132,
+      "matched": 132,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/yujin_optional.rpyc",
+      "source": "Source/game/yujin_optional.rpy",
+      "snippets": 74,
+      "matched": 74,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/yujin_r01_r04.rpyc",
+      "source": "Source/game/yujin_r01_r04.rpy",
+      "snippets": 118,
+      "matched": 118,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/yujin_r05_r08.rpyc",
+      "source": "Source/game/yujin_r05_r08.rpy",
+      "snippets": 104,
+      "matched": 104,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/yujin_r09_r12.rpyc",
+      "source": "Source/game/yujin_r09_r12.rpy",
+      "snippets": 192,
+      "matched": 192,
+      "unmatched": [],
+      "indicators": []
+    },
+    {
+      "path": "Windows/game/yujin_r13_e01.rpyc",
+      "source": "Source/game/yujin_r13_e01.rpy",
+      "snippets": 130,
+      "matched": 130,
+      "unmatched": [],
+      "indicators": []
+    }
+  ],
+  "engine_code_projection": [
+    {
+      "path": "Windows/renpy/common/000statements.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/000window.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00accessibility.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00achievement.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00action_audio.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00action_control.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00action_data.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00action_file.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00action_menu.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00action_other.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00audio.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00barvalues.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00build.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00compat.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00console.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00db.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00defaults.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00definitions.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00director.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00gallery.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00gamemenu.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00gamepad.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00gltest.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00gui.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00iap.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00iconbutton.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00images.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00inputvalues.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00keymap.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00layout.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00library.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00matrixcolor.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00matrixtransform.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00mixers.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00mousedisplayable.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00musicroom.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00nvl_mode.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00obsolete.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00performance.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00placeholder.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00preferences.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00sideimage.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00speechbubble.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00splines.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00sshtransition.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00start.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00steam.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00style.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00stylepreferences.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00sync.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00textshader.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00themes.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00touchkeyboard.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00translation.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00updater.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/00voice.rpyc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_developer/developer.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_developer/inspector.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_errorhandling.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_layout/classic_joystick_preferences.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_layout/classic_navigation.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_layout/screen_load_save.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_layout/screen_main_menu.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_layout/screen_preferences.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_layout/screen_yesno_prompt.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    },
+    {
+      "path": "Windows/renpy/common/_shaders.rpymc",
+      "checks": [
+        {
+          "slot": 1,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        },
+        {
+          "slot": 2,
+          "python_fragments_equal": true,
+          "globals_equal": true
+        }
+      ]
+    }
+  ],
+  "source_projection_limit": "Code/expression matching is not a proof of full AST/control-flow equivalence.",
+  "false_positives": {
+    "pem_markers": 17,
+    "all_in_official_sdk_files": true,
+    "unsupported_rpymc": 5,
+    "all_byte_identical_to_sdk": true
+  },
+  "run_url": "https://github.com/kws07042/office-v2/actions/runs/41365687337"
+}
