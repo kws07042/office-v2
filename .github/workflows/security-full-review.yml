@@ -11,9 +11,9 @@ jobs:
   static-and-clamav:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
-    env:
-      AUDIT_OUTPUT: ${{ runner.temp }}/office-security-review
     steps:
+      - name: Configure report directory
+        run: echo "AUDIT_OUTPUT=$RUNNER_TEMP/office-security-review" >> "$GITHUB_ENV"
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
