@@ -1,0 +1,104 @@
+{
+  "source_version": "0.35.2-player-flow",
+  "source_commit": "315dc14b6a363ab5ebacb8dbba3520cb3b4a9c0b",
+  "baseline": "44ba86ad5aa7cef83d68abd0be261964df74a937",
+  "run_id": 41393284143,
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 125109095604,
+      "name": "contracts-and-lint",
+      "conclusion": "success"
+    },
+    {
+      "id": 125109263120,
+      "name": "native (full-playthroughs)",
+      "conclusion": "success"
+    },
+    {
+      "id": 125109263191,
+      "name": "native (targeted)",
+      "conclusion": "success"
+    }
+  ],
+  "suites": {
+    "player_flow_checks": {
+      "cases": 14,
+      "assertions": 176
+    },
+    "script_polish_checks": {
+      "cases": 23,
+      "assertions": 179
+    },
+    "work_mini_checks": {
+      "cases": 28,
+      "assertions": 478
+    },
+    "common_romance": {
+      "cases": 21,
+      "assertions": 344
+    },
+    "review_continuity_checks": {
+      "cases": 9,
+      "assertions": 30
+    },
+    "full_editorial_checks": {
+      "cases": 14,
+      "assertions": 92
+    },
+    "yujin_final_checks": {
+      "cases": 28,
+      "assertions": 641
+    },
+    "integrated_story_checks": {
+      "cases": 8,
+      "assertions": 115
+    },
+    "marriage_disclosure_checks": {
+      "cases": 2,
+      "assertions": 17
+    }
+  },
+  "total": {
+    "cases": 147,
+    "assertions": 2072
+  },
+  "contract": {
+    "baseline": "44ba86ad5aa7cef83d68abd0be261964df74a937",
+    "runtime_files": 30,
+    "changed_runtime_files": [
+      "Source/game/jihyun_r05_r12.rpy",
+      "Source/game/jihyun_r13_e01.rpy",
+      "Source/game/options.rpy",
+      "Source/game/ria_r13_e01.rpy",
+      "Source/game/seoyun_r13_e01.rpy",
+      "Source/game/yujin_optional.rpy",
+      "Source/game/yujin_r13_e01.rpy"
+    ],
+    "slots": 95,
+    "labels_and_route_guards_preserved": true,
+    "non_yujin_state_writes_and_rewards_preserved": true,
+    "yujin_r14_state_delta": "Adds relationship_talk/reassured readiness; removes newly-produced reconsidered. Closure and continuation rewards unchanged.",
+    "yujin_r14_control_flow": "Reviewed change: relationship choice moves after work. Native tests verify order, both histories, closure/continuation and save/load.",
+    "reserved_scene_text_and_assets_unchanged": true,
+    "source_sha256": {
+      "Source/game/jihyun_r05_r12.rpy": "1fdadcc7e4bc9ed8aa91543702a4dcce71ac6baa1230c130c76a686f46205b8d",
+      "Source/game/jihyun_r13_e01.rpy": "efca7b1df10e4411a66a1ec1cc6283702b34a736a0c0c052b8598c18bc454238",
+      "Source/game/options.rpy": "21e38695a22ff76762a833a0827ce02c27e4b0aae444815455288c6ce07cf62b",
+      "Source/game/ria_r13_e01.rpy": "1cfe4517b1b338ec977ce3bc14dc0079df5edf606a914fcd13190a933f6abb9a",
+      "Source/game/seoyun_r13_e01.rpy": "93369d258cb6c5e20ca24621a1b38000a21e8dad1ed87441bb8c50c0bf5a2501",
+      "Source/game/yujin_optional.rpy": "9dad269ca44b054bf1d20adc048a7b2707ca9b7b7530b7f905957b0eedd7af0c",
+      "Source/game/yujin_r13_e01.rpy": "b6bcd96f7455da221d1d89d4c0237bd741ed97f0f9b305ee0f14ea7a5898cefa"
+    },
+    "limits": "Structure/state checks do not measure entertainment or prove every combination. Existing saves inside rewritten statements need platform play verification."
+  },
+  "official_sdk": {
+    "version": "8.5.3",
+    "sha256": "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45"
+  },
+  "windows_folder_modified": false,
+  "windows_executable_run": false,
+  "windows_package_built": false,
+  "player_research_performed": false,
+  "limits": "Nine selected regression suites; eight representative full routes. Not every historic suite/combination or old-save migration."
+}
