@@ -171,12 +171,12 @@ testsuite script_polish_checks:
             click expression yujin_test_choice(decision)
         advance until screen "choice"
         assert eval dating and memory.get("yujin_support_alignment_verified")
-        assert eval memory["yujin_r14_readiness"] == ["ready", "reconsidered", "talk_after"][decision]
-        assert eval ("아직 웃으면서 넘기기는 어려워요" in polish_history()) == (decision != 0)
+        assert eval memory["yujin_r14_readiness"] == ["ready", "reassured", "talk_after"][decision]
+        assert eval ("오늘 다 정리해서 말하려고 하진 말아요" in polish_history()) == (decision == 2)
         assert eval ("그럼 다시 기다릴까요" in polish_history()) == (decision == 0)
         click "다음 날의 만남까지" until not screen "choice"
         advance until screen "choice"
-        assert eval ("어제 얘기가 다 끝났다고 생각하진 않아요" in polish_history()) == (decision != 0)
+        assert eval ("어제 얘기가 다 끝났다고 생각하진 않아요" in polish_history()) == (decision == 2)
         click expression yujin_test_choice(0)
         advance until screen "choice"
         click expression yujin_test_choice(1)
