@@ -1,0 +1,99 @@
+name: Player flow validation
+on:
+  push:
+    branches: [story/player-flow-polish]
+    paths:
+      - Source/game/**
+      - Source/tests/player_flow_contract.py
+      - .github/workflows/player-flow.yml
+permissions:
+  contents: read
+env:
+  SDL_AUDIODRIVER: dummy
+  RENPY_RENDERER: sw
+jobs:
+  contracts-and-lint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Compare story/state contracts
+        run: |
+          mkdir -p "$RUNNER_TEMP/player-flow"
+          python3 Source/tests/player_flow_contract.py > "$RUNNER_TEMP/player-flow/contract.json"
+          cat "$RUNNER_TEMP/player-flow/contract.json"
+      - name: Fetch verified official SDK
+        run: |
+          curl --fail --location --retry 2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 -o "$RUNNER_TEMP/renpy-sdk.tar.bz2"
+          echo "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45  $RUNNER_TEMP/renpy-sdk.tar.bz2" | sha256sum --check
+          tar -xjf "$RUNNER_TEMP/renpy-sdk.tar.bz2" -C "$RUNNER_TEMP"
+          echo "SDK=$RUNNER_TEMP/renpy-8.5.3-sdk" >> "$GITHUB_ENV"
+      - name: RenPy lint
+        run: |
+          set +e
+          xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" lint --error-code > "$RUNNER_TEMP/player-flow/lint.log" 2>&1
+          status=$?
+          set -e
+          cat "$RUNNER_TEMP/player-flow/lint.log"
+          exit "$status"
+      - name: Preserve contract and lint
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: player-flow-contract
+          path: ${{ runner.temp }}/player-flow/
+          retention-days: 7
+  native:
+    needs: contracts-and-lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        task: [targeted, full-playthroughs]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Fetch verified official SDK
+        run: |
+          curl --fail --location --retry 2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 -o "$RUNNER_TEMP/renpy-sdk.tar.bz2"
+          echo "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45  $RUNNER_TEMP/renpy-sdk.tar.bz2" | sha256sum --check
+          tar -xjf "$RUNNER_TEMP/renpy-sdk.tar.bz2" -C "$RUNNER_TEMP"
+          echo "SDK=$RUNNER_TEMP/renpy-8.5.3-sdk" >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/player-flow"
+      - name: Run reviewed source in native engine
+        env:
+          TASK: ${{ matrix.task }}
+        run: |
+          if [ "$TASK" = "targeted" ]; then
+            suites="player_flow_checks script_polish_checks work_mini_checks common_romance review_continuity_checks full_editorial_checks yujin_final_checks"
+          else
+            suites="integrated_story_checks marriage_disclosure_checks"
+          fi
+          for suite in $suites; do
+            echo "RUNNING_SUITE=$suite"
+            set +e
+            xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" test "$suite" --savedir "$RUNNER_TEMP/saves-$suite" --overwrite-screenshots --report-detailed > "$RUNNER_TEMP/player-flow/$suite.stdout.log" 2>&1
+            status=$?
+            set -e
+            if [ -f Source/log.txt ]; then cp Source/log.txt "$RUNNER_TEMP/player-flow/$suite.log"; fi
+            cat "$RUNNER_TEMP/player-flow/$suite.stdout.log"
+            tail -n 18 "$RUNNER_TEMP/player-flow/$suite.log"
+            if [ "$status" -ne 0 ]; then exit "$status"; fi
+          done
+      - name: Preserve results and generated story transcripts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: player-flow-${{ matrix.task }}
+          path: |
+            ${{ runner.temp }}/player-flow/
+            Source/tests/screenshots/
+            Source/review-output/integrated-v1/*.json
+            Source/errors.txt
+            Source/traceback.txt
+          retention-days: 7

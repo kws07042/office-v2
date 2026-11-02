@@ -69,25 +69,10 @@ label yujin_r14:
             d "아까 정한 범위까지만요. 바뀌면 유진 씨가 먼저 말씀해 주시는 거죠?"
             y "네. 지금은 그대로예요. 같이 확인하니까 좀 덜 급해지네요."
             $ remember("yujin_r14_readiness", "rechecked")
-        "연애를 마치고 동료로 지내고 싶다고 말한다 — 관계 종료 확인으로 이어짐.":
-            d "업무는 합의한 대로 돕겠지만, 연애는 여기서 마치고 싶어요. 잠깐 쉬자는 뜻은 아니에요."
-            menu:
-                "연애를 마치겠다는 뜻을 확인한다.":
-                    y "알겠어요. 오늘 일은 일로 마치고, 그 뒤에는 서로 시간 좀 두면 좋겠어요."
-                    "검토에서는 정해 둔 역할을 수행하고 업무를 인계했다. 사적인 다음 약속은 잡지 않았다."
-                    $ dating = False
-                    $ remember("yujin_relationship_closed")
-                    $ ending = "yujin_relationship_closed"
-                    "유진 관계 종료 · 서로의 자리로"
-                    return
-                "결정을 취소하고, 합의한 역할로 검토를 준비한다.":
-                    d "제가 원하는 걸 아직 정리하지 못했어요. 끝내겠다는 결정은 취소할게요. 뒤에 시간을 잡고 제 마음도 제대로 말하고 싶어요."
-                    y "네. 그 얘기는 따로 듣고 싶어요. 지금 업무 약속은 그대로 준비할게요."
-                    $ remember("yujin_r14_readiness", "reconsidered")
-                "관계 종료 결정은 보류하고, 검토 뒤에 대화할 시간을 잡는다.":
-                    d "지금 결론 내리지는 않을게요. 검토 뒤에 제 마음부터 차분히 말씀드리고 싶어요."
-                    y "네. 업무가 끝나면 저도 제 마음 말씀드릴게요."
-                    $ remember("yujin_r14_readiness", "talk_after")
+        "검토를 마친 뒤, 둘의 관계에 관해 따로 이야기하자고 한다.":
+            d "퇴근하고 잠깐 이야기할 수 있을까요? 오늘은 회사 얘기 말고, 저희 둘 얘기요."
+            y "네. 저도 듣고 싶어요. 지금은 이 두 장부터 끝내고요."
+            $ remember("yujin_r14_readiness", "relationship_talk")
     $ location = "같은 금요일 오전 · 짧은 검토 회의"
     "첫 질문이 나왔다. 유진이 시안을 짚으며 색을 고른 이유부터 설명했다."
     if memory["yujin_r13_support_plan"] == "slides":
@@ -102,25 +87,51 @@ label yujin_r14:
         d "지금 질문은 수정할 부분과 유지할 부분, 두 가지입니다. 유진 씨가 차례로 설명하겠습니다."
         "도현이 멈추자 유진이 두 항목을 직접 비교해 답했다."
     "검토를 마친 뒤 유진은 확정한 수정 사항을 자기 작업 노트에 적었다. 시안 아래에는 유진의 이름이 남았다."
-    $ remember("yujin_support_alignment_verified")
-    $ remember("yujin_r14_performed_plan", memory["yujin_r13_support_plan"])
-    if memory.get("yujin_support_overstep"):
-        $ remember("yujin_support_repair_action_verified")
-        $ remember("yujin_support_repair_status", "resolved")
     $ location = "같은 금요일 퇴근 후 · 회사 앞"
-    if memory.get("yujin_r14_readiness") in ("talk_after", "reconsidered"):
-        d "아까 끝내자는 말 꺼냈죠. 지금 제 대답은, 계속 만나고 싶어요."
-        y "...저도요. 그런데 기다리는 동안엔 무슨 말 들을지 몰라서 힘들었어요."
-        d "미안해요. 아직 모르겠다는 말부터 했어야 했어요."
-        y "네. 모르시면 그렇게 말해 주세요. 끝이라고 했다가 바꾸시면, 저는 어디서 기다려야 할지 모르겠어요."
-        "도현은 바로 손을 내밀지 않고 고개를 끄덕였다."
-        d "네. 없던 말로 넘어가진 않을게요."
+    if memory.get("yujin_r14_readiness") == "relationship_talk":
+        "사람들이 빠져나간 뒤, 둘은 정류장 쪽으로 바로 가지 않고 회사 앞 벤치에 앉았다."
+        y "아까 하시려던 얘기요. 지금은 자료 안 봐도 되니까, 도현 씨 얼굴 보고 들을게요."
+        menu:
+            "연애를 마치고 동료로 지내겠다는 뜻을 분명히 전한다.":
+                d "저는 연인으로는 여기까지 만나고 싶어요. 잠깐 쉬자는 뜻은 아니에요."
+                "유진은 가방 끈을 쥐었다가 천천히 놓았다."
+                y "...알겠어요. 이유는 듣고 싶지만, 대답을 바꾸시라고 하지는 않을게요."
+                d "좋아하는 마음만으로 계속 만나겠다고 약속하기는 어려워요. 유진 씨가 오늘 뭘 잘못하셨다는 뜻은 아니고요."
+                y "네. 오늘 일은 함께 마쳤고요. 이제는 저도 혼자 돌아갈게요."
+                "도현은 붙잡지 않고 인사했다. 사적인 다음 약속은 잡지 않았다."
+                $ dating = False
+                $ remember("yujin_relationship_closed")
+                $ ending = "yujin_relationship_closed"
+                "유진 관계 종료 · 서로의 자리로"
+                return
+            "일 이야기에 가려졌던 좋아하는 마음을 먼저 말한다.":
+                d "요즘 만나면 작업 얘기부터 했잖아요. 오늘은 유진 씨가 보고 싶어서 기다렸다고 먼저 말하고 싶었어요."
+                y "...그 말 하시려고 따로 앉으신 거예요?"
+                d "네. 걸으면서 하면 또 버스 언제 오느냐는 얘기로 샐 것 같아서요."
+                "유진이 벤치 등받이에 기대다가 웃었다."
+                y "저 지금 꽤 긴장했는데요. 그럼 버스 한 대는 놓치셔야겠어요."
+                d "두 대째부터는 같이 시간표 봐요."
+                y "네. 첫 번째는 제 얘기 들으시고요."
+                $ remember("yujin_r14_readiness", "reassured")
+            "연애하면서 마음에 걸렸던 일을 꺼내고, 계속 만나고 싶은 마음도 전한다.":
+                if memory.get("yujin_support_overstep"):
+                    d "전에 제가 먼저 설명했던 일요. 사과한 뒤에도 또 앞서갈까 봐, 둘이 있을 때까지 말을 재게 되더라고요."
+                    y "오늘 기다려 주신 건 좋았어요. 그렇다고 저한테 하고 싶은 말까지 다 참으시면, 저는 그것도 모르잖아요."
+                    d "네. 저는 계속 만나고 싶어요. 실수 안 하겠다는 말만 하느라 그 말을 빼먹었네요."
+                    y "저도 계속 만나고 싶어요. 아직 서운한 게 남으면 그때 말씀드릴게요."
+                else:
+                    d "같이 만나서도 자꾸 작업부터 꺼내게 돼요. 유진 씨랑 할 말이 그것밖에 없는 사람처럼요."
+                    y "저도 보여 드릴 게 있어야 만나자고 하기 쉽더라고요. 도현 씨는 이제 그런 핑계 없어도 오실 것 같은데."
+                    d "네. 오늘도 그래서 기다렸어요. 앞으로도 만나고 싶고요."
+                    y "...그럼 다음엔 빈손으로 와 보세요. 저도 노트는 두고 나와 볼게요."
+                $ remember("yujin_r14_readiness", "talk_after")
         $ remember("yujin_r14_relationship_talk_completed")
-        "둘은 회사 앞에서 잠깐 말없이 섰다. 유진이 먼저 가방 끈을 어깨 위로 올렸다."
-        y "아직 웃으면서 넘기기는 어려워요. 그래도 지금은 같이 걷고 싶어요."
-        d "네. 오늘은 제가 옆에서 걸을게요."
-        "다음 말을 서두르지 않고 정류장까지 나란히 걸었다."
-    else:
+    if memory.get("yujin_r14_readiness") == "talk_after":
+        "도현은 손을 내밀려다 유진이 가방을 고쳐 메는 동안 기다렸다. 유진이 먼저 옆으로 한 걸음 다가왔다."
+        y "오늘 다 정리해서 말하려고 하진 말아요. 정류장까지는 그냥 같이 걷고 싶어요."
+        d "네. 제 얘기도 걷다가 생각나면 할게요."
+        "둘은 나란히 걸었다. 건널목 앞에서 멈췄을 때 유진의 손이 도현의 손등에 잠깐 닿았다."
+    elif memory.get("yujin_r14_readiness") != "reassured":
         if memory.get("yujin_support_overstep"):
             y "오늘은 제가 마지막 말까지 했네요. 도현 씨 쪽 봤을 때도 안 급해져서 좋았어요."
         else:
@@ -132,6 +143,11 @@ label yujin_r14:
         d "그럼 다시 기다릴까요?"
         y "아뇨. 이제 그만 기다리고 같이 가요."
         "유진이 먼저 걸음을 뗐다. 도현이 따라오자 이번에는 돌아보며 웃었다."
+    $ remember("yujin_support_alignment_verified")
+    $ remember("yujin_r14_performed_plan", memory["yujin_r13_support_plan"])
+    if memory.get("yujin_support_overstep"):
+        $ remember("yujin_support_repair_action_verified")
+        $ remember("yujin_support_repair_status", "resolved")
     $ remember("yujin_r14_complete")
     $ award_once("yujin_R14", "yujin", 8)
     return
