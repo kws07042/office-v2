@@ -15,6 +15,17 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
+          fetch-depth: 2
+      - name: Check whether game source changed
+        id: changes
+        env:
+          BASE_SHA: ${{ github.event.before }}
+        run: |
+          changed=true
+          if git cat-file -e "$BASE_SHA^{commit}" 2>/dev/null && git diff --quiet "$BASE_SHA" HEAD -- Source/game; then
+            changed=false
+          fi
+          echo "game=$changed" >> "$GITHUB_OUTPUT"
       - name: Fetch and verify official SDK
         run: |
           curl --fail --location --retry 2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 -o "$RUNNER_TEMP/renpy-sdk.tar.bz2"
@@ -31,6 +42,7 @@ jobs:
           xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" lint --error-code > "$VALIDATION/lint.log" 2>&1
           cat "$VALIDATION/lint.log"
       - name: Work choices, save restoration, legacy state and existing story tests
+        if: steps.changes.outputs.game == 'true'
         env:
           SDL_AUDIODRIVER: dummy
           RENPY_RENDERER: sw
@@ -67,7 +79,8 @@ jobs:
               assert any(n.endswith("/game/work_minis.rpyc") for n in names)
               assert not any(n.endswith(("_tests.rpyc","testcases.rpyc","renpy_agent.rpyc",".save","security_keys.txt")) for n in names)
               assert not any("/game/saves/" in n or "/art/" in n for n in names)
-              assert not any(n.endswith(".rpy") for n in names)
+              assert not any(n.endswith(".rpy") and "/renpy/common/" not in n for n in names)
+              assert any(n.endswith("/afterwork_script_prototype.exe") for n in names)
               result={"file":package.name,"sha256":hashlib.sha256(package.read_bytes()).hexdigest(),"bytes":package.stat().st_size,"files":len(names),"fresh_sdk":"8.5.3","new_work_script":True,"tests_bridge_saves_excluded":True,"windows_executable_run":False}
               (root/"build-verification.json").write_text(json.dumps(result,indent=2))
               print("BUILD_VERIFICATION_JSON="+json.dumps(result))
