@@ -87,6 +87,22 @@ label test_work_no_context:
             pass
     return
 
+label test_work_colleague_ending:
+    scene bg plain
+    $ work_style = work_fixture["style"]
+    $ c07_method = work_style
+    $ active_route = "colleague"
+    $ dating = False
+    $ memory = {}
+    $ affinity = {"ria": 17, "jihyun": 17, "yujin": 17, "seoyun": 17}
+    $ completed = ["fixture_prior"]
+    call work_mini_first
+    call end_common
+    menu:
+        "동료 결말 검사 종료":
+            pass
+    return
+
 testsuite work_mini_checks:
     before testcase:
         if not screen "main_menu":
@@ -167,6 +183,23 @@ testsuite work_mini_checks:
         assert eval not any(any(marker in h.what for marker in ("지난번", "첫 방문객 역할", "숨은 종이")) for h in _history_list)
         assert eval dating is False
         assert eval completed == ["fixture_prior"]
+
+    testcase colleague_wrapper_runs_both_events:
+        parameter style = ["verify", "coordinate", "try"]
+        $ work_fixture["style"] = style
+        run Start("test_work_colleague_ending")
+        advance until screen "choice"
+        click expression work_test_caption(1, 0) until not screen "choice"
+        advance until screen "choice"
+        assert eval chapter.startswith(work_mini_id(style, 2))
+        click expression work_test_caption(2, 0) until not screen "choice"
+        advance until screen "choice"
+        assert eval chapter.startswith("END_COMMON")
+        assert eval ending == "colleague" and dating is False
+        assert eval memory.get("work_stage_1") == work_mini_id(style, 1)
+        assert eval memory.get("work_stage_2") == work_mini_id(style, 2)
+        assert eval completed == ["fixture_prior"]
+        assert eval all(value == 17 for value in affinity.values())
 
     testcase standalone_preview_without_prologue_stays_unchanged:
         run Start("test_work_no_context")

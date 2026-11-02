@@ -22,6 +22,7 @@ init python:
     build.classify("**/three_choice_cases.json", None)
     build.classify("**/saves/**", None)
     build.classify(".renpy-agent/**", None)
+    build.classify("art/**", None)
     build.classify("story/**", None)
     build.classify("tools/**", None)
     build.classify("review-output/**", None)

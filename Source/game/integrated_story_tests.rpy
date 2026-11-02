@@ -17,6 +17,8 @@ init python:
             i = ["ria", "jihyun", "yujin", "seoyun"].index(route)
         elif chapter.startswith(("C06", "C07")) and len(caps) == 4:
             i = (["ria", "jihyun", "yujin", "seoyun"].index(route) + (1 if v else 0)) % 4
+        elif chapter.startswith("C07") and len(caps) == 3:
+            i = integrated_fixture["case"] % 3
         elif chapter.startswith("C01") and any("같이 놓죠" in c for c in caps):
             i = v
         elif "R04" in chapter and not dating:
@@ -2158,6 +2160,10 @@ testsuite integrated_story_checks:
             assert eval all(memory.get(k) != "shared" for k in ("ria_r07_intimacy", "ria_r12_intimacy", "ria_r15_intimacy")) == bool(case % 2)
         else:
             assert eval all(memory.get(active_route + "_" + slot + "_pace", memory.get(active_route + "_" + slot + "_intimacy")) != "shared" for slot in ("r07", "r12", "r15")) == bool(case % 2)
+        assert eval memory.get("work_stage_1") == work_mini_id(work_style, 1)
+        assert eval memory.get("work_stage_2") == work_mini_id(work_style, 2)
+        assert eval memory.get(work_mini_id(work_style, 1).lower().replace("w_", "work_") + "_complete")
+        assert eval memory.get(work_mini_id(work_style, 2).lower().replace("w_", "work_") + "_complete")
         $ integrated_dump()
         $ integrated_fixture["active"] = False
 

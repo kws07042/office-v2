@@ -62,7 +62,7 @@ jobs:
               assert z.testzip() is None
               assert any(n.endswith("/game/work_minis.rpyc") for n in names)
               assert not any(n.endswith(("_tests.rpyc","testcases.rpyc","renpy_agent.rpyc",".save","security_keys.txt")) for n in names)
-              assert not any("/game/saves/" in n for n in names)
+              assert not any("/game/saves/" in n or "/art/" in n for n in names)
               assert not any(n.endswith(".rpy") for n in names)
               result={"file":package.name,"sha256":hashlib.sha256(package.read_bytes()).hexdigest(),"bytes":package.stat().st_size,"files":len(names),"fresh_sdk":"8.5.3","new_work_script":True,"tests_bridge_saves_excluded":True,"windows_executable_run":False}
               (root/"build-verification.json").write_text(json.dumps(result,indent=2))
