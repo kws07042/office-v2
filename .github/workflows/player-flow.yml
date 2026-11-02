@@ -23,7 +23,8 @@ jobs:
       - name: Compare story/state contracts
         run: |
           mkdir -p "$RUNNER_TEMP/player-flow"
-          python3 Source/tests/player_flow_contract.py | tee "$RUNNER_TEMP/player-flow/contract.json"
+          python3 Source/tests/player_flow_contract.py > "$RUNNER_TEMP/player-flow/contract.json"
+          cat "$RUNNER_TEMP/player-flow/contract.json"
       - name: Fetch verified official SDK
         run: |
           curl --fail --location --retry 2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 -o "$RUNNER_TEMP/renpy-sdk.tar.bz2"

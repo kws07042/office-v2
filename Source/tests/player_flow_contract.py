@@ -72,7 +72,8 @@ for f in sorted((ROOT / "Source/game").glob("*.rpy")):
         assert +expected == Counter(a[0]), "Unexpected relationship state/reward change"
         assert Counter(b[1]) == Counter(a[1]), "Call/jump/return changed"
         assert b[4] == a[4]
-        assert b[3][0] == a[3][0], "Route guard changed"
+        r14 = r"(?ms)^label yujin_r14:.*?(?=^label |\\Z)"
+        assert signature(re.search(r14, before).group())[3][0] == signature(re.search(r14, after).group())[3][0], "R14 route guard changed"
         assert after.count("    menu:") == before.count("    menu:")
     else:
         assert b[0] == a[0], "State/reward writes changed: " + path

@@ -141,7 +141,7 @@ testsuite player_flow_checks:
         assert eval dating and memory["seoyun_marriage_state"] == "married_cohabiting"
         assert eval memory["seoyun_r15_pace"] == ["shared", "deferred", "talk"][case]
         assert eval completed.count("seoyun_R15") == 1
-        assert eval not any("이혼" in k for k in memory)
+        assert eval memory["seoyun_marriage_revealed"] and memory["seoyun_trust_status"] == "damaged_not_restored"
 
     testcase optional_sketch_actions_keep_their_own_memory:
         parameter case = list(range(3))
