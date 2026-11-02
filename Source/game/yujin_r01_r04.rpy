@@ -291,6 +291,7 @@ label yujin_early_route(through_r08=False, through_r12=False, full_route=False):
             call yujin_r07
             call yujin_r08
             if through_r12 or full_route:
+                call work_mini_second
                 call yujin_r09
                 call yujin_r10
                 if full_route:

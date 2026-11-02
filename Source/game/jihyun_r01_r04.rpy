@@ -271,6 +271,7 @@ label jihyun_early_route(full_route=False):
         call jihyun_r06
         call jihyun_r07
         call jihyun_r08
+        call work_mini_second
         call jihyun_r09
         call jihyun_r10
         call jihyun_o02_offer

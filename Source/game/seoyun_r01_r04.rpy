@@ -351,6 +351,7 @@ label seoyun_route:
     call seoyun_r06
     call seoyun_r07
     call seoyun_r08
+    call work_mini_second
     call seoyun_r09
     call seoyun_r10
     call seoyun_o02_offer

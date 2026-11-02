@@ -1,0 +1,98 @@
+name: Work mini-scenes validation
+on:
+  push:
+    branches: [story/work-mini-scenes]
+    paths:
+      - Source/game/**
+      - .github/workflows/work-mini-scenes.yml
+permissions:
+  contents: read
+jobs:
+  dialogue-and-save-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Check whether game source changed
+        id: changes
+        env:
+          BASE_SHA: ${{ github.event.before }}
+        run: |
+          changed=true
+          if git cat-file -e "$BASE_SHA^{commit}" 2>/dev/null && git diff --quiet "$BASE_SHA" HEAD -- Source/game; then
+            changed=false
+          fi
+          echo "game=$changed" >> "$GITHUB_OUTPUT"
+      - name: Fetch and verify official SDK
+        run: |
+          curl --fail --location --retry 2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 -o "$RUNNER_TEMP/renpy-sdk.tar.bz2"
+          echo "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45  $RUNNER_TEMP/renpy-sdk.tar.bz2" | sha256sum --check
+          tar -xjf "$RUNNER_TEMP/renpy-sdk.tar.bz2" -C "$RUNNER_TEMP"
+          echo "SDK=$RUNNER_TEMP/renpy-8.5.3-sdk" >> "$GITHUB_ENV"
+          echo "VALIDATION=$RUNNER_TEMP/work-mini-validation" >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/work-mini-validation"
+      - name: Check the reviewed source in an isolated runner
+        env:
+          SDL_AUDIODRIVER: dummy
+          RENPY_RENDERER: sw
+        run: |
+          xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" lint --error-code > "$VALIDATION/lint.log" 2>&1
+          cat "$VALIDATION/lint.log"
+      - name: Work choices, save restoration, legacy state and existing story tests
+        if: steps.changes.outputs.game == 'true'
+        env:
+          SDL_AUDIODRIVER: dummy
+          RENPY_RENDERER: sw
+        run: |
+          for suite in work_mini_checks common_romance integrated_story_checks; do
+            echo "RUNNING_SUITE=$suite"
+            set +e
+            xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" test "$suite" --savedir "$RUNNER_TEMP/saves-$suite" --overwrite-screenshots --report-detailed > "$VALIDATION/$suite.stdout.log" 2>&1
+            status=$?
+            set -e
+            cp Source/log.txt "$VALIDATION/$suite.log"
+            cat "$VALIDATION/$suite.stdout.log"
+            tail -n 18 "$VALIDATION/$suite.log"
+            if [ "$status" -ne 0 ]; then exit "$status"; fi
+          done
+      - name: Clean Windows package from the same reviewed sources
+        env:
+          SDL_AUDIODRIVER: dummy
+          RENPY_RENDERER: sw
+        run: |
+          set +e
+          xvfb-run -a "$SDK/renpy.sh" "$SDK/launcher" distribute "$GITHUB_WORKSPACE/Source" --destination "$VALIDATION/builds" --package win > "$VALIDATION/build.log" 2>&1
+          status=$?
+          set -e
+          cat "$VALIDATION/build.log"
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,zipfile
+          root=pathlib.Path(os.environ["VALIDATION"])
+          package=next((root/"builds").glob("*-win.zip"))
+          with zipfile.ZipFile(package) as z:
+              names=z.namelist()
+              assert z.testzip() is None
+              assert any(n.endswith("/game/work_minis.rpyc") for n in names)
+              assert not any(n.endswith(("_tests.rpyc","testcases.rpyc","renpy_agent.rpyc",".save","security_keys.txt")) for n in names)
+              assert not any("/game/saves/" in n or "/art/" in n for n in names)
+              assert not any(n.endswith(".rpy") and "/renpy/common/" not in n for n in names)
+              assert any(n.endswith("/afterwork_script_prototype.exe") for n in names)
+              result={"file":package.name,"sha256":hashlib.sha256(package.read_bytes()).hexdigest(),"bytes":package.stat().st_size,"files":len(names),"fresh_sdk":"8.5.3","new_work_script":True,"tests_bridge_saves_excluded":True,"windows_executable_run":False}
+              (root/"build-verification.json").write_text(json.dumps(result,indent=2))
+              print("BUILD_VERIFICATION_JSON="+json.dumps(result))
+          PY
+      - name: Keep validation records and private Windows build
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: work-mini-scenes-validation
+          path: |
+            ${{ runner.temp }}/work-mini-validation/
+            Source/traceback.txt
+            Source/errors.txt
+          if-no-files-found: warn
+          retention-days: 7

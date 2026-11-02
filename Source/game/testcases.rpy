@@ -180,6 +180,11 @@ testsuite common_romance:
         run FileSave("3", confirm=False)
         click "강리아와 다음 약속 잡기 — 친구 같은 동갑, 장난 속에서 특별해지는 연애." until not screen "choice"
         advance until screen "choice"
+        assert eval chapter.startswith("W_COORD01")
+        assert eval work_style == "coordinate"
+        click "각자 처음 보는 사람이 무엇을 알아야 하는지 묻는다." until not screen "choice"
+        advance until screen "choice"
+        assert eval memory.get("work_stage_1") == "W_COORD01"
         assert eval chapter.startswith("리아 R01")
         assert eval active_route == "ria"
         assert eval dating is False
@@ -187,6 +192,8 @@ testsuite common_romance:
         assert screen "choice" timeout 10.0
         assert eval chapter.startswith("C08")
         assert eval active_route is None
+        assert eval "work_stage_1" not in memory
+        assert eval work_style == "coordinate"
         assert eval memory.get("c06_ria_place_personal_moment") is True
         assert eval memory.get("c07_ria_afterwork_moment") is True
         assert eval affinity["ria"] == 14
