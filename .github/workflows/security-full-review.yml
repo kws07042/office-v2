@@ -1,0 +1,103 @@
+name: Full static security review
+on:
+  push:
+    branches: [security/renpy-review-2026-11-02]
+    paths:
+      - .github/workflows/security-full-review.yml
+      - .github/security/full_review.py
+permissions:
+  contents: read
+jobs:
+  static-and-clamav:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      AUDIT_OUTPUT: ${{ runner.temp }}/office-security-review
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test non-execution guarantees
+        run: python3 -I .github/security/full_review.py --selftest
+      - name: Inventory, official SDK comparison, compiled formats and reachable history
+        run: python3 -I .github/security/full_review.py
+      - name: Install local antivirus engine and update signatures
+        id: signatures
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq clamav
+          sudo systemctl stop clamav-freshclam || true
+          set +e
+          sudo freshclam --stdout > "$AUDIT_OUTPUT/freshclam.log" 2>&1
+          update_status=$?
+          cat "$AUDIT_OUTPUT/freshclam.log"
+          clamscan --version
+          echo "FRESHCLAM_EXIT=$update_status"
+          exit "$update_status"
+      - name: Scan every reachable unique Git blob without uploading samples
+        if: always()
+        run: |
+          if [ ! -d "$AUDIT_OUTPUT/scan-blobs" ]; then
+            echo 'CLAMAV_STATUS=not_run_missing_inventory'
+            exit 2
+          fi
+          set +e
+          clamscan --recursive --infected --allmatch --scan-archive=yes --max-filesize=128M --max-scansize=512M --max-recursion=64 --alert-exceeds-max=yes --log="$AUDIT_OUTPUT/clamav.log" "$AUDIT_OUTPUT/scan-blobs"
+          scan_status=$?
+          echo "CLAMAV_EXIT=$scan_status"
+          printf '%s\n' "$scan_status" > "$AUDIT_OUTPUT/clamav-exit.txt"
+          exit "$scan_status"
+      - name: Save reports only, no original private samples
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: security-review-static
+          path: |
+            ${{ runner.temp }}/office-security-review/*.json
+            ${{ runner.temp }}/office-security-review/*.log
+            ${{ runner.temp }}/office-security-review/*-exit.txt
+          if-no-files-found: warn
+          retention-days: 7
+  defender-current-checkout:
+    runs-on: windows-2025
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Microsoft Defender scan of checkout without running game
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $outputPath = Join-Path $env:RUNNER_TEMP 'office-defender'
+          New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
+          try {
+            $status = Get-MpComputerStatus
+            $status | Select-Object AMServiceEnabled,AntivirusEnabled,AntivirusSignatureVersion,AntivirusSignatureLastUpdated | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $outputPath 'status.json')
+            if (-not $status.AntivirusEnabled) { throw 'Defender antivirus is disabled on this hosted runner; no clean result can be claimed.' }
+            Update-MpSignature
+            $scanTool = Get-ChildItem -LiteralPath "$env:ProgramData\Microsoft\Windows Defender\Platform" -Directory |
+              Sort-Object Name -Descending |
+              ForEach-Object { Join-Path $_.FullName 'MpCmdRun.exe' } |
+              Where-Object { Test-Path -LiteralPath $_ } |
+              Select-Object -First 1
+            if (-not $scanTool) { $scanTool = "$env:ProgramFiles\Windows Defender\MpCmdRun.exe" }
+            & $scanTool -Scan -ScanType 3 -File $env:GITHUB_WORKSPACE -DisableRemediation 2>&1 |
+              Tee-Object -FilePath (Join-Path $outputPath 'scan.log')
+            $scanExit = $LASTEXITCODE
+            Write-Output "DEFENDER_EXIT=$scanExit"
+            Set-Content -LiteralPath (Join-Path $outputPath 'scan-exit.txt') -Value $scanExit
+            exit $scanExit
+          } catch {
+            $_.Exception.Message | Tee-Object -FilePath (Join-Path $outputPath 'error.log')
+            Write-Output 'DEFENDER_STATUS=unavailable_or_failed'
+            exit 2
+          }
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: security-review-defender
+          path: ${{ runner.temp }}/office-defender/*
+          if-no-files-found: warn
+          retention-days: 7
