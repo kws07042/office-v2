@@ -196,6 +196,7 @@ t+='''        assert eval memory.get("seoyun_test_complete") and seoyun_test_don
 
     testcase preview_entry:
         screenshot "seoyun-main-menu.png"
+        run ShowMenu("office_dev_menu")
         click id "seoyun_preview_button"
         advance until screen "office_phone"
         assert eval active_route=="seoyun" and phone_active_contact=="seoyun" and not memory.get("seoyun_intro")

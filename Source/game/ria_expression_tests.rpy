@@ -90,7 +90,8 @@ testsuite ria_expression_checks:
 
     testcase main_menu_entry:
         screenshot "ria-expression-main-menu.png"
-        click id "ria_r02_preview_button" until not screen "main_menu"
+        run ShowMenu("office_dev_menu")
+        click id "ria_r02_preview_button" until not screen "office_dev_menu"
         assert eval chapter == "리아 R02 · 문 닫힌 가게 앞에서"
         assert eval ria_expression == "serious"
         assert eval speech_informal is True

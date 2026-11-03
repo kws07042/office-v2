@@ -135,40 +135,8 @@ screen choice(items):
 
 screen main_menu():
     tag menu
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
-    frame:
-        xpos 82 ypos 62 xsize 580 ysize 596 padding (40, 34)
-        background cream_round("panel")
-        vbox:
-            spacing 14
-            text "AFTER WORK, WITH YOU" size 15 color "#a38d9f" kerning 2
-            text "퇴근 후, 우리" size 58 color "#79608d"
-            text "초여름, 퇴근 이후의 이야기" size 23 color "#80737f"
-            null height 12
-            textbutton "처음부터 읽기" action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()] id "start_button" xsize 490
-            textbutton "이어 읽기" action ShowMenu("load") xsize 490
-            hbox:
-                spacing 14
-                textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" xsize 238 text_size 20
-                textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" xsize 238 text_size 20
-            hbox:
-                spacing 14
-                textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" xsize 238 text_size 20
-                textbutton "R08 메신저 확인" action Start("office_phone_preview") id "phone_preview_button" xsize 238 text_size 20
-            hbox:
-                spacing 14
-                textbutton "설정" action ShowMenu("preferences") xsize 238
-                if not renpy.variant("web"):
-                    textbutton "종료" action Quit(confirm=False) xsize 238
-            text "네 히로인 전체 대본 · 아트 준비 중" size 15 color "#9c8f98"
-    textbutton "지현 전체 대본 확인":
-        id "jihyun_preview_button"
-        xpos 730 ypos 545 xsize 430
-        action Start("jihyun_early_preview")
-    textbutton "서윤 전체 대본 확인":
-        id "seoyun_preview_button"
-        xpos 730 ypos 610 xsize 430
-        action Start("seoyun_preview")
+    default title_person = "ria"
+    use office_title_menu(title_person)
 
 screen quick_menu():
     zorder 100
@@ -212,41 +180,15 @@ init python:
 
 screen preferences():
     tag menu
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
-    frame:
-        xalign 0.5 yalign 0.5 xsize 720 padding (42, 35)
-        background cream_round("panel")
-        vbox:
-            spacing 22
-            text "설정" size 36 color "#79608d"
-            text "글자 표시 속도" size 23
-            bar value Preference("text speed") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
-            textbutton "글자 즉시 표시" action Preference("text speed", 0)
-            textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
-            text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#796d82" line_spacing 4 xmaximum 620
-            textbutton "돌아가기" action Return()
-            if not main_menu:
-                textbutton "처음 화면" action MainMenu(confirm=True)
+    use office_preferences
 
 screen file_slots(mode):
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
-    frame:
-        xalign 0.5 yalign 0.5 xsize 990 padding (35, 28)
-        background cream_round("panel")
-        vbox:
-            spacing 15
-            text ("저장" if mode == "save" else "불러오기") size 36 color "#79608d"
-            text "대사와 선택·기억을 함께 저장합니다." size 20 color "#9a8995"
-            for slot in range(1, 5):
-                $ slot_name = str(slot)
-                textbutton ("슬롯 " + slot_name + "  ·  " + FileTime(slot_name, format="%m월 %d일 %H:%M", empty="비어 있음")):
-                    xsize 920
-                    action (FileSave(slot_name, confirm=True) if mode == "save" else FileLoad(slot_name, confirm=True))
-            textbutton "돌아가기" action Return()
+    use office_file_slots(mode)
 
 screen save():
     tag menu
     use file_slots("save")
+
 screen load():
     tag menu
     use file_slots("load")
@@ -280,17 +222,7 @@ screen history():
 screen confirm(message, yes_action, no_action):
     modal True
     zorder 200
-    add Solid("#32243899")
-    frame:
-        xalign 0.5 yalign 0.5 xsize 800 padding (35, 30)
-        background cream_round("panel")
-        vbox:
-            spacing 24
-            text message size 26
-            hbox:
-                spacing 25
-                textbutton "예" action yes_action
-                textbutton "아니요" action no_action
+    use office_confirm(message, yes_action, no_action)
 
 translate None strings:
     old "Are you sure?"
@@ -301,3 +233,5 @@ translate None strings:
     new "저장하지 않은 진행은 사라집니다. 불러올까요?"
     old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
     new "저장하지 않은 진행을 마치고 처음 화면으로 돌아갈까요?"
+    old "Are you sure you want to quit?"
+    new "오늘의 이야기를 마칠까요?"

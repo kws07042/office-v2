@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-03",
+  "surface": "Codex in-app browser",
+  "url": "http://127.0.0.1:8765/Preview/index.html",
+  "checks": [
+    {"name": "all four heroine illustrations and captions switch", "passed": true},
+    {"name": "settings entry and return", "passed": true},
+    {"name": "typing toggle on/off", "passed": true},
+    {"name": "motion toggle on/off", "passed": true},
+    {"name": "text-speed keyboard adjustment and sample", "passed": true},
+    {"name": "settings retained after page reload", "passed": true},
+    {"name": "load shows four disabled empty slots", "passed": true},
+    {"name": "Escape returns to title", "passed": true},
+    {"name": "start opens the preview scene and returns", "passed": true},
+    {"name": "quit confirmation cancellation, acceptance and reopen", "passed": true},
+    {"name": "intro Enter skip", "passed": true},
+    {"name": "intro click skip", "passed": true},
+    {"name": "intro automatically ends and does not replay on menu return", "passed": true},
+    {"name": "no missing HTML image elements", "passed": true},
+    {"name": "no captured browser warning/error logs", "passed": true},
+    {"name": "whole stage visible and settings container does not scroll on focus", "passed": true}
+  ],
+  "fixes": ["Moved logo/copy to eliminate overlapping ornament.", "Fit 16:9 stage to both window dimensions.", "Changed stage clipping to prevent focus-induced 80px internal scrolling."],
+  "not_verified": ["RenPy runtime, lint and real save/load roundtrip (automatic approval review blocked SDK execution)", "full game regression", "audio", "browser fullscreen API on every platform"]
+}

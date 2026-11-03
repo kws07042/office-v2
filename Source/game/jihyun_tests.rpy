@@ -113,6 +113,7 @@ testsuite jihyun04_checks:
 
     testcase preview_entry:
         screenshot "review-jihyun-main-menu.png"
+        run ShowMenu("office_dev_menu")
         click id "jihyun_preview_button"
         advance until screen "office_phone"
         assert eval active_route == "jihyun" and phone_active_contact == "jihyun"

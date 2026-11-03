@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-03",
+  "static_checks": [
+    {
+      "check": "ria CG original bytes",
+      "passed": true
+    },
+    {
+      "check": "jihyun CG original bytes",
+      "passed": true
+    },
+    {
+      "check": "yujin CG original bytes",
+      "passed": true
+    },
+    {
+      "check": "seoyun CG original bytes",
+      "passed": true
+    },
+    {
+      "check": "dark logo 1200x700 RGBA transparency",
+      "passed": true
+    },
+    {
+      "check": "light logo 1200x700 RGBA transparency",
+      "passed": true
+    },
+    {
+      "check": "standalone animation 5000ms with merged identical frames",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource title.css",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/cafe_evening_v001.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/ria.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/jihyun.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/yujin.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/seoyun.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_dark_transparent.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_dark_transparent.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/cafe_evening_v001.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_light_motif.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_light_first.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_light_second.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_light_subtitle.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../Source/game/gui/title/logo_light_transparent.png",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource ../README.md",
+      "passed": true
+    },
+    {
+      "check": "HTML local resource title.js",
+      "passed": true
+    },
+    {
+      "check": "CSS local resource ../Source/game/gui/title/bottom_shade.png",
+      "passed": true
+    },
+    {
+      "check": "CSS local resource ../Source/game/gui/title/mote.png",
+      "passed": true
+    },
+    {
+      "check": "CSS local resource ../Source/game/gui/title/menu_wash.png",
+      "passed": true
+    },
+    {
+      "check": "CSS local resource ../Source/game/gui/title/light_bloom.png",
+      "passed": true
+    },
+    {
+      "check": "CSS local resource ../Source/game/gui/title/menu_veil.png",
+      "passed": true
+    },
+    {
+      "check": "CSS local resource ../Source/game/fonts/NanumMyeongjo-Regular.ttf",
+      "passed": true
+    },
+    {
+      "check": "Python expression at line 141",
+      "passed": true
+    },
+    {
+      "check": "Python expression at line 142",
+      "passed": true
+    },
+    {
+      "check": "Python expression at line 247",
+      "passed": true
+    },
+    {
+      "check": "static Python parse prepare_jihyun04_tests.py",
+      "passed": true
+    },
+    {
+      "check": "static Python parse prepare_seoyun_tests.py",
+      "passed": true
+    },
+    {
+      "check": "single screen main_menu",
+      "passed": true
+    },
+    {
+      "check": "single screen preferences",
+      "passed": true
+    },
+    {
+      "check": "single screen save",
+      "passed": true
+    },
+    {
+      "check": "single screen load",
+      "passed": true
+    },
+    {
+      "check": "single screen confirm",
+      "passed": true
+    },
+    {
+      "check": "four original save identifiers",
+      "passed": true
+    },
+    {
+      "check": "normal save/load confirmation kept",
+      "passed": true
+    },
+    {
+      "check": "no game save-directory change",
+      "passed": true
+    },
+    {
+      "check": "development entries isolated",
+      "passed": true
+    },
+    {
+      "check": "ShowMenu transition keyword matches official SDK",
+      "passed": true
+    }
+  ],
+  "static_check_count": 44,
+  "browser_tests": "See browser_checks.json and screenshots.",
+  "renpy_execution": "BLOCKED by automatic approval review before execution; SDK hash verified, executable static-review premise not accepted. No RenPy lint or runtime pass claimed.",
+  "sdk": {
+    "version": "8.5.3",
+    "url": "https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.zip",
+    "sha256": "ff57648f9c04f27e381c48af6d8e3ee3cdec296bed4d3831f47f09b0a71b505e",
+    "used_original_game_binary": false,
+    "used_personal_save": false
+  }
+}

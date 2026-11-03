@@ -126,6 +126,7 @@ testsuite yujin_early_checks:
         click id "phone_archive_close"
 
     testcase main_menu_preview:
+        run ShowMenu("office_dev_menu")
         click id "yujin_preview_button"
         advance until screen "office_phone"
         assert eval active_route == "yujin" and phone_active_contact == "yujin"

@@ -1,0 +1,30 @@
+[
+  {
+    "person": "ria",
+    "source": "outputs\\cg_v003\\ria_r07_v005.png",
+    "target": "Source\\game\\gui\\title\\ria.png",
+    "sha256": "b1cb1e88194d6f2efadc36b45b8bb5b6af405b2194aac3326693c62b79129169",
+    "original_bytes_unchanged": true
+  },
+  {
+    "person": "jihyun",
+    "source": "outputs\\cg_v003\\jihyun_r10_miniature_v005.png",
+    "target": "Source\\game\\gui\\title\\jihyun.png",
+    "sha256": "b36456a34ac364d16564bfbc5b1baa1e13b140c0bdb56c968e720316cb7b9ed5",
+    "original_bytes_unchanged": true
+  },
+  {
+    "person": "yujin",
+    "source": "outputs\\cg_v003\\yujin_o02_sketch_v001.png",
+    "target": "Source\\game\\gui\\title\\yujin.png",
+    "sha256": "1ccb9895755dd185020763b4d21ee1e5da83f572c00337563b40e946c7228c28",
+    "original_bytes_unchanged": true
+  },
+  {
+    "person": "seoyun",
+    "source": "outputs\\cg_v003\\seoyun_r02_reading_v003.png",
+    "target": "Source\\game\\gui\\title\\seoyun.png",
+    "sha256": "dcb5aae2067b5407ad1d17feeac307ec53361a9d1d44468c57f01333fead8448",
+    "original_bytes_unchanged": true
+  }
+]

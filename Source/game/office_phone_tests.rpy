@@ -162,7 +162,8 @@ testsuite office_phone_checks:
         click id "phone_photo_close"
 
     testcase main_menu_preview_and_archive:
-        click id "phone_preview_button" until not screen "main_menu"
+        run ShowMenu("office_dev_menu")
+        click id "phone_preview_button" until not screen "office_dev_menu"
         advance until screen "office_phone"
         assert eval dating is True and active_route == "ria"
         assert eval phone_message("r08_morning_1") is not None
