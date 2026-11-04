@@ -1,8 +1,12 @@
 # 타이틀 키 비주얼 · 2026-11-04
 
-현재 보관본: [title_escalator_jihyun_arm_lowered_v002.png](assets/title/title_escalator_jihyun_arm_lowered_v002.png)
+현재 외형 기준·보관본: [title_escalator_jihyun_arm_lowered_v002.png](assets/title/title_escalator_jihyun_arm_lowered_v002.png)
 
 ![현재 타이틀 이미지](assets/title/title_escalator_jihyun_arm_lowered_v002.png)
+
+## 외형 기준 지정 · 2026-11-04
+
+사용자 요청에 따라 이 사진을 네 히로인의 현행 외형·업무복·공통 작화 기준으로 지정했다. [통합 외형 기준](APPEARANCE_CURRENT.md) 및 [리아](character_art_02_RIA.md)·[지현](character_art_03_JIHYUN.md)·[유진](character_art_04_YUJIN.md)·[서윤](character_art_05_SEOYUN.md) 문서에 얼굴·헤어·의상·사원증과 미확인 범위를 반영했다. 이전 개별 마스터와 충돌하면 이 기준을 우선한다. 인물의 성격·나이·직무·대본은 유지한다.
 
 ## 현재 버전 · v002
 - 백지현이 허리에 얹던 팔을 몸 옆으로 자연스럽게 내린 자세로 변경.
@@ -24,4 +28,4 @@
 - v001은 이력으로 유지하며 현재 보관본은 위의 v002를 따른다.
 
 ## 적용 범위
-사용자 요청에 따른 이미지 자료 보관이다. 게임 실행 파일과 타이틀 UI 코드는 변경하지 않았다. 게임 표시 크기 변환·UI 배치·최종 인게임 검수는 별도 작업이다.
+타이틀 이미지와 새 외형 기준 문서의 보관이다. 합쳐진 평면 PNG이며 새 외형의 개별 입상·파츠 제작 완료를 뜻하지 않는다. 게임 실행 파일과 타이틀 UI 코드는 변경하지 않았다. 게임 표시 크기 변환·UI 배치·최종 인게임 검수는 별도 작업이다.
