@@ -324,7 +324,7 @@ label seoyun_r04:
                 $ remember("seoyun_confession_accepted")
                 $ award_once("seoyun_R04", "seoyun", 5)
             "좋아하는 마음과 첫 연애의 서툼을 조금 더 말한다." if not seoyun_prepared:
-                d "좋아하는 마음은 분명해요. 저는 첫 연애라서, 장난인지 진심인지 혼자 정리하다 늦게 말할 수도 있을 것 같아요."
+                d "저도 좋아해요. 근데 저, 연애는 처음이라서요. 서윤 씨가 장난으로 한 말인지 혼자 고민하다가 답이 늦을 수도 있어요."
                 s "그땐 물어봐 줘. 나도 농담으로 들리게 말했으면 다시 말할게. 다 알아듣는 사람을 만나고 싶은 건 아니니까."
                 d "네. 저도 먼저 보고 싶다고 말할게요. 다음 대답을 혼자 정해 두지 않고요."
                 $ seoyun_prepared = True
@@ -427,7 +427,7 @@ label seoyun_route:
                     $ remember("seoyun_epilogue_skipped")
                 "다음에도 보고 싶다고 말하고 후일담 읽기":
                     d "다음에도 제가 먼저 만나자고 할게요."
-                    s "응. 다음 날짜도 내 대답도 같이 들으면서."
+                    s "응. 근데 나도 보고 싶으면 먼저 연락할 거야. 그건 양보 못 해~"
                     $ remember("seoyun_epilogue_bridge")
                     call seoyun_e01
     return

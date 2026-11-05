@@ -194,7 +194,7 @@ label jihyun_r03:
     else:
         call phone_deliver("jihyun_r03_personal", "jihyun", "업무 의견 고맙다는 말 말고 하나 더. 지난 토요일에 같이 쉰 게 좋았어. 다음에도 회사 밖에서 만나고 싶어.", contact="jihyun", important=True)
     call phone_deliver("jihyun_r03_reply", "dohyun", "저도요. 금요일 저녁 일곱 시 괜찮으세요? 이번에는 제가 따로 말씀드리고 싶은 게 있어요.", contact="jihyun")
-    call phone_deliver("jihyun_r03_confirm", "jihyun", "괜찮아. 회사 앞 카페에서 보자. 그 말도 같이 기다릴게.", contact="jihyun")
+    call phone_deliver("jihyun_r03_confirm", "jihyun", "좋아. 회사 앞 카페에서 보자. 무슨 얘긴지는 금요일까지 참아 볼게.", contact="jihyun")
     $ remember("jihyun_r04_appointment", "금요일 저녁 일곱 시, 회사 앞 카페")
     $ award_once("jihyun_R03", "jihyun", 8)
     $ progression_note_ending()
@@ -226,9 +226,9 @@ label jihyun_r04:
                 $ award_once("jihyun_R04", "jihyun", 5)
             "마음은 있지만, 내 서툼과 회사에서의 경계를 조금 더 이야기한다." if not jihyun_prepared:
                 d "저 연애는 처음이에요. 좋아하는 마음은 분명한데, 일할 때와 구분하려고 제 마음을 너무 늦게 말할까 봐요."
-                j "나도 연애를 아주 익숙하게 하는 쪽은 아니야. 그래도 지금 원하는 건 회사가 아니라 여기서 같이 고를 수 있겠지."
+                j "나도 이런 얘기 잘하는 편 아니야. 그래도 지금은 팀장한테 보고하는 자리 아니잖아. 좀 늦어도 그냥 말해."
                 d "의견이 다르면 일에서는 그대로 말할게요. 보고 싶을 때도 따로 말씀드리고요."
-                j "좋아. 부탁을 안 들어줬다고 마음까지 없다고 짐작하진 않을게. 도현 씨도 내 표정으로 먼저 결론 내리지 말고."
+                j "좋아. 일로 반대했다고 나까지 싫어진 줄 안다거나, 그런 건 하지 말자. 나도 네 마음 혼자 짐작 안 할게."
                 $ jihyun_prepared = True
                 $ remember("jihyun_prepared_conversation")
             "이번 회차는 연애를 시작하지 않고 동료로 지낸다 — 동료 결말로 이어짐.":
@@ -318,7 +318,7 @@ label jihyun_early_route(full_route=False):
                         $ remember("jihyun_epilogue_skipped")
                     "다음에도 만나고 싶다고 한마디 나누고 후일담 읽기":
                         d "다음에도 제가 먼저 만나자고 할게요."
-                        j "응. 나는 기다리는 쪽도 기꺼이 해 볼게."
+                        j "좋아. 이번엔 내가 네 연락 기다려 볼게."
                         $ remember("jihyun_epilogue_bridge")
                         call jihyun_e01
     elif memory.get("jihyun_r04_complete"):

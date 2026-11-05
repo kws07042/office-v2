@@ -223,21 +223,33 @@ label yujin_r07:
     y "순한 걸로 골랐어요. 물은 제 거 드셔 보고 싶어 하실까 봐요."
     d "표정에 써 있었어요?"
     y "아까부터 제 접시만 보셨잖아요~"
-    "도현은 자기 것을 먼저 먹었다. 유진은 재촉하지 않고 한 입 먹는 그의 표정을 기다렸다. 식사 뒤, 낮에 약속했던 작은 그림을 보러 유진의 집에 들렀다."
+    "식당을 나와 횡단보도 앞을 지나는데 유진이 무인 사진관 문을 잡았다. 도현은 유진이 안쪽을 구경하고 나올 줄 알았다. 유진은 이미 두 사람 몫을 결제하고 있었다."
+    y "저랑 찍어요. 사진 잘 나오는 표정 말고, 아까 제 접시 볼 때 하신 표정으로요."
+    d "그 표정으로 찍으면 사진 못 가져가요."
+    y "그럼 저 주세요. 제가 보고 싶어서 찍는 건데요~"
+    "첫 컷에서 둘 다 카메라를 봤다. 두 번째 컷을 앞두고 도현이 몸을 틀었다."
+    d "이번에는 유진 씨 보고 있어도 돼요?"
+    "유진은 남은 초를 확인하지 않고 고개를 돌렸다. 셔터가 울린 건 둘 다 웃고 난 뒤였다."
+    "사진이 나오자 유진이 두 번째 컷을 손가락으로 짚었다. 그 사진이 든 한 장은 자기가 가져가겠다며 먼저 챙겼다. 둘은 낮에 약속했던 작은 그림을 보러 유진의 집에 들렀다."
     $ location = "같은 토요일 저녁 · 유진의 집"
     y "이건 일로 그린 건 아니에요. 집 창가에서 보이던 그림자를 남겨 봤어요."
     d "아까 식당에서는 제 표정 기다리시더니. 이번엔 제가 기다릴게요. 어디부터 보여 주고 싶으세요?"
     "유진은 그림을 가리키려던 손을 내렸다."
     y "그림은 아까부터 보여 드리고 싶었는데... 지금은 도현 씨가 오래 봐 주시는 게 더 좋네요."
     d "조금 더 있을래요. 그림 다 봤다고 바로 가긴 싫어서요."
-    "차를 내온 유진이 도현 쪽 잔의 손잡이를 돌려놓았다. 이번에는 눈을 피하지 않았다."
+    "유진은 그림 옆에 사진을 세웠다. 두 잔 사이로 몸을 조금 기울여 도현의 얼굴을 보았다."
+    y "아까 두 번째 사진 있잖아요. 찍히기 전에 도현 씨가 먼저 저 봤죠."
+    d "네. 실은 첫 번째부터 그러고 싶었어요."
+    y "저도요. 지금도 카메라 없으니까 더 오래 봐도 되죠?"
+    "도현이 유진 쪽으로 앉은 방향을 바꿨다. 둘 사이에 놓여 있던 찻잔은 손도 대지 않은 채였다."
     y "오늘은 조금 더 가까이 있고 싶어요. 여기서 같이 밤을 보내고 싶은데... 도현 씨는요?"
     $ progression_enter("yujin_r07.choice01")
     $ progression_checkpoint("yujin_r07.choice01")
     menu:
         "나도 함께 밤을 보내고 싶다고 답한다 — 친밀한 장면으로 이어짐.":
             d "저도 같은 마음이에요. 오늘은 같이 있고 싶어요."
-            y "네. 그럼 오늘은 저도 조금 천천히 말할게요. 준비해 온 말 말고요."
+            "유진이 먼저 도현의 손을 잡았다. 시선을 내린 건 도현 쪽이었다."
+            y "손 차갑죠? 사진 찍을 때도 이랬어요. 도현 씨만 긴장한 줄 알았죠?"
             call event_sequence("yujin_r07", "casual")
             if not event_main_reached:
                 "(거사 — 장면 생략)"
@@ -252,11 +264,11 @@ label yujin_r07:
         "마음을 조금 더 이야기한 뒤 오늘은 각자 쉬자고 한다.":
             d "가까워지고 싶은 마음은 같아요. 오늘은 그 얘기를 조금 더 하고 갈래요."
             y "네. 그럼 차가 식기 전까지요. 먼저 말씀해 주셔서 좋아요."
-            d "아까 물잔 주실 때, 매운 거 못 먹으면 좀 멋없을까 생각했어요."
-            y "저는 남겨 두고 제 것만 뺏어 드실까 봐요."
-            d "그 걱정이 먼저였어요?"
-            y "네~ 매운 거 못 드셔도 같이 먹는 건 좋은데요. 다음에도 두 접시로요."
-            "유진이 빈 접시 모양으로 손을 벌려 보이자 도현도 웃었다. 차를 마저 마시고 귀가할 시각에 일어났다."
+            d "아까 사진 찍기 전에 긴장한 거 들켰어요?"
+            y "네. 첫 컷에서 제 어깨에 손 올리려다가 내리셨잖아요."
+            d "그것도 보셨어요?"
+            y "거울에 다 비쳤어요. 다음에 찍을 땐 물어봐 주세요. 저 아마 된다고 할걸요."
+            "도현은 차를 마저 마시고 일어났다. 현관을 나가기 전 주머니에서 사진을 꺼내 한 번 더 봤다."
             $ remember("yujin_r07_pace", "talk")
     $ remember("yujin_personal_drawing_seen", "집 창가의 그림자")
     $ award_once("yujin_R07", "yujin", 0)
@@ -281,11 +293,11 @@ label yujin_r08:
         $ remember("yujin_r08_morning_shared")
     $ location = "같은 일요일 오후 · 각자의 집, 개인 메시지"
     if memory.get("yujin_r07_pace") == "shared":
-        call phone_deliver("yujin_r08_memory", "yujin", "커튼 아직 그대로예요. 점심도 아침에 옮겨 앉은 쪽에서 먹었어요. 그늘보다 빈자리가 먼저 보이네요 :)", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "어제 두 번째 사진, 그림 옆에 뒀어요. 오늘 아침에도 도현 씨가 저렇게 봤는데 그땐 사진이 없네요.", contact="yujin")
     elif memory.get("yujin_r07_pace") == "talk":
-        call phone_deliver("yujin_r08_memory", "yujin", "어제 두 접시로 먹자고 한 거요. 잘한 것 같아요. 제 매운맛까지 드시면 아까웠을 거예요~", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "사진 다시 보니까 도현 씨 손 망설인 거 첫 컷에 다 나왔어요. 그거 보고 제가 웃은 것도요~", contact="yujin")
     else:
-        call phone_deliver("yujin_r08_memory", "yujin", "집에서 푹 쉬셨어요? 어제 보여 드린 그림 옆에 날짜도 적어 뒀어요. 같이 본 날로요.", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "푹 쉬셨어요? 사진 정리하다 보니까 저희 둘 다 카메라 안 보는 게 제일 잘 나왔어요. 다음에도 그걸로 찍어요~", contact="yujin")
     if memory.get("yujin_r06_expression") == "think_first":
         call phone_deliver("yujin_r08_invite", "yujin", "다음 주 수요일에 잠깐 만날까요? 생각해 보시고 편한 시간 알려 주세요. 저는 목요일도 괜찮아요.", contact="yujin")
     else:
@@ -298,7 +310,7 @@ label yujin_r08:
     $ phone_context = None
     if memory["yujin_r08_availability"] == "wed19":
         $ remember("yujin_r08_next_appointment", "수요일 저녁 일곱 시, 회사 근처 카페")
-        call phone_deliver("yujin_r08_reply", "dohyun", "수요일 일곱 시 좋아요. 회사 근처 카페에서 봬요.", contact="yujin")
+        call phone_deliver("yujin_r08_reply", "dohyun", "수요일엔 일곱 시쯤 나올 수 있어요. 회사 근처 카페에서 볼까요?", contact="yujin")
     elif memory["yujin_r08_availability"] == "thu19":
         $ remember("yujin_r08_next_appointment", "목요일 저녁 일곱 시, 회사 근처 카페")
         call phone_deliver("yujin_r08_reply", "dohyun", "저는 목요일 일곱 시가 더 편해요. 회사 근처 카페는 어때요?", contact="yujin")
@@ -306,11 +318,11 @@ label yujin_r08:
         $ remember("yujin_r08_next_appointment", "수요일 저녁 일곱 시 반, 회사 근처 카페")
         call phone_deliver("yujin_r08_reply", "dohyun", "수요일 일곱 시 반이면 좋아요. 제 일 마무리하고 카페로 갈게요.", contact="yujin")
     if memory["yujin_r08_availability"] == "wed19":
-        call phone_deliver("yujin_r08_confirm", "yujin", "수요일 일곱 시! 컵 받침의 꽃이 바뀌어도 이제 해바라기라고는 안 하시겠죠~", contact="yujin", important=True)
+        call phone_deliver("yujin_r08_confirm", "yujin", "네, 거기 좋아요. 컵 받침 이번에도 해바라기라고 하시면 저 진짜 사진 찍어 둘 거예요~", contact="yujin", important=True)
     elif memory["yujin_r08_availability"] == "thu19":
-        call phone_deliver("yujin_r08_confirm", "yujin", "목요일 일곱 시로 적었어요. 수요일에 먼저 가 앉아 있지는 않을게요~", contact="yujin", important=True)
+        call phone_deliver("yujin_r08_confirm", "yujin", "목요일 일곱 시에 봬요. 이번에도 제가 창가 자리부터 볼게요.", contact="yujin", important=True)
     else:
-        call phone_deliver("yujin_r08_confirm", "yujin", "일곱 시 반이요. 먼저 가면 제 음료부터 고를게요. 도현 씨 건 오시면 같이요!", contact="yujin", important=True)
+        call phone_deliver("yujin_r08_confirm", "yujin", "일곱 시 반도 괜찮아요. 먼저 도착하면 자리 잡고 연락드릴게요.", contact="yujin", important=True)
     $ remember("yujin_r08_proposer", "yujin")
     $ location = "같은 일요일 오후 · 유진의 집 — 유진 시점"
     "유진은 확정한 약속을 달력에 적었다. ‘그때까지 보고 싶으면 또 연락해도 되죠?’라고 쓰다가 전송하지 않고 지웠다."

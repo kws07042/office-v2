@@ -395,7 +395,7 @@ label ria_r12:
     call ria_r12_plan_pick
     if _return == "fixed":
         $ remember("ria_r12_expectation", "fixed")
-        call ria_r12_contact_line("ria_r12_plan_04", "dohyun", ri('알겠어. 일단 내 일정은 네 시 기준으로 잡을게. 바꾸려면 둘이 다시 확인하고.', '알겠어요. 일단 제 일정은 네 시 기준으로 잡을게요. 바꾸려면 둘이 다시 확인하고요.'))
+        call ria_r12_contact_line("ria_r12_plan_04", "dohyun", ri('난 일단 네 시에 맞춰서 나갈게. 더 일찍 끝나면 그때 다시 얘기하자.', '저는 일단 네 시에 맞춰서 나갈게요. 더 일찍 끝나면 그때 다시 얘기해요.'))
         call ria_r12_contact_line("ria_r12_plan_05", "ria", ri('응. 정리하다 늦어질 것 같으면 그때 바로 말할게.', '네. 정리하다 늦어질 것 같으면 그때 바로 말할게요.'))
     elif _return == "hope_early":
         $ remember("ria_r12_expectation", "hope_early")
@@ -405,8 +405,8 @@ label ria_r12:
         $ remember("choice_third_r12_expectation")
         $ remember("ria_r12_expectation", "fixed")
         call ria_r12_contact_line("ria_r12_plan_08", "dohyun", ri('일찍 끝났다는 연락이 없어도 네 시 약속은 그대로인 거지?', '일찍 끝났다는 연락이 없어도 네 시 약속은 그대로인 거죠?'))
-        call ria_r12_contact_line("ria_r12_plan_09", "ria", ri('응. 그건 확정! 달라지면 알게 된 때 내가 먼저 말할게.', '네. 그건 확정! 달라지면 알게 된 때 제가 먼저 말할게요.'))
-        call ria_r12_contact_line("ria_r12_plan_10", "dohyun", ri('좋아. 나도 바뀌면 미리 말할게. 서로 기다리면서 추측하지 않게.', '좋아요. 저도 바뀌면 미리 말할게요. 서로 기다리면서 추측하지 않게요.'))
+        call ria_r12_contact_line("ria_r12_plan_09", "ria", ri('응, 네 시는 그대로야. 시간 달라지면 내가 먼저 톡할게.', '네, 네 시는 그대로예요. 시간 달라지면 제가 먼저 톡할게요.'))
+        call ria_r12_contact_line("ria_r12_plan_10", "dohyun", ri('응. 나도 늦어질 것 같으면 집에서 나오기 전에 말할게.', '네. 저도 늦어질 것 같으면 나오기 전에 연락할게요.'))
     $ remember("ria_r12_next_appointment", "일요일 오후 네 시, 변경은 서로 다시 확인")
     $ remember("ria_r12_early_contact", "오전에 일찍 끝나면 연락한다는 가능성, 만남 확정 아님")
     $ remember("ria_r12_expectation_discussed")

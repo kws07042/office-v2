@@ -137,7 +137,7 @@ label jihyun_o03:
     $ chapter = "지현 O03 · 부탁의 연습"
     $ location = "일요일 오후 · 동네 공원 입구"
     "각자 집에서 오전을 보낸 뒤 공원에서 만났다. 지현은 벤치를 보고 먼저 도현을 불렀다."
-    j "오늘은 그늘에서 조금 앉고 싶어. 대신 네가 집에 갈 시간도 먼저 듣고 싶고."
+    j "저기 그늘에 잠깐 앉을까? 너 오늘 몇 시쯤 들어가야 돼?"
     $ progression_enter("jihyun_o03.choice01")
     $ progression_checkpoint("jihyun_o03.choice01")
     menu:

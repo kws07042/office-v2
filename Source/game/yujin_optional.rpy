@@ -143,7 +143,7 @@ label yujin_o03_offer:
             $ remember("yujin_o03_status", "skipped")
         "오후는 각자 쉬고 저녁에 만나자고 짧게 전한 뒤 본편 계속":
             $ location = "일요일 오전 · 각자의 집, 개인 메시지"
-            call phone_deliver("yujin_o03_brief_d", "dohyun", "오후에는 제 노트 정리하고 쉴게요. 저녁에 같이 보기로 한 건 그대로예요. 보고 싶어요, 유진 씨.", contact="yujin")
+            call phone_deliver("yujin_o03_brief_d", "dohyun", "오후엔 집에서 노트 좀 정리하려고요. 저녁에 봬요. 아직 몇 시간 남았는데 벌써 보고 싶네요.", contact="yujin")
             call phone_deliver("yujin_o03_brief_y", "yujin", "네. 저도 오후엔 제 것 정리할게요. 저녁에는 노트 말고 얼굴부터 보여 주세요~", contact="yujin")
             $ remember("yujin_o03_status", "brief")
     $ progression_note_ending()

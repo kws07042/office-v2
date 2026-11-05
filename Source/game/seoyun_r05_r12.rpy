@@ -156,8 +156,9 @@ label seoyun_private_evening(slot, outfit):
                 "(거사 — 장면 생략)"
             $ remember("seoyun_" + slot + "_pace", "shared")
             if slot == "r07":
-                s "아까 후식 메뉴 그렇게 볼 때, 내가 조금 더 있으라고 할걸."
-                d "그때 말씀하셨어도 저 따라왔을 거예요."
+                s "아까 내가 너 붙잡으러 갔을 때 있잖아. 그때 벌써 손 잡고 싶었어."
+                d "저는 지금 잡아도 되냐고 물어보려고 했어요."
+                "서윤이 이불 밖으로 손을 내밀었다."
             elif slot == "r12":
                 s "지금은 말 잘하려는 것보다 옆에 있는 게 좋네."
                 d "저도요. 잠깐 조용해져도 그 마음은 같아요."
@@ -173,10 +174,10 @@ label seoyun_private_evening(slot, outfit):
             d "오늘은 마음 얘기를 더 하고 돌아가고 싶어요. 같이 있고 싶은 마음도 말하고요."
             s "좋아. 농담 붙이지 않고 나도 이야기할게."
             if slot == "r07":
-                d "아까 편하게 있다 가라고 하셨을 때, 저는 안 들켰다고 생각했어요."
-                s "가기 싫은 거? 탁자부터 당겼잖아."
-                d "그 전에요. 식당에서 후식 메뉴 또 펼쳤을 때부터요."
-                s "그건 못 봤네. 난 내가 늦게 먹어서 기다리는 줄 알았는데."
+                d "아까 식당에서요. 저도 문자 썼다가 지웠어요. ‘조금 더 걸을래요?’"
+                s "보내지 그랬어. 나 전화할 때 네가 이미 지하철 탄 줄 알았어."
+                d "횡단보도도 안 건넜어요. 초록불 한 번 보내고 있었는데요."
+                s "둘 다 왜 그랬냐~ 다음에는 먼저 가는 사람 없기다. 같이 갈 건지부터 물어보고."
                 "서윤이 다 마신 잔을 보더니 조금만 더 따라 줬다. 도현은 차를 마저 마시고 일어났다."
             elif slot == "r12":
                 d "아까 다음에 제대로 하자던 얘기는 잊지 않을게요. 오늘 대답을 재촉하지는 않고요."
@@ -195,18 +196,19 @@ label seoyun_r07:
         $ progression_note_ending()
         return
     $ chapter = "서윤 R07 · 농담을 멈춘 저녁"
-    $ location = "토요일 저녁 · 서윤의 작업실"
+    $ location = "토요일 저녁 · 식당 앞"
     "아이와 보내는 일정은 미리 맞춰 둔 주말이었다. 서윤은 내일 오후에 아이를 데려오기로 했고, 오늘 저녁은 도현과 만나기로 골랐다."
-    "저녁을 다 먹고 도현이 후식 메뉴를 다시 펼쳤다. 서윤은 아직 배가 고프냐고 물었고, 도현은 메뉴를 덮지 못한 채 웃었다. 조금 뒤 서윤이 개인 작업실에서 차를 마시자고 했다."
-    "작업실에는 작은 주방과 소파가 있었다. 평소의 사복 차림으로 소파 끝에 앉은 서윤은 도현이 멀찍이 서 있자 옆자리를 두드렸다."
-    s "손님 자리는 저쪽인데. 네 자리는 여기로 할까?"
-    d "그럼 앉아도 돼요? 너무 가까울까 봐 서 있었어요."
-    s "가까워도 돼. 내가 먼저 자리 만들었잖아."
-    "서윤이 따뜻한 잔 두 개를 내왔다. 도현은 소파 옆의 작은 탁자를 당겨 잔을 놓았다."
-    s "편하게 있다 가라고 하려던 건데. 아주 자리 잡네~"
-    d "네. 오늘은 빨리 가기 싫어요."
-    s "...농담 한 번 더 할 줄 알았는데."
-    "도현이 잔을 내려놓자 서윤도 차를 마시려던 손을 멈췄다."
+    "식당 문 앞에서 인사하고 서로 반대 방향으로 걸었다. 도현이 횡단보도 신호를 기다리는데 서윤에게 전화가 왔다."
+    s "도현아. 아직 안 건넜지?"
+    d "네. 뭐 두고 나오셨어요?"
+    s "아니. 그냥 가지 마. 내가 그쪽으로 갈게."
+    "전화가 먼저 끊겼다. 고개를 돌리니 서윤이 자기 가방을 팔에 낀 채 빠르게 걸어오고 있었다. 도현 앞으로 와서야 숨을 골랐다."
+    s "할 말 없으면 다시 들어가자고 둘러대려고 했는데. 그냥 네가 더 보고 싶어. 작업실에 갈래?"
+    d "네. 저 아까 인사할 때부터 붙잡고 싶었어요."
+    $ location = "같은 저녁 · 서윤의 작업실"
+    "작업실에 들어서자 서윤이 차를 따르던 중 도현 쪽을 봤다. 그는 소파 끝에 앉아 있었다. 서윤이 잔 두 개를 탁자에 놓고, 쿠션 하나를 자기 무릎 위로 옮겼다."
+    s "지금은 건너편에 앉기 싫어. 여기 와."
+    "도현이 옆으로 옮겨 앉았다. 팔이 살짝 닿았다. 서윤은 잔을 집는 대신 도현 쪽으로 어깨를 돌렸다."
     s "오늘은 같이 밤을 보내고 싶어. 도현아, 너도 그래?"
     call seoyun_private_evening("r07", "casual")
     $ award_once("seoyun_R07", "seoyun", 0)
@@ -230,28 +232,28 @@ label seoyun_r08:
         $ remember("seoyun_shared_morning")
     $ location = "일요일 오후 · 각자의 집, 개인 메시지"
     if memory.get("seoyun_r07_pace") == "shared":
-        call phone_deliver("seoyun_r08_memory", "seoyun", "아침에 네가 반 나눠 준 거, 점심에도 또 생각났어. 내 접시에 있던 걸 도로 받았는데 이상하게 더 맛있더라~", contact="seoyun")
+        call phone_deliver("seoyun_r08_memory", "seoyun", "어제 너 부르러 간 횡단보도 있지. 아까 거기 지났는데 나 혼자 웃고 있더라.", contact="seoyun")
     elif memory.get("seoyun_r07_pace") == "talk":
-        call phone_deliver("seoyun_r08_memory", "seoyun", "어제 후식 메뉴 다시 보던 거 이제 알았네. 다음엔 나도 다 먹었다고 바로 덮진 않을게~", contact="seoyun")
+        call phone_deliver("seoyun_r08_memory", "seoyun", "어제 네가 안 보냈다는 문자 있잖아. 다음엔 보내. 나도 이제 썼다 지우지 않으려고~", contact="seoyun")
     else:
-        call phone_deliver("seoyun_r08_memory", "seoyun", "어제 네가 앉았던 소파 자리, 오늘은 내가 차지했어. 다음엔 또 옆으로 비켜 줄게~", contact="seoyun")
-    call phone_deliver("seoyun_r08_time", "seoyun", "조금 뒤엔 아이랑 있을 거라 답이 늦을 수 있어. 네 얘기는 저녁에 마저 읽을게. 나도 오늘 좋았던 거 하나 남겨 둘게~", contact="seoyun")
-    call phone_deliver("seoyun_r08_direct", "seoyun", "보고 싶어. 다음 수요일 저녁 일곱 시에 같이 밥 먹자. 이번엔 후식도 볼까~ 시간 어때?", contact="seoyun", important=True)
+        call phone_deliver("seoyun_r08_memory", "seoyun", "잘 잤어? 어제 안 붙잡았으면 집에 가서 ‘그냥 물어볼걸’ 하고 후회했을 거야. 같이 차 마셔서 좋았어.", contact="seoyun")
+    call phone_deliver("seoyun_r08_time", "seoyun", "이따 아이랑 나가기로 했어. 답 늦어도 걱정 마. 저녁에 다시 볼게.", contact="seoyun")
+    call phone_deliver("seoyun_r08_direct", "seoyun", "벌써 좀 보고 싶네. 수요일에 같이 저녁 먹을래? 난 일곱 시 괜찮은데, 너는?", contact="seoyun", important=True)
     $ phone_context = "seoyun_r08_reply"
     $ progression_enter("seoyun_r08.choice01")
     $ progression_checkpoint("seoyun_r08.choice01")
-    call screen office_phone(replies=[("miss", "나도 보고 싶다고 직접 답하고 수요일 약속을 확인한다."), ("story", "수요일에 들려주고 싶은 오늘의 작은 일을 보낸다."), ("invite", "수요일엔 내가 식당을 골라 초대하고 싶다고 한다.")])
+    call screen office_phone(replies=[("miss", "보고 싶다고 답한다."), ("story", "오늘 창가에서 있었던 일을 보낸다."), ("invite", "이번엔 내가 식당을 고르겠다고 한다.")])
     $ remember("seoyun_r08_reply", _return)
     $ phone_context = None
     if memory["seoyun_r08_reply"] == "miss":
-        call phone_deliver("seoyun_r08_reply", "dohyun", "저도 보고 싶어요. 수요일 일곱 시에 만나요. 이번에는 제가 먼저 기다릴게요.", contact="seoyun")
-        call phone_deliver("seoyun_r08_confirm", "seoyun", "응. 네가 기다리는 얼굴은 나도 먼저 보고 싶네. 수요일 일곱 시!", contact="seoyun", important=True)
+        call phone_deliver("seoyun_r08_reply", "dohyun", "저도요. 아까부터 제가 먼저 연락할까 했어요. 수요일엔 제가 먼저 가 있을게요.", contact="seoyun")
+        call phone_deliver("seoyun_r08_confirm", "seoyun", "그래? 그럼 이번엔 내가 너 찾는 차례네. 수요일에 봐.", contact="seoyun", important=True)
     elif memory["seoyun_r08_reply"] == "story":
-        call phone_deliver("seoyun_r08_reply", "dohyun", "오늘은 빨래 널고 창가에 좀 앉아 있었어요. 별일 없어도 서윤 씨한테 얘기하고 싶더라고요. 수요일 일곱 시 좋아요.", contact="seoyun")
-        call phone_deliver("seoyun_r08_confirm", "seoyun", "창가에 혼자 앉은 얘기까지 들었네. 수요일엔 내 앞자리로 와~ 일곱 시에 봐.", contact="seoyun")
+        call phone_deliver("seoyun_r08_reply", "dohyun", "수요일 돼요. 아까 빨래 널고 창가에 앉았는데 서윤 씨 생각났어요. 왜인지는 만나서 말해 줄게요.", contact="seoyun")
+        call phone_deliver("seoyun_r08_confirm", "seoyun", "뭐야, 궁금하게. 그럼 수요일에 만나자마자 물어봐야겠다.", contact="seoyun")
     else:
-        call phone_deliver("seoyun_r08_reply", "dohyun", "수요일 일곱 시 괜찮아요. 이번엔 제가 따뜻한 거 먹을 식당 골라서 초대할래요.", contact="seoyun")
-        call phone_deliver("seoyun_r08_confirm", "seoyun", "좋아. 이번엔 내가 초대받는 쪽으로. 수요일 일곱 시에 보자.", contact="seoyun")
+        call phone_deliver("seoyun_r08_reply", "dohyun", "일곱 시면 돼요. 이번엔 제가 식당 골라도 돼요? 같이 가 보고 싶은 데가 있어요.", contact="seoyun")
+        call phone_deliver("seoyun_r08_confirm", "seoyun", "좋지. 어디인지는 나중에 알려 줘도 돼. 수요일에 봐.", contact="seoyun")
     $ remember("seoyun_r09_appointment", "수요일 저녁 일곱 시 함께 식사")
     $ award_once("seoyun_R08", "seoyun", 4)
     $ progression_note_ending()
@@ -265,7 +267,7 @@ label seoyun_r09:
         return
     $ chapter = "서윤 R09 · 웃으면서도 분명하게"
     $ location = "수요일 오후 · 협업 테이블"
-    s "‘전체적으로 빨리’는 오늘 일정에 못 넣어. 제목 후보 두 개와 설명 한 개, 내일 오전까지. 범위부터 이렇게 확인할게."
+    s "다 해 달라면 내일 오전엔 못 줘. 제목 후보 두 개랑 설명 하나까지만 보내겠다고 할게."
     d "남은 요청은 다음 검토로 나누는 거죠?"
     s "응. 아직 못 정한 걸 내가 된다고 말하면, 나중엔 그게 약속이 되거든."
     $ progression_enter("seoyun_r09.choice01")
@@ -286,10 +288,10 @@ label seoyun_r09:
     $ location = "같은 수요일 저녁 일곱 시 · 식당"
     if memory.get("seoyun_r08_reply") == "invite":
         "도현이 고른 식당에서 만났다. 서윤은 문 앞에서 도현을 보고 먼저 손을 흔들었다."
-        s "오늘은 초대받는 사람답게 따라왔어. 메뉴 설명은 조금 기대하고 있고~"
+        s "네가 가 보고 싶다니까 메뉴도 안 찾아봤어. 뭐 먹을까?"
     elif memory.get("seoyun_r08_reply") == "story":
-        s "빨래 널고 앉아 있던 창가 얘기, 오늘은 어디부터 들려줄래?"
-        d "창밖 보려고 앉았는데 수건만 보이더라고요. 제가 바로 앞에 널어 놔서."
+        s "아, 창가에서 왜 내 생각 났는지 말해 준다며. 그거부터 들을래."
+        d "날씨 좋길래 같이 걸으면 좋겠다 싶었어요. 그러고 창밖을 봤는데, 제가 널어 둔 수건밖에 안 보이더라고요."
         s "네가 만든 전망이네~"
         d "한 장 걷으면 되는데, 꼭 그 자리가 제일 잘 말라요. 결국 제가 옮겼어요."
         s "창가 얘기라 좀 근사할 줄 알았는데. 수건한테 자리 뺏긴 얘기였어?"
@@ -297,11 +299,11 @@ label seoyun_r09:
         "서윤이 창 쪽을 봤다가 도현 앞으로 시선을 되돌렸다."
         s "응. 여긴 수건 안 널어도 되고."
     else:
-        s "오늘은 먼저 기다리겠다고 했지. 진짜 네가 먼저 와 있었네."
+        s "먼저 와 있는다더니, 진짜네. 많이 기다렸어?"
     d "오늘 일할 때, 웃으면서도 안 되는 건 분명히 말하시는 게 좋았어요. 지금은 웃는 쪽을 더 오래 보고 싶고요."
     s "칭찬 뒤에 그런 말 붙이면, 밥 먹다 말고 너만 보게 되잖아."
     "서윤이 웃으며 메뉴판을 도현 쪽으로 돌렸다. 평소와 달리 이번에는 설명을 덧붙이지 않았다."
-    s "오늘은 네 추천 들을래. 오늘도 내가 골라 놓으면 네가 뭘 먹는지 못 보잖아."
+    s "오늘은 네가 골라 봐. 아까부터 어디 보고 있는지는 대충 알겠지만~"
     d "그럼 버섯 크림 파스타나 토마토 리소토요. 저는 파스타 쪽인데."
     s "나는 리소토. 아까 파스타 사진만 오래 보더라니~"
     d "들켰네요. 버섯 좋아하실 것 같아서 추천한 척했어요."

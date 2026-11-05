@@ -66,8 +66,8 @@ label seoyun_o02_offer:
         "본편 계속 — 일요일 산책 약속으로":
             $ remember("seoyun_o02_status", "skipped")
         "오늘 고른 문장도 다음에 다시 읽어 달라고 하고 본편 계속":
-            d "다음 판도 읽어 주세요. 그때 감상은 지금하고 달라도 되고요."
-            s "좋아. 다음 감상까지 미리 복사해 놓지는 않을게."
+            d "고치면 또 읽어 주실래요? 이번에 좋았던 부분 없어지면 그것도 말해 주세요."
+            s "좋아. 대신 지우면 안 된다고 우길지도 몰라~"
             $ remember("seoyun_o02_status", "brief")
     $ progression_note_ending()
     return

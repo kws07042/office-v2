@@ -69,7 +69,7 @@ label yujin_r09:
             "급했던 마음을 설명하고, 유진의 이야기를 더 들을 시간을 약속한다.":
                 d "말이 끊기면 더 긴장하실까 봐 그랬어요. 그런데 제가 먼저 정해 버렸네요."
                 y "긴장해도 제 말로 해 보고 싶었어요. 오늘은 그 차이를 좀 생각하고 싶어요."
-                d "네. 다음에 먼저 여쭤볼게요. 오늘 말해 주신 걸 없던 일로 넘기지는 않을게요."
+                d "네. 다음엔 제가 끼어들기 전에 먼저 여쭤볼게요."
                 $ remember("yujin_support_repair_status", "open")
             "이해한 범위를 내 말로 확인하고, 다음에는 먼저 묻겠다고 한다.":
                 d "질문 순서는 도와도, 답할 내용은 제가 정하면 안 되는 거죠? 다음엔 시작하기 전에 물을게요."
@@ -218,7 +218,7 @@ label yujin_r11:
     if memory.get("yujin_publicity") == "agreed_jihyun":
         "두 사람은 어제 정한 범위를 확인하고 지현에게 함께 메시지를 보냈다."
         $ location = "같은 일요일 저녁 · 지현에게 함께 보낸 개인 메시지"
-        call phone_deliver("yujin_disclosure_1", "dohyun", "팀장님, 유진 씨랑 같이 보내요. 저희 연인으로 만나고 있어요. 두 사람이 함께 알려 드리고 싶었습니다. 다른 분들께는 아직 비밀로 부탁드려요.", contact="jihyun")
+        call phone_deliver("yujin_disclosure_1", "dohyun", "팀장님, 저희 둘이 사귀게 됐어요. 유진 씨랑 같이 보내는 거예요. 다른 분들께는 아직 말하지 말아 주세요.", contact="jihyun")
         call phone_deliver("yujin_disclosure_2", "jihyun", "축하해요, 두 사람. 두 분이 직접 말하기 전까지는 나도 다른 사람에게 말하지 않을게요.", contact="jihyun", important=True)
         call phone_deliver("yujin_disclosure_3", "jihyun", "유진 씨가 먼저 고른 말이죠? 오늘은 수정 의견 안 보탤게요. 좋은 저녁 보내요 :)", contact="jihyun")
         $ remember("yujin_disclosed_to", "jihyun")
@@ -379,7 +379,7 @@ label yujin_r12:
         "오늘은 귀가하고, 다음에 더 함께하고 싶다고 말한다.":
             $ location = "같은 목요일 밤 · 정류장"
             d "오늘은 집에서 쉬고 싶어요. 다음에 더 같이 있을 날도 정하고 싶고요."
-            y "네. 오늘 만난 거 좋았어요. 다음 약속도 같이 정해요."
+            y "네. 저도 오늘 좋았어요. 집에 도착하시면 톡 주세요. 다음에 어디 갈지도 얘기하고 싶어요."
             "두 사람은 정류장에서 인사를 나눴다."
             $ remember("yujin_r12_intimacy", "deferred")
         "조금 더 걷고 이야기한 뒤 각자 쉬자고 한다.":
