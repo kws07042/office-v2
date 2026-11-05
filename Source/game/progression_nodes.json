@@ -2277,6 +2277,33 @@
     "order": 255.02
   },
   {
+    "id": "ria_o04_offer",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 O04 · 오늘은 길 안 잃었어",
+    "source": "Source/game/ria_o04.rpy",
+    "order": 257
+  },
+  {
+    "id": "ria_o04_offer.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o04_offer",
+    "title": "리아 O04 · 포차 데이트",
+    "source": "Source/game/ria_o04.rpy",
+    "order": 257.01
+  },
+  {
+    "id": "ria_o04_offer.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o04_offer",
+    "title": "리아 O04 · 역 앞에서",
+    "source": "Source/game/ria_o04.rpy",
+    "order": 257.02
+  },
+  {
     "id": "jihyun_r16",
     "heroine": "jihyun",
     "kind": "event",
@@ -2448,4 +2475,3 @@
     "order": 990
   }
 ]
-

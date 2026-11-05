@@ -95,6 +95,7 @@ label start:
             if dating and memory.get("ria_conflict") == "resolved":
                 call ria_r15
                 call ria_o03_offer
+                call ria_o04_offer from ria_return_from_o04
                 call ria_r16
                 if memory.get("ria_route_completed"):
                     menu:
@@ -149,4 +150,3 @@ label end_common:
     "동료 결말 · 좋은 동료로, 우리"
     $ progression_note_ending()
     return
-

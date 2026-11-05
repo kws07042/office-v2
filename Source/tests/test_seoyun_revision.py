@@ -95,7 +95,7 @@ class SeoyunRevisionTests(unittest.TestCase):
             for target in re.findall(r"^\s*call (\w+)", content, re.M):
                 self.assertTrue(target == "screen" or target in all_labels, target)
         nodes = json.loads((GAME / "progression_nodes.json").read_text(encoding="utf-8"))
-        self.assertEqual(sum(n["kind"] == "event" for n in nodes), 95)
+        self.assertEqual(sum(n["kind"] == "event" for n in nodes), 96)
         self.assertEqual(len({n["id"] for n in nodes}), len(nodes))
         for node in nodes:
             if node["heroine"] == "seoyun" and node["kind"] == "event":

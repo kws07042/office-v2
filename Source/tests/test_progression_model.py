@@ -220,7 +220,7 @@ class IntegrationStaticTests(unittest.TestCase):
     def test_catalog_nodes_unique(self):
         nodes = json.loads((GAME / "progression_nodes.json").read_text(encoding="utf-8"))
         self.assertEqual(len(nodes), len({n["id"] for n in nodes}))
-        self.assertEqual(sum(n["kind"] == "event" for n in nodes), 95)
+        self.assertEqual(sum(n["kind"] == "event" for n in nodes), 96)
         for node in nodes:
             self.assertRegex(node["id"], r"^[a-zA-Z0-9_.-]+$")
 
@@ -278,4 +278,3 @@ class IntegrationStaticTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
-
