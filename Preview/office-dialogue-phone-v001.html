@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>퇴근 후, 우리 · 대화와 메신저 UI</title>
+<link rel="stylesheet" href="office-dialogue-phone-v001.css">
+</head>
+<body>
+<main class="preview">
+  <header class="preview-bar">
+    <div><strong>퇴근 후, 우리</strong><span>대화 · 선택지 · 메신저</span></div>
+    <nav aria-label="화면 미리보기">
+      <button data-view="dialogue" aria-pressed="true">대화</button>
+      <button data-view="choices" aria-pressed="false">선택지</button>
+      <button data-view="phone" aria-pressed="false">메신저</button>
+    </nav>
+    <div class="preview-options">
+      <label><input id="night-toggle" type="checkbox"> 저녁 배경</label>
+      <label><input id="long-toggle" type="checkbox"> 긴 문장</label>
+    </div>
+  </header>
+  <p class="preview-note">기존 게임 입상과 원문을 사용한 UI 미리보기입니다. 게임의 저장·분기와는 연결되지 않습니다.</p>
+  <div class="stage-wrap" id="stage-wrap">
+    <section class="stage" id="stage" aria-label="게임 화면">
+      <div class="scene" id="scene">
+        <div class="portrait"><img src="../Source/game/images/characters/ria/ui_master_v2.png" alt="현재 게임에 연결된 강리아 입상"></div>
+        <aside class="story-heading"><span>강리아</span><strong>퇴근 전의 약속</strong><small id="scene-time">초여름 오후 · 온빛브랜딩</small></aside>
+        <aside class="relation-heading"><strong>강리아</strong><span>교제 중</span><div><b aria-label="호감도 58">♥ ♥ ♥ ♡ ♡</b><small>58 / 100</small></div></aside>
+        <div class="choices" id="choices" aria-label="대화 선택지" hidden></div>
+        <div class="dialogue" id="dialogue">
+          <div class="speaker" id="speaker">강리아</div><div class="speaker-rule"></div>
+          <p id="dialogue-line">오늘 퇴근하고 시간 있어? 가 보고 싶은 곳이 하나 생겼어~</p>
+          <span class="advance" id="advance" aria-hidden="true">›</span>
+        </div>
+        <span class="input-hint">클릭·Enter 다음 / 휠 위로 되돌리기</span>
+        <nav class="quick-menu" aria-label="빠른 메뉴">
+          <button data-action="back">되돌리기</button><button data-action="history">기록</button><button data-action="phone">메신저</button>
+          <button data-action="auto" aria-pressed="false">자동</button><button data-action="skip" aria-pressed="false">스킵</button>
+          <button data-action="save">저장</button><button data-action="load">불러오기</button><button data-action="settings">설정</button><button data-action="menu">메뉴</button>
+        </nav>
+      </div>
+      <section class="phone" id="phone" aria-label="개인 메신저" hidden>
+        <header class="phone-top"><div><strong>퇴근 후, 우리</strong><span id="phone-mode">개인 메시지 · 일요일 아침</span></div>
+          <nav aria-label="메신저 메뉴"><button id="phone-back">되돌리기</button><button data-sheet="저장">저장</button><button data-sheet="불러오기">불러오기</button><button data-sheet="설정">설정</button><button id="archive-toggle">대화 기록</button><button id="phone-close">닫기</button></nav>
+        </header>
+        <aside class="contact-panel"><p>함께 나눈 대화</p><div id="contacts"></div><small>이번 회차에 주고받은 이야기가<br>여기에 차곡차곡 남아요.</small></aside>
+        <section class="conversation">
+          <header class="conversation-top"><h1 id="contact-name">강리아</h1><span id="contact-status">교제 중 · 개인 대화</span></header>
+          <div class="messages" id="messages" tabindex="0" aria-label="메시지 목록"></div>
+          <div class="phone-compose" id="phone-compose"></div>
+          <small class="phone-foot" id="phone-foot">답장은 편할 때 · 실제 시간에 따른 벌점 없음</small>
+        </section>
+      </section>
+      <section class="photo-overlay" id="photo-overlay" role="dialog" aria-modal="true" aria-labelledby="photo-title" hidden>
+        <div class="photo-card"><h2 id="photo-title">일요일 아침 식탁</h2><div class="photo-placeholder"><strong>사진 준비 중</strong><p>실제 이미지가 들어오면 이 자리에서 확대됩니다.</p><small>빈 자리는 사진 감상 완료로 기록하지 않습니다.</small></div><button id="photo-close">대화로 돌아가기</button></div>
+      </section>
+      <section class="sheet-overlay" id="sheet-overlay" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden><div class="sheet-card"><h2 id="sheet-title">대화 기록</h2><div id="sheet-body"></div><button id="sheet-close">돌아가기</button></div></section>
+      <div id="preview-feedback" role="status" class="feedback" hidden></div>
+    </section>
+  </div>
+  <footer class="preview-footer"><span>중앙 선택지 · 투명 대화창 · 답장 영역 스크롤</span><span id="preview-status" role="status">대화 화면</span></footer>
+</main>
+<script src="office-dialogue-phone-v001.js"></script>
+</body></html>
+

@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-05",
+  "base_commit": "588f5444578572702e48016b25de4e59bea0fbba",
+  "scope": [
+    "dialogue",
+    "centered choices",
+    "messenger"
+  ],
+  "native_runtime_verified": false,
+  "browser": {
+    "logical_resolution": [
+      1280,
+      720
+    ],
+    "center_error_px": 0,
+    "choices_above_dialogue": true,
+    "long_choices_inside_stage": true,
+    "normal_reply_count": 3,
+    "normal_replies_fit": true,
+    "long_reply_scroll": true,
+    "contact_switch_empty_state": true,
+    "return_to_active_contact": true,
+    "keyboard_reply": "small_memory / Enter",
+    "message_count_before": 4,
+    "message_count_after_reply": 5,
+    "message_count_after_response": 6,
+    "duplicate_reply_buttons_after_send": 0,
+    "photo_placeholder": true,
+    "escape_closes_photo": true,
+    "console_errors": 0,
+    "horizontal_page_overflow": false
+  },
+  "static": {
+    "javascript_syntax": true,
+    "renpy_python_blocks_parsed": 5,
+    "rpy_executed": false,
+    "phoneDefaultFunctions": true,
+    "phoneScenario": true
+  },
+  "regression": {
+    "suite": "Source/tests/test_progression_model.py",
+    "passed": 38,
+    "failed": 0
+  },
+  "limits": [
+    "Ren’Py screen-language parsing, text rendering and native input still require SDK validation.",
+    "Native save/load/rollback/Replay not exercised by browser preview.",
+    "Browser preview uses system font fallback and original game assets; it is not a pixel-exact Ren’Py capture.",
+    "Long fixture repeats existing captions; the game script is unchanged."
+  ]
+}

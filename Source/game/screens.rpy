@@ -84,54 +84,72 @@ screen story_header():
         if cream_preview_active:
             use cream_preview_controls
 
-screen cream_dialogue_panel(who, what, use_substitution=True):
+screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
     window:
         id "window"
-        xpos 36 ypos 507 xsize 1208 ysize 185
-        padding (40, 32)
+        xpos 44 ypos 508 xsize 1192 ysize 154
+        padding (32, 27)
         background None
         foreground None
         text what:
             id "what"
+            font "fonts/Pretendard-Regular.otf"
             size 26
             color "#fffdf8"
-            outlines [(2, "#30243f", 0, 0), (1, "#00000066", 0, 2)]
-            xmaximum 1125
-            line_spacing 5
+            outlines [(2, "#30243f", 0, 0), (1, "#1a142966", 0, 2)]
+            xmaximum 1128
+            line_spacing 6
             substitute use_substitution
     if who:
         text who:
             id "who"
-            xpos 76 ypos 490
-            size 22
+            xpos 76 ypos 481
+            font "fonts/GowunDodum-Regular.ttf"
+            size 23
             color cream_speaker_color(who)
             outlines [(2, cream_speaker_outline(who), 0, 0)]
-        add Solid("#ccb8e3c0") xpos 76 ypos 526 xsize 180 ysize 1
+        add Solid("#ccb8e3c0") xpos 76 ypos 519 xsize 152 ysize 1
+    if advance:
+        text "›" xpos 1196 ypos 637 size 28 color "#fffdf8" outlines [(2, "#30243f", 0, 0)]
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
+
+screen office_choice_list(items):
+    vbox:
+        xsize 588 spacing 10
+        for item in items:
+            textbutton item.caption action item.action style "office_choice_button"
 
 screen choice(items):
     zorder 30
     if len(items) <= 3:
         if _history_list:
-            use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False)
-        vbox:
-            xpos 815 yanchor 1.0 ypos 485 xsize 437 spacing 9
-            for item in items:
-                textbutton item.caption action item.action style "choice_button"
+            use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
+        if office_ui_long_choices(items):
+            viewport:
+                xalign 0.5 ypos 152 xsize 600 ysize 334
+                mousewheel True draggable True arrowkeys True
+                scrollbars "vertical"
+                vscrollbar_style "office_scrollbar"
+                use office_choice_list(items)
+        else:
+            vbox:
+                xalign 0.5 yanchor 1.0 ypos 486 xsize 600 spacing 10
+                for item in items:
+                    textbutton item.caption action item.action style "office_choice_button"
     else:
         frame:
             xpos 66 ypos 142 xsize 1148 ysize 520 padding (24, 22)
             background cream_round("panel")
             viewport:
-                mousewheel True draggable True
+                mousewheel True draggable True arrowkeys True
                 scrollbars "vertical"
-                vscrollbar_xsize 10
+                vscrollbar_style "office_scrollbar"
                 vbox:
                     xsize 1076 spacing 10
                     for item in items:
-                        textbutton item.caption action item.action style "choice_button"
+                        textbutton item.caption action item.action style "office_choice_button"
 
 screen main_menu():
     tag menu
@@ -177,7 +195,7 @@ screen quick_menu():
     zorder 100
     if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         frame:
-            xpos (580 if not event_cut_active else 750) ypos (651 if not event_cut_active else 18)
+            xpos (565 if not event_cut_active else 750) ypos (678 if not event_cut_active else 18)
             padding (7, 2)
             background (None if not event_cut_active else cream_round("panel"))
             hbox:
@@ -195,7 +213,7 @@ screen quick_menu():
                 if not event_cut_active:
                     textbutton "메뉴" action MainMenu(confirm=True) style "cream_quick_button"
         if not event_cut_active:
-            text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 76 ypos 666 size 13 color "#fffdf8" outlines [(1, "#30243f", 0, 0)]
+            text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 76 ypos 691 size 12 color "#fffdf8" outlines [(1, "#30243f", 0, 0)]
 
 screen cream_preview_controls():
     frame:
