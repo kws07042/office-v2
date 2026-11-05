@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ren’Py 회귀 검사"
+  short_description: "Review project scene plans and validation evidence"
+  default_prompt: "$renpy-regression 스킬로 현재 프로젝트의 관련 자료를 검토하고 근거와 미확인 범위를 보고해 주세요."

@@ -1,0 +1,747 @@
+{
+  "files": [
+    {
+      "path": "CharacterArt/assets/jihyun/cg/jihyun_r10_miniature_v005.png",
+      "bytes": 1992135,
+      "sha256": "b36456a34ac364d16564bfbc5b1baa1e13b140c0bdb56c968e720316cb7b9ed5",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/cg/jihyun_r11_cards_v007.png",
+      "bytes": 1884451,
+      "sha256": "acfc594f8f1f305396ed97023b6de93f00d363c7919d6b1493bb32f61b80140a",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/concepts/jihyun_red_office_fullbody_v002.png",
+      "bytes": 1313255,
+      "sha256": "eef7a4aad7b025580c746492d0105581bb3a40555f3ff9d9ba9c4eecd0733e76",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1190313,
+      "partial_alpha_pixels": 382551,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/concepts/jihyun_red_office_id_v003.png",
+      "bytes": 1356304,
+      "sha256": "6dc0007e6306ec194f5c5a9d9654832af21d65dcf6467237d18a3dd741954883",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1184924,
+      "partial_alpha_pixels": 387940,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/master/jihyun_master_lace_alpha_v005.png",
+      "bytes": 1364435,
+      "sha256": "5bf05df69bf275a611f438073199d7f98dd37dad7b122e5385f14c4795ed4341",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1194010,
+      "partial_alpha_pixels": 8850,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/reference/jihyun_user_visual_reference_v002.png",
+      "bytes": 1545833,
+      "sha256": "3592326c01796453fc4eb2d0ee445dda58d504eb897a74435fcd85bc822ddb57",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/ria/cg/ria_r07_umbrella_v005.png",
+      "bytes": 2182737,
+      "sha256": "b1cb1e88194d6f2efadc36b45b8bb5b6af405b2194aac3326693c62b79129169",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/ria/cg/ria_r11_cooking_v002.png",
+      "bytes": 2348484,
+      "sha256": "005d45212fea9a9e626b0732b62032f94d38b15088dea9c9665aaf1c612082ad",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/ria/master/ria_master_v001.png",
+      "bytes": 774146,
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca",
+      "width": 993,
+      "height": 1584,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1164435,
+      "partial_alpha_pixels": 406373,
+      "aspect_ratio": 0.6268939393939394,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/cg/seoyun_r02_reading_v003.png",
+      "bytes": 2096611,
+      "sha256": "dcb5aae2067b5407ad1d17feeac307ec53361a9d1d44468c57f01333fead8448",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/cg/seoyun_r13_ring_v003.png",
+      "bytes": 2089173,
+      "sha256": "9d37d7fdc99e719932ebb36ce8fe4fce995c17aa15c998e922eaa4951cd99d8c",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/concepts/seoyun_office_dress_id_v003.png",
+      "bytes": 1379371,
+      "sha256": "62c70ae7013c6892191d163d0ad017ec9a4ce38aa506016423ad371c548f756c",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1190857,
+      "partial_alpha_pixels": 382007,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_01.png",
+      "bytes": 1407361,
+      "sha256": "a6c575529b5fc8497e7a0ce69d367d81e0a414cdf6c439aa57ab0b362517a75b",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1146744,
+      "partial_alpha_pixels": 426120,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_02.png",
+      "bytes": 1327106,
+      "sha256": "e299984cf6891cad3b324ecd0128cfdb044b3f02c76105b43658d483f94cadd1",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1195702,
+      "partial_alpha_pixels": 377162,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_03.png",
+      "bytes": 1374388,
+      "sha256": "1d47b0c773f1ee01ba5db9463514ca2b32d3ec9e33b6aa145f6489bd5d4bc806",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1187643,
+      "partial_alpha_pixels": 385221,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_04.png",
+      "bytes": 1405190,
+      "sha256": "17bc55eb12e2587fb3cf1e4d673435fc14b8090c8d4853fe7386dccdff03c692",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1149077,
+      "partial_alpha_pixels": 423787,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_05.png",
+      "bytes": 1349488,
+      "sha256": "54e6d19ad87a82ebf70e97cc4ff3c52fd477ad4a6127da7cdc3fa4b5f80438ef",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1142408,
+      "partial_alpha_pixels": 430456,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/reference/seoyun_user_visual_reference_v002.png",
+      "bytes": 1579365,
+      "sha256": "6395499c547f93f8308945746175c61ce58191dd8210295e2c696ca79ef3ba45",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/title/title_escalator_hands_ria_eyes_v001.png",
+      "bytes": 3570118,
+      "sha256": "0a868163c9949ba562308ebbed33fac4423813d3afeb9d044debdf36ed3b834f",
+      "width": 1670,
+      "height": 942,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.772823779193206,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "CharacterArt/assets/title/title_escalator_jihyun_arm_lowered_v002.png",
+      "bytes": 2312210,
+      "sha256": "8c6966a5dd2ae5da06cb1db17370baab5ae94049d00ebc7d8d441513a7c677a1",
+      "width": 1670,
+      "height": 942,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.772823779193206,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/yujin/cg/yujin_o02_sketch_v001.png",
+      "bytes": 2157022,
+      "sha256": "1ccb9895755dd185020763b4d21ee1e5da83f572c00337563b40e946c7228c28",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/yujin/cg/yujin_r02_gallery_v001.png",
+      "bytes": 2015167,
+      "sha256": "2112c829ed558489aebfaa38b742adc91a31dcf7c90ace0186650912a8ecc531",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.7768331562167907,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "CharacterArt/assets/yujin/reference_v001/yujin_reference_v001.png",
+      "bytes": 901573,
+      "sha256": "ce62752f6e9d31b14043716424bd56587e5e1e32801f2f18b08dba6ba7a21306",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1111360,
+      "partial_alpha_pixels": 461504,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/face_reference.png",
+      "bytes": 178420,
+      "sha256": "b1f2b565c239aca33977e71ee9122b2814c6635a8506e5ea98116f45b01a2987",
+      "width": 320,
+      "height": 320,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 18100,
+      "partial_alpha_pixels": 84168,
+      "aspect_ratio": 1.0,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/serious.png",
+      "bytes": 2007788,
+      "sha256": "fe9c643a7f7bcc36a481ba54977eb5ad43ad563bc652bc31ecffbc408f6d864a",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 281702,
+      "partial_alpha_pixels": 1290767,
+      "aspect_ratio": 1.0,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/shy.png",
+      "bytes": 1988815,
+      "sha256": "de2c21a602996c3beb1da3a290c8eed2f7b6562995688e746286c314b0092ef3",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 285382,
+      "partial_alpha_pixels": 1287070,
+      "aspect_ratio": 1.0,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/smile.png",
+      "bytes": 2042939,
+      "sha256": "c8f14c05a573ef7d10228e1a6930feb078811de6209310bd683aa74a7ce3f267",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 263872,
+      "partial_alpha_pixels": 1308624,
+      "aspect_ratio": 1.0,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "Source/game/images/characters/ria/ui_master.png",
+      "bytes": 2360821,
+      "sha256": "6634a135b51169e314268a581ff7cec6f439eac8597bbd7b33f940d607f7ee65",
+      "width": 2048,
+      "height": 3072,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 4781249,
+      "partial_alpha_pixels": 1497518,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "Source/game/images/characters/ria/ui_master_v2.png",
+      "bytes": 774146,
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca",
+      "width": 993,
+      "height": 1584,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1164435,
+      "partial_alpha_pixels": 406373,
+      "aspect_ratio": 0.6268939393939394,
+      "status": "PASS_TECHNICAL"
+    },
+    {
+      "path": "Source/game/images/characters/yujin/ui_temp_v001.png",
+      "bytes": 803555,
+      "sha256": "c68a17a92b697066c67ed737c0a26f1ab1ce0f0cd0a9301896fcd33e93c7246c",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_channel": true,
+      "transparent_pixels": 1171401,
+      "partial_alpha_pixels": 401463,
+      "aspect_ratio": 0.6666666666666666,
+      "status": "PASS_TECHNICAL"
+    }
+  ],
+  "count": 30,
+  "errors": 0,
+  "duplicate_sha256": [
+    [
+      "CharacterArt/assets/ria/master/ria_master_v001.png",
+      "Source/game/images/characters/ria/ui_master_v2.png"
+    ]
+  ],
+  "missing_planned_assets": [
+    {
+      "id": "ria_R07_casual_intro",
+      "planned_path": "images/events/ria/r07_casual_intro.png"
+    },
+    {
+      "id": "ria_R07_casual_intro_shy",
+      "planned_path": "images/events/ria/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "ria_R07_casual_base01",
+      "planned_path": "images/event_cg/ria/r07_casual_base01.png"
+    },
+    {
+      "id": "ria_R07_casual_base02",
+      "planned_path": "images/event_cg/ria/r07_casual_base02.png"
+    },
+    {
+      "id": "ria_R07_casual_base03",
+      "planned_path": "images/event_cg/ria/r07_casual_base03.png"
+    },
+    {
+      "id": "ria_R12_special_intro",
+      "planned_path": "images/events/ria/r12_special_intro.png"
+    },
+    {
+      "id": "ria_R12_special_intro_shy",
+      "planned_path": "images/events/ria/r12_special_intro_shy.png"
+    },
+    {
+      "id": "ria_R12_special_base01",
+      "planned_path": "images/event_cg/ria/r12_special_base01.png"
+    },
+    {
+      "id": "ria_R12_special_base02",
+      "planned_path": "images/event_cg/ria/r12_special_base02.png"
+    },
+    {
+      "id": "ria_R12_special_base03",
+      "planned_path": "images/event_cg/ria/r12_special_base03.png"
+    },
+    {
+      "id": "ria_R15_home_intro",
+      "planned_path": "images/events/ria/r15_home_intro.png"
+    },
+    {
+      "id": "ria_R15_home_intro_shy",
+      "planned_path": "images/events/ria/r15_home_intro_shy.png"
+    },
+    {
+      "id": "ria_R15_home_base01",
+      "planned_path": "images/event_cg/ria/r15_home_base01.png"
+    },
+    {
+      "id": "ria_R15_home_base02",
+      "planned_path": "images/event_cg/ria/r15_home_base02.png"
+    },
+    {
+      "id": "ria_R15_home_base03",
+      "planned_path": "images/event_cg/ria/r15_home_base03.png"
+    },
+    {
+      "id": "ria_R15_cosplay_intro",
+      "planned_path": "images/events/ria/r15_cosplay_intro.png"
+    },
+    {
+      "id": "ria_R15_cosplay_intro_shy",
+      "planned_path": "images/events/ria/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "ria_R15_cosplay_base01",
+      "planned_path": "images/event_cg/ria/r15_cosplay_base01.png"
+    },
+    {
+      "id": "ria_R15_cosplay_base02",
+      "planned_path": "images/event_cg/ria/r15_cosplay_base02.png"
+    },
+    {
+      "id": "ria_R15_cosplay_base03",
+      "planned_path": "images/event_cg/ria/r15_cosplay_base03.png"
+    },
+    {
+      "id": "jihyun_R07_casual_intro",
+      "planned_path": "images/events/jihyun/r07_casual_intro.png"
+    },
+    {
+      "id": "jihyun_R07_casual_intro_shy",
+      "planned_path": "images/events/jihyun/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R07_casual_base01",
+      "planned_path": "images/event_cg/jihyun/r07_casual_base01.png"
+    },
+    {
+      "id": "jihyun_R07_casual_base02",
+      "planned_path": "images/event_cg/jihyun/r07_casual_base02.png"
+    },
+    {
+      "id": "jihyun_R07_casual_base03",
+      "planned_path": "images/event_cg/jihyun/r07_casual_base03.png"
+    },
+    {
+      "id": "jihyun_R12_special_intro",
+      "planned_path": "images/events/jihyun/r12_special_intro.png"
+    },
+    {
+      "id": "jihyun_R12_special_intro_shy",
+      "planned_path": "images/events/jihyun/r12_special_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R12_special_base01",
+      "planned_path": "images/event_cg/jihyun/r12_special_base01.png"
+    },
+    {
+      "id": "jihyun_R12_special_base02",
+      "planned_path": "images/event_cg/jihyun/r12_special_base02.png"
+    },
+    {
+      "id": "jihyun_R12_special_base03",
+      "planned_path": "images/event_cg/jihyun/r12_special_base03.png"
+    },
+    {
+      "id": "jihyun_R15_home_intro",
+      "planned_path": "images/events/jihyun/r15_home_intro.png"
+    },
+    {
+      "id": "jihyun_R15_home_intro_shy",
+      "planned_path": "images/events/jihyun/r15_home_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R15_home_base01",
+      "planned_path": "images/event_cg/jihyun/r15_home_base01.png"
+    },
+    {
+      "id": "jihyun_R15_home_base02",
+      "planned_path": "images/event_cg/jihyun/r15_home_base02.png"
+    },
+    {
+      "id": "jihyun_R15_home_base03",
+      "planned_path": "images/event_cg/jihyun/r15_home_base03.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_intro",
+      "planned_path": "images/events/jihyun/r15_cosplay_intro.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_intro_shy",
+      "planned_path": "images/events/jihyun/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_base01",
+      "planned_path": "images/event_cg/jihyun/r15_cosplay_base01.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_base02",
+      "planned_path": "images/event_cg/jihyun/r15_cosplay_base02.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_base03",
+      "planned_path": "images/event_cg/jihyun/r15_cosplay_base03.png"
+    },
+    {
+      "id": "yujin_R07_casual_intro",
+      "planned_path": "images/events/yujin/r07_casual_intro.png"
+    },
+    {
+      "id": "yujin_R07_casual_intro_shy",
+      "planned_path": "images/events/yujin/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "yujin_R07_casual_base01",
+      "planned_path": "images/event_cg/yujin/r07_casual_base01.png"
+    },
+    {
+      "id": "yujin_R07_casual_base02",
+      "planned_path": "images/event_cg/yujin/r07_casual_base02.png"
+    },
+    {
+      "id": "yujin_R07_casual_base03",
+      "planned_path": "images/event_cg/yujin/r07_casual_base03.png"
+    },
+    {
+      "id": "yujin_R12_special_intro",
+      "planned_path": "images/events/yujin/r12_special_intro.png"
+    },
+    {
+      "id": "yujin_R12_special_intro_shy",
+      "planned_path": "images/events/yujin/r12_special_intro_shy.png"
+    },
+    {
+      "id": "yujin_R12_special_base01",
+      "planned_path": "images/event_cg/yujin/r12_special_base01.png"
+    },
+    {
+      "id": "yujin_R12_special_base02",
+      "planned_path": "images/event_cg/yujin/r12_special_base02.png"
+    },
+    {
+      "id": "yujin_R12_special_base03",
+      "planned_path": "images/event_cg/yujin/r12_special_base03.png"
+    },
+    {
+      "id": "yujin_R15_home_intro",
+      "planned_path": "images/events/yujin/r15_home_intro.png"
+    },
+    {
+      "id": "yujin_R15_home_intro_shy",
+      "planned_path": "images/events/yujin/r15_home_intro_shy.png"
+    },
+    {
+      "id": "yujin_R15_home_base01",
+      "planned_path": "images/event_cg/yujin/r15_home_base01.png"
+    },
+    {
+      "id": "yujin_R15_home_base02",
+      "planned_path": "images/event_cg/yujin/r15_home_base02.png"
+    },
+    {
+      "id": "yujin_R15_home_base03",
+      "planned_path": "images/event_cg/yujin/r15_home_base03.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_intro",
+      "planned_path": "images/events/yujin/r15_cosplay_intro.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_intro_shy",
+      "planned_path": "images/events/yujin/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_base01",
+      "planned_path": "images/event_cg/yujin/r15_cosplay_base01.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_base02",
+      "planned_path": "images/event_cg/yujin/r15_cosplay_base02.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_base03",
+      "planned_path": "images/event_cg/yujin/r15_cosplay_base03.png"
+    },
+    {
+      "id": "seoyun_R07_casual_intro",
+      "planned_path": "images/events/seoyun/r07_casual_intro.png"
+    },
+    {
+      "id": "seoyun_R07_casual_intro_shy",
+      "planned_path": "images/events/seoyun/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R07_casual_base01",
+      "planned_path": "images/event_cg/seoyun/r07_casual_base01.png"
+    },
+    {
+      "id": "seoyun_R07_casual_base02",
+      "planned_path": "images/event_cg/seoyun/r07_casual_base02.png"
+    },
+    {
+      "id": "seoyun_R07_casual_base03",
+      "planned_path": "images/event_cg/seoyun/r07_casual_base03.png"
+    },
+    {
+      "id": "seoyun_R12_special_intro",
+      "planned_path": "images/events/seoyun/r12_special_intro.png"
+    },
+    {
+      "id": "seoyun_R12_special_intro_shy",
+      "planned_path": "images/events/seoyun/r12_special_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R12_special_base01",
+      "planned_path": "images/event_cg/seoyun/r12_special_base01.png"
+    },
+    {
+      "id": "seoyun_R12_special_base02",
+      "planned_path": "images/event_cg/seoyun/r12_special_base02.png"
+    },
+    {
+      "id": "seoyun_R12_special_base03",
+      "planned_path": "images/event_cg/seoyun/r12_special_base03.png"
+    },
+    {
+      "id": "seoyun_R15_home_intro",
+      "planned_path": "images/events/seoyun/r15_home_intro.png"
+    },
+    {
+      "id": "seoyun_R15_home_intro_shy",
+      "planned_path": "images/events/seoyun/r15_home_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R15_home_base01",
+      "planned_path": "images/event_cg/seoyun/r15_home_base01.png"
+    },
+    {
+      "id": "seoyun_R15_home_base02",
+      "planned_path": "images/event_cg/seoyun/r15_home_base02.png"
+    },
+    {
+      "id": "seoyun_R15_home_base03",
+      "planned_path": "images/event_cg/seoyun/r15_home_base03.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_intro",
+      "planned_path": "images/events/seoyun/r15_cosplay_intro.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_intro_shy",
+      "planned_path": "images/events/seoyun/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_base01",
+      "planned_path": "images/event_cg/seoyun/r15_cosplay_base01.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_base02",
+      "planned_path": "images/event_cg/seoyun/r15_cosplay_base02.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_base03",
+      "planned_path": "images/event_cg/seoyun/r15_cosplay_base03.png"
+    }
+  ],
+  "note": "Missing planned assets are incomplete production, not PNG decode failures; visual QA and approval remain separate."
+}
