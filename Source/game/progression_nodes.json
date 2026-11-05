@@ -1,0 +1,2451 @@
+[
+  {
+    "id": "c01",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C01 · 첫 출근은 현장으로",
+    "source": "Source/game/common.rpy",
+    "order": 10
+  },
+  {
+    "id": "c01.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c01",
+    "title": "C01 · 첫 출근은 현장으로 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 10.01
+  },
+  {
+    "id": "c01.choice02",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c01",
+    "title": "C01 · 첫 출근은 현장으로 · 선택 02",
+    "source": "Source/game/common.rpy",
+    "order": 10.02
+  },
+  {
+    "id": "c02",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C02 · 결론보다 근거",
+    "source": "Source/game/common.rpy",
+    "order": 20
+  },
+  {
+    "id": "c02.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c02",
+    "title": "C02 · 결론보다 근거 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 20.01
+  },
+  {
+    "id": "c03",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C03 · 예쁘다는 말 다음",
+    "source": "Source/game/common.rpy",
+    "order": 30
+  },
+  {
+    "id": "c03.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c03",
+    "title": "C03 · 예쁘다는 말 다음 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 30.01
+  },
+  {
+    "id": "c04",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C04 · 농담 뒤의 요청",
+    "source": "Source/game/common.rpy",
+    "order": 40
+  },
+  {
+    "id": "c04.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c04",
+    "title": "C04 · 농담 뒤의 요청 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 40.01
+  },
+  {
+    "id": "c05",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C05 · 메뉴판 밖의 취향",
+    "source": "Source/game/common.rpy",
+    "order": 50
+  },
+  {
+    "id": "c05.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c05",
+    "title": "C05 · 메뉴판 밖의 취향 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 50.01
+  },
+  {
+    "id": "c06",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C06 · 이야기 하나, 함께한 순간 하나",
+    "source": "Source/game/common.rpy",
+    "order": 60
+  },
+  {
+    "id": "c06.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c06",
+    "title": "C06 · 이야기 하나, 함께한 순간 하나 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 60.01
+  },
+  {
+    "id": "c06.choice02",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c06",
+    "title": "C06 · 이야기 하나, 함께한 순간 하나 · 선택 02",
+    "source": "Source/game/common.rpy",
+    "order": 60.02
+  },
+  {
+    "id": "c07",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C07 · 마지막 확인, 그다음 오 분",
+    "source": "Source/game/common.rpy",
+    "order": 70
+  },
+  {
+    "id": "c07.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c07",
+    "title": "C07 · 마지막 확인, 그다음 오 분 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 70.01
+  },
+  {
+    "id": "c07.choice02",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c07",
+    "title": "C07 · 마지막 확인, 그다음 오 분 · 선택 02",
+    "source": "Source/game/common.rpy",
+    "order": 70.02
+  },
+  {
+    "id": "c08",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "C08 · 다음 약속의 상대",
+    "source": "Source/game/common.rpy",
+    "order": 80
+  },
+  {
+    "id": "c08.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c08",
+    "title": "C08 · 다음 약속의 상대 · 선택 01",
+    "source": "Source/game/common.rpy",
+    "order": 80.01
+  },
+  {
+    "id": "c08.choice02",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "c08",
+    "title": "C08 · 다음 약속의 상대 · 선택 02",
+    "source": "Source/game/common.rpy",
+    "order": 80.02
+  },
+  {
+    "id": "work_coord01",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "W_COORD01 · 회의 전 세 문장",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85
+  },
+  {
+    "id": "work_mini_coda",
+    "heroine": "common",
+    "kind": "support",
+    "parent": null,
+    "title": "WORK_MINI_CODA",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85
+  },
+  {
+    "id": "work_mini_first",
+    "heroine": "common",
+    "kind": "support",
+    "parent": null,
+    "title": "WORK_MINI_FIRST",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85
+  },
+  {
+    "id": "work_mini_second",
+    "heroine": "common",
+    "kind": "support",
+    "parent": null,
+    "title": "WORK_MINI_SECOND",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85
+  },
+  {
+    "id": "work_test01",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "W_TEST01 · 작게 먼저",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85
+  },
+  {
+    "id": "work_verify01",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "W_VERIFY01 · 표의 작은 빈칸",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85
+  },
+  {
+    "id": "work_coord01.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "work_coord01",
+    "title": "W_COORD01 · 회의 전 세 문장 · 선택 01",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85.01
+  },
+  {
+    "id": "work_test01.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "work_test01",
+    "title": "W_TEST01 · 작게 먼저 · 선택 01",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85.01
+  },
+  {
+    "id": "work_verify01.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "work_verify01",
+    "title": "W_VERIFY01 · 표의 작은 빈칸 · 선택 01",
+    "source": "Source/game/work_minis.rpy",
+    "order": 85.01
+  },
+  {
+    "id": "jihyun_r01",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R01 · 업무 얘기는 아니야",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 110
+  },
+  {
+    "id": "ria_r01",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R01 · 오늘은 동료 둘이",
+    "source": "Source/game/ria_r01.rpy",
+    "order": 110
+  },
+  {
+    "id": "seoyun_r01",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R01 · 언제 한번 말고 오늘",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 110
+  },
+  {
+    "id": "yujin_r01",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R01 · 보내려던 메시지",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 110
+  },
+  {
+    "id": "jihyun_r01.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r01",
+    "title": "지현 R01 · 업무 얘기는 아니야 · 선택 01",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 110.01
+  },
+  {
+    "id": "ria_r01.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r01",
+    "title": "리아 R01 · 오늘은 동료 둘이 · 선택 01",
+    "source": "Source/game/ria_r01.rpy",
+    "order": 110.01
+  },
+  {
+    "id": "seoyun_r01.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r01",
+    "title": "서윤 R01 · 언제 한번 말고 오늘 · 선택 01",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 110.01
+  },
+  {
+    "id": "yujin_r01.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r01",
+    "title": "유진 R01 · 보내려던 메시지 · 선택 01",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 110.01
+  },
+  {
+    "id": "jihyun_r02",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R02 · 오늘은 네가 정해 줘",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 120
+  },
+  {
+    "id": "ria_r02",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R02 · 문 닫힌 가게 앞에서",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 120
+  },
+  {
+    "id": "seoyun_r02",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R02 · 누나도 말을 고를 때",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 120
+  },
+  {
+    "id": "yujin_r02",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R02 · 오늘 코스는 제가 골랐어요",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 120
+  },
+  {
+    "id": "jihyun_r02.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r02",
+    "title": "지현 R02 · 오늘은 네가 정해 줘 · 선택 01",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 120.01
+  },
+  {
+    "id": "ria_r02.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r02",
+    "title": "리아 R02 · 문 닫힌 가게 앞에서 · 선택 01",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 120.01
+  },
+  {
+    "id": "seoyun_r02.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r02",
+    "title": "서윤 R02 · 누나도 말을 고를 때 · 선택 01",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 120.01
+  },
+  {
+    "id": "yujin_r02.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r02",
+    "title": "유진 R02 · 오늘 코스는 제가 골랐어요 · 선택 01",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 120.01
+  },
+  {
+    "id": "ria_r02.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r02",
+    "title": "리아 R02 · 문 닫힌 가게 앞에서 · 선택 02",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 120.02
+  },
+  {
+    "id": "seoyun_r02.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r02",
+    "title": "서윤 R02 · 누나도 말을 고를 때 · 선택 02",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 120.02
+  },
+  {
+    "id": "yujin_r02.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r02",
+    "title": "유진 R02 · 오늘 코스는 제가 골랐어요 · 선택 02",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 120.02
+  },
+  {
+    "id": "jihyun_r03",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R03 · 네 안을 다시 봤어",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 130
+  },
+  {
+    "id": "ria_r03",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R03 · 네가 말했던 자리",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 130
+  },
+  {
+    "id": "seoyun_r03",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R03 · 네가 기억했던 약속",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 130
+  },
+  {
+    "id": "yujin_r03",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R03 · 질문을 기억한 시안",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 130
+  },
+  {
+    "id": "jihyun_r03.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r03",
+    "title": "지현 R03 · 네 안을 다시 봤어 · 선택 01",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 130.01
+  },
+  {
+    "id": "ria_r03.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r03",
+    "title": "리아 R03 · 네가 말했던 자리 · 선택 01",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 130.01
+  },
+  {
+    "id": "seoyun_r03.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r03",
+    "title": "서윤 R03 · 네가 기억했던 약속 · 선택 01",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 130.01
+  },
+  {
+    "id": "yujin_r03.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r03",
+    "title": "유진 R03 · 질문을 기억한 시안 · 선택 01",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 130.01
+  },
+  {
+    "id": "seoyun_r03.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r03",
+    "title": "서윤 R03 · 네가 기억했던 약속 · 선택 02",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 130.02
+  },
+  {
+    "id": "jihyun_r04",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R04 · 결정은 같이 하자",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 140
+  },
+  {
+    "id": "ria_r04",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R04 · 장난은 여기까지",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 140
+  },
+  {
+    "id": "seoyun_r04",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R04 · 그 말은 농담으로 하지 마",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 140
+  },
+  {
+    "id": "yujin_r04",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R04 · 부끄럽지만 말할게요",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 140
+  },
+  {
+    "id": "jihyun_r04.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r04",
+    "title": "지현 R04 · 결정은 같이 하자 · 선택 01",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 140.01
+  },
+  {
+    "id": "ria_r04.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r04",
+    "title": "리아 R04 · 장난은 여기까지 · 선택 01",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 140.01
+  },
+  {
+    "id": "seoyun_r04.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r04",
+    "title": "서윤 R04 · 그 말은 농담으로 하지 마 · 선택 01",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 140.01
+  },
+  {
+    "id": "yujin_r04.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r04",
+    "title": "유진 R04 · 부끄럽지만 말할게요 · 선택 01",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 140.01
+  },
+  {
+    "id": "jihyun_r04.choice02",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r04",
+    "title": "지현 R04 · 결정은 같이 하자 · 선택 02",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 140.02
+  },
+  {
+    "id": "ria_r04.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r04",
+    "title": "리아 R04 · 장난은 여기까지 · 선택 02",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 140.02
+  },
+  {
+    "id": "seoyun_r04.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r04",
+    "title": "서윤 R04 · 그 말은 농담으로 하지 마 · 선택 02",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 140.02
+  },
+  {
+    "id": "yujin_r04.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r04",
+    "title": "유진 R04 · 부끄럽지만 말할게요 · 선택 02",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 140.02
+  },
+  {
+    "id": "jihyun_r04.choice03",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r04",
+    "title": "지현 R04 · 결정은 같이 하자 · 선택 03",
+    "source": "Source/game/jihyun_r01_r04.rpy",
+    "order": 140.03
+  },
+  {
+    "id": "ria_r04.choice03",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r04",
+    "title": "리아 R04 · 장난은 여기까지 · 선택 03",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 140.03
+  },
+  {
+    "id": "seoyun_r04.choice03",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r04",
+    "title": "서윤 R04 · 그 말은 농담으로 하지 마 · 선택 03",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 140.03
+  },
+  {
+    "id": "yujin_r04.choice03",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r04",
+    "title": "유진 R04 · 부끄럽지만 말할게요 · 선택 03",
+    "source": "Source/game/yujin_r01_r04.rpy",
+    "order": 140.03
+  },
+  {
+    "id": "seoyun_r04.choice04",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r04",
+    "title": "서윤 R04 · 그 말은 농담으로 하지 마 · 선택 04",
+    "source": "Source/game/seoyun_r01_r04.rpy",
+    "order": 140.04
+  },
+  {
+    "id": "jihyun_r05",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R05 · 비워 둔 일정표",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 150
+  },
+  {
+    "id": "ria_r05",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R05 · 둘이 만드는 저녁",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 150
+  },
+  {
+    "id": "seoyun_r05",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R05 · 단골이 되는 순서",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 150
+  },
+  {
+    "id": "yujin_r05",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R05 · 둘이 고른 주말",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 150
+  },
+  {
+    "id": "jihyun_r05.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r05",
+    "title": "지현 R05 · 비워 둔 일정표 · 선택 01",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 150.01
+  },
+  {
+    "id": "ria_r05.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r05",
+    "title": "리아 R05 · 둘이 만드는 저녁 · 선택 01",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 150.01
+  },
+  {
+    "id": "seoyun_r05.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r05",
+    "title": "서윤 R05 · 단골이 되는 순서 · 선택 01",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 150.01
+  },
+  {
+    "id": "yujin_r05.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r05",
+    "title": "유진 R05 · 둘이 고른 주말 · 선택 01",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 150.01
+  },
+  {
+    "id": "jihyun_r05.choice02",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r05",
+    "title": "지현 R05 · 비워 둔 일정표 · 선택 02",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 150.02
+  },
+  {
+    "id": "yujin_r05.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r05",
+    "title": "유진 R05 · 둘이 고른 주말 · 선택 02",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 150.02
+  },
+  {
+    "id": "jihyun_o01",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "JIHYUN_O01",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 155
+  },
+  {
+    "id": "jihyun_o01_offer",
+    "heroine": "jihyun",
+    "kind": "support",
+    "parent": null,
+    "title": "JIHYUN_O01_OFFER",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 155
+  },
+  {
+    "id": "ria_o01",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "RIA_O01",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 155
+  },
+  {
+    "id": "ria_o01_offer",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_O01_OFFER",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 155
+  },
+  {
+    "id": "seoyun_o01",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 O01 · 책 제목을 기억하는 사람",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 155
+  },
+  {
+    "id": "seoyun_o01_offer",
+    "heroine": "seoyun",
+    "kind": "support",
+    "parent": null,
+    "title": "SEOYUN_O01_OFFER",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 155
+  },
+  {
+    "id": "yujin_o01",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "YUJIN_O01",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 155
+  },
+  {
+    "id": "yujin_o01_offer",
+    "heroine": "yujin",
+    "kind": "support",
+    "parent": null,
+    "title": "YUJIN_O01_OFFER",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 155
+  },
+  {
+    "id": "jihyun_o01_offer.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_o01_offer",
+    "title": "JIHYUN_O01_OFFER · 선택 1",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "jihyun_o01.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_o01",
+    "title": "JIHYUN_O01 · 선택 1",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "ria_o01_offer.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o01_offer",
+    "title": "RIA_O01_OFFER · 선택 1",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "ria_o01.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o01",
+    "title": "RIA_O01 · 선택 1",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "seoyun_o01_offer.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_o01_offer",
+    "title": "SEOYUN_O01_OFFER · 선택 1",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "seoyun_o01.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_o01",
+    "title": "서윤 O01 · 책 제목을 기억하는 사람 · 선택 01",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "yujin_o01_offer.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_o01_offer",
+    "title": "YUJIN_O01_OFFER · 선택 1",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "yujin_o01.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_o01",
+    "title": "YUJIN_O01 · 선택 1",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 155.01
+  },
+  {
+    "id": "jihyun_r06",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R06 · 회사 밖의 호칭",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 160
+  },
+  {
+    "id": "ria_r06",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R06 · 재밌어야만 하는 걸까",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 160
+  },
+  {
+    "id": "seoyun_r06",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R06 · 우리 얘기부터 정하자",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 160
+  },
+  {
+    "id": "yujin_r06",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R06 · 제가 먼저 말해도 되죠",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 160
+  },
+  {
+    "id": "jihyun_r06.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r06",
+    "title": "지현 R06 · 회사 밖의 호칭 · 선택 01",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 160.01
+  },
+  {
+    "id": "ria_r06.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r06",
+    "title": "리아 R06 · 재밌어야만 하는 걸까 · 선택 01",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 160.01
+  },
+  {
+    "id": "seoyun_r06.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r06",
+    "title": "서윤 R06 · 우리 얘기부터 정하자 · 선택 01",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 160.01
+  },
+  {
+    "id": "yujin_r06.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r06",
+    "title": "유진 R06 · 제가 먼저 말해도 되죠 · 선택 01",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 160.01
+  },
+  {
+    "id": "jihyun_r06.choice02",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r06",
+    "title": "지현 R06 · 회사 밖의 호칭 · 선택 02",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 160.02
+  },
+  {
+    "id": "ria_r06.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r06",
+    "title": "리아 R06 · 재밌어야만 하는 걸까 · 선택 02",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 160.02
+  },
+  {
+    "id": "seoyun_r06.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r06",
+    "title": "서윤 R06 · 우리 얘기부터 정하자 · 선택 02",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 160.02
+  },
+  {
+    "id": "yujin_r06.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r06",
+    "title": "유진 R06 · 제가 먼저 말해도 되죠 · 선택 02",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 160.02
+  },
+  {
+    "id": "jihyun_r07",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R07 · 부탁해도 되는 저녁",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 170
+  },
+  {
+    "id": "ria_r07",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R07 · 오늘의 속도",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 170
+  },
+  {
+    "id": "seoyun_r07",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R07 · 농담을 멈춘 저녁",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 170
+  },
+  {
+    "id": "yujin_r07",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R07 · 둘이 선택한 속도",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 170
+  },
+  {
+    "id": "jihyun_private_evening.choice01.r07",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r07",
+    "title": "R07 · 선택 1",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 170.01
+  },
+  {
+    "id": "ria_r07.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r07",
+    "title": "리아 R07 · 오늘의 속도 · 선택 01",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 170.01
+  },
+  {
+    "id": "seoyun_private_evening.choice01.r07",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r07",
+    "title": "서윤 R07 · 농담을 멈춘 저녁 · 선택 01.r07",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 170.01
+  },
+  {
+    "id": "yujin_r07.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r07",
+    "title": "유진 R07 · 둘이 선택한 속도 · 선택 01",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 170.01
+  },
+  {
+    "id": "jihyun_r08",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R08 · 평소처럼, 조금 다르게",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 180
+  },
+  {
+    "id": "ria_r08",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R08 · 조용해도 괜찮은 아침",
+    "source": "Source/game/ria_r05_r08.rpy",
+    "order": 180
+  },
+  {
+    "id": "ria_r08_phone_conversation",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_R08_PHONE_CONVERSATION",
+    "source": "Source/game/office_phone.rpy",
+    "order": 180
+  },
+  {
+    "id": "seoyun_r08",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R08 · 보고 싶다는 한 문장",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 180
+  },
+  {
+    "id": "yujin_r08",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R08 · 다음 약속은 제가",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 180
+  },
+  {
+    "id": "jihyun_r08.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r08",
+    "title": "지현 R08 · 평소처럼, 조금 다르게 · 선택 01",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 180.01
+  },
+  {
+    "id": "ria_r08_phone_conversation.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r08_phone_conversation",
+    "title": "RIA_R08_PHONE_CONVERSATION · 선택 1",
+    "source": "Source/game/office_phone.rpy",
+    "order": 180.01
+  },
+  {
+    "id": "seoyun_r08.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r08",
+    "title": "서윤 R08 · 보고 싶다는 한 문장 · 선택 01",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 180.01
+  },
+  {
+    "id": "yujin_r08.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r08",
+    "title": "유진 R08 · 다음 약속은 제가 · 선택 01",
+    "source": "Source/game/yujin_r05_r08.rpy",
+    "order": 180.01
+  },
+  {
+    "id": "work_coord02",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "W_COORD02 · 다르게 읽은 단어",
+    "source": "Source/game/work_minis.rpy",
+    "order": 185
+  },
+  {
+    "id": "work_test02",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "W_TEST02 · 틀린 시험의 쓸모",
+    "source": "Source/game/work_minis.rpy",
+    "order": 185
+  },
+  {
+    "id": "work_verify02",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "W_VERIFY02 · 가정에 별표",
+    "source": "Source/game/work_minis.rpy",
+    "order": 185
+  },
+  {
+    "id": "work_coord02.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "work_coord02",
+    "title": "W_COORD02 · 다르게 읽은 단어 · 선택 01",
+    "source": "Source/game/work_minis.rpy",
+    "order": 185.01
+  },
+  {
+    "id": "work_test02.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "work_test02",
+    "title": "W_TEST02 · 틀린 시험의 쓸모 · 선택 01",
+    "source": "Source/game/work_minis.rpy",
+    "order": 185.01
+  },
+  {
+    "id": "work_verify02.choice01",
+    "heroine": "common",
+    "kind": "choice",
+    "parent": "work_verify02",
+    "title": "W_VERIFY02 · 가정에 별표 · 선택 01",
+    "source": "Source/game/work_minis.rpy",
+    "order": 185.01
+  },
+  {
+    "id": "jihyun_r09",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R09 · 판단을 바꾸는 책임",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 190
+  },
+  {
+    "id": "ria_r09",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R09 · 분위기 담당이라는 말",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 190
+  },
+  {
+    "id": "seoyun_r09",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R09 · 웃으면서도 분명하게",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 190
+  },
+  {
+    "id": "yujin_r09",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R09 · 제안서의 마지막 이름",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 190
+  },
+  {
+    "id": "jihyun_r09.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r09",
+    "title": "지현 R09 · 판단을 바꾸는 책임 · 선택 01",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 190.01
+  },
+  {
+    "id": "ria_r09.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r09",
+    "title": "리아 R09 · 분위기 담당이라는 말 · 선택 01",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 190.01
+  },
+  {
+    "id": "seoyun_r09.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r09",
+    "title": "서윤 R09 · 웃으면서도 분명하게 · 선택 01",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 190.01
+  },
+  {
+    "id": "yujin_r09.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r09",
+    "title": "유진 R09 · 제안서의 마지막 이름 · 선택 01",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 190.01
+  },
+  {
+    "id": "yujin_r09.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r09",
+    "title": "유진 R09 · 제안서의 마지막 이름 · 선택 02",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 190.02
+  },
+  {
+    "id": "yujin_r09.choice03",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r09",
+    "title": "유진 R09 · 제안서의 마지막 이름 · 선택 03",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 190.03
+  },
+  {
+    "id": "jihyun_r10",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R10 · 천천히 만드는 취미",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 200
+  },
+  {
+    "id": "jihyun_r10_after",
+    "heroine": "jihyun",
+    "kind": "support",
+    "parent": null,
+    "title": "JIHYUN_R10_AFTER",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 200
+  },
+  {
+    "id": "ria_r10",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R10 · 지도에 적은 다음",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 200
+  },
+  {
+    "id": "seoyun_r10",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R10 · 단골도 틀리는 취향",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 200
+  },
+  {
+    "id": "seoyun_r10_after",
+    "heroine": "seoyun",
+    "kind": "support",
+    "parent": null,
+    "title": "SEOYUN_R10_AFTER",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 200
+  },
+  {
+    "id": "yujin_r10",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R10 · 아직 남겨 둔 페이지",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 200
+  },
+  {
+    "id": "jihyun_r10.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r10",
+    "title": "지현 R10 · 천천히 만드는 취미 · 선택 01",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 200.01
+  },
+  {
+    "id": "ria_r10.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r10",
+    "title": "리아 R10 · 지도에 적은 다음 · 선택 01",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 200.01
+  },
+  {
+    "id": "seoyun_r10.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r10",
+    "title": "서윤 R10 · 단골도 틀리는 취향 · 선택 01",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 200.01
+  },
+  {
+    "id": "yujin_r10.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r10",
+    "title": "유진 R10 · 아직 남겨 둔 페이지 · 선택 01",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 200.01
+  },
+  {
+    "id": "jihyun_r10.choice02",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r10",
+    "title": "지현 R10 · 천천히 만드는 취미 · 선택 02",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 200.02
+  },
+  {
+    "id": "ria_r10.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r10",
+    "title": "리아 R10 · 지도에 적은 다음 · 선택 02",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 200.02
+  },
+  {
+    "id": "seoyun_r10.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r10",
+    "title": "서윤 R10 · 단골도 틀리는 취향 · 선택 02",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 200.02
+  },
+  {
+    "id": "yujin_r10.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r10",
+    "title": "유진 R10 · 아직 남겨 둔 페이지 · 선택 02",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 200.02
+  },
+  {
+    "id": "jihyun_o02",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "JIHYUN_O02",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 205
+  },
+  {
+    "id": "jihyun_o02_offer",
+    "heroine": "jihyun",
+    "kind": "support",
+    "parent": null,
+    "title": "JIHYUN_O02_OFFER",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 205
+  },
+  {
+    "id": "ria_o02",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "RIA_O02",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 205
+  },
+  {
+    "id": "ria_o02_offer",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_O02_OFFER",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 205
+  },
+  {
+    "id": "seoyun_o02",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 O02 · 서로 실패한 농담",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 205
+  },
+  {
+    "id": "seoyun_o02_offer",
+    "heroine": "seoyun",
+    "kind": "support",
+    "parent": null,
+    "title": "SEOYUN_O02_OFFER",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 205
+  },
+  {
+    "id": "yujin_o02",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "YUJIN_O02",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 205
+  },
+  {
+    "id": "yujin_o02_offer",
+    "heroine": "yujin",
+    "kind": "support",
+    "parent": null,
+    "title": "YUJIN_O02_OFFER",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 205
+  },
+  {
+    "id": "jihyun_o02_offer.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_o02_offer",
+    "title": "JIHYUN_O02_OFFER · 선택 1",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "jihyun_o02.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_o02",
+    "title": "JIHYUN_O02 · 선택 1",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "ria_o02_offer.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o02_offer",
+    "title": "RIA_O02_OFFER · 선택 1",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "ria_o02.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o02",
+    "title": "RIA_O02 · 선택 1",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "seoyun_o02_offer.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_o02_offer",
+    "title": "SEOYUN_O02_OFFER · 선택 1",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "seoyun_o02.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_o02",
+    "title": "서윤 O02 · 서로 실패한 농담 · 선택 01",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "yujin_o02_offer.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_o02_offer",
+    "title": "YUJIN_O02_OFFER · 선택 1",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "yujin_o02.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_o02",
+    "title": "YUJIN_O02 · 선택 1",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 205.01
+  },
+  {
+    "id": "jihyun_r11",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R11 · 결정하지 않는 시간",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 210
+  },
+  {
+    "id": "ria_r11",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R11 · 계획 없는 저녁",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 210
+  },
+  {
+    "id": "seoyun_r11",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R11 · 다음 주의 일정",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 210
+  },
+  {
+    "id": "yujin_r11",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R11 · 제안한 사람의 마음",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 210
+  },
+  {
+    "id": "jihyun_r11.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r11",
+    "title": "지현 R11 · 결정하지 않는 시간 · 선택 01",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 210.01
+  },
+  {
+    "id": "ria_r11.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r11",
+    "title": "리아 R11 · 계획 없는 저녁 · 선택 01",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 210.01
+  },
+  {
+    "id": "seoyun_r11.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r11",
+    "title": "서윤 R11 · 다음 주의 일정 · 선택 01",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 210.01
+  },
+  {
+    "id": "yujin_r11.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r11",
+    "title": "유진 R11 · 제안한 사람의 마음 · 선택 01",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 210.01
+  },
+  {
+    "id": "jihyun_r12",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R12 · 일정표에 남긴 자리",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 220
+  },
+  {
+    "id": "ria_r12",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R12 · 보고 싶어서 잡은 날",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 220
+  },
+  {
+    "id": "ria_r12_contact_line",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_R12_CONTACT_LINE",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 220
+  },
+  {
+    "id": "ria_r12_plan_pick",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_R12_PLAN_PICK",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 220
+  },
+  {
+    "id": "seoyun_r12",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R12 · 이번엔 날짜까지 말할게",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 220
+  },
+  {
+    "id": "yujin_r12",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R12 · 먼저 잡은 재회",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 220
+  },
+  {
+    "id": "jihyun_private_evening.choice01.r12",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r12",
+    "title": "R12 · 선택 1",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 220.01
+  },
+  {
+    "id": "ria_r12_plan_pick.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r12_plan_pick",
+    "title": "RIA_R12_PLAN_PICK · 선택 1",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 220.01
+  },
+  {
+    "id": "ria_r12.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r12",
+    "title": "리아 R12 · 보고 싶어서 잡은 날 · 선택 01",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 220.01
+  },
+  {
+    "id": "seoyun_private_evening.choice01.r12",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r12",
+    "title": "서윤 R12 · 이번엔 날짜까지 말할게 · 선택 01.r12",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 220.01
+  },
+  {
+    "id": "yujin_r12.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r12",
+    "title": "유진 R12 · 먼저 잡은 재회 · 선택 01",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 220.01
+  },
+  {
+    "id": "ria_r12_plan_pick.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r12_plan_pick",
+    "title": "RIA_R12_PLAN_PICK · 선택 2",
+    "source": "Source/game/ria_r09_r12.rpy",
+    "order": 220.02
+  },
+  {
+    "id": "yujin_r12.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r12",
+    "title": "유진 R12 · 먼저 잡은 재회 · 선택 02",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 220.02
+  },
+  {
+    "id": "yujin_r12.choice03",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r12",
+    "title": "유진 R12 · 먼저 잡은 재회 · 선택 03",
+    "source": "Source/game/yujin_r09_r12.rpy",
+    "order": 220.03
+  },
+  {
+    "id": "jihyun_r13",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R13 · 널 위해 철회했어",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 230
+  },
+  {
+    "id": "ria_r13",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R13 · 다음엔 더 재밌게라는 말",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 230
+  },
+  {
+    "id": "seoyun_r13",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R13 · 내 대답까지 고르지 마요",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 230
+  },
+  {
+    "id": "yujin_r13",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R13 · 제가 원하는 도움",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 230
+  },
+  {
+    "id": "jihyun_r13.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r13",
+    "title": "지현 R13 · 널 위해 철회했어 · 선택 01",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 230.01
+  },
+  {
+    "id": "ria_r13.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r13",
+    "title": "리아 R13 · 다음엔 더 재밌게라는 말 · 선택 01",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 230.01
+  },
+  {
+    "id": "seoyun_r13.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r13",
+    "title": "서윤 R13 · 내 대답까지 고르지 마요 · 선택 01",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 230.01
+  },
+  {
+    "id": "yujin_r13.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r13",
+    "title": "유진 R13 · 제가 원하는 도움 · 선택 01",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 230.01
+  },
+  {
+    "id": "jihyun_r14",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R14 · 네가 설명해, 나는 옆에",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 240
+  },
+  {
+    "id": "ria_r14",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R14 · 시간을 지키는 연습",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 240
+  },
+  {
+    "id": "seoyun_r14",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R14 · 두 사람 몫의 대답",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 240
+  },
+  {
+    "id": "yujin_r14",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R14 · 제가 설명할 순서",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 240
+  },
+  {
+    "id": "jihyun_r14.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r14",
+    "title": "지현 R14 · 네가 설명해, 나는 옆에 · 선택 01",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 240.01
+  },
+  {
+    "id": "ria_r14.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r14",
+    "title": "리아 R14 · 시간을 지키는 연습 · 선택 01",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 240.01
+  },
+  {
+    "id": "seoyun_r14.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r14",
+    "title": "서윤 R14 · 두 사람 몫의 대답 · 선택 01",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 240.01
+  },
+  {
+    "id": "yujin_r14.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r14",
+    "title": "유진 R14 · 제가 설명할 순서 · 선택 01",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 240.01
+  },
+  {
+    "id": "jihyun_r14.choice02",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r14",
+    "title": "지현 R14 · 네가 설명해, 나는 옆에 · 선택 02",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 240.02
+  },
+  {
+    "id": "ria_r14.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r14",
+    "title": "리아 R14 · 시간을 지키는 연습 · 선택 02",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 240.02
+  },
+  {
+    "id": "seoyun_r14.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r14",
+    "title": "서윤 R14 · 두 사람 몫의 대답 · 선택 02",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 240.02
+  },
+  {
+    "id": "yujin_r14.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r14",
+    "title": "유진 R14 · 제가 설명할 순서 · 선택 02",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 240.02
+  },
+  {
+    "id": "ria_r14.choice03",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r14",
+    "title": "리아 R14 · 시간을 지키는 연습 · 선택 03",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 240.03
+  },
+  {
+    "id": "seoyun_r14.choice03",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r14",
+    "title": "서윤 R14 · 두 사람 몫의 대답 · 선택 03",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 240.03
+  },
+  {
+    "id": "ria_r14.choice04",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r14",
+    "title": "리아 R14 · 시간을 지키는 연습 · 선택 04",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 240.04
+  },
+  {
+    "id": "jihyun_r15",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R15 · 같은 편의 다른 의견",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 250
+  },
+  {
+    "id": "ria_r15",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R15 · 쉬는 날도 우리 계획",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 250
+  },
+  {
+    "id": "seoyun_r15",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R15 · 다음 금요일은 우리 약속",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 250
+  },
+  {
+    "id": "yujin_r15",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R15 · 다음에도 제가 말할게요",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 250
+  },
+  {
+    "id": "jihyun_private_evening.choice01.r15",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r15",
+    "title": "R15 · 선택 1",
+    "source": "Source/game/jihyun_r05_r12.rpy",
+    "order": 250.01
+  },
+  {
+    "id": "jihyun_r15.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r15",
+    "title": "지현 R15 · 같은 편의 다른 의견 · 선택 01",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 250.01
+  },
+  {
+    "id": "ria_r15.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r15",
+    "title": "리아 R15 · 쉬는 날도 우리 계획 · 선택 01",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 250.01
+  },
+  {
+    "id": "seoyun_private_evening.choice01.r15",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r15",
+    "title": "서윤 R15 · 다음 금요일은 우리 약속 · 선택 01.r15",
+    "source": "Source/game/seoyun_r05_r12.rpy",
+    "order": 250.01
+  },
+  {
+    "id": "seoyun_r15.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r15",
+    "title": "서윤 R15 · 다음 금요일은 우리 약속 · 선택 01",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 250.01
+  },
+  {
+    "id": "yujin_r15.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r15",
+    "title": "유진 R15 · 다음에도 제가 말할게요 · 선택 01",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 250.01
+  },
+  {
+    "id": "jihyun_r15.choice02",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r15",
+    "title": "지현 R15 · 같은 편의 다른 의견 · 선택 02",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 250.02
+  },
+  {
+    "id": "ria_r15.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r15",
+    "title": "리아 R15 · 쉬는 날도 우리 계획 · 선택 02",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 250.02
+  },
+  {
+    "id": "seoyun_r15.choice02",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r15",
+    "title": "서윤 R15 · 다음 금요일은 우리 약속 · 선택 02",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 250.02
+  },
+  {
+    "id": "yujin_r15.choice02",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r15",
+    "title": "유진 R15 · 다음에도 제가 말할게요 · 선택 02",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 250.02
+  },
+  {
+    "id": "ria_r15.choice03",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r15",
+    "title": "리아 R15 · 쉬는 날도 우리 계획 · 선택 03",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 250.03
+  },
+  {
+    "id": "yujin_r15.choice03",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r15",
+    "title": "유진 R15 · 다음에도 제가 말할게요 · 선택 03",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 250.03
+  },
+  {
+    "id": "jihyun_o03",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "JIHYUN_O03",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 255
+  },
+  {
+    "id": "jihyun_o03_offer",
+    "heroine": "jihyun",
+    "kind": "support",
+    "parent": null,
+    "title": "JIHYUN_O03_OFFER",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 255
+  },
+  {
+    "id": "ria_o03",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "RIA_O03",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 255
+  },
+  {
+    "id": "ria_o03_offer",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_O03_OFFER",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 255
+  },
+  {
+    "id": "seoyun_o03",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 O03 · 우리도 단골인가",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 255
+  },
+  {
+    "id": "seoyun_o03_offer",
+    "heroine": "seoyun",
+    "kind": "support",
+    "parent": null,
+    "title": "SEOYUN_O03_OFFER",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 255
+  },
+  {
+    "id": "yujin_o03",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "YUJIN_O03",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 255
+  },
+  {
+    "id": "yujin_o03_offer",
+    "heroine": "yujin",
+    "kind": "support",
+    "parent": null,
+    "title": "YUJIN_O03_OFFER",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 255
+  },
+  {
+    "id": "jihyun_o03_offer.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_o03_offer",
+    "title": "JIHYUN_O03_OFFER · 선택 1",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "jihyun_o03.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_o03",
+    "title": "JIHYUN_O03 · 선택 1",
+    "source": "Source/game/jihyun_optional.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "ria_o03_offer.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o03_offer",
+    "title": "RIA_O03_OFFER · 선택 1",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "ria_o03.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o03",
+    "title": "RIA_O03 · 선택 1",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "seoyun_o03_offer.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_o03_offer",
+    "title": "SEOYUN_O03_OFFER · 선택 1",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "seoyun_o03.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_o03",
+    "title": "서윤 O03 · 우리도 단골인가 · 선택 01",
+    "source": "Source/game/seoyun_optional.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "yujin_o03_offer.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_o03_offer",
+    "title": "YUJIN_O03_OFFER · 선택 1",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "yujin_o03.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_o03",
+    "title": "YUJIN_O03 · 선택 1",
+    "source": "Source/game/yujin_optional.rpy",
+    "order": 255.01
+  },
+  {
+    "id": "ria_o03.choice02",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_o03",
+    "title": "RIA_O03 · 선택 2",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 255.02
+  },
+  {
+    "id": "jihyun_r16",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 R16 · 책임을 나누는 사람",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 260
+  },
+  {
+    "id": "ria_r16",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 R16 · 같이 쉬는 사람",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 260
+  },
+  {
+    "id": "seoyun_r16",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 R16 · 함께 고르는 다음",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 260
+  },
+  {
+    "id": "yujin_r16",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 R16 · 제 이름으로, 우리 마음으로",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 260
+  },
+  {
+    "id": "jihyun_r16.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_r16",
+    "title": "지현 R16 · 책임을 나누는 사람 · 선택 01",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 260.01
+  },
+  {
+    "id": "ria_r16.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_r16",
+    "title": "리아 R16 · 같이 쉬는 사람 · 선택 01",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 260.01
+  },
+  {
+    "id": "seoyun_r16.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_r16",
+    "title": "서윤 R16 · 함께 고르는 다음 · 선택 01",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 260.01
+  },
+  {
+    "id": "yujin_r16.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_r16",
+    "title": "유진 R16 · 제 이름으로, 우리 마음으로 · 선택 01",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 260.01
+  },
+  {
+    "id": "jihyun_e01",
+    "heroine": "jihyun",
+    "kind": "event",
+    "parent": null,
+    "title": "지현 E01 · 쉬는 날의 부탁",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 280
+  },
+  {
+    "id": "ria_e01",
+    "heroine": "ria",
+    "kind": "event",
+    "parent": null,
+    "title": "리아 E01 · 아직 남은 지도",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 280
+  },
+  {
+    "id": "seoyun_e01",
+    "heroine": "seoyun",
+    "kind": "event",
+    "parent": null,
+    "title": "서윤 E01 · 같이 고른 자리",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 280
+  },
+  {
+    "id": "yujin_e01",
+    "heroine": "yujin",
+    "kind": "event",
+    "parent": null,
+    "title": "유진 E01 · 제 이름 옆의 우리",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 280
+  },
+  {
+    "id": "jihyun_e01.choice01",
+    "heroine": "jihyun",
+    "kind": "choice",
+    "parent": "jihyun_e01",
+    "title": "지현 E01 · 쉬는 날의 부탁 · 선택 01",
+    "source": "Source/game/jihyun_r13_e01.rpy",
+    "order": 280.01
+  },
+  {
+    "id": "ria_e01.choice01",
+    "heroine": "ria",
+    "kind": "choice",
+    "parent": "ria_e01",
+    "title": "리아 E01 · 아직 남은 지도 · 선택 01",
+    "source": "Source/game/ria_r13_e01.rpy",
+    "order": 280.01
+  },
+  {
+    "id": "seoyun_e01.choice01",
+    "heroine": "seoyun",
+    "kind": "choice",
+    "parent": "seoyun_e01",
+    "title": "서윤 E01 · 같이 고른 자리 · 선택 01",
+    "source": "Source/game/seoyun_r13_e01.rpy",
+    "order": 280.01
+  },
+  {
+    "id": "yujin_e01.choice01",
+    "heroine": "yujin",
+    "kind": "choice",
+    "parent": "yujin_e01",
+    "title": "유진 E01 · 제 이름 옆의 우리 · 선택 01",
+    "source": "Source/game/yujin_r13_e01.rpy",
+    "order": 280.01
+  },
+  {
+    "id": "ria_confess",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_CONFESS",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 500
+  },
+  {
+    "id": "ria_prepare",
+    "heroine": "ria",
+    "kind": "support",
+    "parent": null,
+    "title": "RIA_PREPARE",
+    "source": "Source/game/ria_r02_r04.rpy",
+    "order": 500
+  },
+  {
+    "id": "end_common",
+    "heroine": "common",
+    "kind": "event",
+    "parent": null,
+    "title": "END_COMMON · 좋은 동료로, 우리",
+    "source": "Source/game/core.rpy",
+    "order": 990
+  }
+]
+

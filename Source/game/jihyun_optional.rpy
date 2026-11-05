@@ -1,6 +1,11 @@
 label jihyun_o01_offer:
+    $ progression_enter("jihyun_o01_offer")
+    $ progression_checkpoint("jihyun_o01_offer")
     if not dating or active_route != "jihyun" or memory.get("jihyun_o01_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("jihyun_o01_offer.choice01")
+    $ progression_checkpoint("jihyun_o01_offer.choice01")
     menu:
         "잠깐 만나기 — 일정표의 빈칸 하나 (선택 일상)":
             call jihyun_o01
@@ -10,15 +15,21 @@ label jihyun_o01_offer:
             d "다음에는 계획 안 세운 시간도 같이 보내 봐요."
             j "응. 뭘 할지부터 정해 오지 않을게."
             $ remember("jihyun_o01_status", "brief")
+    $ progression_note_ending()
     return
 
 label jihyun_o01:
+    $ progression_enter("jihyun_o01")
+    $ progression_checkpoint("jihyun_o01")
     if not dating or active_route != "jihyun":
+        $ progression_note_ending()
         return
     $ chapter = "지현 O01 · 일정표의 빈칸 하나"
     $ location = "같은 토요일 늦은 오후 · 강변 가게 앞"
     "걷다가 들르려던 작은 가게가 닫혀 있었다. 빗방울까지 떨어지자 지현이 휴대폰을 꺼내려다 멈췄다."
     j "다른 데 세 군데쯤 찾아 버릴 뻔했네. 지금 뭐 하고 싶어?"
+    $ progression_enter("jihyun_o01.choice01")
+    $ progression_checkpoint("jihyun_o01.choice01")
     menu:
         "처마 아래에서 비를 구경하며 잠깐 머문다.":
             "둘은 처마 밑으로 들어가 바닥에 생기는 작은 물자국을 봤다."
@@ -42,11 +53,17 @@ label jihyun_o01:
             $ remember("jihyun_o01_activity", "우산 쓰고 정류장까지 걷기")
     $ remember("jihyun_o01_status", "completed")
     $ award_once("jihyun_O01", "jihyun", 2)
+    $ progression_note_ending()
     return
 
 label jihyun_o02_offer:
+    $ progression_enter("jihyun_o02_offer")
+    $ progression_checkpoint("jihyun_o02_offer")
     if not dating or active_route != "jihyun" or memory.get("jihyun_o02_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("jihyun_o02_offer.choice01")
+    $ progression_checkpoint("jihyun_o02_offer.choice01")
     menu:
         "잠깐 더 보기 — 완성하지 않아도 되는 취미 (선택 일상)":
             call jihyun_o02
@@ -56,14 +73,20 @@ label jihyun_o02_offer:
             d "다음에도 완성 전부터 보여 주세요. 변한 데 찾는 것도 좋아요."
             j "응. 다 만들 때까지 기다리게 하지는 않을게."
             $ remember("jihyun_o02_status", "brief")
+    $ progression_note_ending()
     return
 
 label jihyun_o02:
+    $ progression_enter("jihyun_o02")
+    $ progression_checkpoint("jihyun_o02")
     if not dating or active_route != "jihyun":
+        $ progression_note_ending()
         return
     $ chapter = "지현 O02 · 완성하지 않아도 되는 취미"
     $ location = "같은 토요일 오후 · 조립품 앞"
     j "설명서대로면 지붕 붙일 차례인데. 오늘은 더 보고 싶어."
+    $ progression_enter("jihyun_o02.choice01")
+    $ progression_checkpoint("jihyun_o02.choice01")
     menu:
         "작은 집 안에 놓인 의자가 왜 창가를 향하는지 묻는다.":
             d "의자가 창가를 보네요. [memory.get('jihyun_private_name', '지현 씨')], 이건 직접 고르신 자리예요?"
@@ -82,11 +105,17 @@ label jihyun_o02:
             $ remember("jihyun_o02_detail", "차 마시며 본 창틀의 빛")
     $ remember("jihyun_o02_status", "completed")
     $ award_once("jihyun_O02", "jihyun", 2)
+    $ progression_note_ending()
     return
 
 label jihyun_o03_offer:
+    $ progression_enter("jihyun_o03_offer")
+    $ progression_checkpoint("jihyun_o03_offer")
     if not dating or active_route != "jihyun" or memory.get("jihyun_o03_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("jihyun_o03_offer.choice01")
+    $ progression_checkpoint("jihyun_o03_offer.choice01")
     menu:
         "잠깐 만나기 — 부탁의 연습 (선택 일상)":
             call jihyun_o03
@@ -96,15 +125,21 @@ label jihyun_o03_offer:
             d "저녁에는 제가 하고 싶은 것도 먼저 말해 볼게요."
             j "응. 먼저 물어보기 전에 들어 보고 싶어."
             $ remember("jihyun_o03_status", "brief")
+    $ progression_note_ending()
     return
 
 label jihyun_o03:
+    $ progression_enter("jihyun_o03")
+    $ progression_checkpoint("jihyun_o03")
     if not dating or active_route != "jihyun":
+        $ progression_note_ending()
         return
     $ chapter = "지현 O03 · 부탁의 연습"
     $ location = "일요일 오후 · 동네 공원 입구"
     "각자 집에서 오전을 보낸 뒤 공원에서 만났다. 지현은 벤치를 보고 먼저 도현을 불렀다."
     j "오늘은 그늘에서 조금 앉고 싶어. 대신 네가 집에 갈 시간도 먼저 듣고 싶고."
+    $ progression_enter("jihyun_o03.choice01")
+    $ progression_checkpoint("jihyun_o03.choice01")
     menu:
         "벤치에서 쉰 뒤 내가 고른 빵집에 같이 가 달라고 한다.":
             d "좋아요. 쉰 다음에는 저 빵집 같이 가 주세요. 들어가 보고 싶었어요."
@@ -135,4 +170,5 @@ label jihyun_o03:
             $ remember("jihyun_o03_request", "기록집 한 줄의 첫 감상 부탁")
     $ remember("jihyun_o03_status", "completed")
     $ award_once("jihyun_O03", "jihyun", 2)
+    $ progression_note_ending()
     return

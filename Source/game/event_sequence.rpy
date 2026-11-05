@@ -27,6 +27,7 @@ label event_sequence(event_id, variant):
         if event_pages(event_id, variant)[event_cut_cursor]["kind"] == "main":
             $ event_main_reached = True
         call screen event_cut(event_id, variant, event_cut_cursor)
+        $ progression_observe_cut(event_id, variant, event_cut_cursor)
         if _return == "skip":
             $ event_finish(event_id, variant, "skipped_presentation")
             $ event_cut_cursor = len(event_pages(event_id, variant))

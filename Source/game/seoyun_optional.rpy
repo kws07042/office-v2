@@ -1,6 +1,11 @@
 label seoyun_o01_offer:
+    $ progression_enter("seoyun_o01_offer")
+    $ progression_checkpoint("seoyun_o01_offer")
     if not dating or active_route != "seoyun" or memory.get("seoyun_o01_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("seoyun_o01_offer.choice01")
+    $ progression_checkpoint("seoyun_o01_offer.choice01")
     menu:
         "잠깐 책 읽기 — 책 제목을 기억하는 사람 (선택 일상)":
             call seoyun_o01
@@ -10,10 +15,14 @@ label seoyun_o01_offer:
             d "그 책 제목 기억해 둘게요. 아직 안 읽은 데도 다음에 듣고 싶어요."
             s "좋아. 오늘 읽었다는 확인 도장부터 찍진 않을게~"
             $ remember("seoyun_o01_status", "brief")
+    $ progression_note_ending()
     return
 
 label seoyun_o01:
+    $ progression_enter("seoyun_o01")
+    $ progression_checkpoint("seoyun_o01")
     if not dating or active_route != "seoyun":
+        $ progression_note_ending()
         return
     $ chapter = "서윤 O01 · 책 제목을 기억하는 사람"
     $ location = "같은 토요일 늦은 오후 · 북카페"
@@ -22,6 +31,8 @@ label seoyun_o01:
     "『느린 모퉁이』에서 돌아가는 길에 같은 창문을 한 번 더 보는 짧은 대목을 함께 읽었다. 처음 보는 부분은 서두르지 않았다."
     "서윤은 마지막 문장을 한 번 더 읽다가 도현 쪽으로 책을 밀었다."
     s "여기. 난 그냥 못 지나치겠더라. 네가 빨리 읽고 넘겨도 조금 서운할 것 같고~"
+    $ progression_enter("seoyun_o01.choice01")
+    $ progression_checkpoint("seoyun_o01.choice01")
     menu:
         "다시 보는 창문보다 돌아가는 발걸음이 남았다고 한다.":
             d "저는 돌아가는 쪽이요. 한번 봤다고 꼭 안에 들어가야 하는 건 아니니까요."
@@ -38,11 +49,17 @@ label seoyun_o01:
     $ remember("seoyun_o01_read", "느린 모퉁이의 같은 창문을 다시 보는 대목, 전권 완독 아님")
     $ remember("seoyun_o01_status", "completed")
     $ award_once("seoyun_O01", "seoyun", 2)
+    $ progression_note_ending()
     return
 
 label seoyun_o02_offer:
+    $ progression_enter("seoyun_o02_offer")
+    $ progression_checkpoint("seoyun_o02_offer")
     if not dating or active_route != "seoyun" or memory.get("seoyun_o02_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("seoyun_o02_offer.choice01")
+    $ progression_checkpoint("seoyun_o02_offer.choice01")
     menu:
         "잠깐 더 이야기하기 — 서로 실패한 농담 (선택 일상)":
             call seoyun_o02
@@ -52,15 +69,21 @@ label seoyun_o02_offer:
             d "다음 판도 읽어 주세요. 그때 감상은 지금하고 달라도 되고요."
             s "좋아. 다음 감상까지 미리 복사해 놓지는 않을게."
             $ remember("seoyun_o02_status", "brief")
+    $ progression_note_ending()
     return
 
 label seoyun_o02:
+    $ progression_enter("seoyun_o02")
+    $ progression_checkpoint("seoyun_o02")
     if not dating or active_route != "seoyun":
+        $ progression_note_ending()
         return
     $ chapter = "서윤 O02 · 서로 실패한 농담"
     $ location = "같은 토요일 늦은 오후 · 북카페"
     s "이쯤이면 단골 포인트로 나도 한 번 무료 초대 가능한가?"
     "도현이 테이블의 주문서를 들었다가 내려놓았다. 서윤의 시선도 종이로 갔다가 도현에게 돌아왔다."
+    $ progression_enter("seoyun_o02.choice01")
+    $ progression_checkpoint("seoyun_o02.choice01")
     menu:
         "다음 데이트를 계산하라는 말로 들려 잠깐 헷갈렸다고 한다.":
             d "다음에 제가 전부 계산해야 하나 했어요. 초대하고 싶긴 한데, 포인트 결제는 좀 어렵네요~"
@@ -81,11 +104,17 @@ label seoyun_o02:
     "둘은 뜻을 다시 알고 나서 함께 웃었다. 구체적인 날짜는 다음 일정을 보고 같이 정하기로 했다."
     $ remember("seoyun_o02_status", "completed")
     $ award_once("seoyun_O02", "seoyun", 2)
+    $ progression_note_ending()
     return
 
 label seoyun_o03_offer:
+    $ progression_enter("seoyun_o03_offer")
+    $ progression_checkpoint("seoyun_o03_offer")
     if not dating or active_route != "seoyun" or memory.get("seoyun_o03_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("seoyun_o03_offer.choice01")
+    $ progression_checkpoint("seoyun_o03_offer.choice01")
     menu:
         "잠깐 만나기 — 우리도 단골인가 (선택 일상)":
             call seoyun_o03
@@ -95,15 +124,21 @@ label seoyun_o03_offer:
             d "저녁엔 초안도 가져갈게요. 제가 남긴 문장부터 보여 드리고 싶어요."
             s "응. 내가 대신 쓴 말 아니니까 더 궁금하지."
             $ remember("seoyun_o03_status", "brief")
+    $ progression_note_ending()
     return
 
 label seoyun_o03:
+    $ progression_enter("seoyun_o03")
+    $ progression_checkpoint("seoyun_o03")
     if not dating or active_route != "seoyun":
+        $ progression_note_ending()
         return
     $ chapter = "서윤 O03 · 우리도 단골인가"
     $ location = "일요일 늦은 오후 · 다시 찾은 북카페"
     "각자 오전을 보낸 뒤 저녁 약속보다 조금 먼저 만났다. 도현은 지난번과 다른 자리의 작은 조명을 봤다."
     s "항상 같은 자리여야 단골인가 했는데. 오늘은 어디 앉아 볼래?"
+    $ progression_enter("seoyun_o03.choice01")
+    $ progression_checkpoint("seoyun_o03.choice01")
     menu:
         "바뀐 조명이 가까운 자리에 앉아 전과 다른 점을 본다.":
             "탁자에 빛이 떨어지는 위치를 보며 둘은 조명을 옮기기 전의 자리를 떠올렸다."
@@ -144,4 +179,5 @@ label seoyun_o03:
             $ remember("seoyun_o03_detail", "처음 고른 창가의 식물 그림자")
     $ remember("seoyun_o03_status", "completed")
     $ award_once("seoyun_O03", "seoyun", 2)
+    $ progression_note_ending()
     return

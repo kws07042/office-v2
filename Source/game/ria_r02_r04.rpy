@@ -1,4 +1,6 @@
 label ria_r02:
+    $ progression_enter("ria_r02")
+    $ progression_checkpoint("ria_r02")
     $ ria_expression = "serious"
     $ chapter = "리아 R02 · 문 닫힌 가게 앞에서"
     $ location = "다음 만남 · 아직 밝은 퇴근길"
@@ -27,6 +29,8 @@ label ria_r02:
         r "[ri('도현아. 오늘은 연습 아니고 진짜로 부르는 거야~', '도현 씨. 오늘도 반갑네요~')]"
         d "[ri('응, 리아야. 두 번 불러도 대답할게.', '네, 저도 반가워요.')]"
     dn "리아는 안내문을 한 번 더 봤다. 준비한 계획이 틀어진 게 신경 쓰이는 모양이었다."
+    $ progression_enter("ria_r02.choice01")
+    $ progression_checkpoint("ria_r02.choice01")
     menu:
         "[ri('문 앞 구경은 여기까지 하고, 대안 같이 찾아보자.', '문 앞 구경은 여기까지 하고, 대안 같이 찾아볼까요?')]":
             $ r02_plan = "together"
@@ -64,6 +68,8 @@ label ria_r02:
         "둘은 카페가 있는 골목으로 걸음을 옮긴다."
     else:
         "둘은 역으로 향하는 길을 조금 돌아 걷는다."
+    $ progression_enter("ria_r02.choice02")
+    $ progression_checkpoint("ria_r02.choice02")
     menu:
         "[ri('같이 걸을 때 손도 잡고 싶은데, 괜찮아?', '같이 걸을 때 손도 잡고 싶은데, 괜찮아요?')]":
             $ r02_expression = "hand"
@@ -165,9 +171,12 @@ label ria_r02:
     $ remember("ria_contact_offer")
     $ award_once("ria_R02","ria",7)
     $ ria_expression = "base"
+    $ progression_note_ending()
     return
 
 label ria_r03:
+    $ progression_enter("ria_r03")
+    $ progression_checkpoint("ria_r03")
     $ chapter = "리아 R03 · 네가 말했던 자리"
     $ location = "다음 날 · 약속 연락"
     call phone_deliver("ria_r03_01", "dohyun", ri('내일 퇴근하고 시간 괜찮아? 일곱 시쯤. 메모도 가져가 보려고.', '내일 퇴근하고 시간 괜찮아요? 일곱 시쯤요. 메모도 가져가 보려고요.'))
@@ -249,6 +258,8 @@ label ria_r03:
     r "[ri('...일부러 그러는 거지?', '...일부러 그러시는 거죠?')]"
     d "[ri('응. 여기서 너랑 조금 더 있고 싶어.', '네. 여기서 리아 씨랑 조금 더 있고 싶어요.')]"
     "리아가 고개를 끄덕인다. 잠깐 대화 없이 같은 자리에 머문다."
+    $ progression_enter("ria_r03.choice01")
+    $ progression_checkpoint("ria_r03.choice01")
     menu:
         "[ri('내가 했던 말 기억해서 준비해 준 거, 좋았어.', '제가 했던 말 기억해서 준비해 주신 거, 좋았어요.')]":
             $ r03_reply = "thanks"
@@ -284,13 +295,17 @@ label ria_r03:
     "메시지창에 오늘 즐거웠다는 말을 썼다가 지운다. 금요일에 조금 일찍 가겠다는 말도 적지만, 전송하지 않고 화면을 닫는다."
     rn "조금 일찍 가면... 조금 더 볼 수도 있으니까."
     "도현 시점으로 돌아갑니다."
+    $ progression_note_ending()
     return
 
 label ria_r04:
+    $ progression_enter("ria_r04")
+    $ progression_checkpoint("ria_r04")
     $ chapter = "리아 R04 · 장난은 여기까지"
     $ location = "금요일 저녁 · 카페"
     if not memory.get("ria_core_understanding"):
         "이 시험판은 R03의 실제 만남을 거친 뒤 고백 장면으로 이어집니다."
+        $ progression_note_ending()
         return
     "도현이 약속 시각에 카페에 도착한다. 리아가 먼저 와 있다."
     d "[ri('오늘도 먼저 왔네.', '오늘도 먼저 오셨네요.')]"
@@ -314,6 +329,8 @@ label ria_r04:
     r "[ri('...무슨 얘긴데?', '...무슨 얘긴데요?')]"
     dn "눈을 마주치니 준비한 문장 순서가 바뀌었다. 그래도 오늘 꺼내려던 말은 그대로였다."
     while not dating:
+        $ progression_enter("ria_r04.choice01")
+        $ progression_checkpoint("ria_r04.choice01")
         menu:
             "[ri('너랑 연인으로 만나고 싶다고 말한다.', '리아 씨와 연인으로 만나고 싶다고 말한다.')]":
                 call ria_confess
@@ -322,12 +339,15 @@ label ria_r04:
             "이번 회차는 연애를 시작하지 않고 동료로 지낸다 — 동료 결말로 이어짐.":
                 d "[ri('난 연애를 시작하기보다는 동료로 지내고 싶어.', '저는 연애를 시작하기보다는 동료로 지내고 싶어요.')]"
                 r "[ri('오늘 더 생각해 보자는 뜻이 아니라, 우리 관계를 그렇게 정하고 싶은 거지?', '오늘 더 생각해 보자는 뜻이 아니라, 우리 관계를 그렇게 정하고 싶으신 거죠?')]"
+                $ progression_enter("ria_r04.choice02")
+                $ progression_checkpoint("ria_r04.choice02")
                 menu:
                     "[ri('응, 동료로 지낼게.', '네, 동료로 지낼게요.')]":
                         r "[ri('알겠어. 나는 더 가까워지고 싶었던 것 같아. 그래도 네 뜻은 알겠어.', '알겠어요. 저는 더 가까워지고 싶었던 것 같아요. 그래도 도현 씨 뜻은 알겠어요.')]"
                         d "[ri('솔직하게 말해 줘서 고마워. 오늘 이야기는 회사에서 꺼내지 않을게.', '솔직하게 말해 주셔서 고마워요. 오늘 이야기는 회사에서 꺼내지 않을게요.')]"
                         r "[ri('응. 나도. 그럼 오늘은 여기서 마무리하자.', '네. 저도요. 그럼 오늘은 여기서 마무리해요.')]"
                         call end_common
+                        $ progression_note_ending()
                         return
                     "[ri('아니, 결정을 다시 고를게.', '아니요, 결정을 다시 고를게요.')]":
                         pass
@@ -343,6 +363,8 @@ label ria_r04:
         r "[ri('앞으로는 나도 먼저 연락할게.', '앞으로는 저도 먼저 연락할게요.')]"
         d "[ri('좋아. 나도 기다리기만 하진 않을게.', '좋아요. 저도 기다리기만 하진 않을게요.')]"
     "둘이 조용한 길에서 잠깐 멈춘다."
+    $ progression_enter("ria_r04.choice03")
+    $ progression_checkpoint("ria_r04.choice03")
     menu:
         "[ri('지금 너한테 입맞춤하고 싶은데, 괜찮아?', '지금 리아 씨한테 입맞춤하고 싶은데, 괜찮아요?')]":
             d "[ri('지금 너한테 입맞춤하고 싶은데, 괜찮아?', '지금 리아 씨한테 입맞춤하고 싶은데, 괜찮아요?')]"
@@ -378,9 +400,12 @@ label ria_r04:
     d "[ri('나도. 오늘 집에 가면 연락할게.', '저도요. 오늘 집에 가면 연락할게요.')]"
     r "[ri('응. 오늘은 내가 먼저 보낼 수도 있어.', '네. 오늘은 제가 먼저 보낼 수도 있어요.')]"
     dn "집까지는 늘 걷던 길이었다. 오늘은 돌아가서 전하고 싶은 말이 하나 더 있었다."
+    $ progression_note_ending()
     return
 
 label ria_prepare:
+    $ progression_enter("ria_prepare")
+    $ progression_checkpoint("ria_prepare")
     d "[ri('만나고 싶은 마음은 있는데, 우리가 원하는 게 같은지 조금 더 이야기하고 싶어.', '만나고 싶은 마음은 있는데, 우리가 원하는 게 같은지 조금 더 이야기하고 싶어요.')]"
     r "[ri('응. 어떤 게 마음에 걸리는데?', '네. 어떤 게 마음에 걸리는데요?')]"
     d "[ri('난 연애가 처음이야. 늘 혼자 하던 게 많아서, 같이 지낼 때도 혼자 결정하고 뒤늦게 말할까 봐.', '저는 연애가 처음이에요. 늘 혼자 하던 게 많아서, 같이 지낼 때도 혼자 결정하고 뒤늦게 말할까 봐요.')]"
@@ -396,9 +421,12 @@ label ria_prepare:
     $ prepared = True
     $ remember("ria_prepared_conversation")
     "마음을 더 이야기했다. 이제 이 자리에서 관계를 어떻게 이어갈지 결정한다."
+    $ progression_note_ending()
     return
 
 label ria_confess:
+    $ progression_enter("ria_confess")
+    $ progression_checkpoint("ria_confess")
     d "[ri('그날 입에 거품 묻은 것도 모르고 네 얘기만 듣고 있었잖아.', '그날 입에 거품 묻은 것도 모르고 리아 씨 얘기만 듣고 있었잖아요.')]"
     r "[ri('...오늘은 안 묻었어.', '...오늘은 안 묻었어요.')]"
     d "[ri('응. 오늘은 똑바로 보고 말하려고.', '네. 오늘은 똑바로 보고 말하려고요.')]"
@@ -419,4 +447,5 @@ label ria_confess:
         d "[ri('나 연애는 처음이야. 좋아한다는 말도 방금 엄청 생각했어.', '저 연애는 처음이에요. 좋아한다는 말도 방금 엄청 생각했어요.')]"
         r "[ri('그랬구나. 근데 말해 줬잖아. 나도 듣고 싶었어.', '그랬군요. 근데 말해 주셨잖아요. 저도 듣고 싶었어요.')]"
         d "[ri('앞으로도 보고 싶으면 먼저 말할게.', '앞으로도 보고 싶으면 먼저 말할게요.')]"
+    $ progression_note_ending()
     return

@@ -1,6 +1,11 @@
 label yujin_o01_offer:
+    $ progression_enter("yujin_o01_offer")
+    $ progression_checkpoint("yujin_o01_offer")
     if not dating or active_route != "yujin" or memory.get("yujin_o01_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("yujin_o01_offer.choice01")
+    $ progression_checkpoint("yujin_o01_offer.choice01")
     menu:
         "잠깐 더 이야기하기 — 전시가 끝난 뒤의 감상 (선택 일상)":
             call yujin_o01
@@ -10,16 +15,22 @@ label yujin_o01_offer:
             d "오늘 고른 말은 다음에도 듣고 싶어요. 지금 다 적지 않고 남겨 둬도 되겠네요."
             y "네. 전시 끝났다고 감상까지 끝난 건 아니니까요~"
             $ remember("yujin_o01_status", "brief")
+    $ progression_note_ending()
     return
 
 label yujin_o01:
+    $ progression_enter("yujin_o01")
+    $ progression_checkpoint("yujin_o01")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 O01 · 전시가 끝난 뒤의 감상"
     $ location = "연인 첫 주말의 늦은 오후 · 공원 벤치"
     y "그 전시의 첫 그림요. 저는 혼자 남은 방 같다고 했는데, 도현 씨는 누가 돌아올 것 같다고 하셨잖아요."
     d "네. 의자가 조금 비뚤어져 있어서요. 유진 씨가 다르게 보신 것도 기억나요."
     y "오늘 다시 말하면 어느 쪽이세요? 제 쪽으로 와 달라는 질문은 아니고요~"
+    $ progression_enter("yujin_o01.choice01")
+    $ progression_checkpoint("yujin_o01.choice01")
     menu:
         "아직 누군가 돌아올 방처럼 보인다고 내 감상을 말한다.":
             d "저는 아직 돌아올 것 같아요. 기다리는 쪽 이야기가 더 궁금해서요."
@@ -41,11 +52,17 @@ label yujin_o01:
     "유진은 서로 다른 두 감상을 줄을 바꿔 적었다. 답을 하나로 고치지 않고 노트를 덮는다."
     $ remember("yujin_o01_status", "completed")
     $ award_once("yujin_O01", "yujin", 2)
+    $ progression_note_ending()
     return
 
 label yujin_o02_offer:
+    $ progression_enter("yujin_o02_offer")
+    $ progression_checkpoint("yujin_o02_offer")
     if not dating or active_route != "yujin" or memory.get("yujin_o02_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("yujin_o02_offer.choice01")
+    $ progression_checkpoint("yujin_o02_offer.choice01")
     menu:
         "잠깐 더 보기 — 작은 스케치 한 장 (선택 일상)":
             call yujin_o02
@@ -55,10 +72,14 @@ label yujin_o02_offer:
             d "일로 그린 것 말고, 유진 씨가 그냥 남기고 싶었던 그림도 다음에 보고 싶어요."
             y "네. 꼭 완성한 것만 골라 오지는 않을게요."
             $ remember("yujin_o02_status", "brief")
+    $ progression_note_ending()
     return
 
 label yujin_o02:
+    $ progression_enter("yujin_o02")
+    $ progression_checkpoint("yujin_o02")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 O02 · 작은 스케치 한 장"
     $ location = "기록집을 함께 본 토요일 오후 · 같은 카페"
@@ -66,6 +87,8 @@ label yujin_o02:
     y "이건 집에서 그린 거예요. 지금 컵하고 닮았다고 바꿔 그려 온 건 아니고요~"
     y "같은 컵도 물 마시고 나면 빛이 달라져요. 한번 같이 해 보실래요?"
     "유진이 빈 종이 몇 장과 펜 두 자루를 꺼내 탁자에 놓았다."
+    $ progression_enter("yujin_o02.choice01")
+    $ progression_checkpoint("yujin_o02.choice01")
     menu:
         "손으로 빛을 가려 보며 그림과 실제 컵을 비교한다.":
             "도현이 컵 위로 손을 펼쳤다. 그림자가 컵을 지나 유진의 노트까지 덮었다."
@@ -102,11 +125,17 @@ label yujin_o02:
     $ remember("yujin_o02_subject", "창가 빛이 겹친 작은 컵")
     $ remember("yujin_o02_status", "completed")
     $ award_once("yujin_O02", "yujin", 2)
+    $ progression_note_ending()
     return
 
 label yujin_o03_offer:
+    $ progression_enter("yujin_o03_offer")
+    $ progression_checkpoint("yujin_o03_offer")
     if not dating or active_route != "yujin" or not memory.get("yujin_r15_complete") or memory.get("yujin_o03_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("yujin_o03_offer.choice01")
+    $ progression_checkpoint("yujin_o03_offer.choice01")
     menu:
         "일요일 오후에 잠깐 만나기 — 이번엔 도현 씨 취향 (선택 일상)":
             call yujin_o03
@@ -117,10 +146,14 @@ label yujin_o03_offer:
             call phone_deliver("yujin_o03_brief_d", "dohyun", "오후에는 제 노트 정리하고 쉴게요. 저녁에 같이 보기로 한 건 그대로예요. 보고 싶어요, 유진 씨.", contact="yujin")
             call phone_deliver("yujin_o03_brief_y", "yujin", "네. 저도 오후엔 제 것 정리할게요. 저녁에는 노트 말고 얼굴부터 보여 주세요~", contact="yujin")
             $ remember("yujin_o03_status", "brief")
+    $ progression_note_ending()
     return
 
 label yujin_o03:
+    $ progression_enter("yujin_o03")
+    $ progression_checkpoint("yujin_o03")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 O03 · 이번엔 도현 씨 취향"
     if memory.get("yujin_r10_page") == "entrance_bench":
@@ -140,6 +173,8 @@ label yujin_o03:
         y "오늘은 도현 씨가 남기고 싶은 것부터 고르면 좋겠어요. 이 자리 괜찮으세요?"
         $ remember("yujin_o03_prepared", "현재 취향을 직접 묻는 짧은 카페 만남")
     d "제 얘기로 먼저 골라 주셨네요. 오늘은 제가 천천히 봐도 되겠어요."
+    $ progression_enter("yujin_o03.choice01")
+    $ progression_checkpoint("yujin_o03.choice01")
     menu:
         "인물은 담지 않고 지금 장소를 사진 한 장으로 남긴다.":
             "도현이 인물 없이 장소를 한 장 찍었다. 유진은 촬영이 끝난 뒤 같은 방향을 바라봤다."
@@ -173,4 +208,5 @@ label yujin_o03:
             $ remember("yujin_o03_action", "stay")
     $ remember("yujin_o03_status", "completed")
     $ award_once("yujin_O03", "yujin", 2)
+    $ progression_note_ending()
     return

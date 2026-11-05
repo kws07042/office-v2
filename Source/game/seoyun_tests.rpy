@@ -6,8 +6,8 @@ init python:
     def seoyun_test_caption():
         caps=[renpy.substitute(x.caption) for x in renpy.get_screen("choice").scope["items"]]
         c=seoyun_fixture["case"]
-        if caps[0].startswith("혼인 사실을 안 상태로"):
-            return caps[1 if seoyun_fixture.get("after_reveal_exit") else 0]
+        if caps[0].startswith("소개는 천천히 생각하며"):
+            return caps[1 if seoyun_fixture.get("after_discussion_exit") else 0]
         if chapter.startswith("C"):
             if chapter.startswith("C08"):
                 return next(x for x in caps if x.startswith("한서윤과"))
@@ -84,13 +84,25 @@ label test_seoyun_guards:
             pass
     return
 
+label test_seoyun_late_exit:
+    $ active_route = "seoyun"
+    $ dating = True
+    $ memory = {"seoyun_family_disclosed": True, "seoyun_family_state": "divorced_parent", "seoyun_conflict": "discussing"}
+    $ affinity = {"ria": 0, "jihyun": 0, "yujin": 0, "seoyun": 0}
+    call seoyun_r14
+    $ remember("seoyun_late_exit_test_complete")
+    menu:
+        "검사 종료":
+            pass
+    return
+
 testsuite seoyun_checks:
     before testcase:
         if not screen "main_menu":
             run MainMenu(confirm=False)
         run SetField(persistent,"phone_typing_enabled",False)
         run SetField(persistent,"local_seoyun_ending",False)
-        $ seoyun_fixture.update(common=False,decline_done=False,after_reveal_exit=False)
+        $ seoyun_fixture.update(common=False,decline_done=False,after_discussion_exit=False)
 
     testcase full_choices_and_relationships:
         parameter case = list(range(21))
@@ -130,7 +142,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -171,7 +183,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -212,7 +224,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -253,7 +265,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -294,7 +306,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -335,7 +347,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -376,7 +388,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -417,7 +429,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -458,7 +470,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -499,7 +511,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -540,7 +552,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -581,7 +593,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -622,7 +634,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -663,7 +675,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -704,7 +716,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -745,7 +757,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -786,7 +798,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -827,7 +839,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -868,7 +880,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -909,7 +921,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -950,7 +962,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -991,7 +1003,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1032,7 +1044,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1073,7 +1085,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1114,7 +1126,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1155,7 +1167,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1196,7 +1208,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1237,7 +1249,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1278,7 +1290,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1319,7 +1331,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1360,7 +1372,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1401,7 +1413,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1442,7 +1454,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1483,7 +1495,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1524,7 +1536,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1565,7 +1577,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1606,7 +1618,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1647,7 +1659,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1688,7 +1700,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1729,7 +1741,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1770,7 +1782,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1811,7 +1823,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1852,7 +1864,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1893,7 +1905,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1934,7 +1946,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -1975,7 +1987,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2016,7 +2028,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2057,7 +2069,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2098,7 +2110,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2139,7 +2151,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2180,7 +2192,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2221,7 +2233,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2262,7 +2274,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2303,7 +2315,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2344,7 +2356,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2385,7 +2397,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2426,7 +2438,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2467,7 +2479,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2508,7 +2520,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2549,7 +2561,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2590,7 +2602,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2631,7 +2643,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2672,7 +2684,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2713,7 +2725,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2754,7 +2766,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2795,7 +2807,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2836,7 +2848,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2877,7 +2889,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2918,7 +2930,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2959,7 +2971,7 @@ testsuite seoyun_checks:
                         run FileSave("72",confirm=False)
                         click expression seoyun_test_caption()
                         advance until screen "choice"
-                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_disclosure")
+                        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and memory["seoyun_repair_performed"] and not memory.get("seoyun_continues_after_discussion")
                         run FileLoad("72",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
@@ -2995,8 +3007,8 @@ testsuite seoyun_checks:
                 assert eval "seoyun_R15" not in completed and "seoyun_E01" not in completed
             else:
                 assert eval ending=="seoyun_good" and dating and persistent.local_seoyun_ending
-                assert eval memory.get("seoyun_marriage_revealed") and memory.get("seoyun_marriage_state")=="married_cohabiting"
-                assert eval memory.get("seoyun_continues_after_disclosure") and memory.get("seoyun_trust_status")=="damaged_not_restored"
+                assert eval memory.get("seoyun_family_disclosed") and memory.get("seoyun_family_state")=="divorced_parent"
+                assert eval memory.get("seoyun_continues_after_discussion") and memory.get("seoyun_trust_status")=="mutual_answers_confirmed"
                 assert eval memory["seoyun_route_completed"] and memory["seoyun_conflict"]=="resolved" and memory["seoyun_repair_performed"]
                 assert eval cream_relation_name("seoyun")=="교제 중"
                 assert eval memory["seoyun_r15_pace"] == ("deferred" if case==12 else ["shared","deferred","talk"][(case+2)%3])
@@ -3005,7 +3017,7 @@ testsuite seoyun_checks:
                 assert eval all(not v["loaded_asset_ids"] for v in event_presentations.values())
                 assert eval bool(memory.get("seoyun_epilogue_completed"))==(case!=13)
                 if eval case!=13:
-                    assert eval memory["seoyun_cohabitation_status"]=="동거 약속 없음, 배우자와 동거 중인 기혼 관계 지속"
+                    assert eval memory["seoyun_cohabitation_status"]=="결혼·동거·부모 역할 확약 없음, 소개는 각자의 준비에 따라 별도 논의"
                 assert eval affinity["seoyun"]==69+(0 if case==13 else 8)+(6 if case%3==0 and case!=12 else 0)
                 assert eval all(memory["seoyun_o0"+str(n)+"_status"]==("skipped" if case==12 else ["completed","skipped","brief"][case%3]) for n in range(1,4))
                 if eval case==11:
@@ -3015,6 +3027,20 @@ testsuite seoyun_checks:
                 $ seoyun_score_before=affinity["seoyun"]
                 $ award_once("seoyun_R16","seoyun",4)
                 assert eval affinity["seoyun"]==seoyun_score_before
+
+    testcase exit_after_actual_discussion:
+        run Start("test_seoyun_late_exit")
+        advance until screen "choice"
+        assert eval not memory.get("seoyun_repair_performed")
+        click "수요일에 서로 원하는 만남부터 이야기하자고 한다."
+        advance until screen "choice"
+        assert eval memory.get("seoyun_repair_performed") and memory.get("seoyun_future_boundary_confirmed")
+        assert eval memory["seoyun_conflict"]=="agreed_pending_action" and not memory.get("seoyun_continues_after_discussion")
+        click "이야기를 들었지만 연애는 여기서 마치기로 한다."
+        advance until screen "choice"
+        assert eval seoyun_test_done() and not dating and ending=="seoyun_relationship_closed"
+        assert eval memory.get("seoyun_late_exit_test_complete") and not memory.get("seoyun_route_completed")
+        assert eval not persistent.local_seoyun_ending
 
     testcase no_unearned_finale:
         run Start("test_seoyun_guards")

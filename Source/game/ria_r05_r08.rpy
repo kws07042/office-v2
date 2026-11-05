@@ -1,7 +1,10 @@
 # R05-R08 and the existing optional O01 slot. No new visual assets.
 
 label ria_r05:
+    $ progression_enter("ria_r05")
+    $ progression_checkpoint("ria_r05")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R05 · 둘이 만드는 저녁"
     $ location = "교제 후 첫 토요일 · 동네 산책길"
@@ -19,6 +22,8 @@ label ria_r05:
     d "[ri('십 분만 걷고 싶어. 저 빛은 밥 먹고 나오면 없을 것 같아서.', '십 분만 걷고 싶어요. 저 빛은 밥 먹고 나오면 없을 것 같아서요.')]"
     r "[ri('좋아. 나는 일곱 시 전에는 먹고 싶어. 지금 배고픔이 꽤 진심이야.', '좋아요. 저는 일곱 시 전에는 먹고 싶어요. 지금 배고픔이 꽤 진심이에요.')]"
     d "[ri('그럼 사진은 짧게, 저녁은 길게.', '그럼 사진은 짧게, 저녁은 길게요.')]"
+    $ progression_enter("ria_r05.choice01")
+    $ progression_checkpoint("ria_r05.choice01")
     menu:
         "같이 골목을 걷고, 눈에 들어오는 것을 하나씩 고른다.":
             $ remember("ria_r05_plan", "together")
@@ -71,11 +76,17 @@ label ria_r05:
     r "[ri('응! 나는 오전 약속 있으니까 오후로 보자.', '네! 저는 오전 약속 있으니까 오후로 봐요.')]"
     $ remember("ria_r05_next_walk", "토요일 오후 후보, 시각 미정")
     $ award_once("ria_R05", "ria", 4)
+    $ progression_note_ending()
     return
 
 label ria_o01_offer:
+    $ progression_enter("ria_o01_offer")
+    $ progression_checkpoint("ria_o01_offer")
     if not dating or active_route != "ria" or memory.get("ria_o01_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("ria_o01_offer.choice01")
+    $ progression_checkpoint("ria_o01_offer.choice01")
     menu:
         "잠깐 만나기 — 점심 메뉴의 작은 내기 (선택 일상)":
             call ria_o01
@@ -87,15 +98,20 @@ label ria_o01_offer:
             call phone_deliver("ria_o01_offer_01", "dohyun", ri('오늘 점심은 따로 먹어야겠다. 다음에 메뉴 맞히기는 내가 먼저 할게~', '오늘 점심은 따로 먹어야겠어요. 다음에 메뉴 맞히기는 제가 먼저 할게요~'))
             call phone_deliver("ria_o01_offer_02", "ria", ri('예약 접수! 대신 힌트는 한 번만 줄 거야~', '예약 접수! 대신 힌트는 한 번만 드릴 거예요~'))
             $ remember("ria_o01_status", "brief")
+    $ progression_note_ending()
     return
 
 label ria_o01:
+    $ progression_enter("ria_o01")
+    $ progression_checkpoint("ria_o01")
     $ chapter = "리아 O01 · 점심 메뉴의 작은 내기"
     $ location = "다음 주 평일 점심 · 회사 근처 식당"
     "서로 점심 시간이 맞아 회사 근처에서 잠깐 만났다. 리아가 메뉴판 위쪽만 도현 쪽으로 기울인다."
     r "[ri('내가 고를 거 맞혀 봐. 힌트는... 배고파.', '제가 고를 거 맞혀 보세요. 힌트는... 배고파요.')]"
     d "[ri('그 힌트는 매번 유효한데?', '그 힌트는 매번 유효한데요?')]"
     r "[ri('정확도 높은 힌트지~', '정확도 높은 힌트죠~')]"
+    $ progression_enter("ria_o01.choice01")
+    $ progression_checkpoint("ria_o01.choice01")
     menu:
         "매콤한 덮밥을 가리킨다.":
             $ remember("ria_o01_guess", "rice")
@@ -121,10 +137,14 @@ label ria_o01:
     $ remember("ria_o01_meal", "리아는 매콤한 덮밥, 도현은 국수")
     $ remember("ria_o01_status", "completed")
     $ award_once("ria_O01", "ria", 2)
+    $ progression_note_ending()
     return
 
 label ria_r06:
+    $ progression_enter("ria_r06")
+    $ progression_checkpoint("ria_r06")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R06 · 재밌어야만 하는 걸까"
     $ location = "그 주 평일 저녁 · 동네 카페"
@@ -137,6 +157,8 @@ label ria_r06:
     r "[ri('...나 사실 오늘 조금 졸려. 방금 가게 이름도 두 번 읽었어.', '...저 사실 오늘 조금 졸려요. 방금 가게 이름도 두 번 읽었어요.')]"
     d "[ri('나도 봤어. 같은 가게 설명을 자꾸 다시 읽더라.', '저도 봤어요. 같은 가게 설명을 자꾸 다시 읽으시더라고요.')]"
     r "[ri('만나자고 해 놓고 졸리다고 하긴 좀 그렇잖아. 재미없는 날 될까 봐.', '만나자고 해 놓고 졸리다고 하긴 좀 그렇잖아요. 재미없는 날 될까 봐요.')]"
+    $ progression_enter("ria_r06.choice01")
+    $ progression_checkpoint("ria_r06.choice01")
     menu:
         "어떤 순간에 그렇게 느끼는지 더 듣는다.":
             $ remember("ria_r06_response", "listen")
@@ -170,6 +192,8 @@ label ria_r06:
     $ remember("ria_r06_pace_agreed")
     "카페를 나온 뒤, 인적이 뜸한 골목 모퉁이에서 잠깐 멈췄다."
     $ location = "같은 날 저녁 · 카페 밖 골목"
+    $ progression_enter("ria_r06.choice02")
+    $ progression_checkpoint("ria_r06.choice02")
     menu:
         "가볍게 입맞춤해도 될지 묻는다.":
             d "[ri('인사하기 전에, 입맞춤해도 돼?', '인사하기 전에, 입맞춤해도 돼요?')]"
@@ -199,10 +223,14 @@ label ria_r06:
     r "[ri('응. 만나는 건 그대로!', '네. 만나는 건 그대로요!')]"
     $ remember("ria_r07_appointment", "토요일 오후 네 시")
     $ award_once("ria_R06", "ria", 6, 1)
+    $ progression_note_ending()
     return
 
 label ria_r07:
+    $ progression_enter("ria_r07")
+    $ progression_checkpoint("ria_r07")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R07 · 오늘의 속도"
     $ location = "토요일 오후 · 비가 내리는 동네 카페"
@@ -235,6 +263,8 @@ label ria_r07:
     r "[ri('...그럼 둘 다 상대만 보고 있었던 거네!', '...그럼 둘 다 상대만 보고 있었던 거네요!')]"
     "리아가 먼저 웃었다. 컵을 들려던 도현도 손을 내려놓았다."
     r "[ri('그래도 오늘은 여기서 같이 밤을 보내고 싶어. 너는 어때?', '그래도 오늘은 여기서 같이 밤을 보내고 싶어요. 도현 씨는 어때요?')]"
+    $ progression_enter("ria_r07.choice01")
+    $ progression_checkpoint("ria_r07.choice01")
     menu:
         "같은 마음이라고 답한다 — 친밀한 장면으로 이어짐.":
             d "[ri('나도 그러고 싶어. 오늘은 같이 있을게.', '저도 그러고 싶어요. 오늘은 같이 있을게요.')]"
@@ -271,10 +301,14 @@ label ria_r07:
             $ remember("ria_r07_intimacy", "deferred")
             $ remember("ria_r07_feelings_shared")
     $ award_once("ria_R07", "ria", 0)
+    $ progression_note_ending()
     return
 
 label ria_r08:
+    $ progression_enter("ria_r08")
+    $ progression_checkpoint("ria_r08")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R08 · 조용해도 괜찮은 아침"
     if memory.get("ria_r07_intimacy") == "shared":
@@ -307,4 +341,5 @@ label ria_r08:
     $ location = "같은 날 낮 · 도현의 집 — 도현 시점"
     "다시 펼친 메모의 빈 줄에 오늘 날짜를 적는다. 아직 완성하지 못한 기록은 천천히 이어 갈 생각이다."
     $ award_once("ria_R08", "ria", 4)
+    $ progression_note_ending()
     return
