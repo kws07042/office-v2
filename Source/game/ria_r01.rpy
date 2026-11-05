@@ -1,4 +1,6 @@
 label ria_r01:
+    $ progression_enter("ria_r01")
+    $ progression_checkpoint("ria_r01")
     $ chapter = "리아 R01 · 오늘은 동료 둘이"
     $ location = "다음 퇴근길 · 회사 앞"
     "리아가 휴대폰을 든 채 회사 앞에서 잠깐 기다리고 있다."
@@ -14,6 +16,8 @@ label ria_r01:
     r "[ri('어떻게?', '어떻게요?')]"
     d "[ri('현장에서는 목적지를 정해 놨잖아. 지금은 나한테 물어보는 중이고.', '현장에서는 목적지를 정해 놓으셨잖아요. 지금은 저한테 물어보는 중이고요.')]"
     r "[ri('...그럼 물어볼게. 어떤 데가 좋아?', '...그럼 물어볼게요. 어떤 데가 좋아요?')]"
+    $ progression_enter("ria_r01.choice01")
+    $ progression_checkpoint("ria_r01.choice01")
     menu:
         "[ri('조용히 앉을 수 있는 곳.', '조용히 앉을 수 있는 곳이 좋아요.')]":
             $ afterwork_preference = "quiet"
@@ -90,5 +94,6 @@ label ria_r01:
     r "[ri('응. 그날은 네 컵부터 확인하고~', '네. 그날은 도현 씨 컵부터 확인하고요~')]"
     $ remember("ria_r01_preference",afterwork_preference)
     $ award_once("ria_R01","ria",4,1)
+    $ progression_note_ending()
     return
 

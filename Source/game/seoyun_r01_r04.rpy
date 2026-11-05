@@ -3,6 +3,8 @@ define sn = Character("한서윤", what_prefix="『", what_suffix="』", callbac
 default seoyun_prepared = False
 
 label seoyun_r01:
+    $ progression_enter("seoyun_r01")
+    $ progression_checkpoint("seoyun_r01")
     $ active_route = "seoyun"
     $ cream_focus = "seoyun"
     $ chapter = "서윤 R01 · 언제 한번 말고 오늘"
@@ -27,6 +29,8 @@ label seoyun_r01:
         d "저는 따로 불러 주신 게 반가운데요."
     if memory.get("c07_seoyun_next_question"):
         s "저번 카페에선 오 분만 더 앉자고 했지. 오늘은 시간 조금 더 남겨 뒀어."
+    $ progression_enter("seoyun_r01.choice01")
+    $ progression_checkpoint("seoyun_r01.choice01")
     menu:
         "평소에도 사람을 궁금해하는 편인지 묻는다.":
             d "질문하실 때 상대 얘기를 진짜 기다리시는 것 같아요. 평소에도 그러세요?"
@@ -79,9 +83,12 @@ label seoyun_r01:
     s "응. 대신 마음에 안 들면 바로 말할 거야~ 토요일 두 시에 봐."
     $ remember("seoyun_r02_appointment", "토요일 오후 두 시, 단골 서점 입구")
     $ award_once("seoyun_R01", "seoyun", 4)
+    $ progression_note_ending()
     return
 
 label seoyun_r02:
+    $ progression_enter("seoyun_r02")
+    $ progression_checkpoint("seoyun_r02")
     $ chapter = "서윤 R02 · 누나도 말을 고를 때"
     $ location = "토요일 오후 두 시 · 단골 서점과 북카페"
     if c06_person == "seoyun" and c06_topic == "weekend":
@@ -105,6 +112,8 @@ label seoyun_r02:
     s "다음엔 조금 더 맞히겠지. 아직 서로 모르는 게 더 많잖아~"
     d "서윤 씨는 좋아하는 사람 앞에서도 이렇게 말을 잘 고르세요?"
     "서윤이 책장을 넘기던 손을 멈췄다. 이번에는 바로 농담이 따라오지 않았다."
+    $ progression_enter("seoyun_r02.choice01")
+    $ progression_checkpoint("seoyun_r02.choice01")
     menu:
         "바로 답하지 않아도 된다며 기다린다.":
             d "지금 대답 안 나오셔도 돼요. 물어보고 싶어서 물은 거예요."
@@ -141,6 +150,8 @@ label seoyun_r02:
     else:
         s "다음에는 네가 남긴 것도 하나 들려줄래? 기록집 얘기 아니어도, 네가 멈춘 순간 하나."
     d "좋아요. 다음 수요일 일곱 시에 이 카페에서요. 하나 가져올게요."
+    $ progression_enter("seoyun_r02.choice02")
+    $ progression_checkpoint("seoyun_r02.choice02")
     menu:
         "퇴근길에 눈길이 멈춘 장소 사진 한 장을 가져오겠다고 한다.":
             d "사진 한 장 찍어 올게요. 왜 멈췄는지는 제가 말하고요."
@@ -157,9 +168,12 @@ label seoyun_r02:
     $ remember("seoyun_recommended_book", "느린 모퉁이")
     $ remember("seoyun_r03_appointment", "다음 수요일 저녁 일곱 시, 같은 북카페")
     $ award_once("seoyun_R02", "seoyun", 7)
+    $ progression_note_ending()
     return
 
 label seoyun_r03:
+    $ progression_enter("seoyun_r03")
+    $ progression_checkpoint("seoyun_r03")
     $ chapter = "서윤 R03 · 네가 기억했던 약속"
     $ location = "약속한 수요일 저녁 일곱 시 · 같은 북카페"
     if memory["seoyun_promise"] == "photo":
@@ -210,6 +224,8 @@ label seoyun_r03:
         s "네가 관심 있어서 묻는다고 했잖아. 나도 그래서 오늘 옷 한 번 더 골랐어. 책만 보러 온 건 아니고."
     else:
         s "멋있게 답 안 해도 듣겠다고 했지. 그럼 오늘은 덜 고른 말로. 너 오는 거 기다렸어."
+    $ progression_enter("seoyun_r03.choice01")
+    $ progression_checkpoint("seoyun_r03.choice01")
     menu:
         "다음 대답을 기다릴 사람이 있다는 게 좋았다고 한다.":
             d "오늘 오기 전에도 이 얘기 들으면 어떤 표정 지으실까 궁금했어요."
@@ -239,6 +255,8 @@ label seoyun_r03:
     $ remember("seoyun_core_understanding")
     $ remember("seoyun_r04_appointment", "금요일 저녁 일곱 시, 북카페")
     s "오늘 인사할 때 잠깐 안아도 돼? 그냥 장난으로 팔 벌리는 건 말고."
+    $ progression_enter("seoyun_r03.choice02")
+    $ progression_checkpoint("seoyun_r03.choice02")
     menu:
         "나도 그러고 싶다고 답하고 짧게 안는다.":
             d "네. 저도요."
@@ -258,10 +276,14 @@ label seoyun_r03:
     "서윤은 금요일 일곱 시 옆에 도현의 이름을 적었다. ‘언제 한번’은 적지 않았다."
     sn "가볍게 말하는 건 쉬운데. 이번에는 가볍게 들리지 않았으면 좋겠네."
     $ award_once("seoyun_R03", "seoyun", 8)
+    $ progression_note_ending()
     return
 
 label seoyun_r04:
+    $ progression_enter("seoyun_r04")
+    $ progression_checkpoint("seoyun_r04")
     if not memory.get("seoyun_core_understanding"):
+        $ progression_note_ending()
         return
     $ chapter = "서윤 R04 · 그 말은 농담으로 하지 마"
     $ location = "금요일 저녁 일곱 시 · 약속한 북카페"
@@ -269,6 +291,8 @@ label seoyun_r04:
     "서윤은 컵을 내려놓고 도현을 보았다. 웃으며 다음 화제로 넘기지 않았다."
     s "오늘은 네가 뭐 가져왔는지 안 물어볼 거야. 내가 기다린 건 너였으니까. 네 대답 듣고 싶어."
     while not dating and not memory.get("seoyun_relationship_declined"):
+        $ progression_enter("seoyun_r04.choice01")
+        $ progression_checkpoint("seoyun_r04.choice01")
         menu:
             "나도 좋아하며, 연인으로 만나고 싶다고 답한다.":
                 d "저도 좋아해요. 오늘은 뭘 보여 드릴지 안 골랐어요. 서윤 씨만 보러 오면 되니까요. 사귀어요, 우리."
@@ -283,12 +307,15 @@ label seoyun_r04:
                 $ seoyun_prepared = True
                 $ remember("seoyun_prepared_conversation")
             "이번 회차는 연애를 시작하지 않고 동료로 지낸다 — 동료 결말 확인.":
+                $ progression_enter("seoyun_r04.choice02")
+                $ progression_checkpoint("seoyun_r04.choice02")
                 menu:
                     "동료로 지내겠다는 뜻을 확인한다.":
                         d "저는 연인으로 만나겠다는 답은 못 드리겠어요. 동료로 지내고 싶어요."
                         s "알겠어. 마음 말한 걸 장난이었다고 바꾸진 않을게. 네 대답도 그대로 들을게."
                         $ remember("seoyun_relationship_declined")
                         call end_common
+                        $ progression_note_ending()
                         return
                     "결정을 취소하고 마음을 다시 고른다.":
                         pass
@@ -303,6 +330,8 @@ label seoyun_r04:
     s "...응. 회사에서는."
     "도현이 고개를 끄덕이자 서윤은 말을 덧붙이려다가 삼켰다."
     $ remember("seoyun_publicity", "private")
+    $ progression_enter("seoyun_r04.choice03")
+    $ progression_checkpoint("seoyun_r04.choice03")
     menu:
         "토요일에는 서윤의 단골 북카페를 더 둘러보고 싶다고 한다.":
             d "내일은 그 책 있는 선반을 더 보고 싶어요. 서윤 씨랑요."
@@ -317,6 +346,8 @@ label seoyun_r04:
             s "좋아. 오늘 대답 얻었다고 내일 취향까지 다 알아낸 건 아니니까."
             $ remember("seoyun_next_date_plan", "both")
     s "지금 입맞춤해도 돼? 좋아한다는 말 다음에 하고 싶었던 거야."
+    $ progression_enter("seoyun_r04.choice04")
+    $ progression_checkpoint("seoyun_r04.choice04")
     menu:
         "같은 마음이라고 답하고 가까이 다가간다.":
             d "네. 저도 그러고 싶어요."
@@ -334,6 +365,7 @@ label seoyun_r04:
             s "응. 그럼 오늘은 듣는 쪽 좀 욕심낼게."
             $ remember("seoyun_r04_affection", "words")
     $ remember("seoyun_r04_complete")
+    $ progression_note_ending()
     return
 
 label seoyun_route:

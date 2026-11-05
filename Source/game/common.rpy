@@ -1,5 +1,7 @@
 # Common scenes C01-C08. Only selected personal topics create memories.
 label c01:
+    $ progression_enter("c01")
+    $ progression_checkpoint("c01")
     $ chapter = "C01 · 첫 출근은 현장으로"
     $ location = "첫날 오전 · 팝업 준비 현장"
     dn "편한 신발을 신고 오라더니. 첫 출근부터 행사장에 나올 줄은 몰랐다."
@@ -13,6 +15,8 @@ label c01:
     r "대신 시작 전까지 고칠 수 있는 게 많아요. 같이 봐 줄래요?"
     d "저 두 줄은 서로 다른 행사 줄인가요?"
     r "아뇨. 하나여야 하는데... 저 화살표가 반대쪽에서도 보이는구나."
+    $ progression_enter("c01.choice01")
+    $ progression_checkpoint("c01.choice01")
     menu:
         "표지를 조금 옮기고, 사람들이 어떻게 움직이는지 볼까요?":
             $ first_approach = "observe"
@@ -35,6 +39,8 @@ label c01:
     r "아직 평가하는 사이도 아닌데요~ 대신 기억은 해 둘게요!"
     "리아는 입구를 보다가 도현 쪽으로 다시 고개를 돌린다."
     r "근데 우리 동갑이라면서요? 나만 계속 ‘도현 씨’ 하면 좀 억울한데."
+    $ progression_enter("c01.choice02")
+    $ progression_checkpoint("c01.choice02")
     menu:
         "그럼 같이 놓죠. 리아야.":
             $ speech_informal = True
@@ -56,9 +62,12 @@ label c01:
     dn "첫날부터 이렇게 편하게 웃을 줄은 몰랐다. 다음에 또 말을 걸 핑계를 벌써 찾고 있었다."
     $ remember("c01_approach", first_approach)
     $ award_once("C01","ria",10)
+    $ progression_note_ending()
     return
 
 label c02:
+    $ progression_enter("c02")
+    $ progression_checkpoint("c02")
     $ chapter = "C02 · 결론보다 근거"
     $ location = "첫날 오후 · 회의 공간"
     "사무실로 돌아오자 리아가 회의 공간의 문을 가볍게 두드렸다."
@@ -70,6 +79,8 @@ label c02:
     j "첫날부터 시험 보자는 건 아니고. 우리는 출근길 손님이 많을 거라고 생각했거든."
     d "현장에서는 점심시간에 들른 분도 꽤 있었어요."
     j "응. 우리 예상만으로 시간을 정하면 놓칠 수도 있겠네. 도현 씨는 어떻게 확인하고 싶어?"
+    $ progression_enter("c02.choice01")
+    $ progression_checkpoint("c02.choice01")
     menu:
         "현장에서 본 근거부터 말한다.":
             $ remember("jihyun_intro","evidence")
@@ -105,9 +116,12 @@ label c02:
     j "응. 물은 반대 의견 내도 마실 수 있어."
     dn "다음에는 조금 덜 긴장하고 말해도 되겠다. 물병 뚜껑이 생각보다 쉽게 열렸다."
     $ award_once("C02","jihyun",10)
+    $ progression_note_ending()
     return
 
 label c03:
+    $ progression_enter("c03")
+    $ progression_checkpoint("c03")
     $ chapter = "C03 · 예쁘다는 말 다음"
     $ location = "첫날 오후 · 디자인 작업 공간"
     "유진은 모니터의 두 시안을 번갈아 띄우다가 도현을 보고 의자를 옆으로 조금 옮겼다."
@@ -117,6 +131,8 @@ label c03:
     "유진은 말을 멈췄다. 도현이 화면을 볼 동안 기다린다."
     d "이쪽은 안내 문구가 먼저 보이고, 저쪽은 색이 먼저 들어오네요."
     y "어느 쪽이 더 예쁜지보다, 어느 부분을 먼저 보셨는지 궁금해요."
+    $ progression_enter("c03.choice01")
+    $ progression_checkpoint("c03.choice01")
     menu:
         "사람들이 움직이는 방향을 묻는다.":
             $ remember("yujin_intro","flow")
@@ -156,9 +172,12 @@ label c03:
     y "좋아요! 설명 듣기 전의 감상도 궁금해요."
     $ remember("yujin_alley_suggestion")
     $ award_once("C03","yujin",10)
+    $ progression_note_ending()
     return
 
 label c04:
+    $ progression_enter("c04")
+    $ progression_checkpoint("c04")
     $ chapter = "C04 · 농담 뒤의 요청"
     $ location = "첫날 오후 · 공용 테이블"
     s "도현 씨지? 한서윤이야. 클라이언트 연락이랑 카피 조율을 맡고 있어."
@@ -168,6 +187,8 @@ label c04:
     s "이 요청 좀 봐. 짧게 쓰되 설명은 하나도 빼지 말래."
     d "요청하신 분이 꽤 까다로우시네요."
     s "나 말고 클라이언트 얘기지~?"
+    $ progression_enter("c04.choice01")
+    $ progression_checkpoint("c04.choice01")
     menu:
         "농담을 받아친 뒤 요청을 확인한다.":
             $ remember("seoyun_intro","humor")
@@ -202,9 +223,12 @@ label c04:
     "서윤이 웃으며 자기 컵을 가져간다."
     s "다음엔 도현 씨가 질문해~ 나도 대답해 볼게."
     $ award_once("C04","seoyun",10)
+    $ progression_note_ending()
     return
 
 label c05:
+    $ progression_enter("c05")
+    $ progression_checkpoint("c05")
     $ chapter = "C05 · 메뉴판 밖의 취향"
     $ location = "며칠 뒤 · 회사 근처 카페"
     if memory.get("jihyun_intro") == "check_later":
@@ -234,6 +258,8 @@ label c05:
     j "메뉴까지 마감할 생각은 없어."
     "각자 고른 메뉴로 식사를 마쳤다. 리아가 빈 접시를 한쪽으로 모으다가 도현에게 몸을 돌린다."
     r "[ri('오늘은 바로 집에 가? 아니면 어디 들를 생각이야?', '오늘은 바로 집에 가세요? 아니면 어디 들를 생각이에요?')]"
+    $ progression_enter("c05.choice01")
+    $ progression_checkpoint("c05.choice01")
     menu:
         "동네를 조금 걸어 보고 싶어요.":
             $ downtime = "walk"
@@ -287,12 +313,17 @@ label c05:
     dn "회의 때보다 취향은 제각각인데, 이상하게 더 오래 앉아 있고 싶었다."
     $ remember("c05_shared_table")
     $ remember("downtime", downtime)
+    $ progression_note_ending()
     return
 
 label c06:
+    $ progression_enter("c06")
+    $ progression_checkpoint("c06")
     $ chapter = "C06 · 이야기 하나, 함께한 순간 하나"
     $ location = "다른 날 퇴근 무렵 · 공용 공간"
     "며칠 동안 얼굴과 이름은 익숙해졌다. 오늘은 한 사람과 조금 더 이야기하고 싶었다."
+    $ progression_enter("c06.choice01")
+    $ progression_checkpoint("c06.choice01")
     menu:
         "리아에게 말을 건다.":
             $ c06_person = "ria"
@@ -323,6 +354,8 @@ label c06:
         d "지난번에 주신 차례, 써도 되나요?"
         "서윤은 책에 책갈피를 끼우고 도현 쪽으로 몸을 돌렸다."
         s "응~ 대신 나도 도현 씨 얘기 하나는 들을 거야."
+    $ progression_enter("c06.choice02")
+    $ progression_checkpoint("c06.choice02")
     menu:
         "오늘 있었던 일을 묻는다.":
             $ c06_topic = "today"
@@ -481,12 +514,17 @@ label c06:
         s "질문 차례 한 번으로 꽤 오래 있었네~"
         d "오늘은 다음 질문까지 생겨서요."
     dn "돌아가는 길에는 대답보다, 그 옆에서 함께 웃었던 순간이 먼저 생각났다."
+    $ progression_note_ending()
     return
 
 label c07:
+    $ progression_enter("c07")
+    $ progression_checkpoint("c07")
     $ chapter = "C07 · 마지막 확인, 그다음 오 분"
     $ location = "다른 날 퇴근 직전 · 공용 작업 공간"
     "퇴근 전에 안내 자료 한 장만 확인하면 된다. 도현은 같이 마무리하고 조금 더 이야기할 사람을 찾았다."
+    $ progression_enter("c07.choice01")
+    $ progression_checkpoint("c07.choice01")
     menu:
         "리아와 확인한다.":
             $ c07_person = "ria"
@@ -536,6 +574,8 @@ label c07:
         else:
             s "오늘은 한 장만. 그리고 일 얘기 아닌 질문 하나~"
     "업무를 풀어가는 주된 방식을 고릅니다. 어떤 방식을 골라도 모든 인물과 가까워질 수 있습니다."
+    $ progression_enter("c07.choice02")
+    $ progression_checkpoint("c07.choice02")
     menu:
         "직접 떨어져서 읽고 확인한다.":
             $ c07_method = "verify"
@@ -636,14 +676,19 @@ label c07:
     $ remember("c07_" + c07_person + "_method", c07_method)
     $ remember("c07_" + c07_person + "_afterwork_moment")
     $ award_once("C07", c07_person, 2)
+    $ progression_note_ending()
     return
 
 label c08:
+    $ progression_enter("c08")
+    $ progression_checkpoint("c08")
     $ chapter = "C08 · 다음 약속의 상대"
     $ location = "그 주의 퇴근길"
     "각자의 퇴근 시간이 조금씩 갈렸다. 도현은 다음 만남을 누구에게 먼저 제안할지 생각했다."
     dn "회사에서 알게 된 모습 말고, 조금 더 알고 싶은 사람이 있었다."
     "이번 선택은 앞으로 더 알아갈 상대를 정합니다. 교제는 이후 서로의 마음을 확인한 뒤 시작합니다."
+    $ progression_enter("c08.choice01")
+    $ progression_checkpoint("c08.choice01")
     menu:
         "강리아와 다음 약속 잡기 — 친구 같은 동갑, 장난 속에서 특별해지는 연애.":
             $ active_route = "ria"
@@ -655,6 +700,8 @@ label c08:
             $ active_route = "seoyun"
         "이번 회차는 동료로 지낸다 — 동료 결말로 이어짐.":
             "연애 루트를 시작하지 않고 동료 결말로 진행할까요?"
+            $ progression_enter("c08.choice02")
+            $ progression_checkpoint("c08.choice02")
             menu:
                 "동료로 지낸다.":
                     $ active_route = "colleague"
@@ -677,5 +724,6 @@ label c08:
     elif active_route == "seoyun":
         d "다음 질문은 퇴근하고 따로 해도 될까요?"
         s "응~ 이번엔 나도 준비해 갈게. 날짜부터 맞춰 보자!"
+    $ progression_note_ending()
     return
 

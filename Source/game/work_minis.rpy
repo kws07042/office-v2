@@ -14,9 +14,12 @@ init python:
         return WORK_MINI_IDS[style][stage - 1]
 
 label work_mini_first:
+    $ progression_enter("work_mini_first")
+    $ progression_checkpoint("work_mini_first")
     if work_style not in WORK_MINI_IDS:
         $ work_style = c07_method if c07_method in WORK_MINI_IDS else None
     if work_style is None or memory.get("work_stage_1"):
+        $ progression_note_ending()
         return
     if work_style == "verify":
         call work_verify01
@@ -26,12 +29,16 @@ label work_mini_first:
         call work_test01
     $ remember("work_stage_1", work_mini_id(work_style, 1))
     call work_mini_coda(1)
+    $ progression_note_ending()
     return
 
 label work_mini_second:
+    $ progression_enter("work_mini_second")
+    $ progression_checkpoint("work_mini_second")
     if work_style not in WORK_MINI_IDS:
         $ work_style = c07_method if c07_method in WORK_MINI_IDS else None
     if work_style is None or memory.get("work_stage_2"):
+        $ progression_note_ending()
         return
     if work_style == "verify":
         call work_verify02
@@ -41,11 +48,15 @@ label work_mini_second:
         call work_test02
     $ remember("work_stage_2", work_mini_id(work_style, 2))
     call work_mini_coda(2)
+    $ progression_note_ending()
     return
 
 label work_mini_coda(stage):
+    $ progression_enter("work_mini_coda")
+    $ progression_checkpoint("work_mini_coda")
     # Public collaboration never reveals the selected private relationship.
     if active_route == "colleague" or active_route not in affinity:
+        $ progression_note_ending()
         return
     if stage == 1:
         $ location = "같은 날 퇴근 전 · 복도"
@@ -100,10 +111,14 @@ label work_mini_coda(stage):
             d "지금은 보고 있어서요."
             "서윤이 누르려던 층을 한 번 더 살핀다."
             s "...알았어. 엘리베이터 잘못 타게 하진 말고~"
+    $ progression_note_ending()
     return
 
 label work_verify01:
+    $ progression_enter("work_verify01")
+    $ progression_checkpoint("work_verify01")
     if memory.get("work_verify01_complete"):
+        $ progression_note_ending()
         return
     $ chapter = "W_VERIFY01 · 표의 작은 빈칸"
     $ location = "다음 만남을 앞둔 평일 오후 · 회의 공간"
@@ -120,6 +135,8 @@ label work_verify01:
     y "그럼 색 때문에 더 좋았다는 것도 아직 모르는 거네요?"
     d "네. 그림이 진 건 아닌 것 같아요. 서로 다른 날에 뛰었을 수도 있어서요."
     j "좋아. 지금 확인할 것 하나만 먼저 정하자."
+    $ progression_enter("work_verify01.choice01")
+    $ progression_checkpoint("work_verify01.choice01")
     menu:
         "두 자료의 조사 시간부터 나란히 적는다.":
             $ remember("work_verify01_choice", "conditions")
@@ -155,10 +172,14 @@ label work_verify01:
     r "[ri('그건 내가 직접 챙길게!', '그건 제가 직접 챙길게요!')]"
     "유진이 두 시안을 다시 포갰다. 이번에는 비교표 옆에 조사 조건도 함께 남겨 뒀다."
     $ remember("work_verify01_complete")
+    $ progression_note_ending()
     return
 
 label work_coord01:
+    $ progression_enter("work_coord01")
+    $ progression_checkpoint("work_coord01")
     if memory.get("work_coord01_complete"):
+        $ progression_note_ending()
         return
     $ chapter = "W_COORD01 · 회의 전 세 문장"
     $ location = "다음 만남을 앞둔 평일 오후 · 공용 작업 공간"
@@ -177,6 +198,8 @@ label work_coord01:
     s "곱빼기로 빨리요~"
     y "그럼 제 건 크게 나온 거라 괜찮은데요."
     j "좋아. 웃었으니까 이제 실제로 바꿀 말로."
+    $ progression_enter("work_coord01.choice01")
+    $ progression_checkpoint("work_coord01.choice01")
     menu:
         "각자 처음 보는 사람이 무엇을 알아야 하는지 묻는다.":
             $ remember("work_coord01_choice", "reader")
@@ -211,10 +234,14 @@ label work_coord01:
     s "사람도 곧 따라갈게. 내 문장 좀만 더 보고~"
     "유진이 서윤 쪽에 펜을 건넨다. 이번에는 어느 부분을 고치는지 다시 묻지 않아도 됐다."
     $ remember("work_coord01_complete")
+    $ progression_note_ending()
     return
 
 label work_test01:
+    $ progression_enter("work_test01")
+    $ progression_checkpoint("work_test01")
     if memory.get("work_test01_complete"):
+        $ progression_note_ending()
         return
     $ chapter = "W_TEST01 · 작게 먼저"
     $ location = "다음 만남을 앞둔 평일 오후 · 사내 시험용 안내 공간"
@@ -228,6 +255,8 @@ label work_test01:
     d "[ri('그 표지 아까 네가 들고 왔잖아.', '그 표지 아까 리아 씨가 들고 오셨잖아요.')]"
     r "[ri('그럼 기억력이 잠깐 나쁜 사람!', '그럼 기억력이 잠깐 나쁜 사람이요!')]"
     "유진이 웃으며 원본을 벽 쪽에 세웠다."
+    $ progression_enter("work_test01.choice01")
+    $ progression_checkpoint("work_test01.choice01")
     menu:
         "안내문의 위치만 바꾸고 발걸음을 본다.":
             $ remember("work_test01_choice", "position")
@@ -261,10 +290,14 @@ label work_test01:
     r "[ri('아, 기억력 나쁜 역할은 진짜 잘했네!', '아, 기억력 나쁜 역할은 정말 잘했네요!')]"
     "받침대가 빠진 자리로 사람들이 편하게 지나갔다. 도현은 그제야 펜을 닫았다."
     $ remember("work_test01_complete")
+    $ progression_note_ending()
     return
 
 label work_verify02:
+    $ progression_enter("work_verify02")
+    $ progression_checkpoint("work_verify02")
     if memory.get("work_verify02_complete"):
+        $ progression_note_ending()
         return
     $ chapter = "W_VERIFY02 · 가정에 별표"
     $ location = "막바지 시안 검토를 앞둔 평일 오후 · 회의 공간"
@@ -289,6 +322,8 @@ label work_verify02:
     y "사람이 많이 오면 이 배치로도 괜찮을 거라고 썼는데... 많이 온 상태는 아직 못 봤어요."
     s "그럼 '괜찮다' 대신 뭘 적을까. '아마도'만 늘리면 나부터 못 읽겠어."
     d "제가 제일 걱정하는 경우부터 한 줄로 써 볼게요."
+    $ progression_enter("work_verify02.choice01")
+    $ progression_checkpoint("work_verify02.choice01")
     menu:
         "언제 판단이 바뀌는지 한 줄로 적는다.":
             $ remember("work_verify02_choice", "boundary")
@@ -318,10 +353,14 @@ label work_verify02:
     j "그건 내가 확인했어."
     "리아는 별표 밑의 '확인 전'을 한 번 더 읽고, 자기 컵을 별 없는 쪽으로 돌려놓았다."
     $ remember("work_verify02_complete")
+    $ progression_note_ending()
     return
 
 label work_coord02:
+    $ progression_enter("work_coord02")
+    $ progression_checkpoint("work_coord02")
     if memory.get("work_coord02_complete"):
+        $ progression_note_ending()
         return
     $ chapter = "W_COORD02 · 다르게 읽은 단어"
     $ location = "막바지 시안 검토를 앞둔 평일 오후 · 공용 작업 공간"
@@ -346,6 +385,8 @@ label work_coord02:
     s "이런 쪽. 어려운 말로 멀리서 부르지 않는 거."
     r "[ri('아, 종이가 가벼워지는 게 아니고.', '아, 종이가 가벼워지는 게 아니군요.')]"
     s "그쪽도 무겁긴 해. 그건 다음 문제~"
+    $ progression_enter("work_coord02.choice01")
+    $ progression_checkpoint("work_coord02.choice01")
     menu:
         "바꾸려는 예문 하나를 나란히 놓는다.":
             $ remember("work_coord02_choice", "example")
@@ -378,10 +419,14 @@ label work_coord02:
     d "이제는 다 같은 뜻으로 들었네요."
     s "그럼 설명 더 하지 말고 끝내자. 방금은 나도 그 뜻이야~"
     $ remember("work_coord02_complete")
+    $ progression_note_ending()
     return
 
 label work_test02:
+    $ progression_enter("work_test02")
+    $ progression_checkpoint("work_test02")
     if memory.get("work_test02_complete"):
+        $ progression_note_ending()
         return
     $ chapter = "W_TEST02 · 틀린 시험의 쓸모"
     $ location = "막바지 시안 검토를 앞둔 평일 오후 · 사내 시험용 안내 공간"
@@ -408,6 +453,8 @@ label work_test02:
     d "[ri('그럼 표지 대신 네가 시험에 합격하겠지.', '그럼 표지 대신 리아 씨가 시험에 합격하시겠죠.')]"
     r "[ri('그건 좀 받고 싶네~', '그건 조금 받고 싶네요~')]"
     "리아가 웃으며 입을 다문다. 도현은 메모를 뒤집지 않고 모두가 볼 수 있게 놓았다."
+    $ progression_enter("work_test02.choice01")
+    $ progression_checkpoint("work_test02.choice01")
     menu:
         "예상과 실제 결과를 나란히 보여 준다.":
             $ remember("work_test02_choice", "show")
@@ -443,4 +490,5 @@ label work_test02:
         r "[ri('...그건 벌써 좀 자신 없는데~', '...그건 벌써 조금 자신 없는데요~')]"
     "도현은 웃다가 빈칸에 결과를 마저 적었다. 다음 시험의 답까지 미리 채우지는 않았다."
     $ remember("work_test02_complete")
+    $ progression_note_ending()
     return

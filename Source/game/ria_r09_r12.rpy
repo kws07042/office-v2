@@ -1,7 +1,10 @@
 # Existing R09-R12 and optional O02 slots. Art and voice remain pending.
 
 label ria_r09:
+    $ progression_enter("ria_r09")
+    $ progression_checkpoint("ria_r09")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R09 · 분위기 담당이라는 말"
     $ location = "다음 주 화요일 오후 · 온빛브랜딩"
@@ -13,6 +16,8 @@ label ria_r09:
     r "[ri('좋은 말인데... 내가 사람들 웃긴 것만 남았네.', '좋은 말인데... 제가 사람들 웃긴 것만 남았네요.')]"
     d "[ri('이 두 사진은 분위기 좋아서 찍힌 게 아닌데.', '이 두 사진은 분위기 좋아서 찍힌 게 아닌데요.')]"
     r "[ri('그건 그렇지. 네가 봐 줬으니까 좀 낫다.', '그건 그렇죠. 도현 씨가 봐 주셨으니까 좀 낫네요.')]"
+    $ progression_enter("ria_r09.choice01")
+    $ progression_checkpoint("ria_r09.choice01")
     menu:
         "리아가 판단 근거를 직접 설명하도록 질문을 건넨다.":
             $ remember("ria_r09_support", "explain")
@@ -53,10 +58,14 @@ label ria_r09:
     "버스가 도착하자 리아가 먼저 손을 놓고 손을 흔들었다. 집에 도착한 뒤 서로의 귀가를 확인했다."
     $ remember("ria_r09_date_close", "정류장에서 인사하고 각자 귀가")
     $ award_once("ria_R09", "ria", 6)
+    $ progression_note_ending()
     return
 
 label ria_r10:
+    $ progression_enter("ria_r10")
+    $ progression_checkpoint("ria_r10")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R10 · 지도에 적은 다음"
     $ location = "그 주 토요일 오후 · 리아의 집"
@@ -80,6 +89,8 @@ label ria_r10:
         r "[ri('딱 두 장 찍고 덮밥 먹으러 왔던 날. 오늘도 시간 예약하고 찍자~', '딱 두 장 찍고 덮밥 먹으러 오셨던 날이네요. 오늘도 시간 예약하고 찍어요~')]"
     d "[ri('사진은 고르겠는데 순서가 어렵네. 앞에 두면 좋을 장소 같이 봐 줄래?', '사진은 고르겠는데 순서가 어렵네요. 앞에 두면 좋을 장소 같이 봐 주실래요?')]"
     r "[ri('좋아. 대신 빵집 빼라고 하면 한 번은 항의할 거야!', '좋아요. 대신 빵집 빼라고 하시면 한 번은 항의할 거예요!')]"
+    $ progression_enter("ria_r10.choice01")
+    $ progression_checkpoint("ria_r10.choice01")
     menu:
         "작은 공원의 긴 의자를 기록집 첫 장소 후보로 고른다.":
             $ remember("ria_r10_place", "park")
@@ -113,6 +124,8 @@ label ria_r10:
     r "[ri('우리 얘기, 서윤 언니한테는 말해도 괜찮을 것 같아. 너는 어때?', '우리 얘기, 서윤 언니한테는 말해도 괜찮을 것 같아요. 도현 씨는 어때요?')]"
     d "[ri('회사 전체에 알리는 건 아니고, 서윤 씨 한 명에게?', '회사 전체에 알리는 건 아니고, 서윤 씨 한 명에게요?')]"
     r "[ri('응. 친한 사람 한 명한테는 내가 말하고 싶어서. 아직 싫으면 안 해도 돼.', '네. 친한 사람 한 명한테는 제가 말하고 싶어서요. 아직 싫으면 안 해도 돼요.')]"
+    $ progression_enter("ria_r10.choice02")
+    $ progression_checkpoint("ria_r10.choice02")
     menu:
         "서윤 한 명에게 교제 사실을 알리기로 함께 합의한다.":
             d "[ri('좋아. 둘이 같이 얘기하자. 알려도 된 건 우리가 사귄다는 데까지.', '좋아요. 둘이 같이 얘기해요. 알려도 된 건 우리가 사귄다는 데까지요.')]"
@@ -132,11 +145,17 @@ label ria_r10:
             $ remember("ria_publicity", "private")
             $ remember("ria_disclosure_reason_heard")
     $ award_once("ria_R10", "ria", 4)
+    $ progression_note_ending()
     return
 
 label ria_o02_offer:
+    $ progression_enter("ria_o02_offer")
+    $ progression_checkpoint("ria_o02_offer")
     if not dating or active_route != "ria" or memory.get("ria_o02_status"):
+        $ progression_note_ending()
         return
+    $ progression_enter("ria_o02_offer.choice01")
+    $ progression_checkpoint("ria_o02_offer.choice01")
     menu:
         "잠깐 만나기 — 지도에 없는 산책 (선택 일상)":
             call ria_o02
@@ -147,10 +166,14 @@ label ria_o02_offer:
             d "[ri('오늘은 여기까지 쉬고 싶어. 다음엔 네 지도에 없는 길도 걸어 보자.', '오늘은 여기까지 쉬고 싶어요. 다음엔 리아 씨 지도에 없는 길도 걸어 봐요.')]"
             r "[ri('좋아. 오늘 안 걸은 길은 남겨 두는 걸로~', '좋아요. 오늘 안 걸은 길은 남겨 두는 걸로요~')]"
             $ remember("ria_o02_status", "brief")
+    $ progression_note_ending()
     return
 
 label ria_o02:
+    $ progression_enter("ria_o02")
+    $ progression_checkpoint("ria_o02")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 O02 · 지도에 없는 산책"
     $ location = "같은 토요일 늦은 오후 · 동네 샛길"
@@ -158,6 +181,8 @@ label ria_o02:
     r "[ri('나 여기 처음이야. 지도에 점 하나 더 생겼네!', '저 여기 처음이에요. 지도에 점 하나 더 생겼네요!')]"
     d "[ri('여긴 뭐라고 적을까?', '여긴 뭐라고 적을까요?')]"
     r "[ri('이름 공모! 너무 멋있는 건 금지. 다음에 찾을 수 있는 걸로~', '이름 공모! 너무 멋있는 건 금지. 다음에 찾을 수 있는 걸로요~')]"
+    $ progression_enter("ria_o02.choice01")
+    $ progression_checkpoint("ria_o02.choice01")
     menu:
         "발견한 계단을 따라 ‘한 칸 더’라고 부른다.":
             $ remember("ria_o02_name", "한 칸 더")
@@ -184,10 +209,14 @@ label ria_o02:
     r "[ri('우리끼리만 알아도 길 찾기는 되겠다.', '우리끼리만 알아도 길 찾기는 되겠네요.')]"
     d "[ri('길 이름보다 네가 손 흔드는 걸 먼저 찾을 것 같은데.', '길 이름보다 리아 씨가 손 흔드시는 걸 먼저 찾을 것 같은데요.')]"
     $ award_once("ria_O02", "ria", 2)
+    $ progression_note_ending()
     return
 
 label ria_r11:
+    $ progression_enter("ria_r11")
+    $ progression_checkpoint("ria_r11")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R11 · 계획 없는 저녁"
     $ location = "다음 날 일요일 저녁 · 리아의 집"
@@ -223,6 +252,8 @@ label ria_r11:
     if memory.get("ria_o02_name") == "돌아가기 전 오 분":
         r "[ri('어제 오 분이 생각보다 길었지? 오늘은 밥 먹고 나서 쉬자~', '어제 오 분이 생각보다 길었죠? 오늘은 밥 먹고 나서 쉬어요~')]"
     r "[ri('내 추천은 파스타. 덮밥도 할 수 있어. 뭐가 당겨?', '제 추천은 파스타예요. 덮밥도 할 수 있어요. 뭐가 당기세요?')]"
+    $ progression_enter("ria_r11.choice01")
+    $ progression_checkpoint("ria_r11.choice01")
     menu:
         "리아 추천 파스타를 함께 만들고 소스 간을 맞춘다.":
             $ remember("ria_r11_menu", "pasta")
@@ -277,10 +308,14 @@ label ria_r11:
     "현관에서 인사를 나누고 돌아갔다. 같은 저녁의 기억이 각자의 집까지 이어졌다."
     $ remember("ria_r11_date_close", "요리와 대화 뒤 각자 귀가")
     $ award_once("ria_R11", "ria", 0)
+    $ progression_note_ending()
     return
 
 label ria_r12:
+    $ progression_enter("ria_r12")
+    $ progression_checkpoint("ria_r12")
     if not dating or active_route != "ria":
+        $ progression_note_ending()
         return
     $ chapter = "리아 R12 · 보고 싶어서 잡은 날"
     $ location = "화요일 밤 · 각자의 집, 메시지"
@@ -322,6 +357,8 @@ label ria_r12:
         r "[ri('오늘은 내가 메뉴 고르는 것도 좀 느려. 배고픈 것만 확실해~', '오늘은 제가 메뉴 고르는 것도 좀 느리네요. 배고픈 것만 확실해요~')]"
     "따뜻한 식사를 마치고 리아의 집까지 함께 걸었다."
     r "[ri('오늘 밤은 같이 있고 싶어. 너는?', '오늘 밤은 같이 있고 싶어요. 도현 씨는요?')]"
+    $ progression_enter("ria_r12.choice01")
+    $ progression_checkpoint("ria_r12.choice01")
     menu:
         "나도 같은 마음이라고 답한다 — 친밀한 장면으로 이어짐.":
             d "[ri('응. 나도 오늘은 더 같이 있고 싶어.', '네. 저도 오늘은 더 같이 있고 싶어요.')]"
@@ -382,9 +419,12 @@ label ria_r12:
     else:
         dn "노트 한 장을 넘길 때마다 휴대폰도 한번 봤다. 일찍 끝났다는 연락이면 좋겠는데."
     $ award_once("ria_R12", "ria", 4)
+    $ progression_note_ending()
     return
 
 label ria_r12_contact_line(mid, sender, body):
+    $ progression_enter("ria_r12_contact_line")
+    $ progression_checkpoint("ria_r12_contact_line")
     if memory.get("ria_r12_intimacy") == "deferred":
         call phone_deliver(mid, sender, body)
     else:
@@ -392,14 +432,21 @@ label ria_r12_contact_line(mid, sender, body):
             $ renpy.say(r, body)
         else:
             $ renpy.say(d, body)
+    $ progression_note_ending()
     return
 
 label ria_r12_plan_pick:
+    $ progression_enter("ria_r12_plan_pick")
+    $ progression_checkpoint("ria_r12_plan_pick")
     $ phone_context = "r12_expectation"
     if memory.get("ria_r12_intimacy") == "deferred":
+        $ progression_enter("ria_r12_plan_pick.choice01")
+        $ progression_checkpoint("ria_r12_plan_pick.choice01")
         call screen office_phone(replies=[("fixed", "네 시 약속을 기준으로 내 일정을 잡겠다고 말한다."), ("hope_early", "일찍 연락이 오면 좋겠다고 말하되 확정 시간은 네 시로 둔다."), ("clarify", "변경 연락이 없으면 네 시에 만나기로 기준을 서로 확인한다.")])
         $ phone_r12_plan_result = _return
     else:
+        $ progression_enter("ria_r12_plan_pick.choice02")
+        $ progression_checkpoint("ria_r12_plan_pick.choice02")
         menu:
             "네 시 약속을 기준으로 내 일정을 잡겠다고 말한다.":
                 $ phone_r12_plan_result = "fixed"

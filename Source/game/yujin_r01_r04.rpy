@@ -2,12 +2,16 @@
 default yujin_prepared = False
 
 label yujin_r01:
+    $ progression_enter("yujin_r01")
+    $ progression_checkpoint("yujin_r01")
     $ cream_focus = "yujin"
     $ chapter = "유진 R01 · 보내려던 메시지"
     $ location = "목요일 퇴근 후 · 개인 메시지"
     call phone_deliver("yujin_r01_info", "yujin", "주말에 작은 전시가 열려요. 도현 씨랑 같이 보고 싶어서 보내요.", contact="yujin")
     call phone_deliver("yujin_r01_title", "yujin", "제목은 ‘오후의 온도’예요. 설명하려고 적다 보니... 만나서 얘기하는 게 더 좋겠어요.", contact="yujin")
     $ phone_context = "yujin_r01_reply"
+    $ progression_enter("yujin_r01.choice01")
+    $ progression_checkpoint("yujin_r01.choice01")
     call screen office_phone(replies=[("interest", "같이 보고 싶다고 답하고, 유진의 추천을 듣는다."), ("time", "토요일 오후 시간을 먼저 제안한다."), ("reason", "이 전시를 함께 보고 싶은 이유를 묻는다.")])
     $ remember("yujin_r01_reply", _return)
     $ phone_context = None
@@ -36,9 +40,12 @@ label yujin_r01:
     yn "설명은 가서 해도 되니까. 첫 감상은 그분한테 먼저 물어봐야지."
     $ location = "같은 목요일 저녁 · 도현의 집"
     $ award_once("yujin_R01", "yujin", 4)
+    $ progression_note_ending()
     return
 
 label yujin_r02:
+    $ progression_enter("yujin_r02")
+    $ progression_checkpoint("yujin_r02")
     $ chapter = "유진 R02 · 오늘 코스는 제가 골랐어요"
     $ location = "토요일 오후 두 시 · 작은 전시 공간"
     "입구의 안내를 읽던 유진이 도현을 발견하고 노트를 가방에 넣었다."
@@ -55,6 +62,8 @@ label yujin_r02:
     y "먼저 읽으면 그쪽으로만 보일까 봐요. 오늘은 힌트 없이요~"
     d "저 원래 설명부터 읽는 사람인데요."
     y "오늘 한 번만 제 방식으로 봐 주세요. 다음 그림은 도현 씨 방식으로요."
+    $ progression_enter("yujin_r02.choice01")
+    $ progression_checkpoint("yujin_r02.choice01")
     menu:
         "유진이 골라 온 순서대로 보고 싶은 작품을 듣는다.":
             $ remember("yujin_r02_plan", "follow")
@@ -107,6 +116,8 @@ label yujin_r02:
             "둘은 그림을 한 번 더 본 뒤에야 문 쪽으로 몸을 돌렸다."
     "다음 공간으로 가려던 유진이 손을 가방 끈에서 놓는다."
     y "저, 다음 방까지 손잡고 가도 돼요? 사람 많아서 하는 말은 아니에요."
+    $ progression_enter("yujin_r02.choice02")
+    $ progression_checkpoint("yujin_r02.choice02")
     menu:
         "손을 내밀며 나도 잡고 싶었다고 말한다.":
             $ remember("yujin_r02_touch", "hand")
@@ -133,9 +144,12 @@ label yujin_r02:
     y "...평점보다 그 말이 좋네요."
     $ remember("yujin_r02_exhibition_visited")
     $ award_once("yujin_R02", "yujin", 7)
+    $ progression_note_ending()
     return
 
 label yujin_r03:
+    $ progression_enter("yujin_r03")
+    $ progression_checkpoint("yujin_r03")
     $ chapter = "유진 R03 · 질문을 기억한 시안"
     $ location = "다음 주 월요일 점심 · 개인 메시지"
     if memory.get("yujin_r02_touch") == "hand":
@@ -165,6 +179,8 @@ label yujin_r03:
         y "이번에는 제가 설명하기 전에 도현 씨 질문부터 받아 볼래요. 어디에 먼저 눈이 가세요?"
         d "안내 문구 다음에 입구 방향이 보여요. 읽는 순서를 정하신 거예요?"
         y "네. 제가 생각한 순서로 읽히는지 확인하고 싶었어요."
+    $ progression_enter("yujin_r03.choice01")
+    $ progression_checkpoint("yujin_r03.choice01")
     menu:
         "수정한 부분 중 유진이 남기고 싶었던 것을 묻는다.":
             $ remember("yujin_r03_response", "intent")
@@ -205,10 +221,14 @@ label yujin_r03:
     $ remember("yujin_r03_friday_appointment", "금요일 저녁 일곱 시, 회사 근처 카페")
     $ remember("yujin_core_understanding")
     $ award_once("yujin_R03", "yujin", 8)
+    $ progression_note_ending()
     return
 
 label yujin_r04:
+    $ progression_enter("yujin_r04")
+    $ progression_checkpoint("yujin_r04")
     if not memory.get("yujin_core_understanding"):
+        $ progression_note_ending()
         return
     $ chapter = "유진 R04 · 부끄럽지만 말할게요"
     $ location = "금요일 저녁 일곱 시 · 약속한 카페"
@@ -220,6 +240,8 @@ label yujin_r04:
     y "도현 씨랑 연인으로 만나고 싶어요. ...제가 먼저 고른 말이에요."
     dn "답을 기다리는 눈을 보니 준비한 농담이 사라졌다. 다행히 하고 싶은 대답은 짧았다."
     while not dating and not memory.get("yujin_relationship_declined"):
+        $ progression_enter("yujin_r04.choice01")
+        $ progression_checkpoint("yujin_r04.choice01")
         menu:
             "나도 유진과 연인으로 만나고 싶다고 답한다.":
                 d "저도 좋아해요. 그날 헤어지고 나서 또 불러 주셨으면 했어요. 다음엔 제가 먼저 만나자고 해야겠다고 생각했고요."
@@ -239,12 +261,15 @@ label yujin_r04:
                 $ remember("yujin_prepared_conversation")
             "이번 회차는 연애를 시작하지 않고 동료로 지낸다 — 동료 결말로 이어짐.":
                 d "유진 씨 마음을 들었지만, 저는 동료로 지내고 싶어요. 연애를 시작하겠다는 답은 드릴 수 없어요."
+                $ progression_enter("yujin_r04.choice02")
+                $ progression_checkpoint("yujin_r04.choice02")
                 menu:
                     "동료로 지내겠다는 뜻을 확인한다.":
                         y "알겠어요. 말씀해 주셔서 고마워요. 오늘 제 얘기는 다른 사람한테는 전하지 말아 주세요."
                         d "네. 오늘 들은 마음은 제가 잘 간직할게요."
                         $ remember("yujin_relationship_declined")
                         call end_common
+                        $ progression_note_ending()
                         return
                     "결정을 다시 고른다.":
                         pass
@@ -256,6 +281,8 @@ label yujin_r04:
     if not yujin_prepared:
         d "저 사실 연애는 처음이에요. 방금 호칭도 좀 욕심냈네요."
         y "저도 처음이에요. 그건 같이 서툴러도 되겠어요. 호칭은... 다음에 한 번만 더 해 보세요~"
+    $ progression_enter("yujin_r04.choice03")
+    $ progression_checkpoint("yujin_r04.choice03")
     menu:
         "다음 데이트는 내가 먼저 제안하고 싶다고 말한다.":
             $ remember("yujin_next_date_plan", "dohyun_suggests")
@@ -272,6 +299,7 @@ label yujin_r04:
     $ remember("yujin_r04_next_appointment", "다음 토요일 후보, 장소와 시각은 후속 대화에서 확인")
     "카페 앞에서 인사를 나눴다. 유진은 돌아서다가 도현을 한 번 더 부르고, 대답을 듣고 나서야 걸음을 옮긴다."
     $ remember("yujin_r04_complete")
+    $ progression_note_ending()
     return
 
 label yujin_early_route(through_r08=False, through_r12=False, full_route=False):

@@ -161,6 +161,9 @@ screen main_menu():
                 if not renpy.variant("web"):
                     textbutton "종료" action Quit(confirm=False) xsize 238
             text "네 히로인 전체 대본 · 아트 준비 중" size 15 color "#9c8f98"
+    textbutton "우리의 기록 · 이야기 / CG / 결말":
+        xpos 730 ypos 475 xsize 430 text_size 20
+        action ShowMenu("progression_hub")
     textbutton "지현 전체 대본 확인":
         id "jihyun_preview_button"
         xpos 730 ypos 545 xsize 430
@@ -185,7 +188,7 @@ screen quick_menu():
                     textbutton "메신저" action Show("office_phone_archive") style "cream_quick_button"
                 if not event_cut_active:
                     textbutton "자동" action Preference("auto-forward", "toggle") style "cream_quick_button"
-                    textbutton "스킵" action Skip(fast=True, confirm=False) style "cream_quick_button"
+                    textbutton "스킵" action Skip() style "cream_quick_button"
                 textbutton "저장" action ShowMenu("save") style "cream_quick_button"
                 textbutton "불러오기" action ShowMenu("load") style "cream_quick_button"
                 textbutton "설정" action ShowMenu("preferences") style "cream_quick_button"
@@ -214,19 +217,37 @@ screen preferences():
     tag menu
     add "gui/cream/stage_day.svg" xysize (1280, 720)
     frame:
-        xalign 0.5 yalign 0.5 xsize 720 padding (42, 35)
+        xalign 0.5 yalign 0.5 xsize 720 ysize 672 padding (42, 35)
         background cream_round("panel")
-        vbox:
-            spacing 22
-            text "설정" size 36 color "#79608d"
-            text "글자 표시 속도" size 23
-            bar value Preference("text speed") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
-            textbutton "글자 즉시 표시" action Preference("text speed", 0)
-            textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
-            text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#796d82" line_spacing 4 xmaximum 620
-            textbutton "돌아가기" action Return()
-            if not main_menu:
-                textbutton "처음 화면" action MainMenu(confirm=True)
+        viewport:
+            xsize 636 ysize 602
+            mousewheel True draggable True
+            scrollbars "vertical"
+            vbox:
+                spacing 16
+                text "설정" size 36 color "#79608d"
+                text "글자 표시 속도" size 23
+                textbutton "창모드" action Preference("display", "window") text_size 20
+                textbutton "전체화면" action Preference("display", "fullscreen") text_size 20
+                textbutton "읽은 대사만 스킵" action Preference("skip", "seen") text_size 20
+                bar value Preference("text speed") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
+                textbutton "글자 즉시 표시" action Preference("text speed", 0)
+                text "자동 진행 대기 시간" size 21
+                bar value Preference("auto-forward time") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
+                if config.has_music:
+                    text "음악" size 20
+                    bar value Preference("music volume") xsize 620
+                if config.has_sound:
+                    text "효과음" size 20
+                    bar value Preference("sound volume") xsize 620
+                if config.has_voice:
+                    text "음성" size 20
+                    bar value Preference("voice volume") xsize 620
+                textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
+                text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#796d82" line_spacing 4 xmaximum 620
+                textbutton "돌아가기" action Return()
+                if not main_menu:
+                    textbutton "처음 화면" action MainMenu(confirm=True)
 
 screen file_slots(mode):
     add "gui/cream/stage_day.svg" xysize (1280, 720)

@@ -18,6 +18,7 @@ init python:
     build.classify("game/images/characters/ria/ui_master.png", None)
     build.classify("game/images/characters/ria/expressions/face_reference.png", None)
     build.classify("**/testcases.rpyc", None)
+    build.classify("**/progression_smoke.rpyc", None)
     build.classify("**/*_tests.rpyc", None)
     build.classify("**/three_choice_cases.json", None)
     build.classify("**/saves/**", None)

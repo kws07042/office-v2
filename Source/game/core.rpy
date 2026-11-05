@@ -55,7 +55,7 @@ init python:
         if event in renpy.store.completed:
             return
         renpy.store.affinity = dict(renpy.store.affinity, **{
-            who: min(100, renpy.store.affinity.get(who, 0) + amount)})
+            who: max(0, min(100, renpy.store.affinity.get(who, 0) + amount))})
         renpy.store.completed = renpy.store.completed + [event]
         if who == "ria":
             renpy.store.trust_ria = min(3, max(0, renpy.store.trust_ria + trust))
@@ -120,6 +120,8 @@ label start:
             return
 
 label end_common:
+    $ progression_enter("end_common")
+    $ progression_checkpoint("end_common")
     call work_mini_second
     $ chapter = "END_COMMON · 좋은 동료로, 우리"
     $ location = "온빛브랜딩 · 몇 주 뒤"
@@ -145,5 +147,6 @@ label end_common:
     $ ending = "colleague"
     $ persistent.local_colleague_ending = True
     "동료 결말 · 좋은 동료로, 우리"
+    $ progression_note_ending()
     return
 

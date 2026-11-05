@@ -230,6 +230,8 @@ label phone_deliver(mid, sender, body, media=None, important=False, contact="ria
     return
 
 label ria_r08_phone_conversation:
+    $ progression_enter("ria_r08_phone_conversation")
+    $ progression_checkpoint("ria_r08_phone_conversation")
     $ phone_context = "r08_start"
     if memory.get("ria_r07_intimacy") != "shared":
         call phone_deliver("r08_morning_1", "ria", ri("일어났어? 나는 빵 먹는 중~ 오늘 추천 코스는 식탁!", "일어나셨어요? 저는 빵 먹는 중이에요~ 오늘 추천 코스는 식탁!"))
@@ -241,6 +243,8 @@ label ria_r08_phone_conversation:
         call phone_deliver("r08_photo", "ria", ri("오늘의 추천 코스 인증~ 빵은 내가 골랐어!", "오늘의 추천 코스 인증~ 빵은 제가 골랐어요!"), media="ria_r08_breakfast")
     call phone_deliver("r08_question", "ria", ri("오늘 뭐 해? 나는 빨래 돌리고 나면 특별한 일 없어.", "오늘 뭐 하세요? 저는 빨래 돌리고 나면 특별한 일 없어요."))
     $ phone_context = "r08_reply"
+    $ progression_enter("ria_r08_phone_conversation.choice01")
+    $ progression_checkpoint("ria_r08_phone_conversation.choice01")
     call screen office_phone(replies=[("miss", "보고 싶다고 짧게 답한다."), ("evening", "오늘 할 일을 나누고 저녁 연락을 제안한다."), ("small_memory", "어제 좋았던 작은 순간을 하나 골라 보낸다.")])
     $ remember("ria_r08_reply", _return)
     $ phone_context = "r08_response"
@@ -266,6 +270,7 @@ label ria_r08_phone_conversation:
     else:
         call phone_deliver("r08_lunch", "ria", ri("점심은 국수 먹으려고. 너도 끼니는 챙겨!", "점심은 국수 먹으려고요. 도현 씨도 끼니는 챙기세요!"))
     $ phone_context = None
+    $ progression_note_ending()
     return
 
 label office_phone_preview:

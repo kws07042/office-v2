@@ -1,6 +1,9 @@
 # Established Yujin slots R05-R08. New graphics remain deferred.
 label yujin_r05:
+    $ progression_enter("yujin_r05")
+    $ progression_checkpoint("yujin_r05")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 R05 · 둘이 고른 주말"
     $ location = "약속한 토요일 오후 · 동네 작은 서점"
@@ -38,6 +41,8 @@ label yujin_r05:
     "유진이 과자 봉지를 무릎에 놓는 동안 도현은 노트를 꺼냈다."
     d "드시기 전에 이것만요. 첫 장 후보, 셋 중 하나만 봐 주세요."
     y "그럼 한 장만요. 제 과자 식기 전에~"
+    $ progression_enter("yujin_r05.choice01")
+    $ progression_checkpoint("yujin_r05.choice01")
     menu:
         "사진을 먼저 보여 주고 짧은 글을 뒤에 붙이는 구성을 고른다.":
             $ remember("yujin_r05_layout", "photo_first")
@@ -72,6 +77,8 @@ label yujin_r05:
     d "네. 고른 분은 아직 잘 모르겠지만요."
     "유진이 웃다가 도현의 눈을 봤다. 빈 봉지를 접어 가방에 넣고도 다시 시선을 맞췄다."
     y "그럼 하나 더 알아 가실래요? 지금 입맞춤하고 싶어요. 괜찮으세요?"
+    $ progression_enter("yujin_r05.choice02")
+    $ progression_checkpoint("yujin_r05.choice02")
     menu:
         "나도 그러고 싶다고 답하고 가까이 다가간다.":
             d "네. 저도 아까부터 그러고 싶었어요."
@@ -93,10 +100,14 @@ label yujin_r05:
             $ remember("yujin_r05_affection", "walk")
     $ remember("yujin_r05_kiss_proposed")
     $ award_once("yujin_R05", "yujin", 4)
+    $ progression_note_ending()
     return
 
 label yujin_r06:
+    $ progression_enter("yujin_r06")
+    $ progression_checkpoint("yujin_r06")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 R06 · 제가 먼저 말해도 되죠"
     $ location = "그 주 수요일 퇴근 후 · 회사 근처 카페"
@@ -132,6 +143,8 @@ label yujin_r06:
     y "네. 그럼 꽃은 데이지고요. 시계 보면서 기다린 건 저 때문이고요."
     d "그 둘은 왜 같이 묶으세요?"
     y "앞에 건 바로잡고, 뒤에 건 좀 기억해 두려고요~ 다음엔 제가 먼저 부르고 싶은데요."
+    $ progression_enter("yujin_r06.choice01")
+    $ progression_checkpoint("yujin_r06.choice01")
     menu:
         "유진의 제안이 좋고, 나도 먼저 부르고 싶다고 말한다.":
             $ remember("yujin_r06_expression", "both_initiate")
@@ -162,6 +175,8 @@ label yujin_r06:
     y "...그렇게 바로 따라오신다고 하시면 제가 더 떨리는데요. 그래도 취소는 안 할래요~ 동네 서점 앞에서 만나요."
     d "네. 토요일 세 시에 봬요. 유진 씨가 고른 곳에서요."
     $ remember("yujin_r07_appointment", "토요일 오후 세 시, 동네 서점 앞")
+    $ progression_enter("yujin_r06.choice02")
+    $ progression_checkpoint("yujin_r06.choice02")
     menu:
         "입맞춤해도 괜찮을지 먼저 묻는다.":
             d "오늘은 제가 먼저 물어볼래요. 입맞춤해도 돼요?"
@@ -185,10 +200,14 @@ label yujin_r06:
             "유진이 버스에 오르기 전에 작게 손을 흔들었다."
             $ remember("yujin_r06_affection", "words")
     $ award_once("yujin_R06", "yujin", 6)
+    $ progression_note_ending()
     return
 
 label yujin_r07:
+    $ progression_enter("yujin_r07")
+    $ progression_checkpoint("yujin_r07")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 R07 · 둘이 선택한 속도"
     $ location = "토요일 오후 세 시 · 동네 서점"
@@ -213,6 +232,8 @@ label yujin_r07:
     d "조금 더 있을래요. 그림 다 봤다고 바로 가긴 싫어서요."
     "차를 내온 유진이 도현 쪽 잔의 손잡이를 돌려놓았다. 이번에는 눈을 피하지 않았다."
     y "오늘은 조금 더 가까이 있고 싶어요. 여기서 같이 밤을 보내고 싶은데... 도현 씨는요?"
+    $ progression_enter("yujin_r07.choice01")
+    $ progression_checkpoint("yujin_r07.choice01")
     menu:
         "나도 함께 밤을 보내고 싶다고 답한다 — 친밀한 장면으로 이어짐.":
             d "저도 같은 마음이에요. 오늘은 같이 있고 싶어요."
@@ -239,10 +260,14 @@ label yujin_r07:
             $ remember("yujin_r07_pace", "talk")
     $ remember("yujin_personal_drawing_seen", "집 창가의 그림자")
     $ award_once("yujin_R07", "yujin", 0)
+    $ progression_note_ending()
     return
 
 label yujin_r08:
+    $ progression_enter("yujin_r08")
+    $ progression_checkpoint("yujin_r08")
     if not dating or active_route != "yujin":
+        $ progression_note_ending()
         return
     $ chapter = "유진 R08 · 다음 약속은 제가"
     if memory.get("yujin_r07_pace") == "shared":
@@ -266,6 +291,8 @@ label yujin_r08:
     else:
         call phone_deliver("yujin_r08_invite", "yujin", "이번에도 제가 먼저요~ 다음 주 수요일에 잠깐 만날까요? 저는 목요일도 괜찮아요.", contact="yujin")
     $ phone_context = "yujin_r08_reply"
+    $ progression_enter("yujin_r08.choice01")
+    $ progression_checkpoint("yujin_r08.choice01")
     call screen office_phone(replies=[("wed19", "수요일 저녁 일곱 시가 좋다고 답한다."), ("thu19", "목요일 저녁 일곱 시를 제안한다."), ("wed1930", "수요일 일곱 시 반이 더 편하다고 말한다.")])
     $ remember("yujin_r08_availability", _return)
     $ phone_context = None
@@ -295,4 +322,5 @@ label yujin_r08:
     dn "정해진 시간 옆에 이름을 적었다. 이번엔 유진 씨가 먼저 고른 다음 약속이었다."
     $ remember("yujin_r08_complete")
     $ award_once("yujin_R08", "yujin", 4)
+    $ progression_note_ending()
     return

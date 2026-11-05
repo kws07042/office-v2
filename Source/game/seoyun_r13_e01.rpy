@@ -1,5 +1,8 @@
 label seoyun_r13:
+    $ progression_enter("seoyun_r13")
+    $ progression_checkpoint("seoyun_r13")
     if not dating or active_route != "seoyun":
+        $ progression_note_ending()
         return
     $ chapter = "서윤 R13 · 말하지 않은 사람"
     $ location = "다음 월요일 저녁 · 카페"
@@ -14,6 +17,8 @@ label seoyun_r13:
     $ remember("seoyun_conflict", "open")
     $ remember("seoyun_dismissed_request", "혼인 사실과 배우자 동거를 숨긴 채 교제하고 미래 질문을 피함")
     "도현은 반지보다 서윤을 봤다. 서윤은 케이스를 가방에 숨기지 못했다."
+    $ progression_enter("seoyun_r13.choice01")
+    $ progression_checkpoint("seoyun_r13.choice01")
     menu:
         "교제하기 전에 왜 말하지 않았는지 묻는다.":
             d "제가 알고도 만나겠다고 한 적은 없잖아요. 왜 사귀기 전에 말 안 하셨어요?"
@@ -45,14 +50,20 @@ label seoyun_r13:
     $ remember("seoyun_trust_status", "damaged_not_restored")
     $ remember("seoyun_conflict", "discussing")
     $ award_once("seoyun_R13", "seoyun", 0)
+    $ progression_note_ending()
     return
 
 label seoyun_r14:
+    $ progression_enter("seoyun_r14")
+    $ progression_checkpoint("seoyun_r14")
     if not dating or active_route != "seoyun" or memory.get("seoyun_conflict") != "discussing":
+        $ progression_note_ending()
         return
     $ chapter = "서윤 R14 · 알고 나서 고르는 것"
     $ location = "같은 월요일 저녁 · 카페"
     s "이번 수요일 일곱 시에 여기 올게. 지금 네가 결정 못 해도 돼. 대신 그때는 묻는 걸 피하지 않을게."
+    $ progression_enter("seoyun_r14.choice01")
+    $ progression_checkpoint("seoyun_r14.choice01")
     menu:
         "수요일에 사실을 더 듣고 관계를 판단하겠다고 한다.":
             d "그날은 제가 묻는 걸 그대로 답해 주세요. 듣고 나서 제 마음도 말할게요."
@@ -62,6 +73,8 @@ label seoyun_r14:
             s "응. 이혼하기로 정한 것도 아닌데, 그럴 거라고 약속하지는 않을게."
             $ remember("seoyun_r14_choice", "repair_blunt")
         "연애를 마치고 동료로 지내고 싶다고 말한다 — 관계 종료 확인.":
+            $ progression_enter("seoyun_r14.choice02")
+            $ progression_checkpoint("seoyun_r14.choice02")
             menu:
                 "관계 종료를 확정한다.":
                     d "저는 이 관계를 계속하지 않을래요. 회사에서는 필요한 일만 함께해요."
@@ -70,6 +83,7 @@ label seoyun_r14:
                     $ remember("seoyun_relationship_closed")
                     $ ending = "seoyun_relationship_closed"
                     "둘은 따로 카페를 나왔다. 사적인 다음 약속은 잡지 않았다."
+                    $ progression_note_ending()
                     return
                 "결정을 취소하고 수요일에 이야기를 듣는다.":
                     d "지금 끝내겠다는 결정은 취소할게요. 수요일에 한 번 더 듣고 싶어요."
@@ -94,6 +108,8 @@ label seoyun_r14:
     s "응. 그리고 우리 만남이 들키지 않게 네가 뭘 해 달라고 요구하지는 않을게. 내가 돌아가는 생활까지 네 책임으로 만들지는 않을 거야."
     "도현은 서윤을 봤다. 월요일보다 사실은 분명해졌지만 마음이 가벼워지지는 않았다."
     $ remember("seoyun_repair_performed", "수요일 실제 대면에서 현재 혼인·배우자 동거·정리 미결정 사실을 확인")
+    $ progression_enter("seoyun_r14.choice03")
+    $ progression_checkpoint("seoyun_r14.choice03")
     menu:
         "혼인 사실을 안 상태로도, 지금은 계속 만나기로 한다.":
             d "지금은 계속 만나고 싶어요. 그렇다고 괜찮아졌거나, 끝날 때까지 기다리겠다는 뜻은 아니에요."
@@ -106,6 +122,7 @@ label seoyun_r14:
             $ remember("seoyun_relationship_closed")
             $ ending = "seoyun_relationship_closed"
             "두 사람은 각자 일어났다. 다음의 사적인 약속은 없었다."
+            $ progression_note_ending()
             return
     $ remember("seoyun_conflict", "resolved")
     $ remember("seoyun_future_question_status", "혼인 지속을 알고 교제 지속 선택, 신뢰 회복·이혼·동거 약속 아님")
@@ -116,10 +133,14 @@ label seoyun_r14:
     "서윤은 웃으려다 고개만 끄덕였다. 도현이 먼저 일어났고, 서윤은 그가 외투를 입는 동안 기다렸다."
     $ remember("seoyun_r15_appointment", "금요일 저녁 일곱 시 식사")
     $ award_once("seoyun_R14", "seoyun", 8)
+    $ progression_note_ending()
     return
 
 label seoyun_r15:
+    $ progression_enter("seoyun_r15")
+    $ progression_checkpoint("seoyun_r15")
     if not dating or active_route != "seoyun" or memory.get("seoyun_conflict") != "resolved":
+        $ progression_note_ending()
         return
     $ chapter = "서윤 R15 · 다음 금요일은 우리 약속"
     $ location = "약속한 금요일 저녁 일곱 시 · 식당"
@@ -147,6 +168,8 @@ label seoyun_r15:
     "도현이 아주 조금 웃었다. 서윤은 따라 웃다가 먼저 자기 접시로 시선을 내렸다. 둘은 서둘러 말을 보태지 않고 식사를 이어 갔다."
     "잔을 비운 뒤에는 물을 주문했다. 도현이 잔을 옮기며 서윤을 봤다."
     s "메시지는 쓰다 지운 게 더 많았어. 지금은 네 말부터 들을게."
+    $ progression_enter("seoyun_r15.choice01")
+    $ progression_checkpoint("seoyun_r15.choice01")
     menu:
         "보고 싶다는 마음 뒤에는 다음 날짜도 같이 물어보자고 한다.":
             d "보고 싶다는 말만 보내고 달력만 들여다보진 않으려고요. 다음엔 언제 괜찮으세요?"
@@ -171,6 +194,8 @@ label seoyun_r15:
     s "응. 네가 지금 돌아가고 싶어져도 말해 줘."
     "도현은 잠깐 뒤에야 가방을 의자 옆에 놓았다."
     s "여기 두고 입는 편한 옷도 있고, 전에 사 둔 마술사 재킷도 있어. 지금 보여 줘도 괜찮을까?"
+    $ progression_enter("seoyun_r15.choice02")
+    $ progression_checkpoint("seoyun_r15.choice02")
     menu:
         "편한 생활복으로 쉬자고 한다.":
             d "오늘은 편하게요. 같이 앉아 있는 게 좋아요."
@@ -192,10 +217,14 @@ label seoyun_r15:
     s "오늘은 여기서 더 같이 있고 싶어. 지금 네 마음도 듣고 싶어."
     call seoyun_private_evening("r15", memory["seoyun_r15_outfit"])
     $ award_once("seoyun_R15", "seoyun", 5)
+    $ progression_note_ending()
     return
 
 label seoyun_r16:
+    $ progression_enter("seoyun_r16")
+    $ progression_checkpoint("seoyun_r16")
     if not dating or active_route != "seoyun" or memory.get("seoyun_conflict") != "resolved" or "seoyun_R15" not in completed:
+        $ progression_note_ending()
         return
     $ chapter = "서윤 R16 · 농담 뒤의 약속"
     $ location = "일요일 저녁 · 북카페"
@@ -209,6 +238,8 @@ label seoyun_r16:
     d "있어요. 지금처럼 가까이 앉으니까 좋네요."
     s "...그렇게 바로 말할 줄은 몰랐는데."
     $ remember("seoyun_booklet_state", "직접 쓴 문장을 남긴 새 초안, 최종 인쇄 전")
+    $ progression_enter("seoyun_r16.choice01")
+    $ progression_checkpoint("seoyun_r16.choice01")
     menu:
         "같이 걸은 곳을 다시 찾으며 다음 페이지도 쓰고 싶다고 한다.":
             d "[memory['seoyun_walk_detail']], 그날 얘기도 남기고 싶어요. 다음에 같이 다시 봐요."
@@ -235,10 +266,14 @@ label seoyun_r16:
     $ ending = "seoyun_good"
     $ award_once("seoyun_R16", "seoyun", 4)
     "서윤 본편 결말 · 알고도 고른 다음"
+    $ progression_note_ending()
     return
 
 label seoyun_e01:
+    $ progression_enter("seoyun_e01")
+    $ progression_checkpoint("seoyun_e01")
     if not dating or active_route != "seoyun" or not memory.get("seoyun_route_completed"):
+        $ progression_note_ending()
         return
     $ chapter = "서윤 E01 · 같은 집으로 가지 않는 사람들"
     $ location = "약 반년 뒤, 쉬는 날 오후 · 단골 북카페"
@@ -258,6 +293,8 @@ label seoyun_e01:
         s "그 다리까지 걸을래? 오늘은 바람이 덜 부는 것 같아."
     else:
         s "골목 쪽으로 조금 걸을래? 돌아갈 데는 오늘 정하고."
+    $ progression_enter("seoyun_e01.choice01")
+    $ progression_checkpoint("seoyun_e01.choice01")
     menu:
         "오늘은 함께 걷되, 같이 살 미래를 약속하지는 않는다.":
             d "걷고 싶어요. 오늘 같이 있고 싶은 건 사실이니까요. 그 뒤까지 약속하지는 않을게요."
@@ -282,4 +319,5 @@ label seoyun_e01:
     $ remember("seoyun_cohabitation_status", "동거 약속 없음, 배우자와 동거 중인 기혼 관계 지속")
     $ remember("seoyun_epilogue_completed")
     $ award_once("seoyun_E01", "seoyun", 8)
+    $ progression_note_ending()
     return
