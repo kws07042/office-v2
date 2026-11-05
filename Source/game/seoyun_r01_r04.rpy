@@ -1,6 +1,7 @@
 # Seoyun is a 32-year-old colleague. Final art/voice production is deferred.
 define sn = Character("한서윤", what_prefix="『", what_suffix="』", callback=renpy.curry(cream_note_speaker)("seoyun"))
 default seoyun_prepared = False
+default seoyun_revision_notice_shown = False
 
 label seoyun_r01:
     $ progression_enter("seoyun_r01")
@@ -57,11 +58,11 @@ label seoyun_r01:
             d "그럼 오늘은 저도 잘 온 거네요."
             s "응. 근데 이렇게 빨리 답 얻으면 심심한 거 아니야?"
             d "다 듣고 갈 생각은 없었어요. 오늘은 좀 더 앉아 있고 싶고요."
-            "서윤의 휴대폰이 짧게 울렸다. 화면을 확인한 서윤은 통화를 받지 않고 휴대폰을 가방에 넣었다."
+            "서윤의 휴대폰에 알림이 떴다. 서윤은 시간을 확인하고 짧게 답한 뒤 화면을 껐다."
             d "받으셔도 돼요."
-            s "조금 있다가. 지금은 네 얘기 듣고 있었잖아."
-            "서윤이 시계를 보려던 손을 내려놓았다."
-            s "그럼 마저 마셔. 나도 아직 일어나기 싫으니까."
+            s "집에서 온 확인 메시지야. 답했어. 오늘은 여덟 시 반까지 있을 수 있어."
+            "서윤은 휴대폰을 탁자 끝에 놓고 도현을 봤다."
+            s "그때까진 네 얘기 마저 듣고 싶은데. 커피도 아직 남았고~"
             d "오늘은 제가 붙잡았네요."
             s "응. 도망갈 생각 없는데 자꾸 확인하네~"
             $ remember("seoyun_r01_topic", "direct")
@@ -84,6 +85,24 @@ label seoyun_r01:
     $ remember("seoyun_r02_appointment", "토요일 오후 두 시, 단골 서점 입구")
     $ award_once("seoyun_R01", "seoyun", 4)
     $ progression_note_ending()
+    return
+
+label seoyun_family_context:
+    # A conversation remembered only when actually read, never inferred from old saves.
+    if not memory.get("seoyun_family_disclosed"):
+        "서윤이 책 사이에 손가락을 끼워 두고 도현을 마주 봤다."
+        s "다음에 또 만나자는 말 하기 전에, 하나는 먼저 얘기하고 싶어. 나 이혼했고, 아이가 한 명 있어. 지금은 아이랑 둘이 살아."
+        d "말해 주셔서 고마워요. 오늘 시간도 미리 맞추고 오신 거예요?"
+        s "응. 아이가 아빠랑 보내는 날도 있어서 그 일정 보고 정했어. 부부로 지내는 건 끝났고, 아이 일은 같이 연락해."
+        d "그럼 다음엔 서로 되는 시간부터 물어볼게요. 저는 서윤 씨가 어떤 사람인지 더 알고 싶어요."
+        s "...지금 대답 하나로 네가 다 괜찮다고 약속할 필요는 없어. 나도 사람 알아 가는 중이니까."
+        d "네. 아는 척하지 않고 물어볼게요. 오늘 더 같이 있고 싶은 건 지금 말씀드릴 수 있고요."
+        s "그 말은 좋네. 오늘은 나도 한서윤으로 책 잘못 고르고, 네 커피 한 입 궁금해해도 되겠지?"
+        d "벌써 제 것까지 고르신 거 아니었어요?"
+        s "아직. 네가 이 책을 내려놓는지부터 보려고~"
+        $ remember("seoyun_family_disclosed")
+        $ remember("seoyun_family_state", "divorced_parent")
+        $ remember("seoyun_parenting_context", "아이와 거주, 아이 아빠와 돌봄 일정 조율, 재결합 관계 아님")
     return
 
 label seoyun_r02:
@@ -143,6 +162,7 @@ label seoyun_r02:
             d "틀렸어도 또 물어봐 주실 거죠?"
             s "응. 다음엔 네가 먼저 문제 내."
             $ remember("seoyun_r02_response", "unfinished")
+    call seoyun_family_context
     if not memory.get("booklet_known_seoyun"):
         d "저는 요즘 동네 사진하고 짧은 글 모아서 작은 기록집 만들고 있어요. 아직은 메모가 더 많고요."
         s "그럼 처음 보는 사람한테도 하나 들려줄래? 잘 정리한 것 말고 네가 멈춘 순간이 궁금해."
@@ -287,6 +307,9 @@ label seoyun_r04:
         return
     $ chapter = "서윤 R04 · 그 말은 농담으로 하지 마"
     $ location = "금요일 저녁 일곱 시 · 약속한 북카페"
+    call seoyun_family_context
+    d "해 주신 얘기 기억해요. 아직 모르는 건 많지만, 그래서 더 만나 보고 싶어요."
+    s "응. 나도 아이 엄마라는 말만 하고 내 마음은 빼놓을 뻔했어. 오늘은 그다음 얘기도 할래."
     s "오늘은 내가 먼저 말할게. 좋아해. 너랑 연애하고 싶어."
     "서윤은 컵을 내려놓고 도현을 보았다. 웃으며 다음 화제로 넘기지 않았다."
     s "오늘은 네가 뭐 가져왔는지 안 물어볼 거야. 내가 기다린 건 너였으니까. 네 대답 듣고 싶어."

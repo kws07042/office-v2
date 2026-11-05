@@ -39,9 +39,10 @@ RELATION_RULES = {
         ("seoyun_r02_response", "value", {"wait": 10, "my_interest": 10, "unfinished": 10}, 0),
         ("seoyun_expression", "value", {"sincere_first": 15, "quiet_public": 15, "say_each_time": 15}, 0),
         ("seoyun_r09_support", "value", {"scope": 10, "roles": 10, "reader": 10}, 0),
-        # Disclosure exposes a concealed fact, not restored honesty or forgiveness.
-        ("seoyun_marriage_revealed", "present", {}, -30),
-        ("seoyun_repair_performed", "present", {}, 10),
+        # Being divorced or having a child never reduces relationship value.
+        # Only conversations and performed agreements count, not introduction promises.
+        ("seoyun_mutual_plan_performed", "present", {}, 25),
+        ("seoyun_future_boundary_confirmed", "present", {}, 10),
     ),
 }
 PROPOSAL_LIMITS = {"romance": (30, 0), "first": (60, 30),
@@ -50,7 +51,7 @@ ENDINGS = {"colleague": ("common", "좋은 동료로, 우리"),
            "ria_good": ("ria", "리아 · 본편 결말"),
            "jihyun_good": ("jihyun", "지현 · 본편 결말"),
            "yujin_good": ("yujin", "유진 · 본편 결말"),
-           "seoyun_good": ("seoyun", "알고도 고른 다음")}
+           "seoyun_good": ("seoyun", "함께 고르는 다음")}
 for _who in HEROES:
     ENDINGS[_who + "_relationship_closed"] = (_who, "관계를 여기서 마침")
 

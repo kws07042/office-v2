@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-05",
+  "base_commit": "d1f212f2fd524df854c1ac3999dc90ed69ab93cd",
+  "candidate_version": "0.35.3-seoyun-parent-review",
+  "story": {
+    "family": "divorced_parent",
+    "disclosed_before_dating": true,
+    "child_details_unset": [
+      "name",
+      "age",
+      "gender",
+      "appearance"
+    ],
+    "existing_events": 95,
+    "seoyun_events": 20,
+    "adult_asset_sets_unchanged": 16,
+    "general_cg_compositions_unchanged": 34,
+    "old_marriage_scene_removed": true,
+    "explicit_relationship_exit_before_and_after_discussion": true
+  },
+  "validation": {
+    "python_model_tests": 39,
+    "read_only_story_contract_tests": 9,
+    "total_passed": 48,
+    "failures": 0,
+    "native_test_definitions_updated": true,
+    "native_tests_executed": false,
+    "renpy_lint_executed": false,
+    "native_save_load_rollback_verified": false,
+    "art_changed": false
+  },
+  "compatibility": {
+    "manual_saves_deleted": false,
+    "save_signing_changed": false,
+    "checkpoint_build_changed": true,
+    "old_manual_story_flags": "notify once; recommend new R02/new playthrough; no forged new memories"
+  },
+  "systems": {
+    "implemented_new_features": [],
+    "recommended_order": [
+      "general scene CG display and gallery connection",
+      "confirmed next-date card",
+      "per-playthrough record booklet"
+    ],
+    "other_needs": [
+      "paged saves with thumbnails and scene descriptions",
+      "native SDK branch validation",
+      "scene audio and optional readability presets"
+    ]
+  },
+  "limits": [
+    "Static checks do not establish native rendering, runtime save compatibility, or player enjoyment.",
+    "Older dated editorial reports remain history; v002 specification and Source/game take precedence."
+  ]
+}

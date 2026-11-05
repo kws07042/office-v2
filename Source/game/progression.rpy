@@ -14,7 +14,7 @@ init -10 python:
     import progression_model as pm
     with renpy.file("progression_nodes.json") as progression_nodes_file:
         PROGRESSION_NODES = json.load(progression_nodes_file)
-    PROGRESSION_BUILD = "78ebd75-systems-v001"
+    PROGRESSION_BUILD = "d1f212f-seoyun-v002"
     PROGRESSION_NODE_MAP = {row["id"]: row for row in PROGRESSION_NODES}
     PROGRESSION_CATALOG = []
     PROGRESSION_SPRITES = {}
@@ -143,6 +143,11 @@ init 10 python:
         if updated != progression_state:
             renpy.store.progression_state = updated
             renpy.block_rollback()
+        if (active_route == "seoyun" and not seoyun_revision_notice_shown
+                and (memory.get("seoyun_marriage_revealed")
+                     or memory.get("seoyun_marriage_state") == "married_cohabiting")):
+            renpy.notify("서윤의 설정과 후반 이야기가 변경됐습니다. 새 흐름은 R02부터 읽어 주세요.")
+            renpy.store.seoyun_revision_notice_shown = True
         # No CG or ending inference from affinity or legacy local_* flags.
 
     config.after_load_callbacks.append(progression_after_load)

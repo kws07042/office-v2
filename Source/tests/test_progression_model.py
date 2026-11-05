@@ -73,17 +73,28 @@ class RelationshipTests(unittest.TestCase):
         self.assertLess(pm.relation_value(bad, state, "yujin"),
                         pm.relation_value(fixed, state, "yujin"))
 
-    def test_seoyun_continuation_is_not_restored_honesty(self):
+    def test_seoyun_family_status_and_introduction_are_not_scored(self):
         state = pm.initial_state()
         before = {"seoyun_core_understanding": True, "seoyun_r02_response": "wait",
                   "seoyun_expression": "sincere_first", "seoyun_r09_support": "scope"}
-        disclosed = dict(before, seoyun_marriage_revealed=True)
-        continued = dict(disclosed, seoyun_continues_after_disclosure=True,
-                         seoyun_conflict="resolved")
-        self.assertLess(pm.relation_value(disclosed, state, "seoyun"),
-                        pm.relation_value(before, state, "seoyun"))
+        disclosed = dict(before, seoyun_family_disclosed=True,
+                         seoyun_family_state="divorced_parent")
+        continued = dict(disclosed, seoyun_continues_after_discussion=True,
+                         seoyun_child_introduction_status="planned")
+        self.assertEqual(pm.relation_value(disclosed, state, "seoyun"),
+                         pm.relation_value(before, state, "seoyun"))
         self.assertEqual(pm.relation_value(disclosed, state, "seoyun"),
                          pm.relation_value(continued, state, "seoyun"))
+
+    def test_seoyun_performed_agreement_counts_but_legacy_flags_do_not(self):
+        state = pm.initial_state()
+        old = {"seoyun_marriage_revealed": True,
+               "seoyun_continues_after_disclosure": True,
+               "seoyun_repair_performed": "old version discussion"}
+        self.assertEqual(pm.relation_value(old, state, "seoyun"), 0)
+        actual = dict(old, seoyun_mutual_plan_performed=True,
+                      seoyun_future_boundary_confirmed=True)
+        self.assertEqual(pm.relation_value(actual, state, "seoyun"), 35)
 
     def test_legacy_memory_and_unknown_types(self):
         self.assertEqual(pm.relation_value({"ria_r06_response": []}, pm.initial_state(), "ria"), 0)
@@ -201,7 +212,7 @@ class CollectionTests(unittest.TestCase):
 
     def test_endings_preserve_existing_ids(self):
         self.assertEqual(len(pm.ENDINGS), 9)
-        self.assertEqual(pm.ENDINGS["seoyun_good"][1], "알고도 고른 다음")
+        self.assertEqual(pm.ENDINGS["seoyun_good"][1], "함께 고르는 다음")
         self.assertFalse(any("true" in key for key in pm.ENDINGS))
 
 

@@ -1,3 +1,5 @@
+> **2026-11-05 서윤 v002 반영:** 아이를 키우는 이혼녀로 개정했다. 서윤 R13은 반지 공개에서 수첩을 덮고 서로의 바람을 말하는 장면으로, E01은 기록집을 읽는 따뜻한 후일담으로 교체한다. 총 34개 기본 구도와 우선 제작 12개는 유지한다. [현행 서윤 명세](seoyun-divorced-parent-v002.md)를 우선한다.
+
 # 입상 제외 · 장면 CG 제작 수량 제안
 
 분석일: 2026-11-05  
@@ -15,7 +17,7 @@
 ## 확인 범위와 계산
 
 - 사건 목록 95개: 히로인별 R01~R16 + O01~O03 + E01 각 20개, 공통 8개, 업무 미니 6개, 동료 결말 1개.
-- 해당 사건과 관련 보조 대본 22개 파일의 본문은 위 GitHub 커밋의 blob 해시와 모두 일치했다.
+- 초안은 해당 사건과 관련 보조 대본 22개 파일을 위 커밋의 blob 해시와 대조했다. 이번 서윤 v002 개정에서는 서윤 8개 장면의 지문과 줄 위치를 새 실행 대본에 맞춰 갱신했다.
 - 사건별 장소·행동 지문을 추출해 중복되는 카페 대화·일상 인사를 제외하고 후보를 골랐다.
 - 표정만 달라지는 경우는 새 기본 구도로 세지 않았다.
 - 아래 조건부 장면은 그 행동을 실제 선택한 분기에서만 표시한다. 반대 분기는 입상과 기존 배경으로 진행할 수 있다.
@@ -78,14 +80,14 @@ P1은 먼저 제작할 12장, P2는 그다음 22장이다. 파일명은 새 제�
 
 |번호|장면|그릴 행동|우선|대본 근거|
 |---|---|---|---|---|
-|25|R02|북카페에서 책을 들고 함께 읽기|P1|[seoyun_r02:105](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r01_r04.rpy#L105)|
-|26|R04|컵을 내려놓고 농담 없이 마음을 확인하기|P2|[seoyun_r04:291](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r01_r04.rpy#L291)|
-|27|R05|반으로 나눈 과자를 서로 건네기|P2|[seoyun_r05:69](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r05_r12.rpy#L69)|
-|28|R08|작업실 주방에서 잘 구운 빵을 나누기|P2|[seoyun_r08:217](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r05_r12.rpy#L217)|
-|29|R10|레몬·초콜릿 케이크를 바꿔 맛보기|P1|[seoyun_r10:324](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r05_r12.rpy#L324)|
-|30|R11|강변 다리 아래에서 바람을 맞으며 산책하기|P2|[seoyun_r11:442](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r05_r12.rpy#L442)|
-|31|R13|탁자에 떨어져 열린 반지 케이스 앞에서 멈추기|P1|[seoyun_r13:9](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r13_e01.rpy#L9)|
-|32|E01|카페를 나와 서로 다른 방향으로 돌아서기|P2|[seoyun_e01:315](https://github.com/kws07042/office-v2/blob/c05ebfbfa09a011076e5ce9020739f68a908e100/Source/game/seoyun_r13_e01.rpy#L315)|
+|25|R02|북카페에서 책을 들고 함께 읽기|P1|[seoyun_r02:124](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r01_r04.rpy#L124)|
+|26|R04|컵을 내려놓고 농담 없이 마음을 확인하기|P2|[seoyun_r04:314](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r01_r04.rpy#L314)|
+|27|R05|반으로 나눈 과자를 서로 건네기|P2|[seoyun_r05:72](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r05_r12.rpy#L72)|
+|28|R08|작업실 주방에서 잘 구운 빵을 나누기|P2|[seoyun_r08:225](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r05_r12.rpy#L225)|
+|29|R10|레몬·초콜릿 케이크를 바꿔 맛보기|P1|[seoyun_r10:337](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r05_r12.rpy#L337)|
+|30|R11|강변 다리 아래에서 바람을 맞으며 산책하기|P2|[seoyun_r11:455](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r05_r12.rpy#L455)|
+|31|R13|수첩을 덮고 서로 바라는 관계를 이야기하기|P1|[seoyun_r13:39](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r13_e01.rpy#L39)|
+|32|E01|완성한 기록집을 함께 읽고 웃기|P2|[seoyun_e01:278](https://github.com/kws07042/office-v2/blob/codex/system-upgrade-v001/Source/game/seoyun_r13_e01.rpy#L278)|
 
 ### 공통 · 2장
 
@@ -123,11 +125,11 @@ P1은 먼저 제작할 12장, P2는 그다음 22장이다. 파일명은 새 제�
 - **한서윤 R02**: 같은 책을 읽는 O01과 구도 재사용 가능. 의상·시간 일치 시에만.
 - **한서윤 R04**: 키스 선택 전의 공통 구도. 선택하지 않은 접촉은 표시하지 않음.
 - **한서윤 R05**: 큰 조각/작은 조각, 접시와 손의 관계를 정확하게.
-- **한서윤 R08**: 함께 아침을 맞는 경로. 서윤의 부부 집으로 그리지 않음.
+- **한서윤 R08**: 함께 아침을 맞는 경로. 아이와 사는 집이 아닌 개인 작업실로 표현.
 - **한서윤 R10**: 두 케이크와 서로 다른 접시를 구별.
 - **한서윤 R11**: 다리 경로 전용. 화분 계단 경로에서는 입상/배경 유지.
-- **한서윤 R13**: 주요 반전. 반지를 손가락에 끼우는 장면으로 바꾸지 않음.
-- **한서윤 E01**: 후일담의 혼인 상태와 각자의 귀가를 유지. 동거·결혼식으로 바꾸지 않음.
+- **한서윤 R13**: 가족 공개 반전이 아닌 관계 논의. 반지·배우자·불륜을 암시하는 소품을 추가하지 않음.
+- **한서윤 E01**: 이혼 후 자녀 양육과 교제를 이어가는 후일담. 소개·결혼·동거 완료를 표현하지 않음.
 - **공통 C05**: 공통 단체 CG. 도현은 카메라 시점과 필요한 손만 활용.
 - **공통 동료 결말**: 동료 결말 전용. 연인 관계를 암시하는 접촉 없이.
 
@@ -155,7 +157,7 @@ P1은 먼저 제작할 12장, P2는 그다음 22장이다. 파일명은 새 제�
 
 ## 기존 그림과 재사용
 
-`CharacterArt/CG_CURRENT.md`에는 일반 CG 8장이 보관돼 있다. 리아 우산/요리, 지현 조립/카드, 유진 전시/스케치, 서윤 독서/반지다. 모두 이번 후보에 들어간다. 다만 문서가 이 그림들을 이전 외형의 보관 자산으로 표시하므로, 그대로 승인된 완성본 8장이라고 빼고 ‘26장만 더 만들면 된다’고 계산하지 않는다. 최신 얼굴·머리·의상 기준에 맞으면 구도·배경을 재사용하고 다르면 보정·재제작한다.
+`CharacterArt/CG_CURRENT.md`에는 일반 CG 8장이 보관돼 있다. 리아 우산/요리, 지현 조립/카드, 유진 전시/스케치, 서윤 독서/반지다. 서윤의 이전 반지 그림은 이번 v002 후보에서 제외하며 나머지 구도는 최신 외형과 대조해 재사용을 검토한다. 다만 문서가 이 그림들을 이전 외형의 보관 자산으로 표시하므로, 그대로 승인된 완성본 8장이라고 빼고 ‘26장만 더 만들면 된다’고 계산하지 않는다. 최신 얼굴·머리·의상 기준에 맞으면 구도·배경을 재사용하고 다르면 보정·재제작한다.
 
 ## 로컬 AI 제작 기준
 

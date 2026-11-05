@@ -796,7 +796,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "SEOYUN_O01",
+    "title": "서윤 O01 · 책 제목을 기억하는 사람",
     "source": "Source/game/seoyun_optional.rpy",
     "order": 155
   },
@@ -877,7 +877,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_o01",
-    "title": "SEOYUN_O01 · 선택 1",
+    "title": "서윤 O01 · 책 제목을 기억하는 사람 · 선택 01",
     "source": "Source/game/seoyun_optional.rpy",
     "order": 155.01
   },
@@ -1066,7 +1066,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r07",
-    "title": "R07 · 선택 1",
+    "title": "서윤 R07 · 농담을 멈춘 저녁 · 선택 01.r07",
     "source": "Source/game/seoyun_r05_r12.rpy",
     "order": 170.01
   },
@@ -1471,7 +1471,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "SEOYUN_O02",
+    "title": "서윤 O02 · 서로 실패한 농담",
     "source": "Source/game/seoyun_optional.rpy",
     "order": 205
   },
@@ -1552,7 +1552,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_o02",
-    "title": "SEOYUN_O02 · 선택 1",
+    "title": "서윤 O02 · 서로 실패한 농담 · 선택 01",
     "source": "Source/game/seoyun_optional.rpy",
     "order": 205.01
   },
@@ -1732,7 +1732,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r12",
-    "title": "R12 · 선택 1",
+    "title": "서윤 R12 · 이번엔 날짜까지 말할게 · 선택 01.r12",
     "source": "Source/game/seoyun_r05_r12.rpy",
     "order": 220.01
   },
@@ -1795,7 +1795,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "서윤 R13 · 말하지 않은 사람",
+    "title": "서윤 R13 · 내 대답까지 고르지 마요",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 230
   },
@@ -1831,7 +1831,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r13",
-    "title": "서윤 R13 · 말하지 않은 사람 · 선택 01",
+    "title": "서윤 R13 · 내 대답까지 고르지 마요 · 선택 01",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 230.01
   },
@@ -1867,7 +1867,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "서윤 R14 · 알고 나서 고르는 것",
+    "title": "서윤 R14 · 두 사람 몫의 대답",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 240
   },
@@ -1903,7 +1903,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r14",
-    "title": "서윤 R14 · 알고 나서 고르는 것 · 선택 01",
+    "title": "서윤 R14 · 두 사람 몫의 대답 · 선택 01",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 240.01
   },
@@ -1939,7 +1939,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r14",
-    "title": "서윤 R14 · 알고 나서 고르는 것 · 선택 02",
+    "title": "서윤 R14 · 두 사람 몫의 대답 · 선택 02",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 240.02
   },
@@ -1966,7 +1966,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r14",
-    "title": "서윤 R14 · 알고 나서 고르는 것 · 선택 03",
+    "title": "서윤 R14 · 두 사람 몫의 대답 · 선택 03",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 240.03
   },
@@ -2047,7 +2047,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r15",
-    "title": "R15 · 선택 1",
+    "title": "서윤 R15 · 다음 금요일은 우리 약속 · 선택 01.r15",
     "source": "Source/game/seoyun_r05_r12.rpy",
     "order": 250.01
   },
@@ -2164,7 +2164,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "SEOYUN_O03",
+    "title": "서윤 O03 · 우리도 단골인가",
     "source": "Source/game/seoyun_optional.rpy",
     "order": 255
   },
@@ -2245,7 +2245,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_o03",
-    "title": "SEOYUN_O03 · 선택 1",
+    "title": "서윤 O03 · 우리도 단골인가 · 선택 01",
     "source": "Source/game/seoyun_optional.rpy",
     "order": 255.01
   },
@@ -2299,7 +2299,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "서윤 R16 · 농담 뒤의 약속",
+    "title": "서윤 R16 · 함께 고르는 다음",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 260
   },
@@ -2335,7 +2335,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_r16",
-    "title": "서윤 R16 · 농담 뒤의 약속 · 선택 01",
+    "title": "서윤 R16 · 함께 고르는 다음 · 선택 01",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 260.01
   },
@@ -2371,7 +2371,7 @@
     "heroine": "seoyun",
     "kind": "event",
     "parent": null,
-    "title": "서윤 E01 · 같은 집으로 가지 않는 사람들",
+    "title": "서윤 E01 · 같이 고른 자리",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 280
   },
@@ -2407,7 +2407,7 @@
     "heroine": "seoyun",
     "kind": "choice",
     "parent": "seoyun_e01",
-    "title": "서윤 E01 · 같은 집으로 가지 않는 사람들 · 선택 01",
+    "title": "서윤 E01 · 같이 고른 자리 · 선택 01",
     "source": "Source/game/seoyun_r13_e01.rpy",
     "order": 280.01
   },
