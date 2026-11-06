@@ -1,0 +1,53 @@
+test_catalog_unique_and_preserves_plan (test_progression_model.CollectionTests.test_catalog_unique_and_preserves_plan) ... ok
+test_empty_and_available_collection (test_progression_model.CollectionTests.test_empty_and_available_collection) ... ok
+test_endings_preserve_existing_ids (test_progression_model.CollectionTests.test_endings_preserve_existing_ids) ... ok
+test_fallback_does_not_grant_expression (test_progression_model.CollectionTests.test_fallback_does_not_grant_expression) ... ok
+test_idempotent_unlock_and_persistent_union (test_progression_model.CollectionTests.test_idempotent_unlock_and_persistent_union) ... ok
+test_missing_images_never_unlock (test_progression_model.CollectionTests.test_missing_images_never_unlock) ... ok
+test_only_actual_displayed_path_unlocks (test_progression_model.CollectionTests.test_only_actual_displayed_path_unlocks) ... ok
+test_replay_cannot_unlock (test_progression_model.CollectionTests.test_replay_cannot_unlock) ... ok
+test_affection_only (test_progression_model.ConditionTests.test_affection_only) ... ok
+test_both_thresholds (test_progression_model.ConditionTests.test_both_thresholds) ... ok
+test_compatibility_does_not_add_numeric_gate (test_progression_model.ConditionTests.test_compatibility_does_not_add_numeric_gate) ... ok
+test_full_threshold_grid (test_progression_model.ConditionTests.test_full_threshold_grid) ... ok
+test_missing_flags (test_progression_model.ConditionTests.test_missing_flags) ... ok
+test_no_current_consent (test_progression_model.ConditionTests.test_no_current_consent) ... ok
+test_no_dating (test_progression_model.ConditionTests.test_no_dating) ... ok
+test_no_invented_true_ending (test_progression_model.ConditionTests.test_no_invented_true_ending) ... ok
+test_relation_only (test_progression_model.ConditionTests.test_relation_only) ... ok
+test_romance_does_not_need_dating_or_relation (test_progression_model.ConditionTests.test_romance_does_not_need_dating_or_relation) ... ok
+test_story_not_reached (test_progression_model.ConditionTests.test_story_not_reached) ... ok
+test_asset_recording_follows_screen_interaction (test_progression_model.IntegrationStaticTests.test_asset_recording_follows_screen_interaction) ... ok
+test_catalog_nodes_unique (test_progression_model.IntegrationStaticTests.test_catalog_nodes_unique) ... ok
+test_gallery_and_model_are_read_only_on_open (test_progression_model.IntegrationStaticTests.test_gallery_and_model_are_read_only_on_open) ... ok
+test_legacy_trust_and_proposed_gates_not_replaced (test_progression_model.IntegrationStaticTests.test_legacy_trust_and_proposed_gates_not_replaced) ... ok
+test_native_save_and_replay_contracts (test_progression_model.IntegrationStaticTests.test_native_save_and_replay_contracts) ... ok
+test_python_blocks_parse_without_execution (test_progression_model.IntegrationStaticTests.test_python_blocks_parse_without_execution) ... ok
+test_rules_reference_real_memory_keys (test_progression_model.IntegrationStaticTests.test_rules_reference_real_memory_keys) ... ok
+test_bad_hero_and_choice_ids (test_progression_model.RelationshipTests.test_bad_hero_and_choice_ids) ... ok
+test_bounds (test_progression_model.RelationshipTests.test_bounds) ... ok
+test_declining_intimacy_and_publicity_not_penalized (test_progression_model.RelationshipTests.test_declining_intimacy_and_publicity_not_penalized) ... ok
+test_increase_decrease_all_heroines (test_progression_model.RelationshipTests.test_increase_decrease_all_heroines) ... ok
+test_independent_deltas_and_idempotence (test_progression_model.RelationshipTests.test_independent_deltas_and_idempotence) ... ok
+test_json_state_roundtrip_and_branch_restore (test_progression_model.RelationshipTests.test_json_state_roundtrip_and_branch_restore) ... ok
+test_legacy_memory_and_unknown_types (test_progression_model.RelationshipTests.test_legacy_memory_and_unknown_types) ... ok
+test_ria_no_correct_rest_preference (test_progression_model.RelationshipTests.test_ria_no_correct_rest_preference) ... ok
+test_ria_one_mistake_is_recoverable (test_progression_model.RelationshipTests.test_ria_one_mistake_is_recoverable) ... ok
+test_seoyun_family_status_and_introduction_are_not_scored (test_progression_model.RelationshipTests.test_seoyun_family_status_and_introduction_are_not_scored) ... ok
+test_seoyun_performed_agreement_counts_but_legacy_flags_do_not (test_progression_model.RelationshipTests.test_seoyun_performed_agreement_counts_but_legacy_flags_do_not) ... ok
+test_visits_are_immutable_and_unique (test_progression_model.RelationshipTests.test_visits_are_immutable_and_unique) ... ok
+test_yujin_overstep_and_repair (test_progression_model.RelationshipTests.test_yujin_overstep_and_repair) ... ok
+test_actual_discussion_precedes_repair_and_no_forced_parent_role (test_seoyun_revision.SeoyunRevisionTests.test_actual_discussion_precedes_repair_and_no_forced_parent_role) ... ok
+test_both_breakup_exits_stop_before_later_romance (test_seoyun_revision.SeoyunRevisionTests.test_both_breakup_exits_stop_before_later_romance) ... ok
+test_calls_and_progression_titles_have_real_targets (test_seoyun_revision.SeoyunRevisionTests.test_calls_and_progression_titles_have_real_targets) ... ok
+test_disclosure_precedes_confession_and_is_not_assumed (test_seoyun_revision.SeoyunRevisionTests.test_disclosure_precedes_confession_and_is_not_assumed) ... ok
+test_existing_event_ids_and_affection_rewards_remain (test_seoyun_revision.SeoyunRevisionTests.test_existing_event_ids_and_affection_rewards_remain) ... ok
+test_old_marriage_is_not_new_story_content (test_seoyun_revision.SeoyunRevisionTests.test_old_marriage_is_not_new_story_content) ... ok
+test_private_evening_and_next_morning_keep_real_choices (test_seoyun_revision.SeoyunRevisionTests.test_private_evening_and_next_morning_keep_real_choices) ... ok
+test_production_list_has_34_real_script_references (test_seoyun_revision.SeoyunRevisionTests.test_production_list_has_34_real_script_references) ... ok
+test_python_statements_and_text_literals_parse_without_execution (test_seoyun_revision.SeoyunRevisionTests.test_python_statements_and_text_literals_parse_without_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.100s
+
+OK

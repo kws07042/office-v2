@@ -1,0 +1,13 @@
+test_corrupt_image_rejected (test_image_assets.AuditTests.test_corrupt_image_rejected) ... ok
+test_escape_symlink_rejected (test_image_assets.AuditTests.test_escape_symlink_rejected) ... ok
+test_hash_mismatch_rejected (test_image_assets.AuditTests.test_hash_mismatch_rejected) ... ok
+test_non_png_rejected (test_image_assets.AuditTests.test_non_png_rejected) ... ok
+test_transparency_pixels (test_image_assets.AuditTests.test_transparency_pixels) ... ok
+test_empty_checkout_reports_missing_message_without_decode_error (test_image_inventory.InventoryTests.test_empty_checkout_reports_missing_message_without_decode_error) ... ok
+test_explicit_missing_input_is_still_an_error (test_image_inventory.InventoryTests.test_explicit_missing_input_is_still_an_error) ... ok
+test_present_message_is_not_missing (test_image_inventory.InventoryTests.test_present_message_is_not_missing) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.041s
+
+OK

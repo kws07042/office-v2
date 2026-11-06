@@ -1,14 +1,10 @@
 {
-  "revision": "v4-title-escalator-appearance-20261104",
-  "date": "2026-11-04",
+  "revision": "v5-art-reset-20261106",
+  "date": "2026-11-06",
   "files": {
     "assets/ria/master/ria_master_v001.json": {
       "sha256": "6214d3ab716577b08f798b930a7320556e58b55b474cd9183f04e96dc49e245d",
       "bytes": 1037
-    },
-    "assets/ria/master/ria_master_v001.png": {
-      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca",
-      "bytes": 774146
     },
     "assets/ria/master/ria_master_v001.qa.md": {
       "sha256": "8a910d299dfdff9060c1fbc293799b190245ef04c80f552232f7b69bc690add4",
@@ -34,17 +30,13 @@
       "sha256": "1f07bae5fcca85cefe20fe15967edea5e9f9e63e1823b9dbd14a18a2f7b22d99",
       "bytes": 1163
     },
-    "assets/yujin/reference_v001/yujin_reference_v001.png": {
-      "sha256": "ce62752f6e9d31b14043716424bd56587e5e1e32801f2f18b08dba6ba7a21306",
-      "bytes": 901573
-    },
     "assets/yujin/reference_v001/yujin_reference_v001.qa.md": {
       "sha256": "c39b628e4bb0354637ad432deab6b95d7d598f1d595458b4338440b154189cd6",
       "bytes": 3422
     },
     "character_art_00_README.md": {
-      "sha256": "a791ec4e0f65d58308ae2b8cf46f4a1c134c8f0035180b392c61cbcab4928b55",
-      "bytes": 2927
+      "sha256": "c90585e3ee7075fc5c6a0f4b4ab59327017d6ca61ace722f569466c1b173d1c7",
+      "bytes": 3149
     },
     "character_art_01_COMMON.md": {
       "sha256": "6120107ccc7b7aa46f59db9cbaa4b90516d4661f57f1b6ceaa8022809e25da7a",
@@ -63,8 +55,8 @@
       "bytes": 6155
     },
     "character_art_05_SEOYUN.md": {
-      "sha256": "6e38eb6a2957a35cede641e190fb39d776ed34097343b1c90d9cfe3cf18bc5c7",
-      "bytes": 6744
+      "sha256": "9142e4c43f5767eda8b513aae125f0a2b7275a5fe224d47605ee12e0a68ba5bb",
+      "bytes": 7297
     },
     "character_art_06_PROMPT.md": {
       "sha256": "0a7e69978acfb5fb2bac5fd1c679a9e6be9d450cf01c5c7f69abecef2d9feeb8",
@@ -79,20 +71,20 @@
       "bytes": 1051
     },
     "APPEARANCE_CURRENT.md": {
-      "sha256": "41ee3e5e006527af932bad2731e5d0b626109f9f056d14e2a369d973bb113731",
-      "bytes": 4919
+      "sha256": "b3e4b8069b20dd9d3e7d029ceba7159562f9f43f8517fdc11d0e3da917fbfd4f",
+      "bytes": 5273
     },
     "CG_CURRENT.md": {
-      "sha256": "1a6ec121e074458ff2ea4a98468b9e118511da844068e6e5e2e2b6fc7cecf78c",
-      "bytes": 3256
+      "sha256": "ab081bfb376199ecfd8e69e0c9c7e1195e8c32f13e6b948d29ca6452c81f3d5e",
+      "bytes": 3751
     },
     "character_art_08_LAYERS.md": {
       "sha256": "7460b18a1619f6c819d65e8048db66befacae0b3ae1f15fb688b5ab820852e3d",
       "bytes": 4200
     },
     "TITLE_CURRENT.md": {
-      "sha256": "3b244d9471385d753b972653939b518c1a0a83ee59ac7b40dae2c7e9947e04ea",
-      "bytes": 2283
+      "sha256": "3ad658b9144b9d445427e4f4c46973ea17ee19c74b43feb7a499caadc3b37fb5",
+      "bytes": 2306
     },
     "assets/title/title_escalator_jihyun_arm_lowered_v002.png": {
       "sha256": "8c6966a5dd2ae5da06cb1db17370baab5ae94049d00ebc7d8d441513a7c677a1",
@@ -101,5 +93,6 @@
   },
   "appearance_reference": "assets/title/title_escalator_jihyun_arm_lowered_v002.png",
   "appearance_document": "APPEARANCE_CURRENT.md",
-  "note": "Current appearance follows title v002; previous asset entries are retained as historical files. No runtime or image replacement."
+  "note": "Only extant indexed files. Previous art removed by user request; title v002 retained as reference. See ../Docs/production-review-v001/art-reset.json.",
+  "removed_art_record": "../Docs/production-review-v001/art-reset.json"
 }

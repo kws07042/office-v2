@@ -1,0 +1,350 @@
+{
+  "files": [
+    {
+      "path": "CharacterArt/assets/title/title_escalator_jihyun_arm_lowered_v002.png",
+      "bytes": 2312210,
+      "sha256": "8c6966a5dd2ae5da06cb1db17370baab5ae94049d00ebc7d8d441513a7c677a1",
+      "width": 1670,
+      "height": 942,
+      "mode": "RGB",
+      "alpha_channel": false,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "aspect_ratio": 1.772823779193206,
+      "status": "PASS_TECHNICAL",
+      "baseline_match": true
+    }
+  ],
+  "count": 1,
+  "errors": 0,
+  "duplicate_sha256": [],
+  "missing_planned_assets": [
+    {
+      "id": "ria_R07_casual_intro",
+      "planned_path": "images/events/ria/r07_casual_intro.png"
+    },
+    {
+      "id": "ria_R07_casual_intro_shy",
+      "planned_path": "images/events/ria/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "ria_R07_casual_base01",
+      "planned_path": "images/event_cg/ria/r07_casual_base01.png"
+    },
+    {
+      "id": "ria_R07_casual_base02",
+      "planned_path": "images/event_cg/ria/r07_casual_base02.png"
+    },
+    {
+      "id": "ria_R07_casual_base03",
+      "planned_path": "images/event_cg/ria/r07_casual_base03.png"
+    },
+    {
+      "id": "ria_R12_special_intro",
+      "planned_path": "images/events/ria/r12_special_intro.png"
+    },
+    {
+      "id": "ria_R12_special_intro_shy",
+      "planned_path": "images/events/ria/r12_special_intro_shy.png"
+    },
+    {
+      "id": "ria_R12_special_base01",
+      "planned_path": "images/event_cg/ria/r12_special_base01.png"
+    },
+    {
+      "id": "ria_R12_special_base02",
+      "planned_path": "images/event_cg/ria/r12_special_base02.png"
+    },
+    {
+      "id": "ria_R12_special_base03",
+      "planned_path": "images/event_cg/ria/r12_special_base03.png"
+    },
+    {
+      "id": "ria_R15_home_intro",
+      "planned_path": "images/events/ria/r15_home_intro.png"
+    },
+    {
+      "id": "ria_R15_home_intro_shy",
+      "planned_path": "images/events/ria/r15_home_intro_shy.png"
+    },
+    {
+      "id": "ria_R15_home_base01",
+      "planned_path": "images/event_cg/ria/r15_home_base01.png"
+    },
+    {
+      "id": "ria_R15_home_base02",
+      "planned_path": "images/event_cg/ria/r15_home_base02.png"
+    },
+    {
+      "id": "ria_R15_home_base03",
+      "planned_path": "images/event_cg/ria/r15_home_base03.png"
+    },
+    {
+      "id": "ria_R15_cosplay_intro",
+      "planned_path": "images/events/ria/r15_cosplay_intro.png"
+    },
+    {
+      "id": "ria_R15_cosplay_intro_shy",
+      "planned_path": "images/events/ria/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "ria_R15_cosplay_base01",
+      "planned_path": "images/event_cg/ria/r15_cosplay_base01.png"
+    },
+    {
+      "id": "ria_R15_cosplay_base02",
+      "planned_path": "images/event_cg/ria/r15_cosplay_base02.png"
+    },
+    {
+      "id": "ria_R15_cosplay_base03",
+      "planned_path": "images/event_cg/ria/r15_cosplay_base03.png"
+    },
+    {
+      "id": "jihyun_R07_casual_intro",
+      "planned_path": "images/events/jihyun/r07_casual_intro.png"
+    },
+    {
+      "id": "jihyun_R07_casual_intro_shy",
+      "planned_path": "images/events/jihyun/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R07_casual_base01",
+      "planned_path": "images/event_cg/jihyun/r07_casual_base01.png"
+    },
+    {
+      "id": "jihyun_R07_casual_base02",
+      "planned_path": "images/event_cg/jihyun/r07_casual_base02.png"
+    },
+    {
+      "id": "jihyun_R07_casual_base03",
+      "planned_path": "images/event_cg/jihyun/r07_casual_base03.png"
+    },
+    {
+      "id": "jihyun_R12_special_intro",
+      "planned_path": "images/events/jihyun/r12_special_intro.png"
+    },
+    {
+      "id": "jihyun_R12_special_intro_shy",
+      "planned_path": "images/events/jihyun/r12_special_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R12_special_base01",
+      "planned_path": "images/event_cg/jihyun/r12_special_base01.png"
+    },
+    {
+      "id": "jihyun_R12_special_base02",
+      "planned_path": "images/event_cg/jihyun/r12_special_base02.png"
+    },
+    {
+      "id": "jihyun_R12_special_base03",
+      "planned_path": "images/event_cg/jihyun/r12_special_base03.png"
+    },
+    {
+      "id": "jihyun_R15_home_intro",
+      "planned_path": "images/events/jihyun/r15_home_intro.png"
+    },
+    {
+      "id": "jihyun_R15_home_intro_shy",
+      "planned_path": "images/events/jihyun/r15_home_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R15_home_base01",
+      "planned_path": "images/event_cg/jihyun/r15_home_base01.png"
+    },
+    {
+      "id": "jihyun_R15_home_base02",
+      "planned_path": "images/event_cg/jihyun/r15_home_base02.png"
+    },
+    {
+      "id": "jihyun_R15_home_base03",
+      "planned_path": "images/event_cg/jihyun/r15_home_base03.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_intro",
+      "planned_path": "images/events/jihyun/r15_cosplay_intro.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_intro_shy",
+      "planned_path": "images/events/jihyun/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_base01",
+      "planned_path": "images/event_cg/jihyun/r15_cosplay_base01.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_base02",
+      "planned_path": "images/event_cg/jihyun/r15_cosplay_base02.png"
+    },
+    {
+      "id": "jihyun_R15_cosplay_base03",
+      "planned_path": "images/event_cg/jihyun/r15_cosplay_base03.png"
+    },
+    {
+      "id": "yujin_R07_casual_intro",
+      "planned_path": "images/events/yujin/r07_casual_intro.png"
+    },
+    {
+      "id": "yujin_R07_casual_intro_shy",
+      "planned_path": "images/events/yujin/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "yujin_R07_casual_base01",
+      "planned_path": "images/event_cg/yujin/r07_casual_base01.png"
+    },
+    {
+      "id": "yujin_R07_casual_base02",
+      "planned_path": "images/event_cg/yujin/r07_casual_base02.png"
+    },
+    {
+      "id": "yujin_R07_casual_base03",
+      "planned_path": "images/event_cg/yujin/r07_casual_base03.png"
+    },
+    {
+      "id": "yujin_R12_special_intro",
+      "planned_path": "images/events/yujin/r12_special_intro.png"
+    },
+    {
+      "id": "yujin_R12_special_intro_shy",
+      "planned_path": "images/events/yujin/r12_special_intro_shy.png"
+    },
+    {
+      "id": "yujin_R12_special_base01",
+      "planned_path": "images/event_cg/yujin/r12_special_base01.png"
+    },
+    {
+      "id": "yujin_R12_special_base02",
+      "planned_path": "images/event_cg/yujin/r12_special_base02.png"
+    },
+    {
+      "id": "yujin_R12_special_base03",
+      "planned_path": "images/event_cg/yujin/r12_special_base03.png"
+    },
+    {
+      "id": "yujin_R15_home_intro",
+      "planned_path": "images/events/yujin/r15_home_intro.png"
+    },
+    {
+      "id": "yujin_R15_home_intro_shy",
+      "planned_path": "images/events/yujin/r15_home_intro_shy.png"
+    },
+    {
+      "id": "yujin_R15_home_base01",
+      "planned_path": "images/event_cg/yujin/r15_home_base01.png"
+    },
+    {
+      "id": "yujin_R15_home_base02",
+      "planned_path": "images/event_cg/yujin/r15_home_base02.png"
+    },
+    {
+      "id": "yujin_R15_home_base03",
+      "planned_path": "images/event_cg/yujin/r15_home_base03.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_intro",
+      "planned_path": "images/events/yujin/r15_cosplay_intro.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_intro_shy",
+      "planned_path": "images/events/yujin/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_base01",
+      "planned_path": "images/event_cg/yujin/r15_cosplay_base01.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_base02",
+      "planned_path": "images/event_cg/yujin/r15_cosplay_base02.png"
+    },
+    {
+      "id": "yujin_R15_cosplay_base03",
+      "planned_path": "images/event_cg/yujin/r15_cosplay_base03.png"
+    },
+    {
+      "id": "seoyun_R07_casual_intro",
+      "planned_path": "images/events/seoyun/r07_casual_intro.png"
+    },
+    {
+      "id": "seoyun_R07_casual_intro_shy",
+      "planned_path": "images/events/seoyun/r07_casual_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R07_casual_base01",
+      "planned_path": "images/event_cg/seoyun/r07_casual_base01.png"
+    },
+    {
+      "id": "seoyun_R07_casual_base02",
+      "planned_path": "images/event_cg/seoyun/r07_casual_base02.png"
+    },
+    {
+      "id": "seoyun_R07_casual_base03",
+      "planned_path": "images/event_cg/seoyun/r07_casual_base03.png"
+    },
+    {
+      "id": "seoyun_R12_special_intro",
+      "planned_path": "images/events/seoyun/r12_special_intro.png"
+    },
+    {
+      "id": "seoyun_R12_special_intro_shy",
+      "planned_path": "images/events/seoyun/r12_special_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R12_special_base01",
+      "planned_path": "images/event_cg/seoyun/r12_special_base01.png"
+    },
+    {
+      "id": "seoyun_R12_special_base02",
+      "planned_path": "images/event_cg/seoyun/r12_special_base02.png"
+    },
+    {
+      "id": "seoyun_R12_special_base03",
+      "planned_path": "images/event_cg/seoyun/r12_special_base03.png"
+    },
+    {
+      "id": "seoyun_R15_home_intro",
+      "planned_path": "images/events/seoyun/r15_home_intro.png"
+    },
+    {
+      "id": "seoyun_R15_home_intro_shy",
+      "planned_path": "images/events/seoyun/r15_home_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R15_home_base01",
+      "planned_path": "images/event_cg/seoyun/r15_home_base01.png"
+    },
+    {
+      "id": "seoyun_R15_home_base02",
+      "planned_path": "images/event_cg/seoyun/r15_home_base02.png"
+    },
+    {
+      "id": "seoyun_R15_home_base03",
+      "planned_path": "images/event_cg/seoyun/r15_home_base03.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_intro",
+      "planned_path": "images/events/seoyun/r15_cosplay_intro.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_intro_shy",
+      "planned_path": "images/events/seoyun/r15_cosplay_intro_shy.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_base01",
+      "planned_path": "images/event_cg/seoyun/r15_cosplay_base01.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_base02",
+      "planned_path": "images/event_cg/seoyun/r15_cosplay_base02.png"
+    },
+    {
+      "id": "seoyun_R15_cosplay_base03",
+      "planned_path": "images/event_cg/seoyun/r15_cosplay_base03.png"
+    }
+  ],
+  "missing_message_assets": [
+    {
+      "id": "ria_r08_breakfast",
+      "planned_path": "images/messages/ria/r08_breakfast.png"
+    }
+  ],
+  "note": "Missing planned assets are incomplete production, not PNG decode failures; visual QA and approval remain separate."
+}

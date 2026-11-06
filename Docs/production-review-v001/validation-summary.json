@@ -1,0 +1,23 @@
+{
+  "status": "passed_static_checks",
+  "removed_art": 51,
+  "retained_images": 37,
+  "current_manifest_hashes": "all match",
+  "canonical_reference_sha256": "8c6966a5dd2ae5da06cb1db17370baab5ae94049d00ebc7d8d441513a7c677a1",
+  "narrative_event_rows": 96,
+  "general_cg_quote_matches": 34,
+  "event_sets": 16,
+  "new_art_ready": 0,
+  "proposal_designs": 140,
+  "proposal_exports": 308,
+  "pure_python_tests": 48,
+  "image_checker_tests": 8,
+  "image_decode_errors": 0,
+  "missing_event_plan_paths": 80,
+  "missing_message_paths": 1,
+  "rpy_python_blocks_and_new_image_expression": "AST syntax parse only; no game Python executed",
+  "engine_lint_and_play": "not run; official SDK download blocked",
+  "windows_rebuild": "not run; legacy build needs regeneration",
+  "legacy_native_suites": "Seoyun story and removed Ria/Yujin art assertions stale; not run",
+  "language_check": "no Chinese/Japanese characters in reviewed new reports/tools/skills"
+}

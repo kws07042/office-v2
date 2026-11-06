@@ -19,6 +19,9 @@ init -5 python:
                 "images/characters/ria/expressions/shy_features_mask.svg" if expression == "shy" else "images/characters/ria/expressions/features_mask.svg"))
 
     def ria_portrait_display(st, at):
+        # Old production art was removed for recreation; dialogue remains usable.
+        if not renpy.loadable(RIA_MASTER_V2):
+            return Null(), None
         expression = renpy.store.ria_expression
         # Defaults also cover old saves; unfinished assets fall back to the master.
         if expression not in ("base", "smile", "shy", "serious") or (
