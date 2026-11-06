@@ -1,22 +1,26 @@
+# 원화 전면 재제작 · 2026-11-06
+
+사용자 요청: **캐릭터·CG·후보 원화 삭제, 타이틀 v002는 참조용으로 유지**. [삭제 명세](../Docs/production-review-v001/art-reset.json) / [재제작 검토](../Docs/production-review-v001/REVIEW.md). 아래 기록은 삭제 전 제작 이력이며 파일 보유·사용 승인이 아니다.
+
 # 이전 외형 CG·지현 마스터 보관 목록 · 2026-11-02
 
-> **2026-11-05 서윤 서사 개정:** 서윤은 아이를 키우는 이혼녀로 바뀌었다. 아래 R13 반지 공개 CG는 이전 이야기의 보관 자산이며 현행 제작 후보에서는 제외한다. 새 R13은 수첩을 덮고 서로의 바람을 이야기하는 장면이다. 원본 그림과 해시는 이력으로 유지한다. [새 제작 목록](../Docs/scene-cg-plan-v001.md)을 참조한다.
+> **2026-11-05 서윤 서사 개정:** 서윤은 아이를 키우는 이혼녀로 바뀌었다. 아래 R13 반지 공개 CG는 이전 이야기의 보관 자산이며 현행 제작 후보에서는 제외한다. 새 R13은 수첩을 덮고 서로의 바람을 이야기하는 장면이다. 해시는 삭제 전 이력으로 유지한다. [새 제작 목록](../Docs/scene-cg-plan-v001.md)을 참조한다.
 
 > **2026-11-04 외형 기준 변경:** 후속 제작은 [타이틀 v002의 통합 외형 기준](APPEARANCE_CURRENT.md)을 따른다. 아래는 2026-11-02 외형으로 제작된 보관 자산이며 새 외형 일치·재제작·게임 적용 완료를 뜻하지 않는다.
 
-당시 사용자 요청으로 제작·수정한 이미지 **CG 8장 + 지현 마스터 1장**을 보관한다. 이전 버전은 이 목록에서 제외한다. 원본은 게임에 자동 연결하지 않았으며 이번 변경은 이미지·제작 문서 업로드다.
+당시 제작한 이미지 **CG 8장 + 지현 마스터 1장**의 메타데이터를 남긴다. 이미지 파일은 2026-11-06 사용자 요청으로 삭제했다. 이전 버전은 이 목록에서 제외한다. 원본은 게임에 자동 연결하지 않았으며 이번 변경은 이미지·제작 문서 업로드다.
 
 |인물|장면|최신 파일|
 |---|---|---|
-|지현|R10 · 미니어처 조립|[jihyun_r10_miniature_v005.png](assets/jihyun/cg/jihyun_r10_miniature_v005.png)|
-|지현|R11 · 카드게임|[jihyun_r11_cards_v007.png](assets/jihyun/cg/jihyun_r11_cards_v007.png)|
-|리아|R07 · 우산 건네기|[ria_r07_umbrella_v005.png](assets/ria/cg/ria_r07_umbrella_v005.png)|
-|리아|R11 · 함께 요리|[ria_r11_cooking_v002.png](assets/ria/cg/ria_r11_cooking_v002.png)|
-|서윤|R02/O01 · 함께 독서|[seoyun_r02_reading_v003.png](assets/seoyun/cg/seoyun_r02_reading_v003.png)|
-|서윤|R13 · 반지 공개|[seoyun_r13_ring_v003.png](assets/seoyun/cg/seoyun_r13_ring_v003.png)|
-|유진|O02 · 컵 스케치|[yujin_o02_sketch_v001.png](assets/yujin/cg/yujin_o02_sketch_v001.png)|
-|유진|R02 · 전시 감상|[yujin_r02_gallery_v001.png](assets/yujin/cg/yujin_r02_gallery_v001.png)|
-|지현|master · 레이스 가장자리·알파 정리 마스터|[jihyun_master_lace_alpha_v005.png](assets/jihyun/master/jihyun_master_lace_alpha_v005.png)|
+|지현|R10 · 미니어처 조립|`assets/jihyun/cg/jihyun_r10_miniature_v005.png` (삭제)|
+|지현|R11 · 카드게임|`assets/jihyun/cg/jihyun_r11_cards_v007.png` (삭제)|
+|리아|R07 · 우산 건네기|`assets/ria/cg/ria_r07_umbrella_v005.png` (삭제)|
+|리아|R11 · 함께 요리|`assets/ria/cg/ria_r11_cooking_v002.png` (삭제)|
+|서윤|R02/O01 · 함께 독서|`assets/seoyun/cg/seoyun_r02_reading_v003.png` (삭제)|
+|서윤|R13 · 반지 공개|`assets/seoyun/cg/seoyun_r13_ring_v003.png` (삭제)|
+|유진|O02 · 컵 스케치|`assets/yujin/cg/yujin_o02_sketch_v001.png` (삭제)|
+|유진|R02 · 전시 감상|`assets/yujin/cg/yujin_r02_gallery_v001.png` (삭제)|
+|지현|master · 레이스 가장자리·알파 정리 마스터|`assets/jihyun/master/jihyun_master_lace_alpha_v005.png` (삭제)|
 
 ## 당시 반영한 수정
 - 리아 우산: 전신 구도를 제외하고 머리~허벅지 구도로 비율 수정, 배경 2D 작화 정리.
@@ -29,4 +33,4 @@
 ## 크기와 적용 상태
 CG 원본은 전부 1672×941, 마스터는 1024×1536이다. 최종 게임 화면 1920×1080 변환과 대화창에 손·책·카드가 가려지는지 검수는 별도다. CG는 평면 PNG이며 입상 레이어 PNG·PSD를 완료한 상태가 아니다. 모든 파일의 크기·SHA256·Git blob SHA는 [CG_CURRENT.json](CG_CURRENT.json)에 기록한다.
 
-리아·유진 원래 마스터와 서윤 기준 이미지는 기존 저장소 파일을 유지한다. 기존 지현 사원증 기준본도 원본 이력으로 보존하며, 이 목록의 지현 마스터는 2026-11-02 당시 의상·누끼 기준이다. 현재 외형 우선순위는 위의 2026-11-04 타이틀 기준을 따른다. 기존 이미지와 CG_CURRENT.json의 파일 해시·크기는 유지한다.
+기존 캐릭터·CG·후보 이미지와 게임 설치 복사본은 삭제했다. `CG_CURRENT.json`의 `assets`는 빈 목록이고 `removed_assets`는 삭제 전 이력이다. 현재 외형 참조는 타이틀 v002 한 장이며 재제작 완료본은 없다.

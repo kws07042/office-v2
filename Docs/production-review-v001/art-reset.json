@@ -1,0 +1,453 @@
+{
+  "date": "2026-11-06",
+  "source_commit": "94585aed20632bdfaf49237ea10655fc08f42aad",
+  "authorization": "캐릭터·CG·후보 원화 삭제, 타이틀 v002는 참조용으로 유지",
+  "scope": "Current branch files only; Git history is retained. UI, logo, engine images and Preview screenshots remain.",
+  "backup_archive_sha256": "9d830dca4cf678655e0c4d86eb46434523199dabcffcb3290a5d8d03fada71fb",
+  "removed_count": 51,
+  "retained_count": 37,
+  "removed_files": [
+    {
+      "path": "CharacterArt/assets/jihyun/cg/jihyun_r10_miniature_v005.png",
+      "bytes": 1992135,
+      "sha256": "b36456a34ac364d16564bfbc5b1baa1e13b140c0bdb56c968e720316cb7b9ed5"
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/cg/jihyun_r11_cards_v007.png",
+      "bytes": 1884451,
+      "sha256": "acfc594f8f1f305396ed97023b6de93f00d363c7919d6b1493bb32f61b80140a"
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/concepts/jihyun_red_office_fullbody_v002.png",
+      "bytes": 1313255,
+      "sha256": "eef7a4aad7b025580c746492d0105581bb3a40555f3ff9d9ba9c4eecd0733e76"
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/concepts/jihyun_red_office_id_v003.png",
+      "bytes": 1356304,
+      "sha256": "6dc0007e6306ec194f5c5a9d9654832af21d65dcf6467237d18a3dd741954883"
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/master/jihyun_master_lace_alpha_v005.png",
+      "bytes": 1364435,
+      "sha256": "5bf05df69bf275a611f438073199d7f98dd37dad7b122e5385f14c4795ed4341"
+    },
+    {
+      "path": "CharacterArt/assets/jihyun/reference/jihyun_user_visual_reference_v002.png",
+      "bytes": 1545833,
+      "sha256": "3592326c01796453fc4eb2d0ee445dda58d504eb897a74435fcd85bc822ddb57"
+    },
+    {
+      "path": "CharacterArt/assets/ria/cg/ria_r07_umbrella_v005.png",
+      "bytes": 2182737,
+      "sha256": "b1cb1e88194d6f2efadc36b45b8bb5b6af405b2194aac3326693c62b79129169"
+    },
+    {
+      "path": "CharacterArt/assets/ria/cg/ria_r11_cooking_v002.png",
+      "bytes": 2348484,
+      "sha256": "005d45212fea9a9e626b0732b62032f94d38b15088dea9c9665aaf1c612082ad"
+    },
+    {
+      "path": "CharacterArt/assets/ria/master/ria_master_v001.png",
+      "bytes": 774146,
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/cg/seoyun_r02_reading_v003.png",
+      "bytes": 2096611,
+      "sha256": "dcb5aae2067b5407ad1d17feeac307ec53361a9d1d44468c57f01333fead8448"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/cg/seoyun_r13_ring_v003.png",
+      "bytes": 2089173,
+      "sha256": "9d37d7fdc99e719932ebb36ce8fe4fce995c17aa15c998e922eaa4951cd99d8c"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/concepts/seoyun_office_dress_id_v003.png",
+      "bytes": 1379371,
+      "sha256": "62c70ae7013c6892191d163d0ad017ec9a4ce38aa506016423ad371c548f756c"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_01.png",
+      "bytes": 1407361,
+      "sha256": "a6c575529b5fc8497e7a0ce69d367d81e0a414cdf6c439aa57ab0b362517a75b"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_02.png",
+      "bytes": 1327106,
+      "sha256": "e299984cf6891cad3b324ecd0128cfdb044b3f02c76105b43658d483f94cadd1"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_03.png",
+      "bytes": 1374388,
+      "sha256": "1d47b0c773f1ee01ba5db9463514ca2b32d3ec9e33b6aa145f6489bd5d4bc806"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_04.png",
+      "bytes": 1405190,
+      "sha256": "17bc55eb12e2587fb3cf1e4d673435fc14b8090c8d4853fe7386dccdff03c692"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/outfit-options-v001/seoyun_outfit_05.png",
+      "bytes": 1349488,
+      "sha256": "54e6d19ad87a82ebf70e97cc4ff3c52fd477ad4a6127da7cdc3fa4b5f80438ef"
+    },
+    {
+      "path": "CharacterArt/assets/seoyun/reference/seoyun_user_visual_reference_v002.png",
+      "bytes": 1579365,
+      "sha256": "6395499c547f93f8308945746175c61ce58191dd8210295e2c696ca79ef3ba45"
+    },
+    {
+      "path": "CharacterArt/assets/title/title_escalator_hands_ria_eyes_v001.png",
+      "bytes": 3570118,
+      "sha256": "0a868163c9949ba562308ebbed33fac4423813d3afeb9d044debdf36ed3b834f"
+    },
+    {
+      "path": "CharacterArt/assets/yujin/cg/yujin_o02_sketch_v001.png",
+      "bytes": 2157022,
+      "sha256": "1ccb9895755dd185020763b4d21ee1e5da83f572c00337563b40e946c7228c28"
+    },
+    {
+      "path": "CharacterArt/assets/yujin/cg/yujin_r02_gallery_v001.png",
+      "bytes": 2015167,
+      "sha256": "2112c829ed558489aebfaa38b742adc91a31dcf7c90ace0186650912a8ecc531"
+    },
+    {
+      "path": "CharacterArt/assets/yujin/reference_v001/yujin_reference_v001.png",
+      "bytes": 901573,
+      "sha256": "ce62752f6e9d31b14043716424bd56587e5e1e32801f2f18b08dba6ba7a21306"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/jihyun_office_fullbody_v001.png",
+      "bytes": 1346651,
+      "sha256": "fe2c1f0dd39429effa17e0dfcca0e1543f51dc96b9671678bef62c3c9bb40b0d"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/jihyun_red_office_fullbody_v002.png",
+      "bytes": 1313255,
+      "sha256": "eef7a4aad7b025580c746492d0105581bb3a40555f3ff9d9ba9c4eecd0733e76"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/jihyun_red_office_id_v003.png",
+      "bytes": 1356304,
+      "sha256": "6dc0007e6306ec194f5c5a9d9654832af21d65dcf6467237d18a3dd741954883"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/jihyun_user_visual_reference_v002.png",
+      "bytes": 1545833,
+      "sha256": "3592326c01796453fc4eb2d0ee445dda58d504eb897a74435fcd85bc822ddb57"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/seoyun_office_dress_id_v003.png",
+      "bytes": 1379371,
+      "sha256": "62c70ae7013c6892191d163d0ad017ec9a4ce38aa506016423ad371c548f756c"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/seoyun_office_fullbody_v001.png",
+      "bytes": 1437477,
+      "sha256": "e87fe47fa371cc5e65311da53a143a45a9e8c0368aaee45eeedbfd3a10f6b686"
+    },
+    {
+      "path": "Source/art/character-concepts-v1/seoyun_user_visual_reference_v002.png",
+      "bytes": 1579365,
+      "sha256": "6395499c547f93f8308945746175c61ce58191dd8210295e2c696ca79ef3ba45"
+    },
+    {
+      "path": "Source/art/seoyun-outfit-options-v001/seoyun_outfit_01.png",
+      "bytes": 1407361,
+      "sha256": "a6c575529b5fc8497e7a0ce69d367d81e0a414cdf6c439aa57ab0b362517a75b"
+    },
+    {
+      "path": "Source/art/seoyun-outfit-options-v001/seoyun_outfit_02.png",
+      "bytes": 1327106,
+      "sha256": "e299984cf6891cad3b324ecd0128cfdb044b3f02c76105b43658d483f94cadd1"
+    },
+    {
+      "path": "Source/art/seoyun-outfit-options-v001/seoyun_outfit_03.png",
+      "bytes": 1374388,
+      "sha256": "1d47b0c773f1ee01ba5db9463514ca2b32d3ec9e33b6aa145f6489bd5d4bc806"
+    },
+    {
+      "path": "Source/art/seoyun-outfit-options-v001/seoyun_outfit_04.png",
+      "bytes": 1405190,
+      "sha256": "17bc55eb12e2587fb3cf1e4d673435fc14b8090c8d4853fe7386dccdff03c692"
+    },
+    {
+      "path": "Source/art/seoyun-outfit-options-v001/seoyun_outfit_05.png",
+      "bytes": 1349488,
+      "sha256": "54e6d19ad87a82ebf70e97cc4ff3c52fd477ad4a6127da7cdc3fa4b5f80438ef"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/face_reference.png",
+      "bytes": 178420,
+      "sha256": "b1f2b565c239aca33977e71ee9122b2814c6635a8506e5ea98116f45b01a2987"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/features_mask.svg",
+      "bytes": 739,
+      "sha256": "304e6d0ff7eba30e2c33824afbd469b40711b9c67f107cfa77e63b6591f7c78c"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/serious.png",
+      "bytes": 2007788,
+      "sha256": "fe9c643a7f7bcc36a481ba54977eb5ad43ad563bc652bc31ecffbc408f6d864a"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/shy.png",
+      "bytes": 1988815,
+      "sha256": "de2c21a602996c3beb1da3a290c8eed2f7b6562995688e746286c314b0092ef3"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/shy_features_mask.svg",
+      "bytes": 864,
+      "sha256": "9d107935a10341528cd16bcd9f0cb377d68c8d1aa60f37070c7f4f063f07bf98"
+    },
+    {
+      "path": "Source/game/images/characters/ria/expressions/smile.png",
+      "bytes": 2042939,
+      "sha256": "c8f14c05a573ef7d10228e1a6930feb078811de6209310bd683aa74a7ce3f267"
+    },
+    {
+      "path": "Source/game/images/characters/ria/ui_master.png",
+      "bytes": 2360821,
+      "sha256": "6634a135b51169e314268a581ff7cec6f439eac8597bbd7b33f940d607f7ee65"
+    },
+    {
+      "path": "Source/game/images/characters/ria/ui_master_v2.png",
+      "bytes": 774146,
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca"
+    },
+    {
+      "path": "Source/game/images/characters/yujin/ui_temp_v001.png",
+      "bytes": 803555,
+      "sha256": "c68a17a92b697066c67ed737c0a26f1ab1ce0f0cd0a9301896fcd33e93c7246c"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/expressions/features_mask.svg",
+      "bytes": 739,
+      "sha256": "304e6d0ff7eba30e2c33824afbd469b40711b9c67f107cfa77e63b6591f7c78c"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/expressions/serious.png",
+      "bytes": 2007788,
+      "sha256": "fe9c643a7f7bcc36a481ba54977eb5ad43ad563bc652bc31ecffbc408f6d864a"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/expressions/shy.png",
+      "bytes": 1988815,
+      "sha256": "de2c21a602996c3beb1da3a290c8eed2f7b6562995688e746286c314b0092ef3"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/expressions/shy_features_mask.svg",
+      "bytes": 864,
+      "sha256": "9d107935a10341528cd16bcd9f0cb377d68c8d1aa60f37070c7f4f063f07bf98"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/expressions/smile.png",
+      "bytes": 2042939,
+      "sha256": "c8f14c05a573ef7d10228e1a6930feb078811de6209310bd683aa74a7ce3f267"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/ui_master.png",
+      "bytes": 2360821,
+      "sha256": "6634a135b51169e314268a581ff7cec6f439eac8597bbd7b33f940d607f7ee65"
+    },
+    {
+      "path": "Windows/game/images/characters/ria/ui_master_v2.png",
+      "bytes": 774146,
+      "sha256": "0e541952498d879aad6b131a922f091d374c9951104cc7f1481982f39b390fca"
+    },
+    {
+      "path": "Windows/game/images/characters/yujin/ui_temp_v001.png",
+      "bytes": 803555,
+      "sha256": "c68a17a92b697066c67ed737c0a26f1ab1ce0f0cd0a9301896fcd33e93c7246c"
+    }
+  ],
+  "retained_files": [
+    {
+      "path": "Branding/logos/afterwork-us-sunset-v001.png",
+      "bytes": 1264703,
+      "sha256": "c4809ce78bf9edb1b0856a0ab307dde7f8782b74b9bd91c1f8ca9baba8ef77a1"
+    },
+    {
+      "path": "CharacterArt/assets/title/title_escalator_jihyun_arm_lowered_v002.png",
+      "bytes": 2312210,
+      "sha256": "8c6966a5dd2ae5da06cb1db17370baab5ae94049d00ebc7d8d441513a7c677a1"
+    },
+    {
+      "path": "Preview/phone-empty-contact.png",
+      "bytes": 62261,
+      "sha256": "8b5f5b4eee7e36c7cda844ae3e0eb499a8186cac4ee44569ef6a43d7bc8099bd"
+    },
+    {
+      "path": "Preview/phone-history.png",
+      "bytes": 85599,
+      "sha256": "8bd16005479535b2fb4e68f1f2931d88eb9350ecb36edfed5bf235ff8909134d"
+    },
+    {
+      "path": "Preview/phone-photo-placeholder.png",
+      "bytes": 48130,
+      "sha256": "9c824a3105fae7e273ef4e61578e37377ba803bd2aa44cf7e738d9172aab1f74"
+    },
+    {
+      "path": "Preview/phone-preview.png",
+      "bytes": 65084,
+      "sha256": "3296730c4b6f72c28e9108bfe5d7341f69366d08af3b1072ec708f6bd053ed3c"
+    },
+    {
+      "path": "Preview/phone-real-image-loader-fixture.png",
+      "bytes": 119811,
+      "sha256": "2de141f0cc18c5c095d25461a377d7aec102cb580fba3a264f2816a722147718"
+    },
+    {
+      "path": "Preview/phone-save-menu.png",
+      "bytes": 52178,
+      "sha256": "20dbece763e9f659ba760b6357a1488e054e403282b58fb33ec8bd04dab7104e"
+    },
+    {
+      "path": "Preview/phone-three-replies.png",
+      "bytes": 100606,
+      "sha256": "027a45139e60baaa42ba020994316efedf0586ac861f28f82dc751a7260fa40d"
+    },
+    {
+      "path": "Preview/phone-typing.png",
+      "bytes": 82942,
+      "sha256": "511c8e5e107be69bda52a6eab387ba02427d3013e746af38cf3944106b249473"
+    },
+    {
+      "path": "Source/game/gui/cream/accent.svg",
+      "bytes": 188,
+      "sha256": "56b6d004c0e01a0d65294ccd028834e3414c13ec0abc0b358c20ffd1da8d7a30"
+    },
+    {
+      "path": "Source/game/gui/cream/accent_hover.svg",
+      "bytes": 188,
+      "sha256": "2dad41f3033e5e8f9df710c019772082804029f343766e558344dd0742d2ce17"
+    },
+    {
+      "path": "Source/game/gui/cream/button.svg",
+      "bytes": 188,
+      "sha256": "adcbdbe7cfb001f17c71073e7e6aa3da79e2dd7411d2fb3e5b220c66b2d4c996"
+    },
+    {
+      "path": "Source/game/gui/cream/heart_empty.svg",
+      "bytes": 187,
+      "sha256": "ee26b30ad81ffd2aa0c27fec38f5757b190c4b47e3556f051059de340fdc44f6"
+    },
+    {
+      "path": "Source/game/gui/cream/heart_full.svg",
+      "bytes": 187,
+      "sha256": "1281b2563fbeef68541f745f9672e54a339f0a44d917b4697fee7b5f33d5c83f"
+    },
+    {
+      "path": "Source/game/gui/cream/hover.svg",
+      "bytes": 188,
+      "sha256": "05c34ba8e95a1dd1f1b7cf5585f139026c87ce2f3a2f356221413e763d760fad"
+    },
+    {
+      "path": "Source/game/gui/cream/panel.svg",
+      "bytes": 188,
+      "sha256": "d15125170c267ad4d8213b86b927c304f0bfe5c3df1f7759c91b76c91c7a2afb"
+    },
+    {
+      "path": "Source/game/gui/cream/soft.svg",
+      "bytes": 188,
+      "sha256": "f6caa9c29bc6c27d60cc7deba0082bfe92f004ed2ef4f4598ee858846b090924"
+    },
+    {
+      "path": "Source/game/gui/cream/stage_day.svg",
+      "bytes": 1637,
+      "sha256": "4529eea21e4858150df1c4aea61d706f25dc1a899eb1b4405d0c2920fc24a547"
+    },
+    {
+      "path": "Source/game/gui/cream/stage_night.svg",
+      "bytes": 1780,
+      "sha256": "b4588a227877b8222435cdff7cd2ba5b59580523d886e12c5bd3d0daf56ba30b"
+    },
+    {
+      "path": "Windows/game/gui/cream/accent.svg",
+      "bytes": 188,
+      "sha256": "56b6d004c0e01a0d65294ccd028834e3414c13ec0abc0b358c20ffd1da8d7a30"
+    },
+    {
+      "path": "Windows/game/gui/cream/accent_hover.svg",
+      "bytes": 188,
+      "sha256": "2dad41f3033e5e8f9df710c019772082804029f343766e558344dd0742d2ce17"
+    },
+    {
+      "path": "Windows/game/gui/cream/button.svg",
+      "bytes": 188,
+      "sha256": "adcbdbe7cfb001f17c71073e7e6aa3da79e2dd7411d2fb3e5b220c66b2d4c996"
+    },
+    {
+      "path": "Windows/game/gui/cream/heart_empty.svg",
+      "bytes": 187,
+      "sha256": "ee26b30ad81ffd2aa0c27fec38f5757b190c4b47e3556f051059de340fdc44f6"
+    },
+    {
+      "path": "Windows/game/gui/cream/heart_full.svg",
+      "bytes": 187,
+      "sha256": "1281b2563fbeef68541f745f9672e54a339f0a44d917b4697fee7b5f33d5c83f"
+    },
+    {
+      "path": "Windows/game/gui/cream/hover.svg",
+      "bytes": 188,
+      "sha256": "05c34ba8e95a1dd1f1b7cf5585f139026c87ce2f3a2f356221413e763d760fad"
+    },
+    {
+      "path": "Windows/game/gui/cream/panel.svg",
+      "bytes": 188,
+      "sha256": "d15125170c267ad4d8213b86b927c304f0bfe5c3df1f7759c91b76c91c7a2afb"
+    },
+    {
+      "path": "Windows/game/gui/cream/soft.svg",
+      "bytes": 188,
+      "sha256": "f6caa9c29bc6c27d60cc7deba0082bfe92f004ed2ef4f4598ee858846b090924"
+    },
+    {
+      "path": "Windows/game/gui/cream/stage_day.svg",
+      "bytes": 1637,
+      "sha256": "4529eea21e4858150df1c4aea61d706f25dc1a899eb1b4405d0c2920fc24a547"
+    },
+    {
+      "path": "Windows/game/gui/cream/stage_night.svg",
+      "bytes": 1780,
+      "sha256": "b4588a227877b8222435cdff7cd2ba5b59580523d886e12c5bd3d0daf56ba30b"
+    },
+    {
+      "path": "Windows/renpy/common/_missing_image.png",
+      "bytes": 143,
+      "sha256": "06ab142c3bad172a564f50931dd667c07af918ed7298107b0c41f79cd761cc8f"
+    },
+    {
+      "path": "Windows/renpy/common/_placeholder/boy.png",
+      "bytes": 75880,
+      "sha256": "eae2fa37586790fab47fa711de031002df15278770f65ba53aae7ee2af028683"
+    },
+    {
+      "path": "Windows/renpy/common/_placeholder/girl.png",
+      "bytes": 91783,
+      "sha256": "bef5a9cd7a8066ef5482d1ee36d7bd67e005ff37412d2b291216ef76383e05a7"
+    },
+    {
+      "path": "Windows/renpy/common/_transparent_tile.png",
+      "bytes": 2451,
+      "sha256": "89631717f5ef2160c261856e4c559d1333b3d1db324e9725e85d974f85085b21"
+    },
+    {
+      "path": "Windows/renpy/common/_tv_unsafe.png",
+      "bytes": 14318,
+      "sha256": "21a078fda2e2a0c817ab5b564b55ad89f5dbfba17307b1d82189188abfdede8f"
+    },
+    {
+      "path": "Windows/renpy/common/blindstile.png",
+      "bytes": 693,
+      "sha256": "7fc36fd081021d228c2c3c6b4d8e225731ddefe9f6bd21cdcd0bbc1cacdd4d29"
+    },
+    {
+      "path": "Windows/renpy/common/squarestile.png",
+      "bytes": 606,
+      "sha256": "b940cddf8f6e2629abcf6da6b6e708c442b93426bf848a4cee1d7af254062e1d"
+    }
+  ]
+}

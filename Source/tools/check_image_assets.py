@@ -6,6 +6,7 @@ Paths must stay inside this repository. JSON is printed to stdout; no files are
 written. Decode/size/alpha checks do not establish visual quality or approval.
 """
 import argparse
+import ast
 import hashlib
 import json
 import warnings
@@ -57,6 +58,9 @@ def main():
     roots = [ROOT / x for x in args.paths] or [ROOT / "CharacterArt/assets", ROOT / "Source/game/images"]
     paths = set()
     for p in roots:
+        # A clean checkout omits directories left empty by the art reset.
+        if not args.paths and not p.exists():
+            continue
         if not p.resolve().is_relative_to(ROOT) or not p.exists():
             parser.error("input must exist inside repository: " + str(p))
         if p.is_file():
@@ -79,10 +83,21 @@ def main():
             target = (ROOT / "Source/game" / asset["planned_path"]).resolve()
             if not target.is_relative_to(ROOT / "Source/game") or not target.is_file():
                 missing.append({"id": asset["id"], "planned_path": asset["planned_path"]})
+    # Read only the literal media table, never import or execute game Python.
+    phone_source = (ROOT / "Source/game/office_phone.rpy").read_text(encoding="utf-8")
+    phone_table = next(line.strip().split("=", 1)[1].strip()
+                       for line in phone_source.splitlines() if line.strip().startswith("PHONE_MEDIA ="))
+    phone_media = ast.literal_eval(phone_table)
+    missing_messages = []
+    for media_id, media in phone_media.items():
+        target = (ROOT / "Source/game" / media["path"]).resolve()
+        if not target.is_relative_to(ROOT / "Source/game") or not target.is_file():
+            missing_messages.append({"id": media_id, "planned_path": media["path"]})
     errors = sum(r["status"] == "FAIL" for r in rows)
     print(json.dumps(dict(files=rows, count=len(rows), errors=errors,
                          duplicate_sha256=[v for v in hashes.values() if len(v) > 1],
                          missing_planned_assets=missing,
+                         missing_message_assets=missing_messages,
                          note="Missing planned assets are incomplete production, not PNG decode failures; visual QA and approval remain separate."),
                      ensure_ascii=False, indent=2))
     return 1 if errors else 0

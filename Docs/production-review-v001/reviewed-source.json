@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-06",
+  "source_commit": "94585aed20632bdfaf49237ea10655fc08f42aad",
+  "scope": "96 story event labels, work codas, inline/phone dialogue, 16 event_story variants; static reading only. Tool extraction omits instrumentation; source guards and critical transitions read separately. Historical prose documents are supporting context, not another claimed full narrative pass.",
+  "files": [
+    {
+      "path": "Source/game/common.rpy",
+      "sha256": "ede6dd163f1b24cf281b353cf1ab48a188198fc30f918e7f204fd90888f8024a"
+    },
+    {
+      "path": "Source/game/core.rpy",
+      "sha256": "371b599b0929c7ab5171d0df1ba2dc43a1bdc750d4ded7c345bc70069507946b"
+    },
+    {
+      "path": "Source/game/event_assets.json",
+      "sha256": "3419e2e2a9572305d1a5449d4942cc1128bbf8ffa3eb870f744259c49e6fe594"
+    },
+    {
+      "path": "Source/game/event_cg_plan.json",
+      "sha256": "04e9feead11a97a116957950b058fc824ec4c71a5e485266dfac2f438a018f3d"
+    },
+    {
+      "path": "Source/game/event_cg_slots.rpy",
+      "sha256": "f5ae617cb49bc9b68940ff67d55f882e8bdb39516fb5e6a6c36b796d251cb5ca"
+    },
+    {
+      "path": "Source/game/event_sequence.rpy",
+      "sha256": "0aef3d7d9f223739c924411db739492b239dabd5455fb69b5127c6a52889133b"
+    },
+    {
+      "path": "Source/game/event_story.json",
+      "sha256": "cb0144cec48980a2e54dcd5f1a3c4a6647aefd6031f5186fceef61abb649ce54"
+    },
+    {
+      "path": "Source/game/jihyun_optional.rpy",
+      "sha256": "04bdeab2df17a308d7fb6ab9dc223b195e0e7772af9afbaa3ac1ec70623f45d3"
+    },
+    {
+      "path": "Source/game/jihyun_r01_r04.rpy",
+      "sha256": "919e3f782870afb087187a9103df37ab10d59d2b0a19dd8251512c62ddf7ec64"
+    },
+    {
+      "path": "Source/game/jihyun_r05_r12.rpy",
+      "sha256": "db0d294ec8cc4c606a053a0d97d515476d50860029e3ae6cf5e8f38696f062d1"
+    },
+    {
+      "path": "Source/game/jihyun_r13_e01.rpy",
+      "sha256": "c6f0bd56508b5a8c09a96a64d7144d267523d3e46cbce9df8a42d2a0280d8077"
+    },
+    {
+      "path": "Source/game/office_phone.rpy",
+      "sha256": "5bcd503f0f1a7051e5b5953f33d1facda263201ee8391c698f46a39931eeef63"
+    },
+    {
+      "path": "Source/game/ria_o04.rpy",
+      "sha256": "ed715c4770f3a16ef340eb195aca885fb2ef72c31aaf243b51bcc26efc34b441"
+    },
+    {
+      "path": "Source/game/ria_r01.rpy",
+      "sha256": "ce34921c7830af5866fef1fe0739a9bbfe2c60d47cab91f73ac6d2421103e6a3"
+    },
+    {
+      "path": "Source/game/ria_r02_r04.rpy",
+      "sha256": "a684b393951818ac6deb4abfd905f25fe27664d79136f3c00c22d1d4b14bd961"
+    },
+    {
+      "path": "Source/game/ria_r05_r08.rpy",
+      "sha256": "d6b9cef490c4e864ab30921c4fa7d6f0511557cb7f4da65376599aaa8cde8289"
+    },
+    {
+      "path": "Source/game/ria_r09_r12.rpy",
+      "sha256": "fec21e0cf457144d847451bd990f7913e31fa0962f1a566ff1a1eb7276f5d0bf"
+    },
+    {
+      "path": "Source/game/ria_r13_e01.rpy",
+      "sha256": "31c3d7b14e761c0cb3b414585c215c77113a0e247f7700668b5819dc0b07cf58"
+    },
+    {
+      "path": "Source/game/seoyun_optional.rpy",
+      "sha256": "7bf4ef1743eb0fcf5b59c218598f7ad341fad3cb8dcebdeec962f71e4b14da99"
+    },
+    {
+      "path": "Source/game/seoyun_r01_r04.rpy",
+      "sha256": "7b113cbc1989bef960254044bd38d25cebf3be40264cc624eada0d9278716b5b"
+    },
+    {
+      "path": "Source/game/seoyun_r05_r12.rpy",
+      "sha256": "88aaf402c75b612260149c6b856ed3451b3c9157f77294607eea2678602478b7"
+    },
+    {
+      "path": "Source/game/seoyun_r13_e01.rpy",
+      "sha256": "4c2e38ca6ba847f49d303fe682da4efcb4542e46d6cb7286ed000604af2c00a8"
+    },
+    {
+      "path": "Source/game/work_minis.rpy",
+      "sha256": "5f5fa85c89177465fc5df76dd4ad5415330f5840d4a3b537f11e68c82a8d3353"
+    },
+    {
+      "path": "Source/game/yujin_optional.rpy",
+      "sha256": "7d3fc29cc02258324436e21ee67e11186d8260681e5653e239c0b89c51d3ee34"
+    },
+    {
+      "path": "Source/game/yujin_r01_r04.rpy",
+      "sha256": "535d84c751bfdf04c6ff3f185590c62a8ea1e92538c694e6a60312bfa550771c"
+    },
+    {
+      "path": "Source/game/yujin_r05_r08.rpy",
+      "sha256": "08e65897bb3ee222942d4c1c77471ae98a49fc7b58ad272a423f600520192107"
+    },
+    {
+      "path": "Source/game/yujin_r09_r12.rpy",
+      "sha256": "5604d77166c42961fe7c201d6b556788dd23a5e22d31fcf96430bc9976166c4b"
+    },
+    {
+      "path": "Source/game/yujin_r13_e01.rpy",
+      "sha256": "585bbc42a12bc898f7de8b9628f536df899d97c35f428a3d118dab617abe431f"
+    }
+  ],
+  "reviewed_event_labels": 96,
+  "event_story_variants": 16,
+  "engine_executed": false
+}

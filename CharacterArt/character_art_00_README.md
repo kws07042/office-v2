@@ -1,6 +1,8 @@
 # 「퇴근 후, 우리」 캐릭터 이미지 제작 자료
 
-갱신일: **2026-11-04**. 사용자 지정 [에스컬레이터 타이틀 v002](assets/title/title_escalator_jihyun_arm_lowered_v002.png)를 네 히로인의 현행 외형·업무복·공통 그림체 기준으로 삼는다. 이전 개별 마스터와 다르면 [통합 외형 기준](APPEARANCE_CURRENT.md)을 우선한다.
+갱신일: **2026-11-06**. 캐릭터·CG·후보 원화는 사용자 요청으로 삭제했다. 타이틀 v002만 참조용으로 유지하며 과거 QA/프롬프트는 이력이다. [삭제 명세](../Docs/production-review-v001/art-reset.json).
+
+ 사용자 지정 [에스컬레이터 타이틀 v002](assets/title/title_escalator_jihyun_arm_lowered_v002.png)를 네 히로인의 현행 외형·업무복·공통 그림체 기준으로 삼는다. 이전 개별 마스터와 다르면 [통합 외형 기준](APPEARANCE_CURRENT.md)을 우선한다.
 
 ## 읽는 순서
 

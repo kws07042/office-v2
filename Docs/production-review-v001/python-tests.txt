@@ -48,6 +48,6 @@ test_production_list_has_34_real_script_references (test_seoyun_revision.SeoyunR
 test_python_statements_and_text_literals_parse_without_execution (test_seoyun_revision.SeoyunRevisionTests.test_python_statements_and_text_literals_parse_without_execution) ... ok
 
 ----------------------------------------------------------------------
-Ran 48 tests in 0.062s
+Ran 48 tests in 0.100s
 
 OK

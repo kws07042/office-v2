@@ -1,0 +1,18 @@
+{
+  "status": "proposal_not_delivery_or_approval",
+  "base_designs": 140,
+  "output_files": 308,
+  "event_plan_sets": 16,
+  "event_plan_paths": 80,
+  "event_main_storyboard_slots_on_hold": 48,
+  "background_base": 18,
+  "background_light_variants": 9,
+  "message_derivative_proposal": 1,
+  "after_outfit_derivative_proposal": 2,
+  "face_parts_excluded_from_export_total": 108,
+  "live2d_required": 0,
+  "live2d_optional_candidates": 4,
+  "finished_new_art": 0,
+  "approved_legacy_reuse": 0,
+  "title_reference_excluded_from_production_totals": 1
+}

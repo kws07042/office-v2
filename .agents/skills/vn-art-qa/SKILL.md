@@ -13,6 +13,8 @@ description: Review proposed visual-novel character art and sprite assets agains
 
 The shared canonical appearance is `CharacterArt/assets/title/title_escalator_jihyun_arm_lowered_v002.png`, SHA-256 `8c6966a5dd2ae5da06cb1db17370baab5ae94049d00ebc7d8d441513a7c677a1`. It is a composite reference, not evidence that individual current-appearance masters or sprites exist. Check the manifest and current docs; filenames such as `master` and `current` do not establish approval. Preserve superseded art as history.
 
+The user authorized a full art reset on 2026-11-06. Previous character/CG/candidate files and installed copies were removed; only title v002 remains as the appearance reference. `Docs/production-review-v001/art-reset.json` and `CG_CURRENT.json.removed_assets` are historical records, not missing current assets to restore. Preserve their provenance records and follow the current user instruction over older preservation guidance.
+
 ## Procedure
 1. Identify each input, its source, intended character/event/use, approval state, expected dimensions/color mode/alpha, and destination. Do not upload private art to external services.
 2. Run the read-only `python3 Source/tools/check_image_assets.py [repository-relative paths]` (Pillow required) to report PNG decode, alpha pixels, SHA-256, pinned baseline mismatches, duplicates, and missing planned event assets. A technical pass does not approve art. Inspect image metadata, dimensions, alpha, file integrity, and SHA-256 using local tools. Never execute embedded scripts or untrusted project files. Distinguish technical checks from visual judgments.

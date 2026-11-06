@@ -58,6 +58,8 @@ init -10 python:
         return "night" if any(word in renpy.store.location for word in ("저녁", "밤", "퇴근 후", "퇴근길")) else "day"
 
     def cream_ria_visible():
+        if not renpy.loadable("images/characters/ria/ui_master_v2.png"):
+            return False
         if renpy.store.cream_focus != "ria":
             return False
         if any(word in renpy.store.location for word in ("메시지", "각자의", "연락")):
@@ -66,6 +68,8 @@ init -10 python:
         return not choice or len(choice.scope.get("items", [])) <= 3
 
     def cream_yujin_visible():
+        if not renpy.loadable("images/characters/yujin/ui_temp_v001.png"):
+            return False
         if renpy.store.cream_focus != "yujin":
             return False
         if "도현의 집" in renpy.store.location and "유진" not in renpy.store.location:
@@ -96,7 +100,7 @@ init -10 python:
         return any(renpy.get_screen(name) for name in ("save", "load", "history", "preferences", "progression_hub", "progression_cg_view"))
 
 image ria ui bust = DynamicDisplayable(ria_portrait_display)
-image yujin ui bust = Transform(Crop((230, 0, 570, 850), "images/characters/yujin/ui_temp_v001.png"), zoom=1.0)
+image yujin ui bust = (Transform(Crop((230, 0, 570, 850), "images/characters/yujin/ui_temp_v001.png"), zoom=1.0) if renpy.loadable("images/characters/yujin/ui_temp_v001.png") else Null())
 
 label cream_preview_start:
     $ cream_preview_active = True
