@@ -1,0 +1,18 @@
+# Local working originals and rejected intermediate candidates are preserved,
+# while this checkpoint publishes the reviewed v005 and its evidence.
+/ria_master_office_rebuild_v00[1-4].*
+/alpha-only-validation.json
+/provenance.json
+/technical-audit.json
+/v003.technical-audit.json
+/qa-detail-v003/
+/qa-detail-v004/
+/hand-edit-v004/
+/cutout-review-v005/
+/trials/
+/publish-v005/face.png
+/publish-v005/right-hand.png
+/publish-v005/left-hand.png
+/publish-v005/hair-edge.png
+/publish-v005/shoes.png
+/publish-v005/sleeve-edge.png
