@@ -163,17 +163,16 @@ screen progression_hub(initial_tab="relations"):
     default tab = initial_tab
     default person = "ria"
     default category = "all"
-    use badge_shell("progression_hub")
-    text "우리의 기록" xpos 316 ypos 53 size 44 color badge_ink
+    use badge_shell("progression_hub", "우리의 기록")
     hbox:
-        xpos 306 ypos 119 spacing 9
+        xpos 400 ypos 137 spacing 9
         textbutton "관계" action SetScreenVariable("tab", "relations") selected tab == "relations" style "badge_tab_button"
         textbutton "이야기" action SetScreenVariable("tab", "story") selected tab == "story" style "badge_tab_button"
         textbutton "CG · 회상" action SetScreenVariable("tab", "gallery") selected tab == "gallery" style "badge_tab_button"
         textbutton "결말" action SetScreenVariable("tab", "endings") selected tab == "endings" style "badge_tab_button"
-    add Solid(badge_rule) xpos 316 ypos 171 xysize (870, 1)
+    add Solid(badge_rule) xpos 400 ypos 188 xysize (786, 1)
     vbox:
-        xpos 306 ypos 182 xsize 885 spacing 9
+        xpos 400 ypos 197 xsize 786 spacing 8
         style_prefix "badge"
         hbox:
             spacing 8
@@ -195,7 +194,7 @@ screen progression_hub(initial_tab="relations"):
                 text "함께 나눈 말과 실제 행동을 바탕으로 한 관계 기록이에요." size 18 color badge_muted
                 text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
                 if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
-                    text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 855
+                    text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
             textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
             textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
             text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color badge_muted
@@ -203,10 +202,10 @@ screen progression_hub(initial_tab="relations"):
             text "공통 이야기 → 개인 루트 · 선택 이전 기록으로 돌아가기" size 23 color badge_ink
             text "미발견 제목은 숨겨져요. 돌아가면 그 시점의 상태 전체를 불러와요." size 17
             fixed:
-                xsize 885 ysize 386
+                xsize 786 ysize 337
                 viewport:
                     id "window_story"
-                    xsize 860 ysize 386
+                    xsize 763 ysize 337
                     mousewheel True draggable True
                     vbox:
                         spacing 6
@@ -215,12 +214,12 @@ screen progression_hub(initial_tab="relations"):
                                 $ discovered = node["id"] in persistent.progression_seen_nodes
                                 $ restorable = discovered and progression_loadable(node["id"])
                                 textbutton (("    └ " if node["kind"] == "choice" else "→ ") + node["title"] if discovered else "잠김 · 아직 만나지 않은 이야기"):
-                                    xsize 850 text_size 18
+                                    xsize 750 text_size 18
                                     action FileLoad("flow-" + node["id"], confirm=True, slot=True)
                                     sensitive restorable
                                 if discovered and not restorable:
                                     text "방문 기록만 있어요 · 이 버전의 재진입 저장 없음" size 14 color badge_muted
-                vbar value YScrollValue("window_story") style "badge_scroll" xpos 871 ysize 386
+                vbar value YScrollValue("window_story") style "badge_scroll" xpos 779 ysize 337
         elif tab == "gallery":
             hbox:
                 spacing 9
@@ -233,22 +232,22 @@ screen progression_hub(initial_tab="relations"):
             $ summary = progression_collection(person, category)
             text ("감상 " + str(summary["seen"]) + " / 등록 " + str(summary["available"]) + " · 계획 " + str(summary["planned"])) size 20
             if not summary["available"]:
-                add Solid(badge_rule) xysize (850, 1)
+                add Solid(badge_rule) xysize (750, 1)
                 text "이 분류에 등록된 이미지가 아직 없어요." size 21 color badge_ink
                 text "등록된 장면을 감상하면 여기에서 다시 볼 수 있어요." size 17 color badge_muted
             else:
                 text ("수집률 " + str(summary["percent"]) + "%") size 18 color badge_muted
                 fixed:
-                    xsize 885 ysize 287
+                    xsize 786 ysize 234
                     vpgrid:
                         id "window_gallery"
-                        xsize 860 ysize 287
+                        xsize 763 ysize 234
                         mousewheel True draggable True
                         cols 4 spacing 10
                         for row in progression_gallery_rows(person, category):
                             if progression_asset_ready(row):
                                 button:
-                                    xsize 198 ysize 104 padding (8, 6)
+                                    xsize 178 ysize 99 padding (8, 6)
                                     background Solid(badge_rail)
                                     hover_background Solid(badge_focus)
                                     action Show("progression_cg_view", asset_id=row["id"])
@@ -256,11 +255,11 @@ screen progression_hub(initial_tab="relations"):
                                     vbox:
                                         spacing 5
                                         if progression_asset_unlocked(row):
-                                            add row["path"] xysize (180, 67) fit "contain"
+                                            add row["path"] xysize (160, 62) fit "contain"
                                             text (row["event_id"].upper() + " · " + row["outfit"]) size 14
                                         else:
                                             text "아직 미감상" size 18
-                    vbar value YScrollValue("window_gallery") style "badge_scroll" xpos 871 ysize 287
+                    vbar value YScrollValue("window_gallery") style "badge_scroll" xpos 779 ysize 234
             hbox:
                 spacing 8
                 for key in persistent.progression_replays:
@@ -275,13 +274,12 @@ screen progression_hub(initial_tab="relations"):
             for ending_id, info in pm.ENDINGS.items():
                 if info[0] in ("common", person):
                     text (info[1] if ending_id in progression_ending_ids() else "잠김 · 아직 확인하지 않은 결말") size 23
-            text "새 진엔딩이나 12개 결말을 추가한 상태가 아니에요." size 17 color badge_muted
 
 screen progression_cg_view(asset_id):
     modal True
     zorder 180
     $ row = next((item for item in PROGRESSION_CATALOG if item["id"] == asset_id), None)
-    add Solid("#211927ed")
+    add Solid("#292326ed")
     if row and progression_asset_unlocked(row):
         add row["path"] xysize (1180, 620) fit "contain" xalign 0.5 yalign 0.5
     else:
@@ -292,7 +290,7 @@ screen progression_cg_view(asset_id):
 screen progression_shortcuts():
     if not main_menu and not event_cut_active and not cream_menu_open() and not cream_preview_active and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive") and not progression_in_replay():
         hbox:
-            xpos 62 ypos 53 spacing 8
+            xpos 37 ypos 68 spacing 8
             textbutton "우리의 기록" action ShowMenu("progression_hub") style "cream_quick_button" text_size 16 padding (12, 7)
             textbutton "퀵저장" action QuickSave() style "cream_quick_button" text_size 16 padding (12, 7)
             textbutton "퀵로드" action QuickLoad(confirm=True) style "cream_quick_button" text_size 16 padding (12, 7)

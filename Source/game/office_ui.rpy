@@ -12,8 +12,8 @@ init -6 python:
         palette = {
             "paper": (OFFICE_UI["paper"], OFFICE_UI["line"]),
             "soft": (OFFICE_UI["soft"], OFFICE_UI["soft"]),
-            "choice": ("#202839", "#7487a8"),
-            "choice_hover": ("#dce7fa", "#dce7fa"),
+            "choice": ("#30272b", "#8c7477"),
+            "choice_hover": ("#e9d6c8", "#e9d6c8"),
             "selected": ("#f5ded1", "#c6988b"),
             "peer": (OFFICE_UI["peer"], OFFICE_UI["peer"]),
             "mine": (OFFICE_UI["mine"], OFFICE_UI["mine"]),
@@ -35,7 +35,7 @@ style office_choice_button is button:
     background office_ui_surface("choice", radius=2)
     hover_background office_ui_surface("choice_hover", radius=2)
     selected_background office_ui_surface("choice_hover", radius=2)
-    padding (20, 12)
+    padding (24, 11)
     yminimum 52
     xfill True
     keyboard_focus True
@@ -43,8 +43,8 @@ style office_choice_button_text is button_text:
     font "fonts/Pretendard-Regular.otf"
     size 20
     color "#fff5ed"
-    hover_color "#1c315a"
-    selected_color "#1c315a"
+    hover_color "#34272a"
+    selected_color "#34272a"
     outlines []
     text_align 0.0
     xalign 0.0
@@ -53,5 +53,5 @@ style office_choice_button_text is button_text:
 style office_scrollbar is vscrollbar:
     xsize 6
     base_bar Solid("#e9dbd5")
-    thumb Solid("#879bbb")
+    thumb Solid("#9b817a")
     unscrollable "hide"

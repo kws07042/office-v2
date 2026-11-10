@@ -62,7 +62,7 @@ style phone_button is button:
     keyboard_focus True
 style phone_button_text is phone_text:
     size 18
-    hover_color "#294da1"
+    hover_color "#69424b"
     line_spacing 4
 style phone_reply_button is phone_button:
     xfill True
@@ -97,31 +97,31 @@ screen office_phone_contents(replies, waiting, archive):
     $ choosing_reply = bool(replies and selected == phone_active_contact and not archive and not waiting)
     $ message_height = 298 if choosing_reply else 356
     $ contact_rows = phone_threads.get(selected, [])
-    add Solid("#171b26a6")
+    add Solid("#292326a6")
 
     frame:
         xalign 0.5 yalign 0.5 xsize 380 ysize 652 padding (8, 8)
-        background CreamRoundedPanel("#222733", "#586478", radius=29)
+        background CreamRoundedPanel("#33292e", "#806e72", radius=29)
         frame:
             xsize 364 ysize 636 padding (0, 0)
-            background CreamRoundedPanel("#f6f7fa", "#f6f7fa", radius=22)
+            background CreamRoundedPanel("#f7f3f0", "#f7f3f0", radius=22)
             text phone_status_time(location) xpos 19 ypos 12 size 15
             add "gui/window/phone_status.svg" xpos 269 ypos 13 xysize (74, 15)
-            add CreamRoundedPanel("#27242f", "#27242f", radius=5) xalign 0.5 ypos 13 xysize (9, 9)
-            text phone_names(selected) xalign 0.5 ypos 47 size 24
+            add CreamRoundedPanel("#33292e", "#33292e", radius=5) xalign 0.5 ypos 13 xysize (9, 9)
+            text phone_names(selected) xpos 21 ypos 46 size 24
+            add Solid("#cdbfc0") xpos 8 ypos 119 xysize (348, 1)
             if archive:
-                textbutton "닫기" id "phone_archive_close" xpos 13 ypos 43 action Hide("office_phone_archive") text_size 15 padding (8, 7)
-            use window_phone_avatar(23, 323, 48)
+                textbutton "닫기" id "phone_archive_close" xpos 256 ypos 43 action Hide("office_phone_archive") text_size 15 padding (8, 7)
             hbox:
                 xpos 16 ypos 85 spacing 4
                 for contact, name, initial in PHONE_CONTACTS:
                     textbutton (name + (" •" if phone_unread(contact) else "")):
                         id ("phone_contact_" + contact)
                         xsize 80 text_size 13 text_xalign 0.5 padding (3, 7)
-                        background (Solid("#fff0b8") if selected == contact else Solid("#edf0f4"))
-                        hover_background Solid("#fff0b8")
+                        background (Solid("#e6d2ce") if selected == contact else Solid("#ebe6e4"))
+                        hover_background Solid("#e6d2ce")
                         action [SetLocalVariable("selected", contact), Function(phone_mark_read, contact)]
-            add Solid("#ccdeed") xpos 8 ypos 120 xsize 348 ysize message_height
+            add Solid("#d5e0e4") xpos 8 ypos 120 xsize 348 ysize message_height
             viewport:
                 id "phone_messages"
                 xpos 21 ypos 129 xsize 314 ysize (message_height - 17)
@@ -198,7 +198,7 @@ screen office_phone_contents(replies, waiting, archive):
             add CreamRoundedPanel("#292631", "#292631", radius=2) xalign 0.5 ypos 621 xysize (100, 4)
 
     vbox:
-        xpos 851 ypos 56 spacing 5
+        xpos 851 ypos 475 spacing 5
         if not archive:
             textbutton "되돌리기" action Rollback() style "cream_quick_button"
         textbutton "저장" action ShowMenu("save") style "cream_quick_button"
@@ -216,22 +216,22 @@ screen office_phone_photo(media):
     modal True
     zorder 150
     key "game_menu" action Hide("office_phone_photo")
-    add Solid("#171b26ed")
+    add Solid("#292326ed")
     frame:
-        xalign 0.5 yalign 0.5 xsize 940 ysize 640 padding (24, 22)
-        background phone_surface("panel")
+        xalign 0.5 yalign 0.5 xsize 880 ysize 604 padding (28, 24)
+        background Solid("#f0ebe2")
         vbox:
             spacing 14
-            text PHONE_MEDIA[media]["title"] size 24 color "#864940"
+            text PHONE_MEDIA[media]["title"] size 24 color "#69424b"
             fixed:
-                xsize 892 ysize 487
+                xsize 824 ysize 442
                 if phone_media_ready(media):
-                    add Transform(PHONE_MEDIA[media]["path"], xysize=(892, 487), fit="contain") xalign 0.5 yalign 0.5
+                    add Transform(PHONE_MEDIA[media]["path"], xysize=(824, 442), fit="contain") xalign 0.5 yalign 0.5
                 else:
-                    add Solid("#f2e5de")
+                    add Solid("#e5dcd1")
                     vbox:
                         xalign 0.5 yalign 0.5 spacing 16
-                        text "사진 준비 중" size 34 xalign 0.5 color "#864940"
+                        text "사진 준비 중" size 34 xalign 0.5 color "#69424b"
                         text "실제 이미지가 들어오면 이 자리에서 확대됩니다." size 21 color "#62545c"
                         text "빈 자리는 사진 감상 완료로 기록하지 않습니다." size 17 color "#62545c"
             textbutton "대화로 돌아가기" id "phone_photo_close" action Hide("office_phone_photo") text_size 20 xalign 0.5

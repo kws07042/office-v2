@@ -55,9 +55,9 @@ screen event_cut(event_id, variant, cursor):
     $ outfit_name = {"casual": "익숙한 사복", "special": "특별한 날의 옷", "home": "편한 생활복", "cosplay": "선택한 특별 의상"}[variant]
     if page["kind"] == "intro" and cursor == 2 and not event_intro_expression_ready:
         timer 0.65 action Function(event_show_intro_expression, event_id, variant, cursor)
-    add Solid("#171b26")
+    add Solid("#292326")
     text (event["title"] + "  ·  " + part_name + " " + str(page["part_index"]) + " / " + str(page["part_count"])):
-        xpos 60 ypos 80 size 30 color "#d0dffc"
+        xpos 60 ypos 80 size 30 color "#e6cdb9"
     text outfit_name xpos 60 ypos 124 size 21 color "#e4cfc9"
     if page["kind"] == "main":
         use event_main_panel(event_id, variant, page)
@@ -66,10 +66,10 @@ screen event_cut(event_id, variant, cursor):
     if beat:
         frame:
             xpos (600 if has_art else 60) ypos 174 xsize (620 if has_art else 1160) ysize 405
-            background Solid("#222d42") padding (30, 25)
+            background Solid("#382e34") padding (30, 25)
             vbox:
                 spacing 15
-                text beat["title"] size 30 color "#d0dffc" substitute False
+                text beat["title"] size 30 color "#e6cdb9" substitute False
                 text beat["narration"] size 23 color "#e4cfc9" substitute False
                 text (phone_names(event_id.split("_")[0]) + "  " + (beat["heroine"] if "heroine" in beat else ri(*beat["ria"]))) size 26 substitute False
                 text ("도현  " + ri(*beat["dohyun"])) size 26 substitute False
