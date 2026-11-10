@@ -31,7 +31,7 @@ init -6 python:
 
 screen window_menu_backdrop():
     add "gui/window/title.webp" xysize (1280, 720)
-    add Solid("#261e2bc2")
+    add Solid("#20212acb")
 
 style window_title_button is button:
     background None
@@ -70,3 +70,58 @@ style office_scrollbar is vscrollbar:
     thumb Solid("#b38277")
     unscrollable "hide"
 
+style window_setting_section is default:
+    size 15
+    bold True
+    color "#b6a9b8"
+style window_setting_label is default:
+    size 20
+    color "#eee8e6"
+style window_setting_button is button:
+    background Solid("#2a2b35")
+    hover_background Solid("#3c3a46")
+    selected_background Solid("#f2ded3")
+    selected_hover_background Solid("#ffe8dc")
+    padding (13, 8)
+    xminimum 64
+    keyboard_focus True
+style window_setting_button_text is button_text:
+    size 17
+    xalign 0.5
+    color "#ddd7dd"
+    hover_color "#ffffff"
+    selected_color "#342831"
+    selected_hover_color "#342831"
+style window_setting_nav is button:
+    background None
+    hover_background Solid("#34323e")
+    padding (5, 8)
+    keyboard_focus True
+style window_setting_nav_text is button_text:
+    size 18
+    color "#ece3e5"
+    hover_color "#fff6ec"
+style window_setting_bar is bar:
+    xsize 220
+    ysize 18
+    left_bar Solid("#d7b0a7", ysize=3)
+    right_bar Solid("#504d59", ysize=3)
+    thumb_align 0.5
+    thumb Solid("#f2ded3", xysize=(5, 18))
+    hover_thumb Solid("#ffffff", xysize=(5, 18))
+    thumb_offset 2
+    bar_resizing True
+style window_settings_scroll is office_scrollbar:
+    base_bar Solid("#373640")
+    thumb Solid("#817583")
+
+style window_record_panel is frame:
+    background Solid("#f5f0ed")
+style window_record_button is button:
+    background None
+    hover_background Solid("#e7ddd9")
+    padding (14, 11)
+    keyboard_focus True
+style window_record_button_text is button_text:
+    color "#403640"
+    hover_color "#402e3c"

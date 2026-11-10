@@ -37,16 +37,13 @@ init -10 python:
     def cream_speaker_color(who, history=False):
         # Light fills over artwork; darker companions on the cream history panel.
         palette = {
-            "강리아": ("#ffe0a3", "#93600f"), "리아": ("#ffe0a3", "#93600f"),
-            "백지현": ("#bde7ff", "#32668e"), "지현": ("#bde7ff", "#32668e"),
-            "차유진": ("#ffc9dc", "#98516c"), "유진": ("#ffc9dc", "#98516c"),
-            "한서윤": ("#ddc5ff", "#78549a"), "서윤": ("#ddc5ff", "#78549a"),
+            "강리아": ("#F4D298", "#765019"), "리아": ("#F4D298", "#765019"),
+            "백지현": ("#F2A89C", "#923F44"), "지현": ("#F2A89C", "#923F44"),
+            "차유진": ("#B6DFCC", "#32634F"), "유진": ("#B6DFCC", "#32634F"),
+            "한서윤": ("#D5C6F1", "#654B85"), "서윤": ("#D5C6F1", "#654B85"),
         }
         name = (who or "").split(" · ", 1)[0]
         return palette.get(name, ("#fff8f2", "#864940"))[1 if history else 0]
-
-    def cream_speaker_outline(who):
-        return "#422e3d" if cream_speaker_color(who) == "#fff8f2" else cream_speaker_color(who, history=True)
 
     def cream_note_speaker(person, event, **kwargs):
         if event == "begin" and person not in ("dohyun", "narrator"):
