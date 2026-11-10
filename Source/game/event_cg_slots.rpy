@@ -72,14 +72,14 @@ screen event_main_panel(event_id, variant, page):
     if resolved["path"]:
         add resolved["path"] xpos 60 ypos 174 xysize (1160, 405) fit "contain"
         frame:
-            xpos 60 ypos 174 padding (15, 10) background Solid("#151d30e8")
+            xpos 60 ypos 174 padding (15, 10) background Solid("#211a29e8")
             text cg_caption size 22
     else:
         frame:
-            xpos 60 ypos 174 xsize 1160 ysize 405 padding (30, 25) background Solid("#202a40")
+            xpos 60 ypos 174 xsize 1160 ysize 405 padding (30, 25) background Solid("#222d42")
             vbox:
                 spacing 22
-                text cg_caption size 34 color "#e4c397"
+                text cg_caption size 34 color "#d0dffc"
                 text "이미지 준비 중" size 28
-                text "그림이 등록되면 이 자리에 표시됩니다." size 24 color "#bac4d8"
-                text "현재는 화면 이동을 확인하는 개발용 자리입니다." size 21 color "#bac4d8"
+                text "그림이 등록되면 이 자리에 표시됩니다." size 24 color "#e4cfc9"
+                text "현재는 화면 이동을 확인하는 개발용 자리입니다." size 21 color "#e4cfc9"

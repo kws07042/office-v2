@@ -55,10 +55,10 @@ screen event_cut(event_id, variant, cursor):
     $ outfit_name = {"casual": "익숙한 사복", "special": "특별한 날의 옷", "home": "편한 생활복", "cosplay": "선택한 특별 의상"}[variant]
     if page["kind"] == "intro" and cursor == 2 and not event_intro_expression_ready:
         timer 0.65 action Function(event_show_intro_expression, event_id, variant, cursor)
-    add Solid("#151d30")
+    add Solid("#171b26")
     text (event["title"] + "  ·  " + part_name + " " + str(page["part_index"]) + " / " + str(page["part_count"])):
-        xpos 60 ypos 80 size 30 color "#f1c590"
-    text outfit_name xpos 60 ypos 124 size 21 color "#bac4d8"
+        xpos 60 ypos 80 size 30 color "#d0dffc"
+    text outfit_name xpos 60 ypos 124 size 21 color "#e4cfc9"
     if page["kind"] == "main":
         use event_main_panel(event_id, variant, page)
     elif has_art:
@@ -66,15 +66,15 @@ screen event_cut(event_id, variant, cursor):
     if beat:
         frame:
             xpos (600 if has_art else 60) ypos 174 xsize (620 if has_art else 1160) ysize 405
-            background Solid("#202a40") padding (30, 25)
+            background Solid("#222d42") padding (30, 25)
             vbox:
                 spacing 15
-                text beat["title"] size 30 color "#e4c397" substitute False
-                text beat["narration"] size 23 color "#bac4d8" substitute False
+                text beat["title"] size 30 color "#d0dffc" substitute False
+                text beat["narration"] size 23 color "#e4cfc9" substitute False
                 text (phone_names(event_id.split("_")[0]) + "  " + (beat["heroine"] if "heroine" in beat else ri(*beat["ria"]))) size 26 substitute False
                 text ("도현  " + ri(*beat["dohyun"])) size 26 substitute False
                 if not has_art:
-                    text ("표정 변화 자리 · 그림 준비 중" if expression else "장면 대본 미리보기 · 그림 준비 중") size 18 color "#8d9bb5"
+                    text ("표정 변화 자리 · 그림 준비 중" if expression else "장면 대본 미리보기 · 그림 준비 중") size 18 color "#cdb7b9"
     hbox:
         xpos 60 ypos 610 spacing 20
         textbutton "이전 컷" id "cut_previous" action Return("previous") sensitive cursor > 0 text_size 23
@@ -83,7 +83,7 @@ screen event_cut(event_id, variant, cursor):
             action Return("next")
             text_size 23
         textbutton "연출 건너뛰기" id "cut_skip" action Return("skip") text_size 23
-    text "좌우 화살표로 이동 · Enter로 다음 · 위 메뉴에서 저장 가능" xpos 60 ypos 683 size 18 color "#8d9bb5"
+    text "좌우 화살표로 이동 · Enter로 다음 · 위 메뉴에서 저장 가능" xpos 60 ypos 683 size 18 color "#cdb7b9"
     key "K_LEFT" action (Return("previous") if cursor > 0 else NullAction())
     key "K_RIGHT" action Return("next")
     key "K_RETURN" action Return("next")
