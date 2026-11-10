@@ -25,14 +25,14 @@ init -10 python:
 
     def cream_round(kind):
         palette = {
-            "panel": ("#fffdf7", "#e5d9cd"),
-            "button": ("#fffdf8", "#ded2c5"),
-            "hover": ("#f1e8f8", "#ac91be"),
-            "accent": ("#806695", "#806695"),
-            "accent_hover": ("#6c5482", "#6c5482"),
-            "soft": ("#f7f0e7", "#e5d9cd"),
+            "panel": ("#fff7ef", "#d8c5bd"),
+            "button": ("#fff8f2", "#dac5bd"),
+            "hover": ("#f6e6dc", "#bb8c7f"),
+            "accent": ("#864940", "#864940"),
+            "accent_hover": ("#703e38", "#703e38"),
+            "soft": ("#f2e5de", "#d8c5bd"),
         }
-        return CreamRoundedPanel(*palette[kind])
+        return CreamRoundedPanel(*palette[kind], radius=8)
 
     def cream_speaker_color(who, history=False):
         # Light fills over artwork; darker companions on the cream history panel.
@@ -43,10 +43,10 @@ init -10 python:
             "한서윤": ("#ddc5ff", "#78549a"), "서윤": ("#ddc5ff", "#78549a"),
         }
         name = (who or "").split(" · ", 1)[0]
-        return palette.get(name, ("#fffdf8", "#705684"))[1 if history else 0]
+        return palette.get(name, ("#fff8f2", "#864940"))[1 if history else 0]
 
     def cream_speaker_outline(who):
-        return "#573f70" if cream_speaker_color(who) == "#fffdf8" else cream_speaker_color(who, history=True)
+        return "#422e3d" if cream_speaker_color(who) == "#fff8f2" else cream_speaker_color(who, history=True)
 
     def cream_note_speaker(person, event, **kwargs):
         if event == "begin" and person not in ("dohyun", "narrator"):

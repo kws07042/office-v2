@@ -1,18 +1,16 @@
-define prototype_font = FontGroup().add("DejaVuSans.ttf", 0x0000, 0x04ff).add("DejaVuSans.ttf", 0x2000, 0x206f).add("SourceHanSansLite.ttf", 0x0500, 0x1fff).add("SourceHanSansLite.ttf", 0x2070, 0xffff)
-
 style default:
-    font prototype_font
+    font "fonts/Pretendard-Regular.otf"
     size 26
-    color "#493f4c"
+    color "#342932"
 style button:
     padding (22, 12)
     background cream_round("button")
     hover_background cream_round("hover")
     insensitive_background cream_round("soft")
 style button_text:
-    color "#57485f"
-    hover_color "#705286"
-    insensitive_color "#aca2aa"
+    color "#493741"
+    hover_color "#864940"
+    insensitive_color "#8a7679"
 style choice_button is button:
     padding (22, 12)
     xfill True
@@ -27,26 +25,27 @@ style cream_quick_button is button:
     padding (9, 5)
 style cream_quick_button_text is button_text:
     size 15
-    color "#fffdf8"
-    hover_color "#efdcff"
-    outlines [(1, "#30243f", 0, 0)]
+    color "#fff7ed"
+    hover_color "#f1b8a8"
+    outlines [(1, "#2b222e", 0, 0)]
 style event_text is default:
-    color "#eef0f5"
+    color "#fff5ef"
 style event_button is button:
-    background Solid("#303a53")
-    hover_background Solid("#4c5676")
+    background Solid("#3e3141")
+    hover_background Solid("#62454e")
 style event_button_text is button_text:
-    color "#eef0f5"
-    hover_color "#fff3d9"
+    color "#fff5ef"
+    hover_color "#ffddc9"
 
 screen cream_stage():
     zorder -100
     if not main_menu and not event_cut_active:
         add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
+        $ portrait_align = 0.92 if renpy.get_screen("choice") else 0.82
         if cream_ria_visible():
-            add "ria ui bust" xalign 0.5 ypos 28
+            add "ria ui bust" xalign portrait_align ypos 28
         elif cream_yujin_visible():
-            add "yujin ui bust" xalign 0.5 ypos 50
+            add "yujin ui bust" xalign portrait_align ypos 50
 
 screen cream_heart(fraction):
     fixed:
@@ -57,147 +56,127 @@ screen cream_heart(fraction):
 
 screen story_header():
     zorder 10
-    if not main_menu and not event_cut_active and not cream_menu_open():
+    if not main_menu and not event_cut_active and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         frame:
-            xpos 28 ypos 22 xsize 395 padding (19, 14)
-            background cream_round("panel")
+            xpos 62 ypos 31 padding (12, 8)
+            background Solid("#261e2bbf")
             vbox:
-                spacing 6
-                text chapter size 19 color "#705684" xmaximum 355
-                text location size 14 color "#857885" xmaximum 355
+                spacing 4
+                text chapter size 16 color "#f4bfb0" xmaximum 380
+                text location size 14 color "#fff7ed" xmaximum 380
         $ focus = active_route if active_route in affinity else (cream_focus if cream_focus in affinity else "ria")
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
-            xpos 955 ypos 22 xsize 297 padding (17, 13)
-            background cream_round("panel")
+            xalign 0.948 ypos 31 padding (12, 8)
+            background Solid("#261e2bbf")
             vbox:
-                spacing 7
+                spacing 5
                 hbox:
-                    spacing 13
-                    text person_name size 17 color "#705684"
-                    text cream_relation_name(focus) size 14 color "#948494"
+                    spacing 10
+                    text person_name size 16 color "#fff7ed"
+                    text cream_relation_name(focus) size 14 color "#f4bfb0"
                 hbox:
-                    spacing 6
+                    spacing 4
                     for index in range(5):
                         use cream_heart((affinity[focus] - index * 20) / 20.0)
-                    text (str(affinity[focus]) + " / 100") size 14 color "#857885" yalign 0.5
+                    text (str(affinity[focus]) + " / 100") size 13 color "#fff7ed" yalign 0.5
         if cream_preview_active:
             use cream_preview_controls
 
 screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
+    add "gui/window/dialogue_scrim.png" xysize (1280, 720)
     window:
         id "window"
-        xpos 44 ypos 508 xsize 1192 ysize 154
-        padding (32, 27)
+        xpos 116 ypos 562 xsize 1048 ysize 112
+        padding (0, 0)
         background None
         foreground None
         text what:
             id "what"
             font "fonts/Pretendard-Regular.otf"
             size 26
-            color "#fffdf8"
-            outlines [(2, "#30243f", 0, 0), (1, "#1a142966", 0, 2)]
-            xmaximum 1128
+            color "#fff7ed"
+            outlines [(2, "#2b222e", 0, 0), (1, "#1a142966", 0, 2)]
+            xmaximum 1005
             line_spacing 6
             substitute use_substitution
     if who:
         text who:
             id "who"
-            xpos 76 ypos 481
-            font "fonts/GowunDodum-Regular.ttf"
-            size 23
+            xpos 116 ypos 526
+            font "fonts/Pretendard-Regular.otf"
+            size 21
             color cream_speaker_color(who)
             outlines [(2, cream_speaker_outline(who), 0, 0)]
-        add Solid("#ccb8e3c0") xpos 76 ypos 519 xsize 152 ysize 1
     if advance:
-        text "›" xpos 1196 ypos 637 size 28 color "#fffdf8" outlines [(2, "#30243f", 0, 0)]
+        text "▾" xpos 1150 ypos 641 size 23 color "#fff7ed" outlines [(2, "#2b222e", 0, 0)]
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
 
-screen office_choice_list(items):
+screen office_choice_list(items, width):
     vbox:
-        xsize 588 spacing 10
+        xsize width spacing 9
         for item in items:
             textbutton item.caption action item.action style "office_choice_button"
 
 screen choice(items):
     zorder 30
-    if len(items) <= 3:
-        if _history_list:
-            use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
-        if office_ui_long_choices(items):
-            viewport:
-                xalign 0.5 ypos 152 xsize 600 ysize 334
-                mousewheel True draggable True arrowkeys True
-                scrollbars "vertical"
-                vscrollbar_style "office_scrollbar"
-                use office_choice_list(items)
-        else:
-            vbox:
-                xalign 0.5 yanchor 1.0 ypos 486 xsize 600 spacing 10
-                for item in items:
-                    textbutton item.caption action item.action style "office_choice_button"
+    add Solid("#211b2935")
+    if _history_list:
+        use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
+    if len(items) > 3 or office_ui_long_choices(items):
+        viewport:
+            id "window_choices"
+            xalign 0.5 ypos 138 xsize 620 ysize 362
+            mousewheel True draggable True arrowkeys True
+            use office_choice_list(items, 620)
+        vbar value YScrollValue("window_choices") style "office_scrollbar" xpos 961 ypos 138 ysize 362
     else:
-        frame:
-            xpos 66 ypos 142 xsize 1148 ysize 520 padding (24, 22)
-            background cream_round("panel")
-            viewport:
-                mousewheel True draggable True arrowkeys True
-                scrollbars "vertical"
-                vscrollbar_style "office_scrollbar"
-                vbox:
-                    xsize 1076 spacing 10
-                    for item in items:
-                        textbutton item.caption action item.action style "office_choice_button"
+        vbox:
+            xalign 0.5 yanchor 1.0 ypos 468 xsize 620 spacing 9
+            for item in items:
+                textbutton item.caption action item.action style "office_choice_button"
 
 screen main_menu():
     tag menu
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
-    frame:
-        xpos 82 ypos 62 xsize 580 ysize 596 padding (40, 34)
-        background cream_round("panel")
-        vbox:
-            spacing 14
-            text "AFTER WORK, WITH YOU" size 15 color "#a38d9f" kerning 2
-            text "퇴근 후, 우리" size 58 color "#79608d"
-            text "초여름, 퇴근 이후의 이야기" size 23 color "#80737f"
-            null height 12
-            textbutton "처음부터 읽기" action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()] id "start_button" xsize 490
-            textbutton "이어 읽기" action ShowMenu("load") xsize 490
+    default show_preview_links = False
+    add "gui/window/title.webp" xysize (1280, 720)
+    add "gui/window/title_wash.svg" xysize (1280, 720)
+    add "gui/window/wordmark.svg" xpos 69 ypos 168 xysize (245, 150)
+    vbox:
+        xpos 68 ypos 362
+        spacing 2
+        textbutton "새 이야기" action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()] id "start_button" style "window_title_button" text_color "#864940"
+        textbutton "이어 읽기" action ShowMenu("load") style "window_title_button"
+        textbutton "우리의 기록" action ShowMenu("progression_hub") style "window_title_button"
+        textbutton "설정" action ShowMenu("preferences") style "window_title_button"
+        if not renpy.variant("web"):
+            textbutton "종료" action Quit(confirm=False) style "window_title_button"
+    textbutton "테스트 장면":
+        xpos 68 ypos 657
+        text_size 15
+        action ToggleScreenVariable("show_preview_links")
+    if show_preview_links:
+        frame:
+            xpos 205 ypos 640 xsize 1000 ysize 64 padding (12, 8)
+            background cream_round("panel")
             hbox:
-                spacing 14
-                textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" xsize 238 text_size 20
-                textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" xsize 238 text_size 20
-            hbox:
-                spacing 14
-                textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" xsize 238 text_size 20
-                textbutton "R08 메신저 확인" action Start("office_phone_preview") id "phone_preview_button" xsize 238 text_size 20
-            hbox:
-                spacing 14
-                textbutton "설정" action ShowMenu("preferences") xsize 238
-                if not renpy.variant("web"):
-                    textbutton "종료" action Quit(confirm=False) xsize 238
-            text "네 히로인 전체 대본 · 아트 준비 중" size 15 color "#9c8f98"
-    textbutton "우리의 기록 · 이야기 / CG / 결말":
-        xpos 730 ypos 475 xsize 430 text_size 20
-        action ShowMenu("progression_hub")
-    textbutton "지현 전체 대본 확인":
-        id "jihyun_preview_button"
-        xpos 730 ypos 545 xsize 430
-        action Start("jihyun_early_preview")
-    textbutton "서윤 전체 대본 확인":
-        id "seoyun_preview_button"
-        xpos 730 ypos 610 xsize 430
-        action Start("seoyun_preview")
+                spacing 4
+                textbutton "화면 배치" action Start("cream_preview_start") id "cream_preview_button" text_size 15 padding (12, 9)
+                textbutton "유진 루트" action Start("yujin_early_preview") id "yujin_preview_button" text_size 15 padding (12, 9)
+                textbutton "리아 R02" action Start("ria_r02_preview") id "ria_r02_preview_button" text_size 15 padding (12, 9)
+                textbutton "리아 R08" action Start("office_phone_preview") id "phone_preview_button" text_size 15 padding (12, 9)
+                textbutton "지현 루트" action Start("jihyun_early_preview") id "jihyun_preview_button" text_size 15 padding (12, 9)
+                textbutton "서윤 루트" action Start("seoyun_preview") id "seoyun_preview_button" text_size 15 padding (12, 9)
 
 screen quick_menu():
     zorder 100
     if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         frame:
-            xpos (565 if not event_cut_active else 750) ypos (678 if not event_cut_active else 18)
+            xpos (555 if not event_cut_active else 750) ypos (678 if not event_cut_active else 18)
             padding (7, 2)
-            background (None if not event_cut_active else cream_round("panel"))
+            background (None if not event_cut_active else Solid("#261e2bdf"))
             hbox:
                 spacing 3
                 textbutton "되돌리기" action Rollback() style "cream_quick_button"
@@ -213,11 +192,11 @@ screen quick_menu():
                 if not event_cut_active:
                     textbutton "메뉴" action MainMenu(confirm=True) style "cream_quick_button"
         if not event_cut_active:
-            text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 76 ypos 691 size 12 color "#fffdf8" outlines [(1, "#30243f", 0, 0)]
+            text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 116 ypos 691 size 12 color "#fff7ed" outlines [(1, "#2b222e", 0, 0)]
 
 screen cream_preview_controls():
     frame:
-        xpos 28 ypos 111 padding (9, 8)
+        xpos 62 ypos 108 padding (9, 8)
         background cream_round("panel")
         hbox:
             spacing 7
@@ -233,49 +212,60 @@ init python:
 
 screen preferences():
     tag menu
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
+    use window_menu_backdrop
     frame:
-        xalign 0.5 yalign 0.5 xsize 720 ysize 672 padding (42, 35)
+        xalign 0.5 yalign 0.5 xsize 720 ysize 650 padding (34, 26)
         background cream_round("panel")
-        viewport:
-            xsize 636 ysize 602
-            mousewheel True draggable True
-            scrollbars "vertical"
-            vbox:
-                spacing 16
-                text "설정" size 36 color "#79608d"
-                text "글자 표시 속도" size 23
-                textbutton "창모드" action Preference("display", "window") text_size 20
-                textbutton "전체화면" action Preference("display", "fullscreen") text_size 20
-                textbutton "읽은 대사만 스킵" action Preference("skip", "seen") text_size 20
-                bar value Preference("text speed") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
-                textbutton "글자 즉시 표시" action Preference("text speed", 0)
-                text "자동 진행 대기 시간" size 21
-                bar value Preference("auto-forward time") xsize 620 ysize 14 left_bar Solid("#9c80b2") right_bar Solid("#e9dfd5")
-                if config.has_music:
-                    text "음악" size 20
-                    bar value Preference("music volume") xsize 620
-                if config.has_sound:
-                    text "효과음" size 20
-                    bar value Preference("sound volume") xsize 620
-                if config.has_voice:
-                    text "음성" size 20
-                    bar value Preference("voice volume") xsize 620
-                textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
-                text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#796d82" line_spacing 4 xmaximum 620
-                textbutton "돌아가기" action Return()
+        fixed:
+            xsize 652 ysize 598
+            text "설정" size 36 color "#864940"
+            add Solid("#d8c5bd") ypos 55 xysize (650, 1)
+            viewport:
+                id "window_preferences"
+                ypos 76 xsize 630 ysize 445
+                mousewheel True draggable True arrowkeys True
+                vbox:
+                    xsize 612 spacing 13
+                    text "화면" size 20 color "#864940"
+                    hbox:
+                        spacing 10
+                        textbutton "창모드" action Preference("display", "window") text_size 18
+                        textbutton "전체화면" action Preference("display", "fullscreen") text_size 18
+                    text "글자 표시 속도" size 20 color "#864940"
+                    bar value Preference("text speed") xsize 612 ysize 14 left_bar Solid("#a3685d") right_bar Solid("#e9dbd5")
+                    hbox:
+                        spacing 10
+                        textbutton "글자 즉시 표시" action Preference("text speed", 0) text_size 18
+                        textbutton "읽은 대사만 스킵" action Preference("skip", "seen") text_size 18
+                    text "자동 진행 대기 시간" size 20 color "#864940"
+                    bar value Preference("auto-forward time") xsize 612 ysize 14 left_bar Solid("#a3685d") right_bar Solid("#e9dbd5")
+                    if config.has_music:
+                        text "음악" size 20 color "#864940"
+                        bar value Preference("music volume") xsize 612
+                    if config.has_sound:
+                        text "효과음" size 20 color "#864940"
+                        bar value Preference("sound volume") xsize 612
+                    if config.has_voice:
+                        text "음성" size 20 color "#864940"
+                        bar value Preference("voice volume") xsize 612
+                    textbutton ("메신저 입력 중 연출 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 18
+            vbar value YScrollValue("window_preferences") style "office_scrollbar" xpos 642 ypos 76 ysize 445
+            add Solid("#d8c5bd") ypos 534 xysize (650, 1)
+            hbox:
+                ypos 546 spacing 12
+                textbutton "돌아가기" action Return() text_size 20
                 if not main_menu:
-                    textbutton "처음 화면" action MainMenu(confirm=True)
+                    textbutton "처음 화면" action MainMenu(confirm=True) text_size 20
 
 screen file_slots(mode):
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
+    use window_menu_backdrop
     frame:
         xalign 0.5 yalign 0.5 xsize 990 padding (35, 28)
         background cream_round("panel")
         vbox:
             spacing 15
-            text ("저장" if mode == "save" else "불러오기") size 36 color "#79608d"
-            text "대사와 선택·기억을 함께 저장합니다." size 20 color "#9a8995"
+            text ("저장" if mode == "save" else "불러오기") size 36 color "#864940"
+            text "대사와 선택·기억을 함께 저장합니다." size 20 color "#6d5960"
             for slot in range(1, 5):
                 $ slot_name = str(slot)
                 textbutton ("슬롯 " + slot_name + "  ·  " + FileTime(slot_name, format="%m월 %d일 %H:%M", empty="비어 있음")):
@@ -292,34 +282,33 @@ screen load():
 
 screen history():
     tag menu
-    add "gui/cream/stage_day.svg" xysize (1280, 720)
+    use window_menu_backdrop
     frame:
         xpos 48 ypos 26 xsize 1184 ysize 665 padding (30, 22)
         background cream_round("panel")
         vbox:
             spacing 15
-            text "대화 기록" size 33 color "#79608d"
-            viewport:
-                id "history_viewport"
+            text "대화 기록" size 33 color "#864940"
+            fixed:
                 xsize 1124 ysize 500
-                mousewheel True draggable True
-                scrollbars "vertical"
-                vscrollbar_xsize 12
-                vscrollbar_base_bar Solid("#e9dfd5")
-                vscrollbar_thumb Solid("#ad93bd")
-                yinitial 1.0
-                vbox:
-                    xsize 1070 spacing 14
-                    for entry in _history_list:
-                        if entry.who:
-                            text entry.who size 19 color cream_speaker_color(entry.who, history=True)
-                        text entry.what size 24 substitute False
+                viewport:
+                    id "history_viewport"
+                    xsize 1100 ysize 500
+                    mousewheel True draggable True arrowkeys True
+                    yinitial 1.0
+                    vbox:
+                        xsize 1070 spacing 14
+                        for entry in _history_list:
+                            if entry.who:
+                                text entry.who size 19 color cream_speaker_color(entry.who, history=True)
+                            text entry.what size 24 substitute False
+                vbar value YScrollValue("history_viewport") style "office_scrollbar" xpos 1111 ysize 500
             textbutton "돌아가기" action Return()
 
 screen confirm(message, yes_action, no_action):
     modal True
     zorder 200
-    add Solid("#32243899")
+    add Solid("#241b28aa")
     frame:
         xalign 0.5 yalign 0.5 xsize 800 padding (35, 30)
         background cream_round("panel")
