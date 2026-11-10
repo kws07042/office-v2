@@ -160,18 +160,19 @@ label progression_replay_event:
 
 screen progression_hub():
     tag menu
+    style_prefix "window_record"
     default tab = "relations"
     default person = "ria"
     default category = "all"
     use window_menu_backdrop
     frame:
         xpos 32 ypos 24 xsize 1216 ysize 672 padding (24, 20)
-        background cream_round("panel")
+        style "window_record_panel"
         vbox:
             spacing 12
             hbox:
                 spacing 18
-                text "우리의 기록" size 32 color "#864940"
+                text "우리의 기록" size 32 color "#f4eee9"
                 textbutton "관계" action SetScreenVariable("tab", "relations")
                 textbutton "이야기" action SetScreenVariable("tab", "story")
                 textbutton "CG · 회상" action SetScreenVariable("tab", "gallery")
@@ -182,7 +183,7 @@ screen progression_hub():
                 for who in pm.HEROES:
                     textbutton phone_names(who) action SetScreenVariable("person", who) selected person == who
             if tab == "relations":
-                text (phone_names(person) + " · " + pm.STAT_NAMES[person]) size 27 color "#864940"
+                text (phone_names(person) + " · " + pm.STAT_NAMES[person]) size 27 color "#f4eee9"
                 if main_menu:
                     text "관계 상태는 게임을 진행하거나 저장을 불러온 뒤 확인할 수 있어요." size 22
                 else:
@@ -194,15 +195,15 @@ screen progression_hub():
                         text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
                     $ current_count, total_count, route_count = progression_route_progress(person)
                     text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18
-                    text "함께 나눈 말과 실제 행동을 바탕으로 한 관계 기록이에요." size 18 color "#65535b"
-                    text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color "#65535b"
+                    text "함께 나눈 말과 실제 행동을 바탕으로 한 관계 기록이에요." size 18 color "#c8bbc4"
+                    text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color "#c8bbc4"
                     if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
                         text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 1100
                 textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
                 textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
-                text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color "#65535b"
+                text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color "#c8bbc4"
             elif tab == "story":
-                text "공통 이야기 → 개인 루트 · 선택 이전 기록으로 돌아가기" size 23 color "#864940"
+                text "공통 이야기 → 개인 루트 · 선택 이전 기록으로 돌아가기" size 23 color "#f4eee9"
                 text "미발견 제목은 숨겨져요. 돌아가면 그 시점의 상태 전체를 불러와요." size 17
                 fixed:
                     xsize 1140 ysize 410
@@ -221,8 +222,8 @@ screen progression_hub():
                                         action FileLoad("flow-" + node["id"], confirm=True, slot=True)
                                         sensitive restorable
                                     if discovered and not restorable:
-                                        text "방문 기록만 있어요 · 이 버전의 재진입 저장 없음" size 14 color "#705b62"
-                    vbar value YScrollValue("window_story") style "office_scrollbar" xpos 1124 ysize 410
+                                        text "방문 기록만 있어요 · 이 버전의 재진입 저장 없음" size 14 color "#c8bbc4"
+                    vbar value YScrollValue("window_story") style "window_record_scroll" xpos 1124 ysize 410
             elif tab == "gallery":
                 hbox:
                     spacing 9
@@ -254,7 +255,7 @@ screen progression_hub():
                                         text (row["event_id"].upper() + " · " + row["outfit"]) size 14
                                     else:
                                         text ("아직 미감상" if progression_asset_ready(row) else "이미지 준비 중") size 18
-                    vbar value YScrollValue("window_gallery") style "office_scrollbar" xpos 1124 ysize 300
+                    vbar value YScrollValue("window_gallery") style "window_record_scroll" xpos 1124 ysize 300
                 hbox:
                     spacing 8
                     for key in persistent.progression_replays:
@@ -264,12 +265,12 @@ screen progression_hub():
                                 text_size 14
                                 action Replay("progression_replay_event", scope=progression_replay_scope(eid, outfit), locked=not progression_replay_ready(eid, outfit))
             else:
-                text "확인한 결말 · 기존 시나리오 기준" size 24 color "#864940"
+                text "확인한 결말 · 기존 시나리오 기준" size 24 color "#f4eee9"
                 text (str(len(progression_ending_ids())) + " / " + str(len(pm.ENDINGS))) size 20
                 for ending_id, info in pm.ENDINGS.items():
                     if info[0] in ("common", person):
                         text (info[1] if ending_id in progression_ending_ids() else "잠김 · 아직 확인하지 않은 결말") size 23
-                text "새 진엔딩이나 12개 결말을 추가한 상태가 아니에요." size 17 color "#65535b"
+                text "새 진엔딩이나 12개 결말을 추가한 상태가 아니에요." size 17 color "#c8bbc4"
 
 screen progression_cg_view(asset_id):
     modal True
@@ -286,10 +287,10 @@ screen progression_cg_view(asset_id):
 screen progression_shortcuts():
     if not main_menu and not event_cut_active and not cream_menu_open() and not cream_preview_active and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive") and not progression_in_replay():
         hbox:
-            xpos 62 ypos 108 spacing 8
-            textbutton "우리의 기록" action ShowMenu("progression_hub") text_size 16 padding (12, 7)
-            textbutton "퀵저장" action QuickSave() text_size 16 padding (12, 7)
-            textbutton "퀵로드" action QuickLoad(confirm=True) text_size 16 padding (12, 7)
+            xpos 62 ypos 53 spacing 8
+            textbutton "우리의 기록" action ShowMenu("progression_hub") style "cream_quick_button" text_size 16 padding (12, 7)
+            textbutton "퀵저장" action QuickSave() style "cream_quick_button" text_size 16 padding (12, 7)
+            textbutton "퀵로드" action QuickLoad(confirm=True) style "cream_quick_button" text_size 16 padding (12, 7)
 
 init python:
     config.overlay_screens.append("progression_shortcuts")

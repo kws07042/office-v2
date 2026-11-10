@@ -61,8 +61,7 @@ init -10 python:
             return False
         if any(word in renpy.store.location for word in ("메시지", "각자의", "연락")):
             return False
-        choice = renpy.get_screen("choice")
-        return not choice or len(choice.scope.get("items", [])) <= 3
+        return True
 
     def cream_yujin_visible():
         if not renpy.loadable("images/characters/yujin/ui_temp_v001.png"):
@@ -73,8 +72,7 @@ init -10 python:
             return False
         if any(word in renpy.store.location for word in ("메시지", "각자의", "연락")):
             return False
-        choice = renpy.get_screen("choice")
-        return not choice or len(choice.scope.get("items", [])) <= 3
+        return True
 
     def cream_relation_name(person="ria"):
         if person == "seoyun":

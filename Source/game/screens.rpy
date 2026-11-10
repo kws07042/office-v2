@@ -40,12 +40,12 @@ style event_button_text is button_text:
 screen cream_stage():
     zorder -100
     if not main_menu and not event_cut_active:
-        add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
-        $ portrait_align = 0.92 if renpy.get_screen("choice") else 0.82
+        if renpy.get_attributes("bg") in (None, ("plain",)):
+            add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
         if cream_ria_visible():
-            add "ria ui bust" xalign portrait_align ypos 28
+            add "ria ui bust" xalign 0.5 ypos 28
         elif cream_yujin_visible():
-            add "yujin ui bust" xalign portrait_align ypos 50
+            add "yujin ui bust" xalign 0.5 ypos 50
 
 screen cream_heart(fraction):
     fixed:
@@ -57,29 +57,22 @@ screen cream_heart(fraction):
 screen story_header():
     zorder 10
     if not main_menu and not event_cut_active and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
-        frame:
-            xpos 62 ypos 31 padding (12, 8)
-            background Solid("#261e2bbf")
-            vbox:
-                spacing 4
-                text chapter size 16 color "#f4bfb0" xmaximum 380
-                text location size 14 color "#fff7ed" xmaximum 380
+        add Solid("#18171de8") xysize (1280, 48)
+        hbox:
+            xpos 65 ypos 13 spacing 10
+            text location size 17 color "#eee5e1" xmaximum 320
+            if chapter:
+                text "·" size 17 color "#aaa1ab"
+                text chapter size 17 color "#c9c0c5" xmaximum 310
         $ focus = active_route if active_route in affinity else (cream_focus if cream_focus in affinity else "ria")
-        $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
-        frame:
-            xalign 0.948 ypos 31 padding (12, 8)
-            background Solid("#261e2bbf")
-            vbox:
-                spacing 5
-                hbox:
-                    spacing 10
-                    text person_name size 16 color cream_speaker_color(person_name)
-                    text cream_relation_name(focus) size 14 color "#f4bfb0"
-                hbox:
-                    spacing 4
-                    for index in range(5):
-                        use cream_heart((affinity[focus] - index * 20) / 20.0)
-                    text (str(affinity[focus]) + " / 100") size 13 color "#fff7ed" yalign 0.5
+        $ person_name = phone_names(focus)
+        hbox:
+            xalign 0.95 ypos 12 spacing 8
+            text person_name size 16 color cream_speaker_color(person_name) yalign 0.5
+            text cream_relation_name(focus) size 14 color "#d8ced3" yalign 0.5
+            for index in range(5):
+                use cream_heart((affinity[focus] - index * 20) / 20.0)
+            text (str(affinity[focus]) + " / 100") size 13 color "#eee5e1" yalign 0.5
         if cream_preview_active:
             use cream_preview_controls
 
@@ -87,29 +80,33 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
     add "gui/window/dialogue_scrim.png" xysize (1280, 720)
     window:
         id "window"
-        xpos 116 ypos 562 xsize 1048 ysize 112
+        xalign 0.5 yanchor 1.0 ypos 651
+        xsize 1020 yminimum 71
         padding (0, 0)
         background None
         foreground None
-        text what:
-            id "what"
-            font "fonts/Pretendard-Regular.otf"
-            size 26
-            color "#fff7ed"
-            outlines [(2, "#2b222e", 0, 0), (1, "#1a142966", 0, 2)]
-            xmaximum 1005
-            line_spacing 6
-            substitute use_substitution
-    if who:
-        text who:
-            id "who"
-            xpos 116 ypos 526
-            font "fonts/Pretendard-Regular.otf"
-            size 21
-            color cream_speaker_color(who)
-            outlines [(1, "#25202b", 0, 0)]
+        vbox:
+            xalign 0.5 spacing 7
+            if who:
+                text who:
+                    id "who"
+                    xalign 0.5
+                    size 21
+                    color cream_speaker_color(who)
+                    outlines [(1, "#24212a", 0, 0)]
+            text what:
+                id "what"
+                xalign 0.5
+                text_align 0.5
+                font "fonts/Pretendard-Regular.otf"
+                size 27
+                color "#fff5ed"
+                outlines [(1, "#211e25", 0, 0), (1, "#18171db0", 0, 2)]
+                xmaximum 980
+                line_spacing 5
+                substitute use_substitution
     if advance:
-        text "▾" xpos 1150 ypos 641 size 23 color "#fff7ed" outlines [(2, "#2b222e", 0, 0)]
+        text "›" xpos 1152 ypos 613 size 23 color "#e3d9d4"
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
@@ -122,32 +119,32 @@ screen office_choice_list(items, width):
 
 screen choice(items):
     zorder 30
-    add Solid("#211b2935")
+    add Solid("#18171d40")
     if _history_list:
         use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
     if len(items) > 3 or office_ui_long_choices(items):
         viewport:
             id "window_choices"
-            xalign 0.5 ypos 138 xsize 620 ysize 362
+            xalign 0.5 ypos 194 xsize 570 ysize 325
             mousewheel True draggable True arrowkeys True
-            use office_choice_list(items, 620)
-        vbar value YScrollValue("window_choices") style "office_scrollbar" xpos 961 ypos 138 ysize 362
+            use office_choice_list(items, 570)
+        vbar value YScrollValue("window_choices") style "office_scrollbar" xpos 938 ypos 194 ysize 325
     else:
         vbox:
-            xalign 0.5 yanchor 1.0 ypos 468 xsize 620 spacing 9
+            xalign 0.5 yanchor 1.0 ypos 510 xsize 570 spacing 8
             for item in items:
                 textbutton item.caption action item.action style "office_choice_button"
 
 screen main_menu():
     tag menu
     default show_preview_links = False
-    add "gui/window/title.webp" xysize (1280, 720)
-    add "gui/window/title_wash.svg" xysize (1280, 720)
-    add "gui/window/wordmark.svg" xpos 69 ypos 168 xysize (245, 150)
+    add window_title_art xysize (1280, 720)
+    add "gui/window/film_title_scrim.png" xysize (1280, 720)
+    add window_title_wordmark xpos 71 yanchor 1.0 ypos 613 xysize (293, 158) fit "contain"
     vbox:
-        xpos 68 ypos 362
+        xalign 0.95 yanchor 1.0 ypos 618
         spacing 2
-        textbutton "새 이야기" action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()] id "start_button" style "window_title_button" text_color "#864940"
+        textbutton "새 이야기" action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()] id "start_button" style "window_title_button" text_color "#f0d6b6"
         textbutton "이어 읽기" action ShowMenu("load") style "window_title_button"
         textbutton "우리의 기록" action ShowMenu("progression_hub") style "window_title_button"
         textbutton "설정" action ShowMenu("preferences") style "window_title_button"
@@ -155,7 +152,7 @@ screen main_menu():
             textbutton "종료" action Quit(confirm=False) style "window_title_button"
     textbutton "테스트 장면":
         xpos 68 ypos 657
-        text_size 15
+        style "window_setting_nav" text_size 15
         action ToggleScreenVariable("show_preview_links")
     if show_preview_links:
         frame:
@@ -174,9 +171,9 @@ screen quick_menu():
     zorder 100
     if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         frame:
-            xpos (555 if not event_cut_active else 750) ypos (678 if not event_cut_active else 18)
+            xalign (0.5 if not event_cut_active else 0.96) ypos (675 if not event_cut_active else 18)
             padding (7, 2)
-            background (None if not event_cut_active else Solid("#261e2bdf"))
+            background (None if not event_cut_active else Solid("#1d1b23df"))
             hbox:
                 spacing 3
                 textbutton "되돌리기" action Rollback() style "cream_quick_button"
@@ -191,12 +188,10 @@ screen quick_menu():
                 textbutton "설정" action ShowMenu("preferences") style "cream_quick_button"
                 if not event_cut_active:
                     textbutton "메뉴" action MainMenu(confirm=True) style "cream_quick_button"
-        if not event_cut_active:
-            text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 116 ypos 691 size 12 color "#fff7ed" outlines [(1, "#2b222e", 0, 0)]
 
 screen cream_preview_controls():
     frame:
-        xpos 62 ypos 108 padding (9, 8)
+        xpos 62 ypos 63 padding (9, 8)
         background cream_round("panel")
         hbox:
             spacing 7
@@ -212,95 +207,96 @@ init python:
 
 screen preferences():
     tag menu
-    add "gui/window/title.webp" xpos 34 xysize (1280, 720)
-    add Solid("#1719223d")
-    add Solid("#20212a") xysize (612, 720)
-    add Solid("#82717a") xpos 611 xysize (1, 720)
+    default section = "reading"
+    add window_title_art xysize (1280, 720)
+    add Solid("#18171d55")
+    add "gui/window/film_title_scrim.png" xysize (1280, 720)
+    add Solid("#1e1c23") ypos 517 xysize (1280, 203)
+    add Solid("#625d67") ypos 517 xysize (1280, 1)
 
-    text "설정" xpos 76 ypos 78 size 48 color "#f4eee9"
-    add Solid("#47434d") xpos 76 ypos 158 xysize (500, 1)
+    text "설정" xpos 72 ypos 72 size 44 color "#fff5ed" outlines [(2, "#18171d", 0, 0)]
+    vbox:
+        xpos 67 ypos 141 spacing 5
+        textbutton "화면·대사" action SetScreenVariable("section", "reading") style "window_setting_button" selected section == "reading" id "settings_reading"
+        textbutton "메신저" action SetScreenVariable("section", "messenger") style "window_setting_button" selected section == "messenger" id "settings_messenger"
+        if config.has_music or config.has_sound or config.has_voice:
+            textbutton "소리" action SetScreenVariable("section", "sound") style "window_setting_button" selected section == "sound" id "settings_audio"
 
-    viewport:
-        id "window_preferences"
-        xpos 76 ypos 183 xsize 504 ysize 414
-        mousewheel True draggable True arrowkeys True
-        vbox:
-            xsize 500 spacing 22
-            vbox:
-                spacing 8
-                text "화면" style "window_setting_section"
-                fixed:
-                    xysize (500, 40)
-                    text "표시 방식" style "window_setting_label" yalign 0.5
-                    hbox:
-                        xalign 1.0 yalign 0.5 spacing 6
-                        textbutton "창 모드" action Preference("display", "window") style "window_setting_button" id "settings_window"
-                        textbutton "전체 화면" action Preference("display", "fullscreen") style "window_setting_button" id "settings_fullscreen"
-            vbox:
-                spacing 8
-                text "대사" style "window_setting_section"
-                use window_setting_slider("글자 표시 속도", Preference("text speed"))
-                use window_setting_slider("자동 진행 간격", Preference("auto-forward time"))
-                fixed:
-                    xysize (500, 40)
-                    text "글자 표시" style "window_setting_label" yalign 0.5
-                    textbutton "즉시 표시" action Preference("text speed", 0) style "window_setting_button" xalign 1.0 yalign 0.5 id "settings_instant"
-                fixed:
-                    xysize (500, 40)
-                    text "스킵 범위" style "window_setting_label" yalign 0.5
-                    textbutton "읽은 대사만" action Preference("skip", "seen") style "window_setting_button" xalign 1.0 yalign 0.5 id "settings_skip_seen"
-            vbox:
-                spacing 8
-                text "메신저" style "window_setting_section"
-                fixed:
-                    xysize (500, 40)
-                    text "입력 중 표시" style "window_setting_label" yalign 0.5
-                    hbox:
-                        xalign 1.0 yalign 0.5 spacing 6
-                        textbutton "켜기" action SetField(persistent, "phone_typing_enabled", True) style "window_setting_button" id "settings_typing_on"
-                        textbutton "끄기" action SetField(persistent, "phone_typing_enabled", False) style "window_setting_button" id "settings_typing_off"
-            if config.has_music or config.has_sound or config.has_voice:
-                vbox:
-                    spacing 8
-                    text "소리" style "window_setting_section"
-                    if config.has_music:
-                        use window_setting_slider("음악", Preference("music volume"))
-                    if config.has_sound:
-                        use window_setting_slider("효과음", Preference("sound volume"))
-                    if config.has_voice:
-                        use window_setting_slider("음성", Preference("voice volume"))
-    vbar value YScrollValue("window_preferences") style "window_settings_scroll" xpos 589 ypos 183 ysize 414
-
-    add Solid("#47434d") xpos 76 ypos 611 xysize (500, 1)
     hbox:
-        xpos 76 ypos 631 spacing 14
+        xpos 64 ypos 474 spacing 14
         textbutton "‹  돌아가기" action Return() style "window_setting_nav" id "settings_back"
         if not main_menu:
             textbutton "처음 화면" action MainMenu(confirm=True) style "window_setting_nav"
 
+    text ({"reading":"화면·대사", "messenger":"메신저", "sound":"소리"}[section]) xpos 72 ypos 545 style "window_setting_section"
+    hbox:
+        xpos 72 ypos 584 spacing 24
+        if section == "reading":
+            vbox:
+                xsize 235 spacing 11
+                text "표시 방식" style "window_setting_label"
+                hbox:
+                    spacing 6
+                    textbutton "창 모드" action Preference("display", "window") style "window_setting_button" id "settings_window"
+                    textbutton "전체 화면" action Preference("display", "fullscreen") style "window_setting_button" id "settings_fullscreen"
+            use window_setting_divider
+            vbox:
+                xsize 245 spacing 7
+                text "글자 표시 속도" style "window_setting_label"
+                bar value Preference("text speed") style "window_setting_bar"
+                textbutton "즉시 표시" action Preference("text speed", 0) style "window_setting_button" id "settings_instant"
+            use window_setting_divider
+            vbox:
+                xsize 245 spacing 11
+                text "자동 진행 간격" style "window_setting_label"
+                bar value Preference("auto-forward time") style "window_setting_bar"
+            use window_setting_divider
+            vbox:
+                spacing 11
+                text "스킵 범위" style "window_setting_label"
+                textbutton "읽은 대사만" action Preference("skip", "seen") style "window_setting_button" id "settings_skip_seen"
+        elif section == "messenger":
+            vbox:
+                spacing 11
+                text "입력 중 표시" style "window_setting_label"
+                hbox:
+                    spacing 6
+                    textbutton "켜기" action SetField(persistent, "phone_typing_enabled", True) style "window_setting_button" id "settings_typing_on"
+                    textbutton "끄기" action SetField(persistent, "phone_typing_enabled", False) style "window_setting_button" id "settings_typing_off"
+        else:
+            if config.has_music:
+                use window_setting_slider("음악", Preference("music volume"))
+            if config.has_sound:
+                use window_setting_slider("효과음", Preference("sound volume"))
+            if config.has_voice:
+                use window_setting_slider("음성", Preference("voice volume"))
+
+screen window_setting_divider():
+    add Solid("#4d4852") xysize (1, 75)
+
 screen window_setting_slider(label, setting):
-    fixed:
-        xysize (500, 34)
-        text label style "window_setting_label" yalign 0.5
-        bar value setting style "window_setting_bar" xalign 1.0 yalign 0.5
+    vbox:
+        xsize 245 spacing 11
+        text label style "window_setting_label"
+        bar value setting style "window_setting_bar"
 
 screen file_slots(mode):
+    style_prefix "window_record"
     use window_menu_backdrop
+    text ("저장" if mode == "save" else "불러오기") xpos 73 ypos 129 size 45 color "#f4eee9"
+    textbutton "돌아가기" xpos 67 ypos 598 action Return()
     frame:
-        xalign 0.5 yalign 0.5 xsize 990 padding (35, 28)
+        xpos 735 ypos 132 xsize 470 padding (24, 20)
         style "window_record_panel"
         vbox:
-            spacing 15
-            text ("저장" if mode == "save" else "불러오기") size 36 color "#403640"
-            add Solid("#d6cbc8") xysize (920, 1)
+            spacing 5
             for slot in range(1, 5):
                 $ slot_name = str(slot)
+                add Solid("#5b535e") xysize (422, 1)
                 textbutton ("슬롯 " + slot_name + "  ·  " + FileTime(slot_name, format="%m월 %d일 %H:%M", empty="비어 있음")):
-                    xsize 920
-                    style "window_record_button"
+                    xsize 422
                     id ("window_slot_" + slot_name)
                     action (FileSave(slot_name, confirm=True) if mode == "save" else FileLoad(slot_name, confirm=True))
-            textbutton "돌아가기" action Return() style "window_record_button"
 
 screen save():
     tag menu
@@ -311,13 +307,14 @@ screen load():
 
 screen history():
     tag menu
+    style_prefix "window_record"
     use window_menu_backdrop
     frame:
         xpos 48 ypos 26 xsize 1184 ysize 665 padding (30, 22)
         style "window_record_panel"
         vbox:
             spacing 15
-            text "대화 기록" size 33 color "#403640"
+            text "대화 기록" size 33 color "#f4eee9"
             fixed:
                 xsize 1124 ysize 500
                 viewport:
@@ -329,15 +326,16 @@ screen history():
                         xsize 1070 spacing 14
                         for entry in _history_list:
                             if entry.who:
-                                text entry.who size 19 color cream_speaker_color(entry.who, history=True)
+                                text entry.who size 19 color cream_speaker_color(entry.who)
                             text entry.what size 24 substitute False
-                vbar value YScrollValue("history_viewport") style "office_scrollbar" xpos 1111 ysize 500
+                vbar value YScrollValue("history_viewport") style "window_record_scroll" xpos 1111 ysize 500
             textbutton "돌아가기" action Return()
 
 screen confirm(message, yes_action, no_action):
+    style_prefix "window_record"
     modal True
     zorder 200
-    add Solid("#241b28aa")
+    add Solid("#18171daa")
     frame:
         xalign 0.5 yalign 0.5 xsize 800 padding (35, 30)
         style "window_record_panel"

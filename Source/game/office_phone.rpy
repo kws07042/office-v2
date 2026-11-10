@@ -97,11 +97,11 @@ screen office_phone_contents(replies, waiting, archive):
     $ choosing_reply = bool(replies and selected == phone_active_contact and not archive and not waiting)
     $ message_height = 298 if choosing_reply else 356
     $ contact_rows = phone_threads.get(selected, [])
-    add Solid("#211928a3")
+    add Solid("#18171da6")
 
     frame:
-        xpos 450 ypos 34 xsize 380 ysize 652 padding (8, 8)
-        background CreamRoundedPanel("#27242f", "#534657", radius=29)
+        xalign 0.5 yalign 0.5 xsize 380 ysize 652 padding (8, 8)
+        background CreamRoundedPanel("#25232a", "#55505a", radius=29)
         frame:
             xsize 364 ysize 636 padding (0, 0)
             background CreamRoundedPanel("#f6f7fa", "#f6f7fa", radius=22)
