@@ -36,23 +36,29 @@
 | `Jua-Regular.ttf` | google/fonts `ofl/jua` (main, 2026-11-12 받음) | `769677aef240bfc3b9965f2b50748075bff885e6c6992fc591a3fb268279f898` | SIL OFL 1.1 (`Jua-OFL.txt`) |
 | `PlayfairDisplay-Italic.ttf` | google/fonts `ofl/playfairdisplay` 의 `PlayfairDisplay-Italic[wght].ttf` (main, 2026-11-12 받음) | `a5e26dc5e2e77fb2803a0bf02fd4f81ee136ec8dea863ccdb0c59a263b21378b` | SIL OFL 1.1 (`PlayfairDisplay-OFL.txt`) |
 
-## 확인한 것
+## 엔진에서 확인한 것 (2026-11-12)
 
-- `silk_ui.rpy`, `cream_ui.rpy`의 Python 블록 구문 검사 통과.
-- 그리기 함수를 Python으로 직접 실행해 만든 SVG를 브라우저에서 조합해 대화·선택지·처음 화면의 모양을 눈으로 확인.
-- 장 제목 103개와 고정 라벨이 Jua 수록 글자 안에 있는지 확인.
-- 장 제목 분해와 선택지 꼬리표 분해 함수의 대표 입력 확인.
+공식 배포 SDK가 아니라 **Ren'Py 공식 GitHub 저장소의 `8.5.3.26051504` 태그 소스를 리눅스에서 직접 빌드한 엔진**으로 실행했다(엔진이 스스로 표시한 버전은 `8.6.0.26051501+unofficial`). 저장소가 고정한 SDK 8.5.3 해시로 검증한 실행이 아니므로 배포 전 검증을 대신하지 못한다. 실행 조건은 `xvfb`, `RENPY_RENDERER=sw`, 작업마다 새 저장 폴더.
 
-## 확인하지 못한 것
+| 검사 | 결과 |
+|---|---|
+| `lint` | 통과 (오류 없음) |
+| `silk_ui_checks` (신규) | 7건 통과, 단언 12개 통과. 처음 화면·긴 대사·친밀한 선택지·화자 다섯 명 이름표·지문·저장·설정·대화 기록 캡처 |
+| `common_romance` | 21건 통과, 단언 344개 통과 |
+| `work_mini_checks` | 28건 통과, 단언 478개 통과 |
+| `cream_ui_checks` | 8건 중 1건 통과, 5건 실패, 2건 건너뜀. 실패 다섯 건은 모두 `cream_ria_visible() is True` 단언이다. 리아 입상 그림이 2026-11-06에 삭제되어 생긴 기존 실패이며 이번 UI 변경과 무관하다 |
 
-이 작업 환경에는 Ren'Py SDK가 없고 받아 올 수도 없어서 **엔진에서는 한 번도 실행하지 않았다.** 아래는 전부 미확인이다.
+실행 중에 고친 것:
 
-- [ ] 공식 SDK lint와 정상 시작.
-- [ ] Ren'Py의 SVG 처리기(nanosvg)에서 도형·그라데이션·회전이 브라우저와 같게 그려지는지.
-- [ ] 화면 언어 문법, 속성 충돌 검사(`config.check_conflicting_properties`) 통과 여부.
-- [ ] 제목 기울임의 실제 위치, 이름표·배지 글자의 세로 정렬, 긴 한국어 줄바꿈.
-- [ ] 키보드 초점, 선택지 4개 이상 목록, 긴 선택지 스크롤.
-- [ ] 기존 자동 검사 묶음 전체. 선택지를 글자로 찾아 누르는 검사가 `alt`로 계속 맞는지 포함.
-- [ ] 저장·불러오기·롤백 뒤 화면 상태, 메신저·기록 화면과의 겹침.
+- `vscrollbar_style`은 viewport에서 쓸 수 없는 속성이라 게임이 아예 읽히지 않았다. `screens.rpy`(3곳)와 `office_phone.rpy`(2곳)에서 `vscrollbar_xsize`·`vscrollbar_base_bar`·`vscrollbar_thumb`·`vscrollbar_unscrollable`로 바꿨다. 이 오류는 이번 작업 이전의 main에도 있었다.
+- 긴 대사가 다음 표시와 겹쳐서 글줄 폭을 줄이고 다음 표시를 오른쪽 아래로 옮겼다.
+- 한글이 낱말 중간에서 끊겨서 대사·선택지·대화 기록에 `language "korean-with-spaces"`를 적용했다.
 
-병합 전에 공식 SDK로 위 항목을 확인해야 한다.
+## 아직 확인하지 못한 것
+
+- [ ] 저장소가 고정한 공식 SDK 8.5.3으로의 lint·검사 재실행과 Windows 빌드.
+- [ ] 나머지 자동 검사 묶음(`integrated_story_checks`, `player_flow_checks` 등).
+- [ ] 선택지 4개 이상 목록, 긴 선택지 스크롤, 키보드 초점 이동의 실제 모습.
+- [ ] 이벤트 컷 화면에서의 빠른 메뉴, 메신저·우리의 기록 화면과의 조화.
+- [ ] 창 크기를 키웠을 때 SVG 면의 선명도.
+- [ ] 실제 배경·입상 그림 위에서의 가독성.

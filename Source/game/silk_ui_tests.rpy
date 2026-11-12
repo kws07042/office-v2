@@ -74,17 +74,24 @@ testsuite silk_ui_checks:
         pause 0.2
         screenshot "silk-narration.png"
 
-    testcase menus_look:
+    testcase save_look:
         run Start("test_cream_long")
         pause 0.3
         click "저장" until screen "save"
         pause 0.2
         screenshot "silk-save.png"
         click "돌아가기" until not screen "save"
+
+    testcase preferences_look:
+        run Start("test_cream_long")
+        pause 0.3
         click "설정" until screen "preferences"
         pause 0.2
         screenshot "silk-preferences.png"
-        click "돌아가기" until not screen "preferences"
+
+    testcase history_look:
+        run Start("test_cream_long")
+        pause 0.3
         click "기록" until screen "history"
         pause 0.2
         screenshot "silk-history.png"

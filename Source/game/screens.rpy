@@ -117,8 +117,9 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
             size 25
             color "#3B0B22"
             outlines []
-            xmaximum 1088
+            xmaximum 1060
             line_spacing 8
+            language "korean-with-spaces"
             substitute use_substitution
     if who:
         frame:
@@ -137,7 +138,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 if silk_english(who):
                     text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#FFFDFB" outlines [] yalign 0.7
     if advance:
-        add silk("next", "#3B0B22", size=(14, 9)) xpos 1170 ypos 572
+        add silk("next", "#3B0B22", size=(14, 9)) xpos 1170 ypos 652
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
@@ -150,7 +151,7 @@ screen silk_choice_item(item):
         alt item.caption
         hbox:
             spacing 12
-            text choice_text style "silk_choice_text" xmaximum (366 if choice_chip else 530) min_width (366 if choice_chip else 0)
+            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else 530) min_width (366 if choice_chip else 0)
             if choice_chip:
                 frame:
                     yalign 0.5
@@ -174,7 +175,7 @@ screen choice(items):
                 xalign 0.5 ypos 122 xsize 624 ysize 334
                 mousewheel True draggable True arrowkeys True
                 scrollbars "vertical"
-                vscrollbar_style "office_scrollbar"
+                vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
                 use office_choice_list(items)
         else:
             vbox:
@@ -194,7 +195,7 @@ screen choice(items):
             viewport:
                 mousewheel True draggable True arrowkeys True
                 scrollbars "vertical"
-                vscrollbar_style "office_scrollbar"
+                vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
                 vbox:
                     xsize 1070 spacing 9
                     for item in items:
@@ -346,7 +347,7 @@ screen preferences():
             xsize 636 ysize 602
             mousewheel True draggable True
             scrollbars "vertical"
-            vscrollbar_style "office_scrollbar"
+            vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
             vbox:
                 spacing 16
                 use silk_menu_title("설정", "Config")
@@ -419,7 +420,7 @@ screen history():
                     for entry in _history_list:
                         if entry.who:
                             text entry.who size 19 color cream_speaker_color(entry.who, history=True)
-                        text entry.what size 24 substitute False
+                        text entry.what size 24 substitute False language "korean-with-spaces"
             textbutton "돌아가기" action Return()
 
 screen confirm(message, yes_action, no_action):

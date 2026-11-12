@@ -144,7 +144,7 @@ screen office_phone_contents(replies, waiting, archive):
         xpos 348 ypos 211 xsize 872 ysize (278 if choosing_reply else (386 if archive else 352))
         mousewheel True draggable True
         scrollbars "vertical"
-        vscrollbar_style "office_scrollbar"
+        vscrollbar_xsize 6 vscrollbar_base_bar Solid("#eae3ee") vscrollbar_thumb Solid("#bca4ca") vscrollbar_unscrollable "hide"
         yinitial 1.0
         vbox:
             xsize 844 spacing 15
@@ -204,7 +204,7 @@ screen office_phone_contents(replies, waiting, archive):
             xpos 348 ypos 544 xsize 872 ysize 150
             mousewheel True draggable True arrowkeys True
             scrollbars "vertical"
-            vscrollbar_style "office_scrollbar"
+            vscrollbar_xsize 6 vscrollbar_base_bar Solid("#eae3ee") vscrollbar_thumb Solid("#bca4ca") vscrollbar_unscrollable "hide"
             vbox:
                 xsize 846 spacing 7
                 for value, caption in replies:
