@@ -1,0 +1,71 @@
+name: Silk UI validation
+on:
+  push:
+    branches: [claude/silk-ui]
+    paths:
+      - Source/game/**
+      - .github/workflows/silk-ui.yml
+permissions:
+  contents: read
+jobs:
+  lint-and-screenshots:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Fetch and verify official SDK
+        run: |
+          curl --fail --location --retry 2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 -o "$RUNNER_TEMP/renpy-sdk.tar.bz2"
+          echo "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45  $RUNNER_TEMP/renpy-sdk.tar.bz2" | sha256sum --check
+          tar -xjf "$RUNNER_TEMP/renpy-sdk.tar.bz2" -C "$RUNNER_TEMP"
+          echo "SDK=$RUNNER_TEMP/renpy-8.5.3-sdk" >> "$GITHUB_ENV"
+          echo "VALIDATION=$RUNNER_TEMP/silk-ui-validation" >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/silk-ui-validation"
+      - name: Lint
+        id: lint
+        env:
+          SDL_AUDIODRIVER: dummy
+          RENPY_RENDERER: sw
+        run: |
+          set +e
+          xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" lint --error-code > "$VALIDATION/lint.log" 2>&1
+          status=$?
+          set -e
+          cat "$VALIDATION/lint.log"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Silk UI screens and screenshots
+        id: screens
+        env:
+          SDL_AUDIODRIVER: dummy
+          RENPY_RENDERER: sw
+        run: |
+          set +e
+          xvfb-run -a "$SDK/renpy.sh" "$GITHUB_WORKSPACE/Source" test silk_ui_checks --savedir "$RUNNER_TEMP/saves-silk" --overwrite-screenshots --report-detailed > "$VALIDATION/silk_ui_checks.stdout.log" 2>&1
+          status=$?
+          set -e
+          cat "$VALIDATION/silk_ui_checks.stdout.log"
+          if [ -f Source/log.txt ]; then cp Source/log.txt "$VALIDATION/silk_ui_checks.log"; tail -n 40 "$VALIDATION/silk_ui_checks.log"; fi
+          mkdir -p "$VALIDATION/screenshots"
+          find "$GITHUB_WORKSPACE" "$RUNNER_TEMP/saves-silk" -name "silk-*.png" -exec cp {} "$VALIDATION/screenshots/" \; 2>/dev/null || true
+          ls -la "$VALIDATION/screenshots" || true
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Keep validation records
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: silk-ui-validation
+          path: |
+            ${{ runner.temp }}/silk-ui-validation/
+            Source/traceback.txt
+            Source/errors.txt
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Report result
+        env:
+          LINT_STATUS: ${{ steps.lint.outputs.status }}
+          SCREENS_STATUS: ${{ steps.screens.outputs.status }}
+        run: |
+          echo "lint=$LINT_STATUS screens=$SCREENS_STATUS"
+          if [ "$LINT_STATUS" != "0" ] || [ "$SCREENS_STATUS" != "0" ]; then exit 1; fi
