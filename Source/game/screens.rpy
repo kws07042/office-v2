@@ -359,7 +359,7 @@ screen preferences():
         xalign 0.5 yalign 0.5 xsize 724 ysize 677 padding (42, 35, 46, 40)
         background silk_surface("panel")
         viewport:
-            xsize 636 ysize 602
+            xsize 636 ysize 540
             mousewheel True draggable True
             scrollbars "vertical"
             vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
@@ -386,9 +386,12 @@ screen preferences():
                 textbutton ("화면 움직임 효과: 켜짐" if silk_motion_on() else "화면 움직임 효과: 꺼짐") action ToggleField(persistent, "silk_motion", True, False) text_size 21
                 textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
                 text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#6E4553" line_spacing 4 xmaximum 600
-                textbutton "돌아가기" action Return()
-                if not main_menu:
-                    textbutton "처음 화면" action MainMenu(confirm=True)
+        # 스크롤과 상관없이 항상 보이는 하단 버튼
+        hbox:
+            yalign 1.0 spacing 10
+            textbutton "돌아가기" action Return() style "silk_small_button"
+            if not main_menu:
+                textbutton "처음 화면" action MainMenu(confirm=True) style "silk_small_button"
 
 screen file_slots(mode):
     add "silk ground"
