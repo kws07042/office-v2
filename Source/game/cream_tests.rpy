@@ -112,10 +112,12 @@ testsuite cream_ui_checks:
     testcase transparent_text:
         run Start("test_cream_long")
         pause 0.2
-        # Evening-threshold UI (PR #8): a solid dark panel with warm text replaced the transparent outlined text.
-        assert eval renpy.get_widget("say", "window").style.background is not None
+        # Silk UI: the paper panel is drawn separately, so the say window itself stays transparent.
+        assert eval renpy.get_widget("say", "window").style.background is None
         assert eval renpy.get_widget("say", "window").style.foreground is None
-        assert eval renpy.get_widget("say", "what").style.color == Color("#fff5ed")
+        assert eval renpy.get_widget("say", "what").style.color == Color("#3B0B22")
+        assert eval len(renpy.get_widget("say", "what").style.outlines) == 0
+        assert eval renpy.get_widget("say", "who").style.color == Color("#FFFDFB")
         screenshot "clear-long-outlined-dialogue.png"
 
     testcase scaled_r14_choices:
