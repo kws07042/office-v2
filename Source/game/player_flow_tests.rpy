@@ -16,20 +16,6 @@ label test_flow_yujin:
             pass
     return
 
-label test_flow_seoyun:
-    scene bg plain
-    $ active_route = "seoyun"
-    $ dating = True
-    $ completed = []
-    $ affinity = {n: 17 for n in ("ria", "jihyun", "yujin", "seoyun")}
-    $ memory = {"seoyun_conflict": "resolved", "seoyun_marriage_state": "married_cohabiting", "seoyun_marriage_revealed": True, "seoyun_trust_status": "damaged_not_restored"}
-    $ _history_list = []
-    call seoyun_r15
-    menu:
-        "흐름 검사 종료":
-            pass
-    return
-
 label test_flow_yujin_sketch:
     scene bg plain
     $ active_route = "yujin"
@@ -114,34 +100,6 @@ testsuite player_flow_checks:
         assert eval memory["yujin_r14_readiness"] == "ready"
         assert eval "버스 한 대는 놓치셔야겠어요" not in polish_history()
         assert eval completed.count("yujin_R14") == 1 and affinity["yujin"] == 25
-
-    testcase disclosure_stays_true_across_all_private_paces:
-        parameter case = list(range(3))
-        $ flow_case = case
-        run Start("test_flow_seoyun")
-        advance until screen "choice"
-        assert eval "오는 길엔 몇 번 돌아갈까" in polish_history()
-        assert eval "한 입을 덜었다" in polish_history()
-        assert eval "한 입 바꿀래" in polish_history()
-        assert eval "교환 조건이 생겼네" not in polish_history()
-        click expression yujin_test_choice(case)
-        advance until screen "choice"
-        click expression yujin_test_choice(case)
-        advance until screen "choice"
-        assert eval memory["seoyun_r15_outfit"] == ("cosplay" if case == 1 else "home")
-        assert eval "오늘 저녁 내내 불편하기만 했던 건 아니에요" in polish_history()
-        if eval case == 0:
-            screenshot "flow-seoyun-still-uncertain.png"
-        click expression yujin_test_choice(case)
-        if eval case == 0:
-            advance until screen "event_cut"
-            assert eval renpy.get_screen("event_cut").scope["event_id"] == "seoyun_r15"
-            click id "cut_skip" until not screen "event_cut"
-        advance until screen "choice"
-        assert eval dating and memory["seoyun_marriage_state"] == "married_cohabiting"
-        assert eval memory["seoyun_r15_pace"] == ["shared", "deferred", "talk"][case]
-        assert eval completed.count("seoyun_R15") == 1
-        assert eval memory["seoyun_marriage_revealed"] and memory["seoyun_trust_status"] == "damaged_not_restored"
 
     testcase optional_sketch_actions_keep_their_own_memory:
         parameter case = list(range(3))

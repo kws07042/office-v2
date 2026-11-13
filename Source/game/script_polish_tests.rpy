@@ -29,7 +29,7 @@ label test_polish_private:
     scene bg plain
     $ active_route = polish_fixture["route"]
     $ dating = True
-    $ memory = {"jihyun_private_name": "지현 누나", "seoyun_marriage_state": "married_cohabiting"}
+    $ memory = {"jihyun_private_name": "지현 누나", "seoyun_family_state": "divorced"}
     $ completed = ["polish_prior"]
     $ affinity = {"ria": 17, "jihyun": 17, "yujin": 17, "seoyun": 17}
     $ polish_slot = polish_fixture["slot"]
@@ -140,10 +140,10 @@ testsuite script_polish_checks:
         assert eval memory[active_route + "_" + polish_fixture["slot"] + "_pace"] == ("shared" if case % 2 == 0 else "talk")
         assert eval dating is True and completed == ["polish_prior"]
         assert eval all(n == 17 for n in affinity.values())
-        assert eval memory["seoyun_marriage_state"] == "married_cohabiting"
+        assert eval memory["seoyun_family_state"] == "divorced"
         assert eval memory["jihyun_private_name"] == "지현 누나"
         if eval active_route == "jihyun" and case % 2 == 0:
-            assert eval ("핑계 안 찾아도 되네" in polish_history()) == (polish_fixture["slot"] == "r07")
+            assert eval ("그냥 보고 싶다고 하고 부를게" in polish_history()) == (polish_fixture["slot"] == "r07")
             assert eval ("칭찬 기다리셨다는 것도" in polish_history()) == (polish_fixture["slot"] == "r12")
             assert eval ("말로는 조금 늦게 했네요" in polish_history()) == (polish_fixture["slot"] == "r15")
         elif eval active_route == "jihyun":
@@ -151,11 +151,11 @@ testsuite script_polish_checks:
             assert eval ("옷 고르면서는 칭찬" in polish_history()) == (polish_fixture["slot"] == "r12")
             assert eval ("산책길 후보는 두 군데" in polish_history()) == (polish_fixture["slot"] == "r15")
         elif eval case % 2 == 0:
-            assert eval ("후식 메뉴 그렇게 볼 때" in polish_history()) == (polish_fixture["slot"] == "r07")
+            assert eval ("너 붙잡으러 갔을 때" in polish_history()) == (polish_fixture["slot"] == "r07")
             assert eval ("말 잘하려는 것보다" in polish_history()) == (polish_fixture["slot"] == "r12")
-            assert eval ("앞으로도 기다려야 하는 건 아니고" in polish_history()) == (polish_fixture["slot"] == "r15")
+            assert eval ("내 입으로 말하니까" in polish_history()) == (polish_fixture["slot"] == "r15")
         else:
-            assert eval ("후식 메뉴 또 펼쳤을 때" in polish_history()) == (polish_fixture["slot"] == "r07")
+            assert eval ("문자 썼다가 지웠어요" in polish_history()) == (polish_fixture["slot"] == "r07")
             assert eval ("오늘 대답을 재촉하지는 않고요" in polish_history()) == (polish_fixture["slot"] == "r12")
             assert eval ("아직 어려운 마음도" in polish_history()) == (polish_fixture["slot"] == "r15")
 
