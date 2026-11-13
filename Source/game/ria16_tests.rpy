@@ -49,6 +49,13 @@ init python:
         ria16_fixture["last_pick"] = ria16_flow_caption(route)
         return ria16_fixture["last_pick"]
 
+    def ria16_pick_action(route):
+        cap = ria16_pick(route)
+        for item in renpy.get_screen("choice").scope["items"]:
+            if renpy.substitute(item.caption) == cap:
+                return item.action
+        return None
+
     def ria16_pick_gone():
         screen = renpy.get_screen("choice")
         if not screen:

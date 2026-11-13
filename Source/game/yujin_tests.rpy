@@ -12,6 +12,8 @@ init python:
         captions = [renpy.substitute(x.caption) for x in renpy.get_screen("choice").scope["items"]]
         if chapter.startswith("C08"):
             return next(x for x in captions if x.startswith("차유진과"))
+        if "친밀한 장면" in captions[0] and len(captions) > 1:
+            return captions[1]
         return captions[0]
 
 label test_yujin_entry:

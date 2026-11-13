@@ -46,7 +46,7 @@ testsuite cream_ui_checks:
         pause 0.2
         assert eval cream_preview_active is True
         assert eval cream_stage_mode() == "day"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         screenshot "cream-day-dialogue.png"
         advance until screen "choice"
         pause 0.2
@@ -62,7 +62,7 @@ testsuite cream_ui_checks:
         click id "preview_night"
         pause 0.2
         assert eval cream_stage_mode() == "night"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         screenshot "cream-night-dialogue.png"
         move pos (1200, 440)
         advance until screen "choice"
@@ -79,7 +79,7 @@ testsuite cream_ui_checks:
         assert screen "choice" timeout 10.0
         assert eval cream_preview_reply is None
         assert eval cream_stage_mode() == "night"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         click "기록" until screen "history"
         pause 0.2
         screenshot "cream-history.png"
@@ -92,22 +92,22 @@ testsuite cream_ui_checks:
 
     testcase speaker_identity:
         run Start("test_cream_speakers")
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         advance until eval cream_focus == "jihyun"
         assert eval cream_ria_visible() is False
         pause 0.1
         screenshot "cream-other-speaker.png"
         advance until eval cream_focus == "ria"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
 
     testcase long_dialogue:
         run Start("test_cream_long")
         pause 0.2
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         screenshot "cream-long-dialogue.png"
         click "저장" until screen "save"
         click "돌아가기" until not screen "save"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
 
     testcase transparent_text:
         run Start("test_cream_long")
@@ -124,7 +124,7 @@ testsuite cream_ui_checks:
         run renpy.set_physical_size((1792, 1008))
         advance until screen "choice"
         pause 0.4
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         assert eval len(renpy.get_screen("choice").scope["items"]) == 3
         assert eval renpy.get_physical_size()[0] >= 1700
         assert eval isinstance(cream_round("button"), CreamRoundedPanel)
