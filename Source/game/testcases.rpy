@@ -174,7 +174,7 @@ testsuite common_romance:
         assert eval len(_history_list) > 10
         pause 0.2
         $ history_vp = renpy.get_displayable("history", "history_viewport")
-        assert eval history_vp.xadjustment.page > 1000
+        assert eval history_vp.xadjustment.page > 700  # evening-threshold history panel is 766 px wide
         screenshot "romance-c07-history.png"
         click "돌아가기" until not screen "history"
         run FileSave("3", confirm=False)
