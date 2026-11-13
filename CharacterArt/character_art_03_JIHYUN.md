@@ -1,5 +1,7 @@
 # 백지현 — 이미지 제작용 캐릭터 설정
 
+> **2026-11-14 현행 외형:** 얼굴·헤어·업무복·소품은 [현행 외형 기준 v003](APPEARANCE_CURRENT.md)과 [마스터 후보 v001](candidates/heroine-masters-v001/README.md)을 우선한다. 아래 내용 중 이와 다른 외형 설명은 이전 기준 이력이다.
+
 **현행 외형 기준 · 2026-11-04 사용자 지정:** [에스컬레이터 타이틀 v002](assets/title/title_escalator_jihyun_arm_lowered_v002.png)의 이 인물을 얼굴·헤어·체형·업무복·색감·공통 작화 기준으로 사용한다. [통합 외형 기준](APPEARANCE_CURRENT.md)이 이전 개별 마스터·의상안보다 우선한다. 이 문서의 갱신은 기존 PNG나 게임 입상 교체 완료를 뜻하지 않는다.
 
 ## 유지할 인물
