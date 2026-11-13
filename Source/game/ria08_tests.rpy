@@ -94,7 +94,7 @@ testsuite ria08:
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until screen "choice"
-        click expression ("인사하기 전에 하나만 더 조른다." if case & 4 else "나란히 조금 더 걷는다.") until not screen "choice"
+        click expression ("인사하기 전에 입맞춤을 조른다." if case & 4 else "나란히 조금 더 걷는다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"

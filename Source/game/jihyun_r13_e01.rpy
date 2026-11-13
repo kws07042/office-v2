@@ -167,7 +167,7 @@ label jihyun_r15:
     $ progression_enter("jihyun_r15.choice02")
     $ progression_checkpoint("jihyun_r15.choice02")
     menu:
-        "편한 옷으로 쉬자고 한다.":
+        "편한 생활복으로 쉬자고 한다.":
             d "오늘은 편하게요. 제가 옆자리 비워 둘게요."
             $ remember("jihyun_r15_outfit", "home")
         "탐정 재킷이 보고 싶다고 한다.":
