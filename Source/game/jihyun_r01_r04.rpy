@@ -261,7 +261,7 @@ label jihyun_r04:
     $ progression_checkpoint("jihyun_r04.choice03")
     menu:
         "첫 데이트 장소는 내가 정한다.":
-            d "다음엔 제가 장소 후보 가져올게요. 시간은 같이 정해요."
+            d "다음엔 제가 장소 후보 가져올게요. 시간은 팀장님 비는 데로요."
             j "좋아. 이번엔 기대하면서 기다릴게."
             $ remember("jihyun_next_date_plan", "dohyun_suggests")
         "각자 시간도, 같이 볼 날도 남기자고 한다.":

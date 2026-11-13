@@ -77,7 +77,7 @@ label yujin_r14:
         "정한 대로 준비하고 기다린다.":
             $ remember("yujin_r14_readiness", "ready")
         "신호를 한 번 더 맞춰 본다.":
-            d "아까 정한 범위까지만요. 바뀌면 유진 씨가 말씀해 주시는 거죠?"
+            d "아까 정한 신호 그대로죠? 유진 씨가 저 보면, 그때만요."
             y "네. 지금은 그대로예요. 같이 확인하니까 좀 덜 급해지네요."
             $ remember("yujin_r14_readiness", "rechecked")
         "끝나고 우리 얘기를 하자고 한다.":
@@ -226,7 +226,7 @@ label yujin_r15:
                     $ remember("yujin_r15_outfit", "cosplay")
                 "유진에게 고르게 한다.":
                     y "오늘은 편한 쪽이요. 다른 의상은 다음에 같이 고르고 싶어요."
-                    d "저도 지금이 좋아요. 다음에 고르는 날도 같이 정해요."
+                    d "저도 지금이 좋아요. 다른 옷은 다음에 같이 구경해요."
                     $ remember("yujin_r15_outfit", "home")
                     $ remember("yujin_r15_outfit_delegated")
             call event_sequence("yujin_r15", memory["yujin_r15_outfit"])

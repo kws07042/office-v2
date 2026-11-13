@@ -286,7 +286,7 @@ label yujin_r04:
     menu:
         "다음 데이트는 내가 정한다.":
             $ remember("yujin_next_date_plan", "dohyun_suggests")
-            d "다음 토요일엔 제가 가 보고 싶은 데 말씀드릴게요. 시간은 같이 정해요."
+            d "다음 토요일엔 제가 가 보고 싶은 데로 모실게요."
             y "좋아요. 그날은 제가 처음 보는 사람으로 갈게요."
         "가고 싶은 곳을 하나씩 가져오자고 한다.":
             $ remember("yujin_next_date_plan", "both_suggest")
