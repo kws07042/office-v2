@@ -32,7 +32,7 @@ testsuite five_asset_checks:
         assert eval event_intro_expression_ready is False
         assert eval [p["kind"] for p in event_pages(layout_event,layout_variant)] == ["intro"]*3 + ["main"]*3 + ["after"]
         assert eval len(event_cg_sets) == 16
-        assert eval sum(s["runtime_connected"] for s in event_cg_sets.values()) == 4
+        assert eval sum(s["runtime_connected"] for s in event_cg_sets.values()) == len(event_cg_sets)
         assert eval all(len(s["event_asset_order"]) == 5 and len(s["base_cg"]) == 3 and not s["expression_variants"] for s in event_cg_sets.values())
         click id "cut_next"
         click id "cut_next"

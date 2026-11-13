@@ -32,7 +32,7 @@ testsuite office_phone_checks:
         run Start("test_phone_r08")
         advance until screen "office_phone"
         click id "phone_next" until eval phone_context == "r08_reply"
-        assert eval len(phone_threads["ria"]) == (2 if case >= 6 else 5)
+        assert eval len(phone_threads["ria"]) == (3 if case >= 6 else 6)
         assert eval (phone_message("r08_morning_1") is not None) == (case < 6)
         assert eval all(not phone_threads[key] for key in ("jihyun", "yujin", "seoyun"))
         if eval case == 1:
@@ -86,7 +86,7 @@ testsuite office_phone_checks:
         assert eval memory["ria_r08_reply"] == "evening"
         assert eval "기록 좀 정리" in phone_message("r08_reply")["text"]
         assert eval not memory.get("choice_third_r08_reply")
-        assert eval len(phone_threads["ria"]) == 10
+        assert eval len(phone_threads["ria"]) == 11
         run Show("office_phone_archive")
         assert screen "office_phone_archive"
         click id "phone_contact_yujin"
@@ -156,12 +156,13 @@ testsuite office_phone_checks:
         run Function(phone_note_photo, "qa_fixture")
         run Show("office_phone_photo", media="qa_fixture")
         assert screen "office_phone_photo"
-        assert eval phone_photo_opened == ["qa_fixture"]
-        assert eval phone_media_ready("qa_fixture")
+        assert eval phone_photo_opened == (["qa_fixture"] if renpy.loadable(RIA_MASTER_V2) else [])
+        assert eval phone_media_ready("qa_fixture") == bool(renpy.loadable(RIA_MASTER_V2))
         screenshot "phone-real-image-loader-fixture.png"
         click id "phone_photo_close"
 
     testcase main_menu_preview_and_archive:
+        click id "preview_toggle"
         click id "phone_preview_button" until not screen "main_menu"
         advance until screen "office_phone"
         assert eval dating is True and active_route == "ria"

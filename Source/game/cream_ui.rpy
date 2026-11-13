@@ -25,12 +25,12 @@ init -10 python:
 
     def cream_round(kind):
         palette = {
-            "panel": ("#fff7ef", "#d8c5bd"),
-            "button": ("#fff8f2", "#dac5bd"),
-            "hover": ("#f6e6dc", "#bb8c7f"),
-            "accent": ("#864940", "#864940"),
-            "accent_hover": ("#703e38", "#703e38"),
-            "soft": ("#f2e5de", "#d8c5bd"),
+            "panel": ("#FFFDFB", "#3B0B22"),
+            "button": ("#FFFDFB", "#3B0B22"),
+            "hover": ("#F3E7EA", "#B3123F"),
+            "accent": ("#B3123F", "#B3123F"),
+            "accent_hover": ("#3B0B22", "#3B0B22"),
+            "soft": ("#EFE9E3", "#A3959B"),
         }
         return CreamRoundedPanel(*palette[kind], radius=8)
 

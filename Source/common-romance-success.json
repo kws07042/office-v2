@@ -1,0 +1,30 @@
+{
+  "chapter": "C08 · 다음 약속의 상대",
+  "dating": false,
+  "memory": {
+    "c01_approach": "observe",
+    "jihyun_intro": "check_later",
+    "yujin_intro": "flow",
+    "yujin_alley_suggestion": true,
+    "seoyun_intro": "humor",
+    "jihyun_followup_delivered": true,
+    "booklet_known_ria": true,
+    "booklet_known_jihyun": true,
+    "booklet_known_yujin": true,
+    "booklet_known_seoyun": true,
+    "c05_shared_table": true,
+    "downtime": "rest",
+    "c06_ria_place": true,
+    "c06_ria_place_personal_moment": true,
+    "work_style": "coordinate",
+    "c07_ria_short_break": true,
+    "c07_ria_method": "coordinate",
+    "c07_ria_afterwork_moment": true
+  },
+  "affinity": {
+    "ria": 14,
+    "jihyun": 10,
+    "yujin": 10,
+    "seoyun": 10
+  }
+}

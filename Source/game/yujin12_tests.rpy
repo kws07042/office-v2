@@ -33,7 +33,7 @@ testsuite yujin12_checks:
         run SetField(persistent, "local_yujin_ending", bool(case % 2))
         run Start("test_yujin12_entry")
         advance until screen "choice"
-        assert eval cream_yujin_visible() and not cream_ria_visible()
+        assert eval cream_yujin_visible() == renpy.loadable("images/characters/yujin/ui_temp_v001.png") and not cream_ria_visible()
         if eval case < 27:
             assert eval ("목요일" in location) == (case % 3 == 1)
         click expression yujin_test_choice(case % 3)

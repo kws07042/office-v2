@@ -46,7 +46,7 @@ testsuite editorial_checks:
         if eval case < 2:
             click expression ri("문 앞 구경은 여기까지 하고, 대안 같이 찾아보자.", "문 앞 구경은 여기까지 하고, 대안 같이 찾아볼까요?")
         elif eval case < 4:
-            click "가까운 곳을 찾아보고 다음 후보는 리아에게 부탁한다."
+            click "가까운 데를 찾고, 다음 후보는 리아에게 맡긴다."
         else:
             click expression ri("여긴 다음에 다시 오자. 오늘은 잠깐만 같이 걷고.", "여긴 다음에 다시 와요. 오늘은 잠깐만 같이 걸을까요?")
         advance until screen "choice"
@@ -62,12 +62,12 @@ testsuite editorial_checks:
         $ editorial_fixture = {"scene":"r14", "informal":bool(case % 2)}
         run Start("test_editorial_entry")
         advance until screen "choice"
-        click "함께 바꿔 보자고 말한다 — 교제를 계속한다."
+        click "같이 바꿔 보자고 한다 — 교제를 계속한다."
         advance until screen "choice"
         if eval case < 2:
-            click "네 시부터 다섯 시 반까지, 짧고 확실한 만남을 정한다."
+            click "네 시부터 다섯 시 반까지만 보자고 한다."
         else:
-            click "네 시 약속은 지키고, 코스 없이 한곳에서 쉬자고 정한다."
+            click "네 시, 코스 없이 한 곳에서 쉬자고 한다."
         advance until screen "office_phone"
         click id "phone_next" until not screen "office_phone"
         advance until eval memory.get("editorial_test_done")
@@ -82,9 +82,9 @@ testsuite editorial_checks:
         $ editorial_fixture = {"scene":"r15", "informal":informal}
         run Start("test_editorial_entry")
         advance until screen "choice"
-        click "일주일에 한 번, 짧게라도 만날 저녁을 함께 정한다."
+        click "다음 주에도 여기 오자고 한다."
         advance until screen "choice"
-        click "오늘 좋았던 일을 더 이야기한 뒤, 잠은 각자 집에서 자고 싶다고 말한다."
+        click "얘기만 더 하고 잠은 각자 잔다."
         advance until eval memory.get("editorial_test_done")
         assert eval memory["ria_r15_intimacy"] == "deferred"
         assert eval memory["ria_r15_booklet_photo_taken"] is True

@@ -73,14 +73,14 @@ class RelationshipTests(unittest.TestCase):
         self.assertLess(pm.relation_value(bad, state, "yujin"),
                         pm.relation_value(fixed, state, "yujin"))
 
-    def test_seoyun_family_status_and_introduction_are_not_scored(self):
+    def test_seoyun_family_status_and_publicity_are_not_scored(self):
         state = pm.initial_state()
         before = {"seoyun_core_understanding": True, "seoyun_r02_response": "wait",
                   "seoyun_expression": "sincere_first", "seoyun_r09_support": "scope"}
         disclosed = dict(before, seoyun_family_disclosed=True,
-                         seoyun_family_state="divorced_parent")
+                         seoyun_family_state="divorced")
         continued = dict(disclosed, seoyun_continues_after_discussion=True,
-                         seoyun_child_introduction_status="planned")
+                         seoyun_publicity_status="planned")
         self.assertEqual(pm.relation_value(disclosed, state, "seoyun"),
                          pm.relation_value(before, state, "seoyun"))
         self.assertEqual(pm.relation_value(disclosed, state, "seoyun"),

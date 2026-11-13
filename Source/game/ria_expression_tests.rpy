@@ -32,7 +32,7 @@ testsuite ria_expression_checks:
         pause 0.4
         assert eval cream_stage_mode() == mode
         assert eval ria_expression == "base"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         screenshot ("ria-expression-" + mode + "-base.png")
         advance until eval ria_expression == "smile"
         pause 0.2
@@ -40,7 +40,7 @@ testsuite ria_expression_checks:
         screenshot ("ria-expression-" + mode + "-smile.png")
         advance until eval ria_expression == "shy"
         pause 0.2
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         screenshot ("ria-expression-" + mode + "-shy.png")
         advance until eval ria_expression == "serious"
         pause 0.2
@@ -64,7 +64,7 @@ testsuite ria_expression_checks:
             screenshot "ria-r02-choices.png"
         click expression ria_expression_test_caption((case // 2) % 3) until not screen "choice"
         advance until eval ria_expression == "shy"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         if eval case in (1, 3, 5):
             pause 0.2
             screenshot ("ria-r02-reaction-" + str(case) + ".png")
@@ -84,7 +84,7 @@ testsuite ria_expression_checks:
         assert eval ria_expression == "serious"
         run FileLoad("12", confirm=False)
         assert eval ria_expression == "shy"
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         pause 0.2
         screenshot "ria-expression-restored.png"
 

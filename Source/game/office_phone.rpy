@@ -251,9 +251,9 @@ label ria_r08_phone_conversation:
     if memory.get("ria_r07_intimacy") != "shared":
         call phone_deliver("r08_morning_1", "ria", ri("일어났어? 나는 빵 먹는 중~ 오늘 추천 코스는 식탁!", "일어나셨어요? 저는 빵 먹는 중이에요~ 오늘 추천 코스는 식탁!"))
         call phone_deliver("r08_morning_2", "dohyun", ri("나도 이제 아침 먹으려고. 어제 차 잘 마셨어.", "저도 이제 아침 먹으려고요. 어제 차 잘 마셨어요."))
-        call phone_deliver("r08_morning_3", "ria", ri("응! 별일은 없는데 네 생각이 나서. 오늘은 내가 먼저~", "네! 별일은 없는데 도현 씨 생각이 나서요. 오늘은 제가 먼저예요~"))
+        call phone_deliver("r08_morning_3", "ria", ri("응! 별일은 없는데 그냥 네 생각 나서. 오늘은 내가 선빵~", "네! 별일은 없는데 그냥 도현 씨 생각 나서요. 오늘은 제가 선빵~"))
     if memory.get("ria_r07_intimacy") == "shared":
-        call phone_deliver("r08_photo", "ria", ri("아침 사진 이제 보내네~ 잘 구운 쪽 줬으니까 다음엔 네가 골라 줘!", "아침 사진 이제 보내네요~ 잘 구운 쪽 드렸으니까 다음엔 도현 씨가 골라 주세요!"), media="ria_r08_breakfast")
+        call phone_deliver("r08_photo", "ria", ri("아침 사진 이제야 보내네~ 잘 구운 쪽 줬으니까 다음엔 네가 골라 줘!", "아침 사진 이제야 보내네요~ 잘 구운 쪽 드렸으니까 다음엔 도현 씨가 골라 주세요!"), media="ria_r08_breakfast")
     else:
         call phone_deliver("r08_photo", "ria", ri("오늘의 추천 코스 인증~ 빵은 내가 골랐어!", "오늘의 추천 코스 인증~ 빵은 제가 골랐어요!"), media="ria_r08_breakfast")
     call phone_deliver("r08_laundry_route", "ria", ri("지도에 그 세탁소 저장했어. 다음엔 길 아는데도 같이 돌자고 할게~", "지도에 그 세탁소 저장했어요. 다음엔 길 아는데도 같이 돌자고 할게요~"))
@@ -266,19 +266,19 @@ label ria_r08_phone_conversation:
     $ phone_context = "r08_response"
     if memory["ria_r08_reply"] == "miss":
         call phone_deliver("r08_reply", "dohyun", ri("기록 정리 중인데, 벌써 보고 싶네.", "기록 정리 중인데, 벌써 보고 싶네요."))
-        call phone_deliver("r08_answer", "ria", ri("잠깐만, 방금 그거 세 번 읽었어. 네가 먼저 이러면 나 뭐라고 보내?", "잠깐만요, 방금 그거 세 번 읽었어요. 먼저 이러시면 저 뭐라고 보내요?"), important=True)
-        call phone_deliver("r08_followup", "dohyun", ri("답은 나중에 해도 돼. 그냥 먼저 말하고 싶었어.", "답은 나중에 하셔도 돼요. 그냥 먼저 말하고 싶었어요."))
+        call phone_deliver("r08_answer", "ria", ri("잠깐만, 방금 그거 세 번 읽었어. 네가 이렇게 나오면 나 뭐라고 보내?", "잠깐만요, 방금 그거 세 번 읽었어요. 이렇게 나오시면 저 뭐라고 보내요?"), important=True)
+        call phone_deliver("r08_followup", "dohyun", ri("답은 나중에 해도 돼. 그냥 말하고 싶었어.", "답은 나중에 하셔도 돼요. 그냥 말하고 싶었어요."))
         call phone_deliver("r08_answer_2", "ria", ri("응. 나도 보고 싶어. 이건 지금 답할래 :)", "네. 저도 보고 싶어요. 이건 지금 답할래요 :)"), important=True)
     elif memory["ria_r08_reply"] == "evening":
         call phone_deliver("r08_reply", "dohyun", ri("기록 좀 정리하려고. 저녁에 끝나면 얘기할래?", "기록 좀 정리하려고요. 저녁에 끝나면 얘기하실래요?"))
         call phone_deliver("r08_answer", "ria", ri("좋아. 나는 빨래 산부터 넘을게. 이쪽도 꽤 큰 작업이야~", "좋아요. 저는 빨래 산부터 넘을게요. 이쪽도 꽤 큰 작업이에요~"))
-        call phone_deliver("r08_followup", "dohyun", ri("먼저 끝난 사람이 전화하기. 빨래 다 개야 끝난 거다?", "먼저 끝난 사람이 전화해요. 빨래 다 개셔야 끝난 거예요."))
+        call phone_deliver("r08_followup", "dohyun", ri("빨리 끝난 사람이 전화하기. 빨래 다 개야 끝난 거다?", "빨리 끝난 사람이 전화해요. 빨래 다 개셔야 끝난 거예요."))
         call phone_deliver("r08_answer_2", "ria", ri("치사해. 그럼 넌 책상까지 치워야 끝이야~ 이따 전화해!", "치사해요. 그럼 도현 씨도 책상까지 치우셔야 돼요~ 이따 전화해요!"), important=True)
     else:
         $ remember("choice_third_r08_reply")
         call phone_deliver("r08_reply", "dohyun", ri("어제 나란히 앉아 있던 거 생각났어. 별말 안 해도 좋더라.", "어제 나란히 앉아 있던 거 생각났어요. 별말 안 해도 좋더라고요."))
         call phone_deliver("r08_answer", "ria", ri("나도! 사실 조용해질 때 무슨 얘기할지 찾고 있었는데~", "저도요! 사실 조용해질 때 무슨 얘기할지 찾고 있었는데요~"))
-        call phone_deliver("r08_followup", "dohyun", ri("나도 컵만 봤어. 먼저 눈 마주치면 무슨 말 할지 까먹어서.", "저도 컵만 봤어요. 먼저 눈 마주치면 무슨 말 할지 까먹어서요."))
+        call phone_deliver("r08_followup", "dohyun", ri("나도 컵만 봤어. 눈 마주치면 무슨 말 할지 까먹을 것 같아서.", "저도 컵만 봤어요. 눈 마주치면 무슨 말 할지 까먹을 것 같아서요."))
         call phone_deliver("r08_answer_2", "ria", ri("좋아 :) 다음엔 조용해졌다고 말 찾느라 컵만 돌리지는 않을게~", "좋아요 :) 다음엔 조용해졌다고 말 찾느라 컵만 돌리지는 않을게요~"), important=True)
     if memory.get("ria_o01_status") == "completed":
         call phone_deliver("r08_lunch", "ria", ri("참, 오늘 점심은 나도 국수! 지난번 네 거 보고 생각났어.", "참, 오늘 점심은 저도 국수요! 지난번 드시는 거 보고 생각났어요."))
@@ -305,7 +305,7 @@ label office_phone_preview:
 label ria_disclosure_phone:
     call phone_deliver("ria_disclosure_1", "ria_shared", "언니, 나 도현 씨랑 사귀어. 우리 둘이 같이 알려 주고 싶어서 보냈어! 다른 사람들한테는 아직 말하지 말아 줘~", contact="seoyun")
     call phone_deliver("ria_disclosure_2", "seoyun", "어머, 둘이 드디어 말해 주네~ 축하해. 다른 사람들한텐 너희가 얘기할 때까지 비밀로 할게.", contact="seoyun", important=True)
-    call phone_deliver("ria_disclosure_3", "seoyun", "리아야, 데이트 일정까지 캠페인처럼 꽉 채우진 말고. 도현 씨도 즐거운 저녁 보내요 :)", contact="seoyun")
+    call phone_deliver("ria_disclosure_3", "seoyun", "리아야, 데이트 일정까지 캠페인처럼 빡빡하게 짜진 말고. 도현 씨도 즐거운 저녁 보내요 :)", contact="seoyun")
     call phone_deliver("ria_disclosure_4", "dohyun", "서윤 씨, 감사합니다. 오늘은 저녁만 같이 만들려고요.", contact="seoyun")
     $ phone_active_contact = "ria"
     return

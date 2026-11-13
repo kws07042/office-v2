@@ -1,0 +1,15 @@
+{
+  "suite": "windows_smoke",
+  "passed": true,
+  "native": true,
+  "chapter": "C02 · 결론보다 근거",
+  "speech_informal": false,
+  "ria_affinity": 10,
+  "memory": {
+    "c01_approach": "observe"
+  },
+  "completed": [
+    "C01"
+  ],
+  "dating": false
+}

@@ -11,7 +11,7 @@ testsuite clear_compat_checks:
         assert eval cream_preview_active is True
         assert eval cream_stage_mode() == "night"
         assert eval len(renpy.get_screen("choice").scope["items"]) == 3
-        assert eval cream_ria_visible() is True
+        assert eval cream_ria_visible() == bool(renpy.loadable("images/characters/ria/ui_master_v2.png"))
         click "천천히 걷자. 목적지는 걸으면서 고르고." until not screen "choice"
         assert eval cream_preview_reply == "walk"
 

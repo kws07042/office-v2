@@ -78,7 +78,7 @@ testsuite jihyun04_checks:
         if eval case == 0:
             screenshot "jihyun-confession-choice.png"
         if eval case % 5 == 1:
-            click "마음은 있지만, 내 서툼과 회사에서의 경계를 조금 더 이야기한다."
+            click "마음은 있지만, 겁나는 것도 말한다."
             advance until screen "choice"
             assert eval jihyun_prepared and not dating
         if eval case % 5 in (2,3,4):
@@ -88,7 +88,7 @@ testsuite jihyun04_checks:
             if eval case % 5 != 2:
                 advance until screen "choice"
         if eval case % 5 != 2:
-            click "지현과 연인으로 만나고 싶다고 먼저 고백한다."
+            click "좋아한다고 고백한다."
             advance until screen "choice"
             assert eval dating and memory["jihyun_confession_accepted"]
             assert eval affinity["jihyun"] == 24
@@ -113,6 +113,7 @@ testsuite jihyun04_checks:
 
     testcase preview_entry:
         screenshot "review-jihyun-main-menu.png"
+        click id "preview_toggle"
         click id "jihyun_preview_button"
         advance until screen "office_phone"
         assert eval active_route == "jihyun" and phone_active_contact == "jihyun"
