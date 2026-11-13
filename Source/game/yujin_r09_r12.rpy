@@ -23,14 +23,14 @@ label yujin_r09:
     else:
         $ location = "일요일에 약속한 수요일 오후 · 회사 회의실"
     "검토를 앞두고 유진이 시안의 마지막 장에 이름을 적었다. 도현은 옆에서 연결한 자료 화면을 확인한다."
-    y "저는 색 바꾼 이유랑 수정할 부분을 말씀드릴게요. 질문이 겹치면... 순서만 정리해 주실래요?"
+    y "오늘은 제가 끝까지 말해 볼게요. 질문이 한꺼번에 오면... 그때만 순서 좀 잡아 주실래요?"
     d "네. 자료는 여기까지 띄워 뒀어요."
     "검토가 시작되자 두 질문이 한꺼번에 나왔다. 유진이 첫 장을 다시 열었다."
     $ progression_enter("yujin_r09.choice01")
     $ progression_checkpoint("yujin_r09.choice01")
     menu:
         "질문을 정리하고 자료만 띄운다.":
-            d "색 정한 이유부터 듣고, 수정 범위는 그다음에 볼까요? 유진 씨, 첫 장 띄울게요."
+            d "색 얘기부터 하시죠. 유진 씨, 첫 장 띄울게요."
             y "네. 이 색은 입구에서도 문장이 먼저 읽히라고 넣었어요. 수정할 부분은 그 아래예요."
             "유진이 설명을 마친 뒤 도현은 요청한 비교 자료를 화면에 올렸다."
             $ remember("yujin_support_action", "materials")
@@ -68,23 +68,23 @@ label yujin_r09:
         $ location = "같은 저녁 · 회사 근처 카페"
         $ remember("yujin_r09_kept_appointment", "이날 새로 제안하고 동의한 카페 만남")
     if memory.get("yujin_support_overstep"):
-        y "아까 설명 이어가게 해 주신 건 고마워요. 그런데... 처음부터 제가 하고 싶었어요. 그 말은 꼭 해 두고 싶어서요."
+        y "아까 설명 이어가게 해 주신 건 고마워요. 그런데... 처음부터 제가 하고 싶었어요. 그 회의실에서 제 목소리가 사라지는 것 같았거든요."
         $ progression_enter("yujin_r09.choice02")
         $ progression_checkpoint("yujin_r09.choice02")
         menu:
             "앞질러서 미안했다고 사과한다.":
-                d "부담 덜어 드린다고 앞질렀어요. 부탁하신 건 순서 정리였는데요. 미안해요. 다음엔 자료만 띄우고 기다릴게요."
-                y "네. 질문이 겹치면 순서만요. 설명이 막히면 제가 도와 달라고 할게요."
+                d "도와드린다고 나섰는데, 사실 유진 씨 말을 뺏은 거였네요. 미안해요."
+                y "...알아요. 도와주려고 그런 거. 그래서 더 서운했어요. 미워할 수가 없잖아요."
                 $ remember("yujin_support_repair_status", "agreed_pending_action")
                 $ remember("yujin_support_followup", "자료와 질문 순서만 돕고 설명 요청을 기다림")
             "왜 급했는지 털어놓는다.":
-                d "말 끊기면 더 긴장하실까 봐 그랬어요. 그런데 결국 제가 정해 버렸네요."
-                y "긴장해도 제 말로 하고 싶었어요. 오늘은... 그 차이를 좀 생각해 보고 싶어요."
-                d "네. 다음엔 끼어들기 전에 여쭤볼게요."
+                d "말이 끊기면 유진 씨가 더 떨까 봐 그랬어요. 근데 떨어도 유진 씨 목소리여야 했는데."
+                y "떨어도 제 말로 하고 싶었어요. 오늘은... 그 마음 좀 알아줬으면 해서 불렀어요."
+                d "알아요. 이제는요. 다음엔 끼어들기 전에 유진 씨 얼굴부터 볼게요."
                 $ remember("yujin_support_repair_status", "open")
             "다음엔 끼어들기 전에 묻겠다고 한다.":
-                d "질문 순서는 도와도, 답할 내용은 제가 정하면 안 되는 거죠? 다음엔 시작하기 전에 물을게요."
-                y "네. 그거예요. 도와 달라고 할 때도 있을 거예요. 그땐 제가 말씀드릴게요."
+                d "제가 대신 말하면 유진 씨가 안 보이잖아요. 그걸 몰랐어요."
+                y "네. 그거예요. 진짜 막히면 제가 도현 씨 쳐다볼게요. 그때만 와 주세요."
                 $ remember("yujin_support_repair_status", "agreed_pending_action")
                 $ remember("yujin_support_followup", "대신 요약하기 전 유진에게 범위를 물음")
     else:
@@ -336,31 +336,31 @@ label yujin_r12:
     "자리를 잡고 월요일에 본 창문과 이번 주 얘기를 짧게 나눴다. 유진이 작업 수첩을 꺼내려다 멈춘다."
     if memory.get("yujin_support_overstep"):
         if memory.get("yujin_support_repair_status") == "open":
-            y "그날 설명 가로채셨던 얘기도요. 제가 원하는 도움을 아직 제대로 말씀 못 드린 것 같아요. 다음 검토 전에 잠깐 맞춰 보고 싶어요."
+            y "그날 설명 가로채셨던 얘기요. 아직 다 풀린 건 아닌데... 내일 또 검토가 있어서, 그 전에 한 번만 더 얘기하고 싶었어요."
         else:
-            y "지난번에 미리 물어보시기로 한 거요. 내일 검토가 짧아져서, 어디까지 부탁드릴지 다시 말씀드리고 싶어요."
+            y "미리 물어보시기로 한 거요. 내일 검토가 반으로 줄었어요. 솔직히... 또 떨릴 것 같아요."
     elif memory.get("yujin_support_action") == "agreed_summary":
-        y "지난번 질문 한 문장으로 정리해 주신 건 좋았어요. 내일은 검토 시간이 짧아져서, 부탁드릴 부분을 다시 정하고 싶어요."
+        y "지난번 그 한 문장, 좋았어요. 근데 내일은 시간이 반이라... 또 떨릴 것 같아요."
     elif memory.get("yujin_support_action") == "materials":
-        y "지난번처럼 제가 설명하고 싶어요. 내일은 검토 시간이 짧아져서, 자료랑 질문 순서를 조금 다르게 부탁드릴 것 같아요."
+        y "지난번처럼 제가 설명하고 싶어요. 근데 내일은 시간이 반으로 줄어서, 솔직히 무서워요."
     else:
-        y "내일 짧은 검토가 하나 있어요. 이번엔 어떤 도움이 필요한지 제가 말씀드리고 싶어요."
+        y "내일 짧은 검토가 하나 있어요. 이번엔... 제가 어떻게 해 달라고 할지 미리 말하고 싶어요."
     $ progression_enter("yujin_r12.choice02")
     $ progression_checkpoint("yujin_r12.choice02")
     menu:
         "필요한 도움을 듣고 내일 맞추자고 한다.":
-            d "유진 씨가 직접 말할 부분부터 들을게요. 내일 시작 전에 자료랑 순서 같이 볼까요?"
-            y "네. 오늘은 그 약속까지요. 정확한 순서는 내일 자료 보고 제가 말씀드릴게요."
+            d "그럼 내일 아침에 커피 한 잔 하면서 같이 연습해요. 유진 씨 목소리로요."
+            y "네. 오늘은 그 약속까지만요. 나머진... 오늘은 그냥 도현 씨 보고 싶어서 나왔어요."
             $ remember("yujin_r12_support_request", "내일 시작 전 유진의 설명 범위와 자료·질문 순서를 확인")
             if memory.get("yujin_support_overstep") and memory.get("yujin_support_repair_status") == "open":
                 $ remember("yujin_support_repair_status", "agreed_pending_action")
         "약속은 그대로, 세부는 내일 정하자고 한다.":
-            d "말씀하신 건 기억할게요. 구체적인 순서는 내일 시작 전에 같이 봐요. 제가 혼자 정하진 않을게요."
-            y "네. 그 얘기는 내일 제가 꺼낼게요. 오늘은 만나서 좋다는 말을 좀 더 하고 싶어요."
+            d "기억할게요. 내일 일은 내일 유진 씨가 정해요. 저는 옆에 있을게요."
+            y "네. 그 얘기는 내일 할게요. 오늘은 만나서 좋다는 말을 좀 더 하고 싶어요."
             $ remember("yujin_r12_support_request", "기존 기록을 보존하고 구체적 지원 범위는 내일 다시 합의")
         "부탁한 만큼만 돕겠다고 한다.":
-            d "요약이 필요하시면 범위부터 말씀해 주세요. 시작하기 전에 한 번 더 확인할게요."
-            y "네. 어떤 문장까지인지 같이 정해요. 제 답은 제가 이어가고요."
+            d "막히면 저 쳐다보세요. 그때만 한 문장 거들게요."
+            y "네. 한 문장만요. 그다음은 다시 제 거예요."
             $ remember("yujin_r12_support_request", "부탁받은 요약 범위를 먼저 확인하고 유진이 답을 이어감")
             if memory.get("yujin_support_overstep") and memory.get("yujin_support_repair_status") == "open":
                 $ remember("yujin_support_repair_status", "agreed_pending_action")
