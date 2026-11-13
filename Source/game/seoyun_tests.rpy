@@ -6,7 +6,7 @@ init python:
     def seoyun_test_caption():
         caps=[renpy.substitute(x.caption) for x in renpy.get_screen("choice").scope["items"]]
         c=seoyun_fixture["case"]
-        if caps[0].startswith("피칭이 끝날 때까지 기다리지 않고"):
+        if caps[0].startswith("피칭이 끝날 때까지 기다리지 않고 계속 만난다."):
             return caps[1 if seoyun_fixture.get("after_discussion_exit") else 0]
         if chapter.startswith("C"):
             if chapter.startswith("C08"):
@@ -24,7 +24,7 @@ init python:
             if caps[0].startswith("동료로 지내겠다는"):
                 seoyun_fixture["decline_done"]=True
                 i=c-15
-            elif caps[0].startswith("나도 좋아하며"):
+            elif caps[0].startswith("나도 좋아하며, 사귀자고 답한다."):
                 i=2 if c in (15,16,17) and not seoyun_fixture["decline_done"] else (1 if c in (18,19) and not seoyun_prepared else 0)
             else:
                 i=2 if c==12 else (c//3)%3
@@ -3032,11 +3032,11 @@ testsuite seoyun_checks:
         run Start("test_seoyun_late_exit")
         advance until screen "choice"
         assert eval not memory.get("seoyun_repair_performed")
-        click "수요일에 서로 원하는 만남부터 이야기하자고 한다."
+        click "수요일에 다 얘기하자고 한다."
         advance until screen "choice"
         assert eval memory.get("seoyun_repair_performed") and memory.get("seoyun_future_boundary_confirmed")
         assert eval memory["seoyun_conflict"]=="agreed_pending_action" and not memory.get("seoyun_continues_after_discussion")
-        click "이야기를 들었지만 연애는 여기서 마치기로 한다."
+        click "이야기는 들었지만 여기서 끝낸다."
         advance until screen "choice"
         assert eval seoyun_test_done() and not dating and ending=="seoyun_relationship_closed"
         assert eval memory.get("seoyun_late_exit_test_complete") and not memory.get("seoyun_route_completed")

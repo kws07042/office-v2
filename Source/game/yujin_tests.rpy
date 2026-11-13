@@ -64,7 +64,7 @@ testsuite yujin_early_checks:
         if eval case == 0:
             screenshot "yujin-confession-choice.png"
         if eval case % 4 == 0:
-            click "마음은 있지만 더 이야기하고 싶다고 말한다."
+            click "마음은 있지만 더 얘기하고 싶다고 한다."
             advance until screen "choice"
             assert eval yujin_prepared and memory["yujin_prepared_conversation"]
             assert eval not dating
@@ -77,7 +77,7 @@ testsuite yujin_early_checks:
                 click "결정을 다시 고른다."
                 advance until screen "choice"
         if eval case % 4 != 1:
-            click "나도 유진과 연인으로 만나고 싶다고 답한다."
+            click "나도 좋아한다고 답한다."
             advance until screen "choice"
             assert eval dating and memory["yujin_confession_accepted"]
             assert eval affinity["yujin"] == 24

@@ -109,7 +109,7 @@ testsuite route_phone_checks:
         advance until screen "office_phone"
         click id "phone_next" until not screen "office_phone"
         advance until screen "choice"
-        click "오늘은 돌아가고 내일 다시 만나고 싶다고 말한다."
+        click "오늘은 가고 내일 다시 보자고 한다."
         advance until screen "office_phone"
         click id "phone_next" until eval phone_context == "r12_expectation"
         assert eval len(renpy.get_screen("office_phone").scope["replies"]) == 3

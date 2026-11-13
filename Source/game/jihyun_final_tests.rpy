@@ -21,7 +21,7 @@ init python:
         elif chapter.startswith("지현 R14"):
             i=2 if c in (9,10,11) else c%2
         elif chapter.startswith("지현 R15"):
-            if "같이 산책하되" in captions[0]:
+            if "같이 산책하되, 오전은 각자 쉰다." in captions[0]:
                 i=c%3
             elif "생활복" in captions[0]:
                 i=(c//3)%3

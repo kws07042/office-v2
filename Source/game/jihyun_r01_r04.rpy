@@ -82,7 +82,7 @@ label jihyun_r02:
     $ progression_enter("jihyun_r02.choice01")
     $ progression_checkpoint("jihyun_r02.choice01")
     menu:
-        "조용한 찻집에 먼저 앉아 따뜻한 차를 마시자고 한다.":
+        "찻집에서 따뜻한 차부터.":
             d "서점은 다음에 보고, 저 찻집 어때요? 앉아서 얘기 좀 하고 싶어요."
             j "좋아. 오늘은 내 추천 말고 네가 찾은 자리로."
             $ location = "같은 토요일 오후 · 조용한 찻집"
@@ -99,7 +99,7 @@ label jihyun_r02:
             j "...나도. 첫 모금은 졌네."
             $ remember("jihyun_r02_plan", "tea_first")
             $ remember("jihyun_r02_action", "도현이 고른 조용한 찻집에서 따뜻한 차를 각자 선택함")
-        "짧게 공원을 걷고, 돌아오는 길에 따뜻한 차를 마시자고 한다.":
+        "공원 한 바퀴, 돌아와서 차 한 잔.":
             d "저 공원까지만 걸을까요? 돌아와서 차 마시면 네 시 전에 끝나요."
             j "응. 길은 돌아가도 돼. 돌아갈 시각만 그대로 두고."
             $ location = "같은 토요일 오후 · 공원 산책길"
@@ -116,7 +116,7 @@ label jihyun_r02:
             "잠깐 앉았다가 돌아오는 길에 따뜻한 차를 샀다. 지현은 이번엔 도현이 가자는 길을 따라 걸었다."
             $ remember("jihyun_r02_plan", "walk_then_tea")
             $ remember("jihyun_r02_action", "공원 한 바퀴 뒤 따뜻한 차, 귀가 시각 유지")
-        "서점과 찻집 후보를 하나씩 놓고 지현의 남은 바람도 듣는다.":
+        "서점 한 선반, 그다음 찻집.":
             d "저는 서점 잠깐 보고 차 마시는 순서가 좋아요. 팀장님은 꼭 하고 싶은 거 있으세요?"
             j "책등 예쁜 데. ...방금 제목도 안 읽고 책 산다고 생각했지?"
             d "아직 아무 말도 안 했어요!"
@@ -175,15 +175,15 @@ label jihyun_r03:
     $ progression_enter("jihyun_r03.choice01")
     $ progression_checkpoint("jihyun_r03.choice01")
     menu:
-        "판단을 바꾼 이유를 분명히 들려준 점이 좋았다고 말한다.":
+        "생각을 바꾼 이유가 좋았다고 말한다.":
             d "바꾼 이유까지 말씀해 주셔서 좋았어요. 다음에도 다른 의견 있으면 말할게요."
             j "응. 그럼 나도 또 다시 볼게."
             $ remember("jihyun_r03_response", "reason")
-        "내 의견도 확인 뒤 달라질 수 있다고 말하며 다음 확인을 나눈다.":
+        "나도 틀릴 수 있다고 웃는다.":
             d "저도 더 보면 생각 바뀔 수 있어요. 현장에서 물어볼 건 제가 정리할게요."
             j "좋아. 난 시간대 가정 다시 본다. 왜 바꿨는지까지 같이 남기자."
             $ remember("jihyun_r03_response", "share_check")
-        "업무 의견과 별개로 지현의 태도가 기억에 남았다고 말한다.":
+        "팀장님이 직접 다시 본 게 좋았다고 한다.":
             d "팀장님이 직접 다시 보셨다는 게 기억에 남아요. 제 말에 맞춰 주셨다고 생각하진 않을게요."
             j "응. 의견을 검토한 거야. ...그래도 그렇게 말해 주니까 좀 기분 좋네."
             $ remember("jihyun_r03_response", "attitude")
@@ -218,7 +218,7 @@ label jihyun_r04:
         $ progression_enter("jihyun_r04.choice01")
         $ progression_checkpoint("jihyun_r04.choice01")
         menu:
-            "지현과 연인으로 만나고 싶다고 먼저 고백한다.":
+            "좋아한다고 고백한다.":
                 d "토요일에 네 시 되니까 헤어졌잖아요. 저는 좀 더 같이 있고 싶었어요. 그 뒤로도 또 보고 싶었고요. 지현 씨, 좋아해요. 저랑 사귀실래요?"
                 "지현은 바로 대답하려다 물컵에서 손을 뗐다. 이번에는 도현을 보며 천천히 말한다."
                 j "응. 나도 좋아해. ...너무 빨리 대답했나."
@@ -227,7 +227,7 @@ label jihyun_r04:
                 $ dating = True
                 $ remember("jihyun_confession_accepted")
                 $ award_once("jihyun_R04", "jihyun", 5)
-            "마음은 있지만, 내 서툼과 회사에서의 경계를 조금 더 이야기한다." if not jihyun_prepared:
+            "마음은 있지만, 겁나는 것도 말한다." if not jihyun_prepared:
                 d "저 연애는 처음이에요. 마음은 분명한데, 일이랑 구분하려다가 말이 늦어질까 봐요."
                 j "나도 이런 말 잘 못 해. 그래도 지금은 팀장한테 보고하는 자리 아니잖아. 늦어도 그냥 말해."
                 d "일에서 의견 다르면 그대로 말할게요. 보고 싶을 때도 그냥 말할게요."
@@ -245,9 +245,9 @@ label jihyun_r04:
                         call end_common
                         $ progression_note_ending()
                         return
-                    "결정을 취소하고 마음을 다시 정한다.":
+                    "결정을 무른다.":
                         pass
-                    "결정 전에 지현이 원하는 관계를 한 번 더 듣는다.":
+                    "지현이 원하는 걸 먼저 듣는다.":
                         j "나는 연인으로 만나 보고 싶어. 그렇다고 너도 그래야 한다는 건 아니야. 네 마음 다시 듣고 싶어."
     if not jihyun_prepared:
         d "저 연애는 처음이에요. 고백하는 것까진 연습해 왔는데, 그다음이 더 떨리네요."
@@ -260,15 +260,15 @@ label jihyun_r04:
     $ progression_enter("jihyun_r04.choice03")
     $ progression_checkpoint("jihyun_r04.choice03")
     menu:
-        "첫 연인 데이트 장소 후보는 내가 가져오고 싶다고 말한다.":
+        "첫 데이트 장소는 내가 정한다.":
             d "다음엔 제가 장소 후보 가져올게요. 시간은 같이 정해요."
             j "좋아. 이번엔 기대하면서 기다릴게."
             $ remember("jihyun_next_date_plan", "dohyun_suggests")
-        "각자 쉬는 시간과 함께 만날 시간을 하나씩 정해 보자고 한다.":
+        "각자 시간도, 같이 볼 날도 남기자고 한다.":
             d "각자 하던 것도 남겨 두고 싶어요. 같이 보는 날도 하나 잡고요."
             j "응. 너랑 있을 시간 만든다고 내 일정까지 다 비울 필요는 없겠네. 네 것도 그렇게 두자."
             $ remember("jihyun_next_date_plan", "own_and_shared")
-        "지현의 다음 제안에 내 취향도 보태고 싶다고 말한다.":
+        "팀장님 추천에 내 취향을 얹는다.":
             d "팀장님이 보여 주고 싶은 데도 궁금해요. 제 취향도 하나 끼워 넣을게요."
             j "좋아. 이번에도 조용한 데일 확률이 높긴 한데. 네 취향 들어갈 자리는 남겨 둘게."
             $ remember("jihyun_next_date_plan", "both_suggest")

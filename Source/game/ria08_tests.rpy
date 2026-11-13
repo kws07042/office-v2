@@ -60,7 +60,7 @@ testsuite ria08:
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until screen "choice"
-        click expression ("사진을 찍는 동안 리아에게 저녁 메뉴 후보를 부탁한다." if case & 1 else "같이 골목을 걷고, 눈에 들어오는 것을 하나씩 고른다.") until not screen "choice"
+        click expression ("사진 찍는 동안 메뉴를 맡긴다." if case & 1 else "골목을 걸으며 하나씩 고른다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
@@ -89,12 +89,12 @@ testsuite ria08:
             assert eval memory["ria_o01_status"] == "skipped"
             assert eval "ria_o01_meal" not in memory
         assert eval chapter.startswith("리아 R06")
-        click expression ("나도 쉬면서 같이 있고 싶다고 먼저 말한다." if case & 2 else "어떤 순간에 그렇게 느끼는지 더 듣는다.") until not screen "choice"
+        click expression ("나도 같이 쉬고 싶다고 한다." if case & 2 else "어떨 때 그런지 더 묻는다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
             advance until screen "choice"
-        click expression ("가볍게 입맞춤해도 될지 묻는다." if case & 4 else "오늘은 나란히 조금 더 걷고 인사한다.") until not screen "choice"
+        click expression ("인사하기 전에 하나만 더 조른다." if case & 4 else "나란히 조금 더 걷는다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
@@ -107,7 +107,7 @@ testsuite ria08:
         assert eval affinity["ria"] == 45 + (2 if case & 4 else 0)
         assert eval trust_ria == 3
         run FileSave("2", confirm=False)
-        click expression ("같은 마음이라고 답한다 — 친밀한 장면으로 이어짐." if case & 8 else "오늘은 차를 마시고 돌아가고 싶다고 말한다.") until not screen "choice"
+        click expression ("같은 마음이라고 답한다 — 친밀한 장면으로 이어짐." if case & 8 else "차만 마시고 돌아간다.") until not screen "choice"
         advance until eval renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
         if screen "event_cut":
             click id "cut_next" until not screen "event_cut"
@@ -133,7 +133,7 @@ testsuite ria08:
             run FileLoad("2", confirm=False)
             assert screen "choice" timeout 10.0
             assert eval "ria_r07_stayed" not in memory
-            click "오늘은 차를 마시고 돌아가고 싶다고 말한다." until not screen "choice"
+            click "차만 마시고 돌아간다." until not screen "choice"
             advance until eval renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "event_cut":
                 click id "cut_next" until not screen "event_cut"

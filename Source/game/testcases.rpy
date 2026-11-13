@@ -20,7 +20,7 @@ testsuite windows_smoke:
         run FileSave("4", confirm=False)
         screenshot "windows-save.png"
         click "돌아가기" until not screen "save"
-        click "현장에서 본 근거부터 말한다." until not screen "choice"
+        click "현장에서 본 걸 그대로 말한다." until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("C03")
         assert eval memory["jihyun_intro"] == "evidence"
@@ -104,7 +104,7 @@ testsuite common_romance:
         assert eval sum(affinity.values()) == 2
         click expression {"ria": "리아와 확인한다.", "jihyun": "지현과 확인한다.", "yujin": "유진과 확인한다.", "seoyun": "서윤과 확인한다."}[second] until not screen "choice"
         advance until screen "choice"
-        click expression {"verify": "직접 떨어져서 읽고 확인한다.", "coordinate": "각자 볼 부분을 나누고 결과를 맞춘다.", "try": "작게 바꾼 시안 하나를 만들어 비교한다."}[method] until not screen "choice"
+        click expression {"verify": "직접 떨어져서 읽어 본다.", "coordinate": "나눠 보고 결과를 맞춘다.", "try": "작게 바꾼 안을 하나 만든다."}[method] until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("C08")
         assert eval memory.get("c07_" + second + "_method") == method
@@ -127,7 +127,7 @@ testsuite common_romance:
         advance until screen "choice"
         click expression {"ria": "리아와 확인한다.", "jihyun": "지현과 확인한다.", "yujin": "유진과 확인한다.", "seoyun": "서윤과 확인한다."}[person] until not screen "choice"
         advance until screen "choice"
-        click "직접 떨어져서 읽고 확인한다." until not screen "choice"
+        click "직접 떨어져서 읽어 본다." until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("C08")
         assert eval not any(k.endswith("_personal_moment") for k in memory)
@@ -144,11 +144,11 @@ testsuite common_romance:
         advance until screen "choice"
         click "조금 익숙해지면 놓을게요." until not screen "choice"
         advance until screen "choice"
-        click "더 확인할 시간을 요청한다." until not screen "choice"
+        click "확인할 시간을 하루 달라고 한다." until not screen "choice"
         advance until screen "choice"
-        click "사람들이 움직이는 방향을 묻는다." until not screen "choice"
+        click "손님 동선부터 묻는다." until not screen "choice"
         advance until screen "choice"
-        click "농담을 받아친 뒤 요청을 확인한다." until not screen "choice"
+        click "농담을 받아치고 본론으로 간다." until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("C05")
         assert eval memory.get("jihyun_followup_delivered") is True
@@ -163,7 +163,7 @@ testsuite common_romance:
         advance until screen "choice"
         click "리아와 확인한다." until not screen "choice"
         advance until screen "choice"
-        click "각자 볼 부분을 나누고 결과를 맞춘다." until not screen "choice"
+        click "나눠 보고 결과를 맞춘다." until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("C08")
         assert eval affinity["ria"] == 14
@@ -182,7 +182,7 @@ testsuite common_romance:
         advance until screen "choice"
         assert eval chapter.startswith("W_COORD01")
         assert eval work_style == "coordinate"
-        click "각자 처음 보는 사람이 무엇을 알아야 하는지 묻는다." until not screen "choice"
+        click "처음 보는 사람 입장에서 묻는다." until not screen "choice"
         advance until screen "choice"
         assert eval memory.get("work_stage_1") == "W_COORD01"
         assert eval chapter.startswith("리아 R01")

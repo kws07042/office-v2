@@ -20,15 +20,15 @@ label seoyun_r13:
     $ progression_enter("seoyun_r13.choice01")
     $ progression_checkpoint("seoyun_r13.choice01")
     menu:
-        "전남편 일과 내 마음을 대신 결정하는 건 다르다고 말한다.":
+        "전남편 일로 날 밀어내지 말라고 한다.":
             d "그분이 무슨 연락을 하든, 저까지 밀어내는 건 서윤 씨 혼자 정할 일이 아니에요."
             s "응. 너 지키는 척하면서, 사실은 내가 도망친 거네."
             $ remember("seoyun_r13_response", "weight")
-        "떨어져 있자는 말보다 무슨 일인지부터 듣고 싶다고 한다.":
+        "무슨 일인지부터 듣겠다고 한다.":
             d "떨어져 있자는 말은 나중에 해도 돼요. 지금은 무슨 일이 있었는지부터 들을래요."
             s "...결론부터 던졌네, 내가. 제일 싫어하는 방식인데."
             $ remember("seoyun_r13_response", "unknown")
-        "좋아하는 마음과 부담되는 부분을 잠깐 정리하고 말한다.":
+        "잠깐 생각을 정리하고 말한다.":
             d "저도 안 어려울 거라고는 못 해요. 잠깐만 생각하고 대답할게요."
             "도현이 컵을 내려놓았다. 서윤은 수첩을 덮지 않고 기다렸다."
             d "기다릴 수 있는 것과 싫은 건 저도 말할게요. 아무 일 없는 척하라는 건 싫어요."
@@ -64,15 +64,15 @@ label seoyun_r14:
     $ progression_enter("seoyun_r14.choice01")
     $ progression_checkpoint("seoyun_r14.choice01")
     menu:
-        "수요일에 서로 원하는 만남부터 이야기하자고 한다.":
+        "수요일에 다 얘기하자고 한다.":
             d "수요일에 봐요. 그날은 몇 시에 볼지만 말고, 우리 둘이 뭘 하고 싶은지도 얘기해요."
             s "응. 나도 그건 달력 안 보고 대답할 수 있어."
             $ remember("seoyun_r14_choice", "ready")
-        "부담되는 일도 솔직히 말할 수 있어야 한다고 한다.":
+        "어려운 것도 말하자고 한다.":
             d "저도 늘 괜찮다고는 못 해요. 어렵다고 해도 좋아하는 마음이 없다고는 듣지 말아 주세요."
             s "응. 나도 내 부탁 다 들어줘야 계속 만날 수 있는 것처럼 말하지 않을게."
             $ remember("seoyun_r14_choice", "repair_blunt")
-        "연애를 마치고 동료로 지내고 싶다고 말한다 — 관계 종료 확인.":
+        "연애를 마치자고 한다 — 관계 종료 확인.":
             $ progression_enter("seoyun_r14.choice02")
             $ progression_checkpoint("seoyun_r14.choice02")
             menu:
@@ -85,11 +85,11 @@ label seoyun_r14:
                     "인사하고 카페를 나왔다. 사적인 다음 약속은 잡지 않았다."
                     $ progression_note_ending()
                     return
-                "결정을 취소하고 수요일에 이야기를 듣는다.":
+                "끝내자는 말을 거둔다.":
                     d "끝내겠다는 말은 취소할게요. 서로 생각을 더 듣고 싶어요."
                     s "응. 다음 답까지 미리 받은 걸로 생각하지 않을게."
                     $ remember("seoyun_r14_choice", "reconsidered")
-                "종료 결정은 보류하고 서로의 생각을 들은 뒤 다시 정한다.":
+                "수요일 얘기를 듣고 정하겠다고 한다.":
                     d "지금은 결정하지 않을게요. 수요일엔 제 마음도 말할래요."
                     s "응. 나도 대답을 준비해 갈게."
                     $ remember("seoyun_r14_choice", "wait_action")
@@ -123,11 +123,11 @@ label seoyun_r14:
     $ progression_enter("seoyun_r14.choice03")
     $ progression_checkpoint("seoyun_r14.choice03")
     menu:
-        "피칭이 끝날 때까지 기다리지 않고 연인으로 계속 만나기로 한다.":
+        "피칭이 끝날 때까지 기다리지 않고 계속 만난다.":
             d "피칭 끝날 때까지 떨어져 있는 거 말고, 지금부터 계속 만나요."
             s "응. 회의실에선 모르는 척, 끝나면 바로 네 쪽."
             $ remember("seoyun_continues_after_discussion")
-        "이야기를 들었지만 연애는 여기서 마치기로 한다.":
+        "이야기는 들었지만 여기서 끝낸다.":
             d "생각 말해 주셔서 고마워요. 그래도 저는 지금 이 관계를 이어가기는 어려울 것 같아요."
             s "응. 솔직하게 답해 준 거, 그대로 받을게."
             $ dating = False
@@ -136,7 +136,7 @@ label seoyun_r14:
             "인사하고 각자 일어났다. 새로운 사적 약속은 잡지 않았다."
             $ progression_note_ending()
             return
-        "아직 어려운 점도 말하며 지금의 만남을 이어가고 싶다고 한다.":
+        "아직 어려워도 계속 만난다.":
             d "그분 일이 다 끝난 건 아니란 거 알아요. 그래도 계속 만나 보고 싶어요."
             s "나도 그래. 모르는 건 다시 묻고, 대답이 바뀌면 바로 말해 주자."
             $ remember("seoyun_continues_after_discussion")
@@ -179,17 +179,17 @@ label seoyun_r15:
     $ progression_enter("seoyun_r15.choice01")
     $ progression_checkpoint("seoyun_r15.choice01")
     menu:
-        "보고 싶다는 마음 뒤에는 다음 날짜도 같이 물어보자고 한다.":
+        "보고 싶다는 마음엔 날짜를 붙이자고 한다.":
             d "다음에도 제가 보고 싶다고 할게요. 언제 시간 되는지도 같이 물을게요."
             s "다음 금요일 일곱 시는 어때? 네 일정도 보고 답해 줘."
             d "좋아요. 그날은 제가 궁금한 가게 하나 더 가져올게요."
             $ remember("seoyun_future_promise", "다음 금요일19시, 서로의 일정을 확인한 뒤 만남 확정")
-        "아직 못 정한 일은 다시 이야기할 날을 같이 정하자고 한다.":
+        "아직 못 정한 건 다시 얘기할 날을 잡자고 한다.":
             d "회사에 알리는 얘기는 오늘 정하지 말고, 피칭 끝나고 다시 해요."
             s "응. 피칭 끝난 다음 주 토요일 두 시 어때? 그때도 아직이면 아직이라고 말하고."
             d "좋아요. 저도 제 생각을 가져올게요."
             $ remember("seoyun_future_promise", "피칭 끝난 다음 주 토요일 14시, 회사와 친구들에게 알릴지 다시 이야기")
-        "나도 힘들거나 쉬고 싶을 때 먼저 말하겠다고 한다.":
+        "나도 힘들면 말하겠다고 한다.":
             d "저도 쉬고 싶은 날엔 말할게요. 오늘은 반대예요. 좀 더 같이 있고 싶어요."
             s "그 말 기다렸어. 나도 계산하고 바로 헤어지긴 아까웠거든."
             $ remember("seoyun_future_promise", "서로 쉬는 시간과 함께 있고 싶은 마음을 먼저 말하기")
@@ -203,11 +203,11 @@ label seoyun_r15:
         "편한 생활복으로 쉬자고 한다.":
             d "오늘은 편하게요. 같이 앉아 있는 게 좋아요."
             $ remember("seoyun_r15_outfit", "home")
-        "서윤도 지금 원한다면 마술사 의상을 보고 싶다고 한다.":
+        "마술사 의상이 보고 싶다고 한다.":
             d "서윤 씨도 입어 보고 싶으시면 저도 궁금해요."
             s "내가 보여 주고 싶어서 꺼낸 거야~ 소매에서 꽃 나오는 건 기대하지 말고."
             $ remember("seoyun_r15_outfit", "cosplay")
-        "서윤이 오늘 더 편한 쪽을 정해 달라고 한다.":
+        "서윤에게 고르게 한다.":
             s "그럼 오늘은 생활복. 갈아입는 동안 네가 무슨 표정일지부터 궁금하네."
             d "여기서 기다리고 있을게요."
             $ remember("seoyun_r15_outfit", "home")
@@ -243,15 +243,15 @@ label seoyun_r16:
     $ progression_enter("seoyun_r16.choice01")
     $ progression_checkpoint("seoyun_r16.choice01")
     menu:
-        "같이 걸은 곳을 다시 찾으며 다음 페이지도 쓰고 싶다고 한다.":
+        "같이 걸은 데를 다시 걷자고 한다.":
             d "[memory['seoyun_walk_detail']], 그날 얘기도 남기고 싶어요. 다음에 같이 다시 봐요."
             s "응. 피칭 끝나고 첫 주말, 우리 둘이 갈 데부터 정하자."
             $ remember("seoyun_ending_promise", "revisit")
-        "앞으로도 다음 질문과 대답을 서로 기다려 주자고 한다.":
+        "서로 대답을 기다려 주자고 한다.":
             d "모르는 게 생기면 다시 물어보고 싶어요. 좋아한다는 말도 아끼지 않고요."
             s "응. 나도 괜히 어려울 거라고 미리 결론 내지 않을게."
             $ remember("seoyun_ending_promise", "next_answer")
-        "각자의 생활과 함께 보내는 시간을 모두 존중하는 연인이 되고 싶다고 한다.":
+        "각자 삶도, 둘의 시간도 지키자고 한다.":
             d "서윤 씨 일상도, 제 일상도 지키면서 계속 만나고 싶어요. 숨어서 말고요."
             s "응. 안 보는 날 보고 싶어지면 말할게. 당장 와 달라는 뜻으로 보내진 않고."
             $ remember("seoyun_ending_promise", "own_and_shared")
@@ -302,17 +302,17 @@ label seoyun_e01:
     $ progression_enter("seoyun_e01.choice01")
     $ progression_checkpoint("seoyun_e01.choice01")
     menu:
-        "팀에 둘의 관계를 알리자고 한다.":
+        "팀에 알리자고 한다.":
             d "저는 알리고 싶어요. 회식 때 서윤 씨 옆자리에 눈치 안 보고 앉고 싶어서요."
             s "응. 다음 주 회의 끝나고 같이 말하자. 팀장님 표정 볼만하겠다~"
             $ remember("seoyun_epilogue_choice", "consider_introduction")
             $ remember("seoyun_publicity_status", "서로 의향만 확인, 팀에 알릴 구체적 일정은 확인 전")
-        "공개는 조금 더 미루고 둘만의 데이트를 이어가고 싶다고 한다.":
+        "조금 더 비밀로 하자고 한다.":
             d "저는 조금만 더 둘만 알고 싶어요. 들킬 듯 말 듯한 것도 아직 재밌어서요."
             s "...그 취향은 몰랐네. 좋아, 오늘 대답은 그걸로 들을게. 돌아가는 길엔 내가 하나 더 물어볼래~"
             $ remember("seoyun_epilogue_choice", "couple_time")
             $ remember("seoyun_publicity_status", "공개 보류, 둘만의 교제 지속")
-        "공개보다 같이 사는 얘기를 먼저 해 보고 싶다고 한다.":
+        "공개보다 칫솔 얘기가 먼저라고 한다.":
             d "알리는 것보다... 저는 서윤 씨 집에 제 칫솔 두는 얘기가 더 하고 싶은데요."
             s "응. 나도 네가 바라는 하루부터 듣고 싶어. 내가 혼자 그려 놓은 집 말고."
             $ remember("seoyun_epilogue_choice", "discuss_life")
