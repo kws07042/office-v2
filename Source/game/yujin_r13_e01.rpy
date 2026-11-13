@@ -231,7 +231,7 @@ label yujin_r15:
                     $ remember("yujin_r15_outfit_delegated")
             call event_sequence("yujin_r15", memory["yujin_r15_outfit"])
             if not event_main_reached:
-                "(거사 — 장면 생략)"
+                "(장면 생략 · 시간이 흐릅니다.)"
             $ remember("yujin_r15_intimacy", "shared")
             y "아까 연습한 말, 중간부터 다 잊었어요."
             d "중간부터가 더 좋았는데요."

@@ -252,7 +252,7 @@ label yujin_r07:
             y "손 차갑죠? 사진 찍을 때도 이랬어요. 도현 씨만 긴장한 줄 알았죠?"
             call event_sequence("yujin_r07", "casual")
             if not event_main_reached:
-                "(거사 — 장면 생략)"
+                "(장면 생략 · 시간이 흐릅니다.)"
             $ remember("yujin_r07_pace", "shared")
             y "내일 아침에는 제가 먼저 커튼 열어도 돼요? 빛 보여 드리고 싶어서요."
             d "네. 저는 그때도 옆에서 같이 볼게요."

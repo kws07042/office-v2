@@ -153,7 +153,7 @@ label seoyun_private_evening(slot, outfit):
             s "응. 이 대답은 장난 없이 들을게. 나도 원하니까."
             call event_sequence("seoyun_" + slot, outfit)
             if not event_main_reached:
-                "(거사 — 장면 생략)"
+                "(장면 생략 · 시간이 흐릅니다.)"
             $ remember("seoyun_" + slot + "_pace", "shared")
             if slot == "r07":
                 s "아까 내가 너 붙잡으러 갔을 때 있잖아. 그때 벌써 손 잡고 싶었어."

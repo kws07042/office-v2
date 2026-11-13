@@ -7,37 +7,37 @@ label yujin_r01:
     $ cream_focus = "yujin"
     $ chapter = "유진 R01 · 보내려던 메시지"
     $ location = "목요일 퇴근 후 · 개인 메시지"
-    call phone_deliver("yujin_r01_info", "yujin", "주말에 작은 전시가 열려요. 도현 씨랑 같이 보고 싶어서 보내요.", contact="yujin")
-    call phone_deliver("yujin_r01_title", "yujin", "제목은 ‘오후의 온도’예요. 설명하려고 적다 보니... 만나서 얘기하는 게 더 좋겠어요.", contact="yujin")
+    call phone_deliver("yujin_r01_info", "yujin", "도현 씨, 이번 주말에 작은 전시가 열려요. 그게... 같이 가고 싶어서요.", contact="yujin")
+    call phone_deliver("yujin_r01_title", "yujin", "제목은 ‘오후의 온도’예요. 설명을 세 줄 썼다가 다 지웠어요. 만나서 할게요.", contact="yujin")
     $ phone_context = "yujin_r01_reply"
     $ progression_enter("yujin_r01.choice01")
     $ progression_checkpoint("yujin_r01.choice01")
-    call screen office_phone(replies=[("interest", "같이 보고 싶다고 답하고, 유진의 추천을 듣는다."), ("time", "토요일 오후 시간을 먼저 제안한다."), ("reason", "이 전시를 함께 보고 싶은 이유를 묻는다.")])
+    call screen office_phone(replies=[("interest", "좋아요. 유진 씨 추천이면 가야죠."), ("time", "토요일 오후 두 시 어때요?"), ("reason", "왜 이 전시예요?")])
     $ remember("yujin_r01_reply", _return)
     $ phone_context = None
     if memory["yujin_r01_reply"] == "interest":
-        call phone_deliver("yujin_r01_reply", "dohyun", "좋아요. 유진 씨가 고른 거라 더 궁금해요. 어떤 작품부터 볼까요?", contact="yujin")
-        call phone_deliver("yujin_r01_answer", "yujin", "입구 쪽 그림이요. 그런데 제가 먼저 설명하면 도현 씨 감상이 달라질 것 같아서, 그건 참아 볼게요~", contact="yujin")
+        call phone_deliver("yujin_r01_reply", "dohyun", "좋아요. 유진 씨가 고른 거면 일단 가야죠. 뭐부터 봐요?", contact="yujin")
+        call phone_deliver("yujin_r01_answer", "yujin", "입구 쪽 그림이요! ...아, 아니에요. 제가 말하면 도현 씨 감상이 제 감상이 돼 버려요. 참을게요.", contact="yujin")
     elif memory["yujin_r01_reply"] == "time":
-        call phone_deliver("yujin_r01_reply", "dohyun", "토요일 오후 두 시는 어때요? 그 뒤에는 서두르지 않아도 돼요.", contact="yujin")
-        call phone_deliver("yujin_r01_answer", "yujin", "좋아요! 저는 보내 놓고 시간은 어떻게 물어볼지 생각하고 있었어요. 한 문장 늦었네요.", contact="yujin")
+        call phone_deliver("yujin_r01_reply", "dohyun", "토요일 오후 두 시 어때요? 그 뒤는 비워 둘게요.", contact="yujin")
+        call phone_deliver("yujin_r01_answer", "yujin", "헉. 저 지금 시간을 어떻게 물어볼지 고민하던 중이었는데요. 한 문장 졌네요.", contact="yujin")
     else:
-        call phone_deliver("yujin_r01_reply", "dohyun", "같이 보고 싶어요. 그런데 이 전시를 고르신 이유부터 듣고 싶어요.", contact="yujin")
+        call phone_deliver("yujin_r01_reply", "dohyun", "가고 싶어요. 근데 왜 이 전시예요?", contact="yujin")
         if c06_person == "yujin" and c06_topic == "weekend":
-            call phone_deliver("yujin_r01_answer", "yujin", "지난번 제목 보고 서로 다른 쪽 고르셨잖아요. 이번엔 같은 그림 앞에서 얼마나 다르게 볼지 궁금했어요.", contact="yujin")
+            call phone_deliver("yujin_r01_answer", "yujin", "지난번에 제목 보고 서로 다른 쪽 고르셨잖아요. 같은 그림 앞에서는 얼마나 다를지... 궁금해서요.", contact="yujin")
         else:
-            call phone_deliver("yujin_r01_answer", "yujin", "같은 걸 봐도 도현 씨는 다른 데서 멈추실 것 같아서요. 그걸 옆에서 보고 싶었어요.", contact="yujin")
+            call phone_deliver("yujin_r01_answer", "yujin", "도현 씨는 같은 걸 봐도 다른 데서 멈출 것 같아서요. 그 멈추는 데를 옆에서 보고 싶었어요.", contact="yujin")
     if memory["yujin_r01_reply"] != "time":
-        call phone_deliver("yujin_r01_time", "yujin", "토요일 두 시에 입구에서 만날까요? 사람이 늘기 전에 보고 싶어요.", contact="yujin")
-        call phone_deliver("yujin_r01_time_reply", "dohyun", "네. 두 시에 입구에서 봬요. 저도 궁금한 걸 하나 가져갈게요.", contact="yujin")
+        call phone_deliver("yujin_r01_time", "yujin", "토요일 두 시, 입구 어때요? 사람 많아지기 전에요.", contact="yujin")
+        call phone_deliver("yujin_r01_time_reply", "dohyun", "좋아요. 두 시에 입구에서 봬요.", contact="yujin")
     call phone_deliver("yujin_r01_close", "yujin", "그럼 토요일 두 시예요. ...설명하는 사람 말고, 같이 보는 사람으로 와 주세요 :)", contact="yujin", important=True)
     $ remember("yujin_r01_appointment", "토요일 오후 두 시, 작은 전시 공간 입구")
     $ remember("yujin_r01_first_contact")
     $ location = "목요일 저녁 · 도현의 집"
-    dn "같이 보는 사람. 일정에 적기엔 긴 말이라 전시 제목 옆에 작게 남겼다."
+    dn "같이 보는 사람. 일정에 적기엔 긴 말이라 전시 제목 옆에 작게 적어 뒀다."
     $ location = "같은 목요일 저녁 · 유진의 집 — 유진 시점"
-    "유진은 보낸 초대 문장을 다시 읽었다. 달력에 토요일 두 시를 적고, 전시 노트 첫 줄을 비워 뒀다."
-    yn "설명은 가서 해도 되니까. 첫 감상은 그분한테 먼저 물어봐야지."
+    "유진은 보낸 문장을 세 번 다시 읽었다. 달력의 토요일 칸에 작은 별을 그리고, 전시 노트 첫 장은 비워 둔다."
+    yn "설명은 가서 해도 돼. 첫 감상은 그분 입으로 듣고 싶으니까."
     $ location = "같은 목요일 저녁 · 도현의 집"
     $ award_once("yujin_R01", "yujin", 4)
     $ progression_note_ending()

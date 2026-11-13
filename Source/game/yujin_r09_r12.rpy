@@ -372,7 +372,7 @@ label yujin_r12:
             "함께 집에 들어와 가방을 내려놨다. 유진은 다음에 할 말을 찾기보다 도현을 먼저 바라봤다."
             call event_sequence("yujin_r12", "special")
             if not event_main_reached:
-                "(거사 — 장면 생략)"
+                "(장면 생략 · 시간이 흐릅니다.)"
             $ remember("yujin_r12_intimacy", "shared")
             y "오늘은 같이 있다는 말이 메시지가 아니라서 좋네요."
             d "저도요. 지금은 답장 고를 시간도 필요 없네요."
