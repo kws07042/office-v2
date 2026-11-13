@@ -25,28 +25,25 @@ init -10 python:
 
     def cream_round(kind):
         palette = {
-            "panel": ("#fffdf7", "#e5d9cd"),
-            "button": ("#fffdf8", "#ded2c5"),
-            "hover": ("#f1e8f8", "#ac91be"),
-            "accent": ("#806695", "#806695"),
-            "accent_hover": ("#6c5482", "#6c5482"),
-            "soft": ("#f7f0e7", "#e5d9cd"),
+            "panel": ("#fff7ef", "#d8c5bd"),
+            "button": ("#fff8f2", "#dac5bd"),
+            "hover": ("#f6e6dc", "#bb8c7f"),
+            "accent": ("#864940", "#864940"),
+            "accent_hover": ("#703e38", "#703e38"),
+            "soft": ("#f2e5de", "#d8c5bd"),
         }
-        return CreamRoundedPanel(*palette[kind])
+        return CreamRoundedPanel(*palette[kind], radius=8)
 
     def cream_speaker_color(who, history=False):
         # Light fills over artwork; darker companions on the cream history panel.
         palette = {
-            "강리아": ("#ffe0a3", "#93600f"), "리아": ("#ffe0a3", "#93600f"),
-            "백지현": ("#bde7ff", "#32668e"), "지현": ("#bde7ff", "#32668e"),
-            "차유진": ("#ffc9dc", "#98516c"), "유진": ("#ffc9dc", "#98516c"),
-            "한서윤": ("#ddc5ff", "#78549a"), "서윤": ("#ddc5ff", "#78549a"),
+            "강리아": ("#F4D298", "#765019"), "리아": ("#F4D298", "#765019"),
+            "백지현": ("#F2A89C", "#923F44"), "지현": ("#F2A89C", "#923F44"),
+            "차유진": ("#B6DFCC", "#32634F"), "유진": ("#B6DFCC", "#32634F"),
+            "한서윤": ("#D5C6F1", "#654B85"), "서윤": ("#D5C6F1", "#654B85"),
         }
         name = (who or "").split(" · ", 1)[0]
-        return palette.get(name, ("#fffdf8", "#705684"))[1 if history else 0]
-
-    def cream_speaker_outline(who):
-        return "#573f70" if cream_speaker_color(who) == "#fffdf8" else cream_speaker_color(who, history=True)
+        return palette.get(name, ("#fff8f2", "#864940"))[1 if history else 0]
 
     def cream_note_speaker(person, event, **kwargs):
         if event == "begin" and person not in ("dohyun", "narrator"):
@@ -64,8 +61,7 @@ init -10 python:
             return False
         if any(word in renpy.store.location for word in ("메시지", "각자의", "연락")):
             return False
-        choice = renpy.get_screen("choice")
-        return not choice or len(choice.scope.get("items", [])) <= 3
+        return True
 
     def cream_yujin_visible():
         if not renpy.loadable("images/characters/yujin/ui_temp_v001.png"):
@@ -76,8 +72,7 @@ init -10 python:
             return False
         if any(word in renpy.store.location for word in ("메시지", "각자의", "연락")):
             return False
-        choice = renpy.get_screen("choice")
-        return not choice or len(choice.scope.get("items", [])) <= 3
+        return True
 
     def cream_relation_name(person="ria"):
         if person == "seoyun":
