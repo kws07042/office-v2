@@ -82,7 +82,7 @@ testsuite editorial_checks:
         $ editorial_fixture = {"scene":"r15", "informal":informal}
         run Start("test_editorial_entry")
         advance until screen "choice"
-        click "일주일에 한 번, 짧게라도 만날 저녁을 함께 정한다."
+        click "다음 주에도 여기 오자고 한다."
         advance until screen "choice"
         click "얘기만 더 하고 잠은 각자 잔다."
         advance until eval memory.get("editorial_test_done")

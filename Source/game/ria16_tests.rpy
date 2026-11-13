@@ -230,7 +230,7 @@ testsuite ria16:
                 advance until screen "choice"
         assert eval memory["ria_r15_future_agreed"] is True
         assert eval memory["ria_r15_future_plan"] == ("plan_together" if (case // 3) & 4 else "weekly_evening")
-        click expression ("나도 함께 있고 싶다고 답한다 — 친밀한 장면으로 이어짐." if (case // 3) & 4 else "오늘은 차를 마시고 집에 돌아가 쉬겠다고 말한다.") until not screen "choice"
+        click expression ("나도 함께 있고 싶다고 답한다 — 친밀한 장면으로 이어짐." if (case // 3) & 4 else "오늘은 집에 가서 쉰다.") until not screen "choice"
         advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
         if screen "office_phone":
             click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
@@ -434,7 +434,8 @@ testsuite ria16:
             assert eval "ria_r14_action_confirmed" not in memory
             assert eval trust_ria == 2
             assert eval affinity["ria"] == 63
-            click "연애를 마치자고 한다 — 관계 종료 대화로 이어짐." until not screen "choice"
+            click "연애를 마치자고 한다 — 관계 종료 대화로 이어짐."
+            click "연애를 마치겠다는 뜻을 확인한다." until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
