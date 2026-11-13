@@ -397,6 +397,86 @@ testsuite yujin_early_checks:
                 advance until screen "choice"
             if not eval yujin_test_menu_end():
                 click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
+        if not eval yujin_test_menu_end():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    click id ("phone_reply_" + renpy.get_screen("office_phone").scope["replies"][0][0])
+                    click id "phone_next" until not screen "office_phone"
+                advance until screen "choice"
+            if not eval yujin_test_menu_end():
+                click expression yujin_test_common_choice()
         assert eval yujin_test_menu_end()
         assert eval active_route == "yujin"
         assert eval memory.get("yujin_r04_complete")

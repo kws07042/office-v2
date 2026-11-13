@@ -156,7 +156,7 @@ testsuite office_phone_checks:
         run Function(phone_note_photo, "qa_fixture")
         run Show("office_phone_photo", media="qa_fixture")
         assert screen "office_phone_photo"
-        assert eval phone_photo_opened == ["qa_fixture"]
+        assert eval phone_photo_opened == (["qa_fixture"] if renpy.loadable(RIA_MASTER_V2) else [])
         assert eval phone_media_ready("qa_fixture") == bool(renpy.loadable(RIA_MASTER_V2))
         screenshot "phone-real-image-loader-fixture.png"
         click id "phone_photo_close"

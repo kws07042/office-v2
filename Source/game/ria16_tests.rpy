@@ -47,6 +47,12 @@ init python:
 
     def ria16_pick(route):
         ria16_fixture["last_pick"] = ria16_flow_caption(route)
+        # Long choice lists sit in a scrolling viewport; bring the picked row into view.
+        items = [renpy.substitute(i.caption) for i in renpy.get_screen("choice").scope["items"]]
+        port = renpy.get_widget("choice", "window_choices")
+        if port is not None and ria16_fixture["last_pick"] in items:
+            ratio = items.index(ria16_fixture["last_pick"]) / max(1.0, len(items) - 1.0)
+            port.yadjustment.change(port.yadjustment.range * ratio)
         return ria16_fixture["last_pick"]
 
     def ria16_pick_action(route):
