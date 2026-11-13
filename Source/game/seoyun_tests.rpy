@@ -3050,6 +3050,7 @@ testsuite seoyun_checks:
 
     testcase preview_entry:
         screenshot "seoyun-main-menu.png"
+        click id "preview_toggle"
         click id "seoyun_preview_button"
         advance until screen "office_phone"
         assert eval active_route=="seoyun" and phone_active_contact=="seoyun" and not memory.get("seoyun_intro")

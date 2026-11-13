@@ -157,7 +157,7 @@ screen main_menu():
             textbutton "종료" action Quit(confirm=True) style "afterwork_title_link"
 
     if config.developer:
-        textbutton "테스트 장면" xpos 60 ypos 657 action ToggleScreenVariable("show_preview_links") style "afterwork_title_link" text_size 14
+        textbutton "테스트 장면" id "preview_toggle" xpos 60 ypos 657 action ToggleScreenVariable("show_preview_links") style "afterwork_title_link" text_size 14
         if show_preview_links:
             frame:
                 xpos 351 ypos 654 xsize 780 ysize 52 padding (10, 4)

@@ -41,6 +41,7 @@ testsuite cream_ui_checks:
     testcase main_and_day_portrait:
         pause 0.2
         screenshot "cream-main.png"
+        click id "preview_toggle"
         click id "cream_preview_button" until not screen "main_menu"
         pause 0.2
         assert eval cream_preview_active is True
