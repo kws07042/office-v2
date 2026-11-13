@@ -34,12 +34,12 @@ testsuite silk_ui_checks:
         assert screen "main_menu" timeout 10.0
 
     testcase main_menu_look:
-        pause 0.3
+        pause 0.9
         screenshot "silk-main.png"
 
     testcase long_dialogue_look:
         run Start("test_cream_long")
-        pause 0.3
+        pause 0.9
         assert eval renpy.get_widget("say", "window").style.background is None
         assert eval renpy.get_widget("say", "what").style.color == Color("#3B0B22")
         assert eval renpy.get_widget("say", "who").style.color == Color("#FFFDFB")
@@ -48,7 +48,7 @@ testsuite silk_ui_checks:
     testcase intimate_choice_look:
         run Start("test_silk_intimate")
         advance until screen "choice"
-        pause 0.3
+        pause 0.9
         assert eval len(renpy.get_screen("choice").scope["items"]) == 3
         assert eval silk_has_intimate(renpy.get_screen("choice").scope["items"]) is True
         screenshot "silk-choice-intimate.png"
@@ -56,7 +56,7 @@ testsuite silk_ui_checks:
 
     testcase speaker_tags_look:
         run Start("test_silk_speakers")
-        pause 0.3
+        pause 0.9
         screenshot "silk-tag-ria.png"
         advance
         pause 0.2
@@ -76,7 +76,7 @@ testsuite silk_ui_checks:
 
     testcase save_look:
         run Start("test_cream_long")
-        pause 0.3
+        pause 0.9
         click "저장" until screen "save"
         pause 0.2
         screenshot "silk-save.png"
@@ -84,14 +84,14 @@ testsuite silk_ui_checks:
 
     testcase preferences_look:
         run Start("test_cream_long")
-        pause 0.3
+        pause 0.9
         click "설정" until screen "preferences"
         pause 0.2
         screenshot "silk-preferences.png"
 
     testcase history_look:
         run Start("test_cream_long")
-        pause 0.3
+        pause 0.9
         click "기록" until screen "history"
         pause 0.2
         screenshot "silk-history.png"

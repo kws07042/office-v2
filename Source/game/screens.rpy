@@ -68,6 +68,7 @@ screen story_header():
     if not main_menu and not event_cut_active and not cream_menu_open():
         $ chapter_code, chapter_title = silk_chapter_parts(chapter)
         frame:
+            at (silk_header_in(-40) if silk_motion_on() else silk_still)
             xpos (84 if chapter_code else 32) ypos 30 xmaximum 440
             padding ((34 if chapter_code else 24), 9, 28, 14)
             background silk_surface("button")
@@ -77,12 +78,14 @@ screen story_header():
                 text location size 13 color "#6E4553" xmaximum 370
         if chapter_code:
             fixed:
+                at (silk_header_in(-40) if silk_motion_on() else silk_still)
                 xpos 32 ypos 26 xysize (72, 73)
                 add silk("badge", size=(72, 73))
                 text chapter_code font "fonts/Jua-Regular.ttf" size 23 color "#FFFDFB" xpos 34 ypos 34 xanchor 0.5 yanchor 0.5
         $ focus = active_route if active_route in affinity else (cream_focus if cream_focus in affinity else "ria")
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
+            at (silk_header_in(40) if silk_motion_on() else silk_still)
             xanchor 1.0 xpos 1248 ypos 30
             padding (20, 10, 24, 15)
             background silk_surface("button")
@@ -104,8 +107,9 @@ screen story_header():
 
 screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
     # 레이스 가장자리가 달린 종이 면. 창 자체의 배경은 비워 두고 면은 따로 그린다.
-    add silk("dialogue", size=(1280, 206)) xpos 0 ypos 514
+    add silk("dialogue", size=(1280, 206)) xpos 0 ypos 514 at (silk_panel_in if silk_motion_on() else silk_still)
     window:
+        at (silk_panel_in if silk_motion_on() else silk_still)
         id "window"
         xpos 0 ypos 552 xsize 1280 ysize 122
         padding (96, 10, 96, 0)
@@ -123,6 +127,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
             substitute use_substitution
     if who:
         frame:
+            at (silk_tag_in if silk_motion_on() else silk_still)
             xpos 84 ypos 484 ysize 56
             padding (30, 0, 35, 6)
             background silk("tag", silk_tag_color(who))
@@ -138,14 +143,15 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 if silk_english(who):
                     text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#FFFDFB" outlines [] yalign 0.7
     if advance:
-        add silk("next", "#3B0B22", size=(14, 9)) xpos 1170 ypos 652
+        add silk("next", "#3B0B22", size=(14, 9)) xpos 1170 ypos 652 at (silk_next_bob if silk_motion_on() else silk_still)
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
 
-screen silk_choice_item(item):
+screen silk_choice_item(item, i=0):
     $ choice_text, choice_chip = silk_choice_parts(item.caption)
     button:
+        at ((silk_choice_in(i), silk_choice_hover) if silk_motion_on() else (silk_still,))
         style "silk_choice_button"
         action item.action
         alt item.caption
@@ -154,6 +160,7 @@ screen silk_choice_item(item):
             text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else 530) min_width (366 if choice_chip else 0)
             if choice_chip:
                 frame:
+                    at (silk_chip_glow if silk_motion_on() else silk_still)
                     yalign 0.5
                     padding (13, 5)
                     background silk("flat", "#B3123F", 14)
@@ -162,8 +169,8 @@ screen silk_choice_item(item):
 screen office_choice_list(items):
     vbox:
         xsize 612 spacing 9
-        for item in items:
-            use silk_choice_item(item)
+        for i, item in enumerate(items):
+            use silk_choice_item(item, i)
 
 screen choice(items):
     zorder 30
@@ -180,8 +187,8 @@ screen choice(items):
         else:
             vbox:
                 xalign 0.5 yanchor 1.0 ypos (446 if silk_has_intimate(items) else 470) xsize 624 spacing 9
-                for item in items:
-                    use silk_choice_item(item)
+                for i, item in enumerate(items):
+                    use silk_choice_item(item, i)
         if silk_has_intimate(items):
             frame:
                 xalign 0.5 ypos 452
@@ -198,8 +205,8 @@ screen choice(items):
                 vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
                 vbox:
                     xsize 1070 spacing 9
-                    for item in items:
-                        use silk_choice_item(item)
+                    for i, item in enumerate(items):
+                        use silk_choice_item(item, i)
 
 screen main_menu():
     tag menu
@@ -234,6 +241,7 @@ screen main_menu():
     hbox:
         xpos 64 ypos 594 spacing 8
         button:
+            at ((silk_menu_in(0), silk_menu_hover) if silk_motion_on() else (silk_still,))
             style "silk_menu_button"
             action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()]
             alt "처음부터 읽기"
@@ -244,6 +252,7 @@ screen main_menu():
                 text "처음부터 읽기" style "silk_menu_text"
                 text "New game" style "silk_menu_caption"
         button:
+            at ((silk_menu_in(1), silk_menu_hover) if silk_motion_on() else (silk_still,))
             style "silk_menu_button"
             action ShowMenu("load")
             alt "이어 읽기"
@@ -252,6 +261,7 @@ screen main_menu():
                 text "이어 읽기" style "silk_menu_text"
                 text "Continue" style "silk_menu_caption"
         button:
+            at ((silk_menu_in(2), silk_menu_hover) if silk_motion_on() else (silk_still,))
             style "silk_menu_button"
             action ShowMenu("progression_hub")
             alt "우리의 기록"
@@ -260,6 +270,7 @@ screen main_menu():
                 text "우리의 기록" style "silk_menu_text"
                 text "Album" style "silk_menu_caption"
         button:
+            at ((silk_menu_in(3), silk_menu_hover) if silk_motion_on() else (silk_still,))
             style "silk_menu_button"
             action ShowMenu("preferences")
             alt "설정"
@@ -269,6 +280,7 @@ screen main_menu():
                 text "Config" style "silk_menu_caption"
         if not renpy.variant("web"):
             button:
+                at ((silk_menu_in(4), silk_menu_hover) if silk_motion_on() else (silk_still,))
                 style "silk_menu_button"
                 action Quit(confirm=False)
                 alt "종료"
@@ -281,6 +293,7 @@ screen main_menu():
 
 screen silk_quick_item(label, icon, target):
     button:
+        at (silk_quick_hover if silk_motion_on() else silk_still)
         style "silk_quick_button"
         action target
         alt label
@@ -368,6 +381,7 @@ screen preferences():
                 if config.has_voice:
                     text "음성" size 20
                     bar value Preference("voice volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
+                textbutton ("화면 움직임 효과: 켜짐" if silk_motion_on() else "화면 움직임 효과: 꺼짐") action ToggleField(persistent, "silk_motion", True, False) text_size 21
                 textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
                 text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#6E4553" line_spacing 4 xmaximum 600
                 textbutton "돌아가기" action Return()
