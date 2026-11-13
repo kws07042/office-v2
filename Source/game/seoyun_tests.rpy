@@ -6,7 +6,7 @@ init python:
     def seoyun_test_caption():
         caps=[renpy.substitute(x.caption) for x in renpy.get_screen("choice").scope["items"]]
         c=seoyun_fixture["case"]
-        if caps[0].startswith("소개는 천천히 생각하며"):
+        if caps[0].startswith("피칭이 끝날 때까지 기다리지 않고"):
             return caps[1 if seoyun_fixture.get("after_discussion_exit") else 0]
         if chapter.startswith("C"):
             if chapter.startswith("C08"):
@@ -87,7 +87,7 @@ label test_seoyun_guards:
 label test_seoyun_late_exit:
     $ active_route = "seoyun"
     $ dating = True
-    $ memory = {"seoyun_family_disclosed": True, "seoyun_family_state": "divorced_parent", "seoyun_conflict": "discussing"}
+    $ memory = {"seoyun_family_disclosed": True, "seoyun_family_state": "divorced", "seoyun_conflict": "discussing"}
     $ affinity = {"ria": 0, "jihyun": 0, "yujin": 0, "seoyun": 0}
     call seoyun_r14
     $ remember("seoyun_late_exit_test_complete")
@@ -3007,7 +3007,7 @@ testsuite seoyun_checks:
                 assert eval "seoyun_R15" not in completed and "seoyun_E01" not in completed
             else:
                 assert eval ending=="seoyun_good" and dating and persistent.local_seoyun_ending
-                assert eval memory.get("seoyun_family_disclosed") and memory.get("seoyun_family_state")=="divorced_parent"
+                assert eval memory.get("seoyun_family_disclosed") and memory.get("seoyun_family_state")=="divorced"
                 assert eval memory.get("seoyun_continues_after_discussion") and memory.get("seoyun_trust_status")=="mutual_answers_confirmed"
                 assert eval memory["seoyun_route_completed"] and memory["seoyun_conflict"]=="resolved" and memory["seoyun_repair_performed"]
                 assert eval cream_relation_name("seoyun")=="교제 중"
@@ -3017,7 +3017,7 @@ testsuite seoyun_checks:
                 assert eval all(not v["loaded_asset_ids"] for v in event_presentations.values())
                 assert eval bool(memory.get("seoyun_epilogue_completed"))==(case!=13)
                 if eval case!=13:
-                    assert eval memory["seoyun_cohabitation_status"]=="결혼·동거·부모 역할 확약 없음, 소개는 각자의 준비에 따라 별도 논의"
+                    assert eval memory["seoyun_cohabitation_status"]=="결혼·동거 확약 없음, 주변 공개는 둘이 정한 때에"
                 assert eval affinity["seoyun"]==69+(0 if case==13 else 8)+(6 if case%3==0 and case!=12 else 0)
                 assert eval all(memory["seoyun_o0"+str(n)+"_status"]==("skipped" if case==12 else ["completed","skipped","brief"][case%3]) for n in range(1,4))
                 if eval case==11:

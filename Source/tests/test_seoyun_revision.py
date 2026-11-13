@@ -30,8 +30,9 @@ class SeoyunRevisionTests(unittest.TestCase):
         self.assertLess(r04.index("call seoyun_family_context"), r04.index('$ dating = True'))
         context = self.parts["seoyun_family_context"]
         self.assertIn('if not memory.get("seoyun_family_disclosed"):', context)
-        self.assertIn("이혼했고, 아이가 한 명", context)
-        self.assertIn('remember("seoyun_family_state", "divorced_parent")', context)
+        self.assertIn("이혼했어. 삼 년 됐고", context)
+        self.assertNotIn("아이", context)
+        self.assertIn('remember("seoyun_family_state", "divorced")', context)
 
     def test_old_marriage_is_not_new_story_content(self):
         story = "\n".join(self.files.values())
@@ -39,6 +40,8 @@ class SeoyunRevisionTests(unittest.TestCase):
                          "남편하고 같은 집", "반지 케이스", "알고도 고른 다음"):
             self.assertNotIn(obsolete, story)
         self.assertNotIn("seoyun_child_met", story)
+        for obsolete in ("아이 아빠", "아이랑", "아이와", "아이를", "아이한테", "돌봄"):
+            self.assertNotIn(obsolete, story)
 
     def test_existing_event_ids_and_affection_rewards_remain(self):
         events = [f"seoyun_r{i:02}" for i in range(1, 17)] + [f"seoyun_o{i:02}" for i in range(1, 4)] + ["seoyun_e01"]
@@ -72,8 +75,8 @@ class SeoyunRevisionTests(unittest.TestCase):
     def test_actual_discussion_precedes_repair_and_no_forced_parent_role(self):
         source = self.parts["seoyun_r14"]
         self.assertLess(source.index('약속한 수요일'), source.index('remember("seoyun_repair_performed"'))
-        self.assertIn('바로 아빠 역할을 맡겠다는 약속으로 만들지는', source)
-        self.assertIn('아이 마음과 준비도 봐야', source)
+        self.assertIn('피칭은 피칭으로만', source)
+        self.assertIn('다시 만나자는 연락', source)
         epilogue = self.parts["seoyun_e01"]
         for value in ("consider_introduction", "couple_time", "discuss_life"):
             self.assertIn('"' + value + '"', epilogue)
@@ -84,7 +87,7 @@ class SeoyunRevisionTests(unittest.TestCase):
         for value in ("shared", "deferred", "talk"):
             self.assertIn('"' + value + '"', evening)
         self.assertIn('if memory.get("seoyun_r07_pace") == "shared":', self.parts["seoyun_r08"])
-        self.assertIn("내일 오후에 아이를 데려오기로", self.parts["seoyun_r07"])
+        self.assertIn("오늘 저녁만은 비워 두겠다고", self.parts["seoyun_r07"])
         plan = json.loads((GAME / "event_cg_plan.json").read_text(encoding="utf-8"))
         self.assertEqual(len([row for row in plan["sets"] if row["heroine"] == "seoyun"]), 4)
 
