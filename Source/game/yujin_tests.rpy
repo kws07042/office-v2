@@ -882,8 +882,8 @@ testsuite yujin_early_checks:
         assert eval memory.get("yujin_r04_complete")
         assert eval memory.get("yujin_intro") == "flow"
         assert eval "yujin_R04" in completed and "ria_R01" not in completed
-        assert eval dating
-        assert eval ending == "yujin_early_segment_complete"
+        # core.rpy now plays the full Yujin route after C08, so the run ends at the route ending.
+        assert eval ending in ("yujin_good", "yujin_relationship_closed")
 
     teardown:
         exit
