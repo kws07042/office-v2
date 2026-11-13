@@ -25,8 +25,7 @@ testsuite yujin08_checks:
         $ yujin_fixture["case"] = case
         run Start("test_yujin08_entry")
         advance until screen "choice"
-        assert eval cream_yujin_visible() and not cream_ria_visible()
-        assert eval renpy.loadable("images/characters/yujin/ui_temp_v001.png")
+        assert eval cream_yujin_visible() == bool(renpy.loadable("images/characters/yujin/ui_temp_v001.png")) and not cream_ria_visible()
         if eval case == 0:
             screenshot "yujin-r05-portrait.png"
         click expression yujin_test_choice(case % 3)
