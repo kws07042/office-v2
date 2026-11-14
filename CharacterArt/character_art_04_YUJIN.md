@@ -55,4 +55,4 @@
 
 ## 이전 자산
 
-[유진 예비 마스터 v001](assets/yujin/reference_v001/yujin_reference_v001.png) · [이전 QA](assets/yujin/reference_v001/yujin_reference_v001.qa.md) · [파일 기록](assets/yujin/reference_v001/reference_manifest.json)은 원본 그대로 보존한다. 당시 수령·미설치 상태는 그 파일의 이력이다. 새 외형의 단독 전신·입상 레이어·게임 교체는 별도 제작 상태로 관리한다.
+> 2026-11-14 사용자 요청으로 마스터 v001 네 장 외의 이전 히로인 그림과 기록 폴더를 저장소에서 삭제했다. 필요하면 Git 이력에서 복구한다.

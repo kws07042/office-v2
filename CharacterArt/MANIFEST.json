@@ -2,38 +2,6 @@
   "revision": "v5-art-reset-20261106",
   "date": "2026-11-06",
   "files": {
-    "assets/ria/master/ria_master_v001.json": {
-      "sha256": "6214d3ab716577b08f798b930a7320556e58b55b474cd9183f04e96dc49e245d",
-      "bytes": 1037
-    },
-    "assets/ria/master/ria_master_v001.qa.md": {
-      "sha256": "8a910d299dfdff9060c1fbc293799b190245ef04c80f552232f7b69bc690add4",
-      "bytes": 1775
-    },
-    "assets/ria/records/cleanup_report.json": {
-      "sha256": "1b5e176f4211748e5d03292354070167770e011941d6e3032d9fbe214f103ab6",
-      "bytes": 10480
-    },
-    "assets/ria/records/README.md": {
-      "sha256": "24c67dc55bd39362990a769e31c9442939c825b249adf8d0a5eff14260f011d3",
-      "bytes": 302
-    },
-    "assets/ria/records/superseded_text_records.json": {
-      "sha256": "90fcb7307f4dde72823c6906ed0ad2ec56510afd33bc0b7ad0e8559a43dd21b3",
-      "bytes": 30778
-    },
-    "assets/yujin/records/superseded_design_proposal.md": {
-      "sha256": "48ef1306cc4a1cb583ca9d58963a8fa23a0ef9186b32f2dab95fbbd7fa8bc18a",
-      "bytes": 5083
-    },
-    "assets/yujin/reference_v001/reference_manifest.json": {
-      "sha256": "1f07bae5fcca85cefe20fe15967edea5e9f9e63e1823b9dbd14a18a2f7b22d99",
-      "bytes": 1163
-    },
-    "assets/yujin/reference_v001/yujin_reference_v001.qa.md": {
-      "sha256": "c39b628e4bb0354637ad432deab6b95d7d598f1d595458b4338440b154189cd6",
-      "bytes": 3422
-    },
     "character_art_00_README.md": {
       "sha256": "c90585e3ee7075fc5c6a0f4b4ab59327017d6ca61ace722f569466c1b173d1c7",
       "bytes": 3149

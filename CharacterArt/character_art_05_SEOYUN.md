@@ -63,4 +63,4 @@
 
 ## 이전 자산
 
-[원피스 기준 v003](assets/seoyun/concepts/seoyun_office_dress_id_v003.png) · [이전 사용자 참조](assets/seoyun/reference/seoyun_user_visual_reference_v002.png) · [당시 QA](assets/seoyun/concepts/seoyun_office_dress_id_v003.qa.md)는 이력으로 보존한다. 해당 원본과 이전 CG를 덮어쓰지 않는다.
+> 2026-11-14 사용자 요청으로 마스터 v001 네 장 외의 이전 히로인 그림과 기록 폴더를 저장소에서 삭제했다. 필요하면 Git 이력에서 복구한다.

@@ -2,8 +2,8 @@
 2026년 10월 15일 / 강리아 확정 참조·차유진 제공 예비 참조 수록판
 
 이 묶음에는 설정 MD·TXT·검수 기록과 강리아 마스터 PNG 한 장과 차유진 제공 참조 PNG 한 장이 포함됩니다.
-강리아 기준 파일: assets/ria/master/ria_master_v001.png
-차유진 참조 파일: assets/yujin/reference_v001/yujin_reference_v001.png
+강리아 기준 파일: candidates/heroine-masters-v001/ria_office_pose01_neutral_v001.png
+차유진 기준 파일: candidates/heroine-masters-v001/yujin_office_pose01_neutral_v001.png
 게임 실행 파일·완성 일반 CG·음성은 포함하지 않습니다.
 
 ZIP을 폴더째 PC로 옮겨 압축을 풀고 character_art_00_README.md부터 읽으세요.
