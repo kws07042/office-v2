@@ -9,6 +9,41 @@
 - **CG는 핵심 장면만.** 일반 장면 CG는 아래 우선순위대로 만든다. 성인 이벤트 CG는 챗지피티 정책상 만들 수 없으니 별도 도구로 한다.
 - 모든 그림은 마스터와 **같은 그림체**(셀 명암, 선 굵기, 색감)로 만든다. 실사 질감, 3D 렌더 느낌, 사진 배경은 쓰지 않는다.
 
+## 0-1. 그림체 절대 고정 (2026-11-14 사용자 결정)
+그림체는 마스터 v001 네 장과 화풍 기준 그림 `CharacterArt/candidates/user-uploads/강리아 마스터.png`에서 **바꾸지 않는다.** 어긋나면 수정하지 않고 버린다.
+
+**가장 확실한 방법: 마스터를 만든 도구로 이어서 만든다.**
+- 로컬 ComfyUI, Anima Turbo 1.1, 화풍 IP-Adapter에 `강리아 마스터.png`를 넣고, 마스터와 같은 2차 다듬기 단계를 거친다. seed는 리아 1002, 지현 1002, 서윤 1003, 유진 1103(`CharacterArt/candidates/heroine-masters-v001/README.md`).
+- 표정은 마스터 얼굴을 고정한 채 얼굴 부분만 다시 그리는 방식(inpaint)으로 만든다. 몸과 그림체가 그대로 남는다.
+
+**챗지피티로 할 때 지킬 것**
+1. 새 대화를 열고 **마스터 PNG와 `강리아 마스터.png`를 둘 다 첨부**한다. 한 대화 안에서 같은 인물을 계속 만들고, 대화가 길어져 그림체가 흔들리면 새 대화로 다시 시작한다.
+2. 아래 **화풍 고정 문단을 모든 프롬프트 맨 앞에** 붙인다.
+3. 결과를 마스터 옆에 나란히 놓고 아래 체크리스트로 본다. 하나라도 어긋나면 버린다.
+
+화풍 고정 문단(모든 프롬프트 앞에 그대로 붙임):
+```
+STYLE LOCK — this is the most important rule.
+Copy the art style of the attached reference images EXACTLY, as if drawn by the same artist in the same session:
+- same line art: thin, clean, uniform dark-brown/black outlines, no sketchy or painterly lines
+- same eye rendering: same eye shape, iris gradient, highlight shapes and positions, eyelash style
+- same coloring: flat cel shading with one soft shadow tone and small crisp highlights; same saturation and warmth
+- same face proportions and nose/mouth drawing; same hair strand rendering and hair highlights
+Do NOT reinterpret, stylize, beautify, modernize, add your own style, add gradients, glow, painterly texture, 3D, semi-realism or photo textures.
+If anything conflicts, the reference images win.
+```
+
+**그림체 체크리스트 (마스터와 나란히 비교)**
+| 항목 | 통과 기준 |
+|---|---|
+| 선 | 굵기·색·깔끔함이 마스터와 같다. 스케치 선·붓 질감 없음 |
+| 눈 | 눈매·홍채 그라데이션·하이라이트 모양과 위치가 같다 |
+| 채색 | 셀 명암 단계 수와 그림자 색, 하이라이트 모양이 같다. 그라데이션·광택 과다 없음 |
+| 얼굴 | 턱선·코·입 그리는 방식, 얼굴 비율이 같다 |
+| 머리 | 머리 결 표현과 하이라이트 방식이 같다 |
+| 색감 | 채도·따뜻함이 마스터 범위 안이다 |
+| 배경 | 히로인 옆에 놓았을 때 배경만 사실적이거나 붓 터치가 보이지 않는다 |
+
 ## 1. 수량 요약
 | 구분 | 새로 만들 것 | 비고 |
 |---|---|---|
@@ -87,7 +122,7 @@
 
 ## 6. 프롬프트
 
-챗지피티 이미지 생성은 영어 프롬프트가 더 안정적이다. **항상 해당 히로인 마스터 PNG(`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/`)를 첨부**하고 시작한다.
+챗지피티 이미지 생성은 영어 프롬프트가 더 안정적이다. **항상 해당 히로인 마스터 PNG(`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/`)와 화풍 기준 `CharacterArt/candidates/user-uploads/강리아 마스터.png`를 함께 첨부**하고, 0-1의 **화풍 고정 문단을 아래 각 프롬프트 맨 앞에 붙인다.** 배경과 CG도 마찬가지다.
 
 ### 6-1. 표정 얼굴 시트 (히로인당 1장)
 ```
@@ -128,7 +163,7 @@ Adult woman office worker in her late 20s/early 30s. No ID card for casual/home 
 
 ### 6-3. 배경 (장소당 1장)
 ```
-Visual novel background art in the SAME anime art style as the attached character reference (clean line art, flat cel shading, soft pastel-warm palette, moderate detail). Not photorealistic, no 3D render look.
+Visual novel background art drawn in EXACTLY the art style of the attached character references (same line weight, same flat cel shading, same palette warmth), so a character from the reference can stand in it without looking pasted in. Not photorealistic, no 3D render look, no painterly texture.
 Scene: {PLACE}, {TIME}.
 Setting: contemporary Seoul, Korea; Korean signage only as unreadable shapes.
 Camera: eye level (about 150 cm), slightly wide lens, clear empty floor area in the lower center where a standing character will be placed; keep the bottom 28% visually calm (a dialogue box will cover it).
@@ -154,7 +189,7 @@ No people, no characters, no text, no watermark. 16:9, 1920x1080.
 
 ### 6-4. 장면 CG
 ```
-Visual novel event CG in the SAME art style as the attached character reference(s). 16:9, 1920x1080, full illustration with background.
+Visual novel event CG drawn in EXACTLY the art style of the attached references (same line art, eyes, cel shading and palette). 16:9, 1920x1080, full illustration with background.
 Characters: {HEROINE} exactly as in the reference (same face, hair, outfit: {OUTFIT}). The male lead appears only as hands/arms or from behind, face never shown.
 Scene: {ACTION}, at {PLACE}, {TIME}.
 Emotion: {EMOTION}. Camera: {SHOT}.
