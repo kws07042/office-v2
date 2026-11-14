@@ -65,4 +65,4 @@
 
 ## 이전 자산과 적용 이력
 
-[리아 마스터 v001](assets/ria/master/ria_master_v001.png) · [이전 QA](assets/ria/master/ria_master_v001.qa.md) · [파일 기록](assets/ria/master/ria_master_v001.json)은 이력으로 보존한다. 해당 파일의 RGB·알파·해시는 변경하지 않았다. Windows0.10.0-ria-expressions의 R02 표정 연결은 이 이전 마스터에 대한 적용 기록이며, 이번 타이틀 외형으로 이미 교체됐다는 뜻은 아니다.
+> 2026-11-14 사용자 요청으로 마스터 v001 네 장 외의 이전 히로인 그림과 기록 폴더를 저장소에서 삭제했다. 필요하면 Git 이력에서 복구한다.

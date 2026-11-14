@@ -59,4 +59,4 @@
 
 ## 이전 자산
 
-[레이스·알파 정리 마스터 v005](assets/jihyun/master/jihyun_master_lace_alpha_v005.png), [사원증 기준 v003](assets/jihyun/concepts/jihyun_red_office_id_v003.png), [이전 사용자 참조](assets/jihyun/reference/jihyun_user_visual_reference_v002.png)는 이력으로 보존한다. 2026-11-02의 레이스·누끼 정리는 해당 이전 의상과 파일에 대한 기록이며 현재 재킷·바지 외형을 대신하지 않는다. 이전 CG의 파일 상태는 [보관 목록](CG_CURRENT.md)을 따른다.
+> 2026-11-14 사용자 요청으로 마스터 v001 네 장 외의 이전 히로인 그림과 기록 폴더를 저장소에서 삭제했다. 필요하면 Git 이력에서 복구한다.

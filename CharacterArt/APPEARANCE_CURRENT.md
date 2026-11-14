@@ -10,7 +10,7 @@
 
 - 폴더: [candidates/heroine-masters-v001](candidates/heroine-masters-v001/README.md)
 - 형식: 투명 PNG(RGBA), 1143×2000, 머리 꼭대기~신발 끝이 캔버스 높이 전체
-- 제작: 로컬 ComfyUI, Anima Turbo 1.1, 화풍 기준 그림 `candidates/user-uploads/강리아 마스터.png`(IP-Adapter, 2차 다듬기에만 적용)
+- 제작: 로컬 ComfyUI, Anima Turbo 1.1, 화풍 기준 그림 강리아 마스터 그림(이전 경로 `candidates/user-uploads/강리아 마스터.png`, 2026-11-14 저장소에서 삭제·Git 이력 보존)(IP-Adapter, 2차 다듬기에만 적용)
 - 생성 seed: 강리아 1002, 백지현 1002, 한서윤 1003, 차유진 1103
 - 후처리: 얼굴 1024 확대 재묘사, ToonOut 누끼와 테두리 정리, 사원증 카드 무늬 제거 후 영어 이름 표기
 
