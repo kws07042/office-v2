@@ -244,9 +244,10 @@ screen progression_hub(initial_tab="relations"):
                         xsize 763 ysize 234
                         mousewheel True draggable True
                         cols 4 spacing 10
-                        for row in progression_gallery_rows(person, category):
+                        for tile_index, row in enumerate(progression_gallery_rows(person, category)):
                             if progression_asset_ready(row):
                                 button:
+                                    at (silk_tile_in(tile_index) if silk_motion_on() else silk_still)
                                     xsize 178 ysize 99 padding (8, 6)
                                     background Solid(badge_rail)
                                     hover_background Solid(badge_focus)
@@ -255,7 +256,11 @@ screen progression_hub(initial_tab="relations"):
                                     vbox:
                                         spacing 5
                                         if progression_asset_unlocked(row):
-                                            add row["path"] xysize (160, 62) fit "contain"
+                                            fixed:
+                                                xysize (160, 62)
+                                                add row["path"] xysize (160, 62) fit "contain"
+                                                if silk_motion_on():
+                                                    add silk("heart", True, size=(14, 14)) xalign 1.0 yalign 0.0 at silk_tile_spark(tile_index)
                                             text (row["event_id"].upper() + " · " + row["outfit"]) size 14
                                         else:
                                             text "아직 미감상" size 18

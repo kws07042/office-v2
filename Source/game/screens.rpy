@@ -148,12 +148,12 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
 screen say(who, what):
     use cream_dialogue_panel(who, what)
 
-screen silk_choice_item(item, i=0):
+screen silk_choice_item(item, i=0, n=0, intimate=False):
     $ choice_text, choice_chip = silk_choice_parts(item.caption)
     button:
         at ((silk_choice_in(i), silk_choice_hover) if silk_motion_on() else (silk_still,))
         style "silk_choice_button"
-        action item.action
+        action ([Function(silk_pick, i, n, intimate), item.action] if n else item.action)
         alt item.caption
         hbox:
             spacing 12
@@ -188,7 +188,7 @@ screen choice(items):
             vbox:
                 xalign 0.5 yanchor 1.0 ypos (446 if silk_has_intimate(items) else 470) xsize 624 spacing 9
                 for i, item in enumerate(items):
-                    use silk_choice_item(item, i)
+                    use silk_choice_item(item, i, len(items), silk_has_intimate(items))
         if silk_has_intimate(items):
             frame:
                 xalign 0.5 ypos 452
@@ -295,6 +295,7 @@ screen main_menu():
                     text "종료" style "silk_menu_text"
                     text "Exit" style "silk_menu_caption"
     text ("ver " + config.version) xpos 64 ypos 688 size 12 color "#6E4553"
+    textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 200 ypos 676 text_size 12
     text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 
 screen silk_quick_item(label, icon, target, ring=False):
