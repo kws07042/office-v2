@@ -100,6 +100,7 @@ screen office_phone_contents(replies, waiting, archive):
     add Solid("#292326a6")
 
     frame:
+        at ((silk_phone_rise if (archive or silk_phone_fresh_now) else silk_still) if silk_motion_on() else silk_still)
         xalign 0.5 yalign 0.5 xsize 380 ysize 652 padding (8, 8)
         background CreamRoundedPanel("#33292e", "#806e72", radius=29)
         frame:
@@ -132,13 +133,14 @@ screen office_phone_contents(replies, waiting, archive):
                     if not contact_rows:
                         text "아직 주고받은 메시지가 없어요." size 17 color "#425768" xalign 0.5
                     $ previous_moment = None
-                    for row in contact_rows:
+                    for row_index, row in enumerate(contact_rows):
                         $ moment = row.get("moment", "이전 대화")
                         if moment != previous_moment:
                             text moment size 13 color "#425768" xalign 0.5 xmaximum 288 text_align 0.5
                         $ previous_moment = moment
                         $ mine = row["sender"] in ("dohyun", "ria_shared")
                         hbox:
+                            at ((silk_bubble_pop if (row_index == len(contact_rows) - 1 and not archive and silk_motion_on()) else silk_still))
                             xalign (1.0 if mine else 0.0)
                             spacing 7
                             if not mine:
@@ -241,7 +243,9 @@ label phone_deliver(mid, sender, body, media=None, important=False, contact="ria
     if important and persistent.phone_typing_enabled and not getattr(_preferences, "reduced_motion", False) and not renpy.is_skipping():
         call screen office_phone(waiting=True)
     $ phone_add(mid, sender, body, media, contact)
+    $ silk_phone_fresh_now = silk_phone_fresh()
     call screen office_phone
+    $ silk_phone_mark()
     return
 
 label ria_r08_phone_conversation:

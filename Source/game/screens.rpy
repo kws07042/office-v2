@@ -52,9 +52,9 @@ screen cream_stage():
     if not main_menu and not event_cut_active:
         add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
         if cream_ria_visible():
-            add "ria ui bust" xalign 0.5 ypos 28
+            add "ria ui bust" xalign 0.5 ypos 28 at (silk_bust_idle if silk_motion_on() else silk_still)
         elif cream_yujin_visible():
-            add "yujin ui bust" xalign 0.5 ypos 50
+            add "yujin ui bust" xalign 0.5 ypos 50 at (silk_bust_idle if silk_motion_on() else silk_still)
 
 screen cream_heart(fraction):
     fixed:
@@ -211,9 +211,13 @@ screen choice(items):
 screen main_menu():
     tag menu
     add "silk ground"
-    add silk("band", size=(1280, 584))
+    if silk_motion_on():
+        add "silk title dots"
+    add silk("band", size=(1280, 584)) at (silk_band_in if silk_motion_on() else silk_still)
+    if silk_motion_on():
+        add "silk title hearts"
     vbox:
-        at silk_tilt
+        at ((silk_tilt, silk_logo_in, silk_logo_float) if silk_motion_on() else (silk_tilt,))
         xpos 84 ypos 150
         spacing -6
         text "After Work, With You" font "fonts/PlayfairDisplay-Italic.ttf" size 30 color "#B3123F" xpos 8
@@ -293,9 +297,9 @@ screen main_menu():
     text ("ver " + config.version) xpos 64 ypos 688 size 12 color "#6E4553"
     text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 
-screen silk_quick_item(label, icon, target):
+screen silk_quick_item(label, icon, target, ring=False):
     button:
-        at (silk_quick_hover if silk_motion_on() else silk_still)
+        at ((silk_quick_hover, silk_phone_ring) if (ring and silk_motion_on()) else ((silk_quick_hover if silk_motion_on() else silk_still),))
         style "silk_quick_button"
         action target
         alt label
@@ -312,7 +316,7 @@ screen quick_menu():
                 xanchor 1.0 xpos 1196 ypos 676 spacing 0
                 use silk_quick_item("되돌리기", "rollback", Rollback())
                 use silk_quick_item("기록", "history", ShowMenu("history"))
-                use silk_quick_item("메신저", "phone", Show("office_phone_archive"))
+                use silk_quick_item("메신저", "phone", Show("office_phone_archive"), ring=silk_phone_has_unread())
                 use silk_quick_item("자동", "auto", Preference("auto-forward", "toggle"))
                 use silk_quick_item("스킵", "skip", Skip())
                 use silk_quick_item("저장", "save", ShowMenu("save"))
@@ -356,6 +360,7 @@ screen preferences():
     tag menu
     add "silk ground"
     frame:
+        at (silk_menu_panel if silk_motion_on() else silk_still)
         xalign 0.5 yalign 0.5 xsize 724 ysize 677 padding (42, 35, 46, 40)
         background silk_surface("panel")
         viewport:
@@ -396,6 +401,7 @@ screen preferences():
 screen file_slots(mode):
     add "silk ground"
     frame:
+        at (silk_menu_panel if silk_motion_on() else silk_still)
         xalign 0.5 yalign 0.5 xsize 994 padding (35, 28, 39, 33)
         background silk_surface("panel")
         vbox:
@@ -420,6 +426,7 @@ screen history():
     tag menu
     add "silk ground"
     frame:
+        at (silk_menu_panel if silk_motion_on() else silk_still)
         xpos 48 ypos 26 xsize 1188 ysize 670 padding (30, 22, 34, 27)
         background silk_surface("panel")
         vbox:
