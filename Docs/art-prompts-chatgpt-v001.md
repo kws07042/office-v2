@@ -10,14 +10,14 @@
 - 모든 그림은 마스터와 **같은 그림체**(셀 명암, 선 굵기, 색감)로 만든다. 실사 질감, 3D 렌더 느낌, 사진 배경은 쓰지 않는다.
 
 ## 0-1. 그림체 절대 고정 (2026-11-14 사용자 결정)
-그림체는 마스터 v001 네 장과 화풍 기준 그림 `CharacterArt/candidates/user-uploads/강리아 마스터.png`에서 **바꾸지 않는다.** 어긋나면 수정하지 않고 버린다.
+그림체는 마스터 v001 네 장과 화풍 기준 그림(강리아 마스터 v001, `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`)에서 **바꾸지 않는다.** 어긋나면 수정하지 않고 버린다.
 
 **가장 확실한 방법: 마스터를 만든 도구로 이어서 만든다.**
-- 로컬 ComfyUI, Anima Turbo 1.1, 화풍 IP-Adapter에 `강리아 마스터.png`를 넣고, 마스터와 같은 2차 다듬기 단계를 거친다. seed는 리아 1002, 지현 1002, 서윤 1003, 유진 1103(`CharacterArt/candidates/heroine-masters-v001/README.md`).
+- 로컬 ComfyUI, Anima Turbo 1.1, 화풍 IP-Adapter에 강리아 마스터 원본(로컬 `comfy-pilot/input/강리아 마스터.png`, 저장소에서는 2026-11-14 삭제·Git 이력 보존)을 넣고, 마스터와 같은 2차 다듬기 단계를 거친다. 차유진은 은백 머리가 금발로 끌려가지 않게 한서윤 원본을 화풍 기준으로 쓴다. seed는 리아 1002, 지현 1002, 서윤 1003, 유진 1231(`CharacterArt/candidates/heroine-masters-v001/README.md`).
 - 표정은 마스터 얼굴을 고정한 채 얼굴 부분만 다시 그리는 방식(inpaint)으로 만든다. 몸과 그림체가 그대로 남는다.
 
 **챗지피티로 할 때 지킬 것**
-1. 새 대화를 열고 **마스터 PNG와 `강리아 마스터.png`를 둘 다 첨부**한다. 한 대화 안에서 같은 인물을 계속 만들고, 대화가 길어져 그림체가 흔들리면 새 대화로 다시 시작한다.
+1. 새 대화를 열고 **해당 히로인 마스터 PNG와 강리아 마스터 v001(`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`)을 둘 다 첨부**한다. 한 대화 안에서 같은 인물을 계속 만들고, 대화가 길어져 그림체가 흔들리면 새 대화로 다시 시작한다.
 2. 아래 **화풍 고정 문단을 모든 프롬프트 맨 앞에** 붙인다.
 3. 결과를 마스터 옆에 나란히 놓고 아래 체크리스트로 본다. 하나라도 어긋나면 버린다.
 
@@ -122,7 +122,7 @@ If anything conflicts, the reference images win.
 
 ## 6. 프롬프트
 
-챗지피티 이미지 생성은 영어 프롬프트가 더 안정적이다. **항상 해당 히로인 마스터 PNG(`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/`)와 화풍 기준 `CharacterArt/candidates/user-uploads/강리아 마스터.png`를 함께 첨부**하고, 0-1의 **화풍 고정 문단을 아래 각 프롬프트 맨 앞에 붙인다.** 배경과 CG도 마찬가지다.
+챗지피티 이미지 생성은 영어 프롬프트가 더 안정적이다. **항상 해당 히로인 마스터 PNG(`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/`)와 화풍 기준 강리아 마스터 v001(`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`)을 함께 첨부**하고, 0-1의 **화풍 고정 문단을 아래 각 프롬프트 맨 앞에 붙인다.** 배경과 CG도 마찬가지다.
 
 ### 6-1. 표정 얼굴 시트 (히로인당 1장)
 ```
