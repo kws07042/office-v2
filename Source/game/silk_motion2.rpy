@@ -144,8 +144,8 @@ screen silk_heart_burst():
     zorder 41
     timer 1.4 action Hide("silk_heart_burst")
     if not main_menu and not event_cut_active:
-        for i, (x, dx, d) in enumerate([(1150, -10, 0.0), (1178, 6, 0.12), (1206, 14, 0.24)]):
-            add silk("heart", True, size=(18, 18)) xpos x ypos 46 at silk_heart_rise(dx, d)
+        for i, (x, dx, d) in enumerate([(1040, -12, 0.0), (1064, 2, 0.12), (1086, 14, 0.24)]):
+            add silk("heart", True, size=(18, 18)) xpos x ypos 30 at silk_heart_rise(dx, d)
 
 # ── 입상(원화가 들어오면 바로 적용) ─────────────────────────────
 transform silk_bust_idle:

@@ -63,6 +63,24 @@ screen cream_heart(fraction):
         if fraction > 0:
             add Crop((0, 0, max(1, int(20 * min(1.0, fraction))), 20), silk("heart", True, size=(20, 20)))
 
+transform silk_heart_pulse:
+    zoom 1.0
+    easein 0.12 zoom 1.22
+    easeout_bounce 0.5 zoom 1.0
+
+screen silk_big_heart(value):
+    # 큰 하트 하나가 아래부터 차오른다(0~100).
+    $ heart_h = 46
+    $ filled = int(heart_h * max(0, min(100, value)) / 100.0)
+    fixed:
+        xysize (52, 48)
+        at (silk_heart_pulse if (renpy.get_screen("silk_heart_burst") and silk_motion_on()) else silk_still)
+        add silk("bigheart", "back", size=(52, 48))
+        if filled > 0:
+            add Crop((0, heart_h - filled, 52, filled), silk("bigheart", "fill", size=(52, 48))) ypos (heart_h - filled)
+        add silk("bigheart", "line", size=(52, 48))
+        text str(value) font "fonts/Jua-Regular.ttf" size 17 color ("#FFFDFB" if value >= 45 else "#3B0B22") xalign 0.5 ypos 13 outlines []
+
 screen story_header():
     zorder 10
     if not main_menu and not event_cut_active and not cream_menu_open():
@@ -86,22 +104,16 @@ screen story_header():
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
             at (silk_header_in(40) if silk_motion_on() else silk_still)
-            xanchor 1.0 xpos 1248 ypos 30
-            padding (20, 10, 24, 15)
+            xanchor 1.0 xpos 1248 ypos 26 xsize 214
+            padding (14, 8, 22, 13)
             background silk_surface("button")
-            vbox:
-                spacing 4
-                hbox:
-                    spacing 12
-                    text person_name font "fonts/Jua-Regular.ttf" size 20 color "#3B0B22" yalign 0.5
-                    hbox:
-                        spacing 3 yalign 0.5
-                        for index in range(5):
-                            use cream_heart((affinity[focus] - index * 20) / 20.0)
-                hbox:
-                    spacing 10
-                    text cream_relation_name(focus) size 12 color "#6E4553"
-                    text (str(affinity[focus]) + " / 100") size 12 color "#6E4553"
+            hbox:
+                spacing 11
+                use silk_big_heart(affinity[focus])
+                vbox:
+                    spacing 2 yalign 0.5
+                    text person_name font "fonts/Jua-Regular.ttf" size 21 color "#3B0B22"
+                    text cream_relation_name(focus) size 13 color "#6E4553"
         if cream_preview_active:
             use cream_preview_controls
 

@@ -104,6 +104,13 @@ init -9 python:
             return '<path transform="scale(%s)" fill="%s" d="%s"/>' % (scale, SILK["wine"], SILK_HEART)
         return '<path transform="scale(%s)" fill="none" stroke="%s" stroke-width="2.6" d="M16 27C11 23 3 18 3 10C3 3 12 1 16 8C20 1 29 3 29 10C29 18 21 23 16 27Z"/>' % (scale, SILK["mute"])
 
+    def silk_b_bigheart(w, h, part):
+        # 호감도 창의 큰 하트. part: back(빈 속), fill(찬 속), line(테두리)
+        scale = w / 32.0
+        if part == "line":
+            return '<path transform="scale(%s)" fill="none" stroke="%s" stroke-width="1.7" stroke-linejoin="round" d="%s"/>' % (scale, SILK["ink"], SILK_HEART)
+        return '<path transform="scale(%s)" fill="%s" d="%s"/>' % (scale, SILK["wine"] if part == "fill" else "#F3E7EA", SILK_HEART)
+
     def silk_b_icon(w, h, name, color):
         return '<g transform="scale(%s)" fill="none" stroke="%s" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">%s</g>' % (w / 18.0, color, SILK_ICONS[name])
 
