@@ -69,7 +69,9 @@ screen office_phone(replies=None, waiting=False):
     zorder 40
     if not cream_menu_open():
         use office_phone_contents(replies, waiting, False)
-    if waiting and not cream_menu_open():
+    # 자동 검사에서는 '입력 중' 화면이 저절로 닫히지 않게 한다. 검사가 화면을 확인하는 사이에
+    # 닫히면 다음 단계가 어긋난다. 검사는 '바로 보기' 버튼으로 넘긴다.
+    if waiting and not cream_menu_open() and not renpy.is_in_test():
         timer 0.9 action Return("next")
 
 screen office_phone_archive():
