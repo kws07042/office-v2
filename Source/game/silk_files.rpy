@@ -40,7 +40,7 @@ screen file_slots(mode):
     $ page = FileCurrentPage()
     if (page in ("auto", "quick") and mode == "save") or (page not in ("auto", "quick") and not (page.isdigit() and 1 <= int(page) <= SILK_FILE_PAGES)):
         $ page = "1"
-    add "silk ground"
+    use silk_menu_backdrop
     frame:
         at (silk_menu_panel if silk_motion_on() else silk_still)
         xalign 0.5 yalign 0.5 xsize 1010 ysize 660 padding (36, 26, 40, 30)
