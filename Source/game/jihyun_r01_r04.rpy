@@ -66,6 +66,7 @@ label jihyun_r01:
     d "돼요. 이번엔 제 질문도 하나 가져갈게요."
     j "하나만 가져와. 나는 일곱 개 준비할 거니까 줄이는 건 네 몫이야."
     $ remember("jihyun_r02_appointment", "토요일 오후 두 시, 동네 서점 앞")
+    dn "일곱 개 중 여섯 개를 내가 줄여야 한다. 이상하게 그 숙제가 싫지 않았다."
     $ award_once("jihyun_R01", "jihyun", 4)
     $ progression_note_ending()
     return
@@ -76,6 +77,7 @@ label jihyun_r02:
     $ chapter = "지현 R02 · 오늘은 네가 정해 줘"
     $ location = "토요일 오후 두 시 · 동네 서점 앞"
     "지현은 가벼운 가방 하나를 들고 서 있었다. 도현을 보자 휴대폰의 일정표를 닫는다."
+    dn "일정표를 닫는 손이 조금 어색했다. 닫는 연습을 해 온 사람 같았다."
     j "네 시엔 집에 갈 거야. 그전까진 좀 쉬고 싶고. ...장소랑 순서는, 오늘은 네가 정해. 부탁할게."
     d "두 시간이면 충분하겠네요. 시끄러운 데는 저도 빼고요. 음료는 차가운 거 괜찮으세요?"
     j "따뜻한 거. 그거 말곤 다 맡길게."
@@ -150,6 +152,7 @@ label jihyun_r02:
     "지현은 덜 끝낸 조립물을 책상 위에 두고 오늘 마신 차 이름을 메모했다. 옆에는 다음에 보여 주고 싶은 부품 하나를 올려 둔다."
     jn "쉬자는 말, 내 입으로 했네. 다음엔 설명부터 준비 안 해도 되겠지."
     $ cream_focus = None
+    dn "오늘 지현 씨는 세 번 웃었다. 세 번 다 내가 뭔가를 정했을 때였다."
     $ award_once("jihyun_R02", "jihyun", 7)
     $ progression_note_ending()
     return
@@ -161,6 +164,7 @@ label jihyun_r03:
     $ location = "다음 주 월요일 오후 · 협업 자료 검토 자리"
     $ cream_focus = "jihyun"
     "지현이 ‘출근길 중심’이라고 적었던 가정을 다시 열었다. 도현에게 검토할 부분을 표시해 화면을 돌린다."
+    dn "팀장이 자기 가정을 다시 연다. 회사에서 그게 얼마나 드문 일인지 나는 안다."
     if memory.get("jihyun_intro") == "evidence":
         j "점심에 다시 와도 되냐는 질문, 다시 봤어. 몇 분 얘기라도 출근길만 보긴 어렵겠네."
     elif memory.get("jihyun_intro") == "check_later" and memory.get("jihyun_followup_delivered"):
@@ -199,6 +203,7 @@ label jihyun_r03:
     call phone_deliver("jihyun_r03_reply", "dohyun", "저도요. 금요일 저녁 일곱 시 괜찮으세요? 이번에는 제가 따로 말씀드리고 싶은 게 있어요.", contact="jihyun")
     call phone_deliver("jihyun_r03_confirm", "jihyun", "좋아. 회사 앞 카페. 무슨 얘긴지는 금요일까지 안 물어볼게.", contact="jihyun")
     $ remember("jihyun_r04_appointment", "금요일 저녁 일곱 시, 회사 앞 카페")
+    dn "기분 좋다는 말을 저렇게 어렵게 하는 사람은 처음 봤다. 그래서 더 오래 기억날 것 같다."
     $ award_once("jihyun_R03", "jihyun", 8)
     $ progression_note_ending()
     return
@@ -213,6 +218,7 @@ label jihyun_r04:
     $ location = "금요일 저녁 일곱 시 · 약속한 카페"
     $ cream_focus = "jihyun"
     "지현이 도현을 보고 휴대폰을 가방에 넣었다. 도현은 맞은편에 앉아 준비해 온 말을 속으로 한 번 더 굴렸다."
+    dn "준비한 말은 세 문장이었다. 첫 문장부터 목이 말랐다."
     j "오늘은 네가 할 말 있다고 했지. 나도 질문 안 할게. 해."
     while not dating and not memory.get("jihyun_relationship_declined"):
         $ progression_enter("jihyun_r04.choice01")
@@ -226,6 +232,7 @@ label jihyun_r04:
                 j "응. 그쪽이 맞아."
                 $ dating = True
                 $ remember("jihyun_confession_accepted")
+                dn "'그쪽이 맞아.' 보고서에서나 듣던 말이 오늘은 다르게 들렸다."
                 $ award_once("jihyun_R04", "jihyun", 5)
             "마음은 있지만, 겁나는 것도 말한다." if not jihyun_prepared:
                 d "저 연애는 처음이에요. 마음은 분명한데, 일이랑 구분하려다가 말이 늦어질까 봐요."

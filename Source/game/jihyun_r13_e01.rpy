@@ -112,6 +112,7 @@ label jihyun_r14:
     $ remember("jihyun_r14_performed", "도현이 제안·한계를 직접 설명, 지현이 비용·중단 조건을 별도로 검토")
     $ remember("jihyun_conflict", "resolved")
     $ remember("jihyun_pilot_result", "한 장소 시험 승인, 전면 시행 결정은 보류")
+    dn "지현 씨가 옆에 서 있었다. 대신 말해 주지 않고, 그렇다고 떠나지도 않고. 그게 이 사람이 새로 배운 방식이었다."
     $ award_once("jihyun_R14", "jihyun", 8)
     if not dating:
         $ ending = "jihyun_relationship_closed"
@@ -153,6 +154,7 @@ label jihyun_r15:
     $ chapter = "지현 R15 · 같은 편의 다른 의견"
     $ location = "토요일 저녁 · 지현의 집"
     "저녁을 마친 뒤 지현이 접시를 거두려다 도현이 내민 손을 봤다. 접시를 내려놓고 그 손을 마주 잡았다."
+    dn "접시 대신 내 손을 잡았다. 순서를 바꾼 것뿐인데 숨이 잠깐 멎었다."
     d "[memory.get('jihyun_private_name', '지현 씨')], 저녁 다 먹었는데도 그냥 옆에 있고 싶네요."
     j "나도. 치울 건 조금 뒤에 치우자."
     "지현은 맞은편으로 돌아와 앉으면서도 도현의 손을 천천히 놓았다. 휴대폰의 빈 토요일 칸을 보여 줬다."
@@ -195,6 +197,7 @@ label jihyun_r15:
     "지현이 생활복으로 갈아입고 돌아왔다. 도현이 옆자리를 두드리자 이번엔 지현이 망설이지 않고 와서 앉았다."
     j "이제 옷 얘기 말고 부탁. 오늘은 같이 밤을 보내고 싶어. 너도 괜찮으면."
     call jihyun_private_evening("r15", memory["jihyun_r15_outfit"])
+    dn "같은 편인데 의견이 다르다. 예전엔 그게 불안했는데, 이제는 조금 든든하다."
     $ award_once("jihyun_R15", "jihyun", 5)
     $ progression_note_ending()
     return
@@ -208,6 +211,7 @@ label jihyun_r16:
     $ chapter = "지현 R16 · 책임을 나누는 사람"
     $ location = "피칭 당일 · 클라이언트사 대회의실"
     "피칭 당일. 지현은 발표 첫 장에 TF 전원의 이름을 올렸다. 해체 예고를 팀에 털어놓은 지 열흘 만이었다."
+    dn "첫 장에 전원의 이름. 혼자 지던 걸 나눠 든 사람의 발표 자료였다."
     "맨 뒷줄에는 본부장이 앉아 있었다. 결과를 보고 팀을 접을지 정하겠다던 사람이었다."
     j "결론부터 말씀드리겠습니다. 저희 안은 한 곳에서 먼저 시험하고, 한도를 넘으면 멈춥니다."
     "비용 질문이 쏟아졌다. 지현이 답하려다 말고 도현 쪽을 봤다. 현장 시험 범위는 도현이 설명하기로 한 부분이었다."
@@ -264,6 +268,7 @@ label jihyun_r16:
     $ remember("jihyun_route_completed")
     $ persistent.local_jihyun_ending = True
     $ ending = "jihyun_good"
+    dn "길을 돌아가는 동안 지현 씨는 한 번도 시계를 보지 않았다. 나는 그걸 세 번 확인했다."
     $ award_once("jihyun_R16", "jihyun", 4)
     "지현 본편 결말 · 책임을 나누는 사람"
     $ progression_note_ending()
@@ -278,6 +283,7 @@ label jihyun_e01:
     $ chapter = "지현 E01 · 쉬는 날의 부탁"
     $ location = "약 반년 뒤, 쉬는 날 오후 · 지현의 집"
     "지현의 조립집은 지붕까지 완성돼 있었다. 도현이 직접 사진과 글을 정리한 기록집도 한쪽에 놓였다."
+    dn "지붕이 붙어 있었다. 반년 걸린 지붕이다."
     "피칭은 이겼고, TF는 정식 팀이 됐다. 휴일마다 지현을 찾던 연락도 줄었다. 오늘 휴대폰은 조립집 뒤에 엎어져 있었다."
     "도현이 [memory['jihyun_booklet_subject']]이 실린 쪽을 펼쳐 보였다. 지현은 잠깐 보고 책을 덮었다."
     j "완성한 건 축하해. 오늘은 나랑 놀아 줄 거지?"
@@ -330,6 +336,7 @@ label jihyun_e01:
     "지현은 대답 대신 도현이 고른 카드를 뒤집었다. 이번에는 누구도 시계를 보지 않았다."
     $ remember("jihyun_cohabitation_status", "동거 논의 시작, 계약·입주·동거 완료 아님")
     $ remember("jihyun_epilogue_completed")
+    dn "시계를 보지 않는 저녁이 우리한테도 생겼다. 그걸 만든 게 우리 둘이라는 게 아직도 신기하다."
     $ award_once("jihyun_E01", "jihyun", 8)
     $ progression_note_ending()
     return

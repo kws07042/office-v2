@@ -163,6 +163,7 @@ label seoyun_r14:
     s "금요일 일곱 시, 같이 저녁 먹을래? 그날 시간은 맞춰 뒀어. 장소는 네가 골라 주면 좋겠어."
     d "좋아요. 이번엔 메뉴부터 궁금해지는 데로요."
     $ remember("seoyun_r15_appointment", "금요일 저녁 일곱 시 함께 식사")
+    dn "정민재라는 이름을 서윤 씨는 이제 피하지 않고 말한다. 그 이름이 나올 때마다 내 손을 찾는다는 것도 달라진 점이다."
     $ award_once("seoyun_R14", "seoyun", 8)
     $ progression_note_ending()
     return
@@ -176,6 +177,7 @@ label seoyun_r15:
     $ chapter = "서윤 R15 · 다음 금요일은 우리 약속"
     $ location = "약속한 금요일 저녁 일곱 시 · 식당"
     "서윤은 먼저 와서 메뉴판을 보고 있었다. 도현이 들어오자 자기 옆 빈 의자를 손으로 가리켰다."
+    dn "옆자리를 가리키는 손. 맞은편이 아니라 옆이라는 게 오늘의 대답 같았다."
     s "오늘은 맞은편 말고 여기. 네 접시가 더 맛있어 보이면 바꾸기 편하잖아~"
     d "주문하기도 전에 노리시는 거예요?"
     s "응. 네가 정한 데라니까 기대하고 왔어."
@@ -233,6 +235,7 @@ label seoyun_r15:
     "서윤이 두 의자 사이를 보고 웃었다. 잠깐 뒤에는 도현의 눈을 마주 봤다."
     s "오늘은 여기서 더 같이 있고 싶어. 네 마음도 듣고 싶고."
     call seoyun_private_evening("r15", memory["seoyun_r15_outfit"])
+    dn "우리 약속. 서윤 씨가 '우리'라는 말을 이렇게 쉽게 한 건 처음이다."
     $ award_once("seoyun_R15", "seoyun", 5)
     $ progression_note_ending()
     return
@@ -246,6 +249,7 @@ label seoyun_r16:
     $ chapter = "서윤 R16 · 함께 고르는 다음"
     $ location = "피칭 당일 · 클라이언트사 대회의실"
     "피칭 당일. 심사석 가운데에 정민재가 앉아 있었다. 서윤은 그쪽을 한 번도 보지 않고 첫 장을 띄웠다."
+    dn "심사석의 정민재. 서윤 씨는 그쪽을 보지 않았지만, 나는 그 사람이 서윤 씨만 보고 있다는 걸 알았다."
     s "카피 설명 드리겠습니다. 이번 캠페인은 ‘짧게 쓰되 하나도 빼지 않는다’는 요청에서 출발했습니다."
     "질의응답 시간, 정민재가 마이크를 당겼다. “한서윤 씨는 예전부터 마감 직전에 다 바꾸는 스타일 아니었나요? 이번 안도 그런 건 아닌지.”"
     "회의실 공기가 굳었다. 리아가 도현의 팔을 툭 쳤다. 도현이 손을 들려는 순간, 서윤이 먼저 웃었다."
@@ -294,6 +298,7 @@ label seoyun_r16:
     $ remember("seoyun_route_completed")
     $ persistent.local_seoyun_ending = True
     $ ending = "seoyun_good"
+    dn "내민 손을 서윤 씨가 잡았다. 길 건너 건물에 불이 켜져 있었는데, 이번에는 주머니에 넣지 않았다."
     $ award_once("seoyun_R16", "seoyun", 4)
     "서윤 본편 결말 · 함께 고르는 다음"
     $ progression_note_ending()
@@ -308,6 +313,7 @@ label seoyun_e01:
     $ chapter = "서윤 E01 · 같이 고른 자리"
     $ location = "약 반년 뒤, 쉬는 날 오후 · 단골 북카페"
     "피칭은 TF의 승리로 끝났고, 정민재라는 이름은 그 뒤로 서윤의 입에서 다시 나오지 않았다. 도현과 만날 날은 이제 서로의 달력을 보고 정했다."
+    dn "달력을 같이 본다. 반년 전에는 상상도 못 한, 아주 평범한 일이다."
     $ remember("seoyun_family_state", "divorced")
     "도현은 완성한 기록집을 건넸다. '[memory['seoyun_booklet_sentence']]'와 서윤의 감상도 남아 있었다."
     s "내가 읽고 싶다고 한 쪽, 진짜 남겼네."
@@ -354,6 +360,7 @@ label seoyun_e01:
     $ remember("seoyun_relationship_status", "이혼 후 혼자 사는 서윤과 전남편 문제를 정리하고 교제 지속")
     $ remember("seoyun_cohabitation_status", "결혼·동거 확약 없음, 주변 공개는 둘이 정한 때에")
     $ remember("seoyun_epilogue_completed")
+    dn "각자의 집으로 돌아가는 길이 이제는 서운하지 않다. 다음에 볼 날짜가 달력에 적혀 있으니까."
     $ award_once("seoyun_E01", "seoyun", 8)
     $ progression_note_ending()
     return

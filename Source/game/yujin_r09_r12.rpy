@@ -9,6 +9,7 @@ label yujin_r09:
     $ chapter = "유진 R09 · 제안서의 마지막 이름"
     $ location = "지난 금요일 밤 · 피칭 리허설 뒤 TF 회식"
     "피칭 리허설이 끝난 금요일 밤, TF는 회사 앞 고깃집에 모였다. 유진은 도현과 한 칸 떨어진 자리에서 컵만 만지작거렸다."
+    dn "한 칸 떨어진 자리. 그 한 칸이 오늘따라 유난히 넓었다."
     r "아 맞다, 요즘 ‘창가’라는 계정 알아요? 그림이 진짜 미쳤어요. 우리 이번 시안이랑 분위기 비슷하던데!"
     "유진의 젓가락이 그대로 멈췄다."
     s "어디 봐. ...오, 예쁘네. 유진 씨 스타일이랑 좀 닮았다?"
@@ -112,6 +113,7 @@ label yujin_r09:
     d "그럼 저도 질문 바꿀게요. 이번 토요일, 저랑 좀 오래 있어 줄래요?"
     y "네. 이번에는 제가 보여 드릴 페이지도 가져갈게요~"
     $ remember("yujin_r10_appointment", "같은 주 토요일 오후, 카페에서 개인 노트와 기록집 보기")
+    dn "'창가' 얘기가 나올 때마다 유진 씨의 손이 컵을 꽉 쥐었다. 비밀을 아는 사람은 표정 관리가 두 배로 필요하다."
     $ award_once("yujin_R09", "yujin", 6)
     $ progression_note_ending()
     return
@@ -126,6 +128,7 @@ label yujin_r10:
     $ chapter = "유진 R10 · 아직 남겨 둔 페이지"
     $ location = "같은 주 토요일 오후 · 동네 카페"
     "유진이 개인 노트를 펼쳤다. 안쪽 주머니에서 지난 전시 티켓이 나왔다."
+    dn "전시 티켓을 아직 갖고 있었다. 나도 지갑에 넣어 둔 걸 말할까 하다가 다음으로 미뤘다."
     y "이거 붙일 자리 정하려다가... 오늘 같이 보려고 아껴 뒀어요."
     if memory.get("yujin_r02_plan") == "follow":
         y "같은 방인데 빛이 다른 두 그림, 번갈아 보셨잖아요. 저는 그 사이에 서 있던 게 생각나요."
@@ -212,6 +215,7 @@ label yujin_r10:
             y "네. 지금은 도현 씨한테만 자랑한 걸로요~ ...서운한 건 좀 있는데, 그걸로 재촉하진 않을게요."
             $ remember("yujin_publicity", "private")
             $ remember("yujin_disclosure_reason_heard")
+    dn "서운한 게 있다고 말해 주는 사람이 됐다. 예전의 유진 씨라면 삼켰을 말이다."
     $ award_once("yujin_R10", "yujin", 4)
     $ progression_note_ending()
     return
@@ -226,6 +230,7 @@ label yujin_r11:
     $ chapter = "유진 R11 · 제안한 사람의 마음"
     $ location = "다음 날 일요일 저녁 · 유진의 집"
     "유진이 작은 음악 기기 옆을 비우고 컵 두 개를 가져왔다. 도현은 골라 온 곡 이름을 적었다."
+    dn "기기 옆자리를 비워 준다. 유진 씨의 '옆'은 조금씩 넓어지고 있다."
     if memory.get("yujin_publicity") == "agreed_jihyun":
         "어제 정한 대로, 지현에게 같이 메시지를 보냈다."
         $ location = "같은 일요일 저녁 · 지현에게 함께 보낸 개인 메시지"
@@ -280,6 +285,7 @@ label yujin_r11:
     d "그럼 짧게라도 연락할게요. 답장은 편할 때 하시고요."
     y "네. 목요일엔 제가 시간 여쭤볼게요. 그때까진 좀 기다리는 걸로요~"
     $ remember("yujin_r11_busy_plan", "월~수 도현 외근·유진 납품 마감, 목요일 만남은 다시 확인하기로 함")
+    dn "기다리라는 말이 싫지 않았다. 기다릴 날짜를 주는 사람이니까."
     $ award_once("yujin_R11", "yujin", 0)
     $ progression_note_ending()
     return
@@ -325,6 +331,7 @@ label yujin_r12:
     $ location = memory["yujin_r12_appointment"]
     $ cream_focus = "yujin"
     "약속한 곳에 유진이 와 있었다. 도현을 보자 들고 있던 가방을 양손으로 고쳐 잡았다."
+    dn "가방을 양손으로 고쳐 잡는 건 유진 씨가 긴장했을 때 하는 버릇이다. 나도 주머니 속 손에 땀이 났다."
     y "메시지로는 할 말 많았는데. 지금은 인사부터 하고 싶어요. 보고 싶었어요."
     d "저도요. 말 고르다 또 늦어지기 전에 말할게요."
     if memory.get("yujin_r11_music") == "yujin_calm":
@@ -401,6 +408,7 @@ label yujin_r12:
             $ remember("yujin_r12_intimacy", "walk")
     $ remember("yujin_r12_reunion_kept", memory["yujin_r12_appointment"])
     $ remember("yujin_r12_complete")
+    dn "현관 앞에서 돌아서는 길. 다음에 이 문이 어떻게 열릴지는 유진 씨가 정할 것이다. 그게 맞다."
     $ award_once("yujin_R12", "yujin", 4)
     $ progression_note_ending()
     return

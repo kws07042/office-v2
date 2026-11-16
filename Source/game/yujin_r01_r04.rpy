@@ -39,6 +39,7 @@ label yujin_r01:
     "유진은 보낸 문장을 세 번 다시 읽었다. 달력의 토요일 칸에 작은 별을 그리고, 전시 노트 첫 장은 비워 둔다."
     yn "설명은 가서 해도 돼. 첫 감상은 그분 입으로 듣고 싶으니까."
     $ location = "같은 목요일 저녁 · 도현의 집"
+    dn "수줍음이 많은 사람이 먼저 전시를 골랐다. 그게 어떤 용기였을지, 가는 내내 생각했다."
     $ award_once("yujin_R01", "yujin", 4)
     $ progression_note_ending()
     return
@@ -49,6 +50,7 @@ label yujin_r02:
     $ chapter = "유진 R02 · 오늘 코스는 제가 골랐어요"
     $ location = "토요일 오후 두 시 · 작은 전시 공간"
     "입구의 안내를 읽던 유진이 도현을 발견하고 노트를 가방에 넣었다."
+    dn "노트를 가방에 넣는 손이 급했다. 무엇을 적다 들켰는지 궁금해서 전시보다 그 가방이 더 신경 쓰였다."
     y "안 늦으셨네요. 저도 방금 왔어요. ...아, 한 바퀴 돌 만큼 방금은 아니고요."
     d "벌써 보셨어요? 저는 입구 설명도 못 읽었는데."
     y "입구만요! 첫 그림은... 같이 보려고 아껴 뒀어요."
@@ -143,6 +145,7 @@ label yujin_r02:
     d "그럼 답은 미리 드릴게요. 또 같이 보고 싶어요."
     y "...평점보다 그 말이 좋네요."
     $ remember("yujin_r02_exhibition_visited")
+    dn "평점보다 좋다는 그 말에 나는 별 다섯 개를 주고 싶었다."
     $ award_once("yujin_R02", "yujin", 7)
     $ progression_note_ending()
     return
@@ -163,6 +166,7 @@ label yujin_r03:
     call phone_deliver("yujin_r03_answer", "dohyun", "좋아요. 이번에도 처음 본 느낌부터 말할게요. 점심 끝나고 잠깐 들를게요.", contact="yujin")
     $ location = "같은 월요일 오후 · 디자인 작업 공간"
     "유진이 모니터를 도현 쪽으로 돌렸다. 책상 한쪽에는 전시 때 쓰던 노트가 놓여 있었다."
+    dn "전시 때 내가 흘리듯 물었던 걸 시안에 넣어 왔다. 누가 내 말을 이렇게까지 들은 적이 있었나."
     if memory.get("yujin_intro") == "flow":
         y "처음에 반대쪽에서 오는 사람은 어떻게 보냐고 하셨죠. 양쪽에서 다 확인한 시안이에요."
         d "돌아 들어오는 쪽에서도 문구가 먼저 보이네요."
@@ -220,6 +224,7 @@ label yujin_r03:
     d "듣고 싶어요. 일곱 시에 여기서 봬요."
     $ remember("yujin_r03_friday_appointment", "금요일 저녁 일곱 시, 회사 근처 카페")
     $ remember("yujin_core_understanding")
+    dn "일곱 시. 회사에서 보는 유진 씨 말고, 퇴근한 유진 씨를 처음으로 기다린다."
     $ award_once("yujin_R03", "yujin", 8)
     $ progression_note_ending()
     return
@@ -233,6 +238,7 @@ label yujin_r04:
     $ chapter = "유진 R04 · 부끄럽지만 말할게요"
     $ location = "금요일 저녁 일곱 시 · 약속한 카페"
     "유진은 앞에 둔 메뉴판을 덮었다. 도현이 앉자 인사보다 먼저 한 번 숨을 고른다."
+    dn "인사보다 숨을 먼저 골랐다. 그 숨이 끝나면 무슨 말이 나올지, 나도 같이 숨을 참았다."
     y "오늘은 제가 할 말 있다고 했잖아요. 좀 길어져도... 끝까지 들어 주실래요?"
     d "네. 오늘은 제가 질문을 잠깐 아낄게요."
     y "전시 다 보고 나서도 집에 가기 아쉬웠어요. 다음엔 전시 같은 핑계 없이 만나고 싶었고요."
@@ -249,6 +255,7 @@ label yujin_r04:
                 d "네. 저랑 사귀어요, 유진 씨."
                 $ dating = True
                 $ remember("yujin_confession_accepted")
+                dn "사귀자는 말은 내가 했지만, 여기까지 끌고 온 건 유진 씨였다. 떨리는 목소리로, 한 문장씩."
                 $ award_once("yujin_R04", "yujin", 5)
             "마음은 있지만 더 얘기하고 싶다고 한다." if not yujin_prepared:
                 d "저도 마음 있어요. 그런데 연애는 처음이라, 잘하려다가 혼자 짐작하고 말을 늦게 할까 봐요."

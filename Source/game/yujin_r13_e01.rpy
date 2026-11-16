@@ -101,6 +101,7 @@ label yujin_r14:
             $ remember("yujin_r14_readiness", "relationship_talk")
     $ location = "같은 금요일 오전 · 짧은 검토 회의"
     "첫 질문이 나왔다. 유진이 시안을 짚으며 색을 고른 이유부터 설명했다."
+    dn "유진 씨가 색을 고른 이유를 말하고 있었다. 떨리는데도 멈추지 않는 목소리였다."
     if memory["yujin_r13_support_plan"] == "slides":
         "도현은 유진이 첫 장 모서리를 짚을 때까지 기다렸다. 신호를 보고 두 번째 자료를 올리자 유진이 수정 범위를 이어 말했다."
         y "이 부분은 그대로 두고, 아래 문장 사이만 넓히겠습니다. 비교 자료의 오른쪽을 봐 주세요."
@@ -178,6 +179,7 @@ label yujin_r14:
         $ remember("yujin_support_repair_action_verified")
         $ remember("yujin_support_repair_status", "resolved")
     $ remember("yujin_r14_complete")
+    dn "돌아보며 웃었다. 뒤따라오는 사람에게 주는 웃음이 아니라, 나란히 걷는 사람에게 주는 웃음이었다."
     $ award_once("yujin_R14", "yujin", 8)
     $ progression_note_ending()
     return
@@ -191,6 +193,7 @@ label yujin_r15:
     $ chapter = "유진 R15 · 다음에도 제가 말할게요"
     $ location = "다음 날 토요일 저녁 · 유진의 집"
     "유진은 작업 수첩을 서랍에 넣고 도현이 앉은 맞은편을 봤다. 자기 옆의 빈 자리를 손바닥으로 가볍게 쳤다."
+    dn "옆자리를 손바닥으로 쳤다. 말보다 빠른 초대였다."
     y "오늘은 여기요. 제가 옆에 앉으라고 하기 전까지 계속 저쪽에 계실 생각이었어요?"
     d "맞은편이면 얼굴 잘 보이니까요."
     y "오늘은 옆이 좋아요. ...다른 사람한테는 그 자리 안 내줄래요."
@@ -261,6 +264,7 @@ label yujin_r15:
             "서로 가장 좋았던 말을 하나씩 꼽은 뒤 인사를 나눴다."
             $ remember("yujin_r15_intimacy", "talk")
     $ remember("yujin_r15_complete")
+    dn "가장 좋았던 말을 하나만 꼽기가 어려웠다. 요즘 유진 씨는 좋은 말을 너무 많이 한다."
     $ award_once("yujin_R15", "yujin", 5)
     $ progression_note_ending()
     return
@@ -274,6 +278,7 @@ label yujin_r16:
     $ chapter = "유진 R16 · 제 이름으로, 우리 마음으로"
     $ location = "피칭 당일 · 클라이언트사 대회의실"
     "피칭 당일. 디자인 파트는 유진의 차례였다. 유진은 시안을 띄우고 숨을 한 번 고른 뒤, 원고를 보지 않고 말을 시작했다."
+    dn "원고를 보지 않는다. 두 달 전의 유진 씨를 아는 사람이라면 이 장면에서 울어도 이상하지 않다."
     y "이 안내는 문구가 먼저 보이고, 빛은 그다음에 보이게 만들었습니다."
     "질의응답 시간. 클라이언트 쪽 젊은 담당자가 손을 들었다. “혹시... 이거 ‘창가’ 그림체랑 비슷하지 않아요? 저 그 계정 팔로우하거든요.”"
     "회의실이 잠깐 조용해졌다. 리아가 ‘거봐요’ 하는 얼굴로 도현을 봤다. 리모컨을 쥔 유진의 손가락이 하얗게 굳었다."
@@ -343,6 +348,7 @@ label yujin_r16:
     $ remember("yujin_route_completed")
     $ persistent.local_yujin_ending = True
     $ ending = "yujin_good"
+    dn "먼저 옆에 앉은 사람. 먼저 이름을 말한 사람. 오늘 유진 씨는 전부 먼저였다."
     $ award_once("yujin_R16", "yujin", 4)
     "유진 본편 결말 · 제 이름으로, 우리 마음으로"
     $ progression_note_ending()
@@ -357,6 +363,7 @@ label yujin_e01:
     $ chapter = "유진 E01 · 제 이름 옆의 우리"
     $ location = "약 반년 뒤 초여름의 휴일 오후 · 유진의 집"
     "피칭은 TF의 승리로 끝났고, 그 시안은 납품까지 마쳤다. 이후 유진은 ‘창가’ 계정의 그림을 묶어 처음으로 자기 이름을 건 작은 전시를 열었다. 오늘은 인쇄한 소개지를 도현에게 가장 먼저 보여 준다."
+    dn "전시 소개지에 '차유진'이라고 인쇄돼 있었다. 그 세 글자를 한참 봤다."
     y "이번엔 ‘창가’ 말고 차유진으로 하는 거예요. 제 이름만 적었다가... 처음 보여 주고 싶은 사람 이름도 따로 써 놨어요."
     d "그쪽은 제가 맞힐 수 있을 것 같은데요."
     y "네. 오늘도 오셨으니까 힌트는 여기까지요~"
@@ -410,6 +417,7 @@ label yujin_e01:
     y "네. 그건 처음부터 도현 씨 거예요."
     $ remember("yujin_e01_travel_state", "전시 신청·휴가 여행 계획을 함께 시작함, 예약·참가·여행 완료 아님")
     $ remember("yujin_epilogue_completed")
+    dn "처음부터 내 것이라고 했다. 그 '처음'이 언제였는지는 다음에 물어보기로 했다."
     $ award_once("yujin_E01", "yujin", 8)
     "유진 후일담 · 제 이름 옆의 우리"
     $ progression_note_ending()
