@@ -419,6 +419,7 @@ label seoyun_route:
         call seoyun_o03_offer
         call seoyun_r16
         if memory.get("seoyun_route_completed"):
+            call seoyun_x01
             menu:
                 "후일담 읽기 — 약 반년 뒤, 날짜가 있는 다음":
                     call seoyun_e01

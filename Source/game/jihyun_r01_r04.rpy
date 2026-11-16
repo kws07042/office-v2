@@ -314,6 +314,7 @@ label jihyun_early_route(full_route=False):
             call jihyun_o03_offer
             call jihyun_r16
             if memory.get("jihyun_route_completed"):
+                call jihyun_x01
                 menu:
                     "후일담 읽기 — 약 반년 뒤 쉬는 날의 부탁":
                         call jihyun_e01

@@ -98,6 +98,7 @@ label start:
                 call ria_o04_offer from ria_return_from_o04
                 call ria_r16
                 if memory.get("ria_route_completed"):
+                    call ria_x01
                     menu:
                         "후일담 읽기 — 약 반년 뒤의 두 사람":
                             call ria_e01

@@ -65,7 +65,8 @@ If anything conflicts, the reference images win.
 | sad | 서운·미안 | 눈썹 처지고 억지 미소 | 시선 떨굼, 입 다묾 | 눈물 맺힘 직전 | 웃음 없이 먼 곳 봄 |
 | serious | 진지·단호 | 웃음기 뺀 결심 | 업무 모드 단호 | 용기 낸 직구 | 장난 없는 정면 응시 |
 
-> **계절 고정(2026-11-16)**: 본편은 9월 중순~11월 말, 가을이다. 배경·장면 그림에는 가을 빛(낮은 해, 은행·단풍, 긴 그림자, 선선한 공기)을 넣고 한여름·눈 풍경은 쓰지 않는다. 프롬프트 끝에 `autumn season, mid-September to late November in Seoul, no snow, no summer foliage`를 붙인다. 후일담 그림만 늦봄.
+> **계절 고정(2026-11-16, 개정)**: 본편은 10월 중순~12월 말이다. 초·중반 배경은 늦가을(낮은 해, 낙엽, 긴 그림자), R13 이후와 크리스마스는 겨울(첫눈, 입김, 거리 트리 조명). 한여름 풍경은 쓰지 않는다. 가을 장면 프롬프트 끝에는 `late autumn in Seoul, cold air, fallen leaves, no snow`, 겨울 장면에는 `December in Seoul, light snow, warm window lights, Christmas decorations`를 붙인다. 후일담만 초여름.
+> **추가 그림**: 겨울 외출복 4벌(각자 업무복 위에 코트·목도리), 크리스마스 장면 4장(리아: 철수한 팝업 트리 아래 / 지현: 계획표 없는 휴가 날 집 / 유진: 창가에서 그림을 건네는 순간 / 서윤: 작업실 와인과 열쇠).
 
 ## 3. 의상 전신 8장
 | 인물 | 사복(데이트) | 생활복(집) |

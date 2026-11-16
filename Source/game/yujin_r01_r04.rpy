@@ -334,6 +334,7 @@ label yujin_early_route(through_r08=False, through_r12=False, full_route=False):
                         call yujin_o03_offer
                         call yujin_r16
                         if memory.get("yujin_route_completed"):
+                            call yujin_x01
                             menu:
                                 "후일담 읽기 — 약 반년 뒤의 두 사람":
                                     call yujin_e01
