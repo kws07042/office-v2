@@ -227,22 +227,23 @@ screen main_menu():
             kerning -3
             color "#FFFDFB"
             outlines [(4, "#B3123F", 11, 12), (4, "#3B0B22", 0, 0)]
-    # 개발 중 확인용 진입점. 평소엔 접어 두고 '테스트 장면'을 눌러야 보인다.
+    # 개발 중 확인용 진입점. 배포판(개발자 모드 꺼짐)에서는 보이지 않는다.
     default show_preview_links = False
-    vbox:
-        xanchor 1.0 xpos 1248 ypos 24 spacing 5
-        textbutton "테스트 장면" id "preview_toggle" action ToggleScreenVariable("show_preview_links") style "silk_small_button" xalign 1.0
-        if show_preview_links:
-            hbox:
-                spacing 6 xalign 1.0
-                textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" style "silk_small_button"
-                textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" style "silk_small_button"
-                textbutton "R08 메신저 확인" action Start("office_phone_preview") id "phone_preview_button" style "silk_small_button"
-            hbox:
-                spacing 6 xalign 1.0
-                textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" style "silk_small_button"
-                textbutton "지현 전체 대본 확인" action Start("jihyun_early_preview") id "jihyun_preview_button" style "silk_small_button"
-                textbutton "서윤 전체 대본 확인" action Start("seoyun_preview") id "seoyun_preview_button" style "silk_small_button"
+    if config.developer:
+        vbox:
+            xanchor 1.0 xpos 1248 ypos 24 spacing 5
+            textbutton "테스트 장면" id "preview_toggle" action ToggleScreenVariable("show_preview_links") style "silk_small_button" xalign 1.0
+            if show_preview_links:
+                hbox:
+                    spacing 6 xalign 1.0
+                    textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" style "silk_small_button"
+                    textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" style "silk_small_button"
+                    textbutton "R08 메신저 확인" action Start("office_phone_preview") id "phone_preview_button" style "silk_small_button"
+                hbox:
+                    spacing 6 xalign 1.0
+                    textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" style "silk_small_button"
+                    textbutton "지현 전체 대본 확인" action Start("jihyun_early_preview") id "jihyun_preview_button" style "silk_small_button"
+                    textbutton "서윤 전체 대본 확인" action Start("seoyun_preview") id "seoyun_preview_button" style "silk_small_button"
     add silk("dialogue", size=(1280, 176)) xpos 0 ypos 544
     hbox:
         xpos 64 ypos 594 spacing 8
@@ -372,23 +373,29 @@ screen preferences():
             vbox:
                 spacing 16
                 use silk_menu_title("설정", "Config")
-                text "글자 표시 속도" size 23
-                textbutton "창모드" action Preference("display", "window") text_size 20
-                textbutton "전체화면" action Preference("display", "fullscreen") text_size 20
-                textbutton "읽은 대사만 스킵" action Preference("skip", "seen") text_size 20
+                text "화면" size 21 color "#B3123F"
+                hbox:
+                    spacing 10
+                    textbutton "창모드" action Preference("display", "window") text_size 20
+                    textbutton "전체화면" action Preference("display", "fullscreen") text_size 20
+                text "글자 표시 속도" size 21 color "#B3123F"
                 bar value Preference("text speed") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
-                textbutton "글자 즉시 표시" action Preference("text speed", 0)
-                text "자동 진행 대기 시간" size 21
+                hbox:
+                    spacing 10
+                    textbutton "글자 즉시 표시" action Preference("text speed", 0) text_size 20
+                    textbutton "읽은 대사만 스킵" action Preference("skip", "seen") text_size 20
+                text "자동 진행 대기 시간" size 21 color "#B3123F"
                 bar value Preference("auto-forward time") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
                 if config.has_music:
-                    text "음악" size 20
+                    text "음악" size 21 color "#B3123F"
                     bar value Preference("music volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
                 if config.has_sound:
-                    text "효과음" size 20
+                    text "효과음" size 21 color "#B3123F"
                     bar value Preference("sound volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
                 if config.has_voice:
-                    text "음성" size 20
+                    text "음성" size 21 color "#B3123F"
                     bar value Preference("voice volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
+                text "연출" size 21 color "#B3123F"
                 textbutton ("화면 움직임 효과: 켜짐" if silk_motion_on() else "화면 움직임 효과: 꺼짐") action ToggleField(persistent, "silk_motion", True, False) text_size 21
                 textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
                 text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#6E4553" line_spacing 4 xmaximum 600

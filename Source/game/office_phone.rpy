@@ -243,6 +243,7 @@ label phone_deliver(mid, sender, body, media=None, important=False, contact="ria
     if important and persistent.phone_typing_enabled and not getattr(_preferences, "reduced_motion", False) and not renpy.is_skipping():
         call screen office_phone(waiting=True)
     $ phone_add(mid, sender, body, media, contact)
+    $ silk_sfx("phone")
     $ silk_phone_fresh_now = silk_phone_fresh()
     call screen office_phone
     $ silk_phone_mark()

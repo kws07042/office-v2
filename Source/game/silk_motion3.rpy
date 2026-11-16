@@ -28,6 +28,8 @@ init 7 python:
         motion = silk_motion_on() and not renpy.is_skipping()
         if ending != st.silk_last_ending:
             st.silk_last_ending = ending
+            if ending in SILK_ENDINGS:
+                silk_sfx("ending")
             if motion and ending in SILK_ENDINGS:
                 who, title = SILK_ENDINGS[ending]
                 renpy.show_screen("silk_ending_card", who=who, title=title, good=ending.endswith("_good"), _tag="silk_ending_card")

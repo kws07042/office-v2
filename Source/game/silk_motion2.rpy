@@ -19,6 +19,7 @@ init 6 python:
         code, title = silk_chapter_parts(current)
         if not code:
             return
+        silk_sfx("whoosh")
         renpy.show_screen("silk_chapter_card", code=code, title=title, place=getattr(st, "location", ""), _tag="silk_chapter_card")
 
     config.start_interact_callbacks.append(silk_chapter_check)
@@ -40,8 +41,10 @@ init 6 python:
     def award_once(event, who, amount, trust=0):
         before = renpy.store.affinity.get(who, 0)
         _silk_award_once_v1(event, who, amount, trust)
-        if renpy.store.affinity.get(who, 0) > before and not renpy.store.main_menu and silk_motion_on():
-            renpy.show_screen("silk_heart_burst", _tag="silk_heart_burst")
+        if renpy.store.affinity.get(who, 0) > before and not renpy.store.main_menu:
+            silk_sfx("heart")
+            if silk_motion_on():
+                renpy.show_screen("silk_heart_burst", _tag="silk_heart_burst")
 
 # ── 장 제목 카드 ───────────────────────────────────────────────
 transform silk_card_band:
