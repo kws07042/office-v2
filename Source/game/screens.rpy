@@ -104,7 +104,7 @@ screen story_header():
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
             at (silk_header_in(40) if silk_motion_on() else silk_still)
-            xanchor 1.0 xpos 1248 ypos 26 xsize 214
+            xanchor 1.0 xpos 1182 ypos 26 xsize 214
             padding (14, 8, 22, 13)
             background silk_surface("button")
             hbox:
@@ -348,7 +348,7 @@ screen quick_menu():
             button:
                 id "phone_open_button"
                 at ((silk_quick_hover, silk_phone_ring) if (silk_phone_has_unread() and silk_motion_on()) else ((silk_quick_hover if silk_motion_on() else silk_still),))
-                xanchor 1.0 xpos 1022 ypos 31 xysize (56, 57) padding (0, 0)
+                xanchor 1.0 xpos 1248 ypos 31 xysize (56, 57) padding (0, 0)
                 background silk("pill", "#FFFDFB", "#3B0B22", "#3B0B22", None)
                 hover_background silk("pill", "#3B0B22", "#3B0B22", "#B3123F", None)
                 action Show("office_phone_archive")
