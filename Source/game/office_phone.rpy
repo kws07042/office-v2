@@ -64,16 +64,6 @@ style phone_button_text is phone_text:
     size 18
     hover_color "#69424b"
     line_spacing 4
-style phone_reply_button is phone_button:
-    xfill True
-    yminimum 32
-    padding (10, 5)
-    background phone_surface("peer")
-style phone_reply_button_text is phone_button_text:
-    size 16
-    text_align 0.0
-    xalign 0.0
-
 screen office_phone(replies=None, waiting=False):
     modal not cream_menu_open()
     zorder 40
@@ -89,54 +79,116 @@ screen office_phone_archive():
     if not cream_menu_open():
         use office_phone_contents(None, False, True)
 
+# ── 메신저 화면 (실크 테마) ─────────────────────────────────────
+# 버튼 id와 동작은 예전과 같다. 모양만 바꿨다.
+transform phone_dot(delay=0.0):
+    yoffset 0 alpha 0.45
+    pause delay
+    block:
+        ease 0.22 yoffset -5 alpha 1.0
+        ease 0.22 yoffset 0 alpha 0.45
+        pause 0.5
+        repeat
+
+style phone_chip_button is button:
+    background None
+    hover_background silk("flat", "#F3E7EA", 14)
+    selected_background silk("flat", "#F3E7EA", 14)
+    padding (6, 4, 8, 4)
+    keyboard_focus True
+style phone_send_button is button:
+    background silk("pill", "#B3123F", "#3B0B22", "#3B0B22", None, 3, 4)
+    hover_background silk("pill", "#3B0B22", "#3B0B22", "#B3123F", None, 3, 4)
+    padding (20, 9, 24, 14)
+    keyboard_focus True
+style phone_send_button_text is phone_text:
+    size 16
+    color "#FFFDFB"
+    font "fonts/Jua-Regular.ttf"
+style phone_reply_button is button:
+    background silk("pill", "#FFFDFB", "#3B0B22", "#3B0B22", 18, 3, 4)
+    hover_background silk("pill", "#3B0B22", "#3B0B22", "#B3123F", 18, 3, 4)
+    xfill True
+    yminimum 44
+    padding (16, 9, 20, 14)
+    keyboard_focus True
+style phone_reply_button_text is phone_text:
+    size 16
+    color "#3B0B22"
+    hover_color "#FFFDFB"
+    text_align 0.0
+    xalign 0.0
+    line_spacing 3
+style phone_side_button is silk_small_button
+style phone_side_button_text is silk_small_button_text
+
 screen office_phone_contents(replies, waiting, archive):
     default selected = phone_active_contact
     if not archive and not replies:
         key "dismiss" action Return("next")
     style_prefix "phone"
     $ choosing_reply = bool(replies and selected == phone_active_contact and not archive and not waiting)
-    $ message_height = 298 if choosing_reply else 356
+    $ message_height = 292 if choosing_reply else (410 if archive else 398)
     $ contact_rows = phone_threads.get(selected, [])
-    add Solid("#292326a6")
+    $ chat_top = 150
+    $ below = chat_top + message_height
+    add Solid("#1B0F16b8")
 
     frame:
         at (silk_phone_rise if (silk_motion_on() and silk_phone_fresh_now and not archive) else silk_still)
-        xalign 0.5 yalign 0.5 xsize 380 ysize 652 padding (8, 8)
-        background CreamRoundedPanel("#33292e", "#806e72", radius=29)
+        xalign 0.5 yalign 0.5 xsize 404 ysize 684 padding (9, 9)
+        background silk("flat", "#1B0F16", 38)
         frame:
-            xsize 364 ysize 636 padding (0, 0)
-            background CreamRoundedPanel("#f7f3f0", "#f7f3f0", radius=22)
-            text phone_status_time(location) xpos 19 ypos 12 size 15
-            add "gui/window/phone_status.svg" xpos 269 ypos 13 xysize (74, 15)
-            add CreamRoundedPanel("#33292e", "#33292e", radius=5) xalign 0.5 ypos 13 xysize (9, 9)
-            text phone_names(selected) xpos 21 ypos 46 size 24
-            add Solid("#cdbfc0") xpos 8 ypos 119 xysize (348, 1)
+            xsize 386 ysize 666 padding (0, 0)
+            background silk("flat", "#FFFDFB", 30)
+            # 상태 표시줄
+            text phone_status_time(location) xpos 24 ypos 13 size 14 color "#3B0B22"
+            add "gui/window/phone_status.svg" xpos 290 ypos 14 xysize (74, 15)
+            add silk("flat", "#1B0F16", 6) xalign 0.5 ypos 12 xysize (64, 16)
+            # 대화 상대
+            use window_phone_avatar(44, 18, 42, selected)
+            text phone_names(selected) xpos 72 ypos 43 size 21 font "fonts/Jua-Regular.ttf" color "#3B0B22"
+            text ("지난 대화" if archive else ("입력 중…" if (waiting and selected == phone_active_contact) else "대화 중")) xpos 73 ypos 70 size 12 color ("#B3123F" if (waiting and not archive) else "#8A6B76")
             if archive:
-                textbutton "닫기" id "phone_archive_close" xpos 256 ypos 43 action Hide("office_phone_archive") text_size 15 padding (8, 7)
+                textbutton "닫기" id "phone_archive_close" xanchor 1.0 xpos 368 ypos 46 action Hide("office_phone_archive") style "phone_side_button"
+            # 대화방 바꾸기
             hbox:
-                xpos 16 ypos 85 spacing 4
+                xpos 14 ypos 100 spacing 2
                 for contact, name, initial in PHONE_CONTACTS:
-                    textbutton (name + (" •" if phone_unread(contact) else "")):
+                    button:
                         id ("phone_contact_" + contact)
-                        xsize 80 text_size 13 text_xalign 0.5 padding (3, 7)
-                        background (Solid("#e6d2ce") if selected == contact else Solid("#ebe6e4"))
-                        hover_background Solid("#e6d2ce")
+                        style "phone_chip_button"
+                        xsize 88
+                        selected (selected == contact)
                         action [SetLocalVariable("selected", contact), Function(phone_mark_read, contact)]
-            add Solid("#d5e0e4") xpos 8 ypos 120 xsize 348 ysize message_height
+                        alt name
+                        hbox:
+                            spacing 5 xalign 0.5
+                            use window_phone_avatar(22, 0, 0, contact)
+                            text name size 13 yalign 0.5 color ("#3B0B22" if selected == contact else "#8A6B76")
+                            if phone_unread(contact):
+                                add silk("flat", "#B3123F", 4) xysize (7, 7) yalign 0.2
+            add Solid("#E9DEE1") xpos 0 ypos (chat_top - 1) xysize (386, 1)
+            # 대화 내용
+            add Solid("#DFE8EE") xpos 0 ypos chat_top xsize 386 ysize message_height
             viewport:
                 id "phone_messages"
-                xpos 21 ypos 129 xsize 314 ysize (message_height - 17)
+                xpos 16 ypos (chat_top + 10) xsize 346 ysize (message_height - 20)
                 mousewheel True draggable True
                 yinitial 1.0
                 vbox:
-                    xsize 314 spacing 12
+                    xsize 346 spacing 10
                     if not contact_rows:
-                        text "아직 주고받은 메시지가 없어요." size 17 color "#425768" xalign 0.5
+                        null height 60
+                        text "아직 주고받은 메시지가 없어요." size 15 color "#5E7482" xalign 0.5
                     $ previous_moment = None
                     for row_index, row in enumerate(contact_rows):
                         $ moment = row.get("moment", "이전 대화")
                         if moment != previous_moment:
-                            text moment size 13 color "#425768" xalign 0.5 xmaximum 288 text_align 0.5
+                            frame:
+                                xalign 0.5 padding (12, 3)
+                                background silk("flat", "#C9D6DE", 11)
+                                text moment size 12 color "#4A5F6C" xmaximum 260 text_align 0.5
                         $ previous_moment = moment
                         $ mine = row["sender"] in ("dohyun", "ria_shared")
                         hbox:
@@ -144,74 +196,100 @@ screen office_phone_contents(replies, waiting, archive):
                             xalign (1.0 if mine else 0.0)
                             spacing 7
                             if not mine:
-                                use window_phone_avatar(29)
+                                use window_phone_avatar(30, 0, 0, selected)
                             vbox:
                                 spacing 3
                                 if not mine or row["sender"] == "ria_shared":
-                                    text ("리아 · 함께 보낸 메시지" if mine else phone_names(selected)) size 13 color "#425768"
+                                    text ("리아 · 함께 보낸 메시지" if mine else phone_names(selected)) size 12 color "#5E7482" xalign (1.0 if mine else 0.0)
                                 frame:
-                                    xmaximum 264 padding (10, 8)
-                                    background phone_surface("mine" if mine else "peer")
+                                    xmaximum 262 padding (13, 9, 13, 10)
+                                    background silk("flat", ("#FFE25A" if mine else "#FFFFFF"), 16)
                                     vbox:
                                         spacing 6
-                                        text row["text"] substitute False size 17 xmaximum 244 line_spacing 3
+                                        text row["text"] substitute False size 16 xmaximum 236 line_spacing 4 color "#2A2025"
                                         if row.get("media"):
                                             $ media = row["media"]
                                             button:
                                                 id ("phone_photo_" + media)
                                                 padding (8, 6)
+                                                background silk("flat", "#F3E7EA", 10)
+                                                hover_background silk("flat", "#E9D3D9", 10)
                                                 action [Function(phone_note_photo, media), Show("office_phone_photo", media=media)]
                                                 if phone_media_ready(media):
                                                     add Transform(PHONE_MEDIA[media]["path"], xysize=(208, 116), fit="contain")
                                                 else:
-                                                    text "사진 준비 중 · 눌러서 확대" size 14 color "#864940"
-            vbar value YScrollValue("phone_messages") style "office_scrollbar" xpos 341 ypos 129 ysize (message_height - 17)
+                                                    text "사진 준비 중 · 눌러서 확대" size 13 color "#B3123F"
+                    if waiting and selected == phone_active_contact and not archive:
+                        hbox:
+                            spacing 7
+                            use window_phone_avatar(30, 0, 0, selected)
+                            frame:
+                                padding (14, 13)
+                                background silk("flat", "#FFFFFF", 16)
+                                hbox:
+                                    spacing 5
+                                    for d in range(3):
+                                        add silk("flat", "#8A6B76", 4) xysize (8, 8) at (phone_dot(0.15 * d) if silk_motion_on() else silk_still)
+            vbar value YScrollValue("phone_messages") style "office_scrollbar" xpos 372 ypos (chat_top + 10) ysize (message_height - 20)
+            add Solid("#E9DEE1") xpos 0 ypos below xysize (386, 1)
 
+            # 아래쪽: 답장 / 다음 / 안내
             if archive:
                 $ photos = [row["media"] for row in contact_rows if row.get("media")]
-                text "이 회차에서 받은 메시지만 표시합니다." xpos 21 ypos 501 size 14 color "#62545c"
+                text "이 회차에서 받은 메시지만 표시합니다." xpos 22 ypos (below + 16) size 13 color "#8A6B76"
                 if photos:
                     textbutton "최근 사진 다시 보기":
                         id "phone_archive_photo"
-                        xpos 21 ypos 534 text_size 16
+                        xpos 20 ypos (below + 44) style "phone_side_button"
                         action [Function(phone_note_photo, photos[-1]), Show("office_phone_photo", media=photos[-1])]
             elif selected != phone_active_contact:
-                text (phone_names(phone_active_contact) + " 대화가 기다리고 있어요.") xpos 21 ypos 501 size 16 xmaximum 318
-                textbutton "진행 중인 대화로 돌아가기" xpos 21 ypos 535 action SetLocalVariable("selected", phone_active_contact) text_size 16
+                text (phone_names(phone_active_contact) + " 대화가 기다리고 있어요.") xpos 22 ypos (below + 16) size 14 xmaximum 340 color "#8A6B76"
+                textbutton "진행 중인 대화로 돌아가기" xpos 20 ypos (below + 44) action SetLocalVariable("selected", phone_active_contact) style "phone_send_button"
             elif waiting:
-                text (phone_names(phone_active_contact) + " 님이 입력 중…") xpos 21 ypos 501 size 16
-                textbutton "바로 보기" id "phone_next" xpos 21 ypos 535 action Return("next") text_size 17
+                frame:
+                    xpos 18 ypos (below + 22) xsize 232 ysize 42 padding (16, 0)
+                    background silk("flat", "#F3ECEE", 21)
+                    text (phone_names(phone_active_contact) + " 님이 입력 중…") size 14 color "#8A6B76" yalign 0.5
+                textbutton "바로 보기" id "phone_next" xanchor 1.0 xpos 370 ypos (below + 20) action Return("next") style "phone_send_button"
             elif replies:
-                text "답장 선택" xpos 21 ypos 430 size 14 color "#62545c"
+                text "답장 고르기" xpos 22 ypos (below + 10) size 13 color "#B3123F" font "fonts/Jua-Regular.ttf"
                 viewport:
                     id "phone_replies"
-                    xpos 21 ypos 454 xsize 314 ysize 155
+                    xpos 18 ypos (below + 34) xsize 346 ysize 170
                     mousewheel True draggable True arrowkeys True
                     vbox:
-                        xsize 312 spacing 5
+                        xsize 344 spacing 6
                         for value, caption in replies:
                             textbutton caption:
                                 id ("phone_reply_" + value)
                                 action Return(value)
                                 style "phone_reply_button"
-                vbar value YScrollValue("phone_replies") style "office_scrollbar" xpos 341 ypos 454 ysize 155
+                vbar value YScrollValue("phone_replies") style "office_scrollbar" xpos 372 ypos (below + 34) ysize 170
             else:
-                textbutton "다음 메시지" id "phone_next" xpos 21 ypos 518 action Return("next") text_size 17
-            add CreamRoundedPanel("#292631", "#292631", radius=2) xalign 0.5 ypos 621 xysize (100, 4)
+                frame:
+                    xpos 18 ypos (below + 22) xsize 232 ysize 42 padding (16, 0)
+                    background silk("flat", "#F3ECEE", 21)
+                    text "눌러서 다음 메시지" size 14 color "#A3959B" yalign 0.5
+                textbutton "다음 ▸" id "phone_next" xanchor 1.0 xpos 370 ypos (below + 20) action Return("next") style "phone_send_button"
+            add silk("flat", "#1B0F16", 2) xalign 0.5 ypos 651 xysize (110, 4)
 
     vbox:
-        xpos 851 ypos 475 spacing 5
+        xpos 862 ypos 470 spacing 8
         if not archive:
-            textbutton "되돌리기" action Rollback() style "cream_quick_button"
-        textbutton "저장" action ShowMenu("save") style "cream_quick_button"
-        textbutton "불러오기" action ShowMenu("load") style "cream_quick_button"
-        textbutton "설정" action ShowMenu("preferences") style "cream_quick_button"
+            textbutton "되돌리기" action Rollback() style "phone_side_button"
+        textbutton "저장" action ShowMenu("save") style "phone_side_button"
+        textbutton "불러오기" action ShowMenu("load") style "phone_side_button"
+        textbutton "설정" action ShowMenu("preferences") style "phone_side_button"
 
-screen window_phone_avatar(diameter, left=0, top=0):
+screen window_phone_avatar(diameter, left=0, top=0, contact=None):
+    # 승인된 프로필 그림이 생기기 전까지는 인물 색 동그라미에 이름 첫 글자.
+    $ avatar_name = phone_names(contact) if contact else ""
     fixed:
         xpos left ypos top
         xysize (diameter, diameter)
-        add CreamRoundedPanel("#e6edf4", "#c1cfdb", radius=diameter // 2)
+        add silk("flat", (silk_tag_color(avatar_name) if contact else "#C1CFDB"), diameter // 2) xysize (diameter, diameter)
+        if contact:
+            text avatar_name[1:2] font "fonts/Jua-Regular.ttf" size int(diameter * 0.5) color "#FFFDFB" xalign 0.5 yalign 0.5 outlines []
 
 screen office_phone_photo(media):
     style_prefix "phone"
