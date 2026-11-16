@@ -65,6 +65,8 @@ If anything conflicts, the reference images win.
 | sad | 서운·미안 | 눈썹 처지고 억지 미소 | 시선 떨굼, 입 다묾 | 눈물 맺힘 직전 | 웃음 없이 먼 곳 봄 |
 | serious | 진지·단호 | 웃음기 뺀 결심 | 업무 모드 단호 | 용기 낸 직구 | 장난 없는 정면 응시 |
 
+> **계절 고정(2026-11-16)**: 본편은 9월 중순~11월 말, 가을이다. 배경·장면 그림에는 가을 빛(낮은 해, 은행·단풍, 긴 그림자, 선선한 공기)을 넣고 한여름·눈 풍경은 쓰지 않는다. 프롬프트 끝에 `autumn season, mid-September to late November in Seoul, no snow, no summer foliage`를 붙인다. 후일담 그림만 늦봄.
+
 ## 3. 의상 전신 8장
 | 인물 | 사복(데이트) | 생활복(집) |
 |---|---|---|
