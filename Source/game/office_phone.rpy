@@ -100,7 +100,7 @@ screen office_phone_contents(replies, waiting, archive):
     add Solid("#292326a6")
 
     frame:
-        at ((silk_phone_rise if (archive or silk_phone_fresh_now) else silk_still) if silk_motion_on() else silk_still)
+        at (silk_phone_rise if (silk_motion_on() and silk_phone_fresh_now and not archive) else silk_still)
         xalign 0.5 yalign 0.5 xsize 380 ysize 652 padding (8, 8)
         background CreamRoundedPanel("#33292e", "#806e72", radius=29)
         frame:
