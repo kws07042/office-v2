@@ -122,6 +122,8 @@ style phone_reply_button_text is phone_text:
 style phone_side_button is silk_small_button
 style phone_side_button_text is silk_small_button_text
 
+# 자동 검사는 버튼의 현재 위치를 누른다. 휴대폰이 올라오는 도중에 누르면 가상 마우스가 아래쪽
+# 빠른 메뉴 위에 남아 이후 Enter가 대사로 가지 않으므로, 검사 중에는 올라오는 연출을 끈다.
 screen office_phone_contents(replies, waiting, archive):
     default selected = phone_active_contact
     if not archive and not replies:
@@ -135,7 +137,7 @@ screen office_phone_contents(replies, waiting, archive):
     add Solid("#1B0F16b8")
 
     frame:
-        at (silk_phone_rise if (silk_motion_on() and silk_phone_fresh_now and not archive) else silk_still)
+        at (silk_phone_rise if (silk_motion_on() and silk_phone_fresh_now and not archive and not renpy.is_in_test()) else silk_still)
         xalign 0.5 yalign 0.5 xsize 404 ysize 684 padding (9, 9)
         background silk("flat", "#1B0F16", 38)
         frame:
