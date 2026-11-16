@@ -295,7 +295,7 @@ screen main_menu():
                     text "종료" style "silk_menu_text"
                     text "Exit" style "silk_menu_caption"
     text ("ver " + config.version) xpos 64 ypos 688 size 12 color "#6E4553"
-    textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 200 ypos 676 text_size 12
+    textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 32 ypos 24
     text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 
 screen silk_quick_item(label, icon, target, ring=False):
