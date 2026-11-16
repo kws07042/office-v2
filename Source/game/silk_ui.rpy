@@ -23,6 +23,9 @@ init -9 python:
         "load": '<path d="M3 5h4l1.5 2H15v7H3z"/>',
         "prefs": '<path d="M3 6h3M10 6h5M3 12h7M14 12h1"/><circle cx="8" cy="6" r="2"/><circle cx="12" cy="12" r="2"/>',
         "menu": '<path d="M3 9l6-5 6 5M5 8v7h8V8"/>',
+        "qsave": '<path d="M10 2L4 10h5l-1 6 6-8H9z"/>',
+        "qload": '<path d="M4.5 10a4.5 4.5 0 1 0 1.3-4.2M4 3v3.5h3.5"/>',
+        "album": '<rect x="3" y="4" width="12" height="10" rx="1.5"/><path d="M3 12l4-3.5 3 2.5 2-1.5 3 2.5"/>',
     }
     SILK_ENGLISH = {"강리아": "Kang Ria", "백지현": "Baek Jihyun", "차유진": "Cha Yujin", "한서윤": "Han Seoyun"}
 
@@ -233,6 +236,14 @@ style silk_choice_button is button:
     yminimum 65
     xfill True
     keyboard_focus True
+style silk_choice_sub is default:
+    font "fonts/Pretendard-Regular.otf"
+    size 15
+    color "#6E4553"
+    hover_color "#F3E7EA"
+    selected_color "#F3E7EA"
+    outlines []
+
 style silk_choice_text is default:
     font "fonts/Pretendard-Regular.otf"
     size 19

@@ -4,6 +4,9 @@
 default silk_last_chapter = None
 default silk_phone_last = -100.0
 default silk_phone_fresh_now = True
+# 자동 테스트의 '다음 대사' 신호는 카드가 움직이는 동안 먹히므로 테스트 중에는 카드를 띄우지 않는다.
+# (실제 마우스·Enter 입력은 카드가 떠 있어도 넘어간다. 카드 화면을 찍을 테스트만 True로 바꾼다.)
+default silk_test_cards = False
 
 init 6 python:
     def silk_chapter_check():
@@ -13,14 +16,22 @@ init 6 python:
         current = getattr(st, "chapter", None)
         if not current or current == st.silk_last_chapter:
             return
+        if silk_overlay_busy():
+            return  # 선택지·메신저 위에는 띄우지 않고 다음 대사에서 보여 준다.
         st.silk_last_chapter = current
-        if renpy.is_skipping() or not silk_motion_on():
+        if renpy.is_skipping() or not silk_cards_on():
             return
         code, title = silk_chapter_parts(current)
         if not code:
             return
         silk_sfx("whoosh")
         renpy.show_screen("silk_chapter_card", code=code, title=title, place=getattr(st, "location", ""), _tag="silk_chapter_card")
+
+    def silk_cards_on():
+        return silk_motion_on() and not (renpy.is_in_test() and not renpy.store.silk_test_cards)
+
+    def silk_overlay_busy():
+        return any(renpy.get_screen(n) for n in ("choice", "office_phone", "office_phone_archive", "event_cut"))
 
     config.start_interact_callbacks.append(silk_chapter_check)
 

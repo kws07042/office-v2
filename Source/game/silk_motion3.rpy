@@ -25,8 +25,8 @@ init 7 python:
             return
         place = getattr(st, "location", "") or ""
         ending = getattr(st, "ending", "") or ""
-        motion = silk_motion_on() and not renpy.is_skipping()
-        if ending != st.silk_last_ending:
+        motion = silk_cards_on() and not renpy.is_skipping()
+        if ending != st.silk_last_ending and not (ending in SILK_ENDINGS and silk_overlay_busy()):
             st.silk_last_ending = ending
             if ending in SILK_ENDINGS:
                 silk_sfx("ending")
@@ -36,7 +36,7 @@ init 7 python:
         if place != st.silk_last_location:
             first = st.silk_last_location is None
             st.silk_last_location = place
-            if motion and not first and not any(w in place for w in SILK_QUIET_PLACES) and not renpy.get_screen("silk_chapter_card"):
+            if motion and not first and not any(w in place for w in SILK_QUIET_PLACES) and not renpy.get_screen("silk_chapter_card") and not silk_overlay_busy():
                 renpy.show_screen("silk_location_sweep", _tag="silk_location_sweep")
 
     config.start_interact_callbacks.append(silk_scene_check)

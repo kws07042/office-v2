@@ -148,8 +148,11 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
 screen say(who, what):
     use cream_dialogue_panel(who, what)
 
-screen silk_choice_item(item, i=0, n=0, intimate=False):
+screen silk_choice_item(item, i=0, n=0, intimate=False, wide=False):
     $ choice_text, choice_chip = silk_choice_parts(item.caption)
+    $ choice_sub = None
+    if wide and not choice_chip and " — " in choice_text:
+        $ choice_text, choice_sub = choice_text.split(" — ", 1)
     button:
         at ((silk_choice_in(i), silk_choice_hover) if silk_motion_on() else (silk_still,))
         style "silk_choice_button"
@@ -157,7 +160,9 @@ screen silk_choice_item(item, i=0, n=0, intimate=False):
         alt item.caption
         hbox:
             spacing 12
-            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else 530) min_width (366 if choice_chip else 0)
+            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else (980 if wide else 530)) min_width (366 if choice_chip else 0)
+            if choice_sub:
+                text choice_sub style "silk_choice_sub" yalign 0.5 xmaximum (960 - 19 * len(choice_text))
             if choice_chip:
                 frame:
                     at (silk_chip_glow if silk_motion_on() else silk_still)
@@ -197,7 +202,7 @@ screen choice(items):
                 text "친밀한 장면을 미루는 선택에는 정답이 없어요." size 13 color "#4A2A36"
     else:
         frame:
-            xpos 66 ypos 122 xsize 1148 ysize 350 padding (24, 22, 28, 27)
+            xpos 66 ypos 96 xsize 1148 ysize 428 padding (24, 22, 28, 27)
             background silk_surface("panel")
             viewport:
                 mousewheel True draggable True arrowkeys True
@@ -206,7 +211,7 @@ screen choice(items):
                 vbox:
                     xsize 1070 spacing 9
                     for i, item in enumerate(items):
-                        use silk_choice_item(item, i)
+                        use silk_choice_item(item, i, wide=True)
 
 screen main_menu():
     tag menu
@@ -297,7 +302,8 @@ screen main_menu():
                     text "Exit" style "silk_menu_caption"
     text ("ver " + config.version) xpos 64 ypos 688 size 12 color "#6E4553"
     textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 32 ypos 24
-    text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
+    if config.developer:
+        text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 
 screen silk_quick_item(label, icon, target, ring=False):
     button:
@@ -323,6 +329,9 @@ screen quick_menu():
                 use silk_quick_item("스킵", "skip", Skip())
                 use silk_quick_item("저장", "save", ShowMenu("save"))
                 use silk_quick_item("불러오기", "load", ShowMenu("load"))
+                use silk_quick_item("퀵저장", "qsave", QuickSave())
+                use silk_quick_item("퀵로드", "qload", QuickLoad(confirm=True))
+                use silk_quick_item("기록함", "album", ShowMenu("progression_hub"))
                 use silk_quick_item("설정", "prefs", ShowMenu("preferences"))
                 use silk_quick_item("메뉴", "menu", MainMenu(confirm=True))
             text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 96 ypos 692 size 12 color "#6E4553"
@@ -405,23 +414,6 @@ screen preferences():
             textbutton "돌아가기" action Return() style "silk_small_button"
             if not main_menu:
                 textbutton "처음 화면" action MainMenu(confirm=True) style "silk_small_button"
-
-screen file_slots(mode):
-    add "silk ground"
-    frame:
-        at (silk_menu_panel if silk_motion_on() else silk_still)
-        xalign 0.5 yalign 0.5 xsize 994 padding (35, 28, 39, 33)
-        background silk_surface("panel")
-        vbox:
-            spacing 15
-            use silk_menu_title(("저장" if mode == "save" else "불러오기"), ("Save" if mode == "save" else "Load"))
-            text "대사와 선택·기억을 함께 저장합니다." size 20 color "#6E4553"
-            for slot in range(1, 5):
-                $ slot_name = str(slot)
-                textbutton ("슬롯 " + slot_name + "  ·  " + FileTime(slot_name, format="%m월 %d일 %H:%M", empty="비어 있음")):
-                    xsize 920
-                    action (FileSave(slot_name, confirm=True) if mode == "save" else FileLoad(slot_name, confirm=True))
-            textbutton "돌아가기" action Return()
 
 screen save():
     tag menu

@@ -294,11 +294,9 @@ screen progression_cg_view(asset_id):
 
 screen progression_shortcuts():
     if not main_menu and not event_cut_active and not cream_menu_open() and not cream_preview_active and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive") and not progression_in_replay():
-        hbox:
-            xpos 37 ypos 68 spacing 8
-            textbutton "우리의 기록" action ShowMenu("progression_hub") style "cream_quick_button" text_size 16 padding (12, 7)
-            textbutton "퀵저장" action QuickSave() style "cream_quick_button" text_size 16 padding (12, 7)
-            textbutton "퀵로드" action QuickLoad(confirm=True) style "cream_quick_button" text_size 16 padding (12, 7)
+        # 퀵저장·퀵로드·기록함은 하단 빠른 메뉴로 옮겼다. 키보드 단축키만 남긴다.
+        key "K_F5" action QuickSave()
+        key "K_F9" action QuickLoad(confirm=True)
 
 init python:
     config.overlay_screens.append("progression_shortcuts")
