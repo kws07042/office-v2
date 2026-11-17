@@ -546,10 +546,6 @@ label jihyun_r10:
             j "좋아. 날짜는 둘이 정할 때까지 안 잡을게."
             $ remember("jihyun_publicity", "discuss_later")
     dn "날짜를 안 잡겠다는 말이 약속처럼 들렸다."
-    $ location = "토요일 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("jihyun_r10_x1", "jihyun", "지붕 아직 안 붙였어. 붙이면 끝나는 것 같아서.", contact="jihyun")
-    call phone_deliver("jihyun_r10_x2", "dohyun", "안 끝나요. 붙이고 나면 마당 만들면 되죠.", contact="jihyun")
-    call phone_deliver("jihyun_r10_x3", "jihyun", "...마당. 그건 생각 못 했네. 너 가끔 나보다 계획적이야.", contact="jihyun")
     $ award_once("jihyun_R10", "jihyun", 4)
     $ progression_note_ending()
     return
