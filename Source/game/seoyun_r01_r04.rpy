@@ -220,6 +220,10 @@ label seoyun_r02:
     $ remember("seoyun_recommended_book", "느린 모퉁이")
     $ remember("seoyun_r03_appointment", "다음 수요일 저녁 일곱 시, 같은 북카페")
     dn "사진으로 보여 달라고 못 하겠다는 말에 한참 웃었다. 웃고 나서야 그게 칭찬이었다는 걸 알았다."
+    $ location = "같은 날 밤 · 각자의 집, 개인 메시지"
+    call phone_deliver("seoyun_r02_m1", "seoyun", "『느린 모퉁이』 첫 장 읽었어? 안 읽었으면 아직 읽지 마. 수요일에 같이 첫 장부터 얘기하고 싶어졌어.", contact="seoyun")
+    call phone_deliver("seoyun_r02_m2", "dohyun", "벌써 세 장 읽었는데요...", contact="seoyun")
+    call phone_deliver("seoyun_r02_m3", "seoyun", "...빠르네. 그럼 세 장까지만. 네 번째 장은 내가 제일 좋아하는 데라서 같이 넘기고 싶어~", contact="seoyun")
     $ award_once("seoyun_R02", "seoyun", 7)
     $ progression_note_ending()
     return
@@ -344,6 +348,10 @@ label seoyun_r03:
     "서윤은 금요일 일곱 시 옆에 도현의 이름을 적었다. ‘언제 한번’은 적지 않았다."
     sn "가볍게 말하는 건 쉬운데. 이번엔 가볍게 들리지 않았으면 좋겠다."
     dn "내가 기억한 약속을 서윤 씨가 다시 기억했다. 기억이 두 번 겹치니 약속이 조금 무거워졌다. 좋은 쪽으로."
+    $ location = "다음 날 아침 · 출근길, 개인 메시지"
+    call phone_deliver("seoyun_r03_m1", "seoyun", "금요일 일곱 시, 수첩에 적었어. 펜으로. 연필 아니고.", contact="seoyun")
+    call phone_deliver("seoyun_r03_m2", "dohyun", "그게 다른 거예요?", contact="seoyun")
+    call phone_deliver("seoyun_r03_m3", "seoyun", "연필은 지울 수 있잖아. 펜으로 약속 적은 거 오랜만이야. 그러니까 늦지 마~", contact="seoyun")
     $ award_once("seoyun_R03", "seoyun", 8)
     $ progression_note_ending()
     return

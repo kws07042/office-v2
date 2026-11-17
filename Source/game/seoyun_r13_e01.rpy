@@ -62,6 +62,10 @@ label seoyun_r13:
     s "...말은 잘해."
     "서윤이 처음으로 웃었다. 금방 사라지는 웃음이었다. 도현은 그 뒷모습이 골목을 돌 때까지 서 있었다."
     dn "삼 년을 혼자 버틴 사람이, 지키려고 밀어내는 법밖에 모른다. 그걸 아는 것과 견디는 것은 다른 일이었다."
+    $ location = "같은 날 밤 · 각자의 집, 개인 메시지"
+    call phone_deliver("seoyun_r13_m1", "seoyun", "아까 길에서 미안. 그 건물 앞에서 손이 먼저 움직이더라. 팔짱 낄 뻔한 거 봤지.", contact="seoyun")
+    call phone_deliver("seoyun_r13_m2", "dohyun", "봤어요. 반쯤 낀 거, 저는 좋았어요.", contact="seoyun")
+    call phone_deliver("seoyun_r13_m3", "seoyun", "...그렇게 말하지 마. 수요일까지 버티기로 한 거 흔들려.", contact="seoyun")
     $ award_once("seoyun_R13", "seoyun", 0)
     $ progression_note_ending()
     return

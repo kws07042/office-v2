@@ -163,6 +163,10 @@ label seoyun_r06:
     d "좋아요. 다음 토요일 저녁은 제가 만나자고 할게요."
     s "응. 그럼 이번엔 내가 기다렸다는 말부터 할 수 있겠네."
     dn "기다렸다는 말부터 하겠다고 했다. 다음 약속이 벌써 기다려졌다."
+    $ location = "같은 날 밤 · 각자의 집, 개인 메시지"
+    call phone_deliver("seoyun_r06_m1", "seoyun", "비밀 연애 첫날 소감. 회사 메신저 프로필 사진 바꾸려다 참았어. 티 날까 봐.", contact="seoyun")
+    call phone_deliver("seoyun_r06_m2", "dohyun", "무슨 사진으로 바꾸려고 하셨는데요?", contact="seoyun")
+    call phone_deliver("seoyun_r06_m3", "seoyun", "그것도 비밀. 피칭 끝나면 알려 줄게. 그때까지 궁금해해 줘~", contact="seoyun")
     $ award_once("seoyun_R06", "seoyun", 6)
     $ progression_note_ending()
     return
@@ -317,6 +321,17 @@ label seoyun_r08:
     call phone_deliver("seoyun_r08_x2", "dohyun", "'여전히'요?", contact="seoyun")
     call phone_deliver("seoyun_r08_x3", "seoyun", "...아, 업계가 좁아서. 수요일에 맛있는 거 먹자~", contact="seoyun")
     dn "서윤 씨가 말끝을 흐리는 건 드문 일이다. '여전히'라는 한 단어가 수요일까지 머릿속에 남았다."
+    $ location = "다음 날 월요일 점심 · 회사 옥상"
+    "월요일 점심. 옥상 벤치에서 서윤이 샌드위치 포장을 뜯다 말고 도현을 봤다."
+    s "어제 '여전히'에 물음표 붙인 거, 밤새 신경 쓰였지?"
+    d "...조금요."
+    s "솔직해서 좋네. 그 담당자, 예전에 알던 사람이야. 아주 예전에."
+    d "말하기 싫으면 안 하셔도 돼요."
+    s "싫은 건 아니고, 아직 순서가 안 정해졌어. 나는 얘기할 때 순서가 중요해. 어디서 시작해서 어디서 웃을지."
+    d "웃을 데가 없는 얘기면요?"
+    s "...그럼 좀 더 오래 걸리겠지. 대신 약속할게. 너한테 거짓말로 순서 맞추진 않을 거야."
+    "서윤이 샌드위치 반쪽을 도현에게 건넸다. 건네는 손이 평소보다 조금 오래 머물렀다."
+    dn "얘기의 순서를 고르는 사람. 그 순서표 어딘가에 내 자리가 있다는 것만으로 오늘은 충분했다."
     $ award_once("seoyun_R08", "seoyun", 4)
     $ progression_note_ending()
     return

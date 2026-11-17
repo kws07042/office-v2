@@ -125,7 +125,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -155,7 +156,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -185,7 +187,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -215,7 +218,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -245,7 +249,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -275,7 +280,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -305,7 +311,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -335,7 +342,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -365,7 +373,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -395,7 +404,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -425,7 +435,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -455,7 +466,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -485,7 +497,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -515,7 +528,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -545,7 +559,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -575,7 +590,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -605,7 +621,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -635,7 +652,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -665,7 +683,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -695,7 +714,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -725,7 +745,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -755,7 +776,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -785,7 +807,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -815,7 +838,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -845,7 +869,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -875,7 +900,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -905,7 +931,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -935,7 +962,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -965,7 +993,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -995,7 +1024,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1025,7 +1055,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1055,7 +1086,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1085,7 +1117,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1115,7 +1148,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1145,7 +1179,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1175,7 +1210,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1205,7 +1241,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1235,7 +1272,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1265,7 +1303,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1295,7 +1334,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1325,7 +1365,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1355,7 +1396,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1385,7 +1427,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1415,7 +1458,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         if not eval jihyun_final_finished():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1445,7 +1489,8 @@ testsuite jihyun_final_checks:
                         run FileLoad("61",confirm=False)
                         assert screen "choice" timeout 10.0
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
-                click expression jihyun_final_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         assert eval jihyun_final_finished() and memory.get("jihyun_final_test_done")
         assert eval memory["jihyun_first_shared_slot_kept"] == memory["jihyun_shared_slot"]
         assert eval memory["jihyun_r08_reply"] == ["restaurant","menu","affection"][case%3]
