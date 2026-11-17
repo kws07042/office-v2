@@ -148,7 +148,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -189,7 +190,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -230,7 +232,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -271,7 +274,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -312,7 +316,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -353,7 +358,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -394,7 +400,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -435,7 +442,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -476,7 +484,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -517,7 +526,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -558,7 +568,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -599,7 +610,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -640,7 +652,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -681,7 +694,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -722,7 +736,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -763,7 +778,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -804,7 +820,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -845,7 +862,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -886,7 +904,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -927,7 +946,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -968,7 +988,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1009,7 +1030,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1050,7 +1072,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1091,7 +1114,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1132,7 +1156,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1173,7 +1198,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1214,7 +1240,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1255,7 +1282,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1296,7 +1324,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1337,7 +1366,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1378,7 +1408,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1419,7 +1450,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1460,7 +1492,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1501,7 +1534,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1542,7 +1576,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1583,7 +1618,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1624,7 +1660,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1665,7 +1702,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1706,7 +1744,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1747,7 +1786,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1788,7 +1828,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1829,7 +1870,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1870,7 +1912,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1911,7 +1954,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1952,7 +1996,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1993,7 +2038,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2034,7 +2080,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2075,7 +2122,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2116,7 +2164,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2157,7 +2206,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2198,7 +2248,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2239,7 +2290,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2280,7 +2332,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2321,7 +2374,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2362,7 +2416,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2403,7 +2458,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2444,7 +2500,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2485,7 +2542,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2526,7 +2584,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2567,7 +2626,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2608,7 +2668,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2649,7 +2710,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2690,7 +2752,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2731,7 +2794,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2772,7 +2836,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2813,7 +2878,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2854,7 +2920,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2895,7 +2962,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2936,7 +3004,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2977,7 +3046,8 @@ testsuite seoyun_checks:
                         assert eval memory["seoyun_conflict"]=="discussing" and "seoyun_repair_performed" not in memory
                 if eval case==0 and chapter.startswith("서윤 E01"):
                     screenshot "seoyun-epilogue-date.png"
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         assert eval memory.get("seoyun_test_complete") and seoyun_test_done()
         assert eval memory["seoyun_r01_appointment"] == "수요일 저녁 일곱 시, 회사 앞 카페"
         assert eval memory["seoyun_promise"] == ["photo","sound","rest"][case%3]
@@ -3068,7 +3138,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3078,7 +3149,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3088,7 +3160,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3098,7 +3171,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3108,7 +3182,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3118,7 +3193,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3128,7 +3204,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3138,7 +3215,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3148,7 +3226,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3158,7 +3237,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3168,7 +3248,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3178,7 +3259,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3188,7 +3270,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3198,7 +3281,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3208,7 +3292,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3218,7 +3303,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3228,7 +3314,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3238,7 +3325,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3248,7 +3336,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3258,7 +3347,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3268,7 +3358,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3278,7 +3369,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3288,7 +3380,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3298,7 +3391,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3308,7 +3402,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3318,7 +3413,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3328,7 +3424,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3338,7 +3435,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3348,7 +3446,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3358,7 +3457,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3368,7 +3468,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3378,7 +3479,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3388,7 +3490,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3398,7 +3501,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3408,7 +3512,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3418,7 +3523,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3428,7 +3534,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3438,7 +3545,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3448,7 +3556,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3458,7 +3567,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3468,7 +3578,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3478,7 +3589,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3488,7 +3600,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3498,7 +3611,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3508,7 +3622,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3518,7 +3633,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3528,7 +3644,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3538,7 +3655,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3548,7 +3666,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3558,7 +3677,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3568,7 +3688,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3578,7 +3699,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3588,7 +3710,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3598,7 +3721,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3608,7 +3732,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3618,7 +3743,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3628,7 +3754,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3638,7 +3765,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3648,7 +3776,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3658,7 +3787,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3668,7 +3798,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3678,7 +3809,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3688,7 +3820,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3698,7 +3831,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3708,7 +3842,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3718,7 +3853,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3728,7 +3864,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3738,7 +3875,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3748,7 +3886,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3758,7 +3897,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3768,7 +3908,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3778,7 +3919,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3788,7 +3930,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3798,7 +3941,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3808,7 +3952,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3818,7 +3963,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3828,7 +3974,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3838,7 +3985,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3848,7 +3996,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3858,7 +4007,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3868,7 +4018,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3878,7 +4029,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3888,7 +4040,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3898,7 +4051,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3908,7 +4062,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3918,7 +4073,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3928,7 +4084,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3938,7 +4095,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3948,7 +4106,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3958,7 +4117,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3968,7 +4128,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3978,7 +4139,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3988,7 +4150,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -3998,7 +4161,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4008,7 +4172,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4018,7 +4183,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4028,7 +4194,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4038,7 +4205,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4048,7 +4216,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4058,7 +4227,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4068,7 +4238,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4078,7 +4249,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4088,7 +4260,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4098,7 +4271,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         if not eval seoyun_test_done():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -4108,7 +4282,8 @@ testsuite seoyun_checks:
             elif screen "event_cut":
                 click id "cut_next" until not screen "event_cut"
             elif not eval seoyun_test_done():
-                click expression seoyun_test_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression seoyun_test_caption()
         assert eval seoyun_test_done() and active_route=="seoyun" and ending=="seoyun_good"
         assert eval memory["seoyun_intro"]=="humor" and memory["seoyun_route_completed"]
         assert eval c06_person=="seoyun" and memory["c07_seoyun_next_question"]
