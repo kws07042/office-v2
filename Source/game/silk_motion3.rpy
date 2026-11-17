@@ -36,7 +36,7 @@ init 7 python:
                 silk_sfx("ending")
             if motion and ending in SILK_ENDINGS:
                 who, title = SILK_ENDINGS[ending]
-                renpy.show_screen("silk_ending_card", who=who, title=title, good=ending.endswith("_good"), true_end=(mem.get(route + "_x01") == "night"), _tag="silk_ending_card")
+                renpy.show_screen("silk_ending_card", who=who, title=title, good=ending.endswith("_good"), true_end=(mem.get(route + "_x01") == "night"), normal_end=(mem.get(route + "_x01") == "evening"), _tag="silk_ending_card")
         if place != st.silk_last_location:
             first = st.silk_last_location is None
             st.silk_last_location = place
@@ -104,13 +104,13 @@ transform silk_end_rule:
     pause 3.0
     easeout 0.6 alpha 0.0
 
-screen silk_ending_card(who, title, good, true_end=False):
+screen silk_ending_card(who, title, good, true_end=False, normal_end=False):
     zorder 36
     timer 5.4 action Hide("silk_ending_card")
     add Solid("#3B0B22d9") at silk_end_veil
     if good:
         add "silk title hearts" at silk_end_veil
-    text ("True End" if true_end else ("The End" if good else "Another Day")) font "fonts/PlayfairDisplay-Italic.ttf" size 92 color "#FFFDFB" xalign 0.5 ypos 190 at silk_end_word
+    text ("True End" if true_end else ("Normal End" if normal_end else ("The End" if good else "Another Day"))) font "fonts/PlayfairDisplay-Italic.ttf" size 92 color "#FFFDFB" xalign 0.5 ypos 190 at silk_end_word
     add Solid("#B3123F") xysize (360, 3) xalign 0.5 ypos 316 at silk_end_rule
     text who font "fonts/Jua-Regular.ttf" size 30 color "#F3E7EA" xalign 0.5 ypos 338 at silk_end_line(0.0)
     text title font silk_title_font(title) size 44 color "#FFFDFB" xalign 0.5 ypos 384 at silk_end_line(0.2)

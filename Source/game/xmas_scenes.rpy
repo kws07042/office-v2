@@ -1,12 +1,52 @@
 # 크리스마스 장면(X01). 각 루트의 R16(연말 피칭) 뒤, 후일담 선택 앞에 온다.
-# 호감도가 기준 이상이면 '밤을 함께'(진엔딩), 아니면 '저녁만'(일반 엔딩).
+# 마음 점수가 기준 이상이면 '밤을 함께'(진엔딩), 아니면 '저녁만'(일반 엔딩).
 # 성인 장면 본문은 외부 작성: "(장면 생략 · 시간이 흐릅니다.)" 표시만 둔다.
 
-define XMAS_TRUE_AFFINITY = 80
+# 진엔딩 판정은 장마다 고정으로 쌓이는 호감도(affinity)가 아니라,
+# 플레이어가 실제로 고른 선택에서 계산하는 '마음 점수'로 한다.
+#  - 선택 데이트(O01~O03): 끝까지 함께 2점, 짧게 1점, 건너뜀 0점
+#  - 각 루트의 핵심 선택(그 사람의 상처를 이해한 답일수록 높음)
+#  - 헤어지자고 했다가 거둔 경우 -2점
+define XMAS_TRUE_HEART = 8
 
 init python:
+    XMAS_HEART_RULES = {
+        "ria": [
+            ("ria_r06_response", {"listen": 2, "share": 1, "choose_rest": 1}),
+            ("ria_r13_response", {"honest": 2, "ask": 1}),
+            ("ria_r14_clarification", {"both": 2, "notice": 1, "feelings": 1}),
+        ],
+        "jihyun": [
+            ("jihyun_r09_support", {"evidence": 2, "share": 1}),
+            ("jihyun_r13_response", {"reasons": 2, "roles": 2, "pause_then_return": 1}),
+            ("jihyun_r14_choice", {"ready": 2, "wait_for_action": 1}),
+        ],
+        "yujin": [
+            ("yujin_support_overstep", {False: 2}),
+            ("yujin_support_repair_status", {"resolved": 1, "not_needed": 1}),
+            ("yujin_r14_readiness", {"reassured": 2, "ready": 1, "rechecked": 1, "relationship_talk": 1, "talk_after": 1}),
+        ],
+        "seoyun": [
+            ("seoyun_r09_support", {"reader": 1, "roles": 1, "scope": 1}),
+            ("seoyun_r13_response", {"unknown": 2, "weight": 1, "pause": 1}),
+            ("seoyun_r14_choice", {"ready": 2, "repair_blunt": 1, "wait_action": 1}),
+        ],
+    }
+
+    def xmas_heart(who):
+        mem = renpy.store.memory
+        score = 0
+        for part in ("o01", "o02", "o03"):
+            score += {"completed": 2, "brief": 1}.get(mem.get(who + "_" + part + "_status"), 0)
+        for key, table in XMAS_HEART_RULES.get(who, []):
+            if key in mem:
+                score += table.get(mem[key], 0)
+        if mem.get(who + "_r14_choice") == "reconsidered" or mem.get(who + "_r14_relationship_choice") == "reconsidered":
+            score -= 2
+        return score
+
     def xmas_true(who):
-        return renpy.store.affinity.get(who, 0) >= XMAS_TRUE_AFFINITY
+        return xmas_heart(who) >= XMAS_TRUE_HEART
 
     def xmas_finish(who, night):
         remember(who + "_x01", "night" if night else "evening")
@@ -61,6 +101,8 @@ label ria_x01:
         "둘은 트리의 불을 끄고 셔터를 내렸다. 역까지 걷는 동안 리아는 몇 번이나 뒤통수의 슈슈를 만져 보았다."
         r "[ri('내년 이브엔 내가 먼저 비워 둘게. 진짜로.', '내년 이브엔 제가 먼저 비워 둘게요. 진짜로요.')]"
         "개찰구 앞에서 리아가 손을 크게 흔들었다. 도현은 그 손이 안 보일 때까지 서 있었다."
+        "— 일반 엔딩 —"
+        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 이 밤은 조금 달랐을지도 모릅니다.)"
         $ xmas_finish("ria", False)
     return
 
@@ -116,6 +158,8 @@ label jihyun_x01:
         j "휴가니까 나가는 거야. 일 때문에 나가는 거랑은 달라."
         "둘은 늦은 저녁을 먹고 역까지 걸었다. 지현은 도현의 목도리 매듭을 한 번 더 고쳐 주고, 손을 주머니에 넣었다."
         j "내일도 휴가야. 연락해. 일정표는 안 만들게."
+        "— 일반 엔딩 —"
+        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 이 밤은 조금 달랐을지도 모릅니다.)"
         $ xmas_finish("jihyun", False)
     return
 
@@ -165,6 +209,8 @@ label yujin_x01:
         y "네. 오늘은 저녁만 같이 먹어요. 제가 처음으로 케이크를 골랐거든요. 설명 안 읽고요~"
         "둘은 작은 케이크를 나눠 먹었다. 헤어질 때 유진은 현관에서 그림을 한 번 더 보여 주었다."
         y "다음 장은 정면으로 그릴 거예요. 그러니까 또 와 주세요."
+        "— 일반 엔딩 —"
+        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 이 밤은 조금 달랐을지도 모릅니다.)"
         $ xmas_finish("yujin", False)
     return
 
@@ -215,5 +261,7 @@ label seoyun_x01:
         d "다음이 언제예요?"
         s "네가 정해. 열쇠 가진 사람이 정하는 거야~"
         "둘은 남은 와인을 천천히 비웠다. 골목 끝에서 서윤은 도현의 목도리를 한 번 여며 주고 돌아섰다. 두 번째 잔은 서랍이 아니라 선반 위에 올려 두었다."
+        "— 일반 엔딩 —"
+        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 이 밤은 조금 달랐을지도 모릅니다.)"
         $ xmas_finish("seoyun", False)
     return
