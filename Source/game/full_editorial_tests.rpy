@@ -62,7 +62,7 @@ testsuite full_editorial_checks:
         advance until screen "office_phone"
         assert eval location == "같은 토요일 밤 · 지현의 집 — 지현 시점"
         assert eval phone_threads["jihyun"][-1]["moment"] == "같은 토요일 밤"
-        click id "phone_next"
+        click id "phone_next" until not screen "office_phone" timeout 15.0
         advance until screen "choice"
         assert eval memory.get("jihyun_r10_after_completed")
         assert eval memory["jihyun_o02_status"] == ["completed","skipped","brief"][case // 3]

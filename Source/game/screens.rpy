@@ -52,9 +52,9 @@ screen cream_stage():
     if not main_menu and not event_cut_active:
         add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
         if cream_ria_visible():
-            add "ria ui bust" xalign 0.5 ypos 28
+            add "ria ui bust" xalign 0.5 ypos 28 at (silk_bust_idle if silk_motion_on() else silk_still)
         elif cream_yujin_visible():
-            add "yujin ui bust" xalign 0.5 ypos 50
+            add "yujin ui bust" xalign 0.5 ypos 50 at (silk_bust_idle if silk_motion_on() else silk_still)
 
 screen cream_heart(fraction):
     fixed:
@@ -62,6 +62,24 @@ screen cream_heart(fraction):
         add silk("heart", False, size=(20, 20))
         if fraction > 0:
             add Crop((0, 0, max(1, int(20 * min(1.0, fraction))), 20), silk("heart", True, size=(20, 20)))
+
+transform silk_heart_pulse:
+    zoom 1.0
+    easein 0.12 zoom 1.22
+    easeout_bounce 0.5 zoom 1.0
+
+screen silk_big_heart(value):
+    # 큰 하트 하나가 아래부터 차오른다(0~100).
+    $ heart_h = 46
+    $ filled = int(heart_h * max(0, min(100, value)) / 100.0)
+    fixed:
+        xysize (52, 48)
+        at (silk_heart_pulse if (renpy.get_screen("silk_heart_burst") and silk_motion_on()) else silk_still)
+        add silk("bigheart", "back", size=(52, 48))
+        if filled > 0:
+            add Crop((0, heart_h - filled, 52, filled), silk("bigheart", "fill", size=(52, 48))) ypos (heart_h - filled)
+        add silk("bigheart", "line", size=(52, 48))
+        text str(value) font "fonts/Jua-Regular.ttf" size 17 color ("#FFFDFB" if value >= 45 else "#3B0B22") xalign 0.5 ypos 13 outlines []
 
 screen story_header():
     zorder 10
@@ -86,22 +104,16 @@ screen story_header():
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
             at (silk_header_in(40) if silk_motion_on() else silk_still)
-            xanchor 1.0 xpos 1248 ypos 30
-            padding (20, 10, 24, 15)
+            xanchor 1.0 xpos 1182 ypos 26 xsize 214
+            padding (14, 8, 22, 13)
             background silk_surface("button")
-            vbox:
-                spacing 4
-                hbox:
-                    spacing 12
-                    text person_name font "fonts/Jua-Regular.ttf" size 20 color "#3B0B22" yalign 0.5
-                    hbox:
-                        spacing 3 yalign 0.5
-                        for index in range(5):
-                            use cream_heart((affinity[focus] - index * 20) / 20.0)
-                hbox:
-                    spacing 10
-                    text cream_relation_name(focus) size 12 color "#6E4553"
-                    text (str(affinity[focus]) + " / 100") size 12 color "#6E4553"
+            hbox:
+                spacing 11
+                use silk_big_heart(affinity[focus])
+                vbox:
+                    spacing 2 yalign 0.5
+                    text person_name font "fonts/Jua-Regular.ttf" size 21 color "#3B0B22"
+                    text cream_relation_name(focus) size 13 color "#6E4553"
         if cream_preview_active:
             use cream_preview_controls
 
@@ -148,16 +160,21 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
 screen say(who, what):
     use cream_dialogue_panel(who, what)
 
-screen silk_choice_item(item, i=0):
+screen silk_choice_item(item, i=0, n=0, intimate=False, wide=False):
     $ choice_text, choice_chip = silk_choice_parts(item.caption)
+    $ choice_sub = None
+    if wide and not choice_chip and " — " in choice_text:
+        $ choice_text, choice_sub = choice_text.split(" — ", 1)
     button:
         at ((silk_choice_in(i), silk_choice_hover) if silk_motion_on() else (silk_still,))
         style "silk_choice_button"
-        action item.action
+        action ([Function(silk_pick, i, n, intimate), item.action] if n else item.action)
         alt item.caption
         hbox:
             spacing 12
-            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else 530) min_width (366 if choice_chip else 0)
+            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else (980 if wide else 530)) min_width (366 if choice_chip else 0)
+            if choice_sub:
+                text choice_sub style "silk_choice_sub" yalign 0.5 xmaximum (960 - 19 * len(choice_text))
             if choice_chip:
                 frame:
                     at (silk_chip_glow if silk_motion_on() else silk_still)
@@ -188,7 +205,7 @@ screen choice(items):
             vbox:
                 xalign 0.5 yanchor 1.0 ypos (446 if silk_has_intimate(items) else 470) xsize 624 spacing 9
                 for i, item in enumerate(items):
-                    use silk_choice_item(item, i)
+                    use silk_choice_item(item, i, len(items), silk_has_intimate(items))
         if silk_has_intimate(items):
             frame:
                 xalign 0.5 ypos 452
@@ -197,7 +214,7 @@ screen choice(items):
                 text "친밀한 장면을 미루는 선택에는 정답이 없어요." size 13 color "#4A2A36"
     else:
         frame:
-            xpos 66 ypos 122 xsize 1148 ysize 350 padding (24, 22, 28, 27)
+            xpos 66 ypos 96 xsize 1148 ysize 428 padding (24, 22, 28, 27)
             background silk_surface("panel")
             viewport:
                 mousewheel True draggable True arrowkeys True
@@ -206,14 +223,18 @@ screen choice(items):
                 vbox:
                     xsize 1070 spacing 9
                     for i, item in enumerate(items):
-                        use silk_choice_item(item, i)
+                        use silk_choice_item(item, i, wide=True)
 
 screen main_menu():
     tag menu
     add "silk ground"
-    add silk("band", size=(1280, 584))
+    if silk_motion_on():
+        add "silk title dots"
+    add silk("band", size=(1280, 584)) at (silk_band_in if silk_motion_on() else silk_still)
+    if silk_motion_on():
+        add "silk title hearts"
     vbox:
-        at silk_tilt
+        at ((silk_tilt, silk_logo_in, silk_logo_float) if silk_motion_on() else (silk_tilt,))
         xpos 84 ypos 150
         spacing -6
         text "After Work, With You" font "fonts/PlayfairDisplay-Italic.ttf" size 30 color "#B3123F" xpos 8
@@ -223,22 +244,23 @@ screen main_menu():
             kerning -3
             color "#FFFDFB"
             outlines [(4, "#B3123F", 11, 12), (4, "#3B0B22", 0, 0)]
-    # 개발 중 확인용 진입점. 평소엔 접어 두고 '테스트 장면'을 눌러야 보인다.
+    # 개발 중 확인용 진입점. 배포판(개발자 모드 꺼짐)에서는 보이지 않는다.
     default show_preview_links = False
-    vbox:
-        xanchor 1.0 xpos 1248 ypos 24 spacing 5
-        textbutton "테스트 장면" id "preview_toggle" action ToggleScreenVariable("show_preview_links") style "silk_small_button" xalign 1.0
-        if show_preview_links:
-            hbox:
-                spacing 6 xalign 1.0
-                textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" style "silk_small_button"
-                textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" style "silk_small_button"
-                textbutton "R08 메신저 확인" action Start("office_phone_preview") id "phone_preview_button" style "silk_small_button"
-            hbox:
-                spacing 6 xalign 1.0
-                textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" style "silk_small_button"
-                textbutton "지현 전체 대본 확인" action Start("jihyun_early_preview") id "jihyun_preview_button" style "silk_small_button"
-                textbutton "서윤 전체 대본 확인" action Start("seoyun_preview") id "seoyun_preview_button" style "silk_small_button"
+    if config.developer:
+        vbox:
+            xanchor 1.0 xpos 1248 ypos 24 spacing 5
+            textbutton "테스트 장면" id "preview_toggle" action ToggleScreenVariable("show_preview_links") style "silk_small_button" xalign 1.0
+            if show_preview_links:
+                hbox:
+                    spacing 6 xalign 1.0
+                    textbutton "화면 배치 확인" action Start("cream_preview_start") id "cream_preview_button" style "silk_small_button"
+                    textbutton "R02 대화 확인" action Start("ria_r02_preview") id "ria_r02_preview_button" style "silk_small_button"
+                    textbutton "R08 메신저 확인" action Start("office_phone_preview") id "phone_preview_button" style "silk_small_button"
+                hbox:
+                    spacing 6 xalign 1.0
+                    textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" style "silk_small_button"
+                    textbutton "지현 전체 대본 확인" action Start("jihyun_early_preview") id "jihyun_preview_button" style "silk_small_button"
+                    textbutton "서윤 전체 대본 확인" action Start("seoyun_preview") id "seoyun_preview_button" style "silk_small_button"
     add silk("dialogue", size=(1280, 176)) xpos 0 ypos 544
     hbox:
         xpos 64 ypos 594 spacing 8
@@ -291,11 +313,15 @@ screen main_menu():
                     text "종료" style "silk_menu_text"
                     text "Exit" style "silk_menu_caption"
     text ("ver " + config.version) xpos 64 ypos 688 size 12 color "#6E4553"
-    text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
+    textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 32 ypos 24
+    if spring_story_unlocked():
+        textbutton "숨은 이야기 · 이듬해 봄" id "spring_story_button" action Start("spring_story") style "silk_small_button" xpos 32 ypos 64
+    if config.developer:
+        text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 
-screen silk_quick_item(label, icon, target):
+screen silk_quick_item(label, icon, target, ring=False):
     button:
-        at (silk_quick_hover if silk_motion_on() else silk_still)
+        at ((silk_quick_hover, silk_phone_ring) if (ring and silk_motion_on()) else ((silk_quick_hover if silk_motion_on() else silk_still),))
         style "silk_quick_button"
         action target
         alt label
@@ -312,14 +338,26 @@ screen quick_menu():
                 xanchor 1.0 xpos 1196 ypos 676 spacing 0
                 use silk_quick_item("되돌리기", "rollback", Rollback())
                 use silk_quick_item("기록", "history", ShowMenu("history"))
-                use silk_quick_item("메신저", "phone", Show("office_phone_archive"))
                 use silk_quick_item("자동", "auto", Preference("auto-forward", "toggle"))
                 use silk_quick_item("스킵", "skip", Skip())
                 use silk_quick_item("저장", "save", ShowMenu("save"))
                 use silk_quick_item("불러오기", "load", ShowMenu("load"))
+                use silk_quick_item("퀵저장", "qsave", QuickSave())
+                use silk_quick_item("퀵로드", "qload", QuickLoad(confirm=True))
+                use silk_quick_item("기록함", "album", ShowMenu("progression_hub"))
                 use silk_quick_item("설정", "prefs", ShowMenu("preferences"))
                 use silk_quick_item("메뉴", "menu", MainMenu(confirm=True))
-            text "클릭·Enter 다음 / 휠 위로 되돌리기" xpos 96 ypos 692 size 12 color "#6E4553"
+            button:
+                id "phone_open_button"
+                at ((silk_quick_hover, silk_phone_ring) if (silk_phone_has_unread() and silk_motion_on()) else ((silk_quick_hover if silk_motion_on() else silk_still),))
+                xanchor 1.0 xpos 1248 ypos 31 xysize (56, 57) padding (0, 0)
+                background silk("pill", "#FFFDFB", "#3B0B22", "#3B0B22", None)
+                hover_background silk("pill", "#3B0B22", "#3B0B22", "#B3123F", None)
+                action Show("office_phone_archive")
+                alt "메신저"
+                add silk("icon", "phone", "#3B0B22", size=(24, 24)) xpos 14 ypos 13
+                if silk_phone_has_unread():
+                    add silk("flat", "#B3123F", 7) xysize (14, 14) xpos 38 ypos 0
         else:
             frame:
                 xpos 750 ypos 18
@@ -352,47 +390,7 @@ screen silk_menu_title(title, caption):
         text title font "fonts/Jua-Regular.ttf" size 40 color "#3B0B22" yalign 1.0
         text caption font "fonts/PlayfairDisplay-Italic.ttf" size 20 color "#B3123F" yalign 0.8
 
-screen preferences():
-    tag menu
-    add "silk ground"
-    frame:
-        xalign 0.5 yalign 0.5 xsize 724 ysize 677 padding (42, 35, 46, 40)
-        background silk_surface("panel")
-        viewport:
-            xsize 636 ysize 540
-            mousewheel True draggable True
-            scrollbars "vertical"
-            vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
-            vbox:
-                spacing 16
-                use silk_menu_title("설정", "Config")
-                text "글자 표시 속도" size 23
-                textbutton "창모드" action Preference("display", "window") text_size 20
-                textbutton "전체화면" action Preference("display", "fullscreen") text_size 20
-                textbutton "읽은 대사만 스킵" action Preference("skip", "seen") text_size 20
-                bar value Preference("text speed") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
-                textbutton "글자 즉시 표시" action Preference("text speed", 0)
-                text "자동 진행 대기 시간" size 21
-                bar value Preference("auto-forward time") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
-                if config.has_music:
-                    text "음악" size 20
-                    bar value Preference("music volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
-                if config.has_sound:
-                    text "효과음" size 20
-                    bar value Preference("sound volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
-                if config.has_voice:
-                    text "음성" size 20
-                    bar value Preference("voice volume") xsize 600 ysize 14 left_bar Solid("#B3123F") right_bar Solid("#E1D7CF")
-                textbutton ("화면 움직임 효과: 켜짐" if silk_motion_on() else "화면 움직임 효과: 꺼짐") action ToggleField(persistent, "silk_motion", True, False) text_size 21
-                textbutton ("메신저 입력 중 연출: 켜짐" if persistent.phone_typing_enabled else "메신저 입력 중 연출: 꺼짐") action ToggleField(persistent, "phone_typing_enabled") text_size 21
-                text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 17 color "#6E4553" line_spacing 4 xmaximum 600
-        # 스크롤과 상관없이 항상 보이는 하단 버튼
-        hbox:
-            yalign 1.0 spacing 10
-            textbutton "돌아가기" action Return() style "silk_small_button"
-            if not main_menu:
-                textbutton "처음 화면" action MainMenu(confirm=True) style "silk_small_button"
-
+# 메뉴 뒤에는 직전 게임 화면을 흐리게 깐다. 타이틀에서 열면 실크 바탕.
 screen silk_menu_backdrop():
     if main_menu:
         add "silk ground"
@@ -401,11 +399,106 @@ screen silk_menu_backdrop():
         add Transform(FileCurrentScreenshot(), xysize=(1280, 720), fit="cover", blur=10)
         add Solid("#3B0B2259")
 
+style silk_pref_bar is bar:
+    ysize 26
+    left_bar Fixed(Transform(silk("flat", "#B3123F", 4), ysize=8, yalign=0.5))
+    right_bar Fixed(Transform(silk("flat", "#E1D7CF", 4), ysize=8, yalign=0.5))
+    thumb silk("pill", "#FFFDFB", "#3B0B22", "#3B0B22", None, 2, 3, size=(26, 27))
+    thumb_offset 13
+    left_gutter 13
+    right_gutter 13
+style silk_tab_button is button:
+    background None
+    hover_background silk("flat", "#EADFE2", 24)
+    selected_background silk("pill", "#B3123F", "#3B0B22", "#3B0B22", None, 3, 4)
+    xsize 190 ysize 52 padding (22, 0, 22, 5)
+style silk_tab_button_text is default:
+    font "fonts/Jua-Regular.ttf"
+    size 21
+    color "#3B0B22"
+    selected_color "#FFFDFB"
+    yalign 0.5
+    outlines []
+style silk_switch_button is button:
+    background silk("pill", "#FFFDFB", "#3B0B22", None, None, 0, 0)
+    selected_background silk("pill", "#B3123F", "#3B0B22", None, None, 0, 0)
+    xysize (60, 32) padding (0, 0)
 
-transform silk_menu_panel:
-    on show:
-        alpha 0.0 zoom 0.965
-        easein 0.24 alpha 1.0 zoom 1.0
+screen silk_pref_slider(label, value):
+    vbox:
+        spacing 8
+        text label size 19 color "#3B0B22"
+        bar value value xsize 620 style "silk_pref_bar"
+
+screen silk_pref_switch(label, note, action, on):
+    hbox:
+        xsize 620
+        vbox:
+            spacing 3 xsize 540
+            text label size 19 color "#3B0B22"
+            if note:
+                text note size 14 color "#6E4553"
+        button:
+            style "silk_switch_button"
+            yalign 0.5
+            action action
+            selected on
+            alt label
+            add silk("pill", ("#FFFDFB" if on else "#E1D7CF"), "#3B0B22", None, None, 0, 0, size=(24, 24)) xpos (32 if on else 4) ypos 4
+
+screen preferences():
+    tag menu
+    default tab = "screen"
+    use silk_menu_backdrop
+    frame:
+        at (silk_menu_panel if silk_motion_on() else silk_still)
+        xalign 0.5 yalign 0.5 xsize 1046 ysize 606 padding (0, 0, 6, 7)
+        background silk_surface("panel")
+        hbox:
+            frame:
+                xsize 246 ysize 596 padding (26, 30, 22, 26)
+                background silk("flat", "#F6F2EE", 22)
+                vbox:
+                    spacing 8
+                    use silk_menu_title("설정", "Config")
+                    null height 14
+                    for key, label in (("screen", "화면"), ("text", "글자"), ("sound", "소리"), ("motion", "연출")):
+                        textbutton label action SetScreenVariable("tab", key) selected (tab == key) style "silk_tab_button" id ("pref_tab_" + key)
+                vbox:
+                    yalign 1.0 spacing 8
+                    textbutton "돌아가기" action Return() style "silk_small_button"
+                    if not main_menu:
+                        textbutton "처음 화면" action MainMenu(confirm=True) style "silk_small_button"
+            add Solid("#3B0B22") xsize 2 ysize 596
+            frame:
+                xsize 790 ysize 596 padding (56, 46, 50, 40)
+                background None
+                vbox:
+                    spacing 28
+                    if tab == "screen":
+                        text "화면 모드" size 19 color "#3B0B22"
+                        hbox:
+                            spacing 10
+                            textbutton "창모드" action Preference("display", "window") text_size 19
+                            textbutton "전체화면" action Preference("display", "fullscreen") text_size 19
+                        text "전체화면은 F11 키로도 바꿀 수 있어요." size 14 color "#6E4553"
+                    elif tab == "text":
+                        use silk_pref_slider("글자 표시 속도", Preference("text speed"))
+                        use silk_pref_slider("자동 진행 대기 시간", Preference("auto-forward time"))
+                        use silk_pref_switch("글자 즉시 표시", "대사를 한 번에 보여 줍니다.", Preference("text speed", 0), preferences.text_cps == 0)
+                        use silk_pref_switch("읽은 대사만 스킵", "처음 보는 대사에서는 스킵이 멈춥니다.", Preference("skip", "toggle"), not preferences.skip_unseen)
+                    elif tab == "sound":
+                        if config.has_music:
+                            use silk_pref_slider("배경 음악", Preference("music volume"))
+                        if config.has_sound:
+                            use silk_pref_slider("효과음", Preference("sound volume"))
+                        if config.has_voice:
+                            use silk_pref_slider("음성", Preference("voice volume"))
+                        use silk_pref_switch("전체 소리 끄기", None, Preference("all mute", "toggle"), preferences.get_mute("music") and preferences.get_mute("sfx"))
+                    else:
+                        use silk_pref_switch("화면 움직임 효과", "장 제목 카드, 버튼 움직임, 하트 같은 연출", ToggleField(persistent, "silk_motion", True, False), silk_motion_on())
+                        use silk_pref_switch("메신저 입력 중 연출", "상대가 입력하는 동안 잠깐 기다립니다.", ToggleField(persistent, "phone_typing_enabled"), bool(persistent.phone_typing_enabled))
+                        text "호감도는 함께 겪은 관계의 진전을 보여 줍니다.\n취향에 정답은 없고, 선택에 따라 반응과 기억이 달라집니다." size 15 color "#6E4553" line_spacing 4 xmaximum 620
 
 # 저장·불러오기: 장면 썸네일이 보이는 3×2 카드, 쪽 넘김, 자동·퀵 저장 칸.
 # 1쪽의 칸 이름은 예전과 같은 "1"~"6"이라 이전 저장도 그대로 보인다.
@@ -509,8 +602,9 @@ screen load():
 
 screen history():
     tag menu
-    add "silk ground"
+    use silk_menu_backdrop
     frame:
+        at (silk_menu_panel if silk_motion_on() else silk_still)
         xpos 48 ypos 26 xsize 1188 ysize 670 padding (30, 22, 34, 27)
         background silk_surface("panel")
         vbox:

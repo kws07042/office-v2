@@ -9,6 +9,18 @@ label seoyun_r01:
     $ active_route = "seoyun"
     $ cream_focus = "seoyun"
     $ chapter = "서윤 R01 · 언제 한번 말고 오늘"
+    $ location = "목요일 퇴근 무렵 · 공용 테이블"
+    "목요일 퇴근 무렵. 서윤이 가방을 메며 도현의 책상 옆을 지나갔다."
+    s "도현 씨, 고생했어. 언제 한번 커피 마시자~"
+    d "그 말, 지난주에도 하셨어요."
+    s "...그랬나?"
+    d "네. '언제 한번'. 저는 그 '언제'를 기다리고 있었는데요."
+    "서윤이 걸음을 멈췄다. 가방끈을 고쳐 메는 손이 잠깐 느려졌다."
+    s "그거 내 버릇이야. 삼 년 동안 약속을 그런 식으로만 잡았거든. 안 지켜도 아무도 안 서운한 걸로."
+    d "그럼 저는 서운해해도 돼요?"
+    s "...대답이 빠르네. 알았어. 다음 주 안에 진짜로 날 잡을게. 이번엔 '언제'에 날짜 넣어서."
+    "서윤은 평소의 웃음으로 돌아가 손을 흔들고 나갔다. 도현은 그 웃음이 돌아오기 전의 반 초를 봤다."
+    dn "농담처럼 넘기던 말을 붙잡았다. 다음 주가 갑자기 기다려졌다."
     $ location = "다음 주 수요일 오후 · 개인 메시지"
     call phone_deliver("seoyun_r01_invite", "seoyun", "‘언제 한번 보자’ 있잖아. 그거 오늘로 해도 돼? 일곱 시, 회사 앞 작은 카페.", contact="seoyun", important=True)
     call phone_deliver("seoyun_r01_accept", "dohyun", "좋아요. 일곱 시에 갈게요. 오늘은 제가 질문하는 날이죠?", contact="seoyun")
@@ -16,6 +28,7 @@ label seoyun_r01:
     $ remember("seoyun_r01_appointment", "수요일 저녁 일곱 시, 회사 앞 카페")
     $ location = "같은 수요일 저녁 일곱 시 · 회사 앞 카페"
     "커피 두 잔과 작은 쿠키 하나. 서윤은 마주 앉자마자 턱을 괴고 도현을 본다."
+    dn "턱을 괴고 보는 눈이 느긋했다. 느긋한 쪽이 이기는 자리라는 걸 금방 알았다."
     if memory.get("seoyun_intro") == "humor":
         s "첫날 내 농담 받아치고 질문도 안 놓치더라. 오늘도 그 코스?"
         d "오늘은 웃는 것부터 할까 하는데요."
@@ -80,6 +93,7 @@ label seoyun_r01:
     d "제가 엉뚱한 책 골라도 따라오실 거예요?"
     s "응. 대신 별로면 바로 말할 거야. 나 그런 건 안 참아."
     $ remember("seoyun_r02_appointment", "토요일 오후 두 시, 단골 서점 입구")
+    dn "별로면 바로 말하겠다는 사람 앞에서, 별로이지 않은 사람이 되고 싶어졌다."
     $ award_once("seoyun_R01", "seoyun", 4)
     $ progression_note_ending()
     return
@@ -108,6 +122,21 @@ label seoyun_r02:
     $ progression_enter("seoyun_r02")
     $ progression_checkpoint("seoyun_r02")
     $ chapter = "서윤 R02 · 누나도 말을 고를 때"
+    $ location = "금요일 오후 · 공용 테이블"
+    "금요일 오후. 도현이 쓴 안내 문구 초안이 서윤의 책상에 올라갔다. 삼십 분 뒤 돌아온 종이는 빨간 펜으로 덮여 있었다."
+    s "울지 마~ 빨간 건 애정이야."
+    d "애정이 문장보다 많은데요."
+    s "첫 줄 봐. '고객님의 소중한 일상에 함께하겠습니다.' 이거 누구한테 하는 말이야?"
+    d "...고객님이요."
+    s "고객님이 누군데. 얼굴이 안 보이잖아. 한 사람한테 말해. 퇴근길에 지쳐서 편의점 앞에 서 있는 한 사람."
+    "서윤이 빨간 펜으로 첫 줄을 지우고 그 위에 짧게 적었다. '오늘도 수고했어요. 이건 내일의 당신 거예요.'"
+    d "...이게 훨씬 좋네요."
+    s "당연하지. 삼 년을 혼자 퇴근한 사람이 쓴 거니까."
+    "가볍게 한 말이었다. 서윤은 바로 다음 줄로 펜을 옮겼지만, 도현은 그 문장에서 한참 눈을 떼지 못했다."
+    s "내일 서점 약속, 잊지 않았지? 거기서는 빨간 펜 안 들고 갈게."
+    d "책에 줄 긋는 것도 안 하세요?"
+    s "책은 안 고쳐. 사람만 고쳐~"
+    dn "농담 사이에 진짜 문장을 하나씩 끼워 넣는 사람이다. 내일은 그 진짜 문장을 하나라도 더 듣고 싶다."
     $ location = "토요일 오후 두 시 · 단골 서점과 북카페"
     if c06_person == "seoyun" and c06_topic == "weekend":
         s "네가 숫자 적어 준 책갈피, 오늘도 꽂아 왔어. 진도 검사는 안 하기로 했지?"
@@ -121,6 +150,7 @@ label seoyun_r02:
     else:
         s "여긴 책 권했다고 독후감 안 받아. 마음에 안 들면 딴 선반 가면 되고."
     "서윤이 좋아한다는 얇은 산문집 『느린 모퉁이』를 꺼냈다. 도현은 표지만 보고 옆 선반의 엉뚱한 제목을 집었다."
+    dn "엉뚱한 책을 집었다. 긴장하면 손이 먼저 틀린다."
     d "저는 이거요. 제목만 보면 서윤 씨가 집을 줄 알았어요."
     s "벌써 날 그렇게 안다고? ...그 책, 사실 한 번도 안 읽었어."
     d "그럼 오늘 제가 틀린 거네요."
@@ -186,6 +216,11 @@ label seoyun_r02:
             $ remember("seoyun_promise", "rest")
     $ remember("seoyun_recommended_book", "느린 모퉁이")
     $ remember("seoyun_r03_appointment", "다음 수요일 저녁 일곱 시, 같은 북카페")
+    dn "사진으로 보여 달라고 못 하겠다는 말에 한참 웃었다. 웃고 나서야 그게 칭찬이었다는 걸 알았다."
+    $ location = "같은 날 밤 · 각자의 집, 개인 메시지"
+    call phone_deliver("seoyun_r02_m1", "seoyun", "『느린 모퉁이』 첫 장 읽었어? 안 읽었으면 아직 읽지 마. 수요일에 같이 첫 장부터 얘기하고 싶어졌어.", contact="seoyun")
+    call phone_deliver("seoyun_r02_m2", "dohyun", "벌써 세 장 읽었는데요...", contact="seoyun")
+    call phone_deliver("seoyun_r02_m3", "seoyun", "...빠르네. 그럼 세 장까지만. 네 번째 장은 내가 제일 좋아하는 데라서 같이 넘기고 싶어~", contact="seoyun")
     $ award_once("seoyun_R02", "seoyun", 7)
     $ progression_note_ending()
     return
@@ -194,6 +229,20 @@ label seoyun_r03:
     $ progression_enter("seoyun_r03")
     $ progression_checkpoint("seoyun_r03")
     $ chapter = "서윤 R03 · 네가 기억했던 약속"
+    $ location = "수요일 점심 · 회사 옥상"
+    "점심을 먹고 올라간 옥상 구석 벤치에 서윤이 앉아 있었다. 흡연 구역 바로 옆이었지만 손에는 종이컵뿐이었다."
+    d "담배 피우세요?"
+    s "아니. 끊은 것도 아니고 원래 안 피워. 여기가 이 건물에서 제일 조용해서."
+    "서윤이 옆자리의 낙엽을 손으로 쓸어 냈다. 앉으라는 뜻이었다."
+    s "여기 앉아 있으면 다들 '담배 피우나 보다' 하고 말을 안 걸거든. 혼자 있고 싶은데 혼자 있고 싶다고 말하긴 귀찮을 때 딱이야."
+    d "그럼 제가 방해한 거네요."
+    s "너는 예외. 오늘 저녁에 볼 사람이니까 예습이라고 치지 뭐."
+    "바람이 불어 서윤의 머리카락이 종이컵에 닿았다. 서윤은 머리를 넘기지 않고 그냥 두었다."
+    s "나 원래 말 많은 사람 아니야. 회사에서만 많아. 조용하면 사람들이 물어보거든. 괜찮냐고."
+    d "괜찮으세요?"
+    "서윤이 웃음을 터뜨렸다. 이번 웃음은 평소보다 한 톤 낮았다."
+    s "방금 물어봤네. ...응. 오늘은 괜찮아. 저녁에 약속 있어서."
+    dn "혼자 있고 싶을 때 가는 자리에 나를 앉혔다. 그게 어떤 뜻인지 저녁까지 생각해 볼 숙제가 생겼다."
     $ location = "약속한 수요일 저녁 일곱 시 · 같은 북카페"
     if memory["seoyun_promise"] == "photo":
         "도현이 전날 퇴근길에 찍은 계단 사진을 보여 줬다. 저녁 빛이 난간 끝에만 남아 있었다."
@@ -264,6 +313,7 @@ label seoyun_r03:
             s "...그 말 들으니까 아까 하려던 얘기 다 까먹겠네."
             $ remember("seoyun_r03_meaning", "meet_you")
     "서윤은 가방에서 책을 꺼냈다가 다시 넣었다. 도현이 왜 그러냐는 얼굴로 보자 웃음이 새어 나왔다."
+    dn "꺼냈다 넣는 책. 서윤 씨도 망설일 때가 있다는 걸 오늘 처음 봤다."
     s "오늘은 이 얘기 하려고 가져왔거든. 근데 네가 오니까 딴 말부터 하고 싶어졌어."
     d "그럼 그 말부터 들어도 돼요."
     s "...나 지금, 너 돌아갈 시간을 자꾸 늦추고 싶어."
@@ -294,6 +344,11 @@ label seoyun_r03:
     $ location = "같은 수요일 밤 · 서윤의 집 — 서윤 시점"
     "서윤은 금요일 일곱 시 옆에 도현의 이름을 적었다. ‘언제 한번’은 적지 않았다."
     sn "가볍게 말하는 건 쉬운데. 이번엔 가볍게 들리지 않았으면 좋겠다."
+    dn "내가 기억한 약속을 서윤 씨가 다시 기억했다. 기억이 두 번 겹치니 약속이 조금 무거워졌다. 좋은 쪽으로."
+    $ location = "다음 날 아침 · 출근길, 개인 메시지"
+    call phone_deliver("seoyun_r03_m1", "seoyun", "금요일 일곱 시, 수첩에 적었어. 펜으로. 연필 아니고.", contact="seoyun")
+    call phone_deliver("seoyun_r03_m2", "dohyun", "그게 다른 거예요?", contact="seoyun")
+    call phone_deliver("seoyun_r03_m3", "seoyun", "연필은 지울 수 있잖아. 펜으로 약속 적은 거 오랜만이야. 그러니까 늦지 마~", contact="seoyun")
     $ award_once("seoyun_R03", "seoyun", 8)
     $ progression_note_ending()
     return
@@ -305,9 +360,25 @@ label seoyun_r04:
         $ progression_note_ending()
         return
     $ chapter = "서윤 R04 · 그 말은 농담으로 하지 마"
+    $ location = "전날 밤 · 각자의 집, 전화"
+    "약속 전날 밤. 도현은 내일 할 말을 메모장에 적다가 지웠다. 세 번째로 지웠을 때 전화가 왔다. 서윤이었다."
+    s "안 자지? 목소리 듣고 싶어서. ...농담이야. 내일 몇 시였나 확인하려고."
+    d "문자로 물어보셔도 되는데요."
+    s "그러게. 문자로 물어볼걸."
+    "수화기 너머로 책장 넘기는 소리가 들렸다. 한참 말이 없었다."
+    s "나 이혼했다고 말한 뒤로, 너 좀 달라졌어. 나쁜 쪽 아니고. 말을 더 고르더라."
+    d "티 났어요?"
+    s "응. 그게 고맙기도 하고, 좀 겁나기도 해. 조심스럽게 대하는 사람은 금방 지치거든."
+    d "지치려고 조심하는 거 아니에요."
+    s "알아. 아는데 그래. ...내일 무슨 말 하려는지 대충 알 것 같은데, 하나만 부탁할게."
+    d "네."
+    s "그 말, 농담처럼 하지 마. 나는 농담으로 도망칠 수 있는데, 너까지 그러면 둘 다 길을 잃어."
+    "전화가 끊긴 뒤 도현은 메모장을 덮었다. 적어 둔 문장은 필요 없었다."
+    dn "농담의 달인이 농담을 금지했다. 내일은 한 문장만, 똑바로 말하기로 했다."
     $ location = "금요일 저녁 일곱 시 · 약속한 북카페"
     call seoyun_family_context
     d "해 주신 얘기 기억해요. 모르는 건 아직 많지만, 그래서 더 만나 보고 싶어요."
+    dn "모르는 게 많다고 말하고 나니 오히려 마음이 가벼웠다. 아는 척하는 것보다는 나았다."
     s "응. 나도 이혼했다는 말만 하고 내 마음은 빼먹을 뻔했어. 오늘은 그다음 얘기 할래."
     s "오늘은 내가 할게. 좋아해. 너랑 연애하고 싶어."
     "서윤은 컵을 내려놓고 도현을 보았다. 웃으며 다음 화제로 넘기지 않았다."
@@ -321,6 +392,7 @@ label seoyun_r04:
                 s "응. ...그 말, 그대로 듣고 싶었어."
                 $ dating = True
                 $ remember("seoyun_confession_accepted")
+                dn "농담으로 하지 말라던 말을 농담 없이 했다. 서윤 씨의 눈에서 장난기가 걷히는 걸 처음 봤다."
                 $ award_once("seoyun_R04", "seoyun", 5)
             "좋아하지만 첫 연애라 겁난다고 한다." if not seoyun_prepared:
                 d "저도 좋아해요. 근데 저 연애는 처음이라서요. 서윤 씨 말이 장난인지 혼자 고민하다가 대답이 늦을 수도 있어요."
@@ -403,6 +475,7 @@ label seoyun_route:
     call seoyun_r05
     call seoyun_o01_offer
     call seoyun_r06
+    call special_scene("seoyun", 1)
     call seoyun_r07
     call seoyun_r08
     call work_mini_second
@@ -411,6 +484,7 @@ label seoyun_route:
     call seoyun_o02_offer
     call seoyun_r10_after
     call seoyun_r11
+    call special_scene("seoyun", 2)
     call seoyun_r12
     call seoyun_r13
     call seoyun_r14
@@ -419,6 +493,7 @@ label seoyun_route:
         call seoyun_o03_offer
         call seoyun_r16
         if memory.get("seoyun_route_completed"):
+            call seoyun_x01
             menu:
                 "후일담 읽기 — 약 반년 뒤, 날짜가 있는 다음":
                     call seoyun_e01

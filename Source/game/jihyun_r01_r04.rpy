@@ -6,6 +6,17 @@ label jihyun_r01:
     $ progression_checkpoint("jihyun_r01")
     $ cream_focus = "jihyun"
     $ chapter = "지현 R01 · 업무 얘기는 아니야"
+    $ location = "목요일 오후 · 회의 공간"
+    "회의가 끝나고 다들 나간 뒤, 지현이 도현만 불러 세웠다."
+    j "잠깐. 일 분."
+    d "네, 팀장님. 자료 수정할 게 있나요?"
+    j "아니. 자료는 문제없어."
+    "지현은 펜 뚜껑을 닫았다가 다시 열었다. 세 번째에서야 입을 뗐다."
+    j "너 오늘 저녁에... 그러니까, 퇴근하고."
+    "그때 회의실 문이 열리고 다른 팀 과장이 고개를 들이밀었다. 지현은 펜 뚜껑을 탁 닫았다."
+    j "...아니야. 이따 메시지로 할게. 업무 얘기는 아니야. 그것만 알아 둬."
+    "과장이 지현을 데리고 나갔다. 도현은 빈 회의실에 한참 서 있었다."
+    dn "결론부터 말하는 사람이 결론을 말하지 못하고 나갔다. 퇴근 시간까지 휴대폰을 세 번 확인했다."
     $ location = "목요일 퇴근 후 · 개인 메시지"
     call phone_deliver("jihyun_r01_invite", "jihyun", "오늘 저녁 일곱 시. 회사 앞 작은 식당. 업무 얘기 아니야.", contact="jihyun", important=True)
     call phone_deliver("jihyun_r01_accept", "dohyun", "좋아요. 일곱 시에 갈게요. 저도 일 말고 여쭤볼 게 있어요.", contact="jihyun")
@@ -66,6 +77,7 @@ label jihyun_r01:
     d "돼요. 이번엔 제 질문도 하나 가져갈게요."
     j "하나만 가져와. 나는 일곱 개 준비할 거니까 줄이는 건 네 몫이야."
     $ remember("jihyun_r02_appointment", "토요일 오후 두 시, 동네 서점 앞")
+    dn "일곱 개 중 여섯 개를 내가 줄여야 한다. 이상하게 그 숙제가 싫지 않았다."
     $ award_once("jihyun_R01", "jihyun", 4)
     $ progression_note_ending()
     return
@@ -74,8 +86,24 @@ label jihyun_r02:
     $ progression_enter("jihyun_r02")
     $ progression_checkpoint("jihyun_r02")
     $ chapter = "지현 R02 · 오늘은 네가 정해 줘"
+    $ location = "금요일 오후 · 회의 공간"
+    "금요일 오후. 회의가 끝나고 지현이 수첩을 덮다 말았다. 토요일 칸에 물음표 하나가 적혀 있었다."
+    j "하나 물어봐도 돼. 업무 아니야."
+    d "네, 팀장님."
+    j "쉬는 날에 보통 뭐 해? 나는... 쉬는 날에도 다음 주 자료를 봐서. 다른 사람들은 뭘 하는지 잘 몰라."
+    "농담인 줄 알고 웃으려다 말았다. 지현의 얼굴은 보고서를 검토할 때만큼 진지했다."
+    d "저는 그냥 걸어요. 서점에 들렀다가, 배고프면 눈에 보이는 데서 먹고요."
+    j "계획 없이?"
+    d "계획 없이요."
+    j "...그게 되는구나."
+    "지현이 물음표 옆에 뭔가를 적었다. 거꾸로 봐서 정확하진 않았지만 '걷기(계획 X)'처럼 보였다."
+    j "내일 두 시. 네가 말한 대로 해 보자. 대신 나, 못 견디면 중간에 일정 짤 수도 있어."
+    d "그때는 제가 수첩 뺏을게요."
+    "지현이 수첩을 가슴 쪽으로 당겼다. 그러면서도 웃고 있었다."
+    dn "쉬는 법을 묻는 팀장. 내일 내가 할 일은 길 안내가 아니라, 이 사람이 수첩을 안 꺼내게 하는 것이다."
     $ location = "토요일 오후 두 시 · 동네 서점 앞"
     "지현은 가벼운 가방 하나를 들고 서 있었다. 도현을 보자 휴대폰의 일정표를 닫는다."
+    dn "일정표를 닫는 손이 조금 어색했다. 닫는 연습을 해 온 사람 같았다."
     j "네 시엔 집에 갈 거야. 그전까진 좀 쉬고 싶고. ...장소랑 순서는, 오늘은 네가 정해. 부탁할게."
     d "두 시간이면 충분하겠네요. 시끄러운 데는 저도 빼고요. 음료는 차가운 거 괜찮으세요?"
     j "따뜻한 거. 그거 말곤 다 맡길게."
@@ -145,11 +173,17 @@ label jihyun_r02:
     j "그래. 그럼 나도 곧장. 오늘 좋았어. 너랑 있어서."
     "네 시가 되기 전에 서점 입구에서 인사를 나눴다. 돌아서던 지현이 고개를 한 번 더 돌린다."
     j "오늘 마신 차 이름, 나중에 보내. ...또 마시고 싶어졌으니까."
+    d "차 이름이요? 메뉴판에 있던 건데요."
+    j "메뉴판에 있던 건 나도 알아. 네가 고른 거라서 다시 묻는 거야."
+    j "나는 처음 가는 데선 늘 제일 무난한 걸 시켜. 실패하기 싫어서. 근데 오늘 네가 고른 건 처음 들어 보는 이름이었는데, 맛있었어."
+    d "그럼 다음에도 제가 골라요?"
+    j "한 번만 더. 그다음엔 내가 고를 거야. 이번엔 무난한 거 말고."
     $ remember("jihyun_r02_time_kept")
     $ location = "같은 토요일 저녁 · 지현의 집 — 지현 시점"
     "지현은 덜 끝낸 조립물을 책상 위에 두고 오늘 마신 차 이름을 메모했다. 옆에는 다음에 보여 주고 싶은 부품 하나를 올려 둔다."
     jn "쉬자는 말, 내 입으로 했네. 다음엔 설명부터 준비 안 해도 되겠지."
     $ cream_focus = None
+    dn "오늘 지현 씨는 세 번 웃었다. 세 번 다 내가 뭔가를 정했을 때였다."
     $ award_once("jihyun_R02", "jihyun", 7)
     $ progression_note_ending()
     return
@@ -158,9 +192,27 @@ label jihyun_r03:
     $ progression_enter("jihyun_r03")
     $ progression_checkpoint("jihyun_r03")
     $ chapter = "지현 R03 · 네 안을 다시 봤어"
+    $ location = "월요일 오전 · 탕비실"
+    "월요일 오전. 탕비실에서 지현과 마주쳤다. 토요일 이후 처음이었다."
+    j "주말 잘 쉬었어?"
+    d "네. 팀장님은요?"
+    j "쉬었어. ...정확히는, 쉬는 걸 해 봤어. 일요일에 네가 말한 대로 계획 없이 걸어 봤는데 이십 분 만에 돌아왔어."
+    d "이십 분이면 처음치고 길어요."
+    j "그래? 십 분쯤 지나니까 불안하더라. 어디로 가는지 모르는 게."
+    "지현이 커피를 내리면서 덧붙였다."
+    j "근데 돌아오는 길에 처음 보는 꽃집이 있었어. 삼 년을 다닌 길인데."
+    d "계획이 있었으면 못 봤겠네요."
+    j "응. 그걸 보고서에 쓸 수는 없지만."
+    "문 쪽에서 발소리가 났다. 지현은 한 걸음 물러서며 목소리를 평소대로 돌렸다."
+    j "오후에 검토. 네 메모 가져와."
+    d "네, 팀장님."
+    "나가다 말고 지현이 아주 작게 말했다."
+    j "...꽃집 얘기는 너한테만 한 거야."
+    dn "삼 년 다닌 길의 꽃집. 그 얘기를 들은 사람이 나 하나라는 게, 월요일 오전치고는 과분했다."
     $ location = "다음 주 월요일 오후 · 협업 자료 검토 자리"
     $ cream_focus = "jihyun"
     "지현이 ‘출근길 중심’이라고 적었던 가정을 다시 열었다. 도현에게 검토할 부분을 표시해 화면을 돌린다."
+    dn "팀장이 자기 가정을 다시 연다. 회사에서 그게 얼마나 드문 일인지 나는 안다."
     if memory.get("jihyun_intro") == "evidence":
         j "점심에 다시 와도 되냐는 질문, 다시 봤어. 몇 분 얘기라도 출근길만 보긴 어렵겠네."
     elif memory.get("jihyun_intro") == "check_later" and memory.get("jihyun_followup_delivered"):
@@ -188,6 +240,16 @@ label jihyun_r03:
             j "응. 의견을 검토한 거야. ...그래도 그렇게 말해 주니까 좀 기분 좋네."
             $ remember("jihyun_r03_response", "attitude")
     $ remember("jihyun_core_understanding")
+    "검토가 끝나자 회의실에는 둘만 남았다. 지현은 화이트보드에 적힌 '출근길 중심'을 지우개로 지웠다. 도현이 지우개를 하나 더 집어 반대쪽부터 지웠다."
+    j "안 해도 돼. 내가 쓴 거야."
+    d "같이 쓴 거로 하죠. 물음표는 제가 붙였으니까요."
+    "지현이 지우던 손을 멈췄다. 화이트보드 한가운데에 물음표 하나만 남았다."
+    j "...이건 남겨 두자. 다음에 내가 또 너무 빨리 정하면 이거 가리켜."
+    d "가리켜도 화 안 내시는 거죠?"
+    j "화는 낼 거야. 그래도 볼게."
+    "창밖은 벌써 어두웠다. 지현은 재킷을 걸치다 말고 도현의 얇은 겉옷을 봤다."
+    j "내일부터 추워진대. 목도리 해. 이건 업무 지시 아니고."
+    dn "업무 지시가 아니라고 굳이 덧붙이는 사람. 그 한마디에 퇴근길이 덜 추웠다."
     $ location = "같은 월요일 퇴근 후 · 개인 메시지"
     if memory.get("jihyun_r01_topic") == "why_me":
         call phone_deliver("jihyun_r03_personal", "jihyun", "왜 따로 만나자고 했냐고 물었지. 일 얘기 빼고도 네 다음 말이 궁금했어. 그날 못 한 대답이야.", contact="jihyun", important=True)
@@ -199,6 +261,7 @@ label jihyun_r03:
     call phone_deliver("jihyun_r03_reply", "dohyun", "저도요. 금요일 저녁 일곱 시 괜찮으세요? 이번에는 제가 따로 말씀드리고 싶은 게 있어요.", contact="jihyun")
     call phone_deliver("jihyun_r03_confirm", "jihyun", "좋아. 회사 앞 카페. 무슨 얘긴지는 금요일까지 안 물어볼게.", contact="jihyun")
     $ remember("jihyun_r04_appointment", "금요일 저녁 일곱 시, 회사 앞 카페")
+    dn "기분 좋다는 말을 저렇게 어렵게 하는 사람은 처음 봤다. 그래서 더 오래 기억날 것 같다."
     $ award_once("jihyun_R03", "jihyun", 8)
     $ progression_note_ending()
     return
@@ -210,9 +273,24 @@ label jihyun_r04:
         $ progression_note_ending()
         return
     $ chapter = "지현 R04 · 결정은 같이 하자"
+    $ location = "목요일 밤 열 시 · 사무실"
+    "두고 온 충전기를 가지러 사무실에 돌아갔다. 불이 다 꺼진 층에 스탠드 하나만 켜져 있었다."
+    "지현이 책상에서 삼각김밥 포장을 뜯고 있었다. 한 손은 여전히 마우스 위에 있었다."
+    j "...왜 왔어. 퇴근했잖아."
+    d "충전기요. 팀장님은 저녁이 그거예요?"
+    j "효율적이야. 삼 분이면 먹어."
+    "도현은 충전기 대신 탕비실로 갔다. 컵라면 두 개에 물을 붓고 돌아와 하나를 지현의 책상에 놓았다."
+    d "이것도 삼 분이에요. 대신 삼 분 동안은 아무것도 못 해요. 기다려야 해서."
+    "지현이 컵라면과 모니터를 번갈아 보다가 마우스에서 손을 뗐다."
+    j "삼 분 동안 뭐 해, 그럼."
+    d "그냥 있어요."
+    "둘은 스탠드 불빛 아래서 뚜껑 위에 젓가락을 올려 두고 앉아 있었다. 창밖으로 첫서리가 내린 주차장이 보였다."
+    j "...이상하네. 삼 분이 긴데, 안 아까워."
+    dn "내일 저녁 일곱 시에 할 말이 있다. 준비한 문장은 세 개인데, 방금 그 한마디에 세 문장이 다 흐려졌다."
     $ location = "금요일 저녁 일곱 시 · 약속한 카페"
     $ cream_focus = "jihyun"
     "지현이 도현을 보고 휴대폰을 가방에 넣었다. 도현은 맞은편에 앉아 준비해 온 말을 속으로 한 번 더 굴렸다."
+    dn "준비한 말은 세 문장이었다. 첫 문장부터 목이 말랐다."
     j "오늘은 네가 할 말 있다고 했지. 나도 질문 안 할게. 해."
     while not dating and not memory.get("jihyun_relationship_declined"):
         $ progression_enter("jihyun_r04.choice01")
@@ -226,6 +304,7 @@ label jihyun_r04:
                 j "응. 그쪽이 맞아."
                 $ dating = True
                 $ remember("jihyun_confession_accepted")
+                dn "'그쪽이 맞아.' 보고서에서나 듣던 말이 오늘은 다르게 들렸다."
                 $ award_once("jihyun_R04", "jihyun", 5)
             "마음은 있지만, 겁나는 것도 말한다." if not jihyun_prepared:
                 d "저 연애는 처음이에요. 마음은 분명한데, 일이랑 구분하려다가 말이 늦어질까 봐요."
@@ -298,6 +377,7 @@ label jihyun_early_route(full_route=False):
         call jihyun_r05
         call jihyun_o01_offer
         call jihyun_r06
+        call special_scene("jihyun", 1)
         call jihyun_r07
         call jihyun_r08
         call work_mini_second
@@ -306,6 +386,7 @@ label jihyun_early_route(full_route=False):
         call jihyun_o02_offer
         call jihyun_r10_after
         call jihyun_r11
+        call special_scene("jihyun", 2)
         call jihyun_r12
         call jihyun_r13
         call jihyun_r14
@@ -314,6 +395,7 @@ label jihyun_early_route(full_route=False):
             call jihyun_o03_offer
             call jihyun_r16
             if memory.get("jihyun_route_completed"):
+                call jihyun_x01
                 menu:
                     "후일담 읽기 — 약 반년 뒤 쉬는 날의 부탁":
                         call jihyun_e01

@@ -63,8 +63,10 @@ style badge_slider is bar:
     bar_resizing True
 
 screen badge_shell(active, heading):
-    add Solid(badge_paper)
-    add Solid("#33292d") xysize (1280, 88)
+    # 실크 UI와 같은 바탕·색으로 맞춘 기록·설정 공용 틀
+    add "silk ground"
+    add Solid("#3B0B22") xysize (1280, 88)
+    add Solid("#B3123F") ypos 84 xysize (1280, 4)
     add Solid(badge_rule) ypos 87 xysize (1280, 1)
     textbutton "돌아가기" xpos 61 ypos 24 action Return() style "afterwork_page_tab"
     hbox:
@@ -77,7 +79,7 @@ screen badge_shell(active, heading):
             action ShowMenu("load" if main_menu else "save")
             selected active in ("save", "load")
             style "afterwork_page_tab"
-    text heading xpos 71 ypos 167 size 53 font "fonts/GowunDodum-Regular.ttf" color badge_ink
+    text heading xpos 71 ypos 167 size 50 font silk_title_font(heading) color "#3B0B22" at (silk_header_in(-40) if silk_motion_on() else silk_still)
     add Solid(badge_rule) xpos 73 ypos 251 xysize (218, 1)
     add Solid(badge_rule) xpos 356 ypos 135 xysize (1, 505)
 

@@ -62,14 +62,19 @@ init python:
 
 label start:
     scene bg plain
-    "대본 개발판 · 공통 C01~C08, 네 히로인의 개인 대본을 읽을 수 있습니다."
-    "최종 배경·표정·이벤트 CG·영상·음성은 제작 중입니다. 실제 플레이 길이와 대사의 통합 편집도 남아 있습니다."
+    if config.developer:
+        "대본 개발판 · 공통 C01~C08, 네 히로인의 개인 대본을 읽을 수 있습니다."
+        "최종 배경·표정·이벤트 CG·영상·음성은 제작 중입니다. 실제 플레이 길이와 대사의 통합 편집도 남아 있습니다."
+    call prologue
     call c01
     call c02
     call c03
     call c04
+    call schedule_pick(1)
     call c05
+    call schedule_pick(2)
     call c06
+    call schedule_pick(3)
     call c07
     call c08
     call work_mini_first
@@ -82,6 +87,7 @@ label start:
             call ria_r05
             call ria_o01_offer
             call ria_r06
+            call special_scene("ria", 1)
             call ria_r07
             call ria_r08
             call work_mini_second
@@ -89,6 +95,7 @@ label start:
             call ria_r10
             call ria_o02_offer
             call ria_r11
+            call special_scene("ria", 2)
             call ria_r12
             call ria_r13
             call ria_r14
@@ -98,6 +105,7 @@ label start:
                 call ria_o04_offer from ria_return_from_o04
                 call ria_r16
                 if memory.get("ria_route_completed"):
+                    call ria_x01
                     menu:
                         "후일담 읽기 — 약 반년 뒤의 두 사람":
                             call ria_e01

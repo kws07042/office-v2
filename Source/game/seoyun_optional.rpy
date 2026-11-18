@@ -29,6 +29,7 @@ label seoyun_o01:
     if memory.get("seoyun_next_date_plan") != "bookcafe":
         "헤어지기 전에 서윤의 단골 북카페로 자리를 옮겼다. 서윤이 추천했던 책을 선반에서 꺼냈다."
     "『느린 모퉁이』에서 돌아가는 길에 같은 창문을 한 번 더 보는 짧은 대목을 함께 읽었다. 처음 보는 부분은 서두르지 않았다."
+    dn "같은 창문을 한 번 더 보는 대목. 서윤 씨가 왜 이 책을 좋아하는지 조금 알 것 같았다."
     "서윤은 마지막 문장을 한 번 더 읽다가 도현 쪽으로 책을 밀었다."
     s "여기. 난 여기서 그냥 못 넘어가겠더라. 네가 휙 읽고 넘기면 좀 서운할 것 같고~"
     $ progression_enter("seoyun_o01.choice01")
@@ -48,6 +49,7 @@ label seoyun_o01:
             $ remember("seoyun_o01_impression", "같은 대목을 다르게 읽고 답을 기다린 시간")
     $ remember("seoyun_o01_read", "느린 모퉁이의 같은 창문을 다시 보는 대목, 전권 완독 아님")
     $ remember("seoyun_o01_status", "completed")
+    dn "내 대답을 기다려 보고 싶다는 말. 늘 먼저 답을 던지던 사람이 한 말이라 더 오래 남았다."
     $ award_once("seoyun_O01", "seoyun", 2)
     $ progression_note_ending()
     return
@@ -81,6 +83,7 @@ label seoyun_o02:
     $ chapter = "서윤 O02 · 서로 실패한 농담"
     $ location = "같은 토요일 늦은 오후 · 북카페"
     s "이쯤이면 단골 포인트로 나도 한 번 무료 초대 가능한가?"
+    dn "서윤 씨의 농담은 절반쯤 진심이다. 문제는 어느 절반인지 늘 헷갈린다는 것이다."
     "도현이 테이블의 주문서를 들었다가 내려놓았다. 서윤의 시선도 종이로 갔다가 도현에게 돌아왔다."
     $ progression_enter("seoyun_o02.choice01")
     $ progression_checkpoint("seoyun_o02.choice01")
@@ -103,6 +106,7 @@ label seoyun_o02:
             $ remember("seoyun_o02_boundary", "장난이 막히면 원하는 말을 직접 꺼내기")
     "무슨 뜻이었는지 알고 나서 같이 웃었다. 날짜는 다음 일정을 보고 정하기로 했다."
     $ remember("seoyun_o02_status", "completed")
+    dn "둘 다 실패한 농담이었는데 이상하게 성공한 저녁 같았다."
     $ award_once("seoyun_O02", "seoyun", 2)
     $ progression_note_ending()
     return
@@ -136,6 +140,7 @@ label seoyun_o03:
     $ chapter = "서윤 O03 · 우리도 단골인가"
     $ location = "일요일 늦은 오후 · 다시 찾은 북카페"
     "각자 오전을 보내고 저녁 약속보다 조금 일찍 만났다. 도현은 지난번과 다른 자리의 작은 조명을 봤다."
+    dn "지난번과 다른 자리. 서윤 씨는 같은 가게에서도 매번 다른 풍경을 고른다."
     s "항상 같은 자리여야 단골인가 했는데. 오늘은 어디 앉아 볼래?"
     $ progression_enter("seoyun_o03.choice01")
     $ progression_checkpoint("seoyun_o03.choice01")
@@ -178,6 +183,7 @@ label seoyun_o03:
             s "...다 맞췄는데, 좀만 더 볼래?"
             $ remember("seoyun_o03_detail", "처음 고른 창가의 식물 그림자")
     $ remember("seoyun_o03_status", "completed")
+    dn "다 맞췄는데 조금 더 보자는 말. 헤어지기 싫다는 말을 이 사람은 이렇게 한다."
     $ award_once("seoyun_O03", "seoyun", 2)
     $ progression_note_ending()
     return

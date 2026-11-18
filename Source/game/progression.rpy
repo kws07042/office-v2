@@ -195,6 +195,8 @@ screen progression_hub(initial_tab="relations"):
                 text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
                 if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
                     text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
+            for special_n in (1, 2):
+                text (("특별 장면 · " + SPECIAL_TITLES[person][special_n - 1]) if getattr(persistent, "special_%s_%d" % (person, special_n), False) else "특별 장면 · 잠김 — 마음이 더 가까워지면 열려요") size 18 color badge_muted
             textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
             textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
             text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color badge_muted
@@ -244,9 +246,10 @@ screen progression_hub(initial_tab="relations"):
                         xsize 763 ysize 234
                         mousewheel True draggable True
                         cols 4 spacing 10
-                        for row in progression_gallery_rows(person, category):
+                        for tile_index, row in enumerate(progression_gallery_rows(person, category)):
                             if progression_asset_ready(row):
                                 button:
+                                    at (silk_tile_in(tile_index) if silk_motion_on() else silk_still)
                                     xsize 178 ysize 99 padding (8, 6)
                                     background Solid(badge_rail)
                                     hover_background Solid(badge_focus)
@@ -255,7 +258,11 @@ screen progression_hub(initial_tab="relations"):
                                     vbox:
                                         spacing 5
                                         if progression_asset_unlocked(row):
-                                            add row["path"] xysize (160, 62) fit "contain"
+                                            fixed:
+                                                xysize (160, 62)
+                                                add row["path"] xysize (160, 62) fit "contain"
+                                                if silk_motion_on():
+                                                    add silk("heart", True, size=(14, 14)) xalign 1.0 yalign 0.0 at silk_tile_spark(tile_index)
                                             text (row["event_id"].upper() + " · " + row["outfit"]) size 14
                                         else:
                                             text "아직 미감상" size 18
@@ -289,11 +296,9 @@ screen progression_cg_view(asset_id):
 
 screen progression_shortcuts():
     if not main_menu and not event_cut_active and not cream_menu_open() and not cream_preview_active and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive") and not progression_in_replay():
-        hbox:
-            xpos 37 ypos 68 spacing 8
-            textbutton "우리의 기록" action ShowMenu("progression_hub") style "cream_quick_button" text_size 16 padding (12, 7)
-            textbutton "퀵저장" action QuickSave() style "cream_quick_button" text_size 16 padding (12, 7)
-            textbutton "퀵로드" action QuickLoad(confirm=True) style "cream_quick_button" text_size 16 padding (12, 7)
+        # 퀵저장·퀵로드·기록함은 하단 빠른 메뉴로 옮겼다. 키보드 단축키만 남긴다.
+        key "K_F5" action QuickSave()
+        key "K_F9" action QuickLoad(confirm=True)
 
 init python:
     config.overlay_screens.append("progression_shortcuts")

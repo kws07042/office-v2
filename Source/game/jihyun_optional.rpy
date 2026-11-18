@@ -27,6 +27,7 @@ label jihyun_o01:
     $ chapter = "지현 O01 · 일정표의 빈칸 하나"
     $ location = "같은 토요일 늦은 오후 · 강변 가게 앞"
     "걷다가 들르려던 작은 가게가 닫혀 있었다. 빗방울까지 떨어지자 지현이 휴대폰을 꺼내려다 멈췄다."
+    dn "계획이 틀어졌는데 지현 씨는 화를 내지 않았다. 그게 오히려 낯설었다."
     j "다른 데 세 군데쯤 검색할 뻔했네. ...너 지금 뭐 하고 싶어?"
     $ progression_enter("jihyun_o01.choice01")
     $ progression_checkpoint("jihyun_o01.choice01")
@@ -52,6 +53,7 @@ label jihyun_o01:
             j "응. 다음 차까지 여기 같이 있자."
             $ remember("jihyun_o01_activity", "우산 쓰고 정류장까지 걷기")
     $ remember("jihyun_o01_status", "completed")
+    dn "다음 차까지 십이 분. 일정표에 없는 십이 분이 이렇게 길고 좋을 줄 몰랐다."
     $ award_once("jihyun_O01", "jihyun", 2)
     $ progression_note_ending()
     return
@@ -85,6 +87,7 @@ label jihyun_o02:
     $ chapter = "지현 O02 · 완성하지 않아도 되는 취미"
     $ location = "같은 토요일 오후 · 조립품 앞"
     j "설명서대로면 지붕 붙일 순서인데. 오늘은 좀 더 보고 싶어."
+    dn "설명서를 덮은 지현 씨는 회사에서 본 적 없는 얼굴을 하고 있었다."
     $ progression_enter("jihyun_o02.choice01")
     $ progression_checkpoint("jihyun_o02.choice01")
     menu:
@@ -104,6 +107,7 @@ label jihyun_o02:
             j "그럼 오늘까지만 특별 공개. 다음엔 조금 닫힐 수도 있어."
             $ remember("jihyun_o02_detail", "차 마시며 본 창틀의 빛")
     $ remember("jihyun_o02_status", "completed")
+    dn "특별 공개라는 말이 농담이 아니라는 걸 안다. 이 사람은 완성 안 된 걸 남에게 보여 준 적이 없다."
     $ award_once("jihyun_O02", "jihyun", 2)
     $ progression_note_ending()
     return
@@ -137,6 +141,7 @@ label jihyun_o03:
     $ chapter = "지현 O03 · 부탁의 연습"
     $ location = "일요일 오후 · 동네 공원 입구"
     "각자 집에서 오전을 보낸 뒤 공원에서 만났다. 지현은 벤치를 보자 도현을 불렀다."
+    dn "부탁하는 연습을 하자던 사람이 벤치 하나 고르는 데도 내 눈치를 본다."
     j "저기 그늘에 잠깐 앉을까? 너 오늘 몇 시쯤 들어가야 돼?"
     $ progression_enter("jihyun_o03.choice01")
     $ progression_checkpoint("jihyun_o03.choice01")
@@ -169,6 +174,7 @@ label jihyun_o03:
             "도현은 지현이 떠올린 날씨를 메모했다. 부탁한 한 줄만 보고 노트를 덮었다."
             $ remember("jihyun_o03_request", "기록집 한 줄의 첫 감상 부탁")
     $ remember("jihyun_o03_status", "completed")
+    dn "부탁이 한 줄이어서 좋았다. 한 줄이면 평생 들어줄 수 있을 것 같았다."
     $ award_once("jihyun_O03", "jihyun", 2)
     $ progression_note_ending()
     return

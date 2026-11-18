@@ -27,6 +27,7 @@ label yujin_o01:
     $ chapter = "유진 O01 · 전시가 끝난 뒤의 감상"
     $ location = "연인 첫 주말의 늦은 오후 · 공원 벤치"
     y "그 전시의 첫 그림요. 저는 혼자 남은 방 같다고 했는데, 도현 씨는 누가 돌아올 것 같다고 하셨잖아요."
+    dn "같은 그림을 보고 정반대를 말했었다. 유진 씨는 그걸 틀렸다고 하지 않고 적어 두었다."
     d "네. 의자가 조금 비뚤어져 있어서요. 유진 씨가 다르게 보신 것도 기억나요."
     y "오늘 다시 보면 어느 쪽이세요? 제 편 들어 달라는 건 아니고요~"
     $ progression_enter("yujin_o01.choice01")
@@ -51,6 +52,7 @@ label yujin_o01:
             $ remember("yujin_o01_impression", "different_answers")
     "유진은 서로 다른 두 감상을 줄을 바꿔 적었다. 하나로 고치지 않고 노트를 덮는다."
     $ remember("yujin_o01_status", "completed")
+    dn "두 감상을 하나로 고치지 않는 사람. 나와 다른 채로 옆에 있어도 된다는 말처럼 들렸다."
     $ award_once("yujin_O01", "yujin", 2)
     $ progression_note_ending()
     return
@@ -84,6 +86,7 @@ label yujin_o02:
     $ chapter = "유진 O02 · 작은 스케치 한 장"
     $ location = "기록집을 함께 본 토요일 오후 · 같은 카페"
     "유진이 개인 노트의 뒷장을 펼쳤다. 창가 빛이 겹친 작은 컵 그림 옆으로 탁자에 있던 잔을 옮겼다. 두 잔의 손잡이 방향이 달랐다."
+    dn "손잡이 방향이 다른 두 잔. 유진 씨는 이런 걸 본다. 나는 유진 씨가 보는 걸 보는 게 좋다."
     y "이건 집에서 그린 거예요. 지금 컵이랑 닮았다고 고쳐 그려 온 건 아니고요~"
     y "같은 컵도 물 마시고 나면 빛이 달라져요. 한번... 같이 해 보실래요?"
     "유진이 빈 종이 몇 장과 펜 두 자루를 꺼내 탁자에 놓았다."
@@ -124,6 +127,7 @@ label yujin_o02:
     y "...오늘은 그냥 맞게 알아들으신 걸로 할래요."
     $ remember("yujin_o02_subject", "창가 빛이 겹친 작은 컵")
     $ remember("yujin_o02_status", "completed")
+    dn "맞게 알아들은 걸로 해 주겠다는 말에, 틀리게 알아들었어도 좋았겠다는 생각을 했다."
     $ award_once("yujin_O02", "yujin", 2)
     $ progression_note_ending()
     return
@@ -173,6 +177,7 @@ label yujin_o03:
         y "오늘은 도현 씨가 남기고 싶은 거부터 하면 좋겠어요. 이 자리 괜찮으세요?"
         $ remember("yujin_o03_prepared", "현재 취향을 직접 묻는 짧은 카페 만남")
     d "제 얘기로 자리 잡아 주셨네요. 오늘은 제가 천천히 봐도 되겠어요."
+    dn "오늘은 내 취향을 보는 날이라고 했다. 누가 내 취향을 궁금해한 게 얼마 만인지 모르겠다."
     $ progression_enter("yujin_o03.choice01")
     $ progression_checkpoint("yujin_o03.choice01")
     menu:
@@ -207,6 +212,7 @@ label yujin_o03:
             d "그건 제목보다 먼저 알려 주셔야죠!"
             $ remember("yujin_o03_action", "stay")
     $ remember("yujin_o03_status", "completed")
+    dn "제목보다 먼저 듣고 싶은 말이 있었다. 유진 씨는 그걸 알고도 한 박자 늦게 준다."
     $ award_once("yujin_O03", "yujin", 2)
     $ progression_note_ending()
     return

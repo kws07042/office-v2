@@ -226,6 +226,8 @@ testsuite ria16:
                     click id route_phone_test_reply()
                     click id "phone_next" until not screen "office_phone"
                 advance until screen "choice"
+        if eval not (chapter.startswith("리아 R15") and renpy.get_screen("choice") is not None):
+            advance until eval chapter.startswith("리아 R15") and renpy.get_screen("choice") is not None timeout 20.0
         assert eval chapter.startswith("리아 R15")
         assert eval memory["ria_conflict"] == "resolved"
         assert eval memory["ria_r14_delegation_done"] is True
