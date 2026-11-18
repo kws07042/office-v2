@@ -1,6 +1,6 @@
 # 겨울 외출복 4장 — 챗지피티 이미지 프롬프트 v001
 
-본편이 10월 중순~12월 말로 바뀌어 추가된 그림이다. **포즈와 얼굴 각도는 마스터와 똑같이** 뽑아야 기존 표정 8종을 그대로 얹을 수 있다.
+본편이 10월 중순~12월 말로 바뀌어 추가된 그림이다. (v001.1: 차유진 외투를 카멜 케이프 코트 + 체크 머플러로 교체, 모든 결과물 투명 배경 누끼) **포즈와 얼굴 각도는 마스터와 똑같이** 뽑아야 기존 표정 8종을 그대로 얹을 수 있다.
 
 ## 쓰는 법
 1. 새 대화를 연다(인물마다 새 대화 권장).
@@ -26,7 +26,7 @@ Redraw THE SAME CHARACTER from image 1 in the SAME standing pose, same camera an
 Change only this: she is now dressed for going outside on a cold December day. Keep her whole office outfit from image 1 exactly as it is underneath, and ADD on top: a short cream-white wool coat that ends at the hip, and a sky-blue knitted scarf wrapped once around her neck with both ends hanging in front (the blue matches her scrunchie).
 The coat is worn OPEN at the front so the office outfit underneath stays clearly visible. Remove the ID card and lanyard (she is outside the office).
 Keep: the very long wavy blonde high ponytail and the blue scrunchie, straight bangs, blue eyes, the bright closed-mouth smile, eye color, art style, line weight, cel shading, soft light from the upper left.
-Full body from the top of the head to the shoes, centered, vertical 2:3 canvas, plain white background, nothing else in the picture.
+Full body from the top of the head to the shoes, centered, vertical 2:3 canvas. TRANSPARENT background (PNG with alpha). Clean cutout: crisp outline with no white halo, no fringe, no drop shadow, no ground shadow, no floor, nothing else in the picture. Hair strands and scarf edges fully separated from the background.
 Adult woman office worker (28 years old). No earrings, no extra jewelry, no hat, no gloves, no bag, no snow, no text, no logo.
 ```
 
@@ -47,7 +47,7 @@ Redraw THE SAME CHARACTER from image 1 in the SAME standing pose, same camera an
 Change only this: she is now dressed for going outside on a cold December day. Keep her whole office outfit from image 1 exactly as it is underneath, and ADD on top: a long charcoal-black tailored wool coat that ends below the knee, worn over her charcoal jacket, and a thin dark-gray scarf hanging straight down inside the coat lapels without a knot.
 The coat is worn OPEN at the front so the office outfit underneath stays clearly visible. Remove the ID card and lanyard (she is outside the office).
 Keep: the very long straight crimson hair falling down along the shoulders and back, side-parted bangs, red-brown eyes, the confident look, eye color, art style, line weight, cel shading, soft light from the upper left.
-Full body from the top of the head to the shoes, centered, vertical 2:3 canvas, plain white background, nothing else in the picture.
+Full body from the top of the head to the shoes, centered, vertical 2:3 canvas. TRANSPARENT background (PNG with alpha). Clean cutout: crisp outline with no white halo, no fringe, no drop shadow, no ground shadow, no floor, nothing else in the picture. Hair strands and scarf edges fully separated from the background.
 Adult woman office worker (30 years old). No earrings, no extra jewelry, no hat, no gloves, no bag, no snow, no text, no logo.
 ```
 
@@ -65,10 +65,10 @@ If anything conflicts, the reference images win.
 
 Attached is the official character reference (image 1) and the art-style reference (image 2).
 Redraw THE SAME CHARACTER from image 1 in the SAME standing pose, same camera angle, same head angle, same body proportions and the SAME FACE. Do not change the face, the expression, the hairstyle or the hair color.
-Change only this: she is now dressed for going outside on a cold December day. Keep her whole office outfit from image 1 exactly as it is underneath, and ADD on top: a beige duffle coat with wooden toggle buttons that ends at mid-thigh, worn over her cream cable-knit cardigan, and a thick off-white knitted scarf wrapped loosely around her neck.
-The coat is worn OPEN at the front so the office outfit underneath stays clearly visible. Remove the ID card and lanyard (she is outside the office).
+Change only this: she is now dressed for going outside on a cold December day. Keep her whole office outfit from image 1 exactly as it is underneath, and ADD on top: a short camel-colored wool cape coat (a cape-style coat with slit armholes, ending at the hips, soft rounded collar, two horn buttons at the neck) worn over her cream cable-knit cardigan, and a brown-and-cream tartan check muffler wrapped once around her neck.
+The cape coat is fastened only at the neck so it falls open below and the office outfit underneath stays clearly visible. Remove the ID card and lanyard (she is outside the office).
 Keep: the silver-white bob haircut, the single gold hairpin, the thin round metal-frame glasses, amber-brown eyes, the calm small smile, eye color, art style, line weight, cel shading, soft light from the upper left.
-Full body from the top of the head to the shoes, centered, vertical 2:3 canvas, plain white background, nothing else in the picture.
+Full body from the top of the head to the shoes, centered, vertical 2:3 canvas. TRANSPARENT background (PNG with alpha). Clean cutout: crisp outline with no white halo, no fringe, no drop shadow, no ground shadow, no floor, nothing else in the picture. Hair strands and scarf edges fully separated from the background.
 Adult woman office worker (27 years old). No earrings, no extra jewelry, no hat, no gloves, no bag, no snow, no text, no logo.
 ```
 
@@ -89,7 +89,7 @@ Redraw THE SAME CHARACTER from image 1 in the SAME standing pose, same camera an
 Change only this: she is now dressed for going outside on a cold December day. Keep her whole office outfit from image 1 exactly as it is underneath, and ADD on top: a long deep-navy wrap coat with the belt left untied and hanging at both sides, ending at the calf, and a thin pale-lavender scarf draped around her neck (the lavender matches her blouse).
 The coat is worn OPEN at the front so the office outfit underneath stays clearly visible. Remove the ID card and lanyard (she is outside the office).
 Keep: the long wavy dark plum hair, half-lidded gray-lavender eyes, the beauty mark under her left eye, the relaxed smile, eye color, art style, line weight, cel shading, soft light from the upper left.
-Full body from the top of the head to the shoes, centered, vertical 2:3 canvas, plain white background, nothing else in the picture.
+Full body from the top of the head to the shoes, centered, vertical 2:3 canvas. TRANSPARENT background (PNG with alpha). Clean cutout: crisp outline with no white halo, no fringe, no drop shadow, no ground shadow, no floor, nothing else in the picture. Hair strands and scarf edges fully separated from the background.
 Adult woman office worker (32 years old). No earrings, no extra jewelry, no hat, no gloves, no bag, no snow, no text, no logo.
 ```
 
@@ -98,6 +98,8 @@ Adult woman office worker (32 years old). No earrings, no extra jewelry, no hat,
 - 포즈가 달라졌을 때: `The pose changed. Use exactly the same standing pose, arm positions and head angle as image 1.`
 - 그림체가 달라졌을 때: `The art style drifted. Match the line weight, flat cel shading and eye rendering of the reference images exactly. No gradients, no painterly texture.`
 - 코트가 닫혀 있을 때: `Open the coat at the front so the office outfit underneath is visible.`
+- 유진 케이프가 일반 코트로 나왔을 때: `Make it a real cape coat: no sleeves, slit armholes at the sides, short hip-length, camel wool, fastened only at the neck.`
+- 배경이 남았을 때(누끼): `Remove the background completely. Transparent PNG, clean edges, no white outline, no shadow under the feet.`
 - 사원증이 남았을 때: `Remove the ID card and lanyard.`
 
 ## 받은 뒤 확인할 것
