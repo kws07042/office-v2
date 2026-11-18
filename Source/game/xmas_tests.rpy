@@ -39,5 +39,18 @@ testsuite xmas_checks:
         assert eval memory[xmas_fixture["who"] + "_x01"] == ("night" if xmas_fixture["high"] else "evening")
         assert eval (xmas_heart(xmas_fixture["who"]) >= XMAS_TRUE_HEART) == xmas_fixture["high"]
 
+    testcase spring_story_unlock_and_read:
+        run SetField(persistent, "spring_story_seen", False)
+        assert eval spring_story_unlocked() == all(getattr(persistent, "local_%s_ending" % w, False) for w in ("ria", "jihyun", "yujin", "seoyun"))
+        run Start("spring_story")
+        advance until screen "main_menu" timeout 60.0
+        assert eval persistent.spring_story_seen
+
+    testcase prologue_then_common:
+        run SetField(persistent, "seen_prologue", False)
+        run Start()
+        advance until eval chapter.startswith("C01") timeout 30.0
+        assert eval persistent.seen_prologue
+
     teardown:
         exit
