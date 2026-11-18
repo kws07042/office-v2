@@ -449,6 +449,7 @@ screen silk_pref_switch(label, note, action, on):
 screen preferences():
     tag menu
     default tab = "screen"
+    default previous_text_speed = preferences.text_cps or 40
     use silk_menu_backdrop
     frame:
         at (silk_menu_panel if silk_motion_on() else silk_still)
@@ -485,7 +486,7 @@ screen preferences():
                     elif tab == "text":
                         use silk_pref_slider("글자 표시 속도", Preference("text speed"))
                         use silk_pref_slider("자동 진행 대기 시간", Preference("auto-forward time"))
-                        use silk_pref_switch("글자 즉시 표시", "대사를 한 번에 보여 줍니다.", Preference("text speed", 0), preferences.text_cps == 0)
+                        use silk_pref_switch("글자 즉시 표시", "대사를 한 번에 보여 줍니다.", [SetScreenVariable("previous_text_speed", preferences.text_cps or previous_text_speed), Preference("text speed", previous_text_speed if preferences.text_cps == 0 else 0)], preferences.text_cps == 0)
                         use silk_pref_switch("읽은 대사만 스킵", "처음 보는 대사에서는 스킵이 멈춥니다.", Preference("skip", "toggle"), not preferences.skip_unseen)
                     elif tab == "sound":
                         if config.has_music:

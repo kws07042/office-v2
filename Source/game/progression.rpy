@@ -179,27 +179,36 @@ screen progression_hub(initial_tab="relations"):
             for who in pm.HEROES:
                 textbutton phone_names(who) action SetScreenVariable("person", who) selected person == who style "badge_tab_button"
         if tab == "relations":
-            text (phone_names(person) + " · " + pm.STAT_NAMES[person]) size 27 color badge_ink
-            if main_menu:
-                text "관계 상태는 게임을 진행하거나 저장을 불러온 뒤 확인할 수 있어요." size 22
-            else:
-                if persistent.progression_show_numbers:
-                    text ("호감도 " + str(affinity.get(person, 0)) + " / 100") size 25
-                    text (pm.STAT_NAMES[person] + " " + str(progression_relation(person)) + " / 100") size 25
-                else:
-                    text ("연인 관계" if dating and active_route == person else "서로 알아 가는 중") size 25
-                    text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
-                $ current_count, total_count, route_count = progression_route_progress(person)
-                text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18
-                text "함께 나눈 말과 실제 행동을 바탕으로 한 관계 기록이에요." size 18 color badge_muted
-                text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
-                if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
-                    text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
-            for special_n in (1, 2):
-                text (("특별 장면 · " + SPECIAL_TITLES[person][special_n - 1]) if getattr(persistent, "special_%s_%d" % (person, special_n), False) else "특별 장면 · 잠김 — 마음이 더 가까워지면 열려요") size 18 color badge_muted
-            textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
-            textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
-            text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color badge_muted
+            viewport:
+                id "record_relations"
+                xsize 786 ysize 410
+                mousewheel True draggable True
+                arrowkeys True pagekeys True
+                scrollbars "vertical"
+                vscrollbar_style "badge_scroll"
+                vbox:
+                    xsize 763 spacing 8
+                    text (phone_names(person) + " · " + pm.STAT_NAMES[person]) size 27 color badge_ink
+                    if main_menu:
+                        text "관계 상태는 게임을 진행하거나 저장을 불러온 뒤 확인할 수 있어요." size 22
+                    else:
+                        if persistent.progression_show_numbers:
+                            text ("호감도 " + str(affinity.get(person, 0)) + " / 100") size 25
+                            text (pm.STAT_NAMES[person] + " " + str(progression_relation(person)) + " / 100") size 25
+                        else:
+                            text ("연인 관계" if dating and active_route == person else "서로 알아 가는 중") size 25
+                            text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
+                        $ current_count, total_count, route_count = progression_route_progress(person)
+                        text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18
+                        text "함께 나눈 말과 실제 행동을 바탕으로 한 관계 기록이에요." size 18 color badge_muted
+                        text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
+                        if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
+                            text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
+                    for special_n in (1, 2):
+                        text (("특별 장면 · " + SPECIAL_TITLES[person][special_n - 1]) if getattr(persistent, "special_%s_%d" % (person, special_n), False) else "특별 장면 · 잠김 — 마음이 더 가까워지면 열려요") size 18 color badge_muted
+                    textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
+                    textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
+                    text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color badge_muted
         elif tab == "story":
             text "공통 이야기 → 개인 루트 · 선택 이전 기록으로 돌아가기" size 23 color badge_ink
             text "미발견 제목은 숨겨져요. 돌아가면 그 시점의 상태 전체를 불러와요." size 17
@@ -240,10 +249,10 @@ screen progression_hub(initial_tab="relations"):
             else:
                 text ("수집률 " + str(summary["percent"]) + "%") size 18 color badge_muted
                 fixed:
-                    xsize 786 ysize 234
+                    xsize 786 ysize 200
                     vpgrid:
                         id "window_gallery"
-                        xsize 763 ysize 234
+                        xsize 763 ysize 200
                         mousewheel True draggable True
                         cols 4 spacing 10
                         for tile_index, row in enumerate(progression_gallery_rows(person, category)):
@@ -266,15 +275,22 @@ screen progression_hub(initial_tab="relations"):
                                             text (row["event_id"].upper() + " · " + row["outfit"]) size 14
                                         else:
                                             text "아직 미감상" size 18
-                    vbar value YScrollValue("window_gallery") style "badge_scroll" xpos 779 ysize 234
-            hbox:
-                spacing 8
-                for key in persistent.progression_replays:
-                    if key.split(":")[0].startswith(person + "_"):
-                        $ eid, outfit = key.split(":")
-                        textbutton (eid.upper() + " · " + outfit):
-                            text_size 14
-                            action Replay("progression_replay_event", scope=progression_replay_scope(eid, outfit), locked=not progression_replay_ready(eid, outfit))
+                    vbar value YScrollValue("window_gallery") style "badge_scroll" xpos 779 ysize 200
+            viewport:
+                id "record_replays"
+                xsize 786 ysize 90
+                mousewheel True draggable True
+                arrowkeys True pagekeys True
+                scrollbars "vertical"
+                vscrollbar_style "badge_scroll"
+                vbox:
+                    xsize 763 spacing 8
+                    for key in persistent.progression_replays:
+                        if key.split(":")[0].startswith(person + "_"):
+                            $ eid, outfit = key.split(":")
+                            textbutton (eid.upper() + " · " + outfit):
+                                text_size 14
+                                action Replay("progression_replay_event", scope=progression_replay_scope(eid, outfit), locked=not progression_replay_ready(eid, outfit))
         else:
             text "확인한 결말 · 기존 시나리오 기준" size 24 color badge_ink
             text (str(len(progression_ending_ids())) + " / " + str(len(pm.ENDINGS))) size 20
