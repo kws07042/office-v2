@@ -3,7 +3,7 @@
 `Docs/art-prompts-chatgpt-v001.md`의 규칙을 그대로 따르고, 이번에 새로 생긴 장면까지 프롬프트를 채워 넣었다.
 
 ## 정해진 것 (2026-11-19)
-- **마스터 그림은 게임 화면에 쓰지 않는 쪽으로 간다.** 챗지피티에 첨부하는 '참고용'으로만 쓴다. 그래서 게임에 들어갈 인물 그림은 **의상마다 전신 + 표정**을 새로 뽑는다(아래 A-0).
+- **마스터 그림은 게임 화면에 쓰지 않는 쪽으로 간다.** 챗지피티에 첨부하는 '참고용'으로만 쓴다. 그래서 게임에 들어갈 인물 그림은 **의상마다 전신 + 표정**을 새로 뽑는다(아래 A-0). **포즈도 인물당 3종**을 둔다(A-0-2).
 - **인물이 들어가는 그림은 전부 누끼(투명 배경)로 뽑는다.** 아래 [누끼 문단]을 인물 프롬프트 맨 끝에 붙인다.
 - **차유진 겨울 외투**는 카멜 케이프 코트와 체크 머플러로 바꿨다(`art-prompts-winter-v001.md` 반영).
 
@@ -62,6 +62,49 @@ TRANSPARENT background, clean cutout, no halo, no shadow.
 `{EXPRESSION}` 자리에는 A-1의 표정 문장을 하나씩 넣는다. 파일 이름은 `{인물}_{의상}_{표정}_v001.png` 형식이다(예: `yujin_winter_blush_v001.png`).
 
 > A-1 표정 시트는 이 방식으로 바꾸면서 '표정 문장 모음'으로만 쓴다. 시트 그림을 따로 뽑지 않아도 된다.
+
+### A-0-2. 포즈 3종 (2026-11-19 추가)
+
+표정만 바뀌면 단조로워서 인물마다 포즈를 3개 둔다. 포즈 1은 기본(마스터 자세)이다.
+
+| 포즈 | 쓰는 때 | 리아 | 지현 | 유진 | 서윤 |
+|---|---|---|---|---|---|
+| pose01 기본 | 평소 대화 | 마스터 자세 | 마스터 자세 | 마스터 자세 | 마스터 자세 |
+| pose02 감정 | 신남·설렘 | 한 손을 흔들며 몸을 살짝 앞으로 | 서류철을 가슴에 안기 | 스케치북을 두 팔로 가슴에 꼭 안기 | 한 손으로 머리를 귀 뒤로 넘기기 |
+| pose03 진지 | 갈등·고백 | 두 손을 앞에서 모으기 | 팔짱 끼기 | 두 손으로 카디건 소매 끝 쥐기 | 팔짱 끼고 고개를 살짝 숙이기 |
+
+**장수**
+- 출시 최소: 업무복은 pose01 8표정 + pose02·03 각 4표정(neutral·smile·blush·serious), 나머지 3벌은 pose01만 3표정
+  - 인물당 25장, 4명이면 **약 100장**
+- 전부: 4벌 × 3포즈 × 8표정 × 4명 = 384장
+
+**만드는 순서:** 포즈별 기본 전신(neutral) 1장 → 그 그림에서 표정만 바꾸기(위 2단계 블록 그대로).
+
+**포즈 바꾸기 블록** — 그 의상의 pose01 기본 전신을 첨부하고 [화풍 고정 문단] 다음에 붙인다.
+```
+Use the attached image as the base character sprite. Change ONLY the body pose to: {POSE}.
+Keep IDENTICAL: the face, neutral expression, hairstyle, hair accessory, outfit and its colors, body proportions, art style, line weight, cel shading, light from the upper left.
+Keep the HEAD in exactly the same position and size on the canvas as the attached image, and the same canvas size. The feet stay on the same baseline. Only the arms, hands and upper-body angle change.
+Full body, vertical 2:3 canvas.
+CUTOUT: TRANSPARENT background, PNG with alpha. Crisp clean outline with no white halo, no fringe, no drop shadow, no ground shadow. Nothing else in the image.
+```
+
+`{POSE}` 문장은 아래 표에서 고른다.
+
+| 인물 | pose02 | pose03 |
+|---|---|---|
+| 리아 | waving one hand at shoulder height with an open palm, leaning her upper body slightly forward, the other hand on her hip | both hands clasped together in front of her waist, shoulders slightly raised |
+| 지현 | holding a closed document folder against her chest with both arms | arms crossed in front of her chest, standing straight |
+| 유진 | hugging a closed sketchbook to her chest with both arms | both hands holding the ends of her cardigan sleeves in front of her, shoulders drawn in |
+| 서윤 | one hand tucking her hair behind her ear, the other arm relaxed | arms loosely crossed, head tilted slightly down |
+
+- 포즈가 들고 있는 소품(서류철·스케치북)은 의상이 바뀌어도 같은 것을 쓴다. 생활복이면 서류철 대신 머그컵(`holding a mug with both hands against her chest`)으로 바꿔도 된다.
+- 파일 이름: `{인물}_{의상}_{포즈}_{표정}_v001.png` (예: `jihyun_office_pose03_serious_v001.png`). pose01도 이름에 `pose01`을 붙인다.
+
+**고쳐 달라고 할 때**
+- 얼굴 위치가 바뀌었을 때: `The head moved. Put the head back in exactly the same position and size as the attached image; change only the arms and hands.`
+- 얼굴이 달라졌을 때: `The face changed. Copy the face and expression exactly from the attached image.`
+- 손가락이 이상할 때: `Fix the hands: five fingers each, natural joints, same line weight.`
 
 ---
 
