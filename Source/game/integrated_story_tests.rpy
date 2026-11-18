@@ -77,7 +77,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -99,7 +100,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -121,7 +123,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -143,7 +146,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -165,7 +169,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -187,7 +192,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -209,7 +215,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -231,7 +238,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -253,7 +261,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -275,7 +284,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -297,7 +307,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -319,7 +330,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -341,7 +353,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -363,7 +376,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -385,7 +399,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -407,7 +422,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -429,7 +445,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -451,7 +468,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -473,7 +491,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -495,7 +514,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -517,7 +537,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -539,7 +560,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -561,7 +583,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -583,7 +606,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -605,7 +629,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -627,7 +652,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -649,7 +675,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -671,7 +698,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -693,7 +721,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -715,7 +744,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -737,7 +767,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -759,7 +790,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -781,7 +813,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -803,7 +836,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -825,7 +859,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -847,7 +882,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -869,7 +905,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -891,7 +928,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -913,7 +951,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -935,7 +974,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -957,7 +997,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -979,7 +1020,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1001,7 +1043,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1023,7 +1066,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1045,7 +1089,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1067,7 +1112,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1089,7 +1135,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1111,7 +1158,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1133,7 +1181,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1155,7 +1204,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1177,7 +1227,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1199,7 +1250,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1221,7 +1273,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1243,7 +1296,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1265,7 +1319,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1287,7 +1342,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1309,7 +1365,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1331,7 +1388,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1353,7 +1411,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1375,7 +1434,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1397,7 +1457,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1419,7 +1480,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1441,7 +1503,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1463,7 +1526,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1485,7 +1549,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1507,7 +1572,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1529,7 +1595,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1551,7 +1618,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1573,7 +1641,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1595,7 +1664,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1617,7 +1687,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1639,7 +1710,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1661,7 +1733,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1683,7 +1756,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1705,7 +1779,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1727,7 +1802,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1749,7 +1825,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1771,7 +1848,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1793,7 +1871,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1815,7 +1894,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1837,7 +1917,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1859,7 +1940,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1881,7 +1963,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1903,7 +1986,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1925,7 +2009,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1947,7 +2032,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1969,7 +2055,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -1991,7 +2078,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2013,7 +2101,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2035,7 +2124,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2057,7 +2147,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2079,7 +2170,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2101,7 +2193,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2123,7 +2216,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         if not eval integrated_done():
             advance until eval integrated_done() or renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
             if screen "office_phone":
@@ -2145,7 +2239,8 @@ testsuite integrated_story_checks:
                 if eval "E01" in chapter and "epilogue" not in integrated_fixture["shots"] and case % 2 == 0:
                     screenshot ("integrated-" + (active_route or "common") + "-epilogue.png")
                     $ integrated_fixture["shots"].add("epilogue")
-                click expression integrated_caption()
+                if eval renpy.get_screen("choice") is not None:
+                    click expression integrated_caption()
         assert eval integrated_done() and dating
         assert eval active_route == ["ria", "jihyun", "yujin", "seoyun"][case // 2]
         assert eval memory.get(active_route + "_confession_accepted")
