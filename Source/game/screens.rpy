@@ -528,7 +528,7 @@ transform silk_slot_in(i=0):
 style silk_slot_button is button:
     background silk_surface("card")
     hover_background silk_surface("card_on")
-    insensitive_background silk_surface("card")
+    insensitive_background silk_surface("quiet")
     padding (11, 11, 13, 15)
     xysize (292, 230)
 style silk_page_button is silk_small_button:
@@ -545,7 +545,7 @@ screen file_slots(mode):
     use silk_menu_backdrop
     frame:
         at (silk_menu_panel if silk_motion_on() else silk_still)
-        xalign 0.5 yalign 0.5 xsize 1010 ysize 700 padding (36, 26, 40, 30)
+        xalign 0.5 yalign 0.5 xsize 1010 ysize 660 padding (36, 26, 40, 30)
         background silk_surface("panel")
         vbox:
             spacing 12
@@ -589,9 +589,9 @@ screen file_slots(mode):
                                 text FileTime(slot, page=pg, format="%m월 %d일 %H:%M", empty="") size 14 color "#6E4553" yalign 0.8
                             $ save_line = FileSaveName(slot, empty="", page=pg)
                             text (save_line if len(save_line) <= 24 else save_line[:23] + "…") size 14 color "#3B0B22" xmaximum 270
-            hbox:
-                xalign 1.0 spacing 10
-                textbutton "돌아가기" action Return() style "silk_small_button"
+        hbox:
+            yalign 1.0 xalign 1.0 spacing 10
+            textbutton "돌아가기" action Return() style "silk_small_button"
 
 screen save():
     tag menu
