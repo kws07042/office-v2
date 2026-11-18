@@ -1491,6 +1491,254 @@ testsuite jihyun_final_checks:
                         assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
                 if eval renpy.get_screen("choice") is not None:
                     click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
+        if not eval jihyun_final_finished():
+            advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
+            if screen "office_phone":
+                click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
+                if screen "office_phone":
+                    if eval case == 0:
+                        screenshot "jihyun-r08-phone-replies.png"
+                    click id ("phone_reply_" + ["restaurant","menu","affection"][case%3])
+            elif screen "event_cut":
+                if eval case == 1:
+                    click id "cut_skip"
+                else:
+                    click id "cut_next" until not screen "event_cut"
+            elif not eval jihyun_final_finished():
+                if eval case == 0 and chapter.startswith("지현 E01"):
+                    screenshot "jihyun-epilogue-cohabitation-choice.png"
+                if eval chapter.startswith("지현 R13"):
+                    assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
+                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval not persistent.local_jihyun_ending
+                    if eval case == 0:
+                        screenshot "jihyun-r13-conflict.png"
+                        run FileSave("61",confirm=False)
+                        click expression jihyun_test_choice(1)
+                        advance until screen "choice"
+                        assert eval memory["jihyun_r13_response"] == "roles"
+                        run FileLoad("61",confirm=False)
+                        assert screen "choice" timeout 10.0
+                        assert eval memory["jihyun_conflict"] == "open" and "jihyun_r13_response" not in memory
+                if eval renpy.get_screen("choice") is not None:
+                    click expression jihyun_final_caption()
         assert eval jihyun_final_finished() and memory.get("jihyun_final_test_done")
         assert eval memory["jihyun_first_shared_slot_kept"] == memory["jihyun_shared_slot"]
         assert eval memory["jihyun_r08_reply"] == ["restaurant","menu","affection"][case%3]
