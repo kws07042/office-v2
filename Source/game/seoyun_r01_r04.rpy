@@ -475,6 +475,7 @@ label seoyun_route:
     call seoyun_r05
     call seoyun_o01_offer
     call seoyun_r06
+    call special_scene("seoyun", 1)
     call seoyun_r07
     call seoyun_r08
     call work_mini_second
@@ -483,6 +484,7 @@ label seoyun_route:
     call seoyun_o02_offer
     call seoyun_r10_after
     call seoyun_r11
+    call special_scene("seoyun", 2)
     call seoyun_r12
     call seoyun_r13
     call seoyun_r14

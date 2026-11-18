@@ -377,6 +377,7 @@ label jihyun_early_route(full_route=False):
         call jihyun_r05
         call jihyun_o01_offer
         call jihyun_r06
+        call special_scene("jihyun", 1)
         call jihyun_r07
         call jihyun_r08
         call work_mini_second
@@ -385,6 +386,7 @@ label jihyun_early_route(full_route=False):
         call jihyun_o02_offer
         call jihyun_r10_after
         call jihyun_r11
+        call special_scene("jihyun", 2)
         call jihyun_r12
         call jihyun_r13
         call jihyun_r14

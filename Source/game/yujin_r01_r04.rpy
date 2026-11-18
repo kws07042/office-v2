@@ -338,6 +338,7 @@ label yujin_early_route(through_r08=False, through_r12=False, full_route=False):
             if full_route:
                 call yujin_o01_offer
             call yujin_r06
+            call special_scene("yujin", 1)
             call yujin_r07
             call yujin_r08
             if through_r12 or full_route:
@@ -347,6 +348,7 @@ label yujin_early_route(through_r08=False, through_r12=False, full_route=False):
                 if full_route:
                     call yujin_o02_offer
                 call yujin_r11
+                call special_scene("yujin", 2)
                 call yujin_r12
                 if full_route:
                     call yujin_r13

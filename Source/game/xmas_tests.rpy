@@ -23,6 +23,23 @@ label test_xmas_entry:
             pass
     return
 
+label test_special_entry:
+    $ xwho = xmas_fixture["who"]
+    $ active_route = xwho
+    $ dating = True
+    $ speech_informal = False
+    $ memory = {}
+    if xmas_fixture["high"]:
+        $ remember(xwho + "_o01_status", "completed")
+        $ remember(xwho + "_o02_status", "completed")
+        $ remember(xwho + "_o03_status", "brief")
+    call special_scene(xwho, 1)
+    call special_scene(xwho, 2)
+    menu:
+        "검사 종료":
+            pass
+    return
+
 testsuite xmas_checks:
     before testcase:
         if not screen "main_menu":
@@ -51,6 +68,15 @@ testsuite xmas_checks:
         run Start()
         advance until eval chapter.startswith("C01") timeout 30.0
         assert eval persistent.seen_prologue
+
+    testcase special_scenes_follow_heart:
+        parameter case = list(range(8))
+        $ xmas_fixture["who"] = ["ria", "jihyun", "yujin", "seoyun"][case // 2]
+        $ xmas_fixture["high"] = case % 2 == 0
+        run Start("test_special_entry")
+        advance until screen "choice" timeout 30.0
+        assert eval bool(memory.get("x_special_" + xmas_fixture["who"] + "_1")) == xmas_fixture["high"]
+        assert eval bool(memory.get("x_special_" + xmas_fixture["who"] + "_2")) == xmas_fixture["high"]
 
     teardown:
         exit

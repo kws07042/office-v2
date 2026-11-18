@@ -87,6 +87,7 @@ label start:
             call ria_r05
             call ria_o01_offer
             call ria_r06
+            call special_scene("ria", 1)
             call ria_r07
             call ria_r08
             call work_mini_second
@@ -94,6 +95,7 @@ label start:
             call ria_r10
             call ria_o02_offer
             call ria_r11
+            call special_scene("ria", 2)
             call ria_r12
             call ria_r13
             call ria_r14
