@@ -1,4 +1,11 @@
 init python:
+    def phone_view_at_bottom():
+        v = renpy.get_widget("office_phone", "phone_messages")
+        if v is None:
+            return False
+        adj = v.yadjustment
+        return adj.range <= 0 or adj.value >= adj.range - 1
+
     xmas_fixture = {"who": "ria", "high": True}
 
 label test_xmas_entry:
@@ -77,6 +84,23 @@ testsuite xmas_checks:
         advance until screen "choice" timeout 30.0
         assert eval bool(memory.get("x_special_" + xmas_fixture["who"] + "_1")) == xmas_fixture["high"]
         assert eval bool(memory.get("x_special_" + xmas_fixture["who"] + "_2")) == xmas_fixture["high"]
+
+    testcase messenger_follows_latest:
+        run SetField(persistent, "phone_typing_enabled", False)
+        run Start("office_phone_preview")
+        advance until screen "office_phone" timeout 30.0
+        click id "phone_next"
+        pause 0.5
+        click id "phone_next"
+        pause 0.5
+        click id "phone_next"
+        pause 0.5
+        click id "phone_next"
+        pause 0.5
+        click id "phone_next"
+        pause 0.5
+        assert eval renpy.get_widget("office_phone", "phone_messages").yadjustment.range > 0
+        assert eval phone_view_at_bottom()
 
     teardown:
         exit

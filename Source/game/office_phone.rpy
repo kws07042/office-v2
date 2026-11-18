@@ -8,6 +8,11 @@ default phone_active_contact = "ria"
 default persistent.phone_typing_enabled = True
 
 init python:
+    def phone_follow_adjustment():
+        # 내용 높이(range)가 바뀔 때마다 값을 끝으로 맞춘다. 직접 위로 올려 읽는 동안에는
+        # 새 메시지가 오기 전까지 그 자리를 유지한다.
+        return ui.adjustment(ranged=lambda adj: adj.change(adj.range))
+
     PHONE_CONTACTS = [("ria", "강리아", "R"), ("jihyun", "백지현", "J"), ("yujin", "차유진", "Y"), ("seoyun", "한서윤", "S")]
     PHONE_MEDIA = {"ria_r08_breakfast": {"path": "images/messages/ria/r08_breakfast.png", "title": "일요일 아침 식탁", "caption": "리아가 보낸 아침 식탁 사진"}}
 
@@ -127,6 +132,8 @@ style phone_side_button_text is silk_small_button_text
 # 자동 검사는 버튼의 현재 위치를 누른다. 휴대폰이 올라오는 도중에 누르면 가상 마우스가 아래쪽
 # 빠른 메뉴 위에 남아 이후 Enter가 대사로 가지 않으므로, 검사 중에는 올라오는 연출을 끈다.
 screen office_phone_contents(replies, waiting, archive):
+    # 새 메시지로 대화 내용이 길어지면 자동으로 맨 아래(최신 대화)로 내려간다.
+    default phone_messages_adj = phone_follow_adjustment()
     default selected = phone_active_contact
     if not archive and not replies:
         key "dismiss" action Return("next")
@@ -179,7 +186,7 @@ screen office_phone_contents(replies, waiting, archive):
                 id "phone_messages"
                 xpos 16 ypos (chat_top + 10) xsize 346 ysize (message_height - 20)
                 mousewheel True draggable True
-                yinitial 1.0
+                yadjustment phone_messages_adj
                 vbox:
                     xsize 346 spacing 10
                     if not contact_rows:
