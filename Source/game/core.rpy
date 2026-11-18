@@ -70,8 +70,11 @@ label start:
     call c02
     call c03
     call c04
+    call schedule_pick(1)
     call c05
+    call schedule_pick(2)
     call c06
+    call schedule_pick(3)
     call c07
     call c08
     call work_mini_first

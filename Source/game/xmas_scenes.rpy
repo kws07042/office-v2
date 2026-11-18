@@ -41,6 +41,7 @@ init python:
         for key, table in XMAS_HEART_RULES.get(who, []):
             if key in mem:
                 score += table.get(mem[key], 0)
+        score += sum(1 for n in (1, 2, 3) if mem.get("x_sched_%d" % n) == who)
         if mem.get(who + "_r14_choice") == "reconsidered" or mem.get(who + "_r14_relationship_choice") == "reconsidered":
             score -= 2
         return score
