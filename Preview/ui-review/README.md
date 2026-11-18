@@ -1,3 +1,49 @@
+# UI 시안 이미지
+
+브라우저 시안을 캡처한 이미지입니다. 수치·대사·저장은 예시 데이터입니다.
+
+## 우리의 기록
+
+![우리의 기록](images/records.png)
+
+## 우리의 기록 · 이야기
+
+![우리의 기록 · 이야기](images/story.png)
+
+## 우리의 기록 · CG · 회상
+
+![우리의 기록 · CG · 회상](images/gallery.png)
+
+## 우리의 기록 · 결말
+
+![우리의 기록 · 결말](images/endings.png)
+
+## 저장
+
+![저장](images/save.png)
+
+## 불러오기
+
+![불러오기](images/load.png)
+
+## 설정
+
+![설정](images/settings.png)
+
+## 대화
+
+![대화](images/dialogue.png)
+
+## 메신저
+
+![메신저](images/messenger.png)
+
+## 대화 기록
+
+![대화 기록](images/history.png)
+
+---
+
 # UI 미리보기와 수정 기록
 
 2026-11-19 KST, main의 ac6ea29 기준.
