@@ -28,7 +28,7 @@ label jihyun_o01:
     $ location = "같은 토요일 늦은 오후 · 강변 가게 앞"
     "걷다가 들르려던 작은 가게가 닫혀 있었다. 빗방울까지 떨어지자 지현이 휴대폰을 꺼내려다 멈췄다."
     dn "계획이 틀어졌는데 지현 씨는 화를 내지 않았다. 그게 오히려 낯설었다."
-    j "다른 데 세 군데쯤 검색할 뻔했네. ...너 지금 뭐 하고 싶어?"
+    j "다른 데 세 군데쯤 검색할 뻔했네. 너 지금 뭐 하고 싶어?"
     $ progression_enter("jihyun_o01.choice01")
     $ progression_checkpoint("jihyun_o01.choice01")
     menu:
