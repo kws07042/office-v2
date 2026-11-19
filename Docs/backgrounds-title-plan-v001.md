@@ -123,3 +123,48 @@
 | 5. 업스케일 | 애니메이션용 2배 업스케일러 | 최종 3840×2160 보관, 게임에는 1920×1080 |
 
 같은 방식으로 이벤트 CG도 만들 수 있다. 히로인이 나오는 그림은 1단계(입상 합성으로 구도 잡기) → 2~4단계 순서가 가장 확실하다.
+
+## 4. 배경 그림체 통일 (ChatGPT 낮판 → 입상 그림체) · 2026-11-19 추가
+
+목적: ChatGPT 배경의 "AI 티"(지나치게 매끈한 그라데이션, 어디나 같은 빛·화분 공식)를 줄이고, 입상과 같은 선·채색으로 맞춘다. 구도·가구 위치는 그대로 둔다.
+
+### 입력
+- PR #23의 최종 낮판 23장. 집 4곳과 식당은 `_v002`, 나머지는 `_v001`을 쓴다.
+- 그림체 참조: `CharacterArt/candidates/heroine-masters-v001/ria_office_pose01_neutral_v001.png`(마스터 2차 다듬기 때 쓴 것과 같은 참조).
+
+### 노드 구성 (한 장 기준, 폴더 일괄 처리 가능)
+1. Load Image(배경) → 크기 그대로 1920×1080. VRAM이 12GB 미만이면 1344×756으로 줄여 처리한 뒤 마지막에 2배 업스케일해서 1920×1080으로 줄인다.
+2. 전처리: Lineart(anime) → ControlNet lineart, Depth(Anything/MiDaS) → ControlNet depth.
+3. IP-Adapter: 리아 마스터, 가중치 0.5~0.6, 방식은 style transfer(그림체만, 내용은 따르지 않음).
+4. VAE Encode → KSampler(img2img) → VAE Decode → Save.
+5. 체크포인트·샘플러·스텝·CFG는 마스터를 만든 Anima Turbo 1.1 워크플로 값을 그대로 쓴다.
+
+### 값
+| 항목 | 값 | 비고 |
+|---|---|---|
+| 노이즈 강도(denoise) | 0.30~0.38 | 0.30부터 시작. 선이 안 바뀌면 0.04씩 올림 |
+| ControlNet lineart | 0.85 (끝 0.8) | 가구 위치 고정 |
+| ControlNet depth | 0.5 | 원근 고정 |
+| IP-Adapter | 0.55, style transfer | 0.7 넘기면 인물 얼굴이 섞여 들어올 수 있음 |
+| 시드 | 장소마다 하나 고정 | 저녁·밤 변환도 같은 시드 |
+
+긍정 프롬프트(공통 + 장소):
+```
+anime visual novel background, scenery, no humans, clean thin lineart, cel shading, flat colors with soft two-tone shadows, muted colors, slightly desaturated, lived-in, {장소}
+```
+장소 예: `office interior, desks, monitors` / `meeting room, long table, glass wall` / `small korean apartment, wooden floor, curtains` / `korean pojangmacha restaurant, stainless round tables, plastic stools` / `city street, subway entrance, evening`
+
+부정 프롬프트:
+```
+people, person, character, silhouette, text, letters, logo, watermark, signature, photorealistic, 3d render, glossy, airbrushed gradient, bloom, lens flare, blurry
+```
+
+### 판정 기준
+- 원본과 겹쳐 놓았을 때 창틀·가구·바닥선 위치가 같아야 한다. 어긋나면 lineart를 1.0으로 올리고 노이즈를 0.04 내린다.
+- 표면이 "에어브러시처럼 매끈한 그라데이션"에서 2~3단 셀 명암으로 바뀌어야 성공이다.
+- 사람·글자가 새로 생기면 버리고 시드를 바꾼다.
+
+### 순서
+1. 사무실(bg_office) 1장으로 값을 정한다. 결과를 올리면 게임 화면에 입상과 합성해 판정한다.
+2. 정해진 값으로 23장을 일괄 처리한다. 파일 이름은 `bg_<장소>_day_v003.png`, 폴더는 같은 `bg-chatgpt-v001/`.
+3. 통일된 낮판을 입력으로 3-1의 저녁·밤·겨울·크리스마스 변환을 한다. 같은 시드, 같은 IP-Adapter를 쓴다.
