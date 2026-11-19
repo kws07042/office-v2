@@ -52,5 +52,7 @@
 | [jihyun_winter_pose01_blush_v001.png](jihyun_winter_pose01_blush_v001.png) | 백지현 winter_pose01_blush | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
 | [jihyun_winter_pose01_neutral_v001.png](jihyun_winter_pose01_neutral_v001.png) | 백지현 winter_pose01_neutral | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
 | [jihyun_winter_pose01_smile_v001.png](jihyun_winter_pose01_smile_v001.png) | 백지현 winter_pose01_smile | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
+| [yujin_office_pose02_neutral_v001.png](yujin_office_pose02_neutral_v001.png) | 차유진 · 스케치북을 가슴에 안은 자세 | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
+| [seoyun_office_pose01_neutral_v001.png](seoyun_office_pose01_neutral_v001.png) | 한서윤 · 턱에 손가락을 댄 기본 자세 | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
 
 리아 사복 3장은 10월 말 이후 비 오는 오후의 실내 카페 장면에 맞춘 긴소매 니트, 데님 스커트, 스타킹과 운동화 조합이다. [리아 대본](../../../Source/game/ria_r05_r08.rpy#L262) · [계절 전환](../../../Source/game/common.rpy#L704)
