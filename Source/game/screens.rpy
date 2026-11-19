@@ -68,17 +68,18 @@ transform silk_heart_pulse:
     easein 0.12 zoom 1.22
     easeout_bounce 0.5 zoom 1.0
 
-screen silk_big_heart(value):
-    # 큰 하트 하나가 아래부터 차오른다(0~100).
+screen silk_big_heart(value, tier="normal"):
+    # 큰 하트 하나가 아래부터 차오른다(0~100). 테두리는 신뢰: 금색(높음) / 보통 / 흐린 점선(낮음).
     $ heart_h = 46
     $ filled = int(heart_h * max(0, min(100, value)) / 100.0)
+    $ flash = renpy.get_screen("bond_flash")
     fixed:
         xysize (52, 48)
-        at (silk_heart_pulse if (renpy.get_screen("silk_heart_burst") and silk_motion_on()) else silk_still)
+        at ((bond_shake if (flash and flash.scope.get("kind") == "drop") else (silk_heart_pulse if ((renpy.get_screen("silk_heart_burst") or flash) and silk_motion_on()) else silk_still)) if silk_motion_on() else silk_still)
         add silk("bigheart", "back", size=(52, 48))
         if filled > 0:
             add Crop((0, heart_h - filled, 52, filled), silk("bigheart", "fill", size=(52, 48))) ypos (heart_h - filled)
-        add silk("bigheart", "line", size=(52, 48))
+        add silk("bigheart", ("line_gold" if tier == "gold" else ("line_low" if tier == "low" else "line")), size=(52, 48))
         text str(value) font "fonts/Jua-Regular.ttf" size 17 color ("#FFFDFB" if value >= 45 else "#3B0B22") xalign 0.5 ypos 13 outlines []
 
 screen story_header():
@@ -109,11 +110,11 @@ screen story_header():
             background silk_surface("button")
             hbox:
                 spacing 11
-                use silk_big_heart(affinity[focus])
+                use silk_big_heart(bond_mind(focus), bond_trust_tier(focus))
                 vbox:
                     spacing 2 yalign 0.5
                     text person_name font "fonts/Jua-Regular.ttf" size 21 color "#3B0B22"
-                    text cream_relation_name(focus) size 13 color "#6E4553"
+                    text relation_stage(focus) size 13 color ("#A99BA1" if bond_trust_tier(focus) == "low" else "#6E4553")
         if cream_preview_active:
             use cream_preview_controls
 

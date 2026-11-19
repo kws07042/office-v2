@@ -184,10 +184,10 @@ screen progression_hub(initial_tab="relations"):
                 text "관계 상태는 게임을 진행하거나 저장을 불러온 뒤 확인할 수 있어요." size 22
             else:
                 if persistent.progression_show_numbers:
-                    text ("호감도 " + str(affinity.get(person, 0)) + " / 100") size 25
+                    text ("마음 " + str(bond_mind(person)) + " / 100  ·  신뢰 " + str(bond_trust(person))) size 25
                     text (pm.STAT_NAMES[person] + " " + str(progression_relation(person)) + " / 100") size 25
                 else:
-                    text ("연인 관계" if dating and active_route == person else "서로 알아 가는 중") size 25
+                    text relation_stage(person) size 25
                     text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
                 $ current_count, total_count, route_count = progression_route_progress(person)
                 text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18

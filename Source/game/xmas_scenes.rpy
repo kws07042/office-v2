@@ -10,40 +10,15 @@
 define XMAS_TRUE_HEART = 8
 
 init python:
-    XMAS_HEART_RULES = {
-        "ria": [
-            ("ria_r06_response", {"listen": 2, "share": 1, "choose_rest": 1}),
-            ("ria_r13_response", {"honest": 2, "ask": 1}),
-            ("ria_r14_clarification", {"both": 2, "notice": 1, "feelings": 1}),
-        ],
-        "jihyun": [
-            ("jihyun_r09_support", {"evidence": 2, "share": 1}),
-            ("jihyun_r13_response", {"reasons": 2, "roles": 2, "pause_then_return": 1}),
-            ("jihyun_r14_choice", {"ready": 2, "wait_for_action": 1}),
-        ],
-        "yujin": [
-            ("yujin_support_overstep", {False: 2}),
-            ("yujin_support_repair_status", {"resolved": 1, "not_needed": 1}),
-            ("yujin_r14_readiness", {"reassured": 2, "ready": 1, "rechecked": 1, "relationship_talk": 1, "talk_after": 1}),
-        ],
-        "seoyun": [
-            ("seoyun_r09_support", {"reader": 1, "roles": 1, "scope": 1}),
-            ("seoyun_r13_response", {"unknown": 2, "weight": 1, "pause": 1}),
-            ("seoyun_r14_choice", {"ready": 2, "repair_blunt": 1, "wait_action": 1}),
-        ],
-    }
+    XMAS_HEART_RULES = BOND_TRUST_RULES
 
     def xmas_heart(who):
+        # 신뢰 + 함께 보낸 시간(선택 데이트 2/1/0, 일정 선택 1점씩).
         mem = renpy.store.memory
-        score = 0
+        score = bond_trust(who)
         for part in ("o01", "o02", "o03"):
             score += {"completed": 2, "brief": 1}.get(mem.get(who + "_" + part + "_status"), 0)
-        for key, table in XMAS_HEART_RULES.get(who, []):
-            if key in mem:
-                score += table.get(mem[key], 0)
         score += sum(1 for n in (1, 2, 3) if mem.get("x_sched_%d" % n) == who)
-        if mem.get(who + "_r14_choice") == "reconsidered" or mem.get(who + "_r14_relationship_choice") == "reconsidered":
-            score -= 2
         return score
 
     def xmas_true(who):

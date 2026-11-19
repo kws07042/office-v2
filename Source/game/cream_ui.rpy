@@ -77,16 +77,16 @@ init -10 python:
     def cream_relation_name(person="ria"):
         if person == "seoyun":
             if renpy.store.dating and renpy.store.active_route == "seoyun":
-                return "약속 조율 중" if renpy.store.memory.get("seoyun_conflict") in ("open", "discussing", "agreed_pending_action") else "교제 중"
+                return "다시 마주 보는 중" if renpy.store.memory.get("seoyun_conflict") in ("open", "discussing", "agreed_pending_action") else "교제 중"
             return "동료로 지내는 중" if renpy.store.memory.get("seoyun_relationship_declined") or renpy.store.memory.get("seoyun_relationship_closed") else "알아가는 중"
         if person == "jihyun":
             if renpy.store.dating and renpy.store.active_route == "jihyun":
-                return "약속 조율 중" if renpy.store.memory.get("jihyun_conflict") in ("open", "agreed_pending_action") else "교제 중"
+                return "다시 마주 보는 중" if renpy.store.memory.get("jihyun_conflict") in ("open", "agreed_pending_action") else "교제 중"
             return "동료로 지내는 중" if renpy.store.memory.get("jihyun_relationship_declined") or renpy.store.memory.get("jihyun_relationship_closed") else "알아가는 중"
         if person == "yujin":
             return "교제 중" if renpy.store.dating and renpy.store.active_route == "yujin" else ("동료로 지내는 중" if renpy.store.memory.get("yujin_relationship_declined") or renpy.store.memory.get("yujin_relationship_closed") else "알아가는 중")
         if renpy.store.dating and renpy.store.active_route == "ria":
-            return "약속 조율 중" if renpy.store.memory.get("ria_conflict") in ("open", "discussing", "agreed") else "교제 중"
+            return "다시 마주 보는 중" if renpy.store.memory.get("ria_conflict") in ("open", "discussing", "agreed") else "교제 중"
         if renpy.store.memory.get("ria_relationship_closed"):
             return "동료로 지내는 중"
         return "알아가는 중"
