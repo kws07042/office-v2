@@ -1,5 +1,41 @@
 # 히로인 후보 검수 목록
 
+## v003 수정 후보 25장
+
+[전후 비교 사진](fixes_contact_sheet_v003.jpg)에서 각 칸의 왼쪽은 실제 수정 기준본, 오른쪽은 v003이다. 지현은 v002가 있는 3장만 v002를 사용했고 나머지 14장은 v001을 기준으로 삼았다. 리아 업무복 3번 홍조에는 얼굴과 손 수정을 함께 적용했다.
+
+수정 영역 밖 RGBA 픽셀과 같은 의상·포즈의 손 패치를 대조했다. 리아의 홍조는 업무복 1번 v002에 사용한 얼굴 소스를 각 포즈에 맞춰 합성했다. 누끼와 몸은 유지했다. 게임 내 표시와 전환은 미검수다.
+
+| 기준본 | 수정본 | 수정 부위 | v003 SHA-256 |
+|---|---|---|---|
+| [v001](jihyun_casual_pose01_blush_v001.png) | [jihyun_casual_pose01_blush_v003.png](jihyun_casual_pose01_blush_v003.png) | 허리에 얹은 손 | <code>fed12c9502bff54e0900cfa3c58031496a92bd1e5756c1509ba930482ac96e3e</code> |
+| [v001](jihyun_casual_pose01_neutral_v001.png) | [jihyun_casual_pose01_neutral_v003.png](jihyun_casual_pose01_neutral_v003.png) | 허리에 얹은 손 | <code>aa1a6502b642b165ff9150189484b2a665e7bb8b7b4594ede5d881161224922a</code> |
+| [v001](jihyun_casual_pose01_smile_v001.png) | [jihyun_casual_pose01_smile_v003.png](jihyun_casual_pose01_smile_v003.png) | 허리에 얹은 손 | <code>9d2800f5e8a4b55ab0416aa9aaad3c435ce384dcacd5e92bf478c883f6554209</code> |
+| [v001](jihyun_home_pose01_blush_v001.png) | [jihyun_home_pose01_blush_v003.png](jihyun_home_pose01_blush_v003.png) | 허리에 얹은 손 | <code>54129d874dfa87022052dc0cf3db18e51dce100a7ae5b371c0680a83b67070ca</code> |
+| [v001](jihyun_home_pose01_neutral_v001.png) | [jihyun_home_pose01_neutral_v003.png](jihyun_home_pose01_neutral_v003.png) | 허리에 얹은 손 | <code>0d7f9f54f88068b8f5debe1789d097a2f7de75030559dc9966b2bc962bc17ad3</code> |
+| [v001](jihyun_home_pose01_smile_v001.png) | [jihyun_home_pose01_smile_v003.png](jihyun_home_pose01_smile_v003.png) | 허리에 얹은 손 | <code>c9bca204cdfdb27e05d73dc31adb98d3aca260628820e955892b227a120db380</code> |
+| [v001](jihyun_office_pose01_blush_v001.png) | [jihyun_office_pose01_blush_v003.png](jihyun_office_pose01_blush_v003.png) | 허리에 얹은 손 | <code>99ca3638c59bc9b2a1c22a7752fa3707095eb4cac7ea487e0b9f96ab08b11cc0</code> |
+| [v002](jihyun_office_pose01_laugh_v002.png) | [jihyun_office_pose01_laugh_v003.png](jihyun_office_pose01_laugh_v003.png) | 허리에 얹은 손 | <code>5716cc28bb4c991cbdfb6b0e10bc039660b8def5c28421082168fddf89fd795f</code> |
+| [v001](jihyun_office_pose01_neutral_v001.png) | [jihyun_office_pose01_neutral_v003.png](jihyun_office_pose01_neutral_v003.png) | 허리에 얹은 손 | <code>b8a40a29e807efe9de522144cdf50cc8e4d5fe9daa85aa5402018b7a456d3347</code> |
+| [v002](jihyun_office_pose01_pout_v002.png) | [jihyun_office_pose01_pout_v003.png](jihyun_office_pose01_pout_v003.png) | 허리에 얹은 손 | <code>523bac45744e5230743e4dd12efe2ef1766767d6b9c58845937ff0e5227f59dc</code> |
+| [v001](jihyun_office_pose01_sad_v001.png) | [jihyun_office_pose01_sad_v003.png](jihyun_office_pose01_sad_v003.png) | 허리에 얹은 손 | <code>8abecfb606c5a8b91ddfba6ba3186afa300a0b6aed118ff5410b6a3d27248dc3</code> |
+| [v001](jihyun_office_pose01_serious_v001.png) | [jihyun_office_pose01_serious_v003.png](jihyun_office_pose01_serious_v003.png) | 허리에 얹은 손 | <code>84abee481c07f9256ffaf0a64ba0f709a24beaf0a7f6d5353fdf40cb64a02d14</code> |
+| [v001](jihyun_office_pose01_smile_v001.png) | [jihyun_office_pose01_smile_v003.png](jihyun_office_pose01_smile_v003.png) | 허리에 얹은 손 | <code>311b12b8c4fc48692c0f08f3d57dd62a746f2284eec7be04ca4b7ab621e6134b</code> |
+| [v002](jihyun_office_pose01_surprise_v002.png) | [jihyun_office_pose01_surprise_v003.png](jihyun_office_pose01_surprise_v003.png) | 허리에 얹은 손 | <code>2ec7f2e97f5c2d82476bfe52e1aa2f93e037a2463c8bdf05577747db5eed96d0</code> |
+| [v001](jihyun_winter_pose01_blush_v001.png) | [jihyun_winter_pose01_blush_v003.png](jihyun_winter_pose01_blush_v003.png) | 허리에 얹은 손 | <code>8f4f6fcea3de9c742d134a151e0f36b7bf2dc038e0ad0c46236bf3535f13a0a5</code> |
+| [v001](jihyun_winter_pose01_neutral_v001.png) | [jihyun_winter_pose01_neutral_v003.png](jihyun_winter_pose01_neutral_v003.png) | 허리에 얹은 손 | <code>d95187ba5e756fa205bb0137cb12d634961dfd26bacc63c8944c3518273dbf5e</code> |
+| [v001](jihyun_winter_pose01_smile_v001.png) | [jihyun_winter_pose01_smile_v003.png](jihyun_winter_pose01_smile_v003.png) | 허리에 얹은 손 | <code>2bb63f7ac280b343fdd2f55c252547c15480a4b76e3e052761032056cdb1c598</code> |
+| [v002](ria_casual_pose01_blush_v002.png) | [ria_casual_pose01_blush_v003.png](ria_casual_pose01_blush_v003.png) | 홍조 얼굴·앞머리 | <code>98c8c33770c9015c2ad167e8194e3c7418ecb2f3ade2376c44d4758d815d8c18</code> |
+| [v002](ria_home_pose01_blush_v002.png) | [ria_home_pose01_blush_v003.png](ria_home_pose01_blush_v003.png) | 홍조 얼굴·앞머리 | <code>7b61722eb7be63ccfa53238b67df9e154e557ecaaf6e075778fefff8448c1b5c</code> |
+| [v002](ria_office_pose02_blush_v002.png) | [ria_office_pose02_blush_v003.png](ria_office_pose02_blush_v003.png) | 홍조 얼굴·앞머리 | <code>ce3fb49d2018c1c486614a5837d9025aeb304e2fea8f861e0fbba0cb4d1bb877</code> |
+| [v002](ria_office_pose03_blush_v002.png) | [ria_office_pose03_blush_v003.png](ria_office_pose03_blush_v003.png) | 홍조 얼굴·앞머리 · 모은 두 손 | <code>245d92a07329621c74690cfb9814d4e6149c516167d4184b983ce6d1f7741d9f</code> |
+| [v002](ria_office_pose03_neutral_v002.png) | [ria_office_pose03_neutral_v003.png](ria_office_pose03_neutral_v003.png) | 모은 두 손 | <code>fb6e0b357c4ebfa2549030fc551161d9dabc54b8c38d7cce6f801893b8c2ebb6</code> |
+| [v002](ria_office_pose03_serious_v002.png) | [ria_office_pose03_serious_v003.png](ria_office_pose03_serious_v003.png) | 모은 두 손 | <code>5c73a1527d2038e3a717415e974aec5331ca9839553d7275bf5faba668896e51</code> |
+| [v002](ria_office_pose03_smile_v002.png) | [ria_office_pose03_smile_v003.png](ria_office_pose03_smile_v003.png) | 모은 두 손 | <code>10012f3a6500f1e3e42770cdc252e66d260fd85731c6a663651083907c0b21af</code> |
+| [v002](ria_winter_pose01_blush_v002.png) | [ria_winter_pose01_blush_v003.png](ria_winter_pose01_blush_v003.png) | 홍조 얼굴·앞머리 | <code>b426f6bd772f037f17eefc5e803533455d8cb47c449628704727ef6e0f53d4f9</code> |
+
+비교 사진 SHA-256 <code>ed530813b99189173b89e4d2319ad0b8ada5501400856bd505ff8bbc3ad193ba</code>
+
 ## v002 수정 후보 36장
 
 [수정 전후 비교 사진](fixes_contact_sheet_v002.jpg)에서 각 칸의 왼쪽은 v001, 오른쪽은 v002다. 두 배경에서 전신과 수정 부위를 대조할 수 있다. 리아의 맨 아래 줄은 머리 끝 확대다. 비교 사진 SHA-256은 <code>1c7e7841bbb1c274db18239ff1fcd499d16de4007d7c16af9c7a8da91ec512fa</code>이다.
