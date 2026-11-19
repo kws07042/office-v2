@@ -171,14 +171,14 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
     else:
         fixed:
             at (silk_panel_in if silk_motion_on() else silk_still)
-            xpos 64 ypos 536 xysize (1152, 166)
-            add Solid("#14080E") xpos 4 ypos 6 xysize (1152, 166) alpha 0.18
-            add Solid("#EFE8E0") xysize (1152, 166) alpha 0.92
-            add Solid("#FFFFFF") xysize (1152, 1) alpha 0.5
-            add Solid("#B39462") xpos 72 ypos 132 xysize (1008, 1) alpha 0.85
-            text "온빛브랜딩 · 연말 피칭 TF" xanchor 1.0 xpos 1000 ypos 14 size 12 color "#9A8B80" kerning 1.5
+            xpos 24 ypos 536 xysize (1232, 166)
+            add Solid("#14080E") xpos 4 ypos 6 xysize (1232, 166) alpha 0.18
+            add Solid("#EFE8E0") xysize (1232, 166) alpha 0.92
+            add Solid("#FFFFFF") xysize (1232, 1) alpha 0.5
+            add Solid("#B39462") xpos 72 ypos 132 xysize (1088, 1) alpha 0.85
+            text "온빛브랜딩 · 연말 피칭 TF" xanchor 1.0 xpos 1080 ypos 14 size 12 color "#9A8B80" kerning 1.5
             frame:
-                xanchor 1.0 xpos 1100 ypos 10 padding (1, 1, 1, 1)
+                xanchor 1.0 xpos 1180 ypos 10 padding (1, 1, 1, 1)
                 background Solid("#A2394F")
                 frame:
                     padding (6, 0, 6, 1)
@@ -188,7 +188,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
         window:
             at (silk_panel_in if silk_motion_on() else silk_still)
             id "window"
-            xpos 64 ypos 578 xsize 1152 ysize 100
+            xpos 24 ypos 578 xsize 1232 ysize 100
             padding (72, 0, 96, 0)
             background None
             foreground None
@@ -198,14 +198,14 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 size 25
                 color "#2F262B"
                 outlines []
-                xmaximum 980
+                xmaximum 1060
                 line_spacing 8
                 language "korean-with-spaces"
                 substitute use_substitution
         if who:
             frame:
                 at (silk_tag_in if silk_motion_on() else silk_still)
-                xpos 156 ypos 508 ysize 52
+                xpos 116 ypos 508 ysize 52
                 padding (30, 0, 35, 6)
                 background silk("tag", "#6B1E34")
                 hbox:
@@ -220,7 +220,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                     if silk_english(who):
                         text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#E8C99A" outlines [] yalign 0.7
         if advance:
-            add silk("next", "#6B1E34", size=(14, 9)) xpos 1150 ypos 650 at (silk_next_bob if silk_motion_on() else silk_still)
+            add silk("next", "#6B1E34", size=(14, 9)) xpos 1190 ypos 650 at (silk_next_bob if silk_motion_on() else silk_still)
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
