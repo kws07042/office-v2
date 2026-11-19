@@ -263,3 +263,20 @@
 | [yujin_winter_pose01_smile_v001.png](yujin_winter_pose01_smile_v001.png) | 차유진 winter_pose01 · smile | 부분 수정 | 0 | 기본본에도 같은 작은 미소가 있어 교체 효과가 약함 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1488 · 기본 표정 대비 변경 영역 461,163,581,247 px |
 
 리아 사복 3장은 10월 말 이후 비 오는 오후의 실내 카페 장면에 맞춘 긴소매 니트, 데님 스커트, 스타킹과 운동화 조합이다. [리아 대본](../../../Source/game/ria_r05_r08.rpy#L262) · [계절 전환](../../../Source/game/common.rpy#L704)
+
+
+## 한서윤 사복 v003 (색 보정, 2026-11-19)
+
+ChatGPT 새 사복 v002 9장의 머리카락·피부·눈동자 색을 `seoyun_office_pose01_neutral`과 같게 맞췄다. 그림은 새로 그리지 않았고, 영역별 색 분포(히스토그램)만 옮겼다(`Source/tools/sprite_colormatch.py`). 같은 포즈의 표정끼리 몸 픽셀은 그대로 같다. 선 굵기·니트 질감·명암 방식은 바뀌지 않았다.
+
+| 파일 | 내용 | 종류 | SHA-256 |
+|---|---|---|---|
+| [seoyun_casual_pose01_blush_v003.png](seoyun_casual_pose01_blush_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `76ca8580d8601e7abf79f25838e93f7f1ced0588e6e6f9f5366d6cbaf5dc820e` |
+| [seoyun_casual_pose01_neutral_v003.png](seoyun_casual_pose01_neutral_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `995924d9727bb09e00857daa41ecd8d80db35e6c1c404ac54c32688b0e1e4ce2` |
+| [seoyun_casual_pose01_smile_v003.png](seoyun_casual_pose01_smile_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `ce6ce238683c9f627e6b8dc85bbb35602ad95b42fda537d3ac233743921d3b2d` |
+| [seoyun_casual_pose02_blush_v003.png](seoyun_casual_pose02_blush_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `45835a723ab4f0a097e5a730461c928647298ce02d98cb79a4c6f061119ccf77` |
+| [seoyun_casual_pose02_neutral_v003.png](seoyun_casual_pose02_neutral_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `dec7b48e882b14c13a39a3a473c5167d488dec0aad1b7e1805d46ea82b820f6f` |
+| [seoyun_casual_pose02_sad_v003.png](seoyun_casual_pose02_sad_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `2cb9e2187a66da157b10668d041ba9e9858611966bbd8410640d74db27312605` |
+| [seoyun_casual_pose02_serious_v003.png](seoyun_casual_pose02_serious_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `5c16ddfe0b54e6ee7ad767b7c4b9393ba92c2a2c330e43864c65f694ef3c37b8` |
+| [seoyun_casual_pose02_smile_v003.png](seoyun_casual_pose02_smile_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `59efc87ac6afff62fe3e7d6132a994c424e9182960011eb4163605277fc57cd7` |
+| [seoyun_casual_pose02_surprise_v003.png](seoyun_casual_pose02_surprise_v003.png) | v002에서 머리·피부·눈동자 색만 기존 서윤(업무복 1 기본)에 맞춤 | 색 보정 | `0c17df2af8a376b1d5d544e3482072b4ad005cd1a26894d61ebc529eeac8b3e1` |
