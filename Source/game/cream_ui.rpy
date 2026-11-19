@@ -48,6 +48,8 @@ init -10 python:
     def cream_note_speaker(person, event, **kwargs):
         if event == "begin" and person not in ("dohyun", "narrator"):
             renpy.store.cream_focus = person
+            if person in HEROINES:
+                heroine_note_line(person)
 
     def cream_stage_mode():
         if renpy.store.cream_preview_mode:

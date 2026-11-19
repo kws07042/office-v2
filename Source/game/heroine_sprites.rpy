@@ -1,0 +1,157 @@
+# 히로인 입상: 말하는 히로인을 무대 가운데에 세운다.
+# 의상은 장소 문구(location)로, 포즈는 장면마다 하나로, 표정은 대사 내용으로 고른다.
+# 대본에서 표정을 직접 정하려면:  $ face("ria", "sad")   (다음 장소가 바뀔 때까지 유지)
+#                                  $ face("ria")          (자동으로 되돌림)
+
+default heroine_face_lock = {}
+default heroine_face_auto = {}
+default heroine_face_lock_location = {}
+
+init -4 python:
+    import re as _hs_re
+    import zlib as _hs_zlib
+
+    HEROINES = ("ria", "jihyun", "yujin", "seoyun")
+    HEROINE_HOME = {
+        "ria": ("리아의 집",),
+        "jihyun": ("지현의 집",),
+        "yujin": ("유진의 집",),
+        "seoyun": ("서윤의 집",),
+    }
+    # 서윤은 작업실에서 지낸다. 아침에만 생활복, 그 밖에는 외출복으로 둔다.
+    HEROINE_HOME_MORNING = {"seoyun": ("서윤의 작업실",)}
+    SPRITE_EXPRESSIONS = {
+        ("office", "pose01"): ("neutral", "smile", "laugh", "blush", "surprise", "pout", "sad", "serious"),
+        ("office", "pose02"): ("neutral", "smile", "blush", "serious"),
+        ("office", "pose03"): ("neutral", "smile", "blush", "serious"),
+        ("casual", "pose01"): ("neutral", "smile", "blush"),
+        ("home", "pose01"): ("neutral", "smile", "blush"),
+        ("winter", "pose01"): ("neutral", "smile", "blush"),
+    }
+    # 그 포즈에 없는 표정은 가장 가까운 표정으로 바꾼다.
+    SPRITE_FALLBACK = {
+        "laugh": ("smile",),
+        "surprise": ("blush", "neutral"),
+        "pout": ("serious", "neutral"),
+        "sad": ("serious", "neutral"),
+        "serious": ("neutral",),
+        "blush": ("smile",),
+        "smile": ("neutral",),
+    }
+    # 표정 이름은 기존 리아 표정 변수와도 맞춘다.
+    RIA_LEGACY_FACE = {"smile": "smile", "shy": "blush", "serious": "serious"}
+
+    WEEKEND_WORDS = ("토요일", "일요일", "휴일", "쉬는 날", "주말")
+    WINTER_WORDS = ("12월", "1월", "2월", "크리스마스", "겨울")
+    WORKPLACE_WORDS = ("회사", "사무실", "회의", "탕비실", "온빛브랜딩", "클라이언트사", "작업 공간", "공용",
+        "협업", "옥상", "비상계단", "복도", "엘리베이터", "현장", "행사장", "출장", "피칭", "검토", "출근",
+        "퇴근", "회식", "리허설", "야근", "안내 공간", "숙소", "점심")
+    INDOOR_WORK_WORDS = ("사무실", "회의", "탕비실", "작업 공간", "공용", "복도", "협업", "안내 공간")
+    HIDDEN_PLACE_WORDS = ("메시지", "각자의", "연락", "전화")
+
+    FACE_RULES = (
+        ("blush", ("좋아해", "사랑해", "보고 싶", "설레", "부끄", "키스", "입맞", "안아", "같이 있고 싶", "두근", "예뻐", "귀여")),
+        ("laugh", ("하하", "푸핫", "ㅋㅋ", "크크", "웃겨", "깔깔")),
+        ("surprise", ("어?", "에?", "뭐?", "네?", "헉", "엇", "?!", "!?", "깜짝", "진짜?", "정말?")),
+        ("sad", ("미안", "죄송", "서운", "슬프", "울고", "힘들", "무서", "외로")),
+        ("pout", ("흥", "치사", "몰라", "됐거든", "너무해", "삐졌")),
+        ("serious", ("확인", "일정", "마감", "자료", "보고", "검토", "결정", "문제", "위험", "설명", "이유", "솔직히", "진지")),
+        ("smile", ("고마", "다행", "좋아", "좋네", "좋았", "재밌", "재미있", "ㅎㅎ", "후후", "~", "♪", "맛있", "!")),
+    )
+
+    def _hs_place():
+        return getattr(renpy.store, "location", "") or ""
+
+    def heroine_outfit(who, place=None):
+        place = _hs_place() if place is None else place
+        if any(word in place for word in HEROINE_HOME.get(who, ())):
+            return "home"
+        own_studio = any(word in place for word in HEROINE_HOME_MORNING.get(who, ()))
+        if own_studio and "아침" in place:
+            return "home"
+        at_work = any(word in place for word in WORKPLACE_WORDS)
+        indoor_work = any(word in place for word in INDOOR_WORK_WORDS) or "회사 회의실" in place
+        if any(word in place for word in WINTER_WORDS):
+            if indoor_work:
+                return "office"
+            return "casual" if own_studio else "winter"
+        if any(word in place for word in WEEKEND_WORDS):
+            return "office" if indoor_work or any(word in place for word in ("맡은 행사장", "현장")) else "casual"
+        if own_studio:
+            return "casual"
+        if at_work or "평일" in place or any(day in place for day in ("월요일", "화요일", "수요일", "목요일", "금요일")):
+            return "office"
+        return "casual"
+
+    def heroine_pose(who, outfit, place=None):
+        if outfit != "office":
+            return "pose01"
+        place = _hs_place() if place is None else place
+        # 같은 장면 안에서는 몸이 바뀌지 않게 장소 문구로 포즈를 하나 고른다(절반은 기본 포즈).
+        roll = _hs_zlib.crc32((who + "|" + place).encode("utf-8")) % 4
+        return ("pose01", "pose01", "pose02", "pose03")[roll]
+
+    def heroine_text_face(what):
+        text = _hs_re.sub(r"\{[^}]*\}", "", what or "")
+        for face, words in FACE_RULES:
+            if any(word in text for word in words):
+                return face
+        return "neutral"
+
+    def heroine_resolve_face(face, outfit, pose):
+        allowed = SPRITE_EXPRESSIONS[(outfit, pose)]
+        seen = set()
+        while face not in allowed and face not in seen:
+            seen.add(face)
+            face = next((alt for alt in SPRITE_FALLBACK.get(face, ()) if alt in allowed), SPRITE_FALLBACK.get(face, ("neutral",))[0])
+        return face if face in allowed else "neutral"
+
+    def heroine_face(who):
+        st = renpy.store
+        lock = st.heroine_face_lock.get(who)
+        if lock and st.heroine_face_lock_location.get(who) == _hs_place():
+            return lock
+        if who == "ria" and RIA_LEGACY_FACE.get(getattr(st, "ria_expression", "base")):
+            return RIA_LEGACY_FACE[st.ria_expression]
+        return st.heroine_face_auto.get(who, "neutral")
+
+    def face(who, expression=None):
+        st = renpy.store
+        if expression:
+            st.heroine_face_lock[who] = expression
+            st.heroine_face_lock_location[who] = _hs_place()
+        else:
+            st.heroine_face_lock.pop(who, None)
+
+    def heroine_sprite_path(who, place=None):
+        outfit = heroine_outfit(who, place)
+        pose = heroine_pose(who, outfit, place)
+        expression = heroine_resolve_face(heroine_face(who), outfit, pose)
+        return "images/characters/%s/%s_%s_%s_%s.png" % (who, who, outfit, pose, expression)
+
+    def heroine_sprite_visible():
+        st = renpy.store
+        who = st.cream_focus
+        if who not in HEROINES or st.dialogue_cg_mode or st.event_cut_active:
+            return False
+        if any(word in _hs_place() for word in HIDDEN_PLACE_WORDS):
+            return False
+        return renpy.loadable(heroine_sprite_path(who))
+
+    def heroine_note_line(who):
+        # 말풍선이 열리기 직전에 불린다. 이번 대사 내용으로 자동 표정을 정한다.
+        what = getattr(renpy.store, "_last_raw_what", "") or ""
+        renpy.store.heroine_face_auto[who] = heroine_text_face(what)
+
+    # 무대에 놓는 크기: 머리 위가 화면 약 50px, 대화창(ypos 536) 윗선에서 잘라 글씨 뒤로 몸이 비치지 않게 한다.
+    SPRITE_ZOOM = 0.66
+    SPRITE_YPOS = 20
+    SPRITE_CROP_H = int((536 - SPRITE_YPOS) / SPRITE_ZOOM)
+
+    def heroine_sprite_display(st, at):
+        if not heroine_sprite_visible():
+            return Null(), None
+        path = heroine_sprite_path(renpy.store.cream_focus)
+        return Transform(Crop((0, 0, 1024, SPRITE_CROP_H), path), zoom=SPRITE_ZOOM), None
+
+image heroine stage sprite = DynamicDisplayable(heroine_sprite_display)

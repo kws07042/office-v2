@@ -51,7 +51,9 @@ screen cream_stage():
     zorder -100
     if not main_menu and not event_cut_active:
         add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
-        if cream_ria_visible():
+        if heroine_sprite_visible():
+            add "heroine stage sprite" xalign 0.5 ypos SPRITE_YPOS at (silk_bust_idle if silk_motion_on() else silk_still)
+        elif cream_ria_visible():
             add "ria ui bust" xalign 0.5 ypos 28 at (silk_bust_idle if silk_motion_on() else silk_still)
         elif cream_yujin_visible():
             add "yujin ui bust" xalign 0.5 ypos 50 at (silk_bust_idle if silk_motion_on() else silk_still)
