@@ -1,5 +1,23 @@
 # 히로인 후보 검수 목록
 
+## 한서윤 사복 A안 · 9장
+
+[전신과 세부 확대 비교](seoyun_casual_v002_sheet.jpg)
+
+기존 pose02 여섯 컷의 v001 파일을 보존하기 위해 두 포즈 모두 새 디자인에 v002를 사용했다. 크기는 1024×1536 RGBA이다. 각 포즈 안에서 얼굴 밖 RGBA 값과 전체 알파 마스크를 대조했다. 게임 내 표시는 미검수다.
+
+| 파일 | 설명 | 검수 | 재생성 횟수 | 남은 문제 | SHA-256 |
+|---|---|---|---:|---|---|
+| [seoyun_casual_pose01_neutral_v002.png](seoyun_casual_pose01_neutral_v002.png) | 한서윤 새 사복 pose01 · neutral | 후보 통과 | 0 | 확인된 문제 없음 | <code>b9471ab79933d39ee42392367be8ff0e6acb9c5a5a88c4ddc9815d49ee5e8704</code> |
+| [seoyun_casual_pose01_smile_v002.png](seoyun_casual_pose01_smile_v002.png) | 한서윤 새 사복 pose01 · smile | 후보 통과 | 0 | 확인된 문제 없음 | <code>146159f494123477b08efc1c44488de2852b48ab04bb2df3907c76b2b93d4923</code> |
+| [seoyun_casual_pose01_blush_v002.png](seoyun_casual_pose01_blush_v002.png) | 한서윤 새 사복 pose01 · blush | 후보 통과 | 0 | 확인된 문제 없음 | <code>aad9dfe5044ac718ce03be6f7c85965b1aa7f74673a6d18b4e13a81cb9f6b594</code> |
+| [seoyun_casual_pose02_neutral_v002.png](seoyun_casual_pose02_neutral_v002.png) | 한서윤 새 사복 pose02 · neutral | 후보 통과 | 0 | 확인된 문제 없음 | <code>2418c28d397aec3dc2c3a8fa19615773e49a33023dd593440ab53bda1340b2a0</code> |
+| [seoyun_casual_pose02_smile_v002.png](seoyun_casual_pose02_smile_v002.png) | 한서윤 새 사복 pose02 · smile | 후보 통과 | 0 | 확인된 문제 없음 | <code>aa7dff79566f7559c2fad680abbf4c331b357fa7e4d5cc05423e4fa9da81d60c</code> |
+| [seoyun_casual_pose02_blush_v002.png](seoyun_casual_pose02_blush_v002.png) | 한서윤 새 사복 pose02 · blush | 후보 통과 | 0 | 확인된 문제 없음 | <code>389fad0b3d99eb8956a9560595119b282146faa7eb33b781fa2eb666319f65a3</code> |
+| [seoyun_casual_pose02_serious_v002.png](seoyun_casual_pose02_serious_v002.png) | 한서윤 새 사복 pose02 · serious | 후보 통과 | 0 | 확인된 문제 없음 | <code>f73ee99d02a786cd0d8a50ee2ecef3c36c5315e6b413265234b97e896a4e0662</code> |
+| [seoyun_casual_pose02_sad_v002.png](seoyun_casual_pose02_sad_v002.png) | 한서윤 새 사복 pose02 · sad | 후보 통과 | 0 | 확인된 문제 없음 | <code>1e36807efea88182966332a3ec6c782945561569ef5712fc34e827fd98739306</code> |
+| [seoyun_casual_pose02_surprise_v002.png](seoyun_casual_pose02_surprise_v002.png) | 한서윤 새 사복 pose02 · surprise | 후보 통과 | 0 | 확인된 문제 없음 | <code>2bc9a286fdaf247a4eeeea5aebc1448c922ef2f46d3224cb6a6f6aa925343391</code> |
+
 ## 추가 입상 52장
 
 [포즈별 전신·표정 비교](new_batch_contact_sheet_v002.jpg) · [새 기본 포즈 손 확대](new_pose02_hands_v002.jpg)
@@ -22,12 +40,12 @@
 | [ria_home_pose02_serious_v001.png](ria_home_pose02_serious_v001.png) | 강리아 생활복 pose02 serious | 후보 통과 | 0 | 확인된 문제 없음 | <code>5af717c02c93d76048cb635fbf80bb1df53a95590bc70ceb003cf3d4a7096f7b</code> |
 | [ria_home_pose02_sad_v001.png](ria_home_pose02_sad_v001.png) | 강리아 생활복 pose02 sad | 후보 통과 | 0 | 확인된 문제 없음 | <code>0808a38bb997c75de0f4b76d11b2117793617a1ce997db93bbcf2f0fad31071c</code> |
 | [ria_home_pose02_surprise_v001.png](ria_home_pose02_surprise_v001.png) | 강리아 생활복 pose02 surprise | 후보 통과 | 0 | 확인된 문제 없음 | <code>307166695d0d2ad054a1229c57397b8c41dadaed2d43d8c3991b908116f8122e</code> |
-| [seoyun_casual_pose02_neutral_v001.png](seoyun_casual_pose02_neutral_v001.png) | 한서윤 사복 pose02 neutral | 후보 통과 | 0 | 확인된 문제 없음 | <code>66deb627e2ddf30cf7a7d41f29015f023e9042a7785a8246b3af37c782700579</code> |
-| [seoyun_casual_pose02_smile_v001.png](seoyun_casual_pose02_smile_v001.png) | 한서윤 사복 pose02 smile | 후보 통과 | 0 | 확인된 문제 없음 | <code>7ad412b407e90bf7c730b3abab026e6e9065f5e63666a5af692675af2f5d3ee8</code> |
-| [seoyun_casual_pose02_blush_v001.png](seoyun_casual_pose02_blush_v001.png) | 한서윤 사복 pose02 blush | 후보 통과 | 0 | 확인된 문제 없음 | <code>5a2669d6cb7910f0fb684925ac4abbf6381d3a1d2662ca5e3a58f234f2d80623</code> |
-| [seoyun_casual_pose02_serious_v001.png](seoyun_casual_pose02_serious_v001.png) | 한서윤 사복 pose02 serious | 후보 통과 | 0 | 확인된 문제 없음 | <code>1f3e2ac8f063715a07f0b252edc81e38a339d07ffde08da26bd095b223f52827</code> |
-| [seoyun_casual_pose02_sad_v001.png](seoyun_casual_pose02_sad_v001.png) | 한서윤 사복 pose02 sad | 후보 통과 | 0 | 확인된 문제 없음 | <code>54befc8369eb0a28b1197b3aeb30ef80c8c842daf052b91f26af724602d042de</code> |
-| [seoyun_casual_pose02_surprise_v001.png](seoyun_casual_pose02_surprise_v001.png) | 한서윤 사복 pose02 surprise | 후보 통과 | 0 | 확인된 문제 없음 | <code>cca3fbe0af813f36c89ed76615d89175afa37856f23fd0cad7703f520ac4d4ea</code> |
+| [seoyun_casual_pose02_neutral_v001.png](seoyun_casual_pose02_neutral_v001.png) | 한서윤 사복 pose02 neutral | v002로 대체(사복 디자인 변경) | 0 | 확인된 문제 없음 | <code>66deb627e2ddf30cf7a7d41f29015f023e9042a7785a8246b3af37c782700579</code> |
+| [seoyun_casual_pose02_smile_v001.png](seoyun_casual_pose02_smile_v001.png) | 한서윤 사복 pose02 smile | v002로 대체(사복 디자인 변경) | 0 | 확인된 문제 없음 | <code>7ad412b407e90bf7c730b3abab026e6e9065f5e63666a5af692675af2f5d3ee8</code> |
+| [seoyun_casual_pose02_blush_v001.png](seoyun_casual_pose02_blush_v001.png) | 한서윤 사복 pose02 blush | v002로 대체(사복 디자인 변경) | 0 | 확인된 문제 없음 | <code>5a2669d6cb7910f0fb684925ac4abbf6381d3a1d2662ca5e3a58f234f2d80623</code> |
+| [seoyun_casual_pose02_serious_v001.png](seoyun_casual_pose02_serious_v001.png) | 한서윤 사복 pose02 serious | v002로 대체(사복 디자인 변경) | 0 | 확인된 문제 없음 | <code>1f3e2ac8f063715a07f0b252edc81e38a339d07ffde08da26bd095b223f52827</code> |
+| [seoyun_casual_pose02_sad_v001.png](seoyun_casual_pose02_sad_v001.png) | 한서윤 사복 pose02 sad | v002로 대체(사복 디자인 변경) | 0 | 확인된 문제 없음 | <code>54befc8369eb0a28b1197b3aeb30ef80c8c842daf052b91f26af724602d042de</code> |
+| [seoyun_casual_pose02_surprise_v001.png](seoyun_casual_pose02_surprise_v001.png) | 한서윤 사복 pose02 surprise | v002로 대체(사복 디자인 변경) | 0 | 확인된 문제 없음 | <code>cca3fbe0af813f36c89ed76615d89175afa37856f23fd0cad7703f520ac4d4ea</code> |
 | [seoyun_home_pose02_neutral_v001.png](seoyun_home_pose02_neutral_v001.png) | 한서윤 생활복 pose02 neutral | 후보 통과 | 0 | 확인된 문제 없음 | <code>a6f0bda8cbf3906ef628910bcfcad0bb2065358eb083b0aa60037daa8f766eeb</code> |
 | [seoyun_home_pose02_smile_v001.png](seoyun_home_pose02_smile_v001.png) | 한서윤 생활복 pose02 smile | 후보 통과 | 0 | 확인된 문제 없음 | <code>8c3f103bd8552bfa625984b30fbab62acd51d4338bc05bb5cadff76a3bea6f1b</code> |
 | [seoyun_home_pose02_blush_v001.png](seoyun_home_pose02_blush_v001.png) | 한서윤 생활복 pose02 blush | 후보 통과 | 0 | 확인된 문제 없음 | <code>b48391066376da450f5489ec85d4dc770b421b7352758c975c8f9078603d2a3a</code> |
@@ -210,9 +228,9 @@
 | [seoyun_office_pose03_neutral_v001.png](seoyun_office_pose03_neutral_v001.png) | 한서윤 office_pose03 · neutral | 부분 수정 | 0 | 대화 대기 표정으로 읽힘 · 팔짱 자세는 유지하고 고개를 숙일 때의 얼굴 중심 이동 보정 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1493 · 고개를 숙이면서 얼굴 축도 기울어 pose01과 교체 시 위치가 튐 |
 | [seoyun_office_pose03_serious_v001.png](seoyun_office_pose03_serious_v001.png) | 한서윤 office_pose03 · serious | 부분 수정 | 0 | 같은 포즈의 기본본과 입매·시선 차이가 작음 · 팔짱 자세는 유지하고 고개를 숙일 때의 얼굴 중심 이동 보정 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1493 · 기본 표정 대비 변경 영역 454,177,573,261 px · 고개를 숙이면서 얼굴 축도 기울어 pose01과 교체 시 위치가 튐 |
 | [seoyun_office_pose03_smile_v001.png](seoyun_office_pose03_smile_v001.png) | 한서윤 office_pose03 · smile | 부분 수정 | 0 | 평소보다 올라간 입꼬리가 보임 · 팔짱 자세는 유지하고 고개를 숙일 때의 얼굴 중심 이동 보정 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1493 · 기본 표정 대비 변경 영역 454,177,573,261 px · 고개를 숙이면서 얼굴 축도 기울어 pose01과 교체 시 위치가 튐 |
-| [seoyun_casual_pose01_blush_v001.png](seoyun_casual_pose01_blush_v001.png) | 한서윤 casual_pose01 · blush | 사용 후보 | 0 | 홍조가 보임 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1491 · 기본 표정 대비 변경 영역 460,167,582,245 px |
-| [seoyun_casual_pose01_neutral_v001.png](seoyun_casual_pose01_neutral_v001.png) | 한서윤 casual_pose01 · neutral | 사용 후보 | 1 | 대화 대기 표정으로 읽힘 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1491 |
-| [seoyun_casual_pose01_smile_v001.png](seoyun_casual_pose01_smile_v001.png) | 한서윤 casual_pose01 · smile | 사용 후보 | 0 | 평소보다 올라간 입꼬리가 보임 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1491 · 기본 표정 대비 변경 영역 460,167,582,245 px |
+| [seoyun_casual_pose01_blush_v001.png](seoyun_casual_pose01_blush_v001.png) | 한서윤 casual_pose01 · blush | v002로 대체(사복 디자인 변경) | 0 | 홍조가 보임 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1491 · 기본 표정 대비 변경 영역 460,167,582,245 px |
+| [seoyun_casual_pose01_neutral_v001.png](seoyun_casual_pose01_neutral_v001.png) | 한서윤 casual_pose01 · neutral | v002로 대체(사복 디자인 변경) | 1 | 대화 대기 표정으로 읽힘 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1491 |
+| [seoyun_casual_pose01_smile_v001.png](seoyun_casual_pose01_smile_v001.png) | 한서윤 casual_pose01 · smile | v002로 대체(사복 디자인 변경) | 0 | 평소보다 올라간 입꼬리가 보임 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1491 · 기본 표정 대비 변경 영역 460,167,582,245 px |
 | [seoyun_home_pose01_blush_v001.png](seoyun_home_pose01_blush_v001.png) | 한서윤 home_pose01 · blush | 사용 후보 | 0 | 홍조가 보임 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1490 · 기본 표정 대비 변경 영역 460,167,582,245 px |
 | [seoyun_home_pose01_neutral_v001.png](seoyun_home_pose01_neutral_v001.png) | 한서윤 home_pose01 · neutral | 사용 후보 | 1 | 대화 대기 표정으로 읽힘 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1490 |
 | [seoyun_home_pose01_smile_v001.png](seoyun_home_pose01_smile_v001.png) | 한서윤 home_pose01 · smile | 사용 후보 | 0 | 평소보다 올라간 입꼬리가 보임 · 납품 캔버스 1024×1536 → 2048×3072 필요 · 발 하단 y=1490 · 기본 표정 대비 변경 영역 459,167,582,245 px |
