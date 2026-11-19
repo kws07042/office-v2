@@ -1,5 +1,21 @@
 # 배경 낮판 후보 23장
 
+## v002 수정 후보 5장
+
+[v001·v002 전후 비교 사진](bg_fixes_v002.jpg)
+
+재생성 횟수는 각 v001 이후 새로 생성한 횟수다.
+
+| 파일 | 장소 | 재생성 횟수 | 남은 문제 | SHA-256 |
+|---|---|---:|---|---|
+| [bg_ria_home_day_v002.png](bg_ria_home_day_v002.png) | 리아의 원룸 | 1 | 시각 검수에서 발견된 문제 없음 | <code>9e342a04cc854abb4f5ee4c6b509b5803aa052cb68724c4178347a263c0bc06b</code> |
+| [bg_yujin_home_day_v002.png](bg_yujin_home_day_v002.png) | 유진의 원룸 | 1 | 시각 검수에서 발견된 문제 없음 | <code>246d01b23d2172668c55937e09d1aeb28f56bd88200aa9f592db2147508cabd3</code> |
+| [bg_seoyun_studio_day_v002.png](bg_seoyun_studio_day_v002.png) | 서윤의 작업실 겸 집 | 1 | 시각 검수에서 발견된 문제 없음 | <code>97a906859620c8174c90d0d880e7c1bd3b5a2a96fc46910890c214eff5f62c00</code> |
+| [bg_restaurant_day_v002.png](bg_restaurant_day_v002.png) | 동네 식당 겸 포차 | 1 | 시각 검수에서 발견된 문제 없음 | <code>0be95d28adddef934b0195b97d55efc606b096c6a666da3d2d019a1c617516b3</code> |
+| [bg_jihyun_home_day_v002.png](bg_jihyun_home_day_v002.png) | 지현의 아파트 | 1 | 시각 검수에서 발견된 문제 없음 | <code>994835a890ac1e2215426fe9b0f0c29782736643f3fe5547123f1161ce8fa7a9</code> |
+
+## v001 낮판 23장
+
 ![낮 배경 23장](bg_contact_sheet_v001.jpg)
 
 그림체 참조는 `claude/heroine-sprites`의 커밋 `9635af678eeeb8edd9d0df547805b8fbbcf8bf2a`에 있는 `Source/game/images/characters/ria/ria_office_pose01_neutral.png`이다. 2~23번에는 1번 사무실 완성본을 함께 사용했다.
