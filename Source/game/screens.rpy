@@ -117,45 +117,110 @@ screen story_header():
         if cream_preview_active:
             use cream_preview_controls
 
+init python:
+    DOC_OFFICE_WORDS = ("회사", "사무", "회의", "피칭", "클라이언트", "탕비", "옥상", "복도", "계단", "온빛", "팝업", "현장", "작업 공간", "공용")
+
+    def dialogue_doc_stamp():
+        place = getattr(renpy.store, "location", "") or ""
+        return "내부 메모" if any(w in place for w in DOC_OFFICE_WORDS) else "개인 메모"
+
+default dialogue_cg_mode = False
+default dialogue_cg_location = None
+
+init python:
+    def dialogue_cg_begin():
+        renpy.store.dialogue_cg_mode = True
+        renpy.store.dialogue_cg_location = getattr(renpy.store, "location", None)
+
+    def dialogue_cg_check():
+        # 친밀 장면이 끝나 장소가 바뀌면 평소 대화창으로 돌아간다.
+        st = renpy.store
+        if st.dialogue_cg_mode and getattr(st, "location", None) != st.dialogue_cg_location:
+            st.dialogue_cg_mode = False
+
+    config.start_interact_callbacks.append(dialogue_cg_check)
+
+# 대화창 — 평소(F): 웜그레이 업무 서류 반투명 판 + 와인 이름표 + 클립.
+#          친밀 장면(H): 판 없이 아래쪽 어두운 그라데이션 위에 짧은 대사만.
 screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
-    # 레이스 가장자리가 달린 종이 면. 창 자체의 배경은 비워 두고 면은 따로 그린다.
-    add silk("dialogue", size=(1280, 206)) xpos 0 ypos 514 at (silk_panel_in if silk_motion_on() else silk_still)
-    window:
-        at (silk_panel_in if silk_motion_on() else silk_still)
-        id "window"
-        xpos 0 ypos 552 xsize 1280 ysize 122
-        padding (96, 10, 96, 0)
-        background None
-        foreground None
-        text what:
-            id "what"
-            font "fonts/Pretendard-Regular.otf"
-            size 25
-            color "#3B0B22"
-            outlines []
-            xmaximum 1060
-            line_spacing 8
-            language "korean-with-spaces"
-            substitute use_substitution
-    if who:
-        frame:
-            at (silk_tag_in if silk_motion_on() else silk_still)
-            xpos 84 ypos 484 ysize 56
-            padding (30, 0, 35, 6)
-            background silk("tag", silk_tag_color(who))
-            hbox:
-                spacing 10 yalign 0.5
-                text who:
-                    id "who"
-                    font silk_title_font(who)
-                    size 27
-                    color "#FFFDFB"
-                    outlines []
-                    yalign 0.5
-                if silk_english(who):
-                    text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#FFFDFB" outlines [] yalign 0.7
-    if advance:
-        add silk("next", "#3B0B22", size=(14, 9)) xpos 1170 ypos 652 at (silk_next_bob if silk_motion_on() else silk_still)
+    if dialogue_cg_mode or event_cut_active:
+        add "gui/window/cg_scrim.png" xpos 0 ypos 530
+        textbutton "창 숨기기 · H" action HideInterface() background None hover_background None xanchor 1.0 xpos 1250 ypos 104 text_size 15 text_color "#E8C99A" text_hover_color "#FFFDFB" text_outlines [(1, "#14080E66", 0, 0)]
+        window:
+            id "window"
+            xpos 0 ypos 600 xsize 1280 ysize 110
+            padding (104, 0, 104, 0)
+            background None
+            foreground None
+            vbox:
+                spacing 4
+                if who:
+                    text who id "who" font silk_title_font(who) size 19 color "#E8C99A" outlines []
+                text what:
+                    id "what"
+                    font "fonts/Pretendard-Regular.otf"
+                    size 24
+                    color "#FBEFE6"
+                    outlines [(2, "#14080E99", 0, 1)]
+                    xmaximum 1060
+                    line_spacing 6
+                    language "korean-with-spaces"
+                    substitute use_substitution
+        if advance:
+            add silk("next", "#E8C99A", size=(14, 9)) xpos 1176 ypos 646 at (silk_next_bob if silk_motion_on() else silk_still)
+    else:
+        fixed:
+            at (silk_panel_in if silk_motion_on() else silk_still)
+            xpos 64 ypos 536 xysize (1152, 166)
+            add Solid("#14080E") xpos 4 ypos 6 xysize (1152, 166) alpha 0.18
+            add Solid("#EFE8E0") xysize (1152, 166) alpha 0.92
+            add Solid("#FFFFFF") xysize (1152, 1) alpha 0.5
+            add Solid("#B39462") xpos 72 ypos 132 xysize (1008, 1) alpha 0.85
+            text "온빛브랜딩 · 연말 피칭 TF" xanchor 1.0 xpos 1000 ypos 14 size 12 color "#9A8B80" kerning 1.5
+            frame:
+                xanchor 1.0 xpos 1100 ypos 10 padding (1, 1, 1, 1)
+                background Solid("#A2394F")
+                frame:
+                    padding (6, 0, 6, 1)
+                    background Solid("#EFE8E0")
+                    text dialogue_doc_stamp() size 12 color "#A2394F"
+            add "gui/window/paperclip.svg" xpos 28 ypos -34 xysize (26, 72) at Transform(rotate=-7)
+        window:
+            at (silk_panel_in if silk_motion_on() else silk_still)
+            id "window"
+            xpos 64 ypos 578 xsize 1152 ysize 100
+            padding (72, 0, 96, 0)
+            background None
+            foreground None
+            text what:
+                id "what"
+                font "fonts/Pretendard-Regular.otf"
+                size 25
+                color "#2F262B"
+                outlines []
+                xmaximum 980
+                line_spacing 8
+                language "korean-with-spaces"
+                substitute use_substitution
+        if who:
+            frame:
+                at (silk_tag_in if silk_motion_on() else silk_still)
+                xpos 156 ypos 508 ysize 52
+                padding (30, 0, 35, 6)
+                background silk("tag", "#6B1E34")
+                hbox:
+                    spacing 10 yalign 0.5
+                    text who:
+                        id "who"
+                        font silk_title_font(who)
+                        size 26
+                        color "#FBEFE6"
+                        outlines []
+                        yalign 0.5
+                    if silk_english(who):
+                        text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#E8C99A" outlines [] yalign 0.7
+        if advance:
+            add silk("next", "#6B1E34", size=(14, 9)) xpos 1150 ypos 650 at (silk_next_bob if silk_motion_on() else silk_still)
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
@@ -333,7 +398,7 @@ screen silk_quick_item(label, icon, target, ring=False):
 screen quick_menu():
     zorder 100
     if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
-        if not event_cut_active:
+        if not event_cut_active and not dialogue_cg_mode:
             hbox:
                 xanchor 1.0 xpos 1196 ypos 676 spacing 0
                 use silk_quick_item("되돌리기", "rollback", Rollback())
