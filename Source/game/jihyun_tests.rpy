@@ -130,7 +130,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -141,7 +141,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -152,7 +152,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -163,7 +163,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -174,7 +174,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -185,7 +185,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -196,7 +196,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -207,7 +207,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -218,7 +218,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -229,7 +229,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -240,7 +240,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -251,7 +251,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -262,7 +262,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -273,7 +273,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -284,7 +284,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -295,7 +295,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -306,7 +306,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -317,7 +317,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -328,7 +328,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -339,7 +339,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -350,7 +350,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -361,7 +361,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -372,7 +372,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -383,7 +383,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -394,7 +394,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -405,7 +405,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -416,7 +416,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -427,7 +427,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -438,7 +438,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -449,7 +449,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -460,7 +460,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -471,7 +471,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -482,7 +482,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -493,7 +493,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -504,7 +504,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -515,7 +515,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -526,7 +526,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -537,7 +537,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -548,7 +548,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -559,7 +559,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -570,7 +570,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -581,7 +581,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -592,7 +592,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -603,7 +603,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -614,7 +614,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -625,7 +625,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -636,7 +636,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -647,7 +647,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -658,7 +658,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -669,7 +669,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -680,7 +680,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -691,7 +691,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -702,7 +702,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -713,7 +713,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -724,7 +724,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -735,7 +735,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -746,7 +746,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -757,7 +757,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -768,7 +768,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -779,7 +779,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -790,7 +790,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -801,7 +801,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -812,7 +812,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -823,7 +823,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -834,7 +834,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -845,7 +845,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -856,7 +856,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -867,7 +867,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -878,7 +878,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -889,7 +889,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -900,7 +900,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -911,7 +911,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -922,7 +922,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -933,7 +933,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -944,7 +944,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -955,7 +955,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -966,7 +966,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -977,7 +977,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -988,7 +988,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -999,7 +999,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1010,7 +1010,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1021,7 +1021,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1032,7 +1032,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1043,7 +1043,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1054,7 +1054,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1065,7 +1065,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1076,7 +1076,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1087,7 +1087,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1098,7 +1098,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1109,7 +1109,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1120,7 +1120,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1131,7 +1131,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1142,7 +1142,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1153,7 +1153,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1164,7 +1164,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1175,7 +1175,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1186,7 +1186,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1197,7 +1197,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1208,7 +1208,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         if not eval yujin_test_menu_end():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("office_phone") is not None or renpy.get_screen("event_cut") is not None
@@ -1219,7 +1219,7 @@ testsuite jihyun04_checks:
                 if screen "office_phone":
                     click id ("phone_reply_"+renpy.get_screen("office_phone").scope["replies"][0][0])
                     click id "phone_next" until not screen "office_phone"
-            elif not eval yujin_test_menu_end():
+            elif eval renpy.get_screen("choice") is not None and not yujin_test_menu_end():
                 click expression jihyun_test_common_caption()
         assert eval yujin_test_menu_end()
         assert eval active_route == "jihyun" and memory["jihyun_intro"] == "evidence"
