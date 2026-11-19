@@ -4,403 +4,504 @@
  "files": {
   "images/characters/jihyun/jihyun_casual_pose01_blush.png": {
    "from": "jihyun_casual_pose01_blush_v003.png",
-   "sha256": "fed12c9502bff54e0900cfa3c58031496a92bd1e5756c1509ba930482ac96e3e"
+   "sha256": "8ca8f2e66b055a7412aaaacf72fd3afa05fa492e4fcc19b54e43decf96d3d432",
+   "source_sha256": "fed12c9502bff54e0900cfa3c58031496a92bd1e5756c1509ba930482ac96e3e"
   },
   "images/characters/jihyun/jihyun_casual_pose01_neutral.png": {
    "from": "jihyun_casual_pose01_neutral_v003.png",
-   "sha256": "aa1a6502b642b165ff9150189484b2a665e7bb8b7b4594ede5d881161224922a"
+   "sha256": "424f08225d946546f6a86fa29f9bd0346fbfccc96be478c9ca9ae10a687e3ae5",
+   "source_sha256": "aa1a6502b642b165ff9150189484b2a665e7bb8b7b4594ede5d881161224922a"
   },
   "images/characters/jihyun/jihyun_casual_pose01_smile.png": {
    "from": "jihyun_casual_pose01_smile_v003.png",
-   "sha256": "9d2800f5e8a4b55ab0416aa9aaad3c435ce384dcacd5e92bf478c883f6554209"
+   "sha256": "ff13707697e11bfa05a883165541309a9cf0fa10cbfbf14f138a8428f315c2a7",
+   "source_sha256": "9d2800f5e8a4b55ab0416aa9aaad3c435ce384dcacd5e92bf478c883f6554209"
   },
   "images/characters/jihyun/jihyun_home_pose01_blush.png": {
    "from": "jihyun_home_pose01_blush_v003.png",
-   "sha256": "54129d874dfa87022052dc0cf3db18e51dce100a7ae5b371c0680a83b67070ca"
+   "sha256": "cb324d61255ad5f86f847713b88de614dfe43feebcb355509e106eb2efc94ba7",
+   "source_sha256": "54129d874dfa87022052dc0cf3db18e51dce100a7ae5b371c0680a83b67070ca"
   },
   "images/characters/jihyun/jihyun_home_pose01_neutral.png": {
    "from": "jihyun_home_pose01_neutral_v003.png",
-   "sha256": "0d7f9f54f88068b8f5debe1789d097a2f7de75030559dc9966b2bc962bc17ad3"
+   "sha256": "1ebd70e08943d9ea063f083348deadfba83056df8cbc4af882f40e42973a3c67",
+   "source_sha256": "0d7f9f54f88068b8f5debe1789d097a2f7de75030559dc9966b2bc962bc17ad3"
   },
   "images/characters/jihyun/jihyun_home_pose01_smile.png": {
    "from": "jihyun_home_pose01_smile_v003.png",
-   "sha256": "c9bca204cdfdb27e05d73dc31adb98d3aca260628820e955892b227a120db380"
+   "sha256": "049d566ed52749b57c4c8941c9fbd27223fcfd0fcf6266bbb1308bf5a158a907",
+   "source_sha256": "c9bca204cdfdb27e05d73dc31adb98d3aca260628820e955892b227a120db380"
   },
   "images/characters/jihyun/jihyun_office_pose01_blush.png": {
    "from": "jihyun_office_pose01_blush_v003.png",
-   "sha256": "99ca3638c59bc9b2a1c22a7752fa3707095eb4cac7ea487e0b9f96ab08b11cc0"
+   "sha256": "e088259e19603c8e8920afe519be35031c05d33729121abebe2c8df2dddea76e",
+   "source_sha256": "99ca3638c59bc9b2a1c22a7752fa3707095eb4cac7ea487e0b9f96ab08b11cc0"
   },
   "images/characters/jihyun/jihyun_office_pose01_laugh.png": {
    "from": "jihyun_office_pose01_laugh_v003.png",
-   "sha256": "5716cc28bb4c991cbdfb6b0e10bc039660b8def5c28421082168fddf89fd795f"
+   "sha256": "000fbdc87fb490dd98f71d129247242a4edf4316477995440c6d8ee0eb73be97",
+   "source_sha256": "5716cc28bb4c991cbdfb6b0e10bc039660b8def5c28421082168fddf89fd795f"
   },
   "images/characters/jihyun/jihyun_office_pose01_neutral.png": {
    "from": "jihyun_office_pose01_neutral_v003.png",
-   "sha256": "b8a40a29e807efe9de522144cdf50cc8e4d5fe9daa85aa5402018b7a456d3347"
+   "sha256": "028ce26a70d3c423e6410dd5dc96e1459eb05c82ac320a03d20f655afadd7c22",
+   "source_sha256": "b8a40a29e807efe9de522144cdf50cc8e4d5fe9daa85aa5402018b7a456d3347"
   },
   "images/characters/jihyun/jihyun_office_pose01_pout.png": {
    "from": "jihyun_office_pose01_pout_v003.png",
-   "sha256": "523bac45744e5230743e4dd12efe2ef1766767d6b9c58845937ff0e5227f59dc"
+   "sha256": "47f49ecef3e2d823e303ab619e85c6a615951b73c444a75f2a6bcc7fad028e29",
+   "source_sha256": "523bac45744e5230743e4dd12efe2ef1766767d6b9c58845937ff0e5227f59dc"
   },
   "images/characters/jihyun/jihyun_office_pose01_sad.png": {
    "from": "jihyun_office_pose01_sad_v003.png",
-   "sha256": "8abecfb606c5a8b91ddfba6ba3186afa300a0b6aed118ff5410b6a3d27248dc3"
+   "sha256": "d131a6482a2e20af356bf6c589c8f6a029065b50db3993c774e215d31ccd4c99",
+   "source_sha256": "8abecfb606c5a8b91ddfba6ba3186afa300a0b6aed118ff5410b6a3d27248dc3"
   },
   "images/characters/jihyun/jihyun_office_pose01_serious.png": {
    "from": "jihyun_office_pose01_serious_v003.png",
-   "sha256": "84abee481c07f9256ffaf0a64ba0f709a24beaf0a7f6d5353fdf40cb64a02d14"
+   "sha256": "e593cfc979086df0bc876d95ed47776ffd3b8e35f3e7eb64d432016ff2afb749",
+   "source_sha256": "84abee481c07f9256ffaf0a64ba0f709a24beaf0a7f6d5353fdf40cb64a02d14"
   },
   "images/characters/jihyun/jihyun_office_pose01_smile.png": {
    "from": "jihyun_office_pose01_smile_v003.png",
-   "sha256": "311b12b8c4fc48692c0f08f3d57dd62a746f2284eec7be04ca4b7ab621e6134b"
+   "sha256": "fe0c353d062955c47c22f6f59040caf6a586be08afabbc2abc602279fd16651b",
+   "source_sha256": "311b12b8c4fc48692c0f08f3d57dd62a746f2284eec7be04ca4b7ab621e6134b"
   },
   "images/characters/jihyun/jihyun_office_pose01_surprise.png": {
    "from": "jihyun_office_pose01_surprise_v003.png",
-   "sha256": "2ec7f2e97f5c2d82476bfe52e1aa2f93e037a2463c8bdf05577747db5eed96d0"
+   "sha256": "1a48e86340f0a82fe06a3473ad38aa495589ee3f37e50f39e7cb569e0031bd7d",
+   "source_sha256": "2ec7f2e97f5c2d82476bfe52e1aa2f93e037a2463c8bdf05577747db5eed96d0"
   },
   "images/characters/jihyun/jihyun_office_pose02_blush.png": {
    "from": "jihyun_office_pose02_blush_v001.png",
-   "sha256": "95272a1f21a80ea081bcf89f39d1970e0d93ca5bfbce6bb2d1e66251a2f9adac"
+   "sha256": "ed76166534b399566f15ae207755604803c40bdec43cd52f503078ddb405eeff",
+   "source_sha256": "95272a1f21a80ea081bcf89f39d1970e0d93ca5bfbce6bb2d1e66251a2f9adac"
   },
   "images/characters/jihyun/jihyun_office_pose02_neutral.png": {
    "from": "jihyun_office_pose02_neutral_v001.png",
-   "sha256": "ea26918385ff6accc4997d810b58187b48de122b4a64db5cdf2ce717b0e0d204"
+   "sha256": "74fd7157245feffd16a9802589ddd45eece25224efb63b50bcb867c12ede88bd",
+   "source_sha256": "ea26918385ff6accc4997d810b58187b48de122b4a64db5cdf2ce717b0e0d204"
   },
   "images/characters/jihyun/jihyun_office_pose02_serious.png": {
    "from": "jihyun_office_pose02_serious_v001.png",
-   "sha256": "c3c0fa2adf40665f7d3499427ab288ff5d4dba127232fce4ca4a573676e44322"
+   "sha256": "da3bc75e1417b2dcd0de176326811dfd0dceba592d9a5c934c23bfc2d3ff9655",
+   "source_sha256": "c3c0fa2adf40665f7d3499427ab288ff5d4dba127232fce4ca4a573676e44322"
   },
   "images/characters/jihyun/jihyun_office_pose02_smile.png": {
    "from": "jihyun_office_pose02_smile_v001.png",
-   "sha256": "b351683fe7e0a1c1c1c1e18eb64ef2d6bed19dd089d392f44853e0291e3eb54f"
+   "sha256": "a3075733a7c816a2542005d37f8961f7af1149e5115c903d40d19a9d79fb15c8",
+   "source_sha256": "b351683fe7e0a1c1c1c1e18eb64ef2d6bed19dd089d392f44853e0291e3eb54f"
   },
   "images/characters/jihyun/jihyun_office_pose03_blush.png": {
    "from": "jihyun_office_pose03_blush_v001.png",
-   "sha256": "1e563f66c283bd9ed05bcba909a3899dced469e3b42ca148cfa984c2ab4af2c3"
+   "sha256": "393032bcafec10399d3321693597198839e52c1decb52cf7b5031c1e52294fc2",
+   "source_sha256": "1e563f66c283bd9ed05bcba909a3899dced469e3b42ca148cfa984c2ab4af2c3"
   },
   "images/characters/jihyun/jihyun_office_pose03_neutral.png": {
    "from": "jihyun_office_pose03_neutral_v001.png",
-   "sha256": "fd5eaaa58476e2dce7bbd80efbdbb68030aa8abdc7a0ad347d04e0f2c62ce463"
+   "sha256": "cce915dc56797a1df74864f42d7ed6ee958272d67653d373475154204303b2a6",
+   "source_sha256": "fd5eaaa58476e2dce7bbd80efbdbb68030aa8abdc7a0ad347d04e0f2c62ce463"
   },
   "images/characters/jihyun/jihyun_office_pose03_serious.png": {
    "from": "jihyun_office_pose03_serious_v001.png",
-   "sha256": "384f91e26ddbc4e645bf850b61d76029268d532de6e23d78911cf109bbad308b"
+   "sha256": "40b98de59520c63e2137a889c2c3499be7efe77eebe8d96a403ee9a84b69f7fd",
+   "source_sha256": "384f91e26ddbc4e645bf850b61d76029268d532de6e23d78911cf109bbad308b"
   },
   "images/characters/jihyun/jihyun_office_pose03_smile.png": {
    "from": "jihyun_office_pose03_smile_v001.png",
-   "sha256": "17f363a5fdb2b912c10a5278f19a6fae1e591ea96a76477ea862757581efae0d"
+   "sha256": "ed5391543726a6f46a077b65a4794212085b4d5162b33f06c7b9fd9beec690de",
+   "source_sha256": "17f363a5fdb2b912c10a5278f19a6fae1e591ea96a76477ea862757581efae0d"
   },
   "images/characters/jihyun/jihyun_winter_pose01_blush.png": {
    "from": "jihyun_winter_pose01_blush_v003.png",
-   "sha256": "8f4f6fcea3de9c742d134a151e0f36b7bf2dc038e0ad0c46236bf3535f13a0a5"
+   "sha256": "5dc040ea18d1d96a8087d98d725a24003718378020211ddc6416a99abe0a836a",
+   "source_sha256": "8f4f6fcea3de9c742d134a151e0f36b7bf2dc038e0ad0c46236bf3535f13a0a5"
   },
   "images/characters/jihyun/jihyun_winter_pose01_neutral.png": {
    "from": "jihyun_winter_pose01_neutral_v003.png",
-   "sha256": "d95187ba5e756fa205bb0137cb12d634961dfd26bacc63c8944c3518273dbf5e"
+   "sha256": "95f544434ca363db4910b0625519e26ab5a6acd3af11600c84070b371c48178c",
+   "source_sha256": "d95187ba5e756fa205bb0137cb12d634961dfd26bacc63c8944c3518273dbf5e"
   },
   "images/characters/jihyun/jihyun_winter_pose01_smile.png": {
    "from": "jihyun_winter_pose01_smile_v003.png",
-   "sha256": "2bb63f7ac280b343fdd2f55c252547c15480a4b76e3e052761032056cdb1c598"
+   "sha256": "ef9b9bd074da4853fd65da353ca3489a0b741578a8ab7925e066577c09e74ad2",
+   "source_sha256": "2bb63f7ac280b343fdd2f55c252547c15480a4b76e3e052761032056cdb1c598"
   },
   "images/characters/ria/ria_casual_pose01_blush.png": {
    "from": "ria_casual_pose01_blush_v003.png",
-   "sha256": "98c8c33770c9015c2ad167e8194e3c7418ecb2f3ade2376c44d4758d815d8c18"
+   "sha256": "b9a88d0d7dd4f00b644a70ffd3549bd492153801462262f2f16a28277ba02b6c",
+   "source_sha256": "98c8c33770c9015c2ad167e8194e3c7418ecb2f3ade2376c44d4758d815d8c18"
   },
   "images/characters/ria/ria_casual_pose01_neutral.png": {
    "from": "ria_casual_pose01_neutral_v002.png",
-   "sha256": "bde5e5ede72b669f8a5909b0fa7edacd2856a17896933f97abf8acb79bb2bb3e"
+   "sha256": "ec01b720594c956dae4cb1427cbba37af2685a6ce95312f5bf17695b503ffccc",
+   "source_sha256": "bde5e5ede72b669f8a5909b0fa7edacd2856a17896933f97abf8acb79bb2bb3e"
   },
   "images/characters/ria/ria_casual_pose01_smile.png": {
    "from": "ria_casual_pose01_smile_v002.png",
-   "sha256": "72fdb6aa21e157bd6c43bde68beaf20b203dc4fc54dc8d110cc5716f9adc2c25"
+   "sha256": "f0888bf66ef43a2db285961ce1e6fc33da8f2d787889833c0e0144631885bc59",
+   "source_sha256": "72fdb6aa21e157bd6c43bde68beaf20b203dc4fc54dc8d110cc5716f9adc2c25"
   },
   "images/characters/ria/ria_home_pose01_blush.png": {
    "from": "ria_home_pose01_blush_v003.png",
-   "sha256": "7b61722eb7be63ccfa53238b67df9e154e557ecaaf6e075778fefff8448c1b5c"
+   "sha256": "66ba9008ce593d294bf87b4be46b256d029cdd0be175c1ec1f213b588484909b",
+   "source_sha256": "7b61722eb7be63ccfa53238b67df9e154e557ecaaf6e075778fefff8448c1b5c"
   },
   "images/characters/ria/ria_home_pose01_neutral.png": {
    "from": "ria_home_pose01_neutral_v002.png",
-   "sha256": "18a4b69c4d3b73f98aa1e0607151d11130d467de9514fc51f96c8dc0b00aa40f"
+   "sha256": "cfcff8043a7bf90e1abbda54f3d25b9459da0ede48b6149f7386c8772fb4fadf",
+   "source_sha256": "18a4b69c4d3b73f98aa1e0607151d11130d467de9514fc51f96c8dc0b00aa40f"
   },
   "images/characters/ria/ria_home_pose01_smile.png": {
    "from": "ria_home_pose01_smile_v002.png",
-   "sha256": "c5a87b8f28e46d96cc3e6130ef1b4565a9b6fd8b53eee0ddbc2eed68b31e62d4"
+   "sha256": "c11638d849dd8d27e0da579a8cdf9c2771711fc6c7196c17f43fb79ffce587de",
+   "source_sha256": "c5a87b8f28e46d96cc3e6130ef1b4565a9b6fd8b53eee0ddbc2eed68b31e62d4"
   },
   "images/characters/ria/ria_office_pose01_blush.png": {
    "from": "ria_office_pose01_blush_v002.png",
-   "sha256": "92169263e1c86034d94e88b4abe0277705da0dd12099dd8e652c18b7bb1c1576"
+   "sha256": "6f6168b553ee6eb049f1d47fc4eb58f3dab4ae53c6a92bb6a0bd483c2ae2af3e",
+   "source_sha256": "92169263e1c86034d94e88b4abe0277705da0dd12099dd8e652c18b7bb1c1576"
   },
   "images/characters/ria/ria_office_pose01_laugh.png": {
    "from": "ria_office_pose01_laugh_v002.png",
-   "sha256": "2f81958a8ffbe1cb324b2fe7c38c494843effcd38210823a6aea89ec60c6a320"
+   "sha256": "fba857c328a5cbcc271f098e00dd92fc177868008686e6e448dd134734370d04",
+   "source_sha256": "2f81958a8ffbe1cb324b2fe7c38c494843effcd38210823a6aea89ec60c6a320"
   },
   "images/characters/ria/ria_office_pose01_neutral.png": {
    "from": "ria_office_pose01_neutral_v002.png",
-   "sha256": "5c22843452f67577130c76e770d68939d877b20e39ca4d677dc0b593759b7717"
+   "sha256": "f9b201e0fbd1a5807208ac6f3e25debb7b22af869a67a6a952204d215d261d7e",
+   "source_sha256": "5c22843452f67577130c76e770d68939d877b20e39ca4d677dc0b593759b7717"
   },
   "images/characters/ria/ria_office_pose01_pout.png": {
    "from": "ria_office_pose01_pout_v002.png",
-   "sha256": "5981e7bf89a922ac9d24f0009b739e64e1d03880c9e1cafa4d9a90dfaa6199de"
+   "sha256": "fb29493d0db61836a0412c7ede3aadc32cc75e8d53c52a415bee25814f23e8bb",
+   "source_sha256": "5981e7bf89a922ac9d24f0009b739e64e1d03880c9e1cafa4d9a90dfaa6199de"
   },
   "images/characters/ria/ria_office_pose01_sad.png": {
    "from": "ria_office_pose01_sad_v002.png",
-   "sha256": "520a1a98a44f9d073cacf9e62ef8fb55a94a357fc4524fc8a827611d8e98f5e0"
+   "sha256": "01bc32353198e31ba0b7e4ebcf4a1fd02203865ba65ea476406678258bfa1862",
+   "source_sha256": "520a1a98a44f9d073cacf9e62ef8fb55a94a357fc4524fc8a827611d8e98f5e0"
   },
   "images/characters/ria/ria_office_pose01_serious.png": {
    "from": "ria_office_pose01_serious_v002.png",
-   "sha256": "d9ce650d1bf2623ceefe0712b3ceca66b1ce8c97eb5b27105116bfbb6f0f0f0b"
+   "sha256": "ba2db39e9c09e98aab96cacf76177aa6f5dc3be68d4ca3586939214d7fbec0dc",
+   "source_sha256": "d9ce650d1bf2623ceefe0712b3ceca66b1ce8c97eb5b27105116bfbb6f0f0f0b"
   },
   "images/characters/ria/ria_office_pose01_smile.png": {
    "from": "ria_office_pose01_smile_v002.png",
-   "sha256": "7b69c15a433da1bf7f08415ff7645178151fbd2c67a1d98e41f7a23f36f6410c"
+   "sha256": "82b37e1dd9e829241a6a1ac19716c64f9e18fbb546af98502b09bdb8b1ab886b",
+   "source_sha256": "7b69c15a433da1bf7f08415ff7645178151fbd2c67a1d98e41f7a23f36f6410c"
   },
   "images/characters/ria/ria_office_pose01_surprise.png": {
    "from": "ria_office_pose01_surprise_v002.png",
-   "sha256": "64147cf162446bb5352c8851a64a86441ab2a4a1438e2b2deca667b941b3ce47"
+   "sha256": "8ab3bb758f79a06251c8668b598492246ee5de673c314b9d3e09c564f4a5b075",
+   "source_sha256": "64147cf162446bb5352c8851a64a86441ab2a4a1438e2b2deca667b941b3ce47"
   },
   "images/characters/ria/ria_office_pose02_blush.png": {
    "from": "ria_office_pose02_blush_v003.png",
-   "sha256": "ce3fb49d2018c1c486614a5837d9025aeb304e2fea8f861e0fbba0cb4d1bb877"
+   "sha256": "8d08a9fa06be754dffcee946fd2fbc8a620fed2501dc50bb4d3d8afd0fbc1109",
+   "source_sha256": "ce3fb49d2018c1c486614a5837d9025aeb304e2fea8f861e0fbba0cb4d1bb877"
   },
   "images/characters/ria/ria_office_pose02_neutral.png": {
    "from": "ria_office_pose02_neutral_v002.png",
-   "sha256": "33f3adc02e60fffa9b3a9bb4f87a0126ff1fd4b00ce9cfc790a64cbf0b4de5ec"
+   "sha256": "34827f0133e15bb19327536e39e7cf03642b4f075d44a58392b5e7ffc6703048",
+   "source_sha256": "33f3adc02e60fffa9b3a9bb4f87a0126ff1fd4b00ce9cfc790a64cbf0b4de5ec"
   },
   "images/characters/ria/ria_office_pose02_serious.png": {
    "from": "ria_office_pose02_serious_v002.png",
-   "sha256": "9727501ed29f5a32145adfd4999ab346c4b9bd4d35b296fffa11bec951262971"
+   "sha256": "5748ab35541f60f0b4f731b21b9c5026e0fe3494a7fd04f5adcb6b425c5dbafd",
+   "source_sha256": "9727501ed29f5a32145adfd4999ab346c4b9bd4d35b296fffa11bec951262971"
   },
   "images/characters/ria/ria_office_pose02_smile.png": {
    "from": "ria_office_pose02_smile_v002.png",
-   "sha256": "b5bbfad9b86f3109284a10fc3ec46fc9d7385948ab7ed289a47c036aad45fab2"
+   "sha256": "ed91b4f6cda686c3e71757eaec5048389ea4930ba45195f94906978ff98b4400",
+   "source_sha256": "b5bbfad9b86f3109284a10fc3ec46fc9d7385948ab7ed289a47c036aad45fab2"
   },
   "images/characters/ria/ria_office_pose03_blush.png": {
    "from": "ria_office_pose03_blush_v003.png",
-   "sha256": "245d92a07329621c74690cfb9814d4e6149c516167d4184b983ce6d1f7741d9f"
+   "sha256": "02cfdf366c662271fa8a2fb83d13631c3e24d9c680fe1da254ba38daf2b9e96a",
+   "source_sha256": "245d92a07329621c74690cfb9814d4e6149c516167d4184b983ce6d1f7741d9f"
   },
   "images/characters/ria/ria_office_pose03_neutral.png": {
    "from": "ria_office_pose03_neutral_v003.png",
-   "sha256": "fb6e0b357c4ebfa2549030fc551161d9dabc54b8c38d7cce6f801893b8c2ebb6"
+   "sha256": "c22c02192f857aa15df04788ef2f0d73d1eaf4ae7d919c0baddf89d5535b7806",
+   "source_sha256": "fb6e0b357c4ebfa2549030fc551161d9dabc54b8c38d7cce6f801893b8c2ebb6"
   },
   "images/characters/ria/ria_office_pose03_serious.png": {
    "from": "ria_office_pose03_serious_v003.png",
-   "sha256": "5c73a1527d2038e3a717415e974aec5331ca9839553d7275bf5faba668896e51"
+   "sha256": "0b70c6756e52793dfb6729ee7d9537ceeda1d866de0f69015a3e70478b45ab1a",
+   "source_sha256": "5c73a1527d2038e3a717415e974aec5331ca9839553d7275bf5faba668896e51"
   },
   "images/characters/ria/ria_office_pose03_smile.png": {
    "from": "ria_office_pose03_smile_v003.png",
-   "sha256": "10012f3a6500f1e3e42770cdc252e66d260fd85731c6a663651083907c0b21af"
+   "sha256": "ccdf991d2e78587b6e1604e1ca76b3729b0f5ea2c0e32acd37bcc8c11f1c61f4",
+   "source_sha256": "10012f3a6500f1e3e42770cdc252e66d260fd85731c6a663651083907c0b21af"
   },
   "images/characters/ria/ria_winter_pose01_blush.png": {
    "from": "ria_winter_pose01_blush_v003.png",
-   "sha256": "b426f6bd772f037f17eefc5e803533455d8cb47c449628704727ef6e0f53d4f9"
+   "sha256": "9e6021eb5a5049ae87db31a3859ab76b33fd9a03f1fbc92669e396ffb1cc33f8",
+   "source_sha256": "b426f6bd772f037f17eefc5e803533455d8cb47c449628704727ef6e0f53d4f9"
   },
   "images/characters/ria/ria_winter_pose01_neutral.png": {
    "from": "ria_winter_pose01_neutral_v002.png",
-   "sha256": "978946f4338971e079077afb261f458ea2eee73ff0ec19569ac1860a4484f366"
+   "sha256": "2cb011588d7612ceb3ad566bdb8ccc9884eab37110ab69eaa3094c74bbde9c1d",
+   "source_sha256": "978946f4338971e079077afb261f458ea2eee73ff0ec19569ac1860a4484f366"
   },
   "images/characters/ria/ria_winter_pose01_smile.png": {
    "from": "ria_winter_pose01_smile_v002.png",
-   "sha256": "c7694fbbdfe90eb0a461472d53403bb6f387a66217966b749c8fce42a61fd701"
+   "sha256": "000e7bd8fac33020d3334013408193b8713513929b855cb911faa6cca20d45db",
+   "source_sha256": "c7694fbbdfe90eb0a461472d53403bb6f387a66217966b749c8fce42a61fd701"
   },
   "images/characters/seoyun/seoyun_casual_pose01_blush.png": {
    "from": "seoyun_casual_pose01_blush_v001.png",
-   "sha256": "eac12af6c64c2eace6f3713bec3d2a3ff3102aff9d5b70d1999151efe0c1e311"
+   "sha256": "35ed07d2e2e688d9c5705e05960af4aa0ac2313f24a65525600f0afd52dbb29b",
+   "source_sha256": "eac12af6c64c2eace6f3713bec3d2a3ff3102aff9d5b70d1999151efe0c1e311"
   },
   "images/characters/seoyun/seoyun_casual_pose01_neutral.png": {
    "from": "seoyun_casual_pose01_neutral_v001.png",
-   "sha256": "188cb55d511001885f009c34677cf502cac157b193d0dff1d1e9080c58768179"
+   "sha256": "45be987d0f8738661803ffda0c040adeb537d8b72cd7fdb9335ebda83ce1abe6",
+   "source_sha256": "188cb55d511001885f009c34677cf502cac157b193d0dff1d1e9080c58768179"
   },
   "images/characters/seoyun/seoyun_casual_pose01_smile.png": {
    "from": "seoyun_casual_pose01_smile_v001.png",
-   "sha256": "2df9b758c6e62f423e35894b4c4f1a8c3c20412f520028739db18a210c969175"
+   "sha256": "32c2962c2e6827d414c6edaae358d6ab4251fc878c69ce61d992a77b6113c8fc",
+   "source_sha256": "2df9b758c6e62f423e35894b4c4f1a8c3c20412f520028739db18a210c969175"
   },
   "images/characters/seoyun/seoyun_home_pose01_blush.png": {
    "from": "seoyun_home_pose01_blush_v001.png",
-   "sha256": "49684686b1fb59aea7d187245b1064eb50c7f36980333c44f67fd8f13545b83e"
+   "sha256": "c2781667dad0e81b54dfa0d6fa1be2bb75f83168981f00cf677208c5f56a23fb",
+   "source_sha256": "49684686b1fb59aea7d187245b1064eb50c7f36980333c44f67fd8f13545b83e"
   },
   "images/characters/seoyun/seoyun_home_pose01_neutral.png": {
    "from": "seoyun_home_pose01_neutral_v001.png",
-   "sha256": "94c512c31de71b4b07ec957933e8897c5c430960cda77f6fbcc246ea2dfe4dee"
+   "sha256": "675e852c33c98bc85ef32ee0ef58aef7e8dc585399d99972797cb5914b113b0b",
+   "source_sha256": "94c512c31de71b4b07ec957933e8897c5c430960cda77f6fbcc246ea2dfe4dee"
   },
   "images/characters/seoyun/seoyun_home_pose01_smile.png": {
    "from": "seoyun_home_pose01_smile_v001.png",
-   "sha256": "6231c1c8b67ca14b2109b947f02676c1710fe12fd685cf2469451dbf226bf8a6"
+   "sha256": "17a99a77e56d5c15c41215820ae8caf89830fd8e9f700900c22c8d28613e286f",
+   "source_sha256": "6231c1c8b67ca14b2109b947f02676c1710fe12fd685cf2469451dbf226bf8a6"
   },
   "images/characters/seoyun/seoyun_office_pose01_blush.png": {
    "from": "seoyun_office_pose01_blush_v001.png",
-   "sha256": "07c9430bbd379fe0abdbbb0a3a3a2fc8aba89e647ae6b528e9cf8e63d319e7c1"
+   "sha256": "1a3b890889f8f4003d2ac09f56555a8529482ed9e5deb645944a756e62cfcb22",
+   "source_sha256": "07c9430bbd379fe0abdbbb0a3a3a2fc8aba89e647ae6b528e9cf8e63d319e7c1"
   },
   "images/characters/seoyun/seoyun_office_pose01_laugh.png": {
    "from": "seoyun_office_pose01_laugh_v001.png",
-   "sha256": "78457b228c7b1996c038d6d15f358fd4bb6b20ba74cc70003230f178657bc642"
+   "sha256": "ce046ddc91d17d7c67213ed3bb6c466affb5776ee05616cac91d15c981268368",
+   "source_sha256": "78457b228c7b1996c038d6d15f358fd4bb6b20ba74cc70003230f178657bc642"
   },
   "images/characters/seoyun/seoyun_office_pose01_neutral.png": {
    "from": "seoyun_office_pose01_neutral_v001.png",
-   "sha256": "40a3a6d40fecc9dc432274e0061842f14ff5bbf520c5e20bd49393fc125dc8b4"
+   "sha256": "d2815b5e30b321b164665f6194cdce95a76a89c1d84de992c684df3f09bc9a41",
+   "source_sha256": "40a3a6d40fecc9dc432274e0061842f14ff5bbf520c5e20bd49393fc125dc8b4"
   },
   "images/characters/seoyun/seoyun_office_pose01_pout.png": {
    "from": "seoyun_office_pose01_pout_v002.png",
-   "sha256": "25d791fa09957433931ef2580059d4491ef92eed4f9fdc443c55488fda29e465"
+   "sha256": "05aa0ebb9571e2219287ab6a1ea4294b279cafbb2e78fb1013ff7c326876bb57",
+   "source_sha256": "25d791fa09957433931ef2580059d4491ef92eed4f9fdc443c55488fda29e465"
   },
   "images/characters/seoyun/seoyun_office_pose01_sad.png": {
    "from": "seoyun_office_pose01_sad_v001.png",
-   "sha256": "e05973551141e3fa6a5211078dee71dee3a1e4f7f984d50ee415e963d830068a"
+   "sha256": "3bd32a69fce7ab7a0a0a306ccd067cfecac59919c5bd8948c02cfb87c121b2a2",
+   "source_sha256": "e05973551141e3fa6a5211078dee71dee3a1e4f7f984d50ee415e963d830068a"
   },
   "images/characters/seoyun/seoyun_office_pose01_serious.png": {
    "from": "seoyun_office_pose01_serious_v001.png",
-   "sha256": "60691e83782721f5ce3c14e8b7eb129036eb68067475f173545af94ae7c44788"
+   "sha256": "a6b5116300ebe5742116b3b1b27705060d987521fab9138eca0d8649ea6cd918",
+   "source_sha256": "60691e83782721f5ce3c14e8b7eb129036eb68067475f173545af94ae7c44788"
   },
   "images/characters/seoyun/seoyun_office_pose01_smile.png": {
    "from": "seoyun_office_pose01_smile_v001.png",
-   "sha256": "9febc371f78304f078603c847dc59951bf5b9e5afc40937d8b412df7f8ec481e"
+   "sha256": "32daf01b016a4b8c2c58f3b6389b6897f6937a75dbd6af655b281b77ffeb21fb",
+   "source_sha256": "9febc371f78304f078603c847dc59951bf5b9e5afc40937d8b412df7f8ec481e"
   },
   "images/characters/seoyun/seoyun_office_pose01_surprise.png": {
    "from": "seoyun_office_pose01_surprise_v002.png",
-   "sha256": "3d576243617b0f18d2a628ccf68623dc45f7ec4003d2e255f6a47e90bdde717c"
+   "sha256": "d5734280fccb62d46443964b15730bf096d4a4b1c1864d7e522bbdc1b69d59ac",
+   "source_sha256": "3d576243617b0f18d2a628ccf68623dc45f7ec4003d2e255f6a47e90bdde717c"
   },
   "images/characters/seoyun/seoyun_office_pose02_blush.png": {
    "from": "seoyun_office_pose02_blush_v001.png",
-   "sha256": "b5c7a0f4104aa9e0e70795fd8987abe99890a6fc22cfa34d8709a2829ebb0b8f"
+   "sha256": "67b00d8f0bf9b9a08bec468f43694d30577fff61ec7f69222a1e334c0fed885b",
+   "source_sha256": "b5c7a0f4104aa9e0e70795fd8987abe99890a6fc22cfa34d8709a2829ebb0b8f"
   },
   "images/characters/seoyun/seoyun_office_pose02_neutral.png": {
    "from": "seoyun_office_pose02_neutral_v001.png",
-   "sha256": "64bd10fd0f57e657d06b33e55a1c5dcb6cc7a5036edea420ca8b5c17f4e572a7"
+   "sha256": "49b20184c878e5e91a69f6ebc436a8070d6d8423c270e48a16a85e1a88875128",
+   "source_sha256": "64bd10fd0f57e657d06b33e55a1c5dcb6cc7a5036edea420ca8b5c17f4e572a7"
   },
   "images/characters/seoyun/seoyun_office_pose02_serious.png": {
    "from": "seoyun_office_pose02_serious_v001.png",
-   "sha256": "cc10b6d7cac7bea1931007a9bdfcee53f40eebe0b664d17e0381714fc68e7a3d"
+   "sha256": "8cd69c1c370b74ccbc7230b3d184edf9fcd3b7fe35a78f2826348dff72bba94a",
+   "source_sha256": "cc10b6d7cac7bea1931007a9bdfcee53f40eebe0b664d17e0381714fc68e7a3d"
   },
   "images/characters/seoyun/seoyun_office_pose02_smile.png": {
    "from": "seoyun_office_pose02_smile_v001.png",
-   "sha256": "158d10dcdc2c10ee0d620608e8e215554ef82c104226d6a47b1ec950f2738787"
+   "sha256": "c867d1e75d7315f7ca0d0d395c603fc8fe97d56864b033ce13d9a3b56e9b2e5d",
+   "source_sha256": "158d10dcdc2c10ee0d620608e8e215554ef82c104226d6a47b1ec950f2738787"
   },
   "images/characters/seoyun/seoyun_office_pose03_blush.png": {
    "from": "seoyun_office_pose03_blush_v001.png",
-   "sha256": "0eea62550fce33225bd2b9f62f7473305b1b2115d67fa0f0374d133f56ea5730"
+   "sha256": "566cdd9d41e1532b4971d0947c40a48e6e75db7b57234972b24fd108e534afb4",
+   "source_sha256": "0eea62550fce33225bd2b9f62f7473305b1b2115d67fa0f0374d133f56ea5730"
   },
   "images/characters/seoyun/seoyun_office_pose03_neutral.png": {
    "from": "seoyun_office_pose03_neutral_v001.png",
-   "sha256": "725109f3960f981b801e3ec91b1fbc505614b9cb5f5cb7635f9c1d625ad5f5a2"
+   "sha256": "841a77205f466631fb4fc120b7d8dbfba60143a348fa2d4a6f1c5c672be65151",
+   "source_sha256": "725109f3960f981b801e3ec91b1fbc505614b9cb5f5cb7635f9c1d625ad5f5a2"
   },
   "images/characters/seoyun/seoyun_office_pose03_serious.png": {
    "from": "seoyun_office_pose03_serious_v001.png",
-   "sha256": "ce1206a48a3bca54749d52b5129f339aaaab0e2b375ad0c070ad2e142de27902"
+   "sha256": "98d218cce9cf52c8c945f83a4603c0c945606cd4b7a9b942495d67b83b7471b6",
+   "source_sha256": "ce1206a48a3bca54749d52b5129f339aaaab0e2b375ad0c070ad2e142de27902"
   },
   "images/characters/seoyun/seoyun_office_pose03_smile.png": {
    "from": "seoyun_office_pose03_smile_v001.png",
-   "sha256": "88ff5af55534e0f8d022a2f112373896085182bdf494825ba4258dafb9b08d8f"
+   "sha256": "d963c01e28a798611f9b3fde41c5196dfb36bed44947dd042a968cbb8f712fb6",
+   "source_sha256": "88ff5af55534e0f8d022a2f112373896085182bdf494825ba4258dafb9b08d8f"
   },
   "images/characters/seoyun/seoyun_winter_pose01_blush.png": {
    "from": "seoyun_winter_pose01_blush_v001.png",
-   "sha256": "81c2c3164c90bca44050ce44afd5e2c8b5d0178d2ffbc84e90f7c7b08979f8ff"
+   "sha256": "5c3192e06648f082612680a04606d305f7eb7c94421c29e4af104680dea95bac",
+   "source_sha256": "81c2c3164c90bca44050ce44afd5e2c8b5d0178d2ffbc84e90f7c7b08979f8ff"
   },
   "images/characters/seoyun/seoyun_winter_pose01_neutral.png": {
    "from": "seoyun_winter_pose01_neutral_v001.png",
-   "sha256": "a5752c69984bfe3d485e8c8435c4acec1784de7fc4f2b7f5e484771ef9e822cc"
+   "sha256": "72de976a33cb31094bd3440c83585cce4c0b476535c65553b889d62c5926d8f5",
+   "source_sha256": "a5752c69984bfe3d485e8c8435c4acec1784de7fc4f2b7f5e484771ef9e822cc"
   },
   "images/characters/seoyun/seoyun_winter_pose01_smile.png": {
    "from": "seoyun_winter_pose01_smile_v001.png",
-   "sha256": "43828e812fef8d3f7688979e572553ae8d1c4cf6732474ecd9999cdef9f8dfdd"
+   "sha256": "77b2209ee3f6927bac90c9333470d063229bd664e2c174353149625903b50a1c",
+   "source_sha256": "43828e812fef8d3f7688979e572553ae8d1c4cf6732474ecd9999cdef9f8dfdd"
   },
   "images/characters/yujin/yujin_casual_pose01_blush.png": {
    "from": "yujin_casual_pose01_blush_v001.png",
-   "sha256": "e6c8a186b4b84d94e1c4b5b96b2f5712472fbf7dd82cf2654dd31a652886c172"
+   "sha256": "86acd723bd3d45ab02899b6b63912917ba5708a869c695871d681ac667422bd1",
+   "source_sha256": "e6c8a186b4b84d94e1c4b5b96b2f5712472fbf7dd82cf2654dd31a652886c172"
   },
   "images/characters/yujin/yujin_casual_pose01_neutral.png": {
    "from": "yujin_casual_pose01_neutral_v001.png",
-   "sha256": "8943ca51bdb2ed9c308e5ae5c1d1fed9fd98c1a766ab4e34bdde679fccdda884"
+   "sha256": "7b818c6e4c76c4739035de77cbd7de3c2f76d3bdeb15f7c193e863c4cd18af58",
+   "source_sha256": "8943ca51bdb2ed9c308e5ae5c1d1fed9fd98c1a766ab4e34bdde679fccdda884"
   },
   "images/characters/yujin/yujin_casual_pose01_smile.png": {
    "from": "yujin_casual_pose01_smile_v001.png",
-   "sha256": "7d4e3e74ffbe535ccb3c2ef8e99e2021c6dcf5d89d18ff58c9e563d7c08ea193"
+   "sha256": "b2fa7b210ea23e6c07a3e7361bc1f4e1967f2c3f3df97ee52ccfb15d8ed4308d",
+   "source_sha256": "7d4e3e74ffbe535ccb3c2ef8e99e2021c6dcf5d89d18ff58c9e563d7c08ea193"
   },
   "images/characters/yujin/yujin_home_pose01_blush.png": {
    "from": "yujin_home_pose01_blush_v002.png",
-   "sha256": "8a30c6b308bc7851af1910476c95c4cf5db66c05ce4202a78074ecbd245c0cdf"
+   "sha256": "1e122ba01d0c9fb663c8b8bb211ece00e2cdcf78a093e240f48f540c1594a62c",
+   "source_sha256": "8a30c6b308bc7851af1910476c95c4cf5db66c05ce4202a78074ecbd245c0cdf"
   },
   "images/characters/yujin/yujin_home_pose01_neutral.png": {
    "from": "yujin_home_pose01_neutral_v002.png",
-   "sha256": "ee885d935ea25b0396a51d2e090d512ab49d3be43284dec25c64f5f2dc0efcfd"
+   "sha256": "504226988068e6bb2da69941da55bf49a1a37e52b0325f92b633b4aafe2c9f18",
+   "source_sha256": "ee885d935ea25b0396a51d2e090d512ab49d3be43284dec25c64f5f2dc0efcfd"
   },
   "images/characters/yujin/yujin_home_pose01_smile.png": {
    "from": "yujin_home_pose01_smile_v002.png",
-   "sha256": "8ea2a84ae964c767c076c7d924521b16f107f18422a8c71f51201b45251874e8"
+   "sha256": "9fd0168a3c2b2dc5d15f77e811c786426cbe020bf90511c912fc172568466cf6",
+   "source_sha256": "8ea2a84ae964c767c076c7d924521b16f107f18422a8c71f51201b45251874e8"
   },
   "images/characters/yujin/yujin_office_pose01_blush.png": {
    "from": "yujin_office_pose01_blush_v001.png",
-   "sha256": "a05118f644004c5673e8b4b16c60a48631cbad1b6809d7439c2648821b3f2f0c"
+   "sha256": "48d9acafa30d6e14b400f54cb5aad2f279b8e5d7ccb9ca4c7f49d7212934a972",
+   "source_sha256": "a05118f644004c5673e8b4b16c60a48631cbad1b6809d7439c2648821b3f2f0c"
   },
   "images/characters/yujin/yujin_office_pose01_laugh.png": {
    "from": "yujin_office_pose01_laugh_v001.png",
-   "sha256": "1067936513d2c6ae5cbeface44a17918b610eb6d4b9fddcb6a798e8f56c16110"
+   "sha256": "fe85c1ceb74f4c94a1678f673e55c28703cd3936982a668b47eb60ab1bb0727d",
+   "source_sha256": "1067936513d2c6ae5cbeface44a17918b610eb6d4b9fddcb6a798e8f56c16110"
   },
   "images/characters/yujin/yujin_office_pose01_neutral.png": {
    "from": "yujin_office_pose01_neutral_v001.png",
-   "sha256": "fa3e0b866e4ef85a9fdcf054108d92ba10bf68e6716a31a5b05db6287d652b6b"
+   "sha256": "e17de11f475ca7a07e4162f55507a9e03937a63e43f6423dd24bbd79f78dcde5",
+   "source_sha256": "fa3e0b866e4ef85a9fdcf054108d92ba10bf68e6716a31a5b05db6287d652b6b"
   },
   "images/characters/yujin/yujin_office_pose01_pout.png": {
    "from": "yujin_office_pose01_pout_v001.png",
-   "sha256": "daee4a47f9174c1f623da399633ebbde8ab8a80f1a2dc8fdf689e351d901d2ca"
+   "sha256": "d966939598692e2c549effc0c55cf82505a4305c5d61fdb979cbe1f882749f85",
+   "source_sha256": "daee4a47f9174c1f623da399633ebbde8ab8a80f1a2dc8fdf689e351d901d2ca"
   },
   "images/characters/yujin/yujin_office_pose01_sad.png": {
    "from": "yujin_office_pose01_sad_v001.png",
-   "sha256": "4cd21f5af6924faefbec7e4f035e646c3880cb04f235b2d69b362bcfc006116c"
+   "sha256": "14849dcff1450067e19af6dba0a6af2bddfda35506befda3e6af279395eb04a2",
+   "source_sha256": "4cd21f5af6924faefbec7e4f035e646c3880cb04f235b2d69b362bcfc006116c"
   },
   "images/characters/yujin/yujin_office_pose01_serious.png": {
    "from": "yujin_office_pose01_serious_v002.png",
-   "sha256": "e52f9cc4a1e37960a81340860f8d77abc66c1634541a14f25735a6c6f4cd536b"
+   "sha256": "61e29e0c1e56646800e8d8d768a1111c30f20fd03d145ce51fe1b66ae15bf494",
+   "source_sha256": "e52f9cc4a1e37960a81340860f8d77abc66c1634541a14f25735a6c6f4cd536b"
   },
   "images/characters/yujin/yujin_office_pose01_smile.png": {
    "from": "yujin_office_pose01_smile_v001.png",
-   "sha256": "3b2fa95ae3d61deb8f59460ae483b8a717cb6d16729b11f487e2a98720f98f6e"
+   "sha256": "ad4349d4de3fe109180ad5698dc240a2d9281d83df747b7b3bd51bc1c1028e46",
+   "source_sha256": "3b2fa95ae3d61deb8f59460ae483b8a717cb6d16729b11f487e2a98720f98f6e"
   },
   "images/characters/yujin/yujin_office_pose01_surprise.png": {
    "from": "yujin_office_pose01_surprise_v001.png",
-   "sha256": "872fab41dab33a54d9720c253deb62c74999452cf9ef5285903eeadc7d2db510"
+   "sha256": "d1f31719892f7ee820424a95fe2beccf5fef0004547d40a5d904c2891ad5dbda",
+   "source_sha256": "872fab41dab33a54d9720c253deb62c74999452cf9ef5285903eeadc7d2db510"
   },
   "images/characters/yujin/yujin_office_pose02_blush.png": {
    "from": "yujin_office_pose02_blush_v001.png",
-   "sha256": "4d842fc3245f16deed8066e1f3ec201ec4913ee9396ad7e1399000afdb833079"
+   "sha256": "490ce367bb113940117d7c9dcc488b70bef6178b78694a31b8f47c78395c4a1a",
+   "source_sha256": "4d842fc3245f16deed8066e1f3ec201ec4913ee9396ad7e1399000afdb833079"
   },
   "images/characters/yujin/yujin_office_pose02_neutral.png": {
    "from": "yujin_office_pose02_neutral_v001.png",
-   "sha256": "7c6a9b307d1085e83ad4834dcea9f77ec4f7273102ebc745e5cf04fa000bd33a"
+   "sha256": "d8ed4b1c18c891050672f6cd5b7bd1a51655dff464630273ab8b6b75e2267b98",
+   "source_sha256": "7c6a9b307d1085e83ad4834dcea9f77ec4f7273102ebc745e5cf04fa000bd33a"
   },
   "images/characters/yujin/yujin_office_pose02_serious.png": {
    "from": "yujin_office_pose02_serious_v002.png",
-   "sha256": "472da640616c481305a9ac1a33dd9dfb0bc7b4f6b256e4c2fa9ebc145947429d"
+   "sha256": "7c410891995eb8b74a53c630555b7357690a6d26882503ef3f66e5ab5c7f6787",
+   "source_sha256": "472da640616c481305a9ac1a33dd9dfb0bc7b4f6b256e4c2fa9ebc145947429d"
   },
   "images/characters/yujin/yujin_office_pose02_smile.png": {
    "from": "yujin_office_pose02_smile_v001.png",
-   "sha256": "67d7a02df7dc062c87f4ce8a366e877bf4b970a14ac096cf10e2ee4a5e1e69f2"
+   "sha256": "d0184311986b4d73865b6755fdd8be6f952741c22b7b3c0ced50fbd0a7fcf12d",
+   "source_sha256": "67d7a02df7dc062c87f4ce8a366e877bf4b970a14ac096cf10e2ee4a5e1e69f2"
   },
   "images/characters/yujin/yujin_office_pose03_blush.png": {
    "from": "yujin_office_pose03_blush_v001.png",
-   "sha256": "fdd8374fb45562d0b55445ae0b8ecd11b1a1bbc2eb7ea435396d356aba492d4f"
+   "sha256": "8826a4c482e9f55d7d8cf4ac5258199f76037c8123d2a4b14ea8beb2d335d8b7",
+   "source_sha256": "fdd8374fb45562d0b55445ae0b8ecd11b1a1bbc2eb7ea435396d356aba492d4f"
   },
   "images/characters/yujin/yujin_office_pose03_neutral.png": {
    "from": "yujin_office_pose03_neutral_v001.png",
-   "sha256": "2a15b8b0be61ec0883e34848c1e3cf64322c0b008d99e1ea2af75f2608a738f3"
+   "sha256": "0ac981abd29513414e3af34680e0e5039fe9e1eab46336e0f26d431610036e48",
+   "source_sha256": "2a15b8b0be61ec0883e34848c1e3cf64322c0b008d99e1ea2af75f2608a738f3"
   },
   "images/characters/yujin/yujin_office_pose03_serious.png": {
    "from": "yujin_office_pose03_serious_v002.png",
-   "sha256": "ac5126362467f5db1c7407c8078c4d01081d0505bdffbb4524e9d6933c546ab3"
+   "sha256": "b2bde2d304ef5728b060aebe76ebb668f5504d9ea540d21e74b130eec5cc8ff5",
+   "source_sha256": "ac5126362467f5db1c7407c8078c4d01081d0505bdffbb4524e9d6933c546ab3"
   },
   "images/characters/yujin/yujin_office_pose03_smile.png": {
    "from": "yujin_office_pose03_smile_v001.png",
-   "sha256": "00fa779ddf20c3a70de450616b49f0496bcd3149c889a6b79b4f9ee8f0b416a5"
+   "sha256": "5a0fe63cb85db4147c09900dcae3bb95d4749bc71e7b5cc72ff9c3e15daafa5d",
+   "source_sha256": "00fa779ddf20c3a70de450616b49f0496bcd3149c889a6b79b4f9ee8f0b416a5"
   },
   "images/characters/yujin/yujin_winter_pose01_blush.png": {
    "from": "yujin_winter_pose01_blush_v001.png",
-   "sha256": "982e4dc225d817c6f882e229c4fa307d12c74c6b0d4bbcaa70778ae01ee2aee6"
+   "sha256": "55213858e6c6b0f126395a3cd3968ded0e1ed7c3bac0840061375165661f0cc2",
+   "source_sha256": "982e4dc225d817c6f882e229c4fa307d12c74c6b0d4bbcaa70778ae01ee2aee6"
   },
   "images/characters/yujin/yujin_winter_pose01_neutral.png": {
    "from": "yujin_winter_pose01_neutral_v001.png",
-   "sha256": "d9255f56f138a022657e0041732d2aaecd26b6cbfe945043ae0c4c4612c5dcbd"
+   "sha256": "1ada08b7b6d3d0ae924f95fc25650bf70b0e880bb53cd60168943c66cacf2a92",
+   "source_sha256": "d9255f56f138a022657e0041732d2aaecd26b6cbfe945043ae0c4c4612c5dcbd"
   },
   "images/characters/yujin/yujin_winter_pose01_smile.png": {
    "from": "yujin_winter_pose01_smile_v001.png",
-   "sha256": "89bc9d57dd41d210d76c928fefff51dc4ff48ebfa32fb2e9953ad3ed210b9412"
+   "sha256": "10e11b8bb9ed6c5c5ac543768cf9b5b76a253bd931a680ff81652208e0472ada",
+   "source_sha256": "89bc9d57dd41d210d76c928fefff51dc4ff48ebfa32fb2e9953ad3ed210b9412"
   }
- }
+ },
+ "runtime_size": "676x1014 (66% of 1024x1536, premultiplied Lanczos). Regenerate from the source files for higher resolutions."
 }

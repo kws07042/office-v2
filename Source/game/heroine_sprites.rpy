@@ -144,14 +144,15 @@ init -4 python:
         renpy.store.heroine_face_auto[who] = heroine_text_face(what)
 
     # 무대에 놓는 크기: 머리 위가 화면 약 50px, 대화창(ypos 536) 윗선에서 잘라 글씨 뒤로 몸이 비치지 않게 한다.
-    SPRITE_ZOOM = 0.66
+    # 게임용 사본은 이미 화면 크기(원본의 66%, 676×1014)로 줄여 두어 확대·축소 없이 그린다.
+    SPRITE_SIZE = (676, 1014)
     SPRITE_YPOS = 20
-    SPRITE_CROP_H = int((536 - SPRITE_YPOS) / SPRITE_ZOOM)
+    SPRITE_CROP_H = 536 - SPRITE_YPOS
 
     def heroine_sprite_display(st, at):
         if not heroine_sprite_visible():
             return Null(), None
         path = heroine_sprite_path(renpy.store.cream_focus)
-        return Transform(Crop((0, 0, 1024, SPRITE_CROP_H), path), zoom=SPRITE_ZOOM), None
+        return Crop((0, 0, SPRITE_SIZE[0], SPRITE_CROP_H), path), None
 
 image heroine stage sprite = DynamicDisplayable(heroine_sprite_display)
