@@ -99,6 +99,8 @@ label start:
             call ria_r12
             call ria_r13
             call ria_r14
+            if dating and bond_trust("ria") <= BOND_BREAKUP_TRUST:
+                call bond_breakup("ria")
             if dating and memory.get("ria_conflict") == "resolved":
                 call ria_r15
                 call ria_o03_offer

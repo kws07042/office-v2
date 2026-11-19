@@ -343,6 +343,7 @@ label jihyun_r04:
             d "다음엔 제가 장소 후보 가져올게요. 시간은 팀장님 비는 데로요."
             j "좋아. 이번엔 기대하면서 기다릴게."
             $ remember("jihyun_next_date_plan", "dohyun_suggests")
+            dn "기대하겠다는 말 뒤에서, 지현 씨가 수첩의 '같이 정하기'에 그어 둔 밑줄을 조용히 지웠다."
         "각자 시간도, 같이 볼 날도 남기자고 한다.":
             d "각자 하던 것도 남겨 두고 싶어요. 같이 보는 날도 하나 잡고요."
             j "응. 너랑 있을 시간 만든다고 내 일정까지 다 비울 필요는 없겠네. 네 것도 그렇게 두자."
@@ -390,6 +391,8 @@ label jihyun_early_route(full_route=False):
         call jihyun_r12
         call jihyun_r13
         call jihyun_r14
+        if dating and bond_trust("jihyun") <= BOND_BREAKUP_TRUST:
+            call bond_breakup("jihyun")
         if dating and memory.get("jihyun_conflict") == "resolved":
             call jihyun_r15
             call jihyun_o03_offer

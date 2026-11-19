@@ -488,6 +488,8 @@ label seoyun_route:
     call seoyun_r12
     call seoyun_r13
     call seoyun_r14
+    if dating and bond_trust("seoyun") <= BOND_BREAKUP_TRUST:
+        call bond_breakup("seoyun")
     if dating and memory.get("seoyun_conflict") == "resolved":
         call seoyun_r15
         call seoyun_o03_offer

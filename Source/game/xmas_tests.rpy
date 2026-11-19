@@ -47,6 +47,24 @@ label test_special_entry:
             pass
     return
 
+label test_breakup_entry:
+    $ xwho = xmas_fixture["who"]
+    $ active_route = xwho
+    $ dating = True
+    $ speech_informal = False
+    $ memory = {}
+    python:
+        for key, table in BOND_TRUST_RULES[xwho]:
+            worst = min(table, key=table.get)
+            if table[worst] < 0:
+                remember(key, worst)
+    if dating and bond_trust(xwho) <= BOND_BREAKUP_TRUST:
+        call bond_breakup(xwho)
+    menu:
+        "검사 종료":
+            pass
+    return
+
 testsuite xmas_checks:
     before testcase:
         if not screen "main_menu":
@@ -101,6 +119,15 @@ testsuite xmas_checks:
         pause 0.5
         assert eval renpy.get_widget("office_phone", "phone_messages").yadjustment.range > 0
         assert eval phone_view_at_bottom()
+
+    testcase breakup_when_trust_is_gone:
+        parameter case = [0, 1, 2, 3]
+        $ xmas_fixture["who"] = ["ria", "jihyun", "yujin", "seoyun"][case]
+        run Start("test_breakup_entry")
+        advance until screen "choice" timeout 40.0
+        assert eval bond_trust(xmas_fixture["who"]) <= BOND_BREAKUP_TRUST
+        assert eval not dating and memory.get(xmas_fixture["who"] + "_breakup_by_heroine")
+        assert eval ending == xmas_fixture["who"] + "_relationship_closed"
 
     teardown:
         exit

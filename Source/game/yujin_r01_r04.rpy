@@ -364,6 +364,8 @@ label yujin_early_route(through_r08=False, through_r12=False, full_route=False):
                 if full_route:
                     call yujin_r13
                     call yujin_r14
+                    if dating and bond_trust("yujin") <= BOND_BREAKUP_TRUST:
+                        call bond_breakup("yujin")
                     if dating and memory.get("yujin_support_alignment_verified"):
                         call yujin_r15
                         call yujin_o03_offer
