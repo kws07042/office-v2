@@ -52,7 +52,31 @@
 | [jihyun_winter_pose01_blush_v001.png](jihyun_winter_pose01_blush_v001.png) | 백지현 winter_pose01_blush | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
 | [jihyun_winter_pose01_neutral_v001.png](jihyun_winter_pose01_neutral_v001.png) | 백지현 winter_pose01_neutral | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
 | [jihyun_winter_pose01_smile_v001.png](jihyun_winter_pose01_smile_v001.png) | 백지현 winter_pose01_smile | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
-| [yujin_office_pose02_neutral_v001.png](yujin_office_pose02_neutral_v001.png) | 차유진 · 스케치북을 가슴에 안은 자세 | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
+| [yujin_office_pose03_neutral_v001.png](yujin_office_pose03_neutral_v001.png) | 차유진 · 양손으로 카디건 소매 끝을 모은 자세 | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
 | [seoyun_office_pose01_neutral_v001.png](seoyun_office_pose01_neutral_v001.png) | 한서윤 · 턱에 손가락을 댄 기본 자세 | 검수 중 | 0 | 마스터 대조 및 가장자리 검수 |
+| [seoyun_office_pose01_blush_v001.png](seoyun_office_pose01_blush_v001.png) | 한서윤 office_pose01 · blush | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose01_laugh_v001.png](seoyun_office_pose01_laugh_v001.png) | 한서윤 office_pose01 · laugh | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose01_pout_v001.png](seoyun_office_pose01_pout_v001.png) | 한서윤 office_pose01 · pout | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose01_sad_v001.png](seoyun_office_pose01_sad_v001.png) | 한서윤 office_pose01 · sad | 검수 중 | 1 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose01_serious_v001.png](seoyun_office_pose01_serious_v001.png) | 한서윤 office_pose01 · serious | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose01_smile_v001.png](seoyun_office_pose01_smile_v001.png) | 한서윤 office_pose01 · smile | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose01_surprise_v001.png](seoyun_office_pose01_surprise_v001.png) | 한서윤 office_pose01 · surprise | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose02_blush_v001.png](seoyun_office_pose02_blush_v001.png) | 한서윤 office_pose02 · blush | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose02_neutral_v001.png](seoyun_office_pose02_neutral_v001.png) | 한서윤 office_pose02 · neutral | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose02_serious_v001.png](seoyun_office_pose02_serious_v001.png) | 한서윤 office_pose02 · serious | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose02_smile_v001.png](seoyun_office_pose02_smile_v001.png) | 한서윤 office_pose02 · smile | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose03_blush_v001.png](seoyun_office_pose03_blush_v001.png) | 한서윤 office_pose03 · blush | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose03_neutral_v001.png](seoyun_office_pose03_neutral_v001.png) | 한서윤 office_pose03 · neutral | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose03_serious_v001.png](seoyun_office_pose03_serious_v001.png) | 한서윤 office_pose03 · serious | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_office_pose03_smile_v001.png](seoyun_office_pose03_smile_v001.png) | 한서윤 office_pose03 · smile | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_casual_pose01_blush_v001.png](seoyun_casual_pose01_blush_v001.png) | 한서윤 casual_pose01 · blush | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_casual_pose01_neutral_v001.png](seoyun_casual_pose01_neutral_v001.png) | 한서윤 casual_pose01 · neutral | 검수 중 | 1 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_casual_pose01_smile_v001.png](seoyun_casual_pose01_smile_v001.png) | 한서윤 casual_pose01 · smile | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_home_pose01_blush_v001.png](seoyun_home_pose01_blush_v001.png) | 한서윤 home_pose01 · blush | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_home_pose01_neutral_v001.png](seoyun_home_pose01_neutral_v001.png) | 한서윤 home_pose01 · neutral | 검수 중 | 1 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_home_pose01_smile_v001.png](seoyun_home_pose01_smile_v001.png) | 한서윤 home_pose01 · smile | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_winter_pose01_blush_v001.png](seoyun_winter_pose01_blush_v001.png) | 한서윤 winter_pose01 · blush | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_winter_pose01_neutral_v001.png](seoyun_winter_pose01_neutral_v001.png) | 한서윤 winter_pose01 · neutral | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
+| [seoyun_winter_pose01_smile_v001.png](seoyun_winter_pose01_smile_v001.png) | 한서윤 winter_pose01 · smile | 검수 중 | 0 | 마스터 대조 및 가장자리 확인 |
 
 리아 사복 3장은 10월 말 이후 비 오는 오후의 실내 카페 장면에 맞춘 긴소매 니트, 데님 스커트, 스타킹과 운동화 조합이다. [리아 대본](../../../Source/game/ria_r05_r08.rpy#L262) · [계절 전환](../../../Source/game/common.rpy#L704)
