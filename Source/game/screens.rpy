@@ -184,7 +184,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                     padding (6, 0, 6, 1)
                     background Solid("#EFE8E0")
                     text dialogue_doc_stamp() size 12 color "#A2394F"
-            add "gui/window/paperclip.svg" xpos 8 ypos -34 xysize (26, 72) at Transform(rotate=-7)
+            add "gui/window/paperclip.svg" xpos -8 ypos -34 xysize (26, 72) at Transform(rotate=-7)
         window:
             at (silk_panel_in if silk_motion_on() else silk_still)
             id "window"
