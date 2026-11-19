@@ -1,5 +1,45 @@
 # 배경 낮판 후보 23장
 
+## v003 그림체 통일 23장
+
+[v001·v002 대 v003 비교 사진](bg_style_v003.jpg)
+
+2026-11-19 로컬 ComfyUI로 입력 그림을 입상 그림체에 맞춰 img2img 변환했다. 설정 기준은 [Docs/backgrounds-title-plan-v001.md](../../../Docs/backgrounds-title-plan-v001.md) 4절, 일괄 처리는 `Source/tools/comfy_batch_backgrounds.py`(장소별 고정 시드).
+
+- 체크포인트: Anima Turbo 1.1 (`anima-turbo-v1.1.safetensors`), 텍스트 인코더 `qwen_3_06b_base`, VAE `qwen_image_vae`
+- 샘플러: euler / simple, 10스텝, CFG 1 (마스터 워크플로와 같음), denoise 0.30
+- ControlNet: Anima ControlNet-LLLite `anima-lllite-lineart-1` 0.85(끝 0.8, 전처리 Lineart anime) + `anima-lllite-depth-1` 0.5(전처리 Depth Anything 3 mono large)
+- 그림체 참조: `ria_office_pose01_neutral_v001.png`(회색 바탕 합성), Anima IP-Adapter `anima-ria-ip-adapter` 강도 0.55. Anima용 IP-Adapter에는 style transfer 방식이 없어 강도로만 적용했다.
+- 해상도: VRAM 8GB라 1344×768로 처리 → RealESRGAN x4 anime 6B → 1920×1080
+- 부정 프롬프트는 넣었지만 CFG 1이라 효과가 없다. 23장 모두 사람·글자가 새로 생기지 않았음을 눈으로 확인했다.
+- 후처리: 변환에서 바뀐 창밖 랜드마크 9장은 해당 부분만 입력 그림에서 부드러운 경계로 되살렸다(아래 표).
+
+| 번호 | 파일 | 장소 | 입력 | denoise | 후처리 | SHA-256 |
+|---:|---|---|---|---:|---|---|
+| 1 | [bg_office_day_v003.png](bg_office_day_v003.png) | 브랜딩 회사 사무실 | bg_office_day_v001.png | 0.30 | 창밖 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>a99bbd32cc5442d1b94b205c3a74bf5bc13f2ccd83db5455553a6bd2b3c71010</code> |
+| 2 | [bg_meeting_day_v003.png](bg_meeting_day_v003.png) | 사내 회의실 | bg_meeting_day_v001.png | 0.30 | 창밖 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>b529414a6d62c8094b227aff51a947ef96e654ffb0f06d59bbd2078adf1703bb</code> |
+| 3 | [bg_client_hall_day_v003.png](bg_client_hall_day_v003.png) | 대기업 대회의실 | bg_client_hall_day_v001.png | 0.30 | 없음 | <code>7e200d371e481ed688a2674f89ff81dca5a4473f3f2d8d4a4a78e340b44ebe84</code> |
+| 4 | [bg_pantry_day_v003.png](bg_pantry_day_v003.png) | 회사 탕비실 | bg_pantry_day_v001.png | 0.30 | 창밖 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>5dea83d198a588b080e1b97fa1808b6fb4f13ef9e7ed5d70976ca57506e0a3bc</code> |
+| 5 | [bg_corridor_day_v003.png](bg_corridor_day_v003.png) | 회사 3층 복도 | bg_corridor_day_v001.png | 0.30 | 없음 | <code>67bb3ccf36e1dddaf1100fa7bb0a67b0a0111a9d1f3e4c6d499dd5956d610d79</code> |
+| 6 | [bg_rooftop_day_v003.png](bg_rooftop_day_v003.png) | 회사 옥상 | bg_rooftop_day_v001.png | 0.30 | 없음 | <code>641f3404ab9a4ce1a42bf79969f9cc58227304671283fb7188b3c8687cbdcdd7</code> |
+| 7 | [bg_stairs_day_v003.png](bg_stairs_day_v003.png) | 비상계단 층계참 | bg_stairs_day_v001.png | 0.30 | 창밖 전체와 비상구 표시를 입력 그림에서 되살림 | <code>1f70e1b298dc61fa604f164f76810df86177d5d9c8b12864364a99e2cd2c9a97</code> |
+| 8 | [bg_company_front_day_v003.png](bg_company_front_day_v003.png) | 회사 앞 인도 | bg_company_front_day_v001.png | 0.30 | 원경 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>5da316a74bfb6e121a7f2c8f0854c63016223db8895b2b07600b10b4a1d908a8</code> |
+| 9 | [bg_popup_day_v003.png](bg_popup_day_v003.png) | 팝업 스토어 준비 현장 | bg_popup_day_v001.png | 0.30 | 없음 | <code>2780b141f2e4fb5bead7f02e3cb0c73c331baaaca0ff03217c677a0e45536072</code> |
+| 10 | [bg_cafe_day_v003.png](bg_cafe_day_v003.png) | 동네 카페 | bg_cafe_day_v001.png | 0.30 | 없음 | <code>e1fd4e264b2401da9547ccb905a8b01b3f7edb066cedf6bfc0b2394f32d4cd29</code> |
+| 11 | [bg_bookcafe_day_v003.png](bg_bookcafe_day_v003.png) | 서점 겸 북카페 | bg_bookcafe_day_v001.png | 0.30 | 창밖 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>99fe44c2e8cd7b68ffad163f6ec603ce55b77c5e93b72ca35aa174c9b55f6790</code> |
+| 12 | [bg_restaurant_day_v003.png](bg_restaurant_day_v003.png) | 동네 식당 | bg_restaurant_day_v002.png | 0.30 | 없음 | <code>92bd672a9b1ebe1b2b9d0e3d6086b0bd828b91d44483ed2f68857352a27b5466</code> |
+| 13 | [bg_park_day_v003.png](bg_park_day_v003.png) | 강변 공원 산책길 | bg_park_day_v001.png | 0.30 | 원경 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>66ef49f15283499918ae3a6fda1508093d6f187c5c6915c571f605c6921d3eed</code> |
+| 14 | [bg_street_day_v003.png](bg_street_day_v003.png) | 지하철역 앞 거리 | bg_street_day_v001.png | 0.30 | 없음 | <code>1b10fa696006689e90d76841769b2d38d949484634a56b5cb24e471b51d093b3</code> |
+| 15 | [bg_train_day_v003.png](bg_train_day_v003.png) | 지하철 객차 | bg_train_day_v001.png | 0.30 | 없음 | <code>f3efc3f777857680fc152b3449108ff0ac83c0c9c0d5036f936d6f45ea208048</code> |
+| 16 | [bg_gallery_day_v003.png](bg_gallery_day_v003.png) | 독립 전시 공간 | bg_gallery_day_v001.png | 0.30 | 창밖 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>46c32c8bfd2ed2128fe6ba8ca8c07c51a3e8bfdacf9c9f0089d61d31dcabd2e3</code> |
+| 17 | [bg_laundry_day_v003.png](bg_laundry_day_v003.png) | 코인 세탁방 | bg_laundry_day_v001.png | 0.30 | 없음 | <code>ba60b1e68021c9d8740870b6664bfb41a2235bd77662f308cc5ceb0a57388807</code> |
+| 18 | [bg_ria_home_day_v003.png](bg_ria_home_day_v003.png) | 리아의 원룸 | bg_ria_home_day_v002.png | 0.30 | 없음 | <code>c4be1bc77fc6a52513cff7f8ceb132000243ccd0f75dc01c639545380165070f</code> |
+| 19 | [bg_jihyun_home_day_v003.png](bg_jihyun_home_day_v003.png) | 지현의 아파트 | bg_jihyun_home_day_v002.png | 0.30 | 없음 | <code>07028ee3ae177882ba837f469226b61f7818384bb45b83f7425bb43270b80b7e</code> |
+| 20 | [bg_yujin_home_day_v003.png](bg_yujin_home_day_v003.png) | 유진의 원룸 | bg_yujin_home_day_v002.png | 0.30 | 없음 | <code>418095ca91695b809556f3230a72eb8d1b27c139fcfe9fa7363d56b186e16068</code> |
+| 21 | [bg_seoyun_studio_day_v003.png](bg_seoyun_studio_day_v003.png) | 서윤의 작업실 겸 집 | bg_seoyun_studio_day_v002.png | 0.30 | 없음 | <code>a1a9f26ae2d1537438ebd2139bbb492e7064034250dc6639fda512d02f950ce7</code> |
+| 22 | [bg_dohyun_room_day_v003.png](bg_dohyun_room_day_v003.png) | 도현의 원룸 | bg_dohyun_room_day_v001.png | 0.30 | 창밖 남산(N서울타워) 부분을 입력 그림에서 되살림 | <code>278eff1a99d92014a76d096473f50dd4d988ef44e4a69484486d2dd38df6237c</code> |
+| 23 | [bg_motel_day_v003.png](bg_motel_day_v003.png) | 역 앞 비즈니스 모텔 | bg_motel_day_v001.png | 0.30 | 없음 | <code>30b500042387469ad0837e8169cbe4557b42dd2660e2c6feae937e817c8fdf65</code> |
+
 ## v002 수정 후보 5장
 
 [v001·v002 전후 비교 사진](bg_fixes_v002.jpg)
