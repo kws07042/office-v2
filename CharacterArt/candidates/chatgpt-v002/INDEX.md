@@ -1,5 +1,20 @@
 # 입상 후보
 
+## PR #25 검수 수정본
+
+[기존 후보와 새 후보 비교](fix_13_comparison.jpg)
+
+각 행의 왼쪽은 검수 대상 원본, 오른쪽은 새 후보이다.
+업무복 pose03 세 기준본은 676×1014이므로 Lanczos로 1024×1536에 맞춘 뒤 얼굴만 합성했다. 다섯 장 모두 1024×1536 기준본과 얼굴 밖 RGBA 및 전체 알파 채널을 대조했다. 포즈가 바뀐 네 장은 새 파일명에도 v001을 사용한다.
+
+| 파일 | 고친 이유 | 참고 그림 | SHA-256 |
+|---|---|---|---|
+| [ria_office_pose03_teary_v001.png](ria_office_pose03_teary_v001.png) | 손 흔드는 자세를 양손을 모은 업무복 pose03으로 교체 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`Source/game/images/characters/ria/ria_office_pose03_neutral.png` | <code>3dcd5981b37435d6c6f8807d095d8d874c19ba5716df4a462bef4c17c2cda2f1</code> |
+| [jihyun_office_pose03_teary_v001.png](jihyun_office_pose03_teary_v001.png) | 허리를 짚은 자세를 업무복 pose03으로 교체 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/jihyun/jihyun_office_pose01_neutral.png`<br>`Source/game/images/characters/jihyun/jihyun_office_pose03_neutral.png` | <code>07827ad6673c62d106401f91b327f410e253c22677e43d45e7f5ec5ed7c8805a</code> |
+| [seoyun_office_pose03_teary_v001.png](seoyun_office_pose03_teary_v001.png) | 입술에 손을 댄 자세를 업무복 pose03으로 교체 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose03_neutral.png` | <code>f175b3fd42e01c5f7cc623cbc947973adb5445b0ec6e1c649d4f170cd05f0fe3</code> |
+| [jihyun_casual_pose02_teary_v001.png](jihyun_casual_pose02_teary_v001.png) | 허리를 짚은 자세를 가방 끈을 잡는 사복 pose02로 교체 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/jihyun/jihyun_casual_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v002/jihyun_casual_pose02_neutral_v001.png` | <code>e402b732d388b4a5fb0dcf5faefe1963d99b067a8b96bd4865e4f5c40c1ba818</code> |
+| [ria_casual_pose02_teary_v002.png](ria_casual_pose02_teary_v002.png) | 홍조와 구분되도록 아래 눈꺼풀에 맺힌 눈물 강조 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_casual_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/ria_casual_pose02_neutral_v001.png` | <code>e3d4e62bf724c77b5874080fa3afdeb989bfb26951b3e64e445827a970e7ebff</code> |
+
 기준 문서: `Docs/chatgpt-paste-pack-v001.md` 및 `Docs/art-final-shotlist-v001.md`. 참조 경로는 저장소 루트 기준이다.
 
 ## 묶음 1
