@@ -50,7 +50,7 @@ label yujin_o01:
             d "저는 그림 다음에 유진 씨 대답 기다린 게 남았어요. 같은 걸 보고도 다음 말은 몰라서요."
             y "...그 감상은 노트에 적으면 제가 자꾸 다시 볼 텐데요."
             $ remember("yujin_o01_impression", "different_answers")
-    "유진은 서로 다른 두 감상을 줄을 바꿔 적었다. 하나로 고치지 않고 노트를 덮는다."
+    "유진은 서로 다른 두 감상을 줄을 바꿔 적었다. 하나로 고치지 않고 노트를 덮었다."
     $ remember("yujin_o01_status", "completed")
     dn "두 감상을 하나로 고치지 않는 사람. 나와 다른 채로 옆에 있어도 된다는 말처럼 들렸다."
     $ award_once("yujin_O01", "yujin", 2)
