@@ -1,5 +1,18 @@
 # 장면 CG · 타이틀 후보
 
+## 장면 추가 수정 5장
+
+[전후 비교 · 왼쪽 원본 / 오른쪽 수정본](scene_fixes_comparison.jpg)
+
+| 파일 | 수정 이유 | 참고 그림 | SHA-256 |
+|---|---|---|---|
+| [seoyun_sp1_scene_v002.png](seoyun_sp1_scene_v002.png) | 책을 서윤 쪽으로 돌리고 휴대폰을 귀에 댐 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_home_pose01_neutral.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_sp1_scene_v001.png` | `5d6e8a598d239e1d7cd2ea5a26018c32d77065aae90678050c95a142777b5df4` |
+| [seoyun_sp2_scene_v002.png](seoyun_sp2_scene_v002.png) | 실내 러그에서 운동화를 벗은 맨발로 수정 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_casual_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_sp2_scene_v001.png` | `518e3a0d2889f059362c0b15a3cff2617f36518189ba4e8e587f6fe8321d0655` |
+| [seoyun_x01_scene_v002.png](seoyun_x01_scene_v002.png) | 베이지 카디건 한 벌을 의자 위 도현 코트에 겹쳐 배치 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_casual_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_x01_scene_v001.png` | `261bcab2f32b237a331d988afaea9da8d3ffe79d4833fd2c12eb3da1e5397ba8` |
+| [ria_x01_scene_v002.png](ria_x01_scene_v002.png) | 도현의 두 손을 뒤쪽 시점에 맞추고 기존 슈슈를 손목에 배치 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_winter_pose01_neutral.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/ria_x01_scene_v001.png` | `f6838ebfc9e2e806022d474abc98c64f8e04630a70343e721508dfe7f35be13f` |
+| [seoyun_r16_scene_v002.png](seoyun_r16_scene_v002.png) | 두 사람이 나란히 선 시점으로 팔의 연결을 바로잡고 정민재가 두 사람을 바라보게 수정 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_r16_scene_v001.png` | `961f0c53be2b44c62fd658c5d1fe39e5668a3e8cc3560ff7faa5d7cb108460a1` |
+
+
 ## PR #25 검수 수정본
 
 [기존 후보와 새 후보 비교](fix_13_comparison.jpg)
