@@ -3,19 +3,22 @@
  "approved_by_user": "2026-11-19",
  "files": {
   "images/characters/jihyun/jihyun_casual_pose01_blush.png": {
-   "from": "jihyun_casual_pose01_blush_v003.png",
-   "sha256": "8ca8f2e66b055a7412aaaacf72fd3afa05fa492e4fcc19b54e43decf96d3d432",
-   "source_sha256": "fed12c9502bff54e0900cfa3c58031496a92bd1e5756c1509ba930482ac96e3e"
+   "from": "jihyun_casual_pose01_blush_v004.png",
+   "sha256": "c86f34ace643e751ab4b5cffb15b493561d832d4b22c5e1852e9e4a573bb618a",
+   "source_sha256": "7d712fac92ec8580ca78735075f128578602d4a5a0fc5dd94c6711cb265b070a",
+   "note": "coat belt removed (PR #29)"
   },
   "images/characters/jihyun/jihyun_casual_pose01_neutral.png": {
-   "from": "jihyun_casual_pose01_neutral_v003.png",
-   "sha256": "424f08225d946546f6a86fa29f9bd0346fbfccc96be478c9ca9ae10a687e3ae5",
-   "source_sha256": "aa1a6502b642b165ff9150189484b2a665e7bb8b7b4594ede5d881161224922a"
+   "from": "jihyun_casual_pose01_neutral_v004.png",
+   "sha256": "da16c57c30f4e35f66ca1193a6dd91b42920069db68ace045601a24d17236578",
+   "source_sha256": "695d9022423a90fbf87ca3877c143fe18e802d1635341c591d2cf55cec367e7b",
+   "note": "coat belt removed (PR #29)"
   },
   "images/characters/jihyun/jihyun_casual_pose01_smile.png": {
-   "from": "jihyun_casual_pose01_smile_v003.png",
-   "sha256": "ff13707697e11bfa05a883165541309a9cf0fa10cbfbf14f138a8428f315c2a7",
-   "source_sha256": "9d2800f5e8a4b55ab0416aa9aaad3c435ce384dcacd5e92bf478c883f6554209"
+   "from": "jihyun_casual_pose01_smile_v004.png",
+   "sha256": "c67ec4336d84f1154f744998610751b66c5a31545a0209c07045fc0df424dfef",
+   "source_sha256": "c6814ef12d82e23f65e8e3c1e29fb16a5615231f56d3b04a1525986049b8cc99",
+   "note": "coat belt removed (PR #29)"
   },
   "images/characters/jihyun/jihyun_home_pose01_blush.png": {
    "from": "jihyun_home_pose01_blush_v003.png",
