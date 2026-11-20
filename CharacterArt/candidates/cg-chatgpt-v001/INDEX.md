@@ -1,5 +1,18 @@
 # 장면 CG · 타이틀 후보
 
+## 크리스마스·가을 장면 수정 후보 6장
+
+[원본(왼쪽)과 수정본(오른쪽) 비교](season_fixes_comparison.jpg)
+
+| 파일 | 고친 이유 | 참고 그림 | SHA-256 |
+|---|---|---|---|
+| [ria_x01_scene_v003.png](ria_x01_scene_v003.png) | 낮게 묶인 머리와 웅크린 자세를 높은 포니테일과 상자에 걸터앉은 자세로 수정하고 붕어빵·캔커피·종이봉투의 크기와 위치를 조정 | `CharacterArt/candidates/cg-chatgpt-v001/ria_x01_scene_v002.png`<br>`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_winter_pose01_neutral.png` | `b64cd854d4d7e412fec3e629dfd5cdf2a2768b71b9cf72fbfe879433f4fdd281` |
+| [ria_r04_scene_v003.png](ria_r04_scene_v003.png) | 10월 저녁 강변에 핀 벚꽃과 꽃잎을 물들기 시작한 나무와 낙엽으로 교체 | `CharacterArt/candidates/cg-chatgpt-v001/ria_r04_scene_v002.png`<br>`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png` | `209a8fcfebb13b6c13c065326b9b9ec67a479acc2284795d3c2983c3ac3f6ac3` |
+| [yujin_r02_scene_v003.png](yujin_r02_scene_v003.png) | 10월 오후 전시장 창밖 벚꽃을 노랗게 물든 가로수로 교체 | `CharacterArt/candidates/cg-chatgpt-v001/yujin_r02_scene_v002.png`<br>`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png` | `5cc49da1581de2d238208371ef6b68c327469884b68a841bbf34830fe3fed8ce` |
+| [seoyun_r02_scene_v002.png](seoyun_r02_scene_v002.png) | 10월 오후 북카페 창밖 벚꽃을 노랗게 물든 가로수로 교체 | `CharacterArt/candidates/cg-chatgpt-v001/seoyun_r02_scene_v001.png`<br>`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png` | `09730dde8f8c4d2ddb20852ce9cbbba7a5d358a8d55d6d3901b850b89a548185` |
+| [seoyun_r10_scene_v002.png](seoyun_r10_scene_v002.png) | 10~11월 오후 카페 창밖 벚꽃을 단풍 든 가로수로 교체 | `CharacterArt/candidates/cg-chatgpt-v001/seoyun_r10_scene_v001.png`<br>`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png` | `5b7d2d99f109adc4b3b800d3a825643b2d930e8dfffd3df7ba07166a839d8b6b` |
+| [ria_r07_scene_v002.png](ria_r07_scene_v002.png) | 비 오는 가게 앞의 여름 수국을 가을 국화로 교체 | `CharacterArt/candidates/cg-chatgpt-v001/ria_r07_scene_v001.png`<br>`CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png` | `2b92703459d2984cb6bb1480edd6645d63832df2a71a18f70a02a42d796e3e2f` |
+
 ## 장면 추가 수정 5장
 
 [전후 비교 · 왼쪽 원본 / 오른쪽 수정본](scene_fixes_comparison.jpg)
