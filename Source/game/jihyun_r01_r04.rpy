@@ -304,7 +304,7 @@ label jihyun_r04:
                 j "정답이야. ...그러니까 그만 확인해."
                 $ dating = True
                 $ remember("jihyun_confession_accepted")
-                dn "'그쪽이 맞아.' 보고서에서나 듣던 말이 오늘은 다르게 들렸다."
+                dn "'정답이야.' 검토 회의에서나 듣던 말이 오늘은 전혀 다르게 들렸다."
                 $ award_once("jihyun_R04", "jihyun", 5)
             "마음은 있지만, 겁나는 것도 말한다." if not jihyun_prepared:
                 d "저 연애는 처음이에요. 마음은 분명한데, 일이랑 구분하려다가 말이 늦어질까 봐요."
