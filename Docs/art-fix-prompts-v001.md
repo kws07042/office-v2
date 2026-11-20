@@ -170,3 +170,9 @@ TEARY = teary-eyed with clearly visible tears welling along the lower eyelids an
 | `ria_r07_scene_v001` | 가게 앞 수국 화분(6월 꽃) |
 
 그 밖의 초록 가로수는 10월 초로 읽혀 그대로 둔다.
+
+## 5. 4차 검수 — PR #27 (2026-11-20)
+
+- 통과: `ria_r07_v002`(국화), `yujin_r02_v003`, `seoyun_r02_v002`, `seoyun_r10_v002`(창밖 단풍)
+- `ria_r04_v003`: 단풍은 좋으나 왼쪽 하늘에 벚꽃 조각이 남음 → Claude가 지워 `v004`로 저장, 통과
+- `ria_x01_v003`: 머리·붕어빵·캔커피는 고쳐졌으나 도현의 두 팔이 화면 끝에서 비정상적으로 길게 뻗어 나옴. 슈슈를 감는 순간을 1인칭으로 그리면 팔이 길어질 수밖에 없어 구도를 바꾼다 → 다시

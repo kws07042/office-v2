@@ -141,3 +141,11 @@
 | [common_c05_scene_v001.png](common_c05_scene_v001.png) | 8 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`Source/game/images/characters/jihyun/jihyun_office_pose01_neutral.png`<br>`Source/game/images/characters/yujin/yujin_office_pose01_neutral.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>72eadb36c2ab8d672feef0467d6eb325b4165933f8b5250397ec6f26d62ba3fb</code> |
 | [common_colleague_ending_scene_v001.png](common_colleague_ending_scene_v001.png) | 8 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`Source/game/images/characters/jihyun/jihyun_office_pose01_neutral.png`<br>`Source/game/images/characters/yujin/yujin_office_pose01_neutral.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>3655a312b1a279d2d84a03a34a41d084f4624efbb5f79563fcb4c46b40c16faa</code> |
 | [title_keyvisual_v001.png](title_keyvisual_v001.png) | 8 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`Source/game/images/characters/jihyun/jihyun_office_pose01_neutral.png`<br>`Source/game/images/characters/yujin/yujin_office_pose01_neutral.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>a81b275708e177fb0c58a42ebfbf7fff18ce65c9054a2b97f04e0aef3a62c0fc</code> |
+
+## 리아 R04 v004 — 남은 벚꽃 조각 지움 (Claude, 2026-11-20)
+
+v003 나뭇가지 왼쪽 하늘에 남아 있던 분홍 꽃잎 조각(약 700픽셀)을 주변 밤하늘 색으로 채웠다. 다른 부분은 바꾸지 않았다.
+
+| 파일 | 원본 | SHA-256 |
+|---|---|---|
+| [ria_r04_scene_v004.png](ria_r04_scene_v004.png) | ria_r04_scene_v003.png | <code>898a7fe0eb593af9216ba29bbf1d2a4a02db81cce3d78e078fbbaa83f882c548</code> |
