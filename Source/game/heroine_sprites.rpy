@@ -49,15 +49,21 @@ init -4 python:
     INDOOR_WORK_WORDS = ("사무실", "회의", "탕비실", "작업 공간", "공용", "복도", "협업", "안내 공간")
     HIDDEN_PLACE_WORDS = ("메시지", "각자의", "연락", "전화")
 
+    # 이별·사과·아픔이 분명한 말은 다른 단어보다 먼저 슬픈 얼굴로 둔다("좋아하지만 그만 만나자" 같은 줄).
+    STRONG_SAD_WORDS = ("그만 만나", "여기까지 하자", "여기까지 해요", "여기서 멈추자", "헤어지", "끝내자", "끝내겠",
+        "아파", "속상", "눈물", "울고", "울었", "미안해", "죄송해요")
     FACE_RULES = (
-        ("blush", ("좋아해", "사랑해", "보고 싶", "설레", "부끄", "키스", "입맞", "안아", "같이 있고 싶", "두근", "예뻐", "귀여")),
         ("laugh", ("하하", "푸핫", "ㅋㅋ", "크크", "웃겨", "깔깔")),
-        ("surprise", ("어?", "에?", "뭐?", "네?", "헉", "엇", "?!", "!?", "깜짝", "진짜?", "정말?")),
-        ("sad", ("미안", "죄송", "서운", "슬프", "울고", "힘들", "무서", "외로")),
-        ("pout", ("흥", "치사", "몰라", "됐거든", "너무해", "삐졌")),
-        ("serious", ("확인", "일정", "마감", "자료", "보고", "검토", "결정", "문제", "위험", "설명", "이유", "솔직히", "진지")),
-        ("smile", ("고마", "다행", "좋아", "좋네", "좋았", "재밌", "재미있", "ㅎㅎ", "후후", "~", "♪", "맛있", "!")),
+        ("blush", ("좋아해", "사랑해", "보고 싶", "설레", "부끄", "키스", "입맞", "안아", "같이 있고 싶", "두근", "예뻐", "귀여")),
+        ("surprise", ("어?", "에?", "뭐?", "네?", "헉", "엇", "앗", "?!", "!?", "깜짝", "진짜?", "정말?")),
+        ("sad", ("미안", "죄송", "서운", "슬프", "힘들", "무서", "외로", "걱정")),
+        ("pout", ("흥", "치사", "몰라", "됐거든", "너무해", "삐졌", "반칙")),
+        ("serious", ("확인", "일정", "마감", "자료", "보고", "검토", "결정", "문제", "위험", "설명", "이유", "솔직히", "진지", "결론")),
+        ("smile", ("고마", "다행", "좋아", "좋네", "좋았", "재밌", "재미있", "ㅎㅎ", "후후", "맛있", "합격", "최고", "~", "♪", "!")),
     )
+    # 갈등·이별 장면(장 제목으로 판별)에서는 "!"·"~"만으로 웃지 않고, 크게 웃음·삐짐도 쓰지 않는다.
+    TENSE_CHAPTER_MARKERS = ("R13 ·", "R14 ·", "재미없는 날의 대답", "결론부터 말할게", "제 말로 할게요", "농담 없이 하는 말")
+    TENSE_IGNORED_MARKS = ("~", "♪", "!")
 
     def _hs_place():
         return getattr(renpy.store, "location", "") or ""
@@ -91,10 +97,21 @@ init -4 python:
         roll = _hs_zlib.crc32((who + "|" + place).encode("utf-8")) % 4
         return ("pose01", "pose01", "pose02", "pose03")[roll]
 
-    def heroine_text_face(what):
+    def heroine_tense_scene(chapter=None):
+        chapter = getattr(renpy.store, "chapter", "") if chapter is None else chapter
+        return any(marker in (chapter or "") for marker in TENSE_CHAPTER_MARKERS)
+
+    def heroine_text_face(what, chapter=None):
         text = _hs_re.sub(r"\{[^}]*\}", "", what or "")
+        tense = heroine_tense_scene(chapter)
+        if any(word in text for word in STRONG_SAD_WORDS) and not text.rstrip().endswith("~"):
+            return "sad"
         for face, words in FACE_RULES:
+            if tense and face == "smile":
+                words = tuple(word for word in words if word not in TENSE_IGNORED_MARKS)
             if any(word in text for word in words):
+                if tense and face in ("laugh", "pout"):
+                    return "neutral"
                 return face
         return "neutral"
 

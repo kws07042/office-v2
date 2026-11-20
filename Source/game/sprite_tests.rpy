@@ -27,6 +27,11 @@ label sprite_preview:
     $ face("jihyun", "pout")
     j "이건 직접 정한 표정이에요."
     $ sprite_step = 8
+    $ chapter = "리아 R13 · 다음엔 더 재밌게라는 말"
+    r "오늘은 먼저 와서 기다리는 여자친구! 어때?"
+    $ sprite_step = 9
+    r "좋아하는데... 우리 여기까지 하자."
+    $ sprite_step = 10
     return
 
 testsuite sprite_checks:
@@ -57,6 +62,10 @@ testsuite sprite_checks:
         advance until eval sprite_step == 7 timeout 10.0
         assert eval heroine_sprite_path("jihyun").endswith("_pout.png") or heroine_sprite_path("jihyun").endswith("_serious.png")
         screenshot "sprite-7-jihyun-face-lock.png"
+        advance until eval sprite_step == 8 and renpy.get_screen("say") timeout 10.0
+        assert eval heroine_tense_scene() and heroine_face("ria") == "neutral"
+        advance until eval sprite_step == 9 and renpy.get_screen("say") timeout 10.0
+        assert eval heroine_face("ria") == "sad"
         advance until screen "main_menu" timeout 20.0
 
     teardown:
