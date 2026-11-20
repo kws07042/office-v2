@@ -13,7 +13,7 @@ label jihyun_o01_offer:
             $ remember("jihyun_o01_status", "skipped")
         "다음에도 빈 시간을 남겨 두자고 짧게 말하고 본편 계속":
             d "다음엔 계획 없는 시간도 같이 보내 봐요."
-            j "응. 뭐 할지 정해 오지 않을게."
+            j "알겠어. 계획 없이 갈게. ...말은 이렇게 해도 메모 한 줄은 들고 갈지도 몰라."
             $ remember("jihyun_o01_status", "brief")
     $ progression_note_ending()
     return
@@ -38,7 +38,7 @@ label jihyun_o01:
             "처마 끝에서 빗방울이 튀자 지현이 구두 앞코를 한 발 물렸다."
             j "저 선까지만 비 안 오는 줄 알았는데."
             d "좀 더 안쪽으로 오세요. 여긴 제가 확인했어요."
-            j "응. 그건 믿고 갈게."
+            j "네가 확인했으면 통과. 그건 믿고 갈게."
             $ remember("jihyun_o01_activity", "처마 아래 비 구경")
         "근처 카페로 피한다.":
             "가까운 카페에서 젖은 소매를 털고 차를 주문했다."
@@ -50,7 +50,7 @@ label jihyun_o01:
         "우산 하나 사서 같이 쓴다.":
             "편의점에서 우산을 사서 정류장까지 걸었다. 뛰지 않아도 버스는 다음 차가 있었다."
             d "오늘 계획은 바뀌었는데, 같이 걷는 건 남았네요."
-            j "응. 다음 차까지 여기 같이 있자."
+            j "그럼 다음 차까지는 여기 같이 있자."
             $ remember("jihyun_o01_activity", "우산 쓰고 정류장까지 걷기")
     $ remember("jihyun_o01_status", "completed")
     dn "다음 차까지 십이 분. 일정표에 없는 십이 분이 이렇게 길고 좋을 줄 몰랐다."
@@ -73,7 +73,7 @@ label jihyun_o02_offer:
             $ remember("jihyun_o02_status", "skipped")
         "다음에도 만들던 중간 모습을 보여 달라고 하고 본편 계속":
             d "다음에도 완성 전부터 보여 주세요. 뭐가 바뀌었나 찾는 것도 재밌어요."
-            j "응. 다 만들 때까지 기다리게 하지는 않을게."
+            j "알겠어. 중간보고 자주 할게. 다 만들 때까지 안 기다리게."
             $ remember("jihyun_o02_status", "brief")
     $ progression_note_ending()
     return
@@ -127,7 +127,7 @@ label jihyun_o03_offer:
             $ remember("jihyun_o03_status", "skipped")
         "저녁에 내가 원하는 것도 먼저 말하겠다고 하고 본편 계속":
             d "저녁엔 제가 하고 싶은 것도 제 입으로 말해 볼게요."
-            j "응. 내가 묻기 전에 듣고 싶어."
+            j "좋아. 이번엔 내가 묻기 전에 먼저 보고해."
             $ remember("jihyun_o03_status", "brief")
     $ progression_note_ending()
     return

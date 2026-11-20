@@ -72,7 +72,7 @@ label yujin_o02_offer:
             $ remember("yujin_o02_status", "skipped")
         "다음에도 개인 그림을 보여 달라고 짧게 말하고 본편 계속":
             d "일로 그린 것 말고, 유진 씨가 그냥 남기고 싶었던 그림도 다음에 보고 싶어요."
-            y "네. 완성한 것만 골라 오지는 않을게요."
+            y "네. 완성한 것만 골라 오지는 않을게요. ...낙서 수준인 것도 있는데, 웃으시면 안 돼요."
             $ remember("yujin_o02_status", "brief")
     $ progression_note_ending()
     return

@@ -9,7 +9,7 @@ label jihyun_r05:
     $ location = "고백 다음 날 토요일 오후 · 강변 카페"
     if memory.get("jihyun_next_date_plan") == "dohyun_suggests":
         d "제가 찾은 데예요. 여기 창가가 오후엔 좀 한산하더라고요."
-        j "응. 오늘은 약속 장소 찾는 것부터 네 몫이었지. 잘 찾았네."
+        j "합격. 약속 장소 찾는 건 네 몫이었는데, 생각보다 잘 찾았네."
     elif memory.get("jihyun_next_date_plan") == "own_and_shared":
         j "오전엔 조립 좀 했어. 오후는 너 만나려고 비웠고. 넌?"
         d "사진 정리했어요. 다 못 끝냈는데, 그것 때문에 약속을 미루고 싶진 않았어요."
@@ -42,7 +42,7 @@ label jihyun_r05:
     menu:
         "사진 정리하고 여섯 시에 통화하자고 한다.":
             d "기록집에 넣을 사진 추려 볼게요. 저녁 여섯 시에 뭐 했는지 서로 얘기해요."
-            j "응. 난 조립하다 부품 못 찾았다고 전화할 수도 있어."
+            j "접수. 대신 난 조립하다 부품 못 찾으면 전화한다. 긴급 호출이야."
             $ remember("jihyun_personal_slot", "일요일 오전 사진 고르기")
             $ remember("jihyun_shared_slot", "일요일 저녁 여섯 시 통화")
         "글을 쓰고 일곱 시에 통화하자고 한다.":
@@ -75,7 +75,7 @@ label jihyun_r05:
             $ remember("jihyun_r05_affection", "hand")
         "키스는 아껴 두고 나란히 걷는다.":
             d "지금은 이렇게 걷는 게 좋아요. 다음에도 그렇게 물어봐 주세요."
-            j "응. 그럼 저 다리까지만 더 가자."
+            j "그럼 저 다리까지. 거기서 한 번 더 물어볼 거야. 더 걸을지."
             $ remember("jihyun_r05_affection", "walk")
     dn "저 다리까지만. 지현 씨의 '까지만'이 조금씩 멀어지고 있다."
     $ location = "토요일 밤 · 각자의 집, 개인 메시지"
@@ -299,7 +299,7 @@ label jihyun_private_evening(slot, outfit):
                 d "여기 올 땐 멀쩡했는데요."
                 j "그래? 그럼 다시 펴 줄 필요는 없겠네."
             else:
-                j "응. 서두르지 말자. 나도 원하는 건 말할게."
+                j "그래. 서두를 거 없어. 나도 원하는 게 생기면 결론부터 말할게."
             call event_sequence("jihyun_" + slot, outfit)
             if not event_main_reached:
                 "(장면 생략 · 시간이 흐릅니다.)"
@@ -454,7 +454,7 @@ label jihyun_r09:
     menu:
         "순서 맞았다고 한다.":
             d "맞았어요. 칭찬 먼저, 고칠 건 나중."
-            j "좋아. 다음 회의 때도 연습할게."
+            j "좋아. 다음 회의 땐 칭찬부터 결재할게."
             $ remember("x_jihyun_r09_praise", "order")
         "다른 칭찬도 듣고 싶다고 한다.":
             d "목소리 말고 다른 것도 칭찬받고 싶은데요."
@@ -631,7 +631,7 @@ label jihyun_r10:
             $ remember("jihyun_publicity", "private")
         "말할 땐 사귄다는 것까지만.":
             d "나중에 말하면 만난다는 것만요. 언제인지는 더 생각할래요."
-            j "좋아. 날짜는 둘이 정할 때까지 안 잡을게."
+            j "좋아. 날짜는 보류. 둘 다 결재할 때까지는 안 잡아."
             $ remember("jihyun_publicity", "discuss_later")
     dn "날짜를 안 잡겠다는 말이 약속처럼 들렸다."
     $ award_once("jihyun_R10", "jihyun", 4)
@@ -671,7 +671,7 @@ label jihyun_r11:
     $ location = "일요일 저녁 · 지현의 집"
     if memory.get("jihyun_publicity") == "agreed_ria":
         d "어제 정한 대로, 같이 있는 지금 보낼까요?"
-        j "응. 나도 옆에서 볼게."
+        j "보내. 나는 옆에서 검토만 할게."
         call phone_deliver("jihyun_r11_disclose", "dohyun", "리아 씨, 저 지현 씨랑 사귀어요. 지금 둘이 같이 보내는 거예요. 다른 분들한텐 저희가 직접 말할게요.", contact="ria")
         call phone_deliver("jihyun_r11_congrats", "ria", "와... 진짜요? 축하해요!! 팀장님이 메시지에 웃는 표시 붙이는 날이 오다니. 다른 데 말 안 할게요. 근데 도현 씨, 나중에 커피 한 잔 사요. 저 좀 서운하거든요~", contact="ria")
         $ remember("jihyun_publicity", "told_ria")
@@ -709,7 +709,7 @@ label jihyun_r11:
             j "잘했어. 내가 맞춰 준 것도 잘했고."
             "도현이 자기 빵 카드 옆에 지현의 차를 붙였다."
             d "그럼 오늘 잘한 사람은 둘이네요."
-            j "응. 내 칭찬까지 셀프로 할 뻔했네."
+            j "그러네. 내 칭찬까지 셀프로 할 뻔했어."
             $ remember("jihyun_game_mode", "cooperative")
             $ remember("jihyun_game_result", "마지막 차례에 목표를 채운 협동")
         "점수 말고 내일 아침 메뉴를 만든다.":
