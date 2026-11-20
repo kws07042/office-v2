@@ -79,7 +79,7 @@ label seoyun_r14:
             $ remember("seoyun_r14_choice", "ready")
         "어려운 것도 말하자고 한다.":
             d "저도 늘 괜찮다고는 못 해요. 어렵다고 해도 좋아하는 마음이 없다고는 듣지 말아 주세요."
-            s "응. 나도 내 부탁 다 들어줘야 계속 만날 수 있는 것처럼 말하지 않을게."
+            s "응. '어렵다'는 '싫다'랑 동의어 아님. 메모해 둘게. 나도 내 부탁을 조건처럼 걸진 않을게."
             $ remember("seoyun_r14_choice", "repair_blunt")
         "연애를 마치자고 한다 — 관계 종료 확인.":
             $ progression_enter("seoyun_r14.choice02")
@@ -96,11 +96,11 @@ label seoyun_r14:
                     return
                 "끝내자는 말을 거둔다.":
                     d "끝내겠다는 말은 취소할게요. 서로 생각을 더 듣고 싶어요."
-                    s "응. 다음 답까지 미리 받은 걸로 생각하지 않을게."
+                    s "취소? ...좋아. 근데 다음 대답까지 미리 받은 걸로는 안 칠게. 그건 수요일에 네 입으로 다시 들을래."
                     $ remember("seoyun_r14_choice", "reconsidered")
                 "수요일 얘기를 듣고 정하겠다고 한다.":
                     d "지금은 결정하지 않을게요. 수요일엔 제 마음도 말할래요."
-                    s "응. 나도 대답을 준비해 갈게."
+                    s "응. 그럼 수요일은 서로 초안 들고 만나는 날이네. 나도 퇴고해 갈게."
                     $ remember("seoyun_r14_choice", "wait_action")
                     dn "대답을 준비하겠다던 서윤 씨는 컵만 내려다봤다. 미뤄 둔 대답이 수요일까지 무겁게 남았다."
     $ remember("seoyun_repair_appointment", "수요일 저녁 일곱 시, 전남편 연락과 피칭, 둘의 관계를 숨김없이 이야기")
@@ -175,7 +175,7 @@ label seoyun_r14:
             return
         "아직 어려워도 계속 만난다.":
             d "그분 일이 다 끝난 건 아니란 거 알아요. 그래도 계속 만나 보고 싶어요."
-            s "나도 그래. 모르는 건 다시 묻고, 대답이 바뀌면 바로 말해 주자."
+            s "나도. 완성본 기다리다 아무것도 못 내는 것보단, 고쳐 가면서 같이 쓰는 게 낫지."
             $ remember("seoyun_continues_after_discussion")
             $ remember("seoyun_future_discussion_open")
     $ remember("seoyun_conflict", "resolved")
@@ -210,7 +210,7 @@ label seoyun_r15:
     dn "옆자리를 가리키는 손. 맞은편이 아니라 옆이라는 게 오늘의 대답 같았다."
     s "오늘은 맞은편 말고 여기. 네 접시가 더 맛있어 보이면 바꾸기 편하잖아~"
     d "주문하기도 전에 노리시는 거예요?"
-    s "응. 네가 정한 데라니까 기대하고 왔어."
+    s "응. 네가 고른 가게라길래 기대치 좀 올려 왔어. 책임져~"
     "도현은 외투를 벗고 앉았다. 서윤이 펼친 목록에는 위스키 이름들이 적혀 있었다."
     s "난 이 향이 좋아. 바닐라 같다가 끝엔 나무 향이 남거든. 너도 작은 잔으로 한 번 맛볼래?"
     d "네. 한 잔만요. 음식은 제가 시켜 볼게요."
@@ -335,7 +335,7 @@ label seoyun_r16:
             $ remember("seoyun_ending_promise", "revisit")
         "서로 대답을 기다려 주자고 한다.":
             d "모르는 게 생기면 다시 물어보고 싶어요. 좋아한다는 말도 아끼지 않고요."
-            s "응. 나도 괜히 어려울 거라고 미리 결론 내지 않을게."
+            s "응. 그럼 나도 아끼면 안 되겠네. ...좋아해. 이건 오늘 치 선불."
             $ remember("seoyun_ending_promise", "next_answer")
         "각자 삶도, 둘의 시간도 지키자고 한다.":
             d "[memory.get('seoyun_private_name', '서윤 씨')] 일상도, 제 일상도 지키면서 계속 만나고 싶어요. 숨어서 말고요."
@@ -418,7 +418,7 @@ label seoyun_e01:
             $ remember("seoyun_publicity_status", "공개 보류, 둘만의 교제 지속")
         "공개보다 칫솔 얘기가 먼저라고 한다.":
             d "알리는 것보다... 저는 [memory.get('seoyun_private_name', '서윤 씨')] 집에 제 칫솔 두는 얘기가 더 하고 싶은데요."
-            s "응. 나도 네가 바라는 하루부터 듣고 싶어. 내가 혼자 그려 놓은 집 말고."
+            s "칫솔? ...색은 내가 골라도 돼? 내 거 옆에 꽂혔을 때 잘 어울리는 걸로."
             $ remember("seoyun_epilogue_choice", "discuss_life")
             $ remember("seoyun_publicity_status", "공개·동거 결정 전 생활 방식부터 논의")
     "서윤이 책갈피를 끼워 기록집을 넣었다. 나란히 골목으로 걸어 나왔다."
