@@ -28,9 +28,23 @@ kws07042/office-v2 저장소에서 아래 두 가지를 로컬 ComfyUI로 처리
    - 사무실 1장 시험: python Source/tools/comfy_batch_backgrounds.py --workflow <경로>/bg_workflow_api.json --input CharacterArt/candidates/bg-chatgpt-v001 --output CharacterArt/candidates/bg-chatgpt-v001 --only bg_office
    - 내가 좋다고 하면 --only 를 빼고 23장 전체.
 
-3. 올리기
-   - INDEX.md(두 폴더)에 v004·v003 행 추가: 체크포인트, denoise, SHA-256.
-   - claude/heroine-sprites 브랜치에 커밋·푸시. 워크플로 JSON과 ComfyUI 출력 폴더 임시 파일은 커밋하지 말 것. 원본 v001~v003은 지우지 말 것.
+3. ChatGPT 그림 전부 마스터 그림체로 통일 (입상 + 장면 CG + 타이틀)
+   - 워크플로: Source/tools/comfyui/master_style_api.json 을 ComfyUI에 끌어다 놓는다.
+     CKPT·CN_LINEART·CN_DEPTH 노드의 CHANGE_ME 모델을 내 PC 파일로 고르고, SAMPLER의 steps·cfg·sampler를 마스터 제작 값으로 바꾼 뒤
+     Workflow → Export (API)로 저장소 밖에 my_master_style_api.json 으로 저장.
+     (IP-Adapter는 SDXL 계열 체크포인트에서만 동작한다. 체크포인트가 SDXL 계열이 아니면 실행하지 말고 나에게 알려 줘.)
+   - 한 장 시험:
+     python Source/tools/comfy_style_unify.py --workflow <경로>/my_master_style_api.json --files "CharacterArt/candidates/cg-chatgpt-v001/ria_r07_scene_v001.png" --out-version v002
+     python Source/tools/comfy_style_unify.py --workflow <경로>/my_master_style_api.json --files "CharacterArt/candidates/chatgpt-v002/jihyun_casual_pose02_neutral_v001.png" --out-version v002
+   - 판정: 마스터(ria_office_pose01_neutral_v001.png)와 나란히 놓고 선 굵기·눈 그리는 법·2단 셀 채색이 같으면 성공.
+     구도·옷·얼굴이 원본에서 바뀌면 --denoise 를 0.04씩 낮추고, 그림체가 덜 바뀌면 --style-weight 를 0.95까지 올린다(v002 파일을 지우고 다시).
+     마스터 / 원본 / 결과 비교 이미지를 만들어 나에게 보여 주고, 좋다고 하면 전체 실행.
+   - 전체: --files 에 "CharacterArt/candidates/chatgpt-v002/*_v001.png" 와 "CharacterArt/candidates/cg-chatgpt-v001/*_v001.png" 를 넣는다.
+     같은 포즈의 표정 입상은 neutral 결과의 몸 + 각 표정의 얼굴로 자동으로 합쳐진다. 다시 뽑은 _v002 파일은 --out-version v003 으로 따로 돌린다.
+
+4. 올리기
+   - INDEX.md(각 폴더)에 결과 행 추가: 체크포인트, denoise, style weight, SHA-256.
+   - claude/heroine-sprites 브랜치에 커밋·푸시. 워크플로 JSON과 ComfyUI 출력 폴더 임시 파일은 커밋하지 말 것. 원본은 지우지 말 것.
 ```
 
 결과가 올라오면 클라우드 세션에서 검수하고 게임에 연결한다.

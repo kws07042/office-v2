@@ -54,3 +54,16 @@
 | [ria_office_pose01_teary_v001.png](ria_office_pose01_teary_v001.png) | 3 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`CharacterArt/candidates/chatgpt-v001/ria_casual_pose02_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>96e2ab5ccca3862e094be3e5041b51300511df9275bb2970f862fca21b823b73</code> |
 | [seoyun_casual_pose02_teary_v003.png](seoyun_casual_pose02_teary_v003.png) | 3 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`CharacterArt/candidates/chatgpt-v001/ria_casual_pose02_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>1e89e7d6d8baf5d70fc47ee5f7654692d060f4ccb5d9c7847c235b7cd1d8e62b</code> |
 | [seoyun_office_pose01_teary_v001.png](seoyun_office_pose01_teary_v001.png) | 3 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`CharacterArt/candidates/chatgpt-v001/ria_casual_pose02_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>c68263a0f9b923ab0f8a0400f8ef4caf43e885caf9e8309ce37b6284b407ecd3</code> |
+
+## 유진 생활복 pose02 v002 — 머리 주변 뿌연 테두리 제거 (Claude, 2026-11-20)
+
+v001의 반투명 잔여 배경(알파 1~199, 몸 바깥)을 지우고 윤곽 1px를 다듬었다. 그림 내용은 바꾸지 않았다.
+
+| 파일 | 원본 | SHA-256 |
+|---|---|---|
+| [yujin_home_pose02_blush_v002.png](yujin_home_pose02_blush_v002.png) | yujin_home_pose02_blush_v001.png | <code>00d0f8d26fbe961e2e244097e771a024121459cdcb9222a9349fa91766524b9f</code> |
+| [yujin_home_pose02_neutral_v002.png](yujin_home_pose02_neutral_v002.png) | yujin_home_pose02_neutral_v001.png | <code>74a0303a6d0f4a346d1ce227b389cf16c9595d2f24ad21af0307fa113404ed6b</code> |
+| [yujin_home_pose02_sad_v002.png](yujin_home_pose02_sad_v002.png) | yujin_home_pose02_sad_v001.png | <code>446f4fbf175099cd8fd2e258526fa62870aeb02cbe679fafc6dbe7ef5ab5629b</code> |
+| [yujin_home_pose02_serious_v002.png](yujin_home_pose02_serious_v002.png) | yujin_home_pose02_serious_v001.png | <code>1cb3947b6fa7b770ffbd5f1a8cd1eb3b79a5925a8daa003432a3c3acf5d802da</code> |
+| [yujin_home_pose02_smile_v002.png](yujin_home_pose02_smile_v002.png) | yujin_home_pose02_smile_v001.png | <code>bf4a72bd531b8eb843180bbfc0a56f3361ef788db63fbb23315e82925d36c684</code> |
+| [yujin_home_pose02_surprise_v002.png](yujin_home_pose02_surprise_v002.png) | yujin_home_pose02_surprise_v001.png | <code>69f8ffd6ebacdb9ae26ae0acc0e9f5db5df56cb8a7464f07c6dd0ac9a7f83a92</code> |
