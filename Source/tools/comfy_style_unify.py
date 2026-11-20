@@ -17,6 +17,10 @@
   python Source/tools/comfy_style_unify.py --workflow my_master_style_api.json \
       --files "CharacterArt/candidates/chatgpt-v002/jihyun_casual_pose02_*_v001.png" --out-version v002
 
+  # 최근 ChatGPT 그림 전부(목록 파일 사용, 결과는 별도 폴더)
+  python Source/tools/comfy_style_unify.py --workflow my_master_style_api.json \
+      --list Docs/unify-list-v001.txt --out-dir CharacterArt/candidates/unified-v001 --out-version v101
+
   # 장면 CG·타이틀
   python Source/tools/comfy_style_unify.py --workflow my_master_style_api.json \
       --files "CharacterArt/candidates/cg-chatgpt-v001/*_v001.png" --out-version v002
@@ -51,6 +55,7 @@ HEROINE = {
 STYLE = "anime visual novel illustration, clean bold lineart, cel shading, two-tone hard-edged shadows, crisp highlights"
 SPRITE_TAIL = ", 1girl, solo, adult woman, full body, standing, simple gray background"
 CG_TAIL = ", detailed background, adult women"
+BG_PROMPT = STYLE + ", scenery, no humans, background art, clean thin lineart, muted slightly desaturated colors"
 GRAY = (128, 128, 128, 255)
 VERSION = re.compile(r"_v\d{3}(?=\.png$)")
 SPRITE_NAME = re.compile(r"^(?P<stem>[a-z]+_[a-z]+_pose\d\d)_(?P<expr>[a-z]+)_v\d{3}\.png$")
@@ -83,6 +88,8 @@ def png(img):
 
 
 def prompt_for(name, sprite):
+    if name.startswith("bg_"):
+        return BG_PROMPT
     who = [k for k in HEROINE if name.startswith(k + "_")]
     if who:
         base = HEROINE[who[0]]
@@ -116,7 +123,7 @@ def run(args, template, ref_name, img, name, sprite):
     find_node(wf, "POSITIVE")["inputs"]["text"] = prompt_for(name, sprite)
     sampler = find_node(wf, "SAMPLER")["inputs"]
     sampler["seed"] = zlib.crc32(name.encode()) % (2 ** 32)
-    sampler["denoise"] = args.denoise if args.denoise is not None else (0.30 if sprite else 0.38)
+    sampler["denoise"] = args.denoise if args.denoise is not None else (0.30 if sprite else (0.35 if name.startswith("bg_") else 0.38))
     if args.style_weight is not None:
         find_node(wf, "STYLE_IPA")["inputs"]["weight"] = args.style_weight
     pid = json.loads(http(args.server, "/prompt", json.dumps({"prompt": wf, "client_id": uuid.uuid4().hex}).encode(),
@@ -151,7 +158,9 @@ def face_mask(neutral, other):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--workflow", required=True, type=Path)
-    ap.add_argument("--files", required=True, nargs="+", help="파일 또는 glob 패턴")
+    ap.add_argument("--files", nargs="+", default=[], help="파일 또는 glob 패턴")
+    ap.add_argument("--list", type=Path, help="처리할 파일 경로를 한 줄에 하나씩 적은 목록")
+    ap.add_argument("--out-dir", type=Path, help="결과를 이 폴더에 원래 폴더 이름별로 저장(파일 이름은 _vNNN 만 바꿈)")
     ap.add_argument("--out-version", required=True, help="예: v002")
     ap.add_argument("--ref", default=MASTER, type=Path, help="마스터 그림")
     ap.add_argument("--server", default="127.0.0.1:8188")
@@ -163,7 +172,10 @@ def main():
     if not re.fullmatch(r"v\d{3}", args.out_version):
         sys.exit("--out-version 은 v002 같은 형식이어야 합니다.")
     template = json.loads(args.workflow.read_text(encoding="utf-8"))
-    files = sorted({Path(p) for pat in args.files for p in glob.glob(pat)} )
+    pats = list(args.files)
+    if args.list:
+        pats += [l.strip() for l in args.list.read_text(encoding="utf-8").splitlines() if l.strip()]
+    files = sorted({Path(p) for pat in pats for p in glob.glob(pat)})
     files = [f for f in files if f.suffix == ".png" and VERSION.search(f.name) and not f.name.endswith("_%s.png" % args.out_version)]
     if args.first:
         files = files[:args.first]
@@ -175,6 +187,9 @@ def main():
     files.sort(key=lambda f: (0 if "_neutral_" in f.name else 1, f.name))
     for path in files:
         out = path.with_name(VERSION.sub("_" + args.out_version, path.name))
+        if args.out_dir:
+            out = args.out_dir / path.parent.name / out.name
+            out.parent.mkdir(parents=True, exist_ok=True)
         if out.exists():
             print("건너뜀(이미 있음):", out.name)
             continue

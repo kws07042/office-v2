@@ -39,8 +39,10 @@ kws07042/office-v2 저장소에서 아래 두 가지를 로컬 ComfyUI로 처리
    - 판정: 마스터(ria_office_pose01_neutral_v001.png)와 나란히 놓고 선 굵기·눈 그리는 법·2단 셀 채색이 같으면 성공.
      구도·옷·얼굴이 원본에서 바뀌면 --denoise 를 0.04씩 낮추고, 그림체가 덜 바뀌면 --style-weight 를 0.95까지 올린다(v002 파일을 지우고 다시).
      마스터 / 원본 / 결과 비교 이미지를 만들어 나에게 보여 주고, 좋다고 하면 전체 실행.
-   - 전체: --files 에 "CharacterArt/candidates/chatgpt-v002/*_v001.png" 와 "CharacterArt/candidates/cg-chatgpt-v001/*_v001.png" 를 넣는다.
-     같은 포즈의 표정 입상은 neutral 결과의 몸 + 각 표정의 얼굴로 자동으로 합쳐진다. 다시 뽑은 _v002 파일은 --out-version v003 으로 따로 돌린다.
+   - 전체(깃허브의 최근 ChatGPT 그림 273장, 각 그림의 최신 버전만): 목록 Docs/unify-list-v001.txt
+     python Source/tools/comfy_style_unify.py --workflow <경로>/my_master_style_api.json --list Docs/unify-list-v001.txt --out-dir CharacterArt/candidates/unified-v001 --out-version v101
+     입상 188장(투명 유지, 같은 포즈 표정은 neutral 몸 + 표정 얼굴로 합침), 장면 CG·타이틀 62장, 배경 23장. 결과는 unified-v001/<원래 폴더>/<이름>_v101.png.
+     중간에 끊기면 같은 명령을 다시 실행하면 이미 만든 파일은 건너뛴다. 이 경우 1·2단계(서윤 v004, 배경 v003)는 따로 하지 않아도 된다.
 
 4. 올리기
    - INDEX.md(각 폴더)에 결과 행 추가: 체크포인트, denoise, style weight, SHA-256.
