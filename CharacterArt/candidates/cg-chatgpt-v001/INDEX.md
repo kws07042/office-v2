@@ -1,5 +1,13 @@
 # 장면 CG · 타이틀 후보
 
+## 리아 크리스마스이브 · 슈슈를 묶은 직후
+
+[이전 구도(v003)와 새 구도(v004) 비교](ria_x01_v003_v004_comparison.jpg)
+
+| 파일 | 수정 이유 | 참고 그림 | SHA-256 |
+|---|---|---|---|
+| [ria_x01_scene_v004.png](ria_x01_scene_v004.png) | v003에서 길게 뻗던 두 팔을 걷어내고, 리아가 새 슈슈를 확인하는 순간으로 변경. 도현은 오른쪽 아래에서 원래 슈슈를 쥔 손만 보인다. | [화풍 기준](../heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png) · [리아 겨울 외투](../../../Source/game/images/characters/ria/ria_winter_pose01_neutral.png) · [이전 구도](ria_x01_scene_v003.png) | `0ab6e4fc1a407ffa32d3c3459995c02879eaafee02b4df760305f454e7fe6aa5` |
+
 ## 크리스마스·가을 장면 수정 후보 6장
 
 [원본(왼쪽)과 수정본(오른쪽) 비교](season_fixes_comparison.jpg)
