@@ -1,5 +1,35 @@
 # 장면 CG · 타이틀 후보
 
+## 장면 추가 수정 5장
+
+[전후 비교 · 왼쪽 원본 / 오른쪽 수정본](scene_fixes_comparison.jpg)
+
+| 파일 | 수정 이유 | 참고 그림 | SHA-256 |
+|---|---|---|---|
+| [seoyun_sp1_scene_v002.png](seoyun_sp1_scene_v002.png) | 책을 서윤 쪽으로 돌리고 휴대폰을 귀에 댐 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_home_pose01_neutral.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_sp1_scene_v001.png` | `5d6e8a598d239e1d7cd2ea5a26018c32d77065aae90678050c95a142777b5df4` |
+| [seoyun_sp2_scene_v002.png](seoyun_sp2_scene_v002.png) | 실내 러그에서 운동화를 벗은 맨발로 수정 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_casual_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_sp2_scene_v001.png` | `518e3a0d2889f059362c0b15a3cff2617f36518189ba4e8e587f6fe8321d0655` |
+| [seoyun_x01_scene_v002.png](seoyun_x01_scene_v002.png) | 베이지 카디건 한 벌을 의자 위 도현 코트에 겹쳐 배치 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_casual_pose01_neutral.png`<br>`CharacterArt/candidates/chatgpt-v001/seoyun_casual_pose02_neutral_v003.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_x01_scene_v001.png` | `261bcab2f32b237a331d988afaea9da8d3ffe79d4833fd2c12eb3da1e5397ba8` |
+| [ria_x01_scene_v002.png](ria_x01_scene_v002.png) | 도현의 두 손을 뒤쪽 시점에 맞추고 기존 슈슈를 손목에 배치 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_winter_pose01_neutral.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/ria_x01_scene_v001.png` | `f6838ebfc9e2e806022d474abc98c64f8e04630a70343e721508dfe7f35be13f` |
+| [seoyun_r16_scene_v002.png](seoyun_r16_scene_v002.png) | 두 사람이 나란히 선 시점으로 팔의 연결을 바로잡고 정민재가 두 사람을 바라보게 수정 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png`<br>`CharacterArt/candidates/cg-chatgpt-v001/seoyun_r16_scene_v001.png` | `961f0c53be2b44c62fd658c5d1fe39e5668a3e8cc3560ff7faa5d7cb108460a1` |
+
+
+## PR #25 검수 수정본
+
+[기존 후보와 새 후보 비교](fix_13_comparison.jpg)
+
+각 행의 왼쪽은 검수 대상 원본, 오른쪽은 새 후보이다.
+
+| 파일 | 고친 이유 | 참고 그림 | SHA-256 |
+|---|---|---|---|
+| [jihyun_r10_scene_v002.png](jihyun_r10_scene_v002.png) | 회로 기판을 목재 미니어처 집 조립 키트로 교체 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/jihyun/jihyun_home_pose01_neutral.png` | <code>8d17e87cf41824078dd92e82317c9d648154fc81e72474534f330b18dd32cf87</code> |
+| [jihyun_r16b_scene_v002.png](jihyun_r16b_scene_v002.png) | 사무실 복도와 업무복을 카페 앞 보도와 사복으로 변경 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/jihyun/jihyun_casual_pose01_neutral.png` | <code>08b8b575ecfbc0d8b0a833a1414d8b5da1067dcbe284c145e169a27b1737d540</code> |
+| [yujin_r02_scene_v002.png](yujin_r02_scene_v002.png) | 전시 데이트 의상을 사원증 없는 사복으로 변경 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/yujin/yujin_casual_pose01_neutral.png` | <code>e839cb7b8365ba96d87b621771f00efb25e9053bfcb1cf4d3f36dd4d41481c6c</code> |
+| [yujin_sp2_scene_v002.png](yujin_sp2_scene_v002.png) | 노트북에 옷 입은 남자의 뒷모습 스케치를 배치 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/yujin/yujin_home_pose01_neutral.png` | <code>c2941c2a0116ea55e523d8dd104f0bed6165a5a6ffe77ca77f1afb407f5a9eaf</code> |
+| [yujin_x01_scene_v002.png](yujin_x01_scene_v002.png) | 스케치북 그림 면이 도현을 향하도록 수정 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/yujin/yujin_home_pose01_neutral.png` | <code>6a3b69c5b5ccf6a5c03ccd104d2199f62830c9405e35b370bec316d4713303a8</code> |
+| [ria_r04_scene_v002.png](ria_r04_scene_v002.png) | 도현의 팔을 빼고 고백 직후 리아의 표정에 집중 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png` | <code>0526d5aa5cf94097a049d2b6796d910a7bd4cf831a3d638474132926aa70b2be</code> |
+| [seoyun_x01b_scene_v002.png](seoyun_x01b_scene_v002.png) | 의자 위 두 다리와 머그를 잡은 손의 자세 수정 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/seoyun/seoyun_home_pose01_neutral.png` | <code>5fef3ae99569a481c10e4cce6d953bdead1dd2606068e6001204741523b6019c</code> |
+| [title_keyvisual_v002.png](title_keyvisual_v002.png) | 네 명을 오른쪽에 모아 왼쪽 위 로고 공간 확보 | `CharacterArt/candidates/heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png`<br>`Source/game/images/characters/jihyun/jihyun_office_pose01_neutral.png`<br>`Source/game/images/characters/ria/ria_office_pose01_neutral.png`<br>`Source/game/images/characters/yujin/yujin_office_pose01_neutral.png`<br>`Source/game/images/characters/seoyun/seoyun_office_pose01_neutral.png` | <code>5f2d71a0022d0e82403aa555dc5cb14f3cda9261e29d877f5df1518436b52e01</code> |
+
 기준 문서: `Docs/chatgpt-paste-pack-v001.md` 및 `Docs/art-final-shotlist-v001.md`. 참조 경로는 저장소 루트 기준이다.
 
 ## 묶음 4
