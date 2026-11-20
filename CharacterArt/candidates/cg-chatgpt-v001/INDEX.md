@@ -152,10 +152,10 @@ v003 나뭇가지 왼쪽 하늘에 남아 있던 분홍 꽃잎 조각(약 700픽
 
 ## 리아 X01 v004 — 새 슈슈를 만지는 리아
 
-[4차 검수 기록 5절](../../../Docs/art-fix-prompts-v001.md)에 따라 도현의 두 팔이 화면 양끝에서 길게 뻗던 구도를 수정했다. v004에서는 리아의 등 뒤에서 장면을 본다. 리아는 상자에 옆으로 걸터앉아 붕어빵을 든 손을 무릎에 쉬고, 반대 손으로 새 파란 벨벳 슈슈를 살짝 만지며 어깨 너머로 돌아본다. 도현이 원래 하늘색 슈슈를 쥔 손은 오른쪽 아래에 손목까지만 보인다.
+[4차 검수 기록 5절](../../../Docs/art-fix-prompts-v001.md)에 따라 도현의 두 팔이 화면 양끝에서 길게 뻗던 구도를 수정했다. v004에서는 리아의 등 뒤에서 장면을 본다. 리아는 상자에 옆으로 걸터앉아 꼬리를 한 입 베어 문 붕어빵을 종이에 싸서 무릎 위에 들고, 반대 손으로 새 파란 벨벳 슈슈를 살짝 만지며 어깨 너머로 돌아본다. 옆 상자에는 김이 오르는 뜨거운 아메리카노를 놓았다. 도현이 원래 하늘색 슈슈를 쥔 손은 오른쪽 아래에 손목까지만 보인다.
 
 [비교 사진 · 왼쪽 v003 / 오른쪽 v004](ria_x01_v003_v004_comparison.jpg)
 
 | 파일 | 화풍 기준 | 인물·겨울 의상 참고 | SHA-256 |
 |---|---|---|---|
-| [ria_x01_scene_v004.png](ria_x01_scene_v004.png) | [리아 오피스 원화](../heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png) | [리아 겨울 입상](../../../Source/game/images/characters/ria/ria_winter_pose01_neutral.png) | <code>d38abe55466b82cc122afb76e0df14f8304ad6b3508a7d50b00449f00048467a</code> |
+| [ria_x01_scene_v004.png](ria_x01_scene_v004.png) | [리아 오피스 원화](../heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png) | [리아 겨울 입상](../../../Source/game/images/characters/ria/ria_winter_pose01_neutral.png) | <code>cb9c61f9e668463fa99e1f21f6f82ed7db99e626b1dfbdd2b98d41527b36f56b</code> |
