@@ -1,13 +1,5 @@
 # 장면 CG · 타이틀 후보
 
-## 리아 크리스마스이브 · 슈슈를 묶은 직후
-
-[이전 구도(v003)와 새 구도(v004) 비교](ria_x01_v003_v004_comparison.jpg)
-
-| 파일 | 수정 이유 | 참고 그림 | SHA-256 |
-|---|---|---|---|
-| [ria_x01_scene_v004.png](ria_x01_scene_v004.png) | v003에서 길게 뻗던 두 팔을 걷어내고, 리아가 새 슈슈를 확인하는 순간으로 변경. 도현은 오른쪽 아래에서 원래 슈슈를 쥔 손만 보인다. | [화풍 기준](../heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png) · [리아 겨울 외투](../../../Source/game/images/characters/ria/ria_winter_pose01_neutral.png) · [이전 구도](ria_x01_scene_v003.png) | `0ab6e4fc1a407ffa32d3c3459995c02879eaafee02b4df760305f454e7fe6aa5` |
-
 ## 크리스마스·가을 장면 수정 후보 6장
 
 [원본(왼쪽)과 수정본(오른쪽) 비교](season_fixes_comparison.jpg)
@@ -157,3 +149,13 @@ v003 나뭇가지 왼쪽 하늘에 남아 있던 분홍 꽃잎 조각(약 700픽
 | 파일 | 원본 | SHA-256 |
 |---|---|---|
 | [ria_r04_scene_v004.png](ria_r04_scene_v004.png) | ria_r04_scene_v003.png | <code>898a7fe0eb593af9216ba29bbf1d2a4a02db81cce3d78e078fbbaa83f882c548</code> |
+
+## 리아 X01 v004 — 새 슈슈를 만지는 리아
+
+[4차 검수 기록 5절](../../../Docs/art-fix-prompts-v001.md)에 따라 도현의 두 팔이 화면 양끝에서 길게 뻗던 구도를 수정했다. v004에서는 리아가 직접 새 파란 벨벳 슈슈를 만지며 어깨 너머로 돌아본다. 도현이 원래 하늘색 슈슈를 쥔 손은 오른쪽 아래에 손목까지만 보인다.
+
+[비교 사진 · 왼쪽 v003 / 오른쪽 v004](ria_x01_v003_v004_comparison.jpg)
+
+| 파일 | 화풍 기준 | 인물·겨울 의상 참고 | SHA-256 |
+|---|---|---|---|
+| [ria_x01_scene_v004.png](ria_x01_scene_v004.png) | [리아 오피스 원화](../heroine-masters-v001/final_2048x3072/ria_office_pose01_neutral_v001.png) | [리아 겨울 입상](../../../Source/game/images/characters/ria/ria_winter_pose01_neutral.png) | <code>7a816264ae7315b631bc4025692b8b4c2572969292a409f7a54595a97bc080b5</code> |
