@@ -20,16 +20,19 @@ init -4 python:
     }
     # 서윤은 작업실에서 지낸다. 아침에만 생활복, 그 밖에는 외출복으로 둔다.
     HEROINE_HOME_MORNING = {"seoyun": ("서윤의 작업실",)}
-    SPRITE_EXPRESSIONS = {
-        ("office", "pose01"): ("neutral", "smile", "laugh", "blush", "surprise", "pout", "sad", "serious"),
-        ("office", "pose02"): ("neutral", "smile", "blush", "serious"),
-        ("office", "pose03"): ("neutral", "smile", "blush", "serious"),
-        ("casual", "pose01"): ("neutral", "smile", "blush"),
-        ("home", "pose01"): ("neutral", "smile", "blush"),
-        ("winter", "pose01"): ("neutral", "smile", "blush"),
-    }
+    # 게임 폴더의 입상 파일을 보고 (인물, 의상, 포즈)별로 있는 표정을 모은다.
+    def _hs_scan_sprites():
+        found = {}
+        for path in renpy.list_files():
+            m = _hs_re.match(r"images/characters/(ria|jihyun|yujin|seoyun)/(?:ria|jihyun|yujin|seoyun)_(office|casual|home|winter)_(pose\d\d)_([a-z]+)\.png$", path)
+            if m:
+                found.setdefault((m.group(1), m.group(2), m.group(3)), set()).add(m.group(4))
+        return found
+    SPRITE_SET = _hs_scan_sprites()
+
     # 그 포즈에 없는 표정은 가장 가까운 표정으로 바꾼다.
     SPRITE_FALLBACK = {
+        "teary": ("sad", "serious", "neutral"),
         "laugh": ("smile",),
         "surprise": ("blush", "neutral"),
         "pout": ("serious", "neutral"),
@@ -89,13 +92,22 @@ init -4 python:
             return "office"
         return "casual"
 
-    def heroine_pose(who, outfit, place=None):
-        if outfit != "office":
-            return "pose01"
+    def heroine_poses(who, outfit):
+        return sorted(pose for (w, o, pose) in SPRITE_SET if w == who and o == outfit) or ["pose01"]
+
+    def heroine_pose(who, outfit, place=None, face=None):
         place = _hs_place() if place is None else place
-        # 같은 장면 안에서는 몸이 바뀌지 않게 장소 문구로 포즈를 하나 고른다(절반은 기본 포즈).
-        roll = _hs_zlib.crc32((who + "|" + place).encode("utf-8")) % 4
-        return ("pose01", "pose01", "pose02", "pose03")[roll]
+        poses = heroine_poses(who, outfit)
+        # 직접 정한 표정(예: 울먹)이 이 의상의 어느 포즈에만 있으면 그 포즈를 쓴다.
+        if face:
+            with_face = [p for p in poses if face in SPRITE_SET.get((who, outfit, p), ())]
+            if with_face:
+                return with_face[0]
+        # 같은 장면 안에서는 몸이 바뀌지 않게 장소 문구로 포즈를 하나 고른다(업무복은 절반이 기본 포즈).
+        roll = _hs_zlib.crc32((who + "|" + place).encode("utf-8"))
+        if outfit == "office" and len(poses) >= 3:
+            return ("pose01", "pose01", poses[1], poses[2])[roll % 4]
+        return poses[roll % len(poses)]
 
     def heroine_tense_scene(chapter=None):
         chapter = getattr(renpy.store, "chapter", "") if chapter is None else chapter
@@ -115,8 +127,8 @@ init -4 python:
                 return face
         return "neutral"
 
-    def heroine_resolve_face(face, outfit, pose):
-        allowed = SPRITE_EXPRESSIONS[(outfit, pose)]
+    def heroine_resolve_face(face, outfit, pose, who="ria"):
+        allowed = SPRITE_SET.get((who, outfit, pose), {"neutral"})
         seen = set()
         while face not in allowed and face not in seen:
             seen.add(face)
@@ -142,14 +154,18 @@ init -4 python:
 
     def heroine_sprite_path(who, place=None):
         outfit = heroine_outfit(who, place)
-        pose = heroine_pose(who, outfit, place)
-        expression = heroine_resolve_face(heroine_face(who), outfit, pose)
+        wanted = heroine_face(who)
+        locked = renpy.store.heroine_face_lock.get(who) == wanted
+        pose = heroine_pose(who, outfit, place, wanted if locked else None)
+        expression = heroine_resolve_face(wanted, outfit, pose, who)
         return "images/characters/%s/%s_%s_%s_%s.png" % (who, who, outfit, pose, expression)
 
     def heroine_sprite_visible():
         st = renpy.store
         who = st.cream_focus
         if who not in HEROINES or st.dialogue_cg_mode or st.event_cut_active:
+            return False
+        if art_cg_path():
             return False
         if any(word in _hs_place() for word in HIDDEN_PLACE_WORDS):
             return False

@@ -49,7 +49,7 @@ testsuite sprite_checks:
         assert eval heroine_outfit("jihyun") == "casual" and heroine_face("jihyun") == "laugh"
         screenshot "sprite-2-jihyun-casual.png"
         advance until eval sprite_step == 3 timeout 10.0
-        assert eval heroine_outfit("yujin") == "home" and heroine_sprite_path("yujin").endswith("yujin_home_pose01_blush.png")
+        assert eval heroine_outfit("yujin") == "home" and heroine_sprite_path("yujin").startswith("images/characters/yujin/yujin_home_pose0") and heroine_sprite_path("yujin").endswith("_blush.png")
         screenshot "sprite-3-yujin-home.png"
         advance until eval sprite_step == 4 timeout 10.0
         assert eval heroine_sprite_path("seoyun").endswith("seoyun_winter_pose01_smile.png")

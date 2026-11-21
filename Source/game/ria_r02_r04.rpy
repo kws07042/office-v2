@@ -91,6 +91,7 @@ label ria_r02:
         d "[ri('길 안내하려는 건 아니고.', '길 안내하려는 건 아니고요.')]"
         $ ria_expression = "shy"
         r "[ri('알아~~ 그냥 네 입으로 한 번 더 듣고 싶어서.', '알아요~~ 그냥 도현 씨 입으로 한 번 더 듣고 싶어서요.')]"
+        $ cg("ria_r02")
         "리아가 내민 손을 잡고 걸음을 맞췄다. 정면을 보다가 옆을 보고, 다시 앞을 봤다."
         $ remember("ria_hand")
         $ ria_expression = "shy"
@@ -364,6 +365,7 @@ label ria_r04:
     else:
         r "[ri('앞으로는 나도 먼저 연락할게.', '앞으로는 저도 먼저 연락할게요.')]"
         d "[ri('좋아. 나도 기다리기만 하진 않을게.', '좋아요. 저도 기다리기만 하진 않을게요.')]"
+    $ cg("ria_r04")
     "둘이 조용한 길에서 잠깐 멈췄다."
     $ progression_enter("ria_r04.choice03")
     $ progression_checkpoint("ria_r04.choice03")

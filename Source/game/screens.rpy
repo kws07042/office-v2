@@ -50,8 +50,13 @@ style event_button_text is button_text:
 screen cream_stage():
     zorder -100
     if not main_menu and not event_cut_active:
-        add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
-        if heroine_sprite_visible():
+        if art_stage_has_picture():
+            add "art stage"
+        else:
+            add ("gui/cream/stage_" + cream_stage_mode() + ".svg") xysize (1280, 720)
+        if art_cg_path():
+            pass
+        elif heroine_sprite_visible():
             add "heroine stage sprite" xalign 0.5 ypos SPRITE_YPOS at (silk_bust_idle if silk_motion_on() else silk_still)
         elif cream_ria_visible():
             add "ria ui bust" xalign 0.5 ypos 28 at (silk_bust_idle if silk_motion_on() else silk_still)
@@ -296,14 +301,18 @@ screen choice(items):
 screen main_menu():
     tag menu
     add "silk ground"
+    if renpy.loadable("images/cg/title_keyvisual.jpg"):
+        add "images/cg/title_keyvisual.jpg"
     if silk_motion_on():
         add "silk title dots"
-    add silk("band", size=(1280, 584)) at (silk_band_in if silk_motion_on() else silk_still)
+    if not renpy.loadable("images/cg/title_keyvisual.jpg"):
+        add silk("band", size=(1280, 584)) at (silk_band_in if silk_motion_on() else silk_still)
     if silk_motion_on():
         add "silk title hearts"
+    $ title_art = renpy.loadable("images/cg/title_keyvisual.jpg")
     vbox:
-        at ((silk_tilt, silk_logo_in, silk_logo_float) if silk_motion_on() else (silk_tilt,))
-        xpos 84 ypos 150
+        at (((silk_tilt, silk_logo_in, silk_logo_float) if silk_motion_on() else (silk_tilt,)) + ((Transform(zoom=0.62),) if title_art else ()))
+        xpos (40 if title_art else 84) ypos (40 if title_art else 150)
         spacing -6
         text "After Work, With You" font "fonts/PlayfairDisplay-Italic.ttf" size 30 color "#B3123F" xpos 8
         text "퇴근 후{color=#F2C14E},{/color} 우리":
