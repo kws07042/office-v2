@@ -167,9 +167,9 @@
    "sha256": "5632ee488df9f3e94087baa4bcddcdca8e405b36d3b0af50341812ae284cdcd3"
   },
   "images/cg/jihyun_r16b.jpg": {
-   "from": "cg-chatgpt-v001/jihyun_r16b_scene_v002.png",
-   "source_sha256": "08b8b575ecfbc0d8b0a833a1414d8b5da1067dcbe284c145e169a27b1737d540",
-   "sha256": "b48f16ea42343a3ace1b3f60caac27d87800f0a506514d2681291a5a5f2cc8ad"
+   "from": "cg-chatgpt-v001/jihyun_r16b_scene_v003.png",
+   "source_sha256": "fd977800dfbed178bbe162fde294f5ad1ae0bbe46038550b2536dd1fafd5b2c1",
+   "sha256": "4927cd90d028347b222c00a1d7b9c718055faf30c5cf959f466ee5faf3d3b872"
   },
   "images/cg/jihyun_sp1.jpg": {
    "from": "cg-chatgpt-v001/jihyun_sp1_scene_v001.png",

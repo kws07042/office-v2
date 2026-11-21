@@ -15,14 +15,14 @@
    "note": "coat belt removed (PR #29)"
   },
   "images/characters/jihyun/jihyun_casual_pose01_sad.png": {
-   "from": "chatgpt-v001/jihyun_casual_pose01_sad_v001.png",
-   "sha256": "bdd9f0dba4c17491302bdf8e1508b3b97ffce0a3fff9352fdfdd98c9bc6a5326",
-   "source_sha256": "13d57feaa29bd602197e5178dccb55f636089bc20202f5fe88fee9f63330d22a"
+   "from": "chatgpt-v001/jihyun_casual_pose01_sad_v004.png",
+   "sha256": "04c36d8db606086cf48d3df6fe597ddc4e995cf3785158c6cb1c40f2b99d4b73",
+   "source_sha256": "b38eb31e025e2e39a71be4ad7c6c8d33c86fc1fcd9681f871eb7980687809869"
   },
   "images/characters/jihyun/jihyun_casual_pose01_serious.png": {
-   "from": "chatgpt-v001/jihyun_casual_pose01_serious_v001.png",
-   "sha256": "4ab333aa30df6a00d28cc345063e4750549475ba2bb8dc295ed1c096c30b8106",
-   "source_sha256": "9bbb31e5713e4f88525ad98a8f1bcba31bd6c4324e1114878836ff1ab111c627"
+   "from": "chatgpt-v001/jihyun_casual_pose01_serious_v004.png",
+   "sha256": "d3aa11deb4ceb2573a27b05258421aea7c81a4ce0c41f19d0ab05d9ea1c5da64",
+   "source_sha256": "32b59e03cccf0559998673e3ffe886d34d316218a610f5b4868b941cb284a2cc"
   },
   "images/characters/jihyun/jihyun_casual_pose01_smile.png": {
    "from": "jihyun_casual_pose01_smile_v004.png",
@@ -31,44 +31,44 @@
    "note": "coat belt removed (PR #29)"
   },
   "images/characters/jihyun/jihyun_casual_pose01_surprise.png": {
-   "from": "chatgpt-v001/jihyun_casual_pose01_surprise_v001.png",
-   "sha256": "55a6cd2fcb1c2beb8b2016c392b1083881ff965ea188403b5d0851e923040264",
-   "source_sha256": "c9318444d740e5bbc076ae5a22038b3b842f77abf5b43d4e0334d1a440aa9c2b"
+   "from": "chatgpt-v001/jihyun_casual_pose01_surprise_v004.png",
+   "sha256": "9d31b3da3305b2b4e6e5fdb2e917fcd1b023df0187a04454471e14e66eb27bc2",
+   "source_sha256": "a829dc3c1a21487f0a6e67e747ec9c01dfdb98a567f890ae4fbc05287bf23357"
   },
   "images/characters/jihyun/jihyun_casual_pose02_blush.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_blush_v001.png",
-   "sha256": "ca036bff64fa2c2b795402359befc528cfb1dd9d9cb762bac5d2c477aff77303",
-   "source_sha256": "bc0ac7e32d966617baa47ef82475896009356567d9af05565f1a51aac1889755"
+   "from": "chatgpt-v002/jihyun_casual_pose02_blush_v004.png",
+   "sha256": "b48eff698130a6c2bdfd80bcd4e1e411370bc15bb0bbb2b9c9cb8150f46cb8d7",
+   "source_sha256": "626d0009ccbba9c15baec862914d6de8cc4a2523ac0f945e23a9c88be8ad8d7d"
   },
   "images/characters/jihyun/jihyun_casual_pose02_neutral.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_neutral_v001.png",
-   "sha256": "2459b0736cd7f25cd036434ccab1d189531343f42184fe5320aaf94d884055bf",
-   "source_sha256": "8ddf6adc5eebc0d3ef8a0052818c50e7245b02ff64431e632402f9ac00c343cf"
+   "from": "chatgpt-v002/jihyun_casual_pose02_neutral_v004.png",
+   "sha256": "b6c7f45aac6f35a2524df24a6b0b53706c9752c0499c9eafc12b7448ed527aa3",
+   "source_sha256": "5476dc9dbfb94fb368d0a718f916d87bd21e16de0551ddb8c068cb0d7c9e57df"
   },
   "images/characters/jihyun/jihyun_casual_pose02_sad.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_sad_v001.png",
-   "sha256": "7f76077527d695ae881e650ef00532fd91d1139fbc433876d1a4c16a164761b6",
-   "source_sha256": "b6b64125b1be853ebd3feaaa1d750bb9fb2bdc5a98ae5b5c64fb7e07c1c5b27d"
+   "from": "chatgpt-v002/jihyun_casual_pose02_sad_v004.png",
+   "sha256": "7ebe43a40a9ff19991e025cc257be1a2cdb2e2766057880849cf11c3b899a1ed",
+   "source_sha256": "afa3ba83f90456a94642c298007717751c0efa8b25f4d3ce0fb284d669d372ff"
   },
   "images/characters/jihyun/jihyun_casual_pose02_serious.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_serious_v001.png",
-   "sha256": "de1f55d1b46729afac3226d683ae8f8b758b0967d4542b9d2f5b3495208a5c6c",
-   "source_sha256": "4fbfbbfdf59a5038a74b7cee962933f702b8e2f9bea9b5f27f1f355c0e64815f"
+   "from": "chatgpt-v002/jihyun_casual_pose02_serious_v004.png",
+   "sha256": "22daee07f5fb5e6208c7ab90da35cb86055f2884ceb900ce818cedc896c5b8b1",
+   "source_sha256": "cfda4048dec92e61c93dd6dba5d03605707a74b9adbae9a97f870210f58b883b"
   },
   "images/characters/jihyun/jihyun_casual_pose02_smile.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_smile_v001.png",
-   "sha256": "df5082c01c4e613c7063e5c026e69f42ff3fd35746c82bd4a6dfaa156fe12e36",
-   "source_sha256": "c9b1fc1bc8246c69cbc241aecbf48f37e922d4022b943a16eb32946ddda0b096"
+   "from": "chatgpt-v002/jihyun_casual_pose02_smile_v004.png",
+   "sha256": "02176d5f60dbaa5e659ec356c00f9013f3a3171e29caf1f3bd8451383880720e",
+   "source_sha256": "a6c5d0bd859380db28d5f54e2ad130a9c8ce8c4bf2a961e0f921d17dd1865dc5"
   },
   "images/characters/jihyun/jihyun_casual_pose02_surprise.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_surprise_v001.png",
-   "sha256": "e5c61aad31f8030fb8574b5978aa0e6adc4969bd9cc19fac734848a04df969b9",
-   "source_sha256": "76be8fd62302811626220a985fbc54e1da6fbc74c4724fa1b14b6e9efdcfd3a3"
+   "from": "chatgpt-v002/jihyun_casual_pose02_surprise_v004.png",
+   "sha256": "ce4fa6e5f00fab5621a62ae5fa88eda6203e351c12fc5145f3114446cef6e57a",
+   "source_sha256": "23c43a5463e7519d6b0b5293638ab23a5ab4de9dbcd777716721c3a0cff525fd"
   },
   "images/characters/jihyun/jihyun_casual_pose02_teary.png": {
-   "from": "chatgpt-v002/jihyun_casual_pose02_teary_v001.png",
-   "sha256": "88848ddcf693edfd3da7fb9d69a397d3f929855a7df7aceaaf2f79a6b6403b5c",
-   "source_sha256": "e402b732d388b4a5fb0dcf5faefe1963d99b067a8b96bd4865e4f5c40c1ba818"
+   "from": "chatgpt-v002/jihyun_casual_pose02_teary_v004.png",
+   "sha256": "beb6cdf68044eab8592ce409256aec8e2ae4e9b9324f2b8d7a646dc097de77d8",
+   "source_sha256": "0406c3a610cd41395abc322a627f95f155dbaf0934f4fa06be9554d930f97907"
   },
   "images/characters/jihyun/jihyun_home_pose01_blush.png": {
    "from": "jihyun_home_pose01_blush_v003.png",
