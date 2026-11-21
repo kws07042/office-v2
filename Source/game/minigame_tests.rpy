@@ -65,13 +65,16 @@ testsuite minigame_checks:
 
     testcase spot:
         run [SetField(persistent, "mg_pending", "spot"), Start("minigame_free")]
-        click id "spot_logo"
-        click id "spot_head"
+        click id "spot_cell_12"
+        click id "spot_cell_2"
         screenshot "mg-5-spot.png"
-        click id "spot_arrow"
-        click id "spot_date"
+        click id "spot_cell_8"
+        click id "spot_cell_10"
+        click id "spot_cell_5"
+        click id "spot_cell_6"
+        click id "spot_cell_10"
         advance until screen "main_menu" timeout 20.0
-        assert eval persistent.minigame_best.get("spot") == 3
+        assert eval persistent.minigame_best.get("spot") == 6
 
     teardown:
         exit

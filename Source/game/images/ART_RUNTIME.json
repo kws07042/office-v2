@@ -460,6 +460,26 @@
    "from": "minigame-v001/card_back_v001.png",
    "source_sha256": "fec78ef7cbb0d6cd4059fac6b1d2246c7930989a24ba0ef7d937e98ae50a0a79",
    "sha256": "4eadd1b6ab4c4e905b9f1c13ed9a22bceadde8da94a7422eaa9aad649c469575"
+  },
+  "images/minigame/spot_pair1_orig.png": {
+   "from": "minigame-v001/spot_pair1_orig_v001.png",
+   "source_sha256": "aa2a7cd64d7946e762392a8f209b442e6f8337e86b1437bcd90851773cc38b3d",
+   "sha256": "6baaf812c9df5ba193f2a734b40389e8b5d9f5ccac0a0dc949755f5459fa57f4"
+  },
+  "images/minigame/spot_pair1_edit.png": {
+   "from": "minigame-v001/spot_pair1_edit_v001.png",
+   "source_sha256": "ddc3a1e8c2a14afc5a1fd2212bd0f3a89193363f19a830307145742233809750",
+   "sha256": "46fcb35775f8eed75cd991ab31efd51c2fddc99d36e8212e94915b1af96e883c"
+  },
+  "images/minigame/spot_pair2_orig.png": {
+   "from": "minigame-v001/spot_pair2_orig_v001.png",
+   "source_sha256": "af4ab76f3ebf9884ab5c8e78831a453915880d78f914c71c0f2cd3cfe7156576",
+   "sha256": "68643b6ef5b8c3492fd01511d2f6dd1deff49481b9d4b74639293176e712dd59"
+  },
+  "images/minigame/spot_pair2_edit.png": {
+   "from": "minigame-v001/spot_pair2_edit_v001.png",
+   "source_sha256": "7842e6f6b1ebdd2292cacda9038d9bba19af5552911e5930f7d2655a290184b4",
+   "sha256": "5fbf5c5704b2841142898256ba2d76e76d2505a48e9292ad60ef3a7ff7b04fa4"
   }
  }
 }

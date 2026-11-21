@@ -152,6 +152,13 @@ init -2 python:
                  "arrow": ("→", "#3B0B22", 44), "date": ("11.24\n토", "#3B0B22", 22), "logo": ("ONBIT", "#6E4553", 18)}
     SPOT_EDIT = dict(SPOT_ORIG, head=("퇴근길 향기", "#2F6E8F", 40), arrow=("←", "#3B0B22", 44), date=("11.24", "#3B0B22", 22))
     SPOT_ANSWERS = {"head", "arrow", "date"}
+    # 그림 시안 2쌍. 칸 번호(3x4, 왼쪽 위부터 1~12)가 어느 '달라진 곳'에 속하는지.
+    SPOT_PAIRS = [
+        dict(img="spot_pair1", groups={1: "title", 2: "title", 3: "title", 8: "arrow", 7: "leaf", 10: "leaf"}),
+        dict(img="spot_pair2", groups={5: "steam", 6: "candle", 10: "time"}),
+    ]
+    def spot_art_ready():
+        return all(renpy.loadable("images/minigame/%s_%s.png" % (p["img"], k)) for p in SPOT_PAIRS for k in ("orig", "edit"))
 
 # ---------------- 공통 화면 ----------------
 
@@ -465,28 +472,54 @@ screen mg_spot_poster(data, px, clickable=False, found=set()):
         if not clickable:
             add Solid("#EDE3DC") xpos 30 ypos 180 xysize (200, 4)
 
-screen mg_spot(found=set(), misses=0):
-    use mg_frame("어디가 달라졌어요?", "오른쪽 수정 시안에서 달라진 곳을 누르세요 · 찾은 곳 %d / 3 · 남은 기회 %d" % (len(found), 3 - misses)):
-        text "원래 시안" style "mg_small" xpos 120 ypos 96
-        text "수정 시안" style "mg_small" xpos 720 ypos 96
-        use mg_spot_poster(SPOT_ORIG, 120)
-        use mg_spot_poster(SPOT_EDIT, 720, True, found)
-        textbutton "그만하기" id "spot_quit" style "mg_button" xpos 40 ypos 640 action Return("quit")
+screen mg_spot(found=set(), misses=0, rnd=0):
+    if spot_art_ready():
+        $ P = SPOT_PAIRS[rnd]
+        use mg_frame("어디가 달라졌어요?", "%d / %d · 오른쪽 수정 시안에서 달라진 곳을 누르세요 · 찾은 곳 %d / 3 · 남은 기회 %d" % (rnd + 1, len(SPOT_PAIRS), len(found), 3 - misses)):
+            text "원래 시안" style "mg_small" xpos 140 ypos 108
+            text "수정 시안" style "mg_small" xpos 690 ypos 108
+            add ("images/minigame/%s_orig.png" % P["img"]) xpos 140 ypos 132
+            fixed:
+                xpos 690 ypos 132 xysize (450, 500)
+                add ("images/minigame/%s_edit.png" % P["img"])
+                for n in range(1, 13):
+                    $ g = P["groups"].get(n)
+                    button:
+                        xpos ((n - 1) % 3) * 150 ypos ((n - 1) // 3) * 125 xysize (150, 125)
+                        id "spot_cell_%d" % n
+                        background (Solid("#F2C14E66") if g in found else None)
+                        hover_background Solid("#F6D9DF55")
+                        action Return(g or "miss")
+            textbutton "그만하기" id "spot_quit" style "mg_button" xpos 40 ypos 640 action Return("quit")
+    else:
+        use mg_frame("어디가 달라졌어요?", "오른쪽 수정 시안에서 달라진 곳을 누르세요 · 찾은 곳 %d / 3 · 남은 기회 %d" % (len(found), 3 - misses)):
+            text "원래 시안" style "mg_small" xpos 120 ypos 96
+            text "수정 시안" style "mg_small" xpos 720 ypos 96
+            use mg_spot_poster(SPOT_ORIG, 120)
+            use mg_spot_poster(SPOT_EDIT, 720, True, found)
+            textbutton "그만하기" id "spot_quit" style "mg_button" xpos 40 ypos 640 action Return("quit")
 
 label mg_spot_game:
-    $ found = set()
-    $ misses = 0
-    while len(found) < 3 and misses < 3:
-        $ pick = renpy.call_screen("mg_spot", found=found, misses=misses)
-        if pick == "quit":
-            $ mg_result = len(found)
-            return
-        if pick in SPOT_ANSWERS:
-            $ found = found | {pick}
-        else:
-            $ misses += 1
-    $ mg_record("spot", len(found))
-    $ mg_result = len(found)
+    $ spot_total = 0
+    $ rounds = len(SPOT_PAIRS) if spot_art_ready() else 1
+    $ rnd = 0
+    while rnd < rounds:
+        $ found = set()
+        $ misses = 0
+        $ answers = set(SPOT_PAIRS[rnd]["groups"].values()) if spot_art_ready() else SPOT_ANSWERS
+        while len(found) < 3 and misses < 3:
+            $ pick = renpy.call_screen("mg_spot", found=found, misses=misses, rnd=rnd)
+            if pick == "quit":
+                $ mg_result = spot_total + len(found)
+                return
+            if pick in answers:
+                $ found = found | {pick}
+            elif pick not in found:
+                $ misses += 1
+        $ spot_total += len(found)
+        $ rnd += 1
+    $ mg_record("spot", spot_total)
+    $ mg_result = spot_total
     return
 
 # ---------------- 이야기 속 호출 ----------------
@@ -533,9 +566,9 @@ label minigame_reaction(game):
         else:
             s "줄이는 게 쓰는 것보다 어렵지. 그래서 내가 월급 받는 거야~"
     elif game == "spot":
-        if mg_result >= 3:
+        if mg_result >= (5 if spot_art_ready() else 3):
             $ award_once("mg_spot", "yujin", 1)
-            y "세, 세 군데 다요? ...저 이거 회의 때 써먹어도 돼요?"
+            y "다, 다 찾으셨어요? ...저 이거 회의 때 써먹어도 돼요?"
         else:
             y "괜찮아요. 저도 어제 찾는 데 한참 걸렸어요. 다른 데를 먼저 보셨네요."
     return
