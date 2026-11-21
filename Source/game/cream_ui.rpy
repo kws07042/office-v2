@@ -94,7 +94,7 @@ init -10 python:
         return "알아가는 중"
 
     def cream_menu_open():
-        return any(renpy.get_screen(name) for name in ("save", "load", "history", "preferences", "progression_hub", "progression_cg_view"))
+        return any(renpy.get_screen(name) for name in ("save", "load", "history", "preferences", "progression_hub", "progression_cg_view", "mg_sign", "mg_cards", "mg_photo", "mg_photo_result", "mg_trim", "mg_spot", "minigame_hub", "mg_offer"))
 
 image ria ui bust = DynamicDisplayable(ria_portrait_display)
 image yujin ui bust = (Transform(Crop((230, 0, 570, 850), "images/characters/yujin/ui_temp_v001.png"), zoom=1.0) if renpy.loadable("images/characters/yujin/ui_temp_v001.png") else Null())

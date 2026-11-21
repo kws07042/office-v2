@@ -258,6 +258,7 @@ label ria_r15:
     elif memory.get("ria_r10_place") == "park":
         $ cg("ria_r15")
         "지도에서 골랐던 작은 공원에 갔다. 도현은 긴 의자의 빈자리와 길게 드리운 빛을 찍고, 리아 옆에 앉아 짧은 글을 적었다."
+        call minigame("photo", "ria_r15")
         r "[ri('기록집에 넣을 자리, 오늘은 우리가 직접 앉아 봤네.', '기록집에 넣을 자리, 오늘은 우리가 직접 앉아 봤네요.')]"
         $ remember("ria_r15_booklet_photo", "작은 공원 긴 의자의 빈자리와 빛")
     elif memory.get("ria_r10_place") == "between":

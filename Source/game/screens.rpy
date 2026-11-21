@@ -393,6 +393,7 @@ screen main_menu():
     textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 32 ypos 24
     if spring_story_unlocked():
         textbutton "숨은 이야기 · 이듬해 봄" id "spring_story_button" action Start("spring_story") style "silk_small_button" xpos 32 ypos 64
+    textbutton "미니게임" id "minigame_button" action ShowMenu("minigame_hub") style "silk_small_button" xpos 32 ypos (104 if spring_story_unlocked() else 64)
     if config.developer:
         text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 

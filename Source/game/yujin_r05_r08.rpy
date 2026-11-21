@@ -235,6 +235,7 @@ label yujin_r07:
     $ cream_focus = "yujin"
     $ location = "토요일 오후 세 시 · 동네 서점"
     "약속한 시간에 만나 책을 같이 봤다. 도현이 노트를 꺼내자 유진은 지난번 구성 후보를 바로 알아봤다."
+    call minigame("photo", "yujin_r07")
     if memory.get("yujin_r05_layout") == "photo_first":
         y "사진 먼저 보이던 페이지죠? 이번엔 글 읽기 전에 조금 더 볼게요."
     elif memory.get("yujin_r05_layout") == "text_first":
