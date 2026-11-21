@@ -53,6 +53,7 @@ init -2 python:
     BREADS = ["크루아상", "소금빵", "메론빵"]
     TEAS = ["홍차", "녹차", "유자차"]
     PAIRS = {"크루아상": "홍차", "소금빵": "녹차", "메론빵": "유자차"}
+    CARD_ART = {"크루아상": "croissant", "소금빵": "saltbread", "메론빵": "melonbread", "홍차": "blacktea", "녹차": "greentea", "유자차": "yuzutea"}
 
     def cards_score(hand):
         score = 0
@@ -283,17 +284,23 @@ label mg_sign_game:
 
 screen mg_card(c, button_id=None, action=None):
     $ bread = c in BREADS
+    $ img = "images/minigame/card_" + CARD_ART[c] + ".png"
     button:
         xysize (150, 200)
         id button_id
-        background Solid("#FBE7C8" if bread else "#DDEFD8")
-        hover_background Solid("#F6D9DF")
+        background None
         action action
-        vbox:
-            align (0.5, 0.5) spacing 8
-            text ("빵" if bread else "차") style "mg_small" xalign 0.5
-            text c style "mg_text" size 24 xalign 0.5
-            text ("짝: " + (PAIRS[c] if bread else [b for b, t in PAIRS.items() if t == c][0])) style "mg_small" xalign 0.5
+        fixed:
+            xysize (150, 200)
+            if renpy.loadable(img):
+                add Transform(img, xysize=(150, 200))
+            else:
+                add Solid("#FBE7C8" if bread else "#DDEFD8")
+            add Solid("#E0A84B" if bread else "#8DBF8A") xysize (150, 4) ypos 196
+            vbox:
+                xalign 0.5 ypos 128 spacing 2
+                text c style "mg_text" size 22 xalign 0.5
+                text ("짝: " + (PAIRS[c] if bread else [b for b, t in PAIRS.items() if t == c][0])) style "mg_small" size 13 xalign 0.5
 
 screen mg_cards(g):
     use mg_frame("빵·차 카드게임", "짝 하나 3점 · 세 가지 짝을 모두 모으면 +2 · 각자 다섯 장"):

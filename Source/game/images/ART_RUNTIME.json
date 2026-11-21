@@ -425,6 +425,41 @@
    "from": "cg-chatgpt-v001/yujin_x02_scene_v001.png",
    "source_sha256": "a2707f6caf717e3250189716722a5eeb9e987751476eef6da01d5681a9447c1c",
    "sha256": "9718424e9cbbcf48b38d8cf7afd61b2f2c9c15b10f3993017c9ea6c2da38350b"
+  },
+  "images/minigame/card_croissant.png": {
+   "from": "minigame-v001/card_croissant_v001.png",
+   "source_sha256": "f4e6fc75bd62cfa791a2b533dedf94ecdeb68a5cd82397529f6834d71892bfbb",
+   "sha256": "5860a92220bee5754d3c1e185bc2ed854137f08ae2dc81658b3667442e6ec2d7"
+  },
+  "images/minigame/card_saltbread.png": {
+   "from": "minigame-v001/card_saltbread_v001.png",
+   "source_sha256": "2dd9eb7679bbb2bf0a022b4e2818a0bebd32b0908439edfe9cf672ff32842da3",
+   "sha256": "cbe1b11fe0100867e514f9e0534a765e5aeb9e8060ff38dc477c99144aad356b"
+  },
+  "images/minigame/card_melonbread.png": {
+   "from": "minigame-v001/card_melonbread_v001.png",
+   "source_sha256": "739bb5eaf1a4173b0d37b0f1d9347f4bef277769ee0450fac13c340dd91c194d",
+   "sha256": "3ed826ca8e340387e1ab1b9754a331cae0c2bc84a48f43ede04fb6043d3f4296"
+  },
+  "images/minigame/card_blacktea.png": {
+   "from": "minigame-v001/card_blacktea_v001.png",
+   "source_sha256": "1271ed85b6197c154e98eb126259bac85389ded6d87a1b2d13fd488b3a709a10",
+   "sha256": "1f0a79271492139221a4cb0b9cab186c1bb23b202b09ae40d5830d32bb54de6d"
+  },
+  "images/minigame/card_greentea.png": {
+   "from": "minigame-v001/card_greentea_v001.png",
+   "source_sha256": "000847dea71bc4268a7a869c95e90c6eca84a244cc4845c91c75305cafac6771",
+   "sha256": "0adf4bc0be0e389f2d2be36433c6775576e71d56bcfac03e327a4d68556f019e"
+  },
+  "images/minigame/card_yuzutea.png": {
+   "from": "minigame-v001/card_yuzutea_v001.png",
+   "source_sha256": "d3ae2d33e2d0ac258ef6c75b46084bbe909071f1cb170879fd10e0637af04fc3",
+   "sha256": "07f3a45dd9ab142a83cbb6d597cca6e0aa2143947a26eac5180a9bc8874437b8"
+  },
+  "images/minigame/card_back.png": {
+   "from": "minigame-v001/card_back_v001.png",
+   "source_sha256": "fec78ef7cbb0d6cd4059fac6b1d2246c7930989a24ba0ef7d937e98ae50a0a79",
+   "sha256": "4eadd1b6ab4c4e905b9f1c13ed9a22bceadde8da94a7422eaa9aad649c469575"
   }
  }
 }
