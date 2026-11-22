@@ -117,14 +117,88 @@ init -2 python:
     }
 
     def photo_score(spot, cell):
+        # cell은 뷰파인더 왼쪽 위 위치(칸 단위, 0~2, 소수 가능). 목표와 가까울수록 높은 점수.
         tx, ty = PHOTO_SPOTS[spot][1]
-        d = abs(tx - cell[0]) + abs(ty - cell[1])
-        return 3 if d == 0 else (2 if d == 1 else 1)
+        d = ((tx - cell[0]) ** 2 + (ty - cell[1]) ** 2) ** 0.5
+        return 3 if d <= 0.35 else (2 if d <= 1.1 else 1)
+
+    # 뷰파인더: 사진 위에서 잡고 끌어 앵글을 고른다. 안쪽은 움직이는 동안 그 자리의 밝은 사진을 그린다.
+    PHOTO_W, PHOTO_H = 960, 540          # 화면에 깔린 사진 크기
+    VIEW_W, VIEW_H = 480, 270            # 뷰파인더 크기
+    PHOTO_STEP_X, PHOTO_STEP_Y = 240.0, 135.0   # 칸 1개 = 이만큼(px)
+
+    class PhotoWindow(renpy.Displayable):
+        def __init__(self, path, **kwargs):
+            super(PhotoWindow, self).__init__(**kwargs)
+            self.path = path
+            self.drag = None
+
+        def render(self, width, height, st, at):
+            x = getattr(self.drag, "x", None)
+            y = getattr(self.drag, "y", None)
+            x = PHOTO_STEP_X if x is None else x
+            y = PHOTO_STEP_Y if y is None else y
+            r = renpy.Render(VIEW_W, VIEW_H)
+            r.blit(renpy.render(Transform(photo_crop_at(self.path, x, y), xysize=(VIEW_W, VIEW_H)), VIEW_W, VIEW_H, st, at), (0, 0))
+            for (bx, by, bw, bh) in ((0, 0, VIEW_W, 4), (0, VIEW_H - 4, VIEW_W, 4), (0, 0, 4, VIEW_H), (VIEW_W - 4, 0, 4, VIEW_H)):
+                r.blit(renpy.render(Solid("#FFFDFB"), bw, bh, st, at), (bx, by))
+            mark = renpy.render(Text("+", size=34, color="#FFFDFB", outlines=[]), VIEW_W, VIEW_H, st, at)
+            r.blit(mark, (VIEW_W // 2 - mark.width // 2, VIEW_H // 2 - mark.height // 2))
+            renpy.redraw(self, 0)
+            return r
+
+        def visit(self):
+            return []
+
+    def photo_make_viewfinder(path, cell=(1, 1)):
+        win = PhotoWindow(path)
+        drag = Drag(d=win, drag_name="viewfinder", draggable=True, droppable=False, drag_offscreen=False,
+                    xpos=int(cell[0] * PHOTO_STEP_X), ypos=int(cell[1] * PHOTO_STEP_Y))
+        win.drag = drag
+        return drag
+
+    def photo_view_cell(drag):
+        x = getattr(drag, "x", None)
+        y = getattr(drag, "y", None)
+        x = PHOTO_STEP_X if x is None else x
+        y = PHOTO_STEP_Y if y is None else y
+        return (round(x / PHOTO_STEP_X, 2), round(y / PHOTO_STEP_Y, 2))
+
+    def photo_move(drag, x, y, delay=0.15):
+        x = max(0, min(PHOTO_W - VIEW_W, int(x)))
+        y = max(0, min(PHOTO_H - VIEW_H, int(y)))
+        drag.snap(x, y, delay)
+
+    class PhotoNudge(Action):
+        def __init__(self, drag, dx, dy):
+            self.drag, self.dx, self.dy = drag, dx, dy
+        def __call__(self):
+            cx, cy = photo_view_cell(self.drag)
+            photo_move(self.drag, cx * PHOTO_STEP_X + self.dx, cy * PHOTO_STEP_Y + self.dy, 0.1)
+
+    class PhotoJump(Action):
+        # 사진의 다른 곳을 누르면 뷰파인더 가운데가 그 자리로 온다.
+        def __init__(self, drag, ox, oy):
+            self.drag, self.ox, self.oy = drag, ox, oy
+        def __call__(self):
+            mx, my = renpy.get_mouse_pos()
+            photo_move(self.drag, mx - self.ox - VIEW_W / 2, my - self.oy - VIEW_H / 2)
+
+    class PhotoShoot(Action):
+        def __init__(self, drag):
+            self.drag = drag
+        def __call__(self):
+            return photo_view_cell(self.drag)
 
     def photo_crop(spot, cell):
+        # 실제 그림 크기에 맞춰 뷰파인더가 덮던 영역을 잘라낸다(배경 그림은 1280×720보다 클 수 있다).
         path = PHOTO_SPOTS[spot][0]
-        x, y = cell
-        return Crop((x * 320, y * 180, 640, 360), path)
+        return photo_crop_at(path, cell[0] * 240.0, cell[1] * 135.0)
+
+    def photo_crop_at(path, x, y):
+        iw, ih = renpy.image_size(path)
+        sx, sy = iw / 960.0, ih / 540.0
+        return Crop((int(x * sx), int(y * sy), int(480 * sx), int(270 * sy)), path)
 
     # ---------- 4. 한 줄로 줄이기 ----------
     TRIM_ROUNDS = [
@@ -211,16 +285,20 @@ style mg_small is mg_text:
     size 16
     color "#6E4553"
 style mg_button is default:
-    background Frame(Solid("#FFFDFB"), 0, 0)
-    hover_background Solid("#F6D9DF")
-    insensitive_background Solid("#EDE6E1")
-    padding (16, 10)
+    background silk("flat", "#FFF8F2", 24)
+    hover_background silk("flat", "#F6D9DF", 24)
+    selected_background silk("flat", "#3B0B22", 24)
+    insensitive_background silk("flat", "#EDE6E1", 24)
+    padding (22, 11)
 style mg_button_text is mg_text:
     hover_color "#B3123F"
     insensitive_color "#B5A8AC"
+    selected_color "#FFF8F2"
+    selected_hover_color "#FFF8F2"
 style mg_accent_button is mg_button:
-    background Solid("#B3123F")
-    hover_background Solid("#8E0E32")
+    background silk("flat", "#9A2144", 24)
+    hover_background silk("flat", "#741430", 24)
+    insensitive_background silk("flat", "#C9B4BB", 24)
 style mg_accent_button_text is mg_button_text:
     color "#FFFDFB"
     hover_color "#FFFDFB"
@@ -231,6 +309,22 @@ transform mg_host_in:
         easein 0.35 alpha 1.0 xoffset 0
     on replace:
         alpha 1.0 xoffset 0
+
+transform mg_stamp_anim:
+    on show:
+        alpha 0.0 zoom 0.4 rotate -8
+        easein_back 0.28 alpha 1.0 zoom 1.0 rotate -4
+        pause 0.55
+        linear 0.3 alpha 0.0
+
+screen mg_stamp(stamp, cx, cy):
+    if stamp:
+        text ("정답!" if stamp == "good" else "다시!"):
+            at mg_stamp_anim
+            font "fonts/Jua-Regular.ttf" size 78
+            color ("#F2C14E" if stamp == "good" else "#FFF8F2")
+            outlines [(5, ("#9A2144" if stamp == "good" else "#3B0B22"), 0, 0), (2, "#00000040", 0, 4)]
+            xpos cx ypos cy xanchor 0.5 yanchor 0.5
 
 transform mg_pop:
     on show:
@@ -245,21 +339,22 @@ screen mg_frame(title, subtitle="", game=None, msg="", face="neutral", host=True
     if host_bg and renpy.loadable(host_bg):
         add Transform(host_bg, blur=16, xysize=(1280, 720))
         add Solid("#F6EFE9") alpha 0.78
-    add Solid("#B3123F") ysize 6
+    add Solid("#2A1420") alpha 0.94 xysize (1280, 90)
+    add Solid("#E9C98E") xysize (1280, 2) ypos 90
     if host_who and host:
-        add mg_portrait(host_who, face) zoom 0.6 xanchor 0.5 xpos 1096 ypos 168
+        add mg_portrait(host_who, face) zoom 0.58 xanchor 0.5 xpos 1100 ypos 214
         frame:
-            xpos 900 ypos 52 xsize 356 padding (20, 12, 20, 16)
+            xpos 900 ypos 104 xsize 356 padding (20, 12, 20, 16)
             background silk_surface("panel")
             vbox:
                 spacing 4
                 text MG_NAME[host_who] font "fonts/Jua-Regular.ttf" size 20 color cream_speaker_color(MG_NAME[host_who], history=True)
                 text (msg or MG_HELLO.get(game, "")) style "mg_text" size 18 line_spacing 4
     vbox:
-        xpos 40 ypos 24 spacing 2
-        text title style "mg_title"
+        xpos 40 ypos 14 spacing 2
+        text title font silk_title_font(title) size 32 color "#FFF8F2"
         if subtitle:
-            text subtitle style "mg_small" xmaximum (840 if (host_who and host) else 1200)
+            text subtitle style "mg_small" color "#E9C98E" xmaximum 1180
     transclude
 
 screen mg_bubble(who, msg, px=40, py=640):
@@ -320,61 +415,64 @@ screen mg_result_card(game, score, top=None, verdict="", face="smile", detail=""
 
 # ---------------- 1. 안내판 ----------------
 
-screen mg_sign(rnd=0, tries=0, msg="", face="neutral"):
+screen mg_sign(rnd=0, tries=0, msg="", face="neutral", stamp=None):
     $ R = SIGN_ROUNDS[rnd]
     $ picked, d = mg_pick, mg_dir
     use mg_frame("안내판 옮기기", "%d / %d판 · %s" % (rnd + 1, len(SIGN_ROUNDS), R["goal"]), "sign", msg, face):
+        add silk("flat", "#FFF8F2C8", 20) xpos 26 ypos 104 xysize (688, 468)
         fixed:
-            xpos 40 ypos 104 xysize (660, 440)
+            xpos 40 ypos 118 xysize (660, 440)
             for y, row in enumerate(R["rows"]):
                 for x, ch in enumerate(row):
                     $ cx, cy = x * 110, y * 110
                     if ch == "E":
-                        frame xpos cx ypos cy xysize (106, 106) background Solid("#3B0B22"):
+                        frame xpos cx ypos cy xysize (106, 106) background silk("flat", "#3B0B22", 14):
                             text "입구" style "mg_text" color "#FFFDFB" align (0.5, 0.5)
                     elif ch == "B":
-                        frame xpos cx ypos cy xysize (106, 106) background Solid("#F2C14E"):
+                        frame xpos cx ypos cy xysize (106, 106) background silk("flat", "#F2C14E", 14):
                             text "부스" style "mg_text" align (0.5, 0.5)
                     elif ch == "P":
-                        frame xpos cx ypos cy xysize (106, 106) background Solid("#9C8C91"):
+                        frame xpos cx ypos cy xysize (106, 106) background silk("flat", "#9C8C91", 14):
                             text "기둥" style "mg_text" color "#FFFDFB" align (0.5, 0.5)
                     elif ch.isdigit():
                         button xpos cx ypos cy xysize (106, 106) id ("sign_slot_" + ch):
-                            background Solid("#B3123F" if picked == ch else "#FFFDFB")
-                            hover_background Solid("#F6D9DF")
+                            background silk("flat", ("#9A2144" if picked == ch else "#FFFFFF"), 14)
+                            hover_background silk("flat", "#F6D9DF", 14)
                             action SetVariable("mg_pick", ch)
                             if picked == ch:
                                 add mg_arrow(d, 46, "#FFFDFB") align (0.5, 0.5)
                             else:
                                 text "자리 " + ch style "mg_text" size 18 color "#6E4553" align (0.5, 0.5)
                     else:
-                        add Solid("#E6D9CF") xpos cx ypos cy xysize (106, 106)
+                        add silk("flat", "#E8DCD3", 14) xpos cx ypos cy xysize (106, 106)
         hbox:
-            xpos 40 ypos 566 spacing 6
+            xpos 40 ypos 584 spacing 6
             text "방향" style "mg_text" yalign 0.5
             null width 6
             for dd in SIGN_DIRS:
                 button:
                     style "mg_button" xysize (56, 50) id ("sign_dir_" + str(SIGN_DIRS.index(dd)))
-                    selected_background Solid("#3B0B22")
                     action SetVariable("mg_dir", dd) selected (d == dd)
                     add mg_arrow(dd, 26, ("#FFFDFB" if d == dd else "#3B0B22")) align (0.5, 0.5)
         hbox:
-            xpos 40 ypos 634 spacing 12
+            xpos 40 ypos 646 spacing 12
             textbutton "여기에 놓기" id "sign_place" style "mg_accent_button" sensitive (picked is not None) action Return(("place", picked, d))
             textbutton "그만하기" id "sign_quit" style "mg_button" action Return(("quit", None, None))
+        use mg_stamp(stamp, 370, 338)
 
 label mg_sign_game:
     $ sign_score = 0
     $ rnd = 0
     $ msg = ""
     $ face_now = "neutral"
+    $ stamp_now = None
     while rnd < len(SIGN_ROUNDS):
         $ tries = 0
         $ solved = False
         while not solved and tries < 3:
             $ mg_pick, mg_dir = None, "→"
-            $ act, slot, d = renpy.call_screen("mg_sign", rnd=rnd, tries=tries, msg=msg, face=face_now)
+            $ act, slot, d = renpy.call_screen("mg_sign", rnd=rnd, tries=tries, msg=msg, face=face_now, stamp=stamp_now)
+            $ stamp_now = None
             if act == "quit":
                 $ mg_result = sign_score
                 return
@@ -384,10 +482,12 @@ label mg_sign_game:
                 $ sign_score += 3 - tries
                 $ msg = ["좋아, 바로 거기! 손님들이 줄 서서 들어오겠다.", "딱 맞아! 이제 안내판 감 잡았네?", "역시! 다음 것도 부탁해~"][tries]
                 $ face_now = "smile" if tries else "laugh"
+                $ stamp_now = "good"
             else:
                 $ tries += 1
                 $ msg = R["hints"].get(slot, "음... 다른 데 놔 볼까?")
                 $ face_now = "serious" if R["hints"].get(slot, "").startswith("자리") else "pout"
+                $ stamp_now = "bad"
         if not solved:
             $ msg = "괜찮아, 정답은 자리 %s에 %s 방향이었어. 다음 거 가 보자!" % (R["answer"][0], {"←": "왼쪽", "↑": "위", "→": "오른쪽", "↓": "아래", "↗︎": "오른쪽 위", "↖︎": "왼쪽 위"}[R["answer"][1]])
             $ face_now = "sad"
@@ -446,8 +546,9 @@ screen mg_hand(cards, label):
 
 screen mg_cards(g):
     use mg_frame("빵·차 카드게임", "짝 하나 3점 · 세 가지 짝을 모두 모으면 +2 · 각자 다섯 장", "cards", g["log"], g.get("face", "neutral")):
+        add silk("flat", "#FFF8F2C8", 20) xpos 26 ypos 104 xysize (690, 586)
         vbox:
-            xpos 40 ypos 96 spacing 14
+            xpos 44 ypos 116 spacing 12
             use mg_hand(g["rival"], "지현 (%d점)" % cards_score(g["rival"]))
             text "가운데 카드 · 한 장을 고르세요" style "mg_small"
             hbox:
@@ -456,7 +557,7 @@ screen mg_cards(g):
                     use mg_card(c, "card_market_%d" % i, CardsPick(g, i) if g["turn"] == "me" else None)
             use mg_hand(g["me"], "내 카드 (%d점)" % cards_score(g["me"]))
         hbox:
-            xpos 40 ypos 650 spacing 12
+            xpos 740 ypos 640 spacing 12
             if g["turn"] == "done":
                 textbutton "결과 보기" id "cards_done" style "mg_accent_button" action Return("done")
             textbutton "그만하기" id "cards_quit" style "mg_button" action Return("quit")
@@ -477,34 +578,31 @@ label mg_cards_game:
 # ---------------- 3. 사진 ----------------
 
 screen mg_photo(spot):
-    $ cell = mg_cell
     $ path, target, hint = PHOTO_SPOTS[spot]
+    default vf = photo_make_viewfinder(path, mg_cell)
     use mg_frame("기록집 사진", "오늘 남기고 싶은 것: " + hint, "photo"):
         frame:
-            xpos 34 ypos 94 padding (6, 6, 6, 6)
-            background Solid("#3B0B22")
+            xpos 34 ypos 108 padding (6, 6, 6, 6)
+            background silk("flat", "#2A1420", 10)
             fixed:
-                xysize (960, 540)
-                add Transform(path, xysize=(960, 540))
-                add Solid("#00000066") xysize (960, 540)
-                for gx in range(3):
-                    for gy in range(3):
-                        button:
-                            xpos gx * 240 ypos gy * 135 xysize (480, 270)
-                            id "photo_cell_%d_%d" % (gx, gy)
-                            background None
-                            action SetVariable("mg_cell", (gx, gy))
-                add Transform(Crop((cell[0] * 320, cell[1] * 180, 640, 360), path), xysize=(480, 270)) xpos cell[0] * 240 ypos cell[1] * 135
-                add Solid("#FFFDFB") xpos cell[0] * 240 ypos cell[1] * 135 xysize (480, 4)
-                add Solid("#FFFDFB") xpos cell[0] * 240 ypos cell[1] * 135 + 266 xysize (480, 4)
-                add Solid("#FFFDFB") xpos cell[0] * 240 ypos cell[1] * 135 xysize (4, 270)
-                add Solid("#FFFDFB") xpos cell[0] * 240 + 476 ypos cell[1] * 135 xysize (4, 270)
-                text "+" size 34 color "#FFFDFB" xpos cell[0] * 240 + 240 ypos cell[1] * 135 + 135 xanchor 0.5 yanchor 0.5
+                xysize (PHOTO_W, PHOTO_H)
+                add Transform(path, xysize=(PHOTO_W, PHOTO_H))
+                add Solid("#000000A0") xysize (PHOTO_W, PHOTO_H)
+                button:
+                    id "photo_area"
+                    xysize (PHOTO_W, PHOTO_H)
+                    background None
+                    action PhotoJump(vf, 40, 114)
+                add vf
         vbox:
             xpos 1030 ypos 120 spacing 14 xsize 220
-            text "화면을 눌러 뷰파인더를 옮기세요." style "mg_small"
-            textbutton "찰칵" id "photo_shoot" style "mg_accent_button" text_size 28 action Return(cell)
+            text "뷰파인더를 잡고 끌어 앵글을 고르세요. 사진을 누르면 그 자리로 옮겨지고, 방향키로도 움직일 수 있어요." style "mg_small"
+            textbutton "찰칵" id "photo_shoot" style "mg_accent_button" text_size 28 action PhotoShoot(vf)
             textbutton "그만하기" id "photo_quit" style "mg_button" action Return(None)
+    key "K_LEFT" action PhotoNudge(vf, -40, 0)
+    key "K_RIGHT" action PhotoNudge(vf, 40, 0)
+    key "K_UP" action PhotoNudge(vf, 0, -30)
+    key "K_DOWN" action PhotoNudge(vf, 0, 30)
 
 transform mg_flash:
     alpha 0.9
@@ -540,7 +638,7 @@ label mg_photo_game(spot="free"):
 
 # ---------------- 4. 한 줄로 줄이기 ----------------
 
-screen mg_trim(rnd=0, msg="", face="neutral"):
+screen mg_trim(rnd=0, msg="", face="neutral", stamp=None):
     $ off = mg_off
     $ R = TRIM_ROUNDS[rnd]
     $ n = trim_len(R["chips"], off)
@@ -574,19 +672,22 @@ screen mg_trim(rnd=0, msg="", face="neutral"):
                 spacing 12
                 textbutton "이걸로 보내기" id "trim_submit" style "mg_accent_button" action Return(("submit", off))
                 textbutton "그만하기" id "trim_quit" style "mg_button" action Return(("quit", off))
+        use mg_stamp(stamp, 450, 330)
 
 label mg_trim_game:
     $ trim_score = 0
     $ rnd = 0
     $ msg = ""
     $ face_now = "neutral"
+    $ stamp_now = None
     while rnd < len(TRIM_ROUNDS):
         $ R = TRIM_ROUNDS[rnd]
         $ mg_off = set()
         $ attempts = 0
         $ passed = False
         while not passed:
-            $ act, off = renpy.call_screen("mg_trim", rnd=rnd, msg=msg, face=face_now)
+            $ act, off = renpy.call_screen("mg_trim", rnd=rnd, msg=msg, face=face_now, stamp=stamp_now)
+            $ stamp_now = None
             if act == "quit":
                 $ mg_result = trim_score
                 return
@@ -595,13 +696,16 @@ label mg_trim_game:
             if lost:
                 $ msg = "‘%s’ 빼면 손님이 못 와. 그건 살려 줘." % lost[0]
                 $ face_now = "serious"
+                $ stamp_now = "bad"
             elif trim_len(R["chips"], off) > R["limit"]:
                 $ msg = "아직 길어. 클라이언트가 또 ‘짧게’라고 할걸?"
                 $ face_now = "pout"
+                $ stamp_now = "bad"
             else:
                 $ trim_score += 2 if attempts == 1 else 1
                 $ msg = "오, 깔끔하다! 이건 바로 보내도 되겠어~" if attempts == 1 else "좋아, 이 정도면 통과!"
                 $ face_now = "laugh" if attempts == 1 else "smile"
+                $ stamp_now = "good"
                 $ passed = True
         $ rnd += 1
     $ mg_record("trim", trim_score)
@@ -630,7 +734,7 @@ screen mg_spot_poster(data, px, clickable=False, found=set()):
         if not clickable:
             add Solid("#EDE3DC") xpos 30 ypos 180 xysize (200, 4)
 
-screen mg_spot(found=set(), misses=0, rnd=0, msg=""):
+screen mg_spot(found=set(), misses=0, rnd=0, msg="", stamp=None):
     if spot_art_ready():
         $ P = SPOT_PAIRS[rnd]
         use mg_frame("어디가 달라졌어요?", "%d / %d · 오른쪽 수정 시안에서 달라진 곳을 누르세요" % (rnd + 1, len(SPOT_PAIRS)), "spot", host=False):
@@ -640,7 +744,7 @@ screen mg_spot(found=set(), misses=0, rnd=0, msg=""):
                     spacing 4
                     for k in range(3):
                         add silk("heart", k < len(found), size=(26, 26))
-                text "남은 기회 %d" % (3 - misses) style "mg_text" yalign 0.5
+                text "남은 기회 %d" % (3 - misses) style "mg_text" color "#FFF8F2" yalign 0.5
             text "원래 시안" style "mg_small" xpos 140 ypos 108
             text "수정 시안" style "mg_small" xpos 690 ypos 108
             add ("images/minigame/%s_orig.png" % P["img"]) xpos 140 ypos 132
@@ -657,6 +761,7 @@ screen mg_spot(found=set(), misses=0, rnd=0, msg=""):
                         action Return(g or "miss")
             textbutton "그만하기" id "spot_quit" style "mg_button" xpos 40 ypos 650 action Return("quit")
             use mg_bubble("yujin", msg or MG_HELLO["spot"], 190, 646)
+            use mg_stamp(stamp, 915, 380)
     else:
         use mg_frame("어디가 달라졌어요?", "오른쪽 수정 시안에서 달라진 곳을 누르세요 · 찾은 곳 %d / 3 · 남은 기회 %d" % (len(found), 3 - misses), "spot", host=False):
             text "원래 시안" style "mg_small" xpos 120 ypos 96
@@ -671,12 +776,14 @@ label mg_spot_game:
     $ rounds = len(SPOT_PAIRS) if spot_art_ready() else 1
     $ rnd = 0
     $ msg = ""
+    $ stamp_now = None
     while rnd < rounds:
         $ found = set()
         $ misses = 0
         $ answers = set(SPOT_PAIRS[rnd]["groups"].values()) if spot_art_ready() else SPOT_ANSWERS
         while len(found) < 3 and misses < 3:
-            $ pick = renpy.call_screen("mg_spot", found=found, misses=misses, rnd=rnd, msg=msg)
+            $ pick = renpy.call_screen("mg_spot", found=found, misses=misses, rnd=rnd, msg=msg, stamp=stamp_now)
+            $ stamp_now = None
             if pick == "quit":
                 $ mg_result = spot_total + len(found)
                 return
@@ -685,9 +792,11 @@ label mg_spot_game:
             elif pick in answers:
                 $ found = found | {pick}
                 $ msg = ["맞아요, 거기예요!", "와, 또 찾으셨네요!", "다 찾으셨어요! 다음 시안으로 가요."][len(found) - 1]
+                $ stamp_now = "good"
             else:
                 $ misses += 1
                 $ msg = "음... 거긴 그대로예요. 다시 한번 비교해 보세요."
+                $ stamp_now = "bad"
         $ spot_total += len(found)
         $ rnd += 1
     $ mg_record("spot", spot_total)
@@ -752,7 +861,7 @@ screen minigame_hub():
     tag menu
     use mg_frame("미니게임", "이야기 속 장면을 다시 해 볼 수 있습니다.", "hub"):
         grid 3 2:
-            xpos 40 ypos 104 spacing 18
+            xpos 40 ypos 116 spacing 18
             for key in ("sign", "cards", "photo", "trim", "spot"):
                 $ info = MG_INFO[key]
                 $ who = MG_HOST[key][0]

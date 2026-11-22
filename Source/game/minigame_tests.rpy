@@ -38,12 +38,24 @@ testsuite minigame_checks:
 
     testcase photo:
         run [SetField(persistent, "mg_pending", "photo"), Start("minigame_free")]
-        click id "photo_cell_1_1"
+        pause 0.3
         screenshot "mg-3-photo.png"
         click id "photo_shoot"
         click id "photo_keep"
         advance until screen "main_menu" timeout 20.0
         assert eval persistent.minigame_best.get("photo") == 3 and len(persistent.album) >= 1
+
+    testcase photo_drag:
+        # 뷰파인더(가운데)를 잡아 왼쪽 위 끝까지 끌고 찍으면 그 앵글이 기록집에 남는다.
+        run [SetField(persistent, "mg_pending", "photo"), Start("minigame_free")]
+        pause 0.3
+        drag pos (520, 384) to pos (250, 230) steps 12
+        pause 0.3
+        screenshot "mg-3b-photo-drag.png"
+        click id "photo_shoot"
+        click id "photo_keep"
+        advance until screen "main_menu" timeout 20.0
+        assert eval persistent.album[-1]["cell"] == [0.0, 0.0] and persistent.album[-1]["score"] == 1
 
     testcase trim:
         run [SetField(persistent, "mg_pending", "trim"), Start("minigame_free")]

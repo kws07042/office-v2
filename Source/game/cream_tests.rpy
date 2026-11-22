@@ -115,9 +115,9 @@ testsuite cream_ui_checks:
         # Silk UI: the paper panel is drawn separately, so the say window itself stays transparent.
         assert eval renpy.get_widget("say", "window").style.background is None
         assert eval renpy.get_widget("say", "window").style.foreground is None
-        assert eval renpy.get_widget("say", "what").style.color == Color("#2F262B")
-        assert eval len(renpy.get_widget("say", "what").style.outlines) == 0
-        assert eval renpy.get_widget("say", "who").style.color == Color("#FBEFE6")
+        assert eval renpy.get_widget("say", "what").style.color == Color("#FFF8F2")
+        assert eval len(renpy.get_widget("say", "what").style.outlines) == 1
+        assert eval renpy.get_widget("say", "who").style.color == Color("#2A1420")
         screenshot "clear-long-outlined-dialogue.png"
 
     testcase scaled_r14_choices:

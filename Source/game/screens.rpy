@@ -93,35 +93,35 @@ screen story_header():
     zorder 10
     if not main_menu and not event_cut_active and not cream_menu_open():
         $ chapter_code, chapter_title = silk_chapter_parts(chapter)
-        frame:
+        # 왼쪽 위: 어두운 띠 위에 장 번호(필기체)와 장 제목·장소.
+        fixed:
             at (silk_header_in(-40) if silk_motion_on() else silk_still)
-            xpos (84 if chapter_code else 32) ypos 30 xmaximum 440
-            padding ((34 if chapter_code else 24), 9, 28, 14)
-            background silk_surface("button")
-            vbox:
-                spacing 1
-                text chapter_title font silk_title_font(chapter_title) size 21 color "#3B0B22" xmaximum 370
-                text location size 13 color "#6E4553" xmaximum 370
-        if chapter_code:
-            fixed:
-                at (silk_header_in(-40) if silk_motion_on() else silk_still)
-                xpos 32 ypos 26 xysize (72, 73)
-                add silk("badge", size=(72, 73))
-                text chapter_code font "fonts/Jua-Regular.ttf" size 23 color "#FFFDFB" xpos 34 ypos 34 xanchor 0.5 yanchor 0.5
+            xpos 0 ypos 22 xysize (560, 92)
+            add "gui/window/chapter_band.png"
+            hbox:
+                xpos 36 yalign 0.5 spacing 14
+                if chapter_code:
+                    text chapter_code font "fonts/Pretendard-Regular.otf" size 30 kerning 1.5 color "#FFFFFF" outlines [(1, "#1E0C1655", 0, 1)] yalign 0.5
+                    add Solid("#FFFFFF99") xysize (1, 40) yalign 0.5
+                vbox:
+                    spacing 2 yalign 0.5
+                    text chapter_title font silk_title_font(chapter_title) size 21 color "#FFFFFF" outlines [(1, "#1E0C1655", 0, 1)] xmaximum 380
+                    text location size 13 color "#F3E7EA" outlines [(1, "#1E0C1655", 0, 1)] xmaximum 380 kerning 0.5
+        # 오른쪽 위: 반투명 알약 안에 마음 하트·이름·관계.
         $ focus = active_route if active_route in affinity else (cream_focus if cream_focus in affinity else "ria")
         $ person_name = {"ria":"강리아", "jihyun":"백지현", "yujin":"차유진", "seoyun":"한서윤"}[focus]
         frame:
             at (silk_header_in(40) if silk_motion_on() else silk_still)
             xanchor 1.0 xpos 1182 ypos 26 xsize 214
-            padding (14, 8, 22, 13)
-            background silk_surface("button")
+            padding (12, 7, 22, 9)
+            background silk("flat", "#2A142099", 30)
             hbox:
                 spacing 11
                 use silk_big_heart(bond_mind(focus), bond_trust_tier(focus))
                 vbox:
                     spacing 2 yalign 0.5
-                    text person_name font "fonts/Jua-Regular.ttf" size 21 color "#3B0B22"
-                    text relation_stage(focus) size 13 color ("#A99BA1" if bond_trust_tier(focus) == "low" else "#6E4553")
+                    text person_name font "fonts/Jua-Regular.ttf" size 20 color "#FFFFFF"
+                    text relation_stage(focus) size 13 color ("#B8A9AF" if bond_trust_tier(focus) == "low" else "#E9C98E")
         if cream_preview_active:
             use cream_preview_controls
 
@@ -177,58 +177,59 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
         if advance:
             add silk("next", "#E8C99A", size=(14, 9)) xpos 1176 ypos 646 at (silk_next_bob if silk_motion_on() else silk_still)
     else:
-        fixed:
-            at (silk_panel_in if silk_motion_on() else silk_still)
-            xpos 24 ypos 536 xysize (1232, 166)
-            add Solid("#14080E") xpos 4 ypos 6 xysize (1232, 166) alpha 0.18
-            add Solid("#EFE8E0") xysize (1232, 166) alpha 0.92
-            add Solid("#FFFFFF") xysize (1232, 1) alpha 0.5
-            add Solid("#B39462") xpos 72 ypos 126 xysize (1088, 1) alpha 0.85
-            text "온빛브랜딩 · 연말 피칭 TF" xanchor 1.0 xpos 1080 ypos 14 size 12 color "#9A8B80" kerning 1.5
-            frame:
-                xanchor 1.0 xpos 1180 ypos 10 padding (1, 1, 1, 1)
-                background Solid("#A2394F")
+        # 대화 화면(시안 B): 화면 아래 어두운 그라데이션 + 회사 서류 소품(종이 이름표·클립·메모 도장).
+        add "gui/window/dialogue_scrim.png" xpos 0 ypos 460 at (silk_panel_in if silk_motion_on() else silk_still)
+        if who:
+            hbox:
+                at (silk_tag_in if silk_motion_on() else silk_still)
+                xpos 138 ypos 528 spacing 16
+                # 종이 이름표: 왼쪽에 히로인 색 띠
+                fixed:
+                    fit_first True
+                    frame:
+                        padding (34, 6, 22, 8)
+                        background silk("flat", "#FFF8F2", 5)
+                        hbox:
+                            spacing 10
+                            text who:
+                                id "who"
+                                font silk_title_font(who)
+                                size 24
+                                color "#2A1420"
+                                outlines []
+                                yalign 1.0
+                            if silk_english(who):
+                                text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 15 color "#8E1C3D" outlines [] yalign 0.8
+                    add Solid(silk_name_tag_color(who)) xysize (6, 1.0)
+                # 금색 테두리 메모 도장(회사 장면 "내부 메모", 그 밖에는 "개인 메모")
                 frame:
-                    padding (6, 0, 6, 1)
-                    background Solid("#EFE8E0")
-                    text dialogue_doc_stamp() size 12 color "#A2394F"
-            add "gui/window/paperclip.svg" xpos -8 ypos -34 xysize (26, 72) at Transform(rotate=-7)
+                    yalign 0.6 padding (9, 2, 9, 3)
+                    background silk("outline", "#E9C98E", 3)
+                    at Transform(rotate=-4, rotate_pad=False)
+                    text dialogue_doc_stamp() size 12 color "#E9C98E" outlines []
+            add "gui/window/paperclip.svg" xpos 124 ypos 508 xysize (22, 62) at Transform(rotate=-12, rotate_pad=False)
         window:
             at (silk_panel_in if silk_motion_on() else silk_still)
             id "window"
-            xpos 24 ypos 578 xsize 1232 ysize 100
-            padding (72, 0, 96, 0)
+            xpos 150 ypos 584 xsize 980 ysize 100
+            padding (0, 0, 0, 0)
             background None
             foreground None
             text what:
                 id "what"
                 font "fonts/Pretendard-Regular.otf"
                 size 25
-                color "#2F262B"
-                outlines []
-                xmaximum 1060
-                line_spacing 8
+                color "#FFF8F2"
+                outlines [(1, "#1E0C1688", 0, 1)]
+                xmaximum 960
+                line_spacing 6
                 language "korean-with-spaces"
                 substitute use_substitution
-        if who:
-            frame:
-                at (silk_tag_in if silk_motion_on() else silk_still)
-                xpos 86 ypos 508 ysize 52
-                padding (30, 0, 35, 6)
-                background silk("tag", silk_name_tag_color(who))
-                hbox:
-                    spacing 10 yalign 0.5
-                    text who:
-                        id "who"
-                        font silk_title_font(who)
-                        size 26
-                        color "#FBEFE6"
-                        outlines []
-                        yalign 0.5
-                    if silk_english(who):
-                        text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#E8C99A" outlines [] yalign 0.7
+        # 아래 금색 줄과 회사 표기
+        add "gui/window/name_line.png" xpos 150 ypos 688 xysize (720, 1) matrixcolor TintMatrix("#E9C98E") alpha 0.65
+        text "온빛브랜딩 · 연말 피칭 TF" xpos 150 ypos 697 size 12 color "#FFF8F273" kerning 1.4 outlines []
         if advance:
-            add silk("next", "#6B1E34", size=(14, 9)) xpos 1190 ypos 650 at (silk_next_bob if silk_motion_on() else silk_still)
+            add silk("next", "#E9C98E", size=(14, 9)) xpos 1140 ypos 664 at (silk_next_bob if silk_motion_on() else silk_still)
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)
@@ -243,10 +244,11 @@ screen silk_choice_item(item, i=0, n=0, intimate=False, wide=False):
         style "silk_choice_button"
         action ([Function(silk_pick, i, n, intimate), item.action] if n else item.action)
         alt item.caption
-        # 줄마다 같은 자리에서 시작하고, 꼬리표는 줄 오른쪽 끝(글상자 폭 534 기준)에 맞춘다.
+        # 번호(01·02·03) + 본문. 꼬리표는 줄 오른쪽 끝(글상자 폭 602 기준)에 맞춘다.
         hbox:
             spacing 12
-            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (362 if choice_chip else (980 if wide else 530)) min_width (362 if choice_chip else 0)
+            text ("%02d" % (i + 1)) style "silk_choice_num" yalign 0.5 min_width 40
+            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (378 if choice_chip else (960 if wide else 538)) min_width (378 if choice_chip else 0)
             if choice_sub:
                 text choice_sub style "silk_choice_sub" yalign 0.5 xmaximum (960 - 19 * len(choice_text))
             if choice_chip:
@@ -261,27 +263,27 @@ screen silk_choice_item(item, i=0, n=0, intimate=False, wide=False):
 
 screen office_choice_list(items):
     vbox:
-        xsize 612 spacing 9
+        xsize 660 spacing 12
         for i, item in enumerate(items):
             use silk_choice_item(item, i)
 
 screen choice(items):
     zorder 30
     # 선택지가 뜨면 무대를 살짝 어둡게 해 줄이 인물 그림과 겹쳐도 또렷하게 읽히게 한다.
-    add Solid("#1B0E14") alpha 0.28
+    add Solid("#180A12") alpha 0.42
     if len(items) <= 3:
         if _history_list:
             use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
         if office_ui_long_choices(items):
             viewport:
-                xalign 0.5 ypos 122 xsize 624 ysize 334
+                xalign 0.5 ypos 122 xsize 672 ysize 334
                 mousewheel True draggable True arrowkeys True
                 scrollbars "vertical"
                 vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
                 use office_choice_list(items)
         else:
             vbox:
-                xalign 0.5 yanchor 1.0 ypos (446 if silk_has_intimate(items) else 470) xsize 624 spacing 9
+                xalign 0.5 yanchor 1.0 ypos (446 if silk_has_intimate(items) else 476) xsize 660 spacing 12
                 for i, item in enumerate(items):
                     use silk_choice_item(item, i, len(items), silk_has_intimate(items))
         if silk_has_intimate(items):
@@ -303,29 +305,61 @@ screen choice(items):
                     for i, item in enumerate(items):
                         use silk_choice_item(item, i, wide=True)
 
+screen silk_title_item(label, caption, target, item_id=None, focus_first=False, i=0):
+    button:
+        at ((silk_menu_in(i), silk_title_hover) if silk_motion_on() else (silk_still,))
+        style "silk_title_button"
+        action target
+        alt label
+        id item_id
+        default_focus focus_first
+        hbox:
+            spacing 14
+            add Solid("#E9C98E") xysize (18, 2) yalign 0.55 at silk_title_mark
+            text label style "silk_title_text" yalign 1.0
+            text caption style "silk_title_caption" yalign 0.8
+
 screen main_menu():
     tag menu
     add "silk ground"
-    if renpy.loadable("images/cg/title_keyvisual.jpg"):
+    $ title_art = renpy.loadable("images/cg/title_keyvisual.jpg")
+    if title_art:
         add "images/cg/title_keyvisual.jpg"
-    if silk_motion_on():
-        add "silk title dots"
-    if not renpy.loadable("images/cg/title_keyvisual.jpg"):
+        add "gui/window/title_shade.png"
+    else:
         add silk("band", size=(1280, 584)) at (silk_band_in if silk_motion_on() else silk_still)
     if silk_motion_on():
-        add "silk title hearts"
-    $ title_art = renpy.loadable("images/cg/title_keyvisual.jpg")
+        add "silk title dots"
+    # 로고: 영문 필기체 한 줄 + 큰 한글 두 줄 + 부제.
     vbox:
-        at (((silk_tilt, silk_logo_in, silk_logo_float) if silk_motion_on() else (silk_tilt,)) + ((Transform(zoom=0.62),) if title_art else ()))
-        xpos (40 if title_art else 84) ypos (40 if title_art else 150)
-        spacing -6
-        text "After Work, With You" font "fonts/PlayfairDisplay-Italic.ttf" size 30 color "#B3123F" xpos 8
-        text "퇴근 후{color=#F2C14E},{/color} 우리":
+        at ((silk_logo_in, silk_logo_float) if silk_motion_on() else (silk_still,))
+        xpos 86 ypos 70 spacing 0
+        text "After Work, With You" font "fonts/PlayfairDisplay-Italic.ttf" size 24 color "#E9C98E" xpos 4
+        text "퇴근 후{color=#F2C14E},{/color}\n우리":
             font "fonts/Jua-Regular.ttf"
-            size 150
-            kerning -3
-            color "#FFFDFB"
-            outlines [(4, "#B3123F", 11, 12), (4, "#3B0B22", 0, 0)]
+            size 96
+            line_spacing -8
+            kerning -2
+            color "#FFF8F2"
+            outlines [(0, "#00000000", 0, 0)]
+        text "오후 여섯 시 이후의 이야기" font "fonts/GowunDodum-Regular.ttf" size 16 color "#FFF8F2D8" kerning 1.6 xpos 4
+    # 세로 메뉴: 한글 + 영문 캡션, 고른 항목만 금색 막대.
+    vbox:
+        xpos 90 ypos 350 spacing 0
+        use silk_title_item("처음부터 읽기", "New Game", [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()], "start_button", True, 0)
+        use silk_title_item("이어 읽기", "Continue", ShowMenu("load"), None, False, 1)
+        use silk_title_item("우리의 기록", "Album", ShowMenu("progression_hub"), None, False, 2)
+        use silk_title_item("회상 갤러리", "Gallery", ShowMenu("gallery"), "gallery_button", False, 3)
+        use silk_title_item("미니게임", "Mini Games", ShowMenu("minigame_hub"), "minigame_button", False, 4)
+        if spring_story_unlocked():
+            use silk_title_item("숨은 이야기 · 이듬해 봄", "Secret", Start("spring_story"), "spring_story_button", False, 5)
+        use silk_title_item("설정", "Config", ShowMenu("preferences"), None, False, 6)
+        if not renpy.variant("web"):
+            use silk_title_item("종료", "Exit", Quit(confirm=False), None, False, 7)
+    text ("VER " + config.version.split("-")[0]) xpos 90 ypos 690 size 12 color "#FFF8F280" kerning 1.2
+    hbox:
+        xanchor 1.0 xpos 1246 ypos 680 spacing 6
+        textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_title_small"
     # 개발 중 확인용 진입점. 배포판(개발자 모드 꺼짐)에서는 보이지 않는다.
     default show_preview_links = False
     if config.developer:
@@ -343,65 +377,6 @@ screen main_menu():
                     textbutton "유진 전체 대본 확인" action Start("yujin_early_preview") id "yujin_preview_button" style "silk_small_button"
                     textbutton "지현 전체 대본 확인" action Start("jihyun_early_preview") id "jihyun_preview_button" style "silk_small_button"
                     textbutton "서윤 전체 대본 확인" action Start("seoyun_preview") id "seoyun_preview_button" style "silk_small_button"
-    add silk("dialogue", size=(1280, 176)) xpos 0 ypos 544
-    hbox:
-        xpos 64 ypos 594 spacing 8
-        button:
-            at ((silk_menu_in(0), silk_menu_hover) if silk_motion_on() else (silk_still,))
-            style "silk_menu_button"
-            action [SetVariable("cream_preview_active", False), SetVariable("cream_preview_mode", None), Start()]
-            alt "처음부터 읽기"
-            id "start_button"
-            default_focus True
-            vbox:
-                xalign 0.5 yalign 0.5 spacing 0
-                text "처음부터 읽기" style "silk_menu_text"
-                text "New game" style "silk_menu_caption"
-        button:
-            at ((silk_menu_in(1), silk_menu_hover) if silk_motion_on() else (silk_still,))
-            style "silk_menu_button"
-            action ShowMenu("load")
-            alt "이어 읽기"
-            vbox:
-                xalign 0.5 yalign 0.5 spacing 0
-                text "이어 읽기" style "silk_menu_text"
-                text "Continue" style "silk_menu_caption"
-        button:
-            at ((silk_menu_in(2), silk_menu_hover) if silk_motion_on() else (silk_still,))
-            style "silk_menu_button"
-            action ShowMenu("progression_hub")
-            alt "우리의 기록"
-            vbox:
-                xalign 0.5 yalign 0.5 spacing 0
-                text "우리의 기록" style "silk_menu_text"
-                text "Album" style "silk_menu_caption"
-        button:
-            at ((silk_menu_in(3), silk_menu_hover) if silk_motion_on() else (silk_still,))
-            style "silk_menu_button"
-            action ShowMenu("preferences")
-            alt "설정"
-            vbox:
-                xalign 0.5 yalign 0.5 spacing 0
-                text "설정" style "silk_menu_text"
-                text "Config" style "silk_menu_caption"
-        if not renpy.variant("web"):
-            button:
-                at ((silk_menu_in(4), silk_menu_hover) if silk_motion_on() else (silk_still,))
-                style "silk_menu_button"
-                action Quit(confirm=False)
-                alt "종료"
-                vbox:
-                    xalign 0.5 yalign 0.5 spacing 0
-                    text "종료" style "silk_menu_text"
-                    text "Exit" style "silk_menu_caption"
-    text ("ver " + config.version) xpos 64 ypos 688 size 12 color "#6E4553"
-    textbutton "크레딧" id "credits_button" action ShowMenu("silk_credits") style "silk_small_button" xpos 32 ypos 24
-    if spring_story_unlocked():
-        textbutton "숨은 이야기 · 이듬해 봄" id "spring_story_button" action Start("spring_story") style "silk_small_button" xpos 32 ypos 64
-    textbutton "미니게임" id "minigame_button" action ShowMenu("minigame_hub") style "silk_small_button" xpos 32 ypos (104 if spring_story_unlocked() else 64)
-    textbutton "회상 갤러리" id "gallery_button" action ShowMenu("gallery") style "silk_small_button" xpos 32 ypos (144 if spring_story_unlocked() else 104)
-    if config.developer:
-        text "네 히로인 전체 대본 · 아트 준비 중" xanchor 1.0 xpos 1216 ypos 688 size 12 color "#6E4553"
 
 screen silk_quick_item(label, icon, target, ring=False):
     button:
@@ -409,17 +384,14 @@ screen silk_quick_item(label, icon, target, ring=False):
         style "silk_quick_button"
         action target
         alt label
-        hbox:
-            spacing 6
-            add silk("icon", icon, "#6E4553", size=(17, 17)) yalign 0.5
-            text label style "silk_quick_text"
+        text label style "silk_quick_text"
 
 screen quick_menu():
     zorder 100
     if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         if not event_cut_active and not dialogue_cg_mode:
             hbox:
-                xanchor 1.0 xpos 1196 ypos 665 spacing 0
+                xanchor 1.0 xpos 1244 ypos 688 spacing 2
                 use silk_quick_item("되돌리기", "rollback", Rollback())
                 use silk_quick_item("기록", "history", ShowMenu("history"))
                 use silk_quick_item("자동", "auto", Preference("auto-forward", "toggle"))
@@ -445,8 +417,8 @@ screen quick_menu():
         else:
             frame:
                 xpos 750 ypos 18
-                padding (12, 4, 16, 9)
-                background silk_surface("button")
+                padding (12, 2, 16, 2)
+                background silk("flat", "#2A1420AA", 22)
                 hbox:
                     spacing 0
                     use silk_quick_item("되돌리기", "rollback", Rollback())
