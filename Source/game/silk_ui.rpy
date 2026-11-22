@@ -214,12 +214,16 @@ init -9 python:
             return cream_speaker_color(who, history=True)
         return SILK["ink"]
 
+    # 대화창 종이 이름표 왼쪽 띠 색: 리아 금갈색, 지현 와인, 유진 은회색(머리색), 서윤 보라, 도현·그 밖의 인물 검정.
+    SILK_TAG_STRIPE = {
+        "강리아": "#765019", "리아": "#765019",
+        "백지현": "#923F44", "지현": "#923F44",
+        "차유진": "#A39FAD", "유진": "#A39FAD",
+        "한서윤": "#654B85", "서윤": "#654B85",
+    }
+
     def silk_name_tag_color(who):
-        # 대화창 이름표 바탕: 히로인마다 정해진 화자 색의 짙은 쪽(리아 금갈색, 지현 와인, 유진 초록, 서윤 보라).
-        name = silk_speaker_key(who)
-        if name in ("강리아", "리아", "백지현", "지현", "차유진", "유진", "한서윤", "서윤"):
-            return cream_speaker_color(who, history=True)
-        return "#6B1E34"
+        return SILK_TAG_STRIPE.get(silk_speaker_key(who), "#1E1A1C")
 
     def silk_name_line_color(who):
         # 어두운 그라데이션 위 이름 밑줄: 히로인 화자 색의 밝은 쪽, 그 밖에는 금색.
