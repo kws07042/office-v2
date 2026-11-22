@@ -5,7 +5,7 @@ label seoyun_r05:
         $ progression_note_ending()
         return
     $ chapter = "서윤 R05 · 단골이 되는 순서"
-    $ location = "고백 다음 날 토요일 오후 두 시 · 약속한 장소"
+    $ location = "고백 다음 날 토요일 오후 두 시 · " + {"bookcafe": "서점 안 북카페", "walk": "강변 산책길"}.get(memory.get("seoyun_next_date_plan"), "골목 카페")
     s "오늘 약속, 달력에 네 이름으로 적었어. ‘볼일’이라고 썼다가 고쳤고."
     dn "'볼일'이라고 썼다가 내 이름으로 고쳤다. 그 지운 자국까지 보고 싶었다."
     d "제 이름이면 어떤 표정으로 적으셨어요?"
