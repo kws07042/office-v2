@@ -177,22 +177,37 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
         if advance:
             add silk("next", "#E8C99A", size=(14, 9)) xpos 1176 ypos 646 at (silk_next_bob if silk_motion_on() else silk_still)
     else:
-        # 상업용 대화 화면: 테두리 판 없이 화면 아래를 어두운 그라데이션으로 덮고, 그 위에 이름·대사를 흰 글씨로.
+        # 대화 화면(시안 B): 화면 아래 어두운 그라데이션 + 회사 서류 소품(종이 이름표·클립·메모 도장).
         add "gui/window/dialogue_scrim.png" xpos 0 ypos 460 at (silk_panel_in if silk_motion_on() else silk_still)
         if who:
             hbox:
                 at (silk_tag_in if silk_motion_on() else silk_still)
-                xpos 150 ypos 528 spacing 12
-                text who:
-                    id "who"
-                    font silk_title_font(who)
-                    size 30
-                    color "#FFFFFF"
-                    outlines [(2, "#1E0C1666", 0, 1)]
-                    yalign 1.0
-                if silk_english(who):
-                    text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 17 color "#E9C98E" outlines [] yalign 0.85
-            add Transform("gui/window/name_line.png", matrixcolor=TintMatrix(silk_name_line_color(who))) xpos 150 ypos 572
+                xpos 138 ypos 528 spacing 16
+                # 종이 이름표: 왼쪽에 히로인 색 띠
+                fixed:
+                    fit_first True
+                    frame:
+                        padding (34, 6, 22, 8)
+                        background silk("flat", "#FFF8F2", 5)
+                        hbox:
+                            spacing 10
+                            text who:
+                                id "who"
+                                font silk_title_font(who)
+                                size 24
+                                color "#2A1420"
+                                outlines []
+                                yalign 1.0
+                            if silk_english(who):
+                                text silk_english(who) font "fonts/PlayfairDisplay-Italic.ttf" size 15 color "#8E1C3D" outlines [] yalign 0.8
+                    add Solid(silk_name_tag_color(who)) xysize (6, 1.0)
+                # 금색 테두리 메모 도장(회사 장면 "내부 메모", 그 밖에는 "개인 메모")
+                frame:
+                    yalign 0.6 padding (9, 2, 9, 3)
+                    background silk("outline", "#E9C98E", 3)
+                    at Transform(rotate=-4, rotate_pad=False)
+                    text dialogue_doc_stamp() size 12 color "#E9C98E" outlines []
+            add "gui/window/paperclip.svg" xpos 124 ypos 508 xysize (22, 62) at Transform(rotate=-12, rotate_pad=False)
         window:
             at (silk_panel_in if silk_motion_on() else silk_still)
             id "window"
@@ -210,8 +225,11 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 line_spacing 6
                 language "korean-with-spaces"
                 substitute use_substitution
+        # 아래 금색 줄과 회사 표기
+        add "gui/window/name_line.png" xpos 150 ypos 688 xysize (720, 1) matrixcolor TintMatrix("#E9C98E") alpha 0.65
+        text "온빛브랜딩 · 연말 피칭 TF" xpos 150 ypos 697 size 12 color "#FFF8F273" kerning 1.4 outlines []
         if advance:
-            add silk("next", "#E9C98E", size=(14, 9)) xpos 1140 ypos 672 at (silk_next_bob if silk_motion_on() else silk_still)
+            add silk("next", "#E9C98E", size=(14, 9)) xpos 1140 ypos 664 at (silk_next_bob if silk_motion_on() else silk_still)
 
 screen say(who, what):
     use cream_dialogue_panel(who, what)

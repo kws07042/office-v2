@@ -117,7 +117,7 @@ testsuite cream_ui_checks:
         assert eval renpy.get_widget("say", "window").style.foreground is None
         assert eval renpy.get_widget("say", "what").style.color == Color("#FFF8F2")
         assert eval len(renpy.get_widget("say", "what").style.outlines) == 1
-        assert eval renpy.get_widget("say", "who").style.color == Color("#FFFFFF")
+        assert eval renpy.get_widget("say", "who").style.color == Color("#2A1420")
         screenshot "clear-long-outlined-dialogue.png"
 
     testcase scaled_r14_choices:

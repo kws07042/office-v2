@@ -42,7 +42,7 @@ testsuite silk_ui_checks:
         pause 0.9
         assert eval renpy.get_widget("say", "window").style.background is None
         assert eval renpy.get_widget("say", "what").style.color == Color("#FFF8F2")
-        assert eval renpy.get_widget("say", "who").style.color == Color("#FFFFFF")
+        assert eval renpy.get_widget("say", "who").style.color == Color("#2A1420")
         screenshot "silk-dialogue-long.png"
 
     testcase intimate_choice_look:

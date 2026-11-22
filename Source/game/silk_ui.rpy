@@ -77,6 +77,10 @@ init -9 python:
             fill = fill[:7]
         return '<rect x="0" y="0" width="%d" height="%d" rx="%s" fill="%s"%s/>' % (w, h, min(radius, h / 2.0), fill, opacity)
 
+    def silk_b_outline(w, h, stroke, radius):
+        # 속이 빈 테두리(도장용).
+        return '<rect x="1" y="1" width="%d" height="%d" rx="%s" fill="none" stroke="%s" stroke-width="1.5"/>' % (max(1, w - 2), max(1, h - 2), radius, stroke)
+
     def silk_b_dialogue(w, h):
         # 위 가장자리는 반원 레이스, 그 아래는 종이 면, 안쪽에 작은 점 한 줄.
         out = ""
