@@ -187,7 +187,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 fixed:
                     fit_first True
                     frame:
-                        padding (56, 6, 22, 8)
+                        padding (46, 6, 22, 8)
                         background silk("flat", "#FFF8F2", 5)
                         hbox:
                             spacing 10
@@ -207,7 +207,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                     background silk("outline", "#E9C98E", 3)
                     at Transform(rotate=-4, rotate_pad=False)
                     text dialogue_doc_stamp() size 12 color "#E9C98E" outlines []
-            add "gui/window/paperclip.svg" xpos 154 ypos 508 xysize (22, 62) at Transform(rotate=-12, rotate_pad=False)
+            add "gui/window/paperclip.svg" xpos 145 ypos 508 xysize (22, 62) at Transform(rotate=-12, rotate_pad=False)
         window:
             at (silk_panel_in if silk_motion_on() else silk_still)
             id "window"
