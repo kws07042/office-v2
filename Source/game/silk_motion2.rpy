@@ -72,26 +72,33 @@ transform silk_card_text(delay=0.0):
     easeout 0.3 alpha 0.0
 
 transform silk_card_badge:
-    zoom 0.4 alpha 0.0 rotate -20
+    alpha 0.0 yoffset 12
     pause 0.2
-    easein_back 0.45 zoom 1.0 alpha 1.0 rotate 0
-    pause 1.3
-    easeout 0.3 zoom 0.6 alpha 0.0
+    easein 0.4 alpha 1.0 yoffset 0
+    pause 1.35
+    easeout 0.3 alpha 0.0
 
 screen silk_chapter_card(code, title, place):
+    # 장 제목 카드: 대화창과 같은 톤(어두운 그라데이션 띠 + 금색 선). 장 번호·제목·장소를 한 줄 가운데에 맞춘다.
     zorder 35
     timer 2.5 action Hide("silk_chapter_card")
     fixed:
-        add Solid("#3B0B22e6") xsize 1280 ysize 104 ypos 236 at silk_card_band
-        add Solid("#B3123F") xsize 1280 ysize 4 ypos 236 at silk_card_band
-        add Solid("#B3123F") xsize 1280 ysize 4 ypos 336 at silk_card_band
-        fixed:
-            xpos 150 ypos 250 xysize (76, 77)
+        at silk_card_band
+        add "gui/window/card_band.png" ypos 238
+        add "gui/window/name_line.png" xysize (980, 2) ypos 238 matrixcolor TintMatrix("#E9C98E") alpha 0.8
+        add "gui/window/name_line.png" xysize (980, 2) ypos 360 matrixcolor TintMatrix("#E9C98E") alpha 0.8
+    hbox:
+        xpos 150 ypos 300 yanchor 0.5 spacing 28
+        vbox:
             at silk_card_badge
-            add silk("badge", size=(76, 77))
-            text code font "fonts/Jua-Regular.ttf" size 25 color "#FFFDFB" xpos 36 ypos 36 xanchor 0.5 yanchor 0.5
-        text title font silk_title_font(title) size 40 color "#FFFDFB" xpos 254 ypos 252 at silk_card_text(0.0)
-        text place size 17 color "#F3E7EA" xpos 258 ypos 304 at silk_card_text(0.15)
+            yalign 0.5 spacing 0
+            text "CHAPTER" font "fonts/PlayfairDisplay-Italic.ttf" size 16 color "#E9C98E" kerning 2.5 xalign 0.5 outlines []
+            text code font "fonts/Pretendard-Regular.otf" size 46 color "#FFFFFF" kerning 2 xalign 0.5 outlines []
+        add Solid("#E9C98E") xysize (1, 76) yalign 0.5 alpha 0.7 at silk_card_text(0.0)
+        vbox:
+            yalign 0.5 spacing 6
+            text title font silk_title_font(title) size 40 color "#FFFFFF" outlines [] at silk_card_text(0.0)
+            text place size 16 color "#F3E7EA" kerning 0.8 outlines [] at silk_card_text(0.15)
 
 # ── 타이틀 화면 분위기 ─────────────────────────────────────────
 image silk title hearts = SnowBlossom(Transform(silk("heart", True, size=(16, 16)), alpha=0.28), count=14, border=40, xspeed=(-18, 18), yspeed=(-60, -25), start=0, fast=True, horizontal=False)
