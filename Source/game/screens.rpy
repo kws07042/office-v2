@@ -183,7 +183,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
             add Solid("#14080E") xpos 4 ypos 6 xysize (1232, 166) alpha 0.18
             add Solid("#EFE8E0") xysize (1232, 166) alpha 0.92
             add Solid("#FFFFFF") xysize (1232, 1) alpha 0.5
-            add Solid("#B39462") xpos 72 ypos 132 xysize (1088, 1) alpha 0.85
+            add Solid("#B39462") xpos 72 ypos 126 xysize (1088, 1) alpha 0.85
             text "온빛브랜딩 · 연말 피칭 TF" xanchor 1.0 xpos 1080 ypos 14 size 12 color "#9A8B80" kerning 1.5
             frame:
                 xanchor 1.0 xpos 1180 ypos 10 padding (1, 1, 1, 1)
@@ -215,7 +215,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 at (silk_tag_in if silk_motion_on() else silk_still)
                 xpos 86 ypos 508 ysize 52
                 padding (30, 0, 35, 6)
-                background silk("tag", "#6B1E34")
+                background silk("tag", silk_name_tag_color(who))
                 hbox:
                     spacing 10 yalign 0.5
                     text who:
@@ -243,18 +243,21 @@ screen silk_choice_item(item, i=0, n=0, intimate=False, wide=False):
         style "silk_choice_button"
         action ([Function(silk_pick, i, n, intimate), item.action] if n else item.action)
         alt item.caption
+        # 줄마다 같은 자리에서 시작하고, 꼬리표는 줄 오른쪽 끝(글상자 폭 534 기준)에 맞춘다.
         hbox:
             spacing 12
-            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (366 if choice_chip else (980 if wide else 530)) min_width (366 if choice_chip else 0)
+            text choice_text style "silk_choice_text" language "korean-with-spaces" xmaximum (362 if choice_chip else (980 if wide else 530)) min_width (362 if choice_chip else 0)
             if choice_sub:
                 text choice_sub style "silk_choice_sub" yalign 0.5 xmaximum (960 - 19 * len(choice_text))
             if choice_chip:
                 frame:
-                    at (silk_chip_glow if silk_motion_on() else silk_still)
-                    yalign 0.5
-                    padding (13, 5)
-                    background silk("flat", "#B3123F", 14)
-                    text choice_chip font "fonts/Pretendard-Regular.otf" size 12 color "#FFFDFB" outlines []
+                    background None padding (0, 0) xsize 160 yalign 0.5
+                    frame:
+                        at (silk_chip_glow if silk_motion_on() else silk_still)
+                        xalign 1.0
+                        padding (13, 5)
+                        background silk("flat", "#B3123F", 14)
+                        text choice_chip font "fonts/Pretendard-Regular.otf" size 12 color "#FFFDFB" outlines []
 
 screen office_choice_list(items):
     vbox:
@@ -264,6 +267,8 @@ screen office_choice_list(items):
 
 screen choice(items):
     zorder 30
+    # 선택지가 뜨면 무대를 살짝 어둡게 해 줄이 인물 그림과 겹쳐도 또렷하게 읽히게 한다.
+    add Solid("#1B0E14") alpha 0.28
     if len(items) <= 3:
         if _history_list:
             use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
@@ -414,7 +419,7 @@ screen quick_menu():
     if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         if not event_cut_active and not dialogue_cg_mode:
             hbox:
-                xanchor 1.0 xpos 1196 ypos 676 spacing 0
+                xanchor 1.0 xpos 1196 ypos 665 spacing 0
                 use silk_quick_item("되돌리기", "rollback", Rollback())
                 use silk_quick_item("기록", "history", ShowMenu("history"))
                 use silk_quick_item("자동", "auto", Preference("auto-forward", "toggle"))

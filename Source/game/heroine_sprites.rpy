@@ -176,16 +176,17 @@ init -4 python:
         what = getattr(renpy.store, "_last_raw_what", "") or ""
         renpy.store.heroine_face_auto[who] = heroine_text_face(what)
 
-    # 무대에 놓는 크기: 머리 위가 화면 약 50px, 대화창(ypos 536) 윗선에서 잘라 글씨 뒤로 몸이 비치지 않게 한다.
-    # 게임용 사본은 이미 화면 크기(원본의 66%, 676×1014)로 줄여 두어 확대·축소 없이 그린다.
+    # 무대에 놓는 크기: 전신을 자르지 않고 그려 다리는 대화창 뒤·아래로 이어지게 한다.
+    # 184장 중 손이 가장 낮은 그림(리아 생활복 pose02)의 손끝이 569px이라, 92%로 줄이고 ypos 2에 두면
+    # 모든 히로인의 손이 대화창 윗선(536) 위에 보인다. 게임용 사본은 676×1014.
     SPRITE_SIZE = (676, 1014)
-    SPRITE_YPOS = 20
-    SPRITE_CROP_H = 536 - SPRITE_YPOS
+    SPRITE_ZOOM = 0.92
+    SPRITE_YPOS = 2
 
     def heroine_sprite_display(st, at):
         if not heroine_sprite_visible():
             return Null(), None
         path = heroine_sprite_path(renpy.store.cream_focus)
-        return Crop((0, 0, SPRITE_SIZE[0], SPRITE_CROP_H), path), None
+        return Transform(path, zoom=SPRITE_ZOOM), None
 
 image heroine stage sprite = DynamicDisplayable(heroine_sprite_display)

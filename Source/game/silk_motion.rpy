@@ -52,11 +52,9 @@ transform silk_choice_in(i=0):
     pause (0.04 + i * 0.07)
     easein 0.24 alpha 1.0 yoffset 0
 
+# 줄이 옆으로 밀리면 정렬이 흐트러져 보여서, 위치는 그대로 두고 바탕색만 바뀐다.
 transform silk_choice_hover:
-    on idle:
-        ease 0.14 xoffset 0
-    on hover, selected_hover:
-        ease 0.14 xoffset 9
+    xoffset 0
 
 transform silk_chip_glow:
     alpha 1.0
