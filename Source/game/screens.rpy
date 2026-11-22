@@ -298,8 +298,7 @@ screen choice(items):
                     for i, item in enumerate(items):
                         use silk_choice_item(item, i, wide=True)
 
-screen main_menu():
-    tag menu
+screen main_menu_silk():
     add "silk ground"
     if renpy.loadable("images/cg/title_keyvisual.jpg"):
         add "images/cg/title_keyvisual.jpg"
