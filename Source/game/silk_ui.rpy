@@ -205,6 +205,13 @@ init -9 python:
             return cream_speaker_color(who, history=True)
         return SILK["ink"]
 
+    def silk_name_tag_color(who):
+        # 대화창 이름표 바탕: 히로인마다 정해진 화자 색의 짙은 쪽(리아 금갈색, 지현 와인, 유진 초록, 서윤 보라).
+        name = silk_speaker_key(who)
+        if name in ("강리아", "리아", "백지현", "지현", "차유진", "유진", "한서윤", "서윤"):
+            return cream_speaker_color(who, history=True)
+        return "#6B1E34"
+
     def silk_english(who):
         return SILK_ENGLISH.get(silk_speaker_key(who), "")
 
@@ -267,9 +274,9 @@ style silk_choice_text is default:
 
 style silk_quick_button is button:
     background None
-    hover_background silk("flat", "#F3E7EA", 20)
+    hover_background None
     insensitive_background None
-    padding (9, 9, 10, 9)
+    padding (9, 6, 10, 6)
 style silk_quick_text is default:
     font "fonts/Pretendard-Regular.otf"
     size 13
