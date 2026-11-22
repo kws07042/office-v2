@@ -133,7 +133,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -175,7 +175,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -217,7 +217,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -259,7 +259,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -301,7 +301,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -343,7 +343,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -385,7 +385,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -427,7 +427,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -469,7 +469,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -511,7 +511,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -553,7 +553,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -595,7 +595,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -637,7 +637,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -679,7 +679,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -721,7 +721,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -763,7 +763,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -805,7 +805,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -847,7 +847,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -889,7 +889,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -931,7 +931,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -973,7 +973,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1015,7 +1015,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1057,7 +1057,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1099,7 +1099,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1141,7 +1141,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1183,7 +1183,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1225,7 +1225,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1267,7 +1267,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1309,7 +1309,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1351,7 +1351,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1393,7 +1393,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1435,7 +1435,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1477,7 +1477,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1519,7 +1519,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1561,7 +1561,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1603,7 +1603,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1645,7 +1645,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1687,7 +1687,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1729,7 +1729,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1771,7 +1771,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1813,7 +1813,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1855,7 +1855,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1897,7 +1897,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1939,7 +1939,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -1981,7 +1981,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2023,7 +2023,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2065,7 +2065,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2107,7 +2107,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2149,7 +2149,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2191,7 +2191,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2233,7 +2233,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2275,7 +2275,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2317,7 +2317,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2359,7 +2359,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2401,7 +2401,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2443,7 +2443,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2485,7 +2485,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2527,7 +2527,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2569,7 +2569,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2611,7 +2611,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2653,7 +2653,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2695,7 +2695,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2737,7 +2737,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2779,7 +2779,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2821,7 +2821,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2863,7 +2863,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2905,7 +2905,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2947,7 +2947,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -2989,7 +2989,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):
@@ -3031,7 +3031,7 @@ testsuite seoyun_checks:
                     assert eval affinity["seoyun"]==19
                 if eval chapter.startswith("서윤 R13"):
                     assert eval memory["seoyun_conflict"]=="open" and not memory.get("seoyun_repair_performed")
-                    assert eval cream_relation_name("seoyun")=="약속 조율 중"
+                    assert eval cream_relation_name("seoyun")=="다시 마주 보는 중"
                     if eval case==0:
                         screenshot "seoyun-future-conflict.png"
                 if eval chapter.startswith("서윤 R14") and not memory.get("seoyun_repair_performed"):

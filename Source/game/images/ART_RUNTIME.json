@@ -1,0 +1,485 @@
+{
+ "note": "GPT 후보 최신 승인본을 1280x720 JPEG로 줄인 게임용 사본. 배경은 그림체 통일 전 GPT 원본 사용(2026-11-21 사용자 지시).",
+ "files": {
+  "images/bg/bg_bookcafe.jpg": {
+   "from": "bg-chatgpt-v001/bg_bookcafe_day_v004.png",
+   "source_sha256": "b744d65637a91d06a8726e9b559e425d379565bd9567f7dcf4d5c97844355349",
+   "sha256": "54313e005372532dd86cf25a67f94c01d0bc0808e9c675b566a55f0cb6bb8fb7"
+  },
+  "images/bg/bg_cafe.jpg": {
+   "from": "bg-chatgpt-v001/bg_cafe_day_v003.png",
+   "source_sha256": "e1fd4e264b2401da9547ccb905a8b01b3f7edb066cedf6bfc0b2394f32d4cd29",
+   "sha256": "14bd9a10b54c299b8a28208f7044041e227023a8487f340e97d08ba9fd1db446"
+  },
+  "images/bg/bg_client_hall.jpg": {
+   "from": "bg-chatgpt-v001/bg_client_hall_day_v003.png",
+   "source_sha256": "7e200d371e481ed688a2674f89ff81dca5a4473f3f2d8d4a4a78e340b44ebe84",
+   "sha256": "b6e036d90b5a6befc2628ce0ee17ad455738f319f06269b22a407903bac9b0d7"
+  },
+  "images/bg/bg_company_front.jpg": {
+   "from": "bg-chatgpt-v001/bg_company_front_day_v004.png",
+   "source_sha256": "5d1763d77722ee778859d9d6d586386c437bcba913ce4a33e8234c2f6a4ec223",
+   "sha256": "217cf0ea64ef08ecfe444d4283684a0d68dccd4a6ced09f5a49d2b86ecb356fb"
+  },
+  "images/bg/bg_corridor.jpg": {
+   "from": "bg-chatgpt-v001/bg_corridor_day_v004.png",
+   "source_sha256": "8b749f64d6df45913c206e18e266d6b03db4fd54a872794cc4af3d36e56ee620",
+   "sha256": "d78ecc5214780848f5a9972654dc69986f28f2c3db06ca892601f6c6f94ee446"
+  },
+  "images/bg/bg_dohyun_room.jpg": {
+   "from": "bg-chatgpt-v001/bg_dohyun_room_day_v004.png",
+   "source_sha256": "4909c5a2663130df8c96a5b8b9d87e7a34e2754177e329058c34a6e80ef5f42a",
+   "sha256": "f5e6b742bdf90fd30cf2308e6cda06aea3427d9edf880a556ad6569286c8e8d9"
+  },
+  "images/bg/bg_gallery.jpg": {
+   "from": "bg-chatgpt-v001/bg_gallery_day_v004.png",
+   "source_sha256": "ccbb6e56f47b50b85f122e57c180623f014a99b26e6d5a009d46268dbe5b35bd",
+   "sha256": "894cf65c4f40bf43a0422cc11b25d63a54d6bee0ec218e6ad748ac956696d2d6"
+  },
+  "images/bg/bg_jihyun_home.jpg": {
+   "from": "bg-chatgpt-v001/bg_jihyun_home_day_v003.png",
+   "source_sha256": "07028ee3ae177882ba837f469226b61f7818384bb45b83f7425bb43270b80b7e",
+   "sha256": "05759b2e3e614837f11c14aa52f4941cb30a8ee7fdd44fceb9affea881e57dca"
+  },
+  "images/bg/bg_laundry.jpg": {
+   "from": "bg-chatgpt-v001/bg_laundry_day_v003.png",
+   "source_sha256": "ba60b1e68021c9d8740870b6664bfb41a2235bd77662f308cc5ceb0a57388807",
+   "sha256": "dcf8c59ac1a3198a85cbb886c84998cb08e6eed632989b8266be0e9ef8f00c17"
+  },
+  "images/bg/bg_meeting.jpg": {
+   "from": "bg-chatgpt-v001/bg_meeting_day_v004.png",
+   "source_sha256": "6b02497735ec3f619c159ba78fb70b01b8f799615b4f455144084706459e9e79",
+   "sha256": "539c3e07c6c5bd63fb9887f4a6726fbc47157890c7b7734169ce21f9d34d16f5"
+  },
+  "images/bg/bg_motel.jpg": {
+   "from": "bg-chatgpt-v001/bg_motel_day_v003.png",
+   "source_sha256": "30b500042387469ad0837e8169cbe4557b42dd2660e2c6feae937e817c8fdf65",
+   "sha256": "4031b46236db5a3d5257c0176232a067d4e143cdff696b5e37b02048b6d8a1c3"
+  },
+  "images/bg/bg_office.jpg": {
+   "from": "bg-chatgpt-v001/bg_office_day_v004.png",
+   "source_sha256": "037de98d650cdf34966759a3621236fa609d055a68674c40064c4a807cea1920",
+   "sha256": "3f0e39fd93158e54c75bfef448d876fcda1f2700da6752b70ad153aedd85956b"
+  },
+  "images/bg/bg_pantry.jpg": {
+   "from": "bg-chatgpt-v001/bg_pantry_day_v004.png",
+   "source_sha256": "3eaed3731e85fa63059600438134f0d3caa1d6d9b6a1d6d4fc25f2f688ca370e",
+   "sha256": "86ade7e4f92648f029e1e30a0943d7e013d601f13b5ca2b2ed2504f60d5d0725"
+  },
+  "images/bg/bg_park.jpg": {
+   "from": "bg-chatgpt-v001/bg_park_day_v003.png",
+   "source_sha256": "66ef49f15283499918ae3a6fda1508093d6f187c5c6915c571f605c6921d3eed",
+   "sha256": "b69e16da2231ab6c8dd25cd14e92aea57b60ccf15645c1e2c480c51170bd0179"
+  },
+  "images/bg/bg_popup.jpg": {
+   "from": "bg-chatgpt-v001/bg_popup_day_v003.png",
+   "source_sha256": "2780b141f2e4fb5bead7f02e3cb0c73c331baaaca0ff03217c677a0e45536072",
+   "sha256": "effd276a2aa4a942cf20ba65756bad896b3e8464ebb3ab7494c5f86fae747fb3"
+  },
+  "images/bg/bg_restaurant.jpg": {
+   "from": "bg-chatgpt-v001/bg_restaurant_day_v003.png",
+   "source_sha256": "92bd672a9b1ebe1b2b9d0e3d6086b0bd828b91d44483ed2f68857352a27b5466",
+   "sha256": "daa4ad9e896f8feb1210e79a9aacd7a008ff32bec01463b667373510cd6dc280"
+  },
+  "images/bg/bg_ria_home.jpg": {
+   "from": "bg-chatgpt-v001/bg_ria_home_day_v003.png",
+   "source_sha256": "c4be1bc77fc6a52513cff7f8ceb132000243ccd0f75dc01c639545380165070f",
+   "sha256": "11e93b7cf3c665f7806f976826e4f9f31cfc8ed53fc6b4da722af68fc83b725e"
+  },
+  "images/bg/bg_rooftop.jpg": {
+   "from": "bg-chatgpt-v001/bg_rooftop_day_v003.png",
+   "source_sha256": "641f3404ab9a4ce1a42bf79969f9cc58227304671283fb7188b3c8687cbdcdd7",
+   "sha256": "3db0428ddef169e6b08cbdced3271d51ee2f0dabc7835db434257a3930b8e8cb"
+  },
+  "images/bg/bg_seoyun_studio.jpg": {
+   "from": "bg-chatgpt-v001/bg_seoyun_studio_day_v004.png",
+   "source_sha256": "b3837b752ec542b054b3ae934b49e664072e13da2a8f660dceaa0695ac723be9",
+   "sha256": "b25a0593da8cb5dadc4203b85f76cff6d383d06c529320298c0d2e53ef57615e"
+  },
+  "images/bg/bg_stairs.jpg": {
+   "from": "bg-chatgpt-v001/bg_stairs_day_v004.png",
+   "source_sha256": "92898815828525f94bf0007e1d05214a8d6b0759ac341773b31b706585d17b3c",
+   "sha256": "d5c5b8fb4c0b02f4d5519a9a46faeb9819e43277f7b9e28fba1aa87d149d99da"
+  },
+  "images/bg/bg_street.jpg": {
+   "from": "bg-chatgpt-v001/bg_street_day_v004.png",
+   "source_sha256": "dac8681222db44d18c588d38c9ac93444a54eeb7d18494d635c893217686012e",
+   "sha256": "1c9679e5175e54d0b03010196fddb300915787ced2521d2da71cb8c6c06c6772"
+  },
+  "images/bg/bg_train.jpg": {
+   "from": "bg-chatgpt-v001/bg_train_day_v004.png",
+   "source_sha256": "508f8f8ffb42324c07e9bfd586662313beae0a2da97ab3993f73a907db33a954",
+   "sha256": "ef8ee1835f9192d31b5445d305ebb47a051d4ccc05d6adfc3bb5ba8461b662a1"
+  },
+  "images/bg/bg_yujin_home.jpg": {
+   "from": "bg-chatgpt-v001/bg_yujin_home_day_v003.png",
+   "source_sha256": "418095ca91695b809556f3230a72eb8d1b27c139fcfe9fa7363d56b186e16068",
+   "sha256": "52f9f9d1e01de52288670a883b644982324170cb2e44f80958521021c1b281a8"
+  },
+  "images/cg/common_c05.jpg": {
+   "from": "cg-chatgpt-v001/common_c05_scene_v001.png",
+   "source_sha256": "72eadb36c2ab8d672feef0467d6eb325b4165933f8b5250397ec6f26d62ba3fb",
+   "sha256": "7df31fe9acbce685190c0093d093dde49cb6e4020141496d7e915a47bfd64401"
+  },
+  "images/cg/common_colleague_ending.jpg": {
+   "from": "cg-chatgpt-v001/common_colleague_ending_scene_v001.png",
+   "source_sha256": "3655a312b1a279d2d84a03a34a41d084f4624efbb5f79563fcb4c46b40c16faa",
+   "sha256": "16c47e832ed963f9f1b6f01ba79bbfe5cd172624b3aca0b8152bbb0f1f372632"
+  },
+  "images/cg/jihyun_e01.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_e01_scene_v001.png",
+   "source_sha256": "b19bc8afc092ddc7ac38d97e41006dc7f51777cf6ebd7fe99050604ae0ec9ce1",
+   "sha256": "e4a40e0dbabb4969f7585a7324f9b6e44b369dcb1ba4069fa46ed198ebe7d26c"
+  },
+  "images/cg/jihyun_r04.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r04_scene_v001.png",
+   "source_sha256": "a30f5fbe06dab2258d75af5afee6f944fca2adc5eb1e07b014501fef09f4c91f",
+   "sha256": "33eeb65fcd8fdc7d8694698455638dedd0e187d31717484c338a5552206cb9ac"
+  },
+  "images/cg/jihyun_r05.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r05_scene_v001.png",
+   "source_sha256": "56c088310c1649bd3c8965640d29a81e4551a0c08d30b6cc195deb462bd28979",
+   "sha256": "c5a2b901de82f491f44c73f3e34231120001dc7307a64064807386dc5ade80e7"
+  },
+  "images/cg/jihyun_r08.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r08_scene_v001.png",
+   "source_sha256": "9bb4725580abe6c9fd17dfb1737a209ef3e233607937fc52a5446c54fe6383e5",
+   "sha256": "1b1cff438ed516464e918e1ce29a6cd589339f9dae227e960ed416ffc0525f09"
+  },
+  "images/cg/jihyun_r10.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r10_scene_v002.png",
+   "source_sha256": "8d17e87cf41824078dd92e82317c9d648154fc81e72474534f330b18dd32cf87",
+   "sha256": "62a92a088f6907de03a46d370c04e68c311fd6e78c332ed3c40c0facbdc22630"
+  },
+  "images/cg/jihyun_r11.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r11_scene_v001.png",
+   "source_sha256": "f056c063370fb087747fa3fd39f190b6ed8d501c1f01f45c1598c49533821bc9",
+   "sha256": "1c45b3b3d3f128001db5be565a10ffe2ac70a07b5cf9e9cd480742cad281f096"
+  },
+  "images/cg/jihyun_r14.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r14_scene_v001.png",
+   "source_sha256": "f5674483bbd43ec70dacc19349d87afad1c93e3e46b83bd73f3cae98fd642464",
+   "sha256": "481be19d6327ab5b824b6cc4fc753843eaa87f7530aff0833be9045e43903006"
+  },
+  "images/cg/jihyun_r16.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r16_scene_v001.png",
+   "source_sha256": "5193a32ec20664eed41d6f64ab2e2e9e1d08d62a92ea032edbcc9df4da7c3258",
+   "sha256": "5632ee488df9f3e94087baa4bcddcdca8e405b36d3b0af50341812ae284cdcd3"
+  },
+  "images/cg/jihyun_r16b.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_r16b_scene_v003.png",
+   "source_sha256": "fd977800dfbed178bbe162fde294f5ad1ae0bbe46038550b2536dd1fafd5b2c1",
+   "sha256": "4927cd90d028347b222c00a1d7b9c718055faf30c5cf959f466ee5faf3d3b872"
+  },
+  "images/cg/jihyun_sp1.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_sp1_scene_v001.png",
+   "source_sha256": "e51089e6308cbc86da3d8a77b47b21845a933861395bc64f249ea7b84ebe021a",
+   "sha256": "b32a48c9ceb7bf6ae171910f234e8e3f3875ef3320ed30a4d3bdf559be6e3c64"
+  },
+  "images/cg/jihyun_sp2.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_sp2_scene_v001.png",
+   "source_sha256": "cbc183fd4bc4a9910626b72937f3b200e938b6934cae4d3ef35dd67cda98c76b",
+   "sha256": "b5fd3539ac8dea763d28cbf26b9dc7396828e644819ef756dda598a23c9b3bb0"
+  },
+  "images/cg/jihyun_x01.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_x01_scene_v001.png",
+   "source_sha256": "f899282134b24efb532a00414d795b7849f3fb4d7617b12f09934dbf0723d861",
+   "sha256": "63d0b60f6ae379f88b5e715059d2da7f7c947794725a23240e18650ffa6d0c94"
+  },
+  "images/cg/jihyun_x01b.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_x01b_scene_v001.png",
+   "source_sha256": "2e8c0de185d723dc81c6f2af020235841a5638627856d819a2abacd9060e4a50",
+   "sha256": "6ab1865f3d9a08fc1051fab9564e258645ad29f86b6326ab55c95221c0471e1e"
+  },
+  "images/cg/jihyun_x02.jpg": {
+   "from": "cg-chatgpt-v001/jihyun_x02_scene_v001.png",
+   "source_sha256": "6025aea31597d276019002502c1e567419a95572091b81e179af912f6a9c5e40",
+   "sha256": "8438d37ee23f59b8dc2d7c419b6615d6f9cf8e899c8d522e2f7c829528c00fdb"
+  },
+  "images/cg/prologue_hands.jpg": {
+   "from": "cg-chatgpt-v001/prologue_hands_v001.png",
+   "source_sha256": "9aa249fbc08fe70d6427344b495cb6e0173054e0c99a6be6506e2dd5904f27f0",
+   "sha256": "a0f8334a16d848523a8469529b9c1d57c9cf247391f8954beff304d1d50b9c37"
+  },
+  "images/cg/ria_e01.jpg": {
+   "from": "cg-chatgpt-v001/ria_e01_scene_v001.png",
+   "source_sha256": "3fba82af4254a60f92c7ed9f97b1167f3fe018441e602d5c20f942135437badb",
+   "sha256": "8c705eb911ee2da1398201044f1ddd6c369b8b819abd2014ef1d374527538b64"
+  },
+  "images/cg/ria_r02.jpg": {
+   "from": "cg-chatgpt-v001/ria_r02_scene_v001.png",
+   "source_sha256": "e8416bf8f44353b7f8fb859e5514b66614c67c0cd38212f6b53d690585d7a416",
+   "sha256": "45a0e160e5a4242e9e8986f16e97858ef1ca7b9ab83beac5baac0b1d0484e330"
+  },
+  "images/cg/ria_r04.jpg": {
+   "from": "cg-chatgpt-v001/ria_r04_scene_v004.png",
+   "source_sha256": "898a7fe0eb593af9216ba29bbf1d2a4a02db81cce3d78e078fbbaa83f882c548",
+   "sha256": "ae4c152bf7f44269b5e0fc399cae5996bd384a4b94b156e538edcac5d4c8b70a"
+  },
+  "images/cg/ria_r07.jpg": {
+   "from": "cg-chatgpt-v001/ria_r07_scene_v002.png",
+   "source_sha256": "2b92703459d2984cb6bb1480edd6645d63832df2a71a18f70a02a42d796e3e2f",
+   "sha256": "9e4d694a17523c0d1dd4fa0621b9ac76c4cdfda09e24be06a3f0cb5dc8056e8c"
+  },
+  "images/cg/ria_r08.jpg": {
+   "from": "cg-chatgpt-v001/ria_r08_scene_v001.png",
+   "source_sha256": "cb4397ce53e2a7d1ef6e089d70486464fbff83e8f520ec6f651f973739f9fb72",
+   "sha256": "e97881ec73e9d97a5ec794feb7dbe9366534458588860fa2f9a3bf508e9e67c8"
+  },
+  "images/cg/ria_r10.jpg": {
+   "from": "cg-chatgpt-v001/ria_r10_scene_v001.png",
+   "source_sha256": "bd3d3ddb7b21c0e875a1391580e915d6db8a510711ee8fa5740f9bd5a9726e06",
+   "sha256": "e25402dc590ccddf876adb20892f2bf85a3e95cd6d7c63624144e911aded7c92"
+  },
+  "images/cg/ria_r11.jpg": {
+   "from": "cg-chatgpt-v001/ria_r11_scene_v001.png",
+   "source_sha256": "bae14e877129a9b75e1df913b5746c7b89742d0da3bfe88c6e688d3b4f3701a4",
+   "sha256": "4c56124ae286883a8edfff1680f129af903b8856a7562ea57bdfea2e2d2d2e50"
+  },
+  "images/cg/ria_r15.jpg": {
+   "from": "cg-chatgpt-v001/ria_r15_scene_v001.png",
+   "source_sha256": "1c8202228f9afd6dd01c8da1fb7cb1a7f61f365e9f1133b8c8e53debead385b3",
+   "sha256": "5f9772e978c7319aacc7110557a9d91270a51d446f12608774782f42a94082d9"
+  },
+  "images/cg/ria_r16.jpg": {
+   "from": "cg-chatgpt-v001/ria_r16_scene_v001.png",
+   "source_sha256": "1bbd18f8ad9ee548360f659d6470552d87473a7850bd3986d838f610c0e75660",
+   "sha256": "a2b12e437697c0eb5ec2423b82dce5bc7096a20515cdfafa8ab59c9281b86910"
+  },
+  "images/cg/ria_sp1.jpg": {
+   "from": "cg-chatgpt-v001/ria_sp1_scene_v001.png",
+   "source_sha256": "bd35aaacadd170127825d3fc350604ce7f9012cd1ef532e9efa74c7812f12610",
+   "sha256": "d94813782d2f4c8989abf47cf3e0e8d0928d4693a71ac42025839910d2621032"
+  },
+  "images/cg/ria_sp2.jpg": {
+   "from": "cg-chatgpt-v001/ria_sp2_scene_v001.png",
+   "source_sha256": "91bd883cf6f7a934b9f7d9175d04481e9bcf4a49876a2ee954bc4c752a0ebf77",
+   "sha256": "6d31a423596079abe35dcfd1a3210aa6c008bbdcd08b4c2c4207ade9f7e74da3"
+  },
+  "images/cg/ria_x01.jpg": {
+   "from": "cg-chatgpt-v001/ria_x01_scene_v004.png",
+   "source_sha256": "cb9c61f9e668463fa99e1f21f6f82ed7db99e626b1dfbdd2b98d41527b36f56b",
+   "sha256": "acc1e16db154110109d2706ca73695315b8c3f8cd304d40d8f969467bc5f0cda"
+  },
+  "images/cg/ria_x01b.jpg": {
+   "from": "cg-chatgpt-v001/ria_x01b_scene_v001.png",
+   "source_sha256": "4d6547ddf301b793a694aee474108f0b01d4d0db86c1000d86c382a532d7efd2",
+   "sha256": "fac578c599a85e5d0829530bed6660c7e77474491d2b677a97faba9d02788f8f"
+  },
+  "images/cg/ria_x02.jpg": {
+   "from": "cg-chatgpt-v001/ria_x02_scene_v001.png",
+   "source_sha256": "8522edaee16842dec40c0d9e9bbd8838c2d525ae3a28c87447fa729a10d789a9",
+   "sha256": "1569e07e06969f5c47f03456a0f68e2e7f5ab06f255ac684b59a3087d2a298fe"
+  },
+  "images/cg/seoyun_e01.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_e01_scene_v001.png",
+   "source_sha256": "12fe88a53c634920b4cfbc87955b8cb6dd9749d55bf80cb7e5e527d7ec5bbbc1",
+   "sha256": "17df466585c190da9424ac0e53b433801faea1d5af88dd6d56ff18f519a0cf87"
+  },
+  "images/cg/seoyun_r02.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r02_scene_v002.png",
+   "source_sha256": "09730dde8f8c4d2ddb20852ce9cbbba7a5d358a8d55d6d3901b850b89a548185",
+   "sha256": "8564ea0c573e0db2177806e87c0753f598ba3ff066cd921d363100c904d2e172"
+  },
+  "images/cg/seoyun_r04.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r04_scene_v001.png",
+   "source_sha256": "4a9d19382e9a7f3a237acfcd9819a7a2fad8ccfffc237eb36ce4b977ce6e81a0",
+   "sha256": "5af7c6e6548778f70dff875d66bb3b22e4519007cfe5d989644ded7dee0a7530"
+  },
+  "images/cg/seoyun_r05.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r05_scene_v001.png",
+   "source_sha256": "c3322c7feea8d55086772af07f893f4ad8e3455852fed077bdec601a09ef3c44",
+   "sha256": "d155040ed063f5b084ea301bb5d0f4c0d681261e9ef0d8caa1568467b5c2dddb"
+  },
+  "images/cg/seoyun_r08.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r08_scene_v001.png",
+   "source_sha256": "338d0bda8567fc091eaeaeb534967cc0f46d7dafb67bd8f25414c3b4de655380",
+   "sha256": "403ed22fb5f4160c2713d45e8b2ca89d5ba57587e832dfca47a79835d2ed62ba"
+  },
+  "images/cg/seoyun_r10.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r10_scene_v002.png",
+   "source_sha256": "5b7d2d99f109adc4b3b800d3a825643b2d930e8dfffd3df7ba07166a839d8b6b",
+   "sha256": "ed13637f0f25be80d53f50cddf61094b4eb3e2fd2ef02f73c571f4e8dd176401"
+  },
+  "images/cg/seoyun_r11.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r11_scene_v001.png",
+   "source_sha256": "3284a6aff2febe1222e76390a98480eb676c6fd97071f1b1dd80fb04eef03ae3",
+   "sha256": "c51d5cae70b87a4cf243edcad32e56b16a1b35088ac63c3693d4ff08f087393e"
+  },
+  "images/cg/seoyun_r13.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r13_scene_v001.png",
+   "source_sha256": "45ba5a5fef5cf3d6a1ba0522b91b0024591378fffed902322ae84009b6e04fce",
+   "sha256": "57e6b26fe466210a7b78aa3f50d1f3b3200d151dc7df5e27dc86f6b63e2ad52f"
+  },
+  "images/cg/seoyun_r16.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_r16_scene_v002.png",
+   "source_sha256": "961f0c53be2b44c62fd658c5d1fe39e5668a3e8cc3560ff7faa5d7cb108460a1",
+   "sha256": "edfafb9162b952b849ce10733f6f015c3758f3cef4523be3b7a49b0f6ccd362e"
+  },
+  "images/cg/seoyun_sp1.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_sp1_scene_v002.png",
+   "source_sha256": "5d6e8a598d239e1d7cd2ea5a26018c32d77065aae90678050c95a142777b5df4",
+   "sha256": "9c90ed02f2a60e801559fa1b22307147e95afba02fcf54589ee93419f331e91d"
+  },
+  "images/cg/seoyun_sp2.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_sp2_scene_v002.png",
+   "source_sha256": "518e3a0d2889f059362c0b15a3cff2617f36518189ba4e8e587f6fe8321d0655",
+   "sha256": "df1d85da9c913a27b4071c79b5830a7c505c918bba894e753570d5ba8392fc7b"
+  },
+  "images/cg/seoyun_x01.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_x01_scene_v002.png",
+   "source_sha256": "261bcab2f32b237a331d988afaea9da8d3ffe79d4833fd2c12eb3da1e5397ba8",
+   "sha256": "e78d5f1b2982112a84f6e9a8dd7ca2647972debe365304d3485624520e333f6a"
+  },
+  "images/cg/seoyun_x01b.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_x01b_scene_v002.png",
+   "source_sha256": "5fef3ae99569a481c10e4cce6d953bdead1dd2606068e6001204741523b6019c",
+   "sha256": "39d06b28bb170bb1c619b73a502a5cc33799f44772bc266cd4f269ac57a15ccc"
+  },
+  "images/cg/seoyun_x02.jpg": {
+   "from": "cg-chatgpt-v001/seoyun_x02_scene_v001.png",
+   "source_sha256": "ff30b9d5f628a7eb24ce0918767210e40c5e17c723dc0db24b208e4925d43c57",
+   "sha256": "13f48dc515c96edfe9c5044813e4d7262e29aef464ddf532634f75605e19a9f4"
+  },
+  "images/cg/spring_pitch.jpg": {
+   "from": "cg-chatgpt-v001/spring_pitch_scene_v001.png",
+   "source_sha256": "59002fc3221679c21656620c267fefd0518b94512c4c9c1814eeb3d3df486d05",
+   "sha256": "fdb36b898e5641631ce1dafb1c1e1b207c2acca967f6c8d00f43cda72ce54eb3"
+  },
+  "images/cg/spring_rooftop.jpg": {
+   "from": "cg-chatgpt-v001/spring_rooftop_scene_v001.png",
+   "source_sha256": "1ee13257fabf75e9d06068b9cfbb5a33395128d7cc2b1e26388a88b66c4b3ad1",
+   "sha256": "7119c0d8910767d84075f7caf364101715dacfcbfdb3f57c0ad6b8348a74de76"
+  },
+  "images/cg/title_keyvisual.jpg": {
+   "from": "cg-chatgpt-v001/title_keyvisual_v002.png",
+   "source_sha256": "5f2d71a0022d0e82403aa555dc5cb14f3cda9261e29d877f5df1518436b52e01",
+   "sha256": "31db60cdd3c17b7fbd3d159e6f958224b9444a65fb7660e539e30b9951a89de9"
+  },
+  "images/cg/yujin_e01.jpg": {
+   "from": "cg-chatgpt-v001/yujin_e01_scene_v001.png",
+   "source_sha256": "45ab9c426397478ea5ea93bcee94f7701c8e8bad2d12f08c4cd50600d7e6c1ca",
+   "sha256": "07258c0f46348c256ec021555af643835d7bf7a3858edeecf38cd17a8afc37a1"
+  },
+  "images/cg/yujin_o02.jpg": {
+   "from": "cg-chatgpt-v001/yujin_o02_scene_v001.png",
+   "source_sha256": "5da731452aadd630addea60626f4d6f093cc50f262e86d70ed16374ab0839eb4",
+   "sha256": "350c6ca9b956901d87f0174c7db1ad4235e4a329c705c02292d7f4cdcb8ae66a"
+  },
+  "images/cg/yujin_r02.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r02_scene_v003.png",
+   "source_sha256": "5cc49da1581de2d238208371ef6b68c327469884b68a841bbf34830fe3fed8ce",
+   "sha256": "0b948860d8122938f27616e0d6b4f24d54f1d51092651f1e90b52e78819e8038"
+  },
+  "images/cg/yujin_r04.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r04_scene_v001.png",
+   "source_sha256": "2b446f25e0128364da6422d5a35036d70bcc04556be58362f969bcb0fd241c84",
+   "sha256": "9b4bf047155716c27e55f44ac9e6fd8cc02bafb1ca7935f48b0da12a3034fb79"
+  },
+  "images/cg/yujin_r07.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r07_scene_v001.png",
+   "source_sha256": "91249efe948215f41ead7ba3bc5881a27155c69af463fb77fb971ad8fdc72cf7",
+   "sha256": "a2621c4c189ce9f5495eb0c03527c4b7b2529602965dab00739d57c42a793813"
+  },
+  "images/cg/yujin_r08.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r08_scene_v001.png",
+   "source_sha256": "f3938b1dd35c7c377d867f30585b4e67fa75e70d55795a1619b1594fd553b2d2",
+   "sha256": "9174f1b7185d8e405e2a1c7f2a1447da42eea1a99ed169dc27cb40a4f5134b92"
+  },
+  "images/cg/yujin_r10.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r10_scene_v001.png",
+   "source_sha256": "3107e158cf8afdbfe35d8be19816755357329b8508c223e94d4f7b093b351f93",
+   "sha256": "5c5cfc5aa9ea8b8b3862530befbd5cb1057863c88df72e25793b6b464d81a772"
+  },
+  "images/cg/yujin_r11.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r11_scene_v001.png",
+   "source_sha256": "1377527bbe0e322fd4f333ea1dfc0ee54a487a857fb2395a7bd47be58eddc54f",
+   "sha256": "4711b6af6bcb2aaa8f3118ffc2968396418c4170341b9cf03f8a8d23c5afde3e"
+  },
+  "images/cg/yujin_r16.jpg": {
+   "from": "cg-chatgpt-v001/yujin_r16_scene_v001.png",
+   "source_sha256": "c8f67eaab1f178f8fb0d9b26a6d02337c1f6e651a3981925bbca63339d5d8e79",
+   "sha256": "b7dd98933db2d850a88b192e3b9af68bd0a8cf37a8802026040ed770378b2b70"
+  },
+  "images/cg/yujin_sp1.jpg": {
+   "from": "cg-chatgpt-v001/yujin_sp1_scene_v001.png",
+   "source_sha256": "e689c130c2f62e9429822089562e375cc30c1d682fb6831f67ee7d59646503c3",
+   "sha256": "f005ad5dfe6646913e2d4bb504452b4e92a95e1f7d3e173157b7d5426104e750"
+  },
+  "images/cg/yujin_sp2.jpg": {
+   "from": "cg-chatgpt-v001/yujin_sp2_scene_v002.png",
+   "source_sha256": "c2941c2a0116ea55e523d8dd104f0bed6165a5a6ffe77ca77f1afb407f5a9eaf",
+   "sha256": "8bb9845b3e2678f2e6e451771bdaa120ae7d9b7cda48a2ac6123e410edef94fd"
+  },
+  "images/cg/yujin_x01.jpg": {
+   "from": "cg-chatgpt-v001/yujin_x01_scene_v002.png",
+   "source_sha256": "6a3b69c5b5ccf6a5c03ccd104d2199f62830c9405e35b370bec316d4713303a8",
+   "sha256": "a462510eb23013b70ac965d699df323f4686efbb9ec45dda25795ad12b53914b"
+  },
+  "images/cg/yujin_x01b.jpg": {
+   "from": "cg-chatgpt-v001/yujin_x01b_scene_v001.png",
+   "source_sha256": "210795c646a211637a7d3f85b23f82db6b85a2a2e653acbc2e7fa943f3a35366",
+   "sha256": "6238910cf07f379c7038453b6de424080599356343458eb9081f598af2659277"
+  },
+  "images/cg/yujin_x02.jpg": {
+   "from": "cg-chatgpt-v001/yujin_x02_scene_v001.png",
+   "source_sha256": "a2707f6caf717e3250189716722a5eeb9e987751476eef6da01d5681a9447c1c",
+   "sha256": "9718424e9cbbcf48b38d8cf7afd61b2f2c9c15b10f3993017c9ea6c2da38350b"
+  },
+  "images/minigame/card_croissant.png": {
+   "from": "minigame-v001/card_croissant_v001.png",
+   "source_sha256": "f4e6fc75bd62cfa791a2b533dedf94ecdeb68a5cd82397529f6834d71892bfbb",
+   "sha256": "5860a92220bee5754d3c1e185bc2ed854137f08ae2dc81658b3667442e6ec2d7"
+  },
+  "images/minigame/card_saltbread.png": {
+   "from": "minigame-v001/card_saltbread_v001.png",
+   "source_sha256": "2dd9eb7679bbb2bf0a022b4e2818a0bebd32b0908439edfe9cf672ff32842da3",
+   "sha256": "cbe1b11fe0100867e514f9e0534a765e5aeb9e8060ff38dc477c99144aad356b"
+  },
+  "images/minigame/card_melonbread.png": {
+   "from": "minigame-v001/card_melonbread_v001.png",
+   "source_sha256": "739bb5eaf1a4173b0d37b0f1d9347f4bef277769ee0450fac13c340dd91c194d",
+   "sha256": "3ed826ca8e340387e1ab1b9754a331cae0c2bc84a48f43ede04fb6043d3f4296"
+  },
+  "images/minigame/card_blacktea.png": {
+   "from": "minigame-v001/card_blacktea_v001.png",
+   "source_sha256": "1271ed85b6197c154e98eb126259bac85389ded6d87a1b2d13fd488b3a709a10",
+   "sha256": "1f0a79271492139221a4cb0b9cab186c1bb23b202b09ae40d5830d32bb54de6d"
+  },
+  "images/minigame/card_greentea.png": {
+   "from": "minigame-v001/card_greentea_v001.png",
+   "source_sha256": "000847dea71bc4268a7a869c95e90c6eca84a244cc4845c91c75305cafac6771",
+   "sha256": "0adf4bc0be0e389f2d2be36433c6775576e71d56bcfac03e327a4d68556f019e"
+  },
+  "images/minigame/card_yuzutea.png": {
+   "from": "minigame-v001/card_yuzutea_v001.png",
+   "source_sha256": "d3ae2d33e2d0ac258ef6c75b46084bbe909071f1cb170879fd10e0637af04fc3",
+   "sha256": "07f3a45dd9ab142a83cbb6d597cca6e0aa2143947a26eac5180a9bc8874437b8"
+  },
+  "images/minigame/card_back.png": {
+   "from": "minigame-v001/card_back_v001.png",
+   "source_sha256": "fec78ef7cbb0d6cd4059fac6b1d2246c7930989a24ba0ef7d937e98ae50a0a79",
+   "sha256": "4eadd1b6ab4c4e905b9f1c13ed9a22bceadde8da94a7422eaa9aad649c469575"
+  },
+  "images/minigame/spot_pair1_orig.png": {
+   "from": "minigame-v001/spot_pair1_orig_v001.png",
+   "source_sha256": "aa2a7cd64d7946e762392a8f209b442e6f8337e86b1437bcd90851773cc38b3d",
+   "sha256": "6baaf812c9df5ba193f2a734b40389e8b5d9f5ccac0a0dc949755f5459fa57f4"
+  },
+  "images/minigame/spot_pair1_edit.png": {
+   "from": "minigame-v001/spot_pair1_edit_v001.png",
+   "source_sha256": "ddc3a1e8c2a14afc5a1fd2212bd0f3a89193363f19a830307145742233809750",
+   "sha256": "46fcb35775f8eed75cd991ab31efd51c2fddc99d36e8212e94915b1af96e883c"
+  },
+  "images/minigame/spot_pair2_orig.png": {
+   "from": "minigame-v001/spot_pair2_orig_v001.png",
+   "source_sha256": "af4ab76f3ebf9884ab5c8e78831a453915880d78f914c71c0f2cd3cfe7156576",
+   "sha256": "68643b6ef5b8c3492fd01511d2f6dd1deff49481b9d4b74639293176e712dd59"
+  },
+  "images/minigame/spot_pair2_edit.png": {
+   "from": "minigame-v001/spot_pair2_edit_v001.png",
+   "source_sha256": "7842e6f6b1ebdd2292cacda9038d9bba19af5552911e5930f7d2655a290184b4",
+   "sha256": "5fbf5c5704b2841142898256ba2d76e76d2505a48e9292ad60ef3a7ff7b04fa4"
+  }
+ }
+}

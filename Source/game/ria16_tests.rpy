@@ -544,7 +544,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -563,7 +563,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -582,7 +582,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -601,7 +601,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -620,7 +620,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -639,7 +639,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -658,7 +658,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -677,7 +677,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -696,7 +696,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -715,7 +715,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -734,7 +734,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -753,7 +753,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -772,7 +772,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -791,7 +791,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -810,7 +810,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -829,7 +829,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -848,7 +848,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -867,7 +867,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -886,7 +886,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -905,7 +905,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -924,7 +924,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -943,7 +943,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -962,7 +962,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -981,7 +981,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1000,7 +1000,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1019,7 +1019,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1038,7 +1038,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1057,7 +1057,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1076,7 +1076,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1095,7 +1095,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1114,7 +1114,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1133,7 +1133,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1152,7 +1152,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1171,7 +1171,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1190,7 +1190,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1209,7 +1209,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1228,7 +1228,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1247,7 +1247,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1266,7 +1266,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1285,7 +1285,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1304,7 +1304,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1323,7 +1323,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1342,7 +1342,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1361,7 +1361,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1380,7 +1380,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1399,7 +1399,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1418,7 +1418,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1437,7 +1437,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1456,7 +1456,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1475,7 +1475,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1494,7 +1494,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1513,7 +1513,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1532,7 +1532,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1551,7 +1551,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1570,7 +1570,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1589,7 +1589,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1608,7 +1608,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1627,7 +1627,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1646,7 +1646,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1665,7 +1665,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1684,7 +1684,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1703,7 +1703,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1722,7 +1722,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1741,7 +1741,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1760,7 +1760,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1779,7 +1779,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1798,7 +1798,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1817,7 +1817,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1836,7 +1836,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1855,7 +1855,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1874,7 +1874,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1893,7 +1893,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1912,7 +1912,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1931,7 +1931,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1950,7 +1950,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1969,7 +1969,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -1988,7 +1988,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -2007,7 +2007,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -2026,7 +2026,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         if not eval ria16_final_menu():
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
@@ -2045,7 +2045,7 @@ testsuite ria16_flow:
                         click id route_phone_test_reply()
                         click id "phone_next" until not screen "office_phone"
                     advance until screen "choice"
-            if not eval ria16_final_menu():
+            if eval renpy.get_screen("choice") is not None and not ria16_final_menu():
                 click expression ria16_pick(route) until eval ria16_pick_gone()
         assert eval ria16_final_menu()
         if eval route in ("ria", "deferred", "no_epilogue", "cosplay", "third"):

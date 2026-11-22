@@ -114,7 +114,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -145,7 +145,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -176,7 +176,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -207,7 +207,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -238,7 +238,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -269,7 +269,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -300,7 +300,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -331,7 +331,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -362,7 +362,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -393,7 +393,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -424,7 +424,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -455,7 +455,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -486,7 +486,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -517,7 +517,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -548,7 +548,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -579,7 +579,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -610,7 +610,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -641,7 +641,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -672,7 +672,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -703,7 +703,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -734,7 +734,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -765,7 +765,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -796,7 +796,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -827,7 +827,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -858,7 +858,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -889,7 +889,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -920,7 +920,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -951,7 +951,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -982,7 +982,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1013,7 +1013,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1044,7 +1044,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1075,7 +1075,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1106,7 +1106,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1137,7 +1137,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1168,7 +1168,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1199,7 +1199,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1230,7 +1230,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1261,7 +1261,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1292,7 +1292,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1323,7 +1323,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1354,7 +1354,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1385,7 +1385,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1416,7 +1416,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1447,7 +1447,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1478,7 +1478,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1509,7 +1509,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1540,7 +1540,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1571,7 +1571,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1602,7 +1602,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1633,7 +1633,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1664,7 +1664,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1695,7 +1695,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"
@@ -1726,7 +1726,7 @@ testsuite jihyun_final_checks:
                     screenshot "jihyun-epilogue-cohabitation-choice.png"
                 if eval chapter.startswith("지현 R13"):
                     assert eval memory["jihyun_conflict"] == "open" and not memory.get("jihyun_r14_performed")
-                    assert eval cream_relation_name("jihyun") == "약속 조율 중"
+                    assert eval cream_relation_name("jihyun") == "다시 마주 보는 중"
                     assert eval not persistent.local_jihyun_ending
                     if eval case == 0:
                         screenshot "jihyun-r13-conflict.png"

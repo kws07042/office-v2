@@ -48,6 +48,8 @@ init -10 python:
     def cream_note_speaker(person, event, **kwargs):
         if event == "begin" and person not in ("dohyun", "narrator"):
             renpy.store.cream_focus = person
+            if person in HEROINES:
+                heroine_note_line(person)
 
     def cream_stage_mode():
         if renpy.store.cream_preview_mode:
@@ -77,22 +79,22 @@ init -10 python:
     def cream_relation_name(person="ria"):
         if person == "seoyun":
             if renpy.store.dating and renpy.store.active_route == "seoyun":
-                return "약속 조율 중" if renpy.store.memory.get("seoyun_conflict") in ("open", "discussing", "agreed_pending_action") else "교제 중"
+                return "다시 마주 보는 중" if renpy.store.memory.get("seoyun_conflict") in ("open", "discussing", "agreed_pending_action") else "교제 중"
             return "동료로 지내는 중" if renpy.store.memory.get("seoyun_relationship_declined") or renpy.store.memory.get("seoyun_relationship_closed") else "알아가는 중"
         if person == "jihyun":
             if renpy.store.dating and renpy.store.active_route == "jihyun":
-                return "약속 조율 중" if renpy.store.memory.get("jihyun_conflict") in ("open", "agreed_pending_action") else "교제 중"
+                return "다시 마주 보는 중" if renpy.store.memory.get("jihyun_conflict") in ("open", "agreed_pending_action") else "교제 중"
             return "동료로 지내는 중" if renpy.store.memory.get("jihyun_relationship_declined") or renpy.store.memory.get("jihyun_relationship_closed") else "알아가는 중"
         if person == "yujin":
             return "교제 중" if renpy.store.dating and renpy.store.active_route == "yujin" else ("동료로 지내는 중" if renpy.store.memory.get("yujin_relationship_declined") or renpy.store.memory.get("yujin_relationship_closed") else "알아가는 중")
         if renpy.store.dating and renpy.store.active_route == "ria":
-            return "약속 조율 중" if renpy.store.memory.get("ria_conflict") in ("open", "discussing", "agreed") else "교제 중"
+            return "다시 마주 보는 중" if renpy.store.memory.get("ria_conflict") in ("open", "discussing", "agreed") else "교제 중"
         if renpy.store.memory.get("ria_relationship_closed"):
             return "동료로 지내는 중"
         return "알아가는 중"
 
     def cream_menu_open():
-        return any(renpy.get_screen(name) for name in ("save", "load", "history", "preferences", "progression_hub", "progression_cg_view"))
+        return any(renpy.get_screen(name) for name in ("save", "load", "history", "preferences", "progression_hub", "progression_cg_view", "mg_sign", "mg_cards", "mg_photo", "mg_photo_result", "mg_trim", "mg_spot", "minigame_hub", "mg_offer", "gallery", "gallery_view"))
 
 image ria ui bust = DynamicDisplayable(ria_portrait_display)
 image yujin ui bust = (Transform(Crop((230, 0, 570, 850), "images/characters/yujin/ui_temp_v001.png"), zoom=1.0) if renpy.loadable("images/characters/yujin/ui_temp_v001.png") else Null())

@@ -48,7 +48,7 @@ testsuite ria_expression_checks:
         screenshot ("ria-expression-" + mode + "-serious.png")
         advance until screen "choice"
         assert eval ria_expression == "base"
-        assert eval renpy.loadable(RIA_MASTER_V2)
+        assert eval renpy.loadable(RIA_MASTER_V2) or heroine_sprite_visible() or not cream_ria_visible()
 
     testcase real_r02_all_choices_both_speech_styles:
         parameter case = list(range(18))

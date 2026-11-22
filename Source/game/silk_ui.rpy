@@ -109,6 +109,10 @@ init -9 python:
         scale = w / 32.0
         if part == "line":
             return '<path transform="scale(%s)" fill="none" stroke="%s" stroke-width="1.7" stroke-linejoin="round" d="%s"/>' % (scale, SILK["ink"], SILK_HEART)
+        if part == "line_gold":
+            return '<path transform="scale(%s)" fill="none" stroke="#C9A046" stroke-width="2.4" stroke-linejoin="round" d="%s"/>' % (scale, SILK_HEART)
+        if part == "line_low":
+            return '<path transform="scale(%s)" fill="none" stroke="#A99BA1" stroke-width="1.5" stroke-dasharray="2.2 1.6" stroke-linejoin="round" d="%s"/>' % (scale, SILK_HEART)
         return '<path transform="scale(%s)" fill="%s" d="%s"/>' % (scale, SILK["wine"] if part == "fill" else "#F3E7EA", SILK_HEART)
 
     def silk_b_icon(w, h, name, color):

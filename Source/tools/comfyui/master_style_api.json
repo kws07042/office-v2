@@ -1,0 +1,269 @@
+{
+ "1": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "CHANGE_ME_master_checkpoint.safetensors"
+  },
+  "_meta": {
+   "title": "CKPT"
+  }
+ },
+ "2": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "input.png"
+  },
+  "_meta": {
+   "title": "IN_IMAGE"
+  }
+ },
+ "3": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "master_ref.png"
+  },
+  "_meta": {
+   "title": "REF_MASTER"
+  }
+ },
+ "4": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "1girl, anime visual novel illustration, clean bold lineart, cel shading, two-tone hard-edged shadows",
+   "clip": [
+    "1",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "POSITIVE"
+  }
+ },
+ "5": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "photorealistic, realistic, 3d, render, semi-realistic, painterly, oil painting, watercolor, sketch, rough lines, blurry, soft focus, glow, bloom, gradient shading, airbrush, noise, jpeg artifacts, extra fingers, missing fingers, fused fingers, deformed hands, bad anatomy, extra limbs, text, letters, watermark, logo, signature, child, loli",
+   "clip": [
+    "1",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "NEGATIVE"
+  }
+ },
+ "6": {
+  "class_type": "IPAdapterUnifiedLoader",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "preset": "PLUS (high strength)"
+  },
+  "_meta": {
+   "title": "IPA_LOADER"
+  }
+ },
+ "7": {
+  "class_type": "IPAdapterAdvanced",
+  "inputs": {
+   "model": [
+    "6",
+    0
+   ],
+   "ipadapter": [
+    "6",
+    1
+   ],
+   "image": [
+    "3",
+    0
+   ],
+   "weight": 0.85,
+   "weight_type": "strong style transfer",
+   "combine_embeds": "concat",
+   "start_at": 0.0,
+   "end_at": 1.0,
+   "embeds_scaling": "V only"
+  },
+  "_meta": {
+   "title": "STYLE_IPA"
+  }
+ },
+ "8": {
+  "class_type": "AIO_Preprocessor",
+  "inputs": {
+   "preprocessor": "AnimeLineArtPreprocessor",
+   "resolution": 1024,
+   "image": [
+    "2",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "PRE_LINEART"
+  }
+ },
+ "9": {
+  "class_type": "ControlNetLoader",
+  "inputs": {
+   "control_net_name": "CHANGE_ME_lineart_anime.safetensors"
+  },
+  "_meta": {
+   "title": "CN_LINEART"
+  }
+ },
+ "10": {
+  "class_type": "ControlNetApplyAdvanced",
+  "inputs": {
+   "positive": [
+    "4",
+    0
+   ],
+   "negative": [
+    "5",
+    0
+   ],
+   "control_net": [
+    "9",
+    0
+   ],
+   "image": [
+    "8",
+    0
+   ],
+   "strength": 0.85,
+   "start_percent": 0.0,
+   "end_percent": 0.8
+  },
+  "_meta": {
+   "title": "APPLY_LINEART"
+  }
+ },
+ "11": {
+  "class_type": "AIO_Preprocessor",
+  "inputs": {
+   "preprocessor": "DepthAnythingV2Preprocessor",
+   "resolution": 1024,
+   "image": [
+    "2",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "PRE_DEPTH"
+  }
+ },
+ "12": {
+  "class_type": "ControlNetLoader",
+  "inputs": {
+   "control_net_name": "CHANGE_ME_depth.safetensors"
+  },
+  "_meta": {
+   "title": "CN_DEPTH"
+  }
+ },
+ "13": {
+  "class_type": "ControlNetApplyAdvanced",
+  "inputs": {
+   "positive": [
+    "10",
+    0
+   ],
+   "negative": [
+    "10",
+    1
+   ],
+   "control_net": [
+    "12",
+    0
+   ],
+   "image": [
+    "11",
+    0
+   ],
+   "strength": 0.5,
+   "start_percent": 0.0,
+   "end_percent": 0.6
+  },
+  "_meta": {
+   "title": "APPLY_DEPTH"
+  }
+ },
+ "14": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "2",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "ENCODE"
+  }
+ },
+ "15": {
+  "class_type": "KSampler",
+  "inputs": {
+   "seed": 1,
+   "steps": 20,
+   "cfg": 5.0,
+   "sampler_name": "euler_ancestral",
+   "scheduler": "normal",
+   "denoise": 0.35,
+   "model": [
+    "7",
+    0
+   ],
+   "positive": [
+    "13",
+    0
+   ],
+   "negative": [
+    "13",
+    1
+   ],
+   "latent_image": [
+    "14",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SAMPLER"
+  }
+ },
+ "16": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "15",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "DECODE"
+  }
+ },
+ "17": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "master_style",
+   "images": [
+    "16",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SAVE"
+  }
+ }
+}

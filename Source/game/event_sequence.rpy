@@ -17,6 +17,7 @@ init python:
         renpy.store.event_presentations = dict(event_presentations, **{key: dict(previous, status=status)})
 
 label event_sequence(event_id, variant):
+    $ dialogue_cg_begin()
     $ event_cut_cursor = 0
     $ event_cut_active = True
     $ event_intro_expression_ready = False
