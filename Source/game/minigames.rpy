@@ -117,14 +117,88 @@ init -2 python:
     }
 
     def photo_score(spot, cell):
+        # cell은 뷰파인더 왼쪽 위 위치(칸 단위, 0~2, 소수 가능). 목표와 가까울수록 높은 점수.
         tx, ty = PHOTO_SPOTS[spot][1]
-        d = abs(tx - cell[0]) + abs(ty - cell[1])
-        return 3 if d == 0 else (2 if d == 1 else 1)
+        d = ((tx - cell[0]) ** 2 + (ty - cell[1]) ** 2) ** 0.5
+        return 3 if d <= 0.35 else (2 if d <= 1.1 else 1)
+
+    # 뷰파인더: 사진 위에서 잡고 끌어 앵글을 고른다. 안쪽은 움직이는 동안 그 자리의 밝은 사진을 그린다.
+    PHOTO_W, PHOTO_H = 960, 540          # 화면에 깔린 사진 크기
+    VIEW_W, VIEW_H = 480, 270            # 뷰파인더 크기
+    PHOTO_STEP_X, PHOTO_STEP_Y = 240.0, 135.0   # 칸 1개 = 이만큼(px)
+
+    class PhotoWindow(renpy.Displayable):
+        def __init__(self, path, **kwargs):
+            super(PhotoWindow, self).__init__(**kwargs)
+            self.path = path
+            self.drag = None
+
+        def render(self, width, height, st, at):
+            x = getattr(self.drag, "x", None)
+            y = getattr(self.drag, "y", None)
+            x = PHOTO_STEP_X if x is None else x
+            y = PHOTO_STEP_Y if y is None else y
+            r = renpy.Render(VIEW_W, VIEW_H)
+            r.blit(renpy.render(Transform(photo_crop_at(self.path, x, y), xysize=(VIEW_W, VIEW_H)), VIEW_W, VIEW_H, st, at), (0, 0))
+            for (bx, by, bw, bh) in ((0, 0, VIEW_W, 4), (0, VIEW_H - 4, VIEW_W, 4), (0, 0, 4, VIEW_H), (VIEW_W - 4, 0, 4, VIEW_H)):
+                r.blit(renpy.render(Solid("#FFFDFB"), bw, bh, st, at), (bx, by))
+            mark = renpy.render(Text("+", size=34, color="#FFFDFB", outlines=[]), VIEW_W, VIEW_H, st, at)
+            r.blit(mark, (VIEW_W // 2 - mark.width // 2, VIEW_H // 2 - mark.height // 2))
+            renpy.redraw(self, 0)
+            return r
+
+        def visit(self):
+            return []
+
+    def photo_make_viewfinder(path, cell=(1, 1)):
+        win = PhotoWindow(path)
+        drag = Drag(d=win, drag_name="viewfinder", draggable=True, droppable=False, drag_offscreen=False,
+                    xpos=int(cell[0] * PHOTO_STEP_X), ypos=int(cell[1] * PHOTO_STEP_Y))
+        win.drag = drag
+        return drag
+
+    def photo_view_cell(drag):
+        x = getattr(drag, "x", None)
+        y = getattr(drag, "y", None)
+        x = PHOTO_STEP_X if x is None else x
+        y = PHOTO_STEP_Y if y is None else y
+        return (round(x / PHOTO_STEP_X, 2), round(y / PHOTO_STEP_Y, 2))
+
+    def photo_move(drag, x, y, delay=0.15):
+        x = max(0, min(PHOTO_W - VIEW_W, int(x)))
+        y = max(0, min(PHOTO_H - VIEW_H, int(y)))
+        drag.snap(x, y, delay)
+
+    class PhotoNudge(Action):
+        def __init__(self, drag, dx, dy):
+            self.drag, self.dx, self.dy = drag, dx, dy
+        def __call__(self):
+            cx, cy = photo_view_cell(self.drag)
+            photo_move(self.drag, cx * PHOTO_STEP_X + self.dx, cy * PHOTO_STEP_Y + self.dy, 0.1)
+
+    class PhotoJump(Action):
+        # 사진의 다른 곳을 누르면 뷰파인더 가운데가 그 자리로 온다.
+        def __init__(self, drag, ox, oy):
+            self.drag, self.ox, self.oy = drag, ox, oy
+        def __call__(self):
+            mx, my = renpy.get_mouse_pos()
+            photo_move(self.drag, mx - self.ox - VIEW_W / 2, my - self.oy - VIEW_H / 2)
+
+    class PhotoShoot(Action):
+        def __init__(self, drag):
+            self.drag = drag
+        def __call__(self):
+            return photo_view_cell(self.drag)
 
     def photo_crop(spot, cell):
+        # 실제 그림 크기에 맞춰 뷰파인더가 덮던 영역을 잘라낸다(배경 그림은 1280×720보다 클 수 있다).
         path = PHOTO_SPOTS[spot][0]
-        x, y = cell
-        return Crop((x * 320, y * 180, 640, 360), path)
+        return photo_crop_at(path, cell[0] * 240.0, cell[1] * 135.0)
+
+    def photo_crop_at(path, x, y):
+        iw, ih = renpy.image_size(path)
+        sx, sy = iw / 960.0, ih / 540.0
+        return Crop((int(x * sx), int(y * sy), int(480 * sx), int(270 * sy)), path)
 
     # ---------- 4. 한 줄로 줄이기 ----------
     TRIM_ROUNDS = [
@@ -504,34 +578,31 @@ label mg_cards_game:
 # ---------------- 3. 사진 ----------------
 
 screen mg_photo(spot):
-    $ cell = mg_cell
     $ path, target, hint = PHOTO_SPOTS[spot]
+    default vf = photo_make_viewfinder(path, mg_cell)
     use mg_frame("기록집 사진", "오늘 남기고 싶은 것: " + hint, "photo"):
         frame:
             xpos 34 ypos 108 padding (6, 6, 6, 6)
             background silk("flat", "#2A1420", 10)
             fixed:
-                xysize (960, 540)
-                add Transform(path, xysize=(960, 540))
-                add Solid("#00000066") xysize (960, 540)
-                for gx in range(3):
-                    for gy in range(3):
-                        button:
-                            xpos gx * 240 ypos gy * 135 xysize (480, 270)
-                            id "photo_cell_%d_%d" % (gx, gy)
-                            background None
-                            action SetVariable("mg_cell", (gx, gy))
-                add Transform(Crop((cell[0] * 320, cell[1] * 180, 640, 360), path), xysize=(480, 270)) xpos cell[0] * 240 ypos cell[1] * 135
-                add Solid("#FFFDFB") xpos cell[0] * 240 ypos cell[1] * 135 xysize (480, 4)
-                add Solid("#FFFDFB") xpos cell[0] * 240 ypos cell[1] * 135 + 266 xysize (480, 4)
-                add Solid("#FFFDFB") xpos cell[0] * 240 ypos cell[1] * 135 xysize (4, 270)
-                add Solid("#FFFDFB") xpos cell[0] * 240 + 476 ypos cell[1] * 135 xysize (4, 270)
-                text "+" size 34 color "#FFFDFB" xpos cell[0] * 240 + 240 ypos cell[1] * 135 + 135 xanchor 0.5 yanchor 0.5
+                xysize (PHOTO_W, PHOTO_H)
+                add Transform(path, xysize=(PHOTO_W, PHOTO_H))
+                add Solid("#000000A0") xysize (PHOTO_W, PHOTO_H)
+                button:
+                    id "photo_area"
+                    xysize (PHOTO_W, PHOTO_H)
+                    background None
+                    action PhotoJump(vf, 40, 114)
+                add vf
         vbox:
             xpos 1030 ypos 120 spacing 14 xsize 220
-            text "화면을 눌러 뷰파인더를 옮기세요." style "mg_small"
-            textbutton "찰칵" id "photo_shoot" style "mg_accent_button" text_size 28 action Return(cell)
+            text "뷰파인더를 잡고 끌어 앵글을 고르세요. 사진을 누르면 그 자리로 옮겨지고, 방향키로도 움직일 수 있어요." style "mg_small"
+            textbutton "찰칵" id "photo_shoot" style "mg_accent_button" text_size 28 action PhotoShoot(vf)
             textbutton "그만하기" id "photo_quit" style "mg_button" action Return(None)
+    key "K_LEFT" action PhotoNudge(vf, -40, 0)
+    key "K_RIGHT" action PhotoNudge(vf, 40, 0)
+    key "K_UP" action PhotoNudge(vf, 0, -30)
+    key "K_DOWN" action PhotoNudge(vf, 0, 30)
 
 transform mg_flash:
     alpha 0.9
