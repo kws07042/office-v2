@@ -25,7 +25,7 @@ init -4 python:
     def _hs_scan_sprites():
         found = {}
         for path in renpy.list_files():
-            m = _hs_re.match(r"images/characters/(ria|jihyun|yujin|seoyun)/(?:ria|jihyun|yujin|seoyun)_(office|casual|home|winter)_(pose\d\d)_([a-z]+)\.png$", path)
+            m = _hs_re.match(r"images/characters/(ria|jihyun|yujin|seoyun)/(?:ria|jihyun|yujin|seoyun)_(office|casual|home|winter|special)_(pose\d\d)_([a-z]+)\.png$", path)
             if m:
                 found.setdefault((m.group(1), m.group(2), m.group(3)), set()).add(m.group(4))
         return found

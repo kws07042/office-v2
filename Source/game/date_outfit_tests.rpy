@@ -23,3 +23,40 @@ testsuite date_outfit_checks:
 
     teardown:
         exit
+
+default date_test_who = "ria"
+
+label test_date_outfit_scene:
+    $ who = date_test_who
+    $ line = "오늘 옷, 너 만나려고 고른 거야."
+    scene bg plain
+    $ active_route = who
+    $ dating = True
+    $ cream_focus = who
+    $ location = "금요일 저녁 일곱 시 · 약속한 식당"
+    $ date_outfit_on(who)
+    $ renpy.say({"ria": r, "jihyun": j, "yujin": y, "seoyun": s}[who], line)
+    $ location = "같은 밤 · %s의 집" % {"ria": "리아", "jihyun": "지현", "yujin": "유진", "seoyun": "서윤"}[who]
+    $ renpy.say({"ria": r, "jihyun": j, "yujin": y, "seoyun": s}[who], "들어와. 오늘은 같이 있고 싶어.")
+    $ date_outfit_off(who)
+    return
+
+testsuite date_outfit_screens:
+    before testcase:
+        if not screen "main_menu":
+            run MainMenu(confirm=False)
+
+    testcase date_outfit_on_screen:
+        parameter who = ["ria", "jihyun", "yujin", "seoyun"]
+        $ date_test_who = who
+        run Start("test_date_outfit_scene")
+        pause 1.2
+        assert eval heroine_outfit(who) == "special"
+        screenshot ("date-outfit-" + who + "-1-restaurant.png")
+        advance
+        pause 1.2
+        assert eval heroine_outfit(who) == "special"
+        screenshot ("date-outfit-" + who + "-2-home.png")
+
+    teardown:
+        exit
