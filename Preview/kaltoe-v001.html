@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>칼퇴 작전 시안</title>
+<link rel="stylesheet" href="local-fonts.css">
+<style>
+:root{
+  --ink:#3d3345; --sub:#766b7e; --accent:#705080; --accent-d:#56396a; --line:#e4dce9;
+  --paper:#fffdfa; --cream:#fff8ef; --soft:#f3eef7; --gold:#e9b44c; --warn:#b3123f; --ok:#2f7a3b;
+  --t-num:#4e7fa8; --t-design:#c46a8a; --t-copy:#8a6bb8; --t-field:#c98a2e;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#eee9f0;color:var(--ink);font-family:"Pretendard","Malgun Gothic",sans-serif}
+button{font:inherit;cursor:pointer;border:0;color:inherit}
+button:focus-visible{outline:3px solid #9672ae;outline-offset:2px}
+.preview{max-width:1440px;margin:auto;padding:18px 22px}
+.bar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.bar strong{font-size:18px}.bar small{color:var(--sub);font-size:13px;margin-left:10px}
+.bar nav{display:flex;gap:4px;background:#fffdfd;padding:4px;border-radius:12px;flex-wrap:wrap}
+.bar nav button{padding:7px 13px;border-radius:8px;background:transparent;color:var(--sub);font-size:14px}
+.bar nav button[aria-pressed=true]{background:#e7dced;color:#5f3d70}
+.bar .lbl{font-size:12px;color:var(--sub);align-self:center;padding:0 4px}
+.wrap{position:relative;width:100%;overflow:hidden;border-radius:16px;box-shadow:0 12px 40px #39234418;background:#2b2233}
+.stage{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0;overflow:hidden;
+  background:url("../Source/game/images/bg/bg_office.jpg") center/cover}
+.stage::before{content:"";position:absolute;inset:0;background:linear-gradient(#2c213855,#2c2138aa)}
+.note{font-size:13px;color:var(--sub);margin:10px 2px 0;line-height:1.6}
+
+/* 상단 */
+.top{position:absolute;left:24px;top:18px;right:24px;height:78px;background:var(--paper);border-radius:20px;
+  display:flex;align-items:center;padding:0 24px;gap:26px;box-shadow:0 6px 20px #2a183512}
+.top .ttl{font-family:"Gowun Dodum";font-size:28px;color:var(--accent-d);letter-spacing:.02em}
+.top .ttl small{display:block;font-family:"Pretendard";font-size:13px;color:var(--sub);letter-spacing:0;margin-top:2px}
+.clock{font-family:"Gowun Dodum";font-size:40px;color:var(--ink);min-width:178px;font-variant-numeric:tabular-nums}
+.clock span{font-size:17px;color:var(--sub);margin-right:6px}
+.promise{margin-left:auto;display:flex;align-items:center;gap:12px;background:var(--cream);border:1px solid #efdfc9;
+  border-radius:16px;padding:9px 16px}
+.promise .heart{width:30px;height:30px;border-radius:50%;background:#f7d9e2;display:grid;place-items:center;color:#b2456b;font-size:16px}
+.promise b{display:block;font-weight:400;font-size:17px}.promise small{font-size:13px;color:var(--sub)}
+
+/* 받은 일 */
+.inbox{position:absolute;left:24px;top:110px;width:288px;height:592px;background:var(--paper);border-radius:20px;padding:16px 14px}
+.h{font-size:15px;color:var(--sub);margin:0 4px 10px;display:flex;justify-content:space-between}
+.h b{font-weight:400;color:var(--ink)}
+.cards{display:flex;flex-direction:column;gap:8px;height:520px;overflow:auto;padding:2px}
+.card{text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px 10px 16px;position:relative;
+  transition:transform .12s, box-shadow .12s, border-color .12s}
+.card::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:5px;border-radius:0 4px 4px 0;background:var(--tc)}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 14px #4b2a5f14}
+.card.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset, 0 6px 14px #4b2a5f1c}
+.card .r1{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--sub)}
+.tag{padding:2px 8px;border-radius:9px;color:#fff;background:var(--tc);font-size:12px}
+.must{color:var(--warn);font-size:12px}
+.card b{display:block;font-weight:400;font-size:17px;margin:5px 0 3px}
+.card small{font-size:13px;color:var(--sub)}
+.empty{color:var(--sub);font-size:15px;text-align:center;padding:40px 10px;line-height:1.7}
+
+/* 시간표 */
+.board{position:absolute;left:326px;top:110px;width:642px;height:592px;background:var(--paper);border-radius:20px;padding:16px 16px}
+.ticks{position:relative;margin-left:86px;height:22px}
+.ticks span{position:absolute;top:0;font-size:12px;color:var(--sub);transform:translateX(-50%)}
+.ticks span.off{color:var(--warn)}
+.lane{position:relative;display:flex;align-items:stretch;margin-top:10px;height:124px;border-radius:16px;
+  text-align:left;width:100%;background:transparent;padding:0}
+.lane .who{width:80px;flex:none;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:14px}
+.lane .who i{width:46px;height:46px;border-radius:50%;background:#e6dced center/cover;display:block;font-style:normal;
+  display:grid;place-items:center;color:var(--accent);font-size:18px}
+.track{position:relative;flex:1;margin-left:6px;border-radius:14px;background:
+  repeating-linear-gradient(90deg,#f5f0f8 0 67px,#fff 67px 68px);border:1px dashed #d8cce2;overflow:hidden}
+.track .over{position:absolute;top:0;bottom:0;left:408px;right:0;background:repeating-linear-gradient(135deg,#fbe9ee 0 8px,#fff4f6 8px 16px);border-left:2px solid #e7a3b5}
+.lane.drop .track{border:2px solid var(--accent);background-color:#efe6f6}
+.lane.drop::after{content:"여기에 넣기";position:absolute;right:12px;top:-2px;font-size:12px;color:var(--accent)}
+.blk{position:absolute;top:10px;bottom:10px;border-radius:11px;background:var(--tc);color:#fff;padding:7px 9px;font-size:13px;
+  text-align:left;overflow:hidden;line-height:1.35;box-shadow:0 3px 8px #00000018;transition:filter .15s}
+.blk:hover{filter:brightness(1.07)}
+.blk em{font-style:normal;display:block;font-size:11px;opacity:.9;margin-top:2px}
+.blk.own{background:repeating-linear-gradient(135deg,#a99bb3 0 10px,#9d8fa8 10px 20px);cursor:default}
+.blk.help{background:#e7a3b5}
+.blk.done::after{content:"✓";position:absolute;right:8px;top:5px;font-size:15px}
+.blk.late{box-shadow:0 0 0 2px var(--warn) inset}
+.endtag{position:absolute;top:-1px;font-size:11px;padding:1px 6px;border-radius:7px;background:var(--ink);color:#fff;transform:translateX(-50%)}
+.now{position:absolute;top:30px;width:2px;background:#b2456b;height:280px;display:none;pointer-events:none}
+.now::before{content:"";position:absolute;left:-5px;top:-6px;width:12px;height:12px;border-radius:50%;background:#b2456b}
+.tomorrow{margin-top:16px;height:92px}
+.tomorrow .track{background:#faf7f2;border-color:#e3d6c3;display:flex;gap:6px;align-items:center;padding:0 10px}
+.chip{position:relative;padding:6px 10px 6px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:13px}
+.chip::before{content:"";position:absolute;left:0;top:7px;bottom:7px;width:4px;border-radius:0 3px 3px 0;background:var(--tc)}
+.hint{color:var(--sub);font-size:13px}
+.helpbox{margin-top:14px;display:flex;align-items:center;gap:12px;background:var(--soft);border-radius:14px;padding:10px 14px;font-size:14px}
+.helpbox b{font-weight:400}
+.btn{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 15px;font-size:15px}
+.btn:hover{background:#eee4f5}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#fff;font-size:17px;padding:11px 22px}
+.btn.main:hover{background:var(--accent-d)}
+.btn:disabled{opacity:.45;cursor:default}
+.actions{position:absolute;left:16px;right:16px;bottom:14px;display:flex;gap:10px;align-items:center}
+.actions .sum{margin-left:auto;font-size:14px;color:var(--sub);text-align:right}
+.actions .sum b{font-weight:400;font-size:16px}
+.sum .bad{color:var(--warn)}.sum .good{color:var(--ok)}
+
+/* 히로인 */
+.host{position:absolute;left:982px;top:110px;width:274px;height:592px}
+.host .pic{position:absolute;left:-36px;top:0;width:346px;height:440px;overflow:hidden;border-radius:0 0 0 0;
+  -webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+.host .pic img{position:absolute;left:-10px;top:-6px;width:366px;transition:opacity .2s}
+.bubble{position:absolute;left:0;right:0;top:380px;background:var(--paper);border-radius:18px;padding:14px 16px 16px;
+  box-shadow:0 8px 22px #2a183522;min-height:118px}
+.bubble::before{content:"";position:absolute;left:46px;top:-10px;border:10px solid transparent;border-top:0;border-bottom-color:var(--paper)}
+.bubble small{display:block;color:var(--accent);font-size:14px;margin-bottom:6px}
+.bubble p{margin:0;font-size:17px;line-height:1.55}
+.spec{position:absolute;left:0;right:0;bottom:0;background:#fffdfaee;border-radius:14px;padding:10px 14px;font-size:13px;color:var(--sub);line-height:1.6}
+.spec b{font-weight:400;color:var(--ink)}
+.bubble.pop{animation:pop .25s ease-out}
+@keyframes pop{from{transform:translateY(6px);opacity:.3}to{transform:none;opacity:1}}
+
+/* 모달 */
+[hidden]{display:none!important}
+.modal{position:absolute;inset:0;background:#2a1f33cc;display:grid;place-items:center;z-index:20}
+.sheet{width:640px;background:var(--paper);border-radius:22px;padding:26px 28px;box-shadow:0 20px 50px #0004}
+.sheet .kicker{font-size:14px;color:var(--warn)}
+.sheet h2{font-family:"Gowun Dodum";font-weight:400;font-size:28px;margin:6px 0 10px;color:var(--ink)}
+.sheet p{font-size:17px;line-height:1.6;margin:0 0 16px;color:var(--ink)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opts button{text-align:left;background:var(--soft);border-radius:14px;padding:13px 18px;font-size:17px;border:1px solid transparent}
+.opts button:disabled{opacity:.5;cursor:default}
+.opts button:not(:disabled):hover{background:#eee4f5;border-color:#a78ab9}
+.opts button small{display:block;font-size:13px;color:var(--sub);margin-top:2px}
+.result{width:760px;padding:0;overflow:hidden;display:flex}
+.result .side{width:250px;flex:none;background:#f3eef7;position:relative;overflow:hidden}
+.result .side img{position:absolute;left:-112px;top:-6px;width:470px}
+.result .body{padding:26px 28px;flex:1}
+.stamp{display:inline-block;font-family:"Gowun Dodum";font-size:15px;padding:4px 12px;border-radius:9px;color:#fff;background:var(--ok)}
+.stamp.mid{background:var(--gold);color:#4a3410}.stamp.bad{background:var(--warn)}
+.result h2{font-size:32px}
+.lines{font-size:15px;color:var(--sub);line-height:1.8;margin:0 0 16px;padding:12px 14px;background:var(--soft);border-radius:12px}
+.lines b{font-weight:400;color:var(--ink)}
+.next{font-size:15px;color:var(--accent);margin-bottom:16px}
+.toast{position:absolute;left:50%;top:104px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:12px;
+  font-size:15px;z-index:15;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="preview">
+  <div class="bar">
+    <div><strong>칼퇴 작전 · 업무 미니게임 시안 v001</strong><small>브라우저 시안 · 실제 게임 아님 · 대사는 임시</small></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <nav id="pickHero" aria-label="함께 일할 사람"><span class="lbl">함께</span></nav>
+      <nav id="pickStyle" aria-label="내 업무 방식"><span class="lbl">내 방식</span></nav>
+      <nav><button id="shuffle">다른 날</button><button id="reset">처음부터</button></nav>
+    </div>
+  </div>
+  <div class="wrap" id="wrap">
+    <div class="stage" id="stage">
+      <header class="top">
+        <div class="ttl">칼퇴 작전<small>11월 24일 화요일 · 오후 업무</small></div>
+        <div class="clock" id="clock"><span>오후</span>3:00</div>
+        <div class="promise"><div class="heart">♥</div><div><b id="promise">6:00 · 유진과 북카페</b><small>둘 다 6시에 나가야 해요</small></div></div>
+      </header>
+
+      <section class="inbox" aria-label="받은 일">
+        <div class="h"><span>받은 일</span><b id="inCount"></b></div>
+        <div class="cards" id="cards"></div>
+      </section>
+
+      <section class="board" aria-label="오늘의 시간표">
+        <div class="ticks" id="ticks"></div>
+        <button class="lane" id="lane-me" data-lane="me">
+          <div class="who"><i>도</i>도현</div><div class="track"><div class="over"></div></div>
+        </button>
+        <button class="lane" id="lane-her" data-lane="her">
+          <div class="who"><i id="herIcon"></i><span id="herName"></span></div><div class="track"><div class="over"></div></div>
+        </button>
+        <div class="helpbox" id="helpbox"></div>
+        <button class="lane tomorrow" id="lane-tmr" data-lane="tmr">
+          <div class="who">내일로<small style="font-size:11px;color:var(--sub)">1칸</small></div><div class="track" id="tmrTrack"></div>
+        </button>
+        <div class="now" id="now"></div>
+        <div class="actions">
+          <button class="btn main" id="start">작업 시작</button>
+          <button class="btn" id="clear">다시 배치</button>
+          <div class="sum" id="sum"></div>
+        </div>
+      </section>
+
+      <aside class="host">
+        <div class="pic"><img id="herImg" alt=""></div>
+        <div class="bubble" id="bubble"><small id="bName"></small><p id="bText"></p></div>
+      </aside>
+
+      <div class="toast" id="toast"></div>
+      <div class="modal" id="modal" hidden></div>
+    </div>
+  </div>
+  <p class="note">조작: 왼쪽 일 카드를 고른 뒤 도현 · 동료 · 내일로 줄을 누르면 들어갑니다. 넣은 블록을 다시 누르면 빠집니다. 특기가 맞으면 30분 줄고, 6시 선(빗금) 넘어가면 늦게 퇴근합니다. 「작업 시작」을 누르면 시계가 흐르고 5시쯤 돌발 요청이 옵니다.<br>
+  미리보기 막대(함께 · 내 방식 · 다른 날)는 시안 확인용이며 게임 화면에 포함되지 않습니다. 이 시안은 Ren'Py 엔진에서 확인하지 않았습니다.</p>
+</div>
+
+<script>
+const SLOT=68, CAP=6, MAXS=8, TMR=1; // 내일 아침 칸은 1개 // 30분 칸 · 6시까지 6칸 · 7시까지 표시
+const TYPES={num:["숫자","var(--t-num)"],design:["시안","var(--t-design)"],copy:["문구","var(--t-copy)"],field:["현장","var(--t-field)"]};
+const STYLES={verify:["검증형","num"],coord:["조율형","copy"],try:["실행형","field"]};
+const HEROES={
+  ria:{name:"리아",spec:"field",place:"공원 산책",own:["부스 동선 정리","design"],
+    hello:"오늘 6시 땡 하면 바로 나가는 거다? 일 나눠 보자!",
+    spec_l:"현장 일은 나한테 맡겨! 금방 끝내.",non:"음... 이건 좀 오래 걸려도 괜찮지?",
+    over:"잠깐잠깐, 이러다 나 7시 넘겠는데?",helped:"헉, 같이 봐 주는 거야? 고마워!",unhelp:"앗, 그럼 동선은 혼자 해 볼게...",
+    tmr:"내일 아침의 우리가 해 주겠지, 뭐!",ok:"좋아, 이 배치면 6시 땡이다!",
+    win:"6시 땡! 가자, 오늘 진짜 완벽했어!",wait:"로비에서 기다렸지롱. 늦은 만큼 맛있는 거 사!",both:"미안, 나 때문에 늦었네... 끝나고 떡볶이 콜?"},
+  jihyun:{name:"지현",spec:"num",place:"카페",own:["분기 보고서 문장","copy"],
+    hello:"6시엔 나간다. 그러려면 지금 순서부터 정하자.",
+    spec_l:"숫자는 내가 보는 게 빠르지.",non:"이건... 해 보긴 할게. 시간은 좀 걸려.",
+    over:"이 배치면 우리 둘 다 6시 못 나가.",helped:"...같이 봐 줘서 고마워. 생각보다 빨리 끝나겠네.",unhelp:"알았어. 보고서는 내가 마저 볼게.",
+    tmr:"내일 오전 첫 일로 잡아 두자.",ok:"계산 맞네. 6시 정각에 나갈 수 있어.",
+    win:"6시 정각. 계획대로네. ...가자.",wait:"30분. 기다리는 동안 메뉴 다 정해 놨어.",both:"둘 다 늦었네. 저녁은 회사 앞에서 간단히 먹자."},
+  yujin:{name:"유진",spec:"design",place:"북카페",own:["설문 결과 정리","num"],
+    hello:"저, 저도 6시에 나가고 싶어요. 같이 정리해 볼까요?",
+    spec_l:"시안은 제가 볼게요. 금방 해요!",non:"이건... 조금 오래 걸릴 수도 있어요.",
+    over:"저기, 이러면 저 7시 넘을 것 같아요...",helped:"아, 같이 봐 주시는 거예요? 고마워요.",unhelp:"괜찮아요, 제가 천천히 해 볼게요.",
+    tmr:"내일 아침에 제가 먼저 열어 볼게요.",ok:"이러면 정시에 나갈 수 있겠어요!",
+    win:"정시에 나왔어요! 저 이거 처음일지도 몰라요.",wait:"괜찮아요, 기다리는 동안 책 읽고 있었어요.",both:"같이 남았네요... 그래도 혼자보단 좋았어요."},
+  seoyun:{name:"서윤",spec:"copy",place:"동네 산책",own:["견적 숫자 확인","num"],
+    hello:"6시 칼퇴 각이다~ 일 나눠서 빨리 끝내자.",
+    spec_l:"문구? 이건 내 전문이지~",non:"이건 좀 졸린데... 해 볼게.",
+    over:"야야, 나한테 너무 몰아주는 거 아니야?",helped:"오, 도와주는 거야? 점수 땄다~",unhelp:"에이, 숫자는 나 혼자 하면 오래 걸린단 말이야~",
+    tmr:"내일의 우리한테 맡기자~",ok:"오케이, 이대로면 칼퇴 확정!",
+    win:"칼퇴 성공~ 오늘 저녁은 네가 골라.",wait:"늦었네~ 벌칙으로 디저트 추가.",both:"둘 다 야근이라니... 편의점 야식이라도 먹자."},
+};
+const POOL=[
+  ["견적표 숫자 맞추기","num",2,true,"거래처"],["설문 결과 표","num",1,false,"기획팀"],
+  ["배너 시안 수정","design",2,true,"클라이언트"],["포스터 색 확인","design",1,false,"디자인팀"],
+  ["행사 안내문 첫 줄","copy",1,false,"홍보팀"],["부장님 보고 메일","copy",2,true,"부장님"],
+  ["현장 물품 목록","field",1,false,"행사팀"],["거래처 전화 회신","field",1,true,"거래처"],
+  ["회의록 정리","copy",1,false,"팀 회의"],["체험 부스 배치","field",2,false,"행사팀"],
+];
+const INTERRUPTS=[["“이것만 잠깐” 수치 재확인","num"],["급한 문구 한 줄 수정","copy"],["시안 색 하나만 바꿔 줘","design"],["택배 수령 확인","field"]];
+
+let hero="yujin", style="verify", seed=1, S;
+const $=id=>document.getElementById(id);
+const J=(n,a,b)=>n+(((n.charCodeAt(n.length-1)-0xAC00)%28)?a:b); // 받침 있으면 a
+
+function rng(s){return()=>{s=(s*16807)%2147483647;return s/2147483647}}
+function newDay(){
+  const r=rng(seed*7919+11), pool=POOL.slice().sort(()=>r()-.5);
+  const must=pool.filter(t=>t[3]).slice(0,3), opt=pool.filter(t=>!t[3]).slice(0,3);
+  const tasks=[...must,...opt].map((t,i)=>({id:"t"+i,title:t[0],type:t[1],base:t[2],must:t[3],from:t[4],lane:null}));
+  tasks.sort(()=>r()-.5);
+  S={tasks,sel:null,helped:false,running:false,done:false,intr:INTERRUPTS[Math.floor(r()*INTERRUPTS.length)],face:"neutral",line:HEROES[hero].hello};
+}
+function dur(t,lane){
+  if(lane==="tmr")return 0;
+  const strong = lane==="me" ? STYLES[style][1] : HEROES[hero].spec;
+  return Math.max(1, t.base - (t.type===strong?1:0));
+}
+function ownLen(){return S.helped?1:3}
+function laneTasks(l){return S.tasks.filter(t=>t.lane===l)}
+function laneLen(l){
+  let n = laneTasks(l).reduce((a,t)=>a+dur(t,l),0);
+  if(l==="me" && S.helped) n+=1;
+  if(l==="her") n+=ownLen();
+  return n;
+}
+function fmt(slots){const m=180+slots*30;return Math.floor(m/60)+":"+String(m%60).padStart(2,"0")}
+
+function say(line,face){S.line=line;S.face=face||"neutral";const b=$("bubble");b.classList.remove("pop");void b.offsetWidth;b.classList.add("pop");renderHost()}
+function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),1600)}
+
+function img(face){
+  const f = ["neutral","smile","laugh","pout","sad","serious","surprise","blush"].includes(face)?face:"neutral";
+  return `../Source/game/images/characters/${hero}/${hero}_office_pose01_${f}.png`;
+}
+function setImg(el,face){el.onerror=()=>{el.onerror=null;el.src=img("smile")};el.src=img(face)}
+
+function renderHost(){
+  const H=HEROES[hero];
+  setImg($("herImg"),S.face);
+  $("bName").textContent=H.name; $("bText").textContent=S.line;
+}
+function render(){
+  const H=HEROES[hero];
+  $("promise").textContent=`6:00 · ${J(H.name,"과","와")} ${H.place}`;
+  $("herName").textContent=H.name; $("herIcon").textContent=H.name[0];
+  // 눈금
+  let tk=""; for(let i=0;i<=MAXS;i++) tk+=`<span class="${i>CAP?'off':''}" style="left:${i*SLOT}px">${i%2?"":fmt(i)}</span>`;
+  $("ticks").innerHTML=tk;
+  // 카드
+  const free=S.tasks.filter(t=>!t.lane);
+  $("inCount").textContent=`남은 일 ${free.length}`;
+  $("cards").innerHTML = free.length? free.map(t=>{
+    const [tl,tc]=TYPES[t.type];
+    return `<button class="card ${S.sel===t.id?'sel':''}" style="--tc:${tc}" data-id="${t.id}" ${S.running||S.done?'disabled':''}>
+      <div class="r1"><span class="tag">${tl}</span>${t.must?'<span class="must">오늘 마감</span>':'<span>내일 가능</span>'}<span style="margin-left:auto">${t.from}</span></div>
+      <b>${t.title}</b><small>${t.base*30}분 · 도현 ${dur(t,"me")*30}분 · ${H.name} ${dur(t,"her")*30}분</small></button>`}).join("")
+    : `<div class="empty">받은 일을 모두 나눴어요.<br>시간표를 확인하고<br>「작업 시작」을 눌러요.</div>`;
+  // 줄
+  for(const l of ["me","her"]){
+    const tr=$("lane-"+l).querySelector(".track");
+    tr.querySelectorAll(".blk,.endtag").forEach(e=>e.remove());
+    let x=0, html="";
+    const block=(cls,w,label,sub,id,tc)=>{const late=x+w>CAP;html+=`<span class="blk ${cls} ${late?'late':''} ${S.progress!=null&&x+w<=S.progress?'done':''}" ${id?`data-id="${id}"`:""} style="left:${x*SLOT+3}px;width:${w*SLOT-6}px;${tc?`--tc:${tc}`:""}">${label}<em>${sub}</em></span>`;x+=w};
+    if(l==="her") block("own",ownLen(),H.own[0],S.helped?"같이 봐서 30분":"막힘 · 혼자 1시간 반");
+    if(l==="me"&&S.helped) block("help",1,`${H.name} 돕기`,"30분");
+    for(const t of laneTasks(l)){const d=dur(t,l);block("",d,t.title,(d<t.base?"특기 −30분 · ":"")+d*30+"분",t.id,TYPES[t.type][1])}
+    tr.insertAdjacentHTML("beforeend",html);
+    if(x) tr.insertAdjacentHTML("beforeend",`<span class="endtag" style="left:${Math.min(x*SLOT-14,MAXS*SLOT-30)}px;top:auto;bottom:2px;background:${x>CAP?'var(--warn)':'var(--ink)'}">${fmt(x)}</span>`);
+    $("lane-"+l).classList.toggle("drop", !!S.sel);
+  }
+  $("lane-tmr").classList.toggle("drop", !!S.sel && !S.tasks.find(t=>t.id===S.sel).must);
+  const tm=laneTasks("tmr");
+  $("tmrTrack").innerHTML = tm.length? tm.map(t=>`<span class="chip blk2" data-id="${t.id}" style="--tc:${TYPES[t.type][1]}">${t.title}</span>`).join("")
+    : `<span class="hint">마감이 내일인 일 하나만 미룰 수 있어요. 내일 아침 첫 일이 돼요.</span>`;
+  // 돕기
+  $("helpbox").innerHTML = `<span style="font-size:18px">🤝</span><div style="flex:1"><b>${H.name}의 「${H.own[0]}」가 막혀 있어요.</b><br><span class="hint">도현이 30분 같이 보면, ${J(H.name,"은","는")} 1시간을 아껴요.</span></div>
+    <button class="btn" id="helpBtn" ${S.running||S.done?'disabled':''}>${S.helped?"돕기 취소":"30분 돕기"}</button>`;
+  // 요약
+  const me=laneLen("me"), her=laneLen("her"), left=S.tasks.filter(t=>!t.lane).length;
+  const st=v=>v>CAP?`<span class="bad">${fmt(v)} 퇴근</span>`:`<span class="good">${fmt(v)} 퇴근</span>`;
+  $("sum").innerHTML = `<b>도현 ${st(me)} · ${H.name} ${st(her)}</b><br>${left?`아직 안 나눈 일 ${left}개`:"모두 배치 완료"}`;
+  $("start").disabled = left>0 || S.running || S.done;
+  $("clear").disabled = S.running;
+  renderHost();
+}
+
+function place(laneId){
+  if(!S.sel||S.running||S.done)return;
+  const t=S.tasks.find(x=>x.id===S.sel), H=HEROES[hero];
+  if(laneId==="tmr"&&t.must){toast("오늘 마감인 일은 내일로 못 미뤄요");return}
+  if(laneId==="tmr"&&laneTasks("tmr").length>=TMR){toast("내일 아침 칸은 하나뿐이에요");return}
+  t.lane=laneId; S.sel=null;
+  if(laneId==="her"){
+    if(laneLen("her")>CAP) say(H.over,"pout");
+    else if(t.type===H.spec) say(H.spec_l,"smile"); else say(H.non,"serious");
+  } else if(laneId==="tmr") say(H.tmr,"smile");
+  else if(laneLen("me")>CAP) toast("이대로면 도현이 6시를 넘겨요");
+  if(S.tasks.every(x=>x.lane)&&laneLen("me")<=CAP&&laneLen("her")<=CAP) say(H.ok,"laugh");
+  render();
+}
+
+document.addEventListener("click",e=>{
+  if(S.running||S.done) return;
+  const card=e.target.closest(".card"); if(card){S.sel=S.sel===card.dataset.id?null:card.dataset.id;render();return}
+  const blk=e.target.closest(".blk[data-id],.chip[data-id]");
+  if(blk){const t=S.tasks.find(x=>x.id===blk.dataset.id);t.lane=null;S.sel=t.id;render();e.stopPropagation();return}
+  if(e.target.closest("#helpBtn")){S.helped=!S.helped;const H=HEROES[hero];say(S.helped?H.helped:H.unhelp,S.helped?"blush":"sad");render();return}
+  const lane=e.target.closest(".lane"); if(lane){place(lane.dataset.lane);return}
+});
+$("clear").onclick=()=>{S.tasks.forEach(t=>t.lane=null);S.helped=false;S.sel=null;say(HEROES[hero].hello);render()};
+$("start").onclick=run;
+
+function setClock(slotsFloat){
+  const m=Math.round(180+slotsFloat*30), h=Math.floor(m/60), mm=m%60;
+  $("clock").innerHTML=`<span>오후</span>${h}:${String(mm).padStart(2,"0")}`;
+  const now=$("now"); now.style.display="block";
+  now.style.left=(16+86+6+Math.min(slotsFloat,MAXS)*SLOT)+"px";
+}
+function run(){
+  S.running=true; S.progress=0; render();
+  const end=Math.max(laneLen("me"),laneLen("her"),4);
+  let t=0, paused=false, interrupted=false;
+  const step=()=>{
+    if(paused) return;
+    t+=0.05; S.progress=t; setClock(t);
+    if(Math.abs(t*20-Math.round(t*20))<.01 && Math.round(t*20)%10===0) render();
+    if(!interrupted && t>=4){interrupted=true;paused=true;render();interrupt(()=>{paused=false;requestAnimationFrame(loop)});return}
+    if(t>=Math.max(laneLen("me"),laneLen("her"))&&interrupted){finish();return}
+  };
+  const loop=()=>{step(); if(!paused&&S.running) setTimeout(()=>requestAnimationFrame(loop),28)};
+  loop();
+}
+function interrupt(cb){
+  const H=HEROES[hero], [title,type]=S.intr, [tl]=TYPES[type];
+  const t={id:"intr",title,type,base:1,must:true,from:"부장님",lane:null};
+  const meEnd=laneLen("me")+dur(t,"me"), herEnd=laneLen("her")+dur(t,"her");
+  const m=$("modal"); m.hidden=false;
+  m.innerHTML=`<div class="sheet"><div class="kicker">오후 5:00 · 돌발 요청</div>
+    <h2>부장님: “${title}”</h2>
+    <p>${tl} 일 · 30분짜리예요. 지금 받으면 누군가는 그만큼 늦게 나가요.</p>
+    <div class="opts">
+      <button data-o="me">내가 한다<small>도현 퇴근 ${fmt(meEnd)}${meEnd>CAP?" · 6시를 넘겨요":""}</small></button>
+      <button data-o="her">${H.name}에게 부탁한다<small>${H.name} 퇴근 ${fmt(herEnd)}${herEnd>CAP?" · 6시를 넘겨요":""}</small></button>
+      <button data-o="tmr" ${laneTasks("tmr").length>=TMR?"disabled":""}>내일 아침 첫 일로 하겠다고 말한다<small>${laneTasks("tmr").length>=TMR?"내일 아침 칸이 이미 찼어요":"둘 다 제시간 · 부장님은 조금 서운해해요"}</small></button>
+    </div></div>`;
+  m.querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    const o=b.dataset.o; t.lane=o; S.tasks.push(t); S.intrChoice=o; m.hidden=true;
+    if(o==="her") say(laneLen("her")>CAP?H.over:H.spec_l, laneLen("her")>CAP?"pout":"smile");
+    else if(o==="tmr") say(H.tmr,"smile");
+    if(o==="me") say(hero==="yujin"?"고마워요. 제가 먼저 정리하고 있을게요.":hero==="jihyun"?"그럼 그건 맡길게. 늦지 마.":hero==="ria"?"오, 멋있다! 빨리 끝내고 나와!":"오~ 책임감. 로비에서 기다릴게~","smile");
+    render(); cb();
+  });
+}
+function finish(){
+  S.running=false; S.done=true; S.progress=99; render();
+  const H=HEROES[hero], me=laneLen("me"), her=laneLen("her");
+  let stamp,cls,title,line,face,next;
+  if(me<=CAP&&her<=CAP){stamp="칼퇴 성공";cls="";title="오후 6:00, 회사 앞";line=H.win;face="laugh";next=`→ ${H.place} 장면이 여유롭게 시작돼요`}
+  else if(her<=CAP){stamp=`${fmt(me)} 퇴근`;cls="mid";title=`${fmt(me)}, 로비`;line=H.wait;face="smile";next=`→ ${J(H.name,"이","가")} 기다리는 장면으로 바뀌어요`}
+  else {stamp="함께 야근";cls="bad";title=`${fmt(Math.max(me,her))}, 빈 사무실`;line=H.both;face=her>CAP&&me<=CAP?"sad":"smile";next="→ 함께 야근하는 장면으로 바뀌어요"}
+  const helped=S.helped?`<b>${H.name} 도와줌</b> · 기억에 남아요<br>`:"";
+  const tm=laneTasks("tmr").map(t=>t.title);
+  const ic={me:"도현이 처리",her:`${J(H.name,"이","가")} 처리`,tmr:"내일 아침으로"}[S.intrChoice];
+  const m=$("modal"); m.hidden=false;
+  m.innerHTML=`<div class="sheet result"><div class="side"><img id="resImg" alt=""></div><div class="body">
+    <span class="stamp ${cls}">${stamp}</span><h2>${title}</h2>
+    <p>“${line}”</p>
+    <div class="lines">${helped}<b>돌발 요청</b> · ${ic}<br><b>내일로 미룬 일</b> · ${tm.length?tm.join(", "):"없음"}</div>
+    <div class="next">${next}</div>
+    <div style="display:flex;gap:10px"><button class="btn main" id="again">한 번 더</button><button class="btn" id="other">다른 날로</button></div>
+  </div></div>`;
+  setImg($("resImg"),face); say(line,face);
+  $("again").onclick=()=>{m.hidden=true;$("now").style.display="none";$("clock").innerHTML="<span>오후</span>3:00";S.tasks=S.tasks.filter(t=>t.id!=="intr");S.tasks.forEach(t=>t.lane=null);S.helped=false;S.done=false;S.progress=null;say(H.hello);render()};
+  $("other").onclick=()=>{seed++;restart()};
+}
+function restart(){$("modal").hidden=true;$("now").style.display="none";$("clock").innerHTML="<span>오후</span>3:00";newDay();render()}
+
+// 미리보기 막대
+const ph=$("pickHero"), ps=$("pickStyle");
+for(const k in HEROES) ph.insertAdjacentHTML("beforeend",`<button data-k="${k}">${HEROES[k].name}</button>`);
+for(const k in STYLES) ps.insertAdjacentHTML("beforeend",`<button data-k="${k}">${STYLES[k][0]} · ${TYPES[STYLES[k][1]][0]}</button>`);
+const sync=()=>{ph.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===hero));ps.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===style))};
+ph.onclick=e=>{const b=e.target.closest("button");if(!b)return;hero=b.dataset.k;sync();restart()};
+ps.onclick=e=>{const b=e.target.closest("button");if(!b)return;style=b.dataset.k;sync();render()};
+$("shuffle").onclick=()=>{seed++;restart()};
+$("reset").onclick=restart;
+
+function fit(){const w=$("wrap").clientWidth, s=w/1280; $("stage").style.transform=`scale(${s})`; $("wrap").style.height=720*s+"px"}
+addEventListener("resize",fit);
+sync(); newDay(); render(); fit();
+</script>
+</body>
+</html>
