@@ -7,6 +7,7 @@
 default mc_name = "도현"
 default mc_name_input = ""
 default mc_card_message = ""
+default mc_card_date = None
 
 init -10 python:
     import re as _mc_re
@@ -48,6 +49,17 @@ init -10 python:
             text = _mc_prev_replace(text)
         return mc_apply(text)
     config.replace_text = _mc_replace_text
+
+    def mc_card_today():
+        """사원증 발급일: 플레이어가 새 게임을 시작한 날(컴퓨터 날짜). 한 번 정하면 저장 파일에 남는다."""
+        if not renpy.store.mc_card_date:
+            import datetime
+            renpy.store.mc_card_date = datetime.date.today().strftime("%Y-%m-%d")
+        return renpy.store.mc_card_date
+
+    def mc_card_number():
+        y, m, d = mc_card_today().split("-")
+        return "GY-%s-%s%s" % (y, m, d)
 
     def mc_valid(name):
         return 1 <= len(name) <= 5 and all("가" <= ch <= "힣" for ch in name)
@@ -117,7 +129,7 @@ screen employee_card():
             fixed:
                 add Solid("#DCE2EC")
                 add silk("flat", "#AEB8C8", 50) xysize (92, 92) xalign 0.5 ypos 38
-                add silk("flat", "#AEB8C8", 80) xysize (160, 96) xalign 0.5 ypos 150
+                add silk("flat", "#AEB8C8", 70) xysize (150, 84) xalign 0.5 ypos 142
         # 이름
         text "NAME" style "mc_card_text" size 11 color "#A0969C" xalign 0.5 ypos 362
         frame:
@@ -141,8 +153,8 @@ screen employee_card():
         vbox:
             xpos 26 ypos 516 spacing 2
             text "EMPLOYEE NO." style "mc_card_text" size 10 color "#A0969C"
-            text "GY-2026-1017" style "mc_card_text" size 15 color "#3A3036"
-            text "발급 2026. 10. 17" style "mc_card_text" size 11 color "#8A8086"
+            text mc_card_number() style "mc_card_text" size 15 color "#3A3036"
+            text ("발급 " + mc_card_today()) style "mc_card_text" size 11 color "#8A8086"
         add silk("glass", "#E2C46A", 1.0, 4, "#B8963A") xysize (34, 26) xpos 186 ypos 524
         hbox:
             xpos 238 ypos 520 spacing 2
@@ -169,6 +181,8 @@ init -10 python:
 
 label player_name_card:
     $ mc_name_input = ""
+    $ mc_card_date = None
+    $ mc_card_today()
     $ mc_card_message = ""
     if renpy.is_in_test() and not getattr(store, "mc_card_in_test", False):
         return

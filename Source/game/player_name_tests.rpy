@@ -33,6 +33,7 @@ testsuite player_name_checks:
     testcase card_input_and_screen:
         run Start("test_mc_card_entry")
         advance until screen "employee_card" timeout 20.0
+        assert eval mc_card_date and len(mc_card_date) == 10 and mc_card_number() == "GY-" + mc_card_date[:4] + "-" + mc_card_date[5:7] + mc_card_date[8:]
         pause 0.5
         screenshot "player-name-1-card.png"
         click id "mc_card_confirm"
