@@ -96,3 +96,11 @@ TRANSPARENT background, clean cutout, no halo, no shadow.
 | `_pout` | puffed cheeks, sulking | sideways look as if arms are crossed | lips pushed out a little | half-closed eyes giving a sidelong glare |
 
 출시 최소: 기본·미소·홍조 3장(인물당). 전부 뽑으면 인물당 8장, 4명 32장.
+
+## 한 번에 끝내는 판 · 그림체 강화 (2026-11-23)
+
+새 대화에서 그림체가 무너지는 문제 때문에 만든 판이다.
+- 마스터 4장과 사복 입상 4장을 **직접 첨부**한다. 링크는 예비용이다.
+- 첫 그림으로 리아 마스터를 그대로 다시 그리게 해서 그림체를 먼저 맞춘다.
+- 그림체 특징을 글로 구체적으로 적었다.
+- 프롬프트 본문은 채팅으로 전달했다. 장면·의상 내용은 위의 [1]·[2]와 같다.
