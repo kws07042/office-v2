@@ -61,23 +61,34 @@ screen event_cut(event_id, variant, cursor):
     if page["kind"] == "intro" and cursor == 2 and not event_intro_expression_ready:
         timer 0.65 action Function(event_show_intro_expression, event_id, variant, cursor)
     add Solid("#292326")
-    text (event["title"] + "  ·  " + part_name + " " + str(page["part_index"]) + " / " + str(page["part_count"])):
-        xpos 60 ypos 80 size 30 color "#e6cdb9"
-    text outfit_name xpos 60 ypos 124 size 21 color "#e4cfc9"
+    $ full_art = has_art and page["kind"] != "main"
+    if full_art:
+        # 도입·이후 대화: 그림을 화면 가득, 글은 아래에 반투명 판으로 얹는다.
+        add resolved["path"] xysize (1280, 720)
+        add Solid("#120c10a8") xysize (1280, 280) ypos 440
+        frame:
+            xpos 40 ypos 26 padding (16, 8) background Solid("#120c10b0")
+            hbox:
+                spacing 14
+                text (event["title"] + "  ·  " + part_name + " " + str(page["part_index"]) + " / " + str(page["part_count"])) size 20 color "#f0dccd" substitute False
+                text outfit_name size 18 color "#e4cfc9" yalign 0.5
+    else:
+        text (event["title"] + "  ·  " + part_name + " " + str(page["part_index"]) + " / " + str(page["part_count"])):
+            xpos 60 ypos 80 size 30 color "#e6cdb9"
+        text outfit_name xpos 60 ypos 124 size 21 color "#e4cfc9"
     if page["kind"] == "main":
         use event_main_panel(event_id, variant, page)
-    elif has_art:
-        add resolved["path"] xpos 60 ypos 174 xysize (520, 405) fit "contain"
     if beat:
         frame:
-            xpos (600 if has_art else 60) ypos 174 xsize (620 if has_art else 1160) ysize 405
-            background Solid("#382e34") padding (30, 25)
+            xpos 60 ypos (454 if full_art else 174) xsize 1160 ysize (146 if full_art else 405)
+            background (None if full_art else Solid("#382e34")) padding ((0, 0) if full_art else (30, 25))
             vbox:
-                spacing 15
-                text beat["title"] size 30 color "#e6cdb9" substitute False
-                text beat["narration"] size 23 color "#e4cfc9" substitute False
-                text (phone_names(event_id.split("_")[0]) + "  " + (beat["heroine"] if "heroine" in beat else ri(*beat["ria"]))) size 26 substitute False
-                text ("도현  " + ri(*beat["dohyun"])) size 26 substitute False
+                spacing (6 if full_art else 15)
+                if not full_art:
+                    text beat["title"] size 30 color "#e6cdb9" substitute False
+                text beat["narration"] size (20 if full_art else 23) color "#e4cfc9" substitute False
+                text (phone_names(event_id.split("_")[0]) + "  " + (beat["heroine"] if "heroine" in beat else ri(*beat["ria"]))) size (23 if full_art else 26) color "#FFFFFF" substitute False
+                text ("도현  " + ri(*beat["dohyun"])) size (23 if full_art else 26) color "#FFFFFF" substitute False
                 if not has_art:
                     text ("표정 변화 자리 · 그림 준비 중" if expression else "장면 대본 미리보기 · 그림 준비 중") size 18 color "#cdb7b9"
     hbox:

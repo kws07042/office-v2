@@ -22,7 +22,12 @@ init python:
         base = originals[base_id]
         base_ids = [a["id"] for a in group["base_cg"]]
         result = {"requested_id": asset_id, "base_id": base_id, "base_index": base_ids.index(base_id) + 1 if base_id in base_ids else 0, "is_expression": asset_id == expression["id"], "requested_path": requested["planned_path"], "displayed_id": None, "path": None, "fallback": False}
-        if renpy.loadable(requested["planned_path"]):
+        # R15 코스프레는 고른 의상(바니걸·간호사·전용 의상)의 그림을 먼저 찾는다.
+        costume = renpy.store.memory.get(event_id.split("_")[0] + "_r15_costume") if variant == "cosplay" else None
+        costume_path = requested["planned_path"].replace("_cosplay_", "_cosplay_%s_" % costume) if costume else None
+        if costume_path and renpy.loadable(costume_path):
+            result.update(displayed_id=asset_id, path=costume_path)
+        elif renpy.loadable(requested["planned_path"]):
             result.update(displayed_id=asset_id, path=requested["planned_path"])
         elif result["is_expression"] and renpy.loadable(base["planned_path"]):
             result.update(displayed_id=base_id, path=base["planned_path"], fallback=True)
