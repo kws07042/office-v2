@@ -7,6 +7,8 @@ default date_outfit = set()
 default heroine_face_lock = {}
 default heroine_face_auto = {}
 default heroine_face_lock_location = {}
+# 히로인마다 마지막으로 보여 준 의상과 그때의 장소. 같은 장면 안에서 옷이 갑자기 바뀌지 않게 한다.
+default heroine_outfit_memory = {}
 
 init -4 python:
     import re as _hs_re
@@ -82,11 +84,34 @@ init -4 python:
     def date_outfit_off(who):
         renpy.store.date_outfit = set(renpy.store.date_outfit) - {who}
 
+    # 날짜·때를 말하는 낱말. 장소 문구에 이런 말이 없거나 "같은"으로 시작하면 앞 장면에서 이어진다고 본다.
+    TIME_MARKERS = _hs_re.compile(r"(다음 |요일|아침|오전|오후|점심|저녁|밤|새벽|다음 날|다음날|주말|당일|전날|평일|휴일|[0-9]+월|[0-9]+일)")
+
+    def heroine_scene_continues(place):
+        place = (place or "").strip()
+        return place.startswith("같은") or not TIME_MARKERS.search(place)
+
     def heroine_outfit(who, place=None):
         place = _hs_place() if place is None else place
+        # R12 데이트 옷이 켜져 있으면 장면이 이어져도 데이트 옷을 먼저 쓴다.
         if who in renpy.store.date_outfit and "아침" not in place and "다음 날" not in place and heroine_has_outfit(who, "special"):
             return "special"
-        if any(word in place for word in HEROINE_HOME.get(who, ())):
+        # 같은 장면이 이어지면(예: "회사 앞" 다음 "둘이 앉은 자리", "같은 날 저녁 · 카페 밖 골목") 입던 옷을 그대로 둔다.
+        memory = getattr(renpy.store, "heroine_outfit_memory", {}).get(who)
+        if memory and (memory[1] == place or heroine_scene_continues(place)):
+            return memory[0]
+        return heroine_outfit_rule(who, place)
+
+    def heroine_scene_anchor(who, place):
+        # 장면이 시작된 장소 문구. 포즈는 이것으로 골라 같은 장면 안에서 자세가 바뀌지 않게 한다.
+        memory = getattr(renpy.store, "heroine_outfit_memory", {}).get(who)
+        if memory and len(memory) > 2 and (memory[1] == place or heroine_scene_continues(place)):
+            return memory[2]
+        return place
+
+    def heroine_outfit_rule(who, place):
+        # "유진의 집 앞"처럼 집 밖이면 생활복으로 보지 않는다.
+        if any(word in place and (word + " 앞") not in place for word in HEROINE_HOME.get(who, ())):
             return "home"
         own_studio = any(word in place for word in HEROINE_HOME_MORNING.get(who, ()))
         if own_studio and "아침" in place:
@@ -169,7 +194,7 @@ init -4 python:
         outfit = heroine_outfit(who, place)
         wanted = heroine_face(who)
         locked = renpy.store.heroine_face_lock.get(who) == wanted
-        pose = heroine_pose(who, outfit, place, wanted if locked else None)
+        pose = heroine_pose(who, outfit, heroine_scene_anchor(who, _hs_place() if place is None else place), wanted if locked else None)
         expression = heroine_resolve_face(wanted, outfit, pose, who)
         return "images/characters/%s/%s_%s_%s_%s.png" % (who, who, outfit, pose, expression)
 
@@ -188,17 +213,23 @@ init -4 python:
         # 말풍선이 열리기 직전에 불린다. 이번 대사 내용으로 자동 표정을 정한다.
         what = getattr(renpy.store, "_last_raw_what", "") or ""
         renpy.store.heroine_face_auto[who] = heroine_text_face(what)
+        # 이번 대사에서 보여 줄 의상을 기억해 둔다(다음 장소가 같은 장면이면 이 옷을 이어 입는다).
+        place = _hs_place()
+        memory = dict(renpy.store.heroine_outfit_memory)
+        memory[who] = (heroine_outfit(who, place), place, heroine_scene_anchor(who, place))
+        renpy.store.heroine_outfit_memory = memory
 
-    # 무대에 놓는 크기: 머리 위가 화면 약 50px, 대화창(ypos 536) 윗선에서 잘라 글씨 뒤로 몸이 비치지 않게 한다.
-    # 게임용 사본은 이미 화면 크기(원본의 66%, 676×1014)로 줄여 두어 확대·축소 없이 그린다.
+    # 무대에 놓는 크기: 전신을 자르지 않고 그려 다리는 대화창 뒤·아래로 이어지게 한다.
+    # 184장 중 손이 가장 낮은 그림(리아 생활복 pose02)의 손끝이 569px이라, 92%로 줄이고 ypos 2에 두면
+    # 모든 히로인의 손이 대화창 윗선(536) 위에 보인다. 게임용 사본은 676×1014.
     SPRITE_SIZE = (676, 1014)
-    SPRITE_YPOS = 20
-    SPRITE_CROP_H = 536 - SPRITE_YPOS
+    SPRITE_ZOOM = 0.92
+    SPRITE_YPOS = 2
 
     def heroine_sprite_display(st, at):
         if not heroine_sprite_visible():
             return Null(), None
         path = heroine_sprite_path(renpy.store.cream_focus)
-        return Crop((0, 0, SPRITE_SIZE[0], SPRITE_CROP_H), path), None
+        return Transform(path, zoom=SPRITE_ZOOM), None
 
 image heroine stage sprite = DynamicDisplayable(heroine_sprite_display)

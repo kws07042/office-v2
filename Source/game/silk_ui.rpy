@@ -70,7 +70,16 @@ init -9 python:
         return out
 
     def silk_b_flat(w, h, fill, radius):
-        return '<rect x="0" y="0" width="%d" height="%d" rx="%s" fill="%s"/>' % (w, h, min(radius, h / 2.0), fill)
+        # "#RRGGBBAA"는 SVG에서 fill + fill-opacity로 나눠 반투명 면을 만든다.
+        opacity = ""
+        if isinstance(fill, str) and fill.startswith("#") and len(fill) == 9:
+            opacity = ' fill-opacity="%.3f"' % (int(fill[7:9], 16) / 255.0)
+            fill = fill[:7]
+        return '<rect x="0" y="0" width="%d" height="%d" rx="%s" fill="%s"%s/>' % (w, h, min(radius, h / 2.0), fill, opacity)
+
+    def silk_b_outline(w, h, stroke, radius):
+        # 속이 빈 테두리(도장용).
+        return '<rect x="1" y="1" width="%d" height="%d" rx="%s" fill="none" stroke="%s" stroke-width="1.5"/>' % (max(1, w - 2), max(1, h - 2), radius, stroke)
 
     def silk_b_dialogue(w, h):
         # 위 가장자리는 반원 레이스, 그 아래는 종이 면, 안쪽에 작은 점 한 줄.
@@ -205,6 +214,24 @@ init -9 python:
             return cream_speaker_color(who, history=True)
         return SILK["ink"]
 
+    # 대화창 종이 이름표 왼쪽 띠 색: 리아 금갈색, 지현 와인, 유진 은회색(머리색), 서윤 보라, 도현·그 밖의 인물 검정.
+    SILK_TAG_STRIPE = {
+        "강리아": "#765019", "리아": "#765019",
+        "백지현": "#923F44", "지현": "#923F44",
+        "차유진": "#A39FAD", "유진": "#A39FAD",
+        "한서윤": "#654B85", "서윤": "#654B85",
+    }
+
+    def silk_name_tag_color(who):
+        return SILK_TAG_STRIPE.get(silk_speaker_key(who), "#1E1A1C")
+
+    def silk_name_line_color(who):
+        # 어두운 그라데이션 위 이름 밑줄: 히로인 화자 색의 밝은 쪽, 그 밖에는 금색.
+        name = silk_speaker_key(who)
+        if name in ("강리아", "리아", "백지현", "지현", "차유진", "유진", "한서윤", "서윤"):
+            return cream_speaker_color(who)
+        return "#E9C98E"
+
     def silk_english(who):
         return SILK_ENGLISH.get(silk_speaker_key(who), "")
 
@@ -240,13 +267,21 @@ transform silk_tilt:
 image silk ground = SilkSVG(silk_b_ground, size=(1280, 720))
 
 style silk_choice_button is button:
-    background silk_choice_surface("idle")
-    hover_background silk_choice_surface("hover")
-    selected_background silk_choice_surface("hover")
-    padding (60, 14, 30, 19)
-    yminimum 65
+    background silk("flat", "#FFF8F2EE", 14)
+    hover_background silk("flat", "#9A2144", 14)
+    selected_background silk("flat", "#9A2144", 14)
+    padding (28, 16, 30, 18)
+    yminimum 66
     xfill True
     keyboard_focus True
+style silk_choice_num is default:
+    font "fonts/Pretendard-Regular.otf"
+    size 20
+    kerning 1.5
+    color "#8E1C3D"
+    hover_color "#E9C98E"
+    selected_color "#E9C98E"
+    outlines []
 style silk_choice_sub is default:
     font "fonts/Pretendard-Regular.otf"
     size 15
@@ -257,8 +292,8 @@ style silk_choice_sub is default:
 
 style silk_choice_text is default:
     font "fonts/Pretendard-Regular.otf"
-    size 19
-    color "#3B0B22"
+    size 20
+    color "#2A1420"
     hover_color "#FFFDFB"
     selected_color "#FFFDFB"
     outlines []
@@ -267,15 +302,17 @@ style silk_choice_text is default:
 
 style silk_quick_button is button:
     background None
-    hover_background silk("flat", "#F3E7EA", 20)
+    hover_background None
     insensitive_background None
-    padding (9, 9, 10, 9)
+    padding (9, 6, 10, 6)
 style silk_quick_text is default:
     font "fonts/Pretendard-Regular.otf"
     size 13
-    color "#6E4553"
-    hover_color "#3B0B22"
-    insensitive_color "#A3959B"
+    kerning 0.8
+    color "#FFF8F2A8"
+    hover_color "#E9C98E"
+    selected_color "#E9C98E"
+    insensitive_color "#FFF8F250"
     outlines []
     yalign 0.5
 
@@ -309,3 +346,33 @@ style silk_small_button is button:
     padding (16, 8, 20, 13)
 style silk_small_button_text is button_text:
     size 15
+
+# 타이틀 세로 메뉴
+style silk_title_button is button:
+    background None
+    hover_background None
+    padding (0, 6, 24, 6)
+    xminimum 330
+style silk_title_text is default:
+    font "fonts/GowunDodum-Regular.ttf"
+    size 23
+    color "#FFF8F2"
+    hover_color "#E9C98E"
+    selected_color "#E9C98E"
+    outlines [(1, "#1E0C1644", 0, 1)]
+style silk_title_caption is default:
+    font "fonts/PlayfairDisplay-Italic.ttf"
+    size 14
+    color "#E9C98EB0"
+    hover_color "#E9C98E"
+    outlines []
+style silk_title_small is button:
+    background None
+    hover_background None
+    padding (6, 4)
+style silk_title_small_text is default:
+    font "fonts/Pretendard-Regular.otf"
+    size 13
+    color "#FFF8F2B0"
+    hover_color "#E9C98E"
+    outlines []

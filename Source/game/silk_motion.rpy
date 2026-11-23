@@ -52,11 +52,9 @@ transform silk_choice_in(i=0):
     pause (0.04 + i * 0.07)
     easein 0.24 alpha 1.0 yoffset 0
 
+# 줄이 옆으로 밀리면 정렬이 흐트러져 보여서, 위치는 그대로 두고 바탕색만 바뀐다.
 transform silk_choice_hover:
-    on idle:
-        ease 0.14 xoffset 0
-    on hover, selected_hover:
-        ease 0.14 xoffset 9
+    xoffset 0
 
 transform silk_chip_glow:
     alpha 1.0
@@ -113,3 +111,16 @@ screen silk_gain(who, amount):
                 add silk("heart", True, size=(18, 18)) yalign 0.5 at (silk_heart_pop if silk_motion_on() else silk_still)
                 text SILK_GAIN_NAMES[who] font "fonts/Jua-Regular.ttf" size 17 color "#FFFDFB" outlines [] yalign 0.5
                 text ("+" + str(amount)) font "fonts/Jua-Regular.ttf" size 19 color "#FFFDFB" outlines [] yalign 0.5
+
+# 타이틀 메뉴: 마우스를 올리면 금색 막대가 나타나고 글자가 살짝 오른쪽으로.
+transform silk_title_hover:
+    on idle:
+        ease 0.16 xoffset 0
+    on hover, selected_hover:
+        ease 0.16 xoffset 6
+
+transform silk_title_mark:
+    on idle:
+        ease 0.16 alpha 0.0
+    on hover, selected_hover:
+        ease 0.16 alpha 1.0
