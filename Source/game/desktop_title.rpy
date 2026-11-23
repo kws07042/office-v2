@@ -180,7 +180,7 @@ screen main_menu():
                         vbox:
                             yalign 0.5
                             text "도현" font "fonts/GowunDodum-Regular.ttf" size 18 color "#FFFFFF"
-                            text "온빛브랜딩 · 연말 피칭 TF" style "desk_tiny" size 13 color "#FFFFFF99"
+                            text "GY브랜딩 · 연말 피칭 TF" style "desk_tiny" size 13 color "#FFFFFF99"
                     null height 10
                     add Solid("#FFFFFF22") ysize 1
                     null height 6

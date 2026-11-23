@@ -126,7 +126,7 @@ screen story_header():
             use cream_preview_controls
 
 init python:
-    DOC_OFFICE_WORDS = ("회사", "사무", "회의", "피칭", "클라이언트", "탕비", "옥상", "복도", "계단", "온빛", "팝업", "현장", "작업 공간", "공용")
+    DOC_OFFICE_WORDS = ("회사", "사무", "회의", "피칭", "클라이언트", "탕비", "옥상", "복도", "계단", "GY", "팝업", "현장", "작업 공간", "공용")
 
     def dialogue_doc_stamp():
         place = getattr(renpy.store, "location", "") or ""
@@ -227,7 +227,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 substitute use_substitution
         # 아래 금색 줄과 회사 표기
         add "gui/window/name_line.png" xpos 150 ypos 688 xysize (720, 1) matrixcolor TintMatrix("#E9C98E") alpha 0.65
-        text "온빛브랜딩 · 연말 피칭 TF" xpos 150 ypos 697 size 12 color "#FFF8F273" kerning 1.4 outlines []
+        text "GY브랜딩 · 연말 피칭 TF" xpos 150 ypos 697 size 12 color "#FFF8F273" kerning 1.4 outlines []
         if advance:
             add silk("next", "#E9C98E", size=(14, 9)) xpos 1140 ypos 664 at (silk_next_bob if silk_motion_on() else silk_still)
 

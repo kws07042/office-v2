@@ -63,7 +63,7 @@ Use the supplied original title v002 and identify each required heroine by name 
 Scene: [existing event ID, location, time, props, emotion and action].
 Preserve each heroine's current identity, adult proportions, hairstyle, outfit and accessories.
 Use the same delicate 2D anime style for both characters and background.
-Camera: the player's viewpoint. Dohyun's hands/forearms may appear if the interaction needs them;
+Camera: the player's viewpoint. the player character's hands/forearms may appear if the interaction needs them;
 do not add his face, full body, back, silhouette or reflection.
 If the scene explicitly excludes the protagonist's body, exclude his hands/arms too.
 Keep coherent joints, body rotation, weight-bearing feet and prop contacts.

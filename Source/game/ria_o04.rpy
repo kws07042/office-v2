@@ -7,7 +7,7 @@ label ria_o04_offer:
     $ progression_enter("ria_o04_offer")
     $ progression_checkpoint("ria_o04_offer")
     $ chapter = "리아 O04 · 오늘은 길 안 잃었어"
-    $ location = "목요일 퇴근 후 · 온빛브랜딩 앞"
+    $ location = "목요일 퇴근 후 · GY브랜딩 앞"
     "건물 밖에 나오자 리아가 도현의 소매를 잡았다. 신호가 바뀌었는데도 리아는 건너지 않았다."
     r "[ri('오늘 바로 집에 가? 역 뒤에 내가 좋아하는 포차 있어. 한잔할래?', '오늘 바로 집에 가세요? 역 뒤에 제가 좋아하는 포차 있어요. 한잔하실래요?')]"
     $ progression_enter("ria_o04_offer.choice01")

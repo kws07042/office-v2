@@ -48,7 +48,7 @@ UNDERWEAR TASTE (keep consistent in every scene):
 
 ONE COHERENT SCENE, NOT A COMPOSITE. 16:9, 1920x1080, no text/logos/UI.
 PERSPECTIVE RULES: single camera at standing eye level (about 1.4 m), 35 mm lens, one consistent horizon and vanishing point for the room and the character. The character's size must match the furniture (mattress top reaches her knee when she stands). Show contact: hips sink into the mattress, feet flat on the floor with soft contact shadows. Nothing floats, nothing clips through the bed. Legs angled sideways, never stretched toward the camera.
-THE VIEWER is her boyfriend Dohyun: at most his hand and shirt cuff at the frame edge; no face, no body.
+THE VIEWER is her boyfriend (the player character): at most his hand and shirt cuff at the frame edge; no face, no body.
 CONTENT LIMIT (scenes 1–13): she is half-undressed from the outfit named in each scene, with her bra and panties visible and fully covering; not see-through. No nudity, no nipples, no sexual act, no explicit pose. Romantic, a moment before an intimate scene.
 
 ROOMS (draw once, then reuse the same room for that heroine):
@@ -83,7 +83,7 @@ COSTUME SCENES (R15, after making up). Same room as that heroine's scene above. 
 22 YUJIN · maid (YUJIN ROOM). "A uniform from the café collab. Y-your order... no, that's not it." Classic black-and-white maid dress with frilly apron and headdress, black thigh-highs, glasses on. Standing by the bed in a small curtsy, holding her skirt. Flustered, mouth open mid-word.
 23 SEOYUN · bunny girl (SEOYUN STUDIO BACK ROOM). "Knew you'd pick this one. Laugh and I take it off again... you're laughing." Deep purple satin bunny suit, black ears, sheer black pantyhose, cuffs and bow tie. Leaning against the bedpost, one hand on her hip. Teasing half-lidded smile.
 24 SEOYUN · nurse (SEOYUN STUDIO BACK ROOM). "Tell me where it hurts. Tonight I'll take care of you, no jokes." White nurse dress with lavender trim, nurse cap, her garter belt and black lace thigh-highs, stethoscope around her neck. Sitting on the bed, patting the space beside her. Gentle sincere smile.
-25 SEOYUN · police (SEOYUN STUDIO BACK ROOM). "Dohyun, answer only what I ask. Did you miss me today?" Navy police-style uniform jacket and mini skirt, peaked cap, toy handcuffs dangling from one finger, black thigh-highs. Standing by the bed, weight on one hip. Smirking, eyes narrowed playfully.
+25 SEOYUN · police (SEOYUN STUDIO BACK ROOM). "Answer only what I ask. Did you miss me today?" Navy police-style uniform jacket and mini skirt, peaked cap, toy handcuffs dangling from one finger, black thigh-highs. Standing by the bed, weight on one hip. Smirking, eyes narrowed playfully.
 
 Start with STEP 0.
 ```

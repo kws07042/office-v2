@@ -1,4 +1,4 @@
-# 사내 메신저 '온빛톡' (도현의 회사 PC). 업무 시간에만 쓴다.
+# 사내 메신저 'GY톡' (도현의 회사 PC). 업무 시간에만 쓴다.
 # 휴대폰(노란 말풍선, 세로 화면)과 구분한다: 가로 PC 창, 흰·회색 바탕, 도현이 보낸 말은 파란 말풍선, 이름 옆에 부서.
 # 쓰는 때: 회사 안에서 서로 떨어져 있을 때, 또는 같은 방에 있어도 소리 내어 말할 수 없을 때(회의 중 등).
 # 퇴근 후·집·주말 연락은 휴대폰(office_phone.rpy)을 쓴다.
@@ -90,7 +90,7 @@ screen pc_messenger_choice(items):
         # 제목 줄
         frame:
             xysize (1000, 38) padding (16, 0) background pc_glass("#F3F3F5", 1.0, 8)
-            text "온빛톡" style "pc_text" size 14 color "#55555E" yalign 0.5
+            text "GY톡" style "pc_text" size 14 color "#55555E" yalign 0.5
             hbox:
                 xalign 1.0 yalign 0.5 spacing 22
                 add Solid("#77777F") xysize (11, 1) yalign 0.5
@@ -199,7 +199,7 @@ screen pc_messenger_choice(items):
                 text "퇴근 후{color=#F2C14E},{/color}" font "fonts/Jua-Regular.ttf" size 21 color "#FFFFFF" align (0.5, 0.5)
             frame:
                 ysize 40 padding (14, 0) background silk("glass", "#FFFFFF", 0.14, 8)
-                text "온빛톡" style "desk_tiny" yalign 0.5
+                text "GY톡" style "desk_tiny" yalign 0.5
         text "오후 5:50" style "desk_tiny" color "#FFFFFF" xalign 1.0 yalign 0.5
 
 # ── 장면 속 사내 메신저 대화 ───────────────────────────────
@@ -235,7 +235,7 @@ screen pc_chat_screen(contact, rows, when="오후"):
         at ((silk_menu_in(0),) if silk_motion_on() else (silk_still,))
         frame:
             xysize (760, 38) padding (16, 0) background silk("glass", "#F3F3F5", 1.0, 8)
-            text "온빛톡" style "pc_text" size 14 color "#55555E" yalign 0.5
+            text "GY톡" style "pc_text" size 14 color "#55555E" yalign 0.5
             hbox:
                 xalign 1.0 yalign 0.5 spacing 22
                 add Solid("#77777F") xysize (11, 1) yalign 0.5

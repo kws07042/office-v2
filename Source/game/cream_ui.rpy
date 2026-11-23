@@ -111,7 +111,7 @@ label cream_preview_start:
 label cream_preview_day:
     $ cream_preview_mode = "day"
     $ chapter = "강리아 · 퇴근 전의 약속"
-    $ location = "초여름 오후 · 온빛브랜딩"
+    $ location = "초여름 오후 · GY브랜딩"
     scene bg plain
     r "오늘 퇴근하고 시간 있어? 가 보고 싶은 곳이 하나 생겼어~"
     d "있어. 이번에는 나도 같이 고르고 싶어."

@@ -62,6 +62,7 @@ init python:
 
 label start:
     scene bg plain
+    call player_name_card
     if config.developer:
         "대본 개발판 · 공통 C01~C08, 네 히로인의 개인 대본을 읽을 수 있습니다."
         "최종 배경·표정·이벤트 CG·영상·음성은 제작 중입니다. 실제 플레이 길이와 대사의 통합 편집도 남아 있습니다."
@@ -135,7 +136,7 @@ label end_common:
     $ progression_checkpoint("end_common")
     call work_mini_second
     $ chapter = "END_COMMON · 좋은 동료로, 우리"
-    $ location = "온빛브랜딩 · 몇 주 뒤"
+    $ location = "GY브랜딩 · 몇 주 뒤"
     "피칭 결과가 나왔다. TF는 살아남았다. 다음 주, 정식 팀이 된 뒤의 첫 캠페인 검토가 끝났다."
     j "한꺼번에 다 바꾸지 말자. 이번에 확인한 것부터 반영하면 돼."
     y "문구 크기는 제가 다시 볼게요. 실제로 읽히는지도 확인하고 싶어요."

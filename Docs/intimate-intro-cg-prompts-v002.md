@@ -4,7 +4,7 @@ v001 결과(`codex/intro-cgs-v001`)에서 원근이 깨진 그림(02·03·06·13
 - 의상: 속옷만 입히지 않는다. 장면 직전 대본에서 입고 있던 옷을 반쯤 벗은 상태로 그린다(대본의 사복·특별한 날의 옷·생활복). 노출과 성행위는 없다.
 - 장소: 침실에서 침대가 보이게 한다. 서윤은 작업실 안쪽 작은 침실이다(가족 물건 없음).
 - 원근: 한 장면으로 그리고, 카메라 높이와 몸이 닿는 곳을 고정한다. 같은 히로인의 방은 첫 장면의 방을 다시 쓴다.
-- 손: 도현은 손과 소매만 화면 가장자리에 나올 수 있다.
+- 손: 주인공은 손과 소매만 화면 가장자리에 나올 수 있다.
 
 '특별한 날의 옷'(R12)은 2026-11-23 사용자 결정으로 입상을 새로 만든다([입상 프롬프트](art-prompts-special-outfit-v001.md)). 2·6·9·12번은 그 입상을 먼저 만든 뒤, 입상과 같은 옷으로 뽑는다.
 
@@ -56,7 +56,7 @@ CHARACTERS (adults 27–32, mature proportions, never childlike; no earrings/nec
 
 ONE COHERENT SCENE, NOT A COMPOSITE. 16:9, 1920x1080, no text/logos/UI.
 PERSPECTIVE RULES: single camera at standing eye level (about 1.4 m), 35 mm lens, one consistent horizon and vanishing point for the room and the character. The character's size must match the furniture (mattress top reaches her knee when she stands). Show contact: hips sink into the mattress, feet flat on the floor with soft contact shadows. Nothing floats, nothing clips through the bed. Legs angled sideways, never stretched toward the camera.
-THE VIEWER is her boyfriend Dohyun: at most his hand and shirt cuff at the frame edge; no face, no body.
+THE VIEWER is her boyfriend (the player character): at most his hand and shirt cuff at the frame edge; no face, no body.
 CONTENT LIMIT (scenes 1–13): she is half-undressed from the outfit named in each scene, with her bra and panties visible and fully covering; not see-through. No nudity, no nipples, no sexual act, no explicit pose. Romantic, a moment before an intimate scene.
 
 ROOMS (draw once, then reuse the same room for that heroine):
@@ -91,7 +91,7 @@ COSTUME SCENES (R15, after making up). Same room as that heroine's scene above. 
 22 YUJIN · maid (YUJIN ROOM). "A uniform from the café collab. Y-your order... no, that's not it." Classic black-and-white maid dress with frilly apron and headdress, black thigh-highs, glasses on. Standing by the bed in a small curtsy, holding her skirt. Flustered, mouth open mid-word.
 23 SEOYUN · bunny girl (SEOYUN STUDIO BACK ROOM). "Knew you'd pick this one. Laugh and I take it off again... you're laughing." Deep purple satin bunny suit, black ears, sheer black pantyhose, cuffs and bow tie. Leaning against the bedpost, one hand on her hip. Teasing half-lidded smile.
 24 SEOYUN · nurse (SEOYUN STUDIO BACK ROOM). "Tell me where it hurts. Tonight I'll take care of you, no jokes." White nurse dress with lavender trim, nurse cap, her garter belt and black lace thigh-highs, stethoscope around her neck. Sitting on the bed, patting the space beside her. Gentle sincere smile.
-25 SEOYUN · police (SEOYUN STUDIO BACK ROOM). "Dohyun, answer only what I ask. Did you miss me today?" Navy police-style uniform jacket and mini skirt, peaked cap, toy handcuffs dangling from one finger, black thigh-highs. Standing by the bed, weight on one hip. Smirking, eyes narrowed playfully.
+25 SEOYUN · police (SEOYUN STUDIO BACK ROOM). "Answer only what I ask. Did you miss me today?" Navy police-style uniform jacket and mini skirt, peaked cap, toy handcuffs dangling from one finger, black thigh-highs. Standing by the bed, weight on one hip. Smirking, eyes narrowed playfully.
 
 Start with scene 1.
 ```

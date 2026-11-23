@@ -92,7 +92,7 @@ Han Seoyun, seoyun_R12_special_intro. Her studio late at night, rain-free city l
 
 ### seoyun_R15_home_intro · 작업실 (숨길 게 없어진 첫 밤)
 ```text
-Han Seoyun, seoyun_R15_home_intro. Her studio at night in warm lamp light, papers put away, the space tidy and calm, background ref bg_seoyun_studio.jpg. She wears a lavender silk bra and panties. Pose: lying back on the daybed, one arm above her head, long plum hair spread across the cushion, knees drawn up and tilted to one side. Expression: the most relaxed open smile in the game, eyes gentle, calling him "도현아" with her look. Mood: nothing left to hide; completely at ease.
+Han Seoyun, seoyun_R15_home_intro. Her studio at night in warm lamp light, papers put away, the space tidy and calm, background ref bg_seoyun_studio.jpg. She wears a lavender silk bra and panties. Pose: lying back on the daybed, one arm above her head, long plum hair spread across the cushion, knees drawn up and tilted to one side. Expression: the most relaxed open smile in the game, eyes gentle, calling him "주인공아" with her look. Mood: nothing left to hide; completely at ease.
 ```
 
 ## 검수 메모 (받은 뒤)

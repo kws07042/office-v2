@@ -23,7 +23,7 @@ label yujin_o01:
         return
     $ chapter = "유진 O01 · 전시가 끝난 뒤의 감상"
     $ location = "연인 첫 주말의 늦은 오후 · 공원 벤치"
-    y "그 전시의 첫 그림요. 저는 혼자 남은 방 같다고 했는데, 도현 씨는 누가 돌아올 것 같다고 하셨잖아요."
+    y "그 전시의 첫 그림요. 저는 혼자 남은 방 같다고 했는데, 주인공 씨는 누가 돌아올 것 같다고 하셨잖아요."
     d "네. 의자가 조금 비뚤어져 있어서요. 유진 씨가 다르게 보신 것도 기억나요."
     y "오늘 다시 말하면 어느 쪽이세요? 제 쪽으로 와 달라는 질문은 아니고요~"
     menu:
@@ -33,7 +33,7 @@ label yujin_o01:
             $ remember("yujin_o01_impression", "returning")
         "유진의 설명을 듣고 빈 방의 고요도 궁금해졌다고 한다.":
             d "생각해 보니 빈 방의 소리도 궁금해졌어요. 유진 씨는 조용한 쪽부터 보셨겠네요."
-            y "네. 저는 그 조용한 쪽이 조금 쓸쓸했어요. 도현 씨는 어떤 소리일지 고르실 것 같고요."
+            y "네. 저는 그 조용한 쪽이 조금 쓸쓸했어요. 주인공 씨는 어떤 소리일지 고르실 것 같고요."
             $ remember("yujin_o01_impression", "quiet_room")
         "같은 그림을 다르게 본 시간이 더 기억난다고 말한다.":
             d "저는 그림 다음에 유진 씨 대답 기다린 게 남았어요. 같은 걸 보고도 다음 말은 몰라서요."
@@ -89,7 +89,7 @@ label yujin_o03_offer:
     if not dating or active_route != "yujin" or not memory.get("yujin_r15_complete") or memory.get("yujin_o03_status"):
         return
     menu:
-        "일요일 오후에 잠깐 만나기 — 이번엔 도현 씨 취향 (선택 일상)":
+        "일요일 오후에 잠깐 만나기 — 이번엔 주인공 씨 취향 (선택 일상)":
             call yujin_o03
         "본편 계속 — 일요일 저녁의 두 초안으로":
             $ remember("yujin_o03_status", "skipped")
@@ -103,14 +103,14 @@ label yujin_o03_offer:
 label yujin_o03:
     if not dating or active_route != "yujin":
         return
-    $ chapter = "유진 O03 · 이번엔 도현 씨 취향"
+    $ chapter = "유진 O03 · 이번엔 주인공 씨 취향"
     if memory.get("yujin_r10_page") == "entrance_bench":
         $ location = "일요일 오후 · 전시 공간 입구의 긴 의자"
         y "촬영 후보로 남겨 두셨잖아요. 오늘 다시 와 보고 싶을 것 같아서요. 앉는 쪽부터 해도 좋고요."
         $ remember("yujin_o03_prepared", "기록집 후보였던 전시 입구 긴 의자에 다시 오기")
     elif memory.get("yujin_r10_page") == "one_sentence":
         $ location = "일요일 오후 · 조용한 동네 카페"
-        y "한 문장으로 한 페이지 고르셨잖아요. 오늘은 말 적을 자리부터 골라 봤어요. 도현 씨가 더 쓰고 싶은지 궁금해서요."
+        y "한 문장으로 한 페이지 고르셨잖아요. 오늘은 말 적을 자리부터 골라 봤어요. 주인공 씨가 더 쓰고 싶은지 궁금해서요."
         $ remember("yujin_o03_prepared", "한 문장을 적을 수 있는 조용한 카페 자리")
     elif memory.get("yujin_r10_page") == "open_space":
         $ location = "일요일 오후 · 동네 산책길"
@@ -118,12 +118,12 @@ label yujin_o03:
         $ remember("yujin_o03_prepared", "빈칸을 남긴 기록집 취향에 맞춰 목적지를 비운 짧은 산책")
     else:
         $ location = "일요일 오후 · 동네 카페"
-        y "오늘은 도현 씨가 남기고 싶은 것부터 고르면 좋겠어요. 이 자리 괜찮으세요?"
+        y "오늘은 주인공 씨가 남기고 싶은 것부터 고르면 좋겠어요. 이 자리 괜찮으세요?"
         $ remember("yujin_o03_prepared", "현재 취향을 직접 묻는 짧은 카페 만남")
     d "제 얘기로 먼저 골라 주셨네요. 오늘은 제가 천천히 봐도 되겠어요."
     menu:
         "인물은 담지 않고 지금 장소를 사진 한 장으로 남긴다.":
-            "도현이 인물 없이 장소를 한 장 찍었다. 유진은 촬영이 끝난 뒤 같은 방향을 바라봤다."
+            "주인공이 인물 없이 장소를 한 장 찍었다. 유진은 촬영이 끝난 뒤 같은 방향을 바라봤다."
             d "오늘은 이 한 장이요. 제목은 조금 더 있다가 고를래요."
             y "네. 제 감상도 제목 정하실 때 같이 들려드릴게요."
             $ remember("yujin_o03_action", "photo")
