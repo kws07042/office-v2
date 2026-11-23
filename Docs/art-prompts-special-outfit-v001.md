@@ -103,4 +103,82 @@ TRANSPARENT background, clean cutout, no halo, no shadow.
 - 마스터 4장과 사복 입상 4장을 **직접 첨부**한다. 링크는 예비용이다.
 - 첫 그림으로 리아 마스터를 그대로 다시 그리게 해서 그림체를 먼저 맞춘다.
 - 그림체 특징을 글로 구체적으로 적었다.
-- 프롬프트 본문은 채팅으로 전달했다. 장면·의상 내용은 위의 [1]·[2]와 같다.
+- 아래가 프롬프트 본문이다(ChatGPT 대화용). Codex에 맡길 때는 [Codex 작업 지시](codex-art-tasks-v001.md)를 쓴다.
+
+```text
+You will draw 32 full-body game sprites for an adult office-romance visual novel: 4 heroines x 8 expressions, in a "special date outfit". ONE image per reply. Before each image, write its file name on one line. After each image, wait for me to say "next".
+
+REFERENCES: I attached 8 images — 4 MASTER sprites (office outfit, *_office_pose01_neutral_v001.png) and 4 casual sprites (*_casual_pose01_neutral.png). If any attachment is missing, use these public links:
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/ria_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/jihyun_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/yujin_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/seoyun_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/ria/ria_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/jihyun/jihyun_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/yujin/yujin_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/seoyun/seoyun_casual_pose01_neutral.png
+
+ABSOLUTE STYLE RULE: the MASTER sprites are the only allowed art style. Every image must look like the same artist drew it in the same session. Match these exact traits:
+- LINE ART: thin, clean, uniform dark-brown outlines (slightly darker at the outer silhouette), no sketchy, painterly or thick lines.
+- EYES: large almond eyes with a thick dark upper lash line ending in a small wing, thin lower lash line, iris gradient from dark at the top to lighter at the bottom, one bright white crescent highlight plus small round white highlights, same eye spacing and size as the masters.
+- FACE: small pointed chin, tiny nose drawn with a faint shadow only, small mouth, soft pink blush on the cheeks.
+- SHADING: anime cel shading — one soft shadow tone with gentle gradient edges, small crisp highlights; warm, clean, slightly glossy finish.
+- HAIR: defined strand clumps with bright white glossy highlight bands near the crown, flowing tips.
+- BODY: tall slim adult proportions, about 8 heads tall, long legs, same height and build as each master.
+- COLOR: same saturation, warmth and skin tone as the masters.
+FORBIDDEN: realistic or semi-realistic rendering, 3D, painterly or watercolor texture, thick outlines, flat vector style, chibi, a different anime style, glow or bloom, redesigned faces, childlike proportions. If anything conflicts, the master images win.
+Characters are adult women aged 27–32. No earrings, necklaces or rings.
+
+STEP 0 — before drawing, reply in text only: (a) which references you can see, (b) your description of the master style using the traits above, (c) each heroine's identifying features. Wait for my "ok".
+STEP 1 — STYLE TEST: redraw ria_office_pose01_neutral_v001.png as exactly as possible (same outfit, pose and face, transparent background). Wait for my "ok". If I say "again", redraw until it matches the master.
+STYLE CHECK: whenever I say "style check", put your last image side by side with the matching master in your mind, list what differs (eyes, lines, shading, proportions) and redraw it.
+
+EVERY SPRITE: full body from the top of the head to the shoes, centered, vertical 2:3 canvas. TRANSPARENT background, PNG with alpha, crisp clean outline, no white halo, no gray edge, no drop shadow, no ground shadow, no floor line, nothing else in the image. (If transparency fails, use a solid pure green #00FF00 background with no shadows.)
+EACH HEROINE: image 1 = base (same standing pose, camera angle and proportions as her casual sprite, same face and hair as her master, NEW outfit below, neutral face). Images 2–8 = use image 1 as the exact base and change ONLY the facial expression; keep pose, body, outfit, hair, head position and size, lines, colors and canvas pixel-identical.
+
+HEROINE 1 — KANG RIA (very long wavy blonde high ponytail, blue scrunchie, straight bangs, blue eyes). Pose: one hand raised in a small wave.
+Outfit: sky-blue off-shoulder knit mini dress with long sleeves, fitted at the waist, sheer black pantyhose, white ankle boots.
+ria_special_pose01_neutral.png — bright closed-mouth smile
+ria_special_pose01_smile.png — wide cheerful smile showing teeth
+ria_special_pose01_blush.png — cheeks flushed, looking away shyly
+ria_special_pose01_laugh.png — eyes closed, laughing playfully
+ria_special_pose01_surprise.png — eyes wide, mouth open
+ria_special_pose01_sad.png — drooping brows with a forced small smile
+ria_special_pose01_serious.png — no smile, determined look
+ria_special_pose01_pout.png — puffed cheeks, sulking
+
+HEROINE 2 — BAEK JIHYUN (very long straight crimson hair falling down her back, side-parted bangs, reddish-brown eyes, sharp eyeliner). Pose: one hand on her hip.
+Outfit: deep wine-red long-sleeve wrap midi dress tied at the waist, sheer black pantyhose, black heeled ankle boots.
+jihyun_special_pose01_neutral.png — composed, almost expressionless
+jihyun_special_pose01_smile.png — only the corners of the mouth lifted slightly
+jihyun_special_pose01_blush.png — ears turning red, frozen and stiff
+jihyun_special_pose01_laugh.png — trying to hold back a laugh, lips pressed
+jihyun_special_pose01_surprise.png — eyebrows raised, a brief pause
+jihyun_special_pose01_sad.png — eyes lowered, mouth closed tight
+jihyun_special_pose01_serious.png — firm, steady look
+jihyun_special_pose01_pout.png — sideways look as if arms are crossed
+
+HEROINE 3 — CHA YUJIN (silver-white bob, one gold hairpin, thin round metal glasses always on, amber eyes, curvy adult figure). Pose: same as her casual sprite, no bag.
+Outfit: sage-green knee-length long-sleeve knit dress with a small ribbon collar, sheer pantyhose, brown low-heel ankle boots.
+yujin_special_pose01_neutral.png — slightly tense default look
+yujin_special_pose01_smile.png — shy small smile
+yujin_special_pose01_blush.png — eyes cast down, face bright red
+yujin_special_pose01_laugh.png — laughing while covering her mouth with one hand
+yujin_special_pose01_surprise.png — round eyes behind the glasses
+yujin_special_pose01_sad.png — eyes glistening, just before tears
+yujin_special_pose01_serious.png — brave, direct gaze
+yujin_special_pose01_pout.png — lips pushed out a little
+
+HEROINE 4 — HAN SEOYUN (long wavy dark plum hair, half-lidded grey-lavender eyes, beauty mark under her LEFT eye). Pose: one finger near her lips.
+Outfit: black satin long-sleeve blouse tucked into a lavender high-waist satin midi skirt, black lace-band thigh-highs with a garter just peeking below the hem, black pumps.
+seoyun_special_pose01_neutral.png — relaxed, eyes half-lidded
+seoyun_special_pose01_smile.png — teasing playful smile
+seoyun_special_pose01_blush.png — the teasing stops, a serious quiet blush
+seoyun_special_pose01_laugh.png — mischievous laugh as if teasing someone
+seoyun_special_pose01_surprise.png — eyes widen slightly
+seoyun_special_pose01_sad.png — no smile, looking far away
+seoyun_special_pose01_serious.png — no teasing, steady direct gaze
+seoyun_special_pose01_pout.png — half-closed eyes giving a sidelong glare
+
+Start with STEP 0.
+```
