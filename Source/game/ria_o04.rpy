@@ -48,6 +48,7 @@ label ria_o04_offer:
             d "[ri('응. 나도 아까부터 그러고 싶었어.', '네. 저도 아까부터 그러고 싶었어요.')]"
             "도현이 몸을 기울이기도 전에 리아가 입을 맞췄다. 창 아래로 마지막 열차가 지나가는 소리가 났다."
             $ remember("ria_o04_outcome", "motel")
+            $ event_play_text_scene("ria_o04:motel", r)
             scene bg plain with fade
         "손잡고 조금 더 걷는다.":
             d "[ri('나도 더 있고 싶어. 오늘은 손 잡고 조금만 더 걷고 싶어.', '저도 더 있고 싶어요. 오늘은 손 잡고 조금만 더 걷고 싶어요.')]"
