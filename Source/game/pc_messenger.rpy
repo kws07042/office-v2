@@ -48,6 +48,8 @@ init -1 python:
         return caption.split(" — ", 1)[1] if " — " in caption else ""
 
     def pc_choice_open():
+        if renpy.get_screen("pc_chat_screen"):
+            return True
         sc = renpy.get_screen("choice")
         return bool(sc and sc.scope.get("pc"))
 
@@ -199,3 +201,80 @@ screen pc_messenger_choice(items):
                 ysize 40 padding (14, 0) background silk("glass", "#FFFFFF", 0.14, 8)
                 text "온빛톡" style "desk_tiny" yalign 0.5
         text "오후 5:50" style "desk_tiny" color "#FFFFFF" xalign 1.0 yalign 0.5
+
+# ── 장면 속 사내 메신저 대화 ───────────────────────────────
+#   call pc_chat("jihyun", [("jihyun", "근무표 3쪽."), ("dohyun", "확인했어요.")])
+# 클릭(또는 스페이스·엔터)할 때마다 한 줄씩 나오고, 다 나온 뒤 한 번 더 누르면 닫힌다.
+default pc_chat_n = 1
+default pc_chat_test_hold = False
+
+label pc_chat(contact, rows, when="오후"):
+    $ pc_chat_n = 1
+    $ silk_sfx("phone")
+    call screen pc_chat_screen(contact, rows, when)
+    return
+
+screen pc_chat_screen(contact, rows, when="오후"):
+    modal True
+    zorder 40
+    $ info = dict((row[0], row) for row in PC_CONTACTS)[contact]
+    $ n = max(1, min(pc_chat_n, len(rows)))
+    $ more = n < len(rows)
+    # 자동 검사의 'advance'는 키를 한 번 보내고 다음 대사를 기다린다. 검사 중에는 한 번에 닫는다
+    # (화면을 한 줄씩 보는 검사는 pc_chat_test_hold를 켠다).
+    $ step = SetVariable("pc_chat_n", n + 1) if (more and (pc_chat_test_hold or not renpy.is_in_test())) else Return()
+    if renpy.is_skipping():
+        timer 0.05 action Return()
+    add Solid("#0E0A1680")
+    button:
+        xysize (1280, 720) background None action step
+    frame:
+        id "pc_chat_window"
+        xalign 0.5 ypos 70 xysize (760, 500) padding (0, 0)
+        background silk("glass", "#FFFFFF", 1.0, 8)
+        at ((silk_menu_in(0),) if silk_motion_on() else (silk_still,))
+        frame:
+            xysize (760, 38) padding (16, 0) background silk("glass", "#F3F3F5", 1.0, 8)
+            text "온빛톡" style "pc_text" size 14 color "#55555E" yalign 0.5
+            hbox:
+                xalign 1.0 yalign 0.5 spacing 22
+                add Solid("#77777F") xysize (11, 1) yalign 0.5
+                add silk("glass", "#FFFFFF", 0.0, 1, "#55555E") xysize (11, 11) yalign 0.5
+                text "×" style "pc_text" size 18 color "#55555E" yalign 0.5
+        frame:
+            ypos 38 xysize (760, 62) padding (18, 0) background Solid("#FFFFFF")
+            hbox:
+                yalign 0.5 spacing 12
+                fixed:
+                    xysize (40, 40)
+                    add pc_avatar(contact, 40)
+                    add silk("flat", "#FFFFFF", 7) xysize (14, 14) xpos 29 ypos 29
+                    add silk("flat", info[4], 5) xysize (10, 10) xpos 31 ypos 31
+                vbox:
+                    yalign 0.5
+                    hbox:
+                        spacing 8
+                        text info[1] style "pc_text" size 18
+                        text info[2] style "pc_small" yalign 1.0
+                    text info[3] style "pc_small" size 13
+        add Solid("#E2E2E6") ypos 100 xysize (760, 1)
+        frame:
+            ypos 101 xysize (760, 399) padding (24, 18, 24, 18) background Solid("#BCC9D8")
+            vbox:
+                xfill True spacing 10 yalign 1.0
+                for sender, body in rows[:n]:
+                    if sender == "dohyun":
+                        frame:
+                            xalign 1.0 xmaximum 480 padding (14, 9) background silk("glass", "#3E6FD8", 1.0, 12)
+                            text body style "pc_text" color "#FFFFFF" size 17
+                    else:
+                        frame:
+                            xmaximum 480 padding (14, 9) background silk("glass", "#FFFFFF", 1.0, 12)
+                            text body style "pc_text" size 17
+    textbutton ("다음" if more else "닫기"):
+        id "pc_next"
+        xalign 0.5 ypos 590
+        padding (22, 8) background silk("glass", "#FFFFFF", 0.9, 6) hover_background silk("glass", "#FFFFFF", 1.0, 6)
+        text_style "pc_text" text_size 15
+        action step
+    key "dismiss" action step

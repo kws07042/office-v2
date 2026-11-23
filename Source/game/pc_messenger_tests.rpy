@@ -5,6 +5,14 @@ label test_pc_c08_entry:
     call c08
     return
 
+label test_pc_chat_entry:
+    scene bg plain
+    $ location = "월요일 오후 · 사무실"
+    call pc_chat("seoyun", [("seoyun", "안 가?"), ("dohyun", "...가도 되는지 모르겠어서요."), ("seoyun", "가도 되는지 묻고 갈 거면 평생 못 가. 물이나 갖다 놔. 말은 안 해도 돼.")])
+    $ pc_chat_done = True
+    "끝."
+    return
+
 testsuite pc_messenger_checks:
     before testcase:
         if not screen "main_menu":
@@ -36,6 +44,31 @@ testsuite pc_messenger_checks:
         click id "pc_extra_0"
         advance until screen "choice" timeout 10.0
         assert eval not renpy.get_screen("choice").scope.get("pc")
+
+    testcase pc_chat_advances_line_by_line:
+        $ pc_chat_done = False
+        $ pc_chat_test_hold = True
+        run Start("test_pc_chat_entry")
+        advance until screen "pc_chat_screen" timeout 20.0
+        assert eval pc_chat_n == 1
+        keysym "dismiss"
+        pause 0.2
+        assert eval pc_chat_n == 2
+        click id "pc_next"
+        pause 0.4
+        screenshot "pc-messenger-3-chat.png"
+        assert eval pc_chat_n == 3
+        advance until eval pc_chat_done timeout 10.0
+        assert eval not renpy.get_screen("pc_chat_screen")
+        $ pc_chat_test_hold = False
+
+    testcase pc_chat_single_advance_in_tests:
+        $ pc_chat_done = False
+        $ pc_chat_test_hold = False
+        run Start("test_pc_chat_entry")
+        advance until screen "pc_chat_screen" timeout 20.0
+        advance
+        assert eval pc_chat_done
 
     teardown:
         exit
