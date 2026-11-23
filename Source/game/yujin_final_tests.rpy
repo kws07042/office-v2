@@ -93,6 +93,10 @@ testsuite yujin_final_checks:
         if eval (case // 5) % 3 == 0:
             advance until screen "choice"
             click expression yujin_test_choice(case % 3)
+            if eval case % 3 == 1:
+                advance until screen "choice"
+                click expression ["바니걸", "간호사", "메이드"][case % 3 if case < 3 else (case // 3) % 3]
+                assert eval memory.get("yujin_r15_costume") in ("bunny", "nurse", "maid")
             advance until screen "event_cut"
             assert eval renpy.get_screen("event_cut").scope["event_id"] == "yujin_r15"
             assert eval renpy.get_screen("event_cut").scope["variant"] == ("cosplay" if case % 3 == 1 else "home")
