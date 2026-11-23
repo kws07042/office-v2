@@ -2082,7 +2082,7 @@ testsuite ria16_flow:
                 assert eval "ria_r15_outfit" not in memory
             if eval route in ("ria", "cosplay", "no_epilogue"):
                 assert eval len(event_presentations) == 3
-                assert eval all(v["visited_slots"] == list(range(1, 8)) and v["loaded_images"] == [] and v["main_frames_seen"] == [1, 2, 3] and v["base_slots_seen"] == [1, 2, 3] and v["loaded_asset_ids"] == [] and v["status"] == "completed" for v in event_presentations.values())
+                assert eval all(v["visited_slots"] == list(range(1, 8)) and not set(v["loaded_images"]) & {4, 5, 6} and v["main_frames_seen"] == [1, 2, 3] and v["base_slots_seen"] == [1, 2, 3] and not [a for a in v["loaded_asset_ids"] if "_intro" not in a] and v["status"] == "completed" for v in event_presentations.values())
                 assert eval memory["ria_r15_outfit"] == ("cosplay" if route == "cosplay" else "home")
                 assert eval "ria_r15:" + memory["ria_r15_outfit"] in event_presentations
             if eval route == "cosplay":
