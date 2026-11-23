@@ -5,6 +5,8 @@ default event_intro_expression_ready = False
 default event_main_reached = False
 
 init python:
+    # R15 코스프레: 공통 두 벌(바니걸·간호사) + 히로인 전용 한 벌(리아 치어리더, 지현 차이나드레스, 유진 메이드, 서윤 여경찰)
+    COSTUME_NAMES = {"bunny": "바니걸", "nurse": "간호사", "cheer": "치어리더", "qipao": "차이나드레스", "maid": "메이드", "police": "여경찰"}
     import json
     with renpy.file("event_assets.json") as event_manifest_file:
         event_assets = json.load(event_manifest_file)
@@ -54,6 +56,8 @@ screen event_cut(event_id, variant, cursor):
     $ has_art = bool(resolved and resolved["path"])
     $ part_name = {"intro": "도입", "main": "본장면", "after": "이후 대화"}[page["kind"]]
     $ outfit_name = {"casual": "익숙한 사복", "special": "특별한 날의 옷", "home": "편한 생활복", "cosplay": "선택한 특별 의상"}[variant]
+    if variant == "cosplay":
+        $ outfit_name = COSTUME_NAMES.get(memory.get(event_id.split("_")[0] + "_r15_costume"), outfit_name)
     if page["kind"] == "intro" and cursor == 2 and not event_intro_expression_ready:
         timer 0.65 action Function(event_show_intro_expression, event_id, variant, cursor)
     add Solid("#292326")

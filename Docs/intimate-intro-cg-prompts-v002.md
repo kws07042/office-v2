@@ -8,7 +8,7 @@ v001 결과(`codex/intro-cgs-v001`)에서 원근이 깨진 그림(02·03·06·13
 
 '특별한 날의 옷'(R12)은 대본에 모양이 정해져 있지 않다. 이 문서에서 처음 정한다(지현·유진·서윤은 대본대로 소매가 있는 옷). 사용자 확인이 필요하다.
 
-R15 코스프레 버전은 지현 탐정 재킷과 서윤 마술사 재킷만 의상이 정해져 있어 두 장을 추가했다. 리아·유진의 코스프레 의상은 미정이다.
+R15 코스프레는 2026-11-23 사용자 결정으로 바꿨다. 공통 두 벌(바니걸·간호사)과 히로인 전용 한 벌(리아 치어리더, 지현 차이나드레스, 유진 메이드, 서윤 여경찰) 중 하나를 고른다. 예전 탐정·마술사 재킷은 폐기한다. 각 장면의 대사는 대본의 의상 선택 대사를 그대로 쓴다.
 
 결과는 후보다. 검수와 사용자 승인 전에는 게임에 연결하지 않는다.
 
@@ -57,7 +57,7 @@ CHARACTERS (adults 27–32, mature proportions, never childlike; no earrings/nec
 ONE COHERENT SCENE, NOT A COMPOSITE. 16:9, 1920x1080, no text/logos/UI.
 PERSPECTIVE RULES: single camera at standing eye level (about 1.4 m), 35 mm lens, one consistent horizon and vanishing point for the room and the character. The character's size must match the furniture (mattress top reaches her knee when she stands). Show contact: hips sink into the mattress, feet flat on the floor with soft contact shadows. Nothing floats, nothing clips through the bed. Legs angled sideways, never stretched toward the camera.
 THE VIEWER is her boyfriend Dohyun: at most his hand and shirt cuff at the frame edge; no face, no body.
-CONTENT LIMIT: she is half-undressed from the outfit named in each scene, with her bra and panties visible and fully covering; not see-through. No nudity, no nipples, no sexual act, no explicit pose. Romantic, a moment before an intimate scene.
+CONTENT LIMIT (scenes 1–13): she is half-undressed from the outfit named in each scene, with her bra and panties visible and fully covering; not see-through. No nudity, no nipples, no sexual act, no explicit pose. Romantic, a moment before an intimate scene.
 
 ROOMS (draw once, then reuse the same room for that heroine):
 - RIA BEDROOM: warm one-room apartment, wooden bed with white duvet and a pink knit throw, bedside table with a fabric lamp and pink flowers, gingham curtains, hanging plants, open sliding door to a small living room with a sofa.
@@ -79,8 +79,19 @@ SCENES — character · scene · moment from the script → outfit / pose / expr
 11 SEOYUN · Saturday evening, she ran back to stop him from leaving (SEOYUN STUDIO BACK ROOM; through the door, two teacups on the studio table). "I'll take that answer without joking. I want it too." Beige cardigan dropped on the floor, grey knit maxi dress pulled down off both shoulders to her waist, showing a dusty plum lace bra. Standing at the foot of the bed facing the viewer, one hand holding the dress at her waist. No teasing: serious, earnest, flushed. An old paperback with a pencilled date on the bedside table.
 12 SEOYUN · Friday night; she avoided answering his question about going public, but wants to stay with him (SEOYUN STUDIO BACK ROOM). Special outfit: black satin long-sleeve blouse fully unbuttoned over a black lace bra, lavender high-waist midi skirt, her garter belt and black lace-band thigh-highs visible at the hem. Sitting on the bed hugging her knees, chin on her knees. Soft, slightly guilty smile, eyes up at the viewer. A glass of water on the bedside table.
 13 SEOYUN · night after she ended things with her ex; nothing left to hide (SEOYUN STUDIO BACK ROOM, warm lamp). Home clothes she keeps at the studio: champagne satin pajama shirt unbuttoned over a lavender silk bra, matching satin shorts. Lying back on the pillows, one arm behind her head, knees together and tilted to one side (not toward the camera). The most relaxed open smile.
-14 JIHYUN · R15 costume version (JIHYUN BEDROOM). "I wanted to show you this." Brown tweed detective jacket with a short cape, worn open over a black lace bra and panties, magnifying glass in hand. Standing by the bed, one hand on her hip. Proud, playful, slightly embarrassed.
-15 SEOYUN · R15 costume version (SEOYUN STUDIO BACK ROOM). "Don't expect flowers from my sleeve." Black magician tailcoat jacket with red lining, open over a black lace bra and panties, garter belt and lace thigh-highs, small top hat tilted. Sitting on the bed edge, legs crossed, a playing card between two fingers. Teasing smile with a wink.
+COSTUME SCENES (R15, after making up). Same room as that heroine's scene above. Each costume is a fully covering adult costume (leotard, dress or uniform), not see-through, no nudity. Professional-adult costume look, nothing school-like.
+14 RIA · bunny girl (RIA BEDROOM). "I didn't pick the bunny ears... just kidding, I did." Blue satin bunny suit, white bunny ears, white wrist cuffs and bow tie, sheer black pantyhose. Standing in the bedroom doorway, one hand on the door frame, other hand making a little bunny-ear gesture. Playful grin, deep blush.
+15 RIA · nurse (RIA BEDROOM). "You walked all day. I'll do the check-up." White-and-pink mini nurse dress, small nurse cap, white thigh-high stockings, toy stethoscope. Sitting on the bed edge, leaning toward the viewer holding the stethoscope out. Teasing smile.
+16 RIA · cheerleader (RIA BEDROOM). "My uniform from the sports pop-up event! Tonight I'm only cheering for you." Blue-and-white pro-team style cheer crop top and pleated skirt, no logos, blue pom-poms, high ponytail with the blue scrunchie. Standing by the bed, one pom-pom raised. Big bright smile.
+17 JIHYUN · bunny girl (JIHYUN BEDROOM). "I never even wore this at the event. Laugh and I change back right now." Black satin bunny suit with crimson trim, black bunny ears, sheer black pantyhose, cuffs and bow tie. Standing by the bed, arms crossed, chin up. Proud but blushing to the ears.
+18 JIHYUN · nurse (JIHYUN BEDROOM). "You always refilled my water. Tonight I check on you. Results first." Classic white nurse dress, nurse cap, white stockings, clipboard and pen. Standing, clipboard against her hip, pen pointed at the viewer. Confident, faint smile.
+19 JIHYUN · china dress (JIHYUN BEDROOM). "The slit is normally this high. ...I picked it for you to look at, so look." Deep crimson silk cheongsam with gold embroidery and a high side slit. Sitting on the bed edge, legs crossed so the slit shows her leg, face turned aside. Composed expression breaking into a shy blush.
+20 YUJIN · bunny girl (YUJIN ROOM, dim desk lamp). "This was at the very bottom of the box... but you picked it." Cream-white satin bunny suit with gold trim, white ears, sheer pantyhose, glasses on. Standing by the bed, both hands clasped in front, knees together. Very embarrassed, looking up through her glasses.
+21 YUJIN · nurse (YUJIN ROOM). "I can keep my glasses on, right? So I can see your face." Pastel pink nurse dress, nurse cap, white stockings, glasses on. Sitting on the bed, clipboard hugged to her chest. Shy small smile.
+22 YUJIN · maid (YUJIN ROOM). "A uniform from the café collab. Y-your order... no, that's not it." Classic black-and-white maid dress with frilly apron and headdress, black thigh-highs, glasses on. Standing by the bed in a small curtsy, holding her skirt. Flustered, mouth open mid-word.
+23 SEOYUN · bunny girl (SEOYUN STUDIO BACK ROOM). "Knew you'd pick this one. Laugh and I take it off again... you're laughing." Deep purple satin bunny suit, black ears, sheer black pantyhose, cuffs and bow tie. Leaning against the bedpost, one hand on her hip. Teasing half-lidded smile.
+24 SEOYUN · nurse (SEOYUN STUDIO BACK ROOM). "Tell me where it hurts. Tonight I'll take care of you, no jokes." White nurse dress with lavender trim, nurse cap, her garter belt and black lace thigh-highs, stethoscope around her neck. Sitting on the bed, patting the space beside her. Gentle sincere smile.
+25 SEOYUN · police (SEOYUN STUDIO BACK ROOM). "Dohyun, answer only what I ask. Did you miss me today?" Navy police-style uniform jacket and mini skirt, peaked cap, toy handcuffs dangling from one finger, black thigh-highs. Standing by the bed, weight on one hip. Smirking, eyes narrowed playfully.
 
 Start with scene 1.
 ```
@@ -103,5 +114,15 @@ Start with scene 1.
 | 11 | `11_seoyun_r07_casual_intro.png` | seoyun_r07 |
 | 12 | `12_seoyun_r12_special_intro.png` | seoyun_r12 |
 | 13 | `13_seoyun_r15_home_intro.png` | seoyun_r15 home |
-| 14 | `14_jihyun_r15_cosplay_intro.png` | jihyun_r15 cosplay |
-| 15 | `15_seoyun_r15_cosplay_intro.png` | seoyun_r15 cosplay |
+| 14 | `14_ria_r15_bunny_intro.png` | ria_r15 cosplay · bunny |
+| 15 | `15_ria_r15_nurse_intro.png` | ria_r15 cosplay · nurse |
+| 16 | `16_ria_r15_cheer_intro.png` | ria_r15 cosplay · cheer |
+| 17 | `17_jihyun_r15_bunny_intro.png` | jihyun_r15 cosplay · bunny |
+| 18 | `18_jihyun_r15_nurse_intro.png` | jihyun_r15 cosplay · nurse |
+| 19 | `19_jihyun_r15_qipao_intro.png` | jihyun_r15 cosplay · qipao |
+| 20 | `20_yujin_r15_bunny_intro.png` | yujin_r15 cosplay · bunny |
+| 21 | `21_yujin_r15_nurse_intro.png` | yujin_r15 cosplay · nurse |
+| 22 | `22_yujin_r15_maid_intro.png` | yujin_r15 cosplay · maid |
+| 23 | `23_seoyun_r15_bunny_intro.png` | seoyun_r15 cosplay · bunny |
+| 24 | `24_seoyun_r15_nurse_intro.png` | seoyun_r15 cosplay · nurse |
+| 25 | `25_seoyun_r15_police_intro.png` | seoyun_r15 cosplay · police |

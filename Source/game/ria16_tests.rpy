@@ -275,6 +275,10 @@ testsuite ria16:
         if eval (case // 3) & 4:
             click expression ("코스프레 의상을 같이 고르자고 한다." if (case // 3) & 1 else "지금의 편한 생활복이 좋다고 말한다.") until not screen "choice"
             advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
+            if eval (case // 3) & 1 and renpy.get_screen("choice") is not None and any(i.caption == "치어리더" for i in renpy.get_screen("choice").scope["items"]):
+                click "치어리더" until not screen "choice"
+                assert eval memory.get("ria_r15_costume") == "cheer"
+                advance until eval renpy.get_screen("choice") is not None or renpy.get_screen("event_cut") is not None or renpy.get_screen("office_phone") is not None
             if screen "office_phone":
                 click id "phone_next" until eval not renpy.get_screen("office_phone") or bool(renpy.get_screen("office_phone").scope.get("replies"))
                 if screen "office_phone":
