@@ -49,6 +49,8 @@ init -5 python:
         return office_ui_surface(aliases[kind], radius=6)
 
     def phone_status_time(moment):
+        if "퇴근 직후" in moment:
+            return "오후 6:04"
         if any(word in moment for word in ("아침", "오전")):
             return "오전 9:41"
         if any(word in moment for word in ("저녁", "밤", "퇴근")):

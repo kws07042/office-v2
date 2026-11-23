@@ -702,7 +702,7 @@ label c08:
     $ progression_enter("c08")
     $ progression_checkpoint("c08")
     $ chapter = "C08 · 다음 약속의 상대"
-    $ location = "그 주의 퇴근길"
+    $ location = "그 주 · 퇴근 십 분 전, 사무실 자리"
     "달력은 10월의 마지막 장에 와 있었다. 회사 앞 은행나무가 노랗게 떨어지기 시작했고, 퇴근길 바람이 부쩍 차가워졌다."
     "피칭까지 남은 날이 달력에서 하나씩 지워졌다. 각자의 퇴근 시간도 조금씩 엇갈리기 시작했다."
     "리아는 오늘도 제일 먼저 웃었고, 제일 늦게까지 현장 얘기를 했다. 가끔 휴대폰을 보는 얼굴이 웃지 않는다는 건 가까이 앉아야 보였다."
@@ -713,12 +713,14 @@ label c08:
     if sched_top:
         $ sched_top_name = SCHED_NAMES[sched_top]
         "돌아보면 이번 달, 점심이든 야근이든 퇴근길이든 가장 자주 같이 있었던 사람은 [sched_top_name] 쪽이었다."
+    "퇴근 십 분 전. 모니터 구석에 사내 메신저가 떠 있었다. 네 사람의 이름 옆에 상태 메시지가 하나씩 붙어 있었다."
     dn "네 사람 다 뭔가를 조금씩 감추고 있다. 그걸 알아챌 만큼은 이 팀을 봤고, 그중 한 사람은 더 오래 보고 싶어졌다."
     dn "다음 약속, 누구한테 먼저 말을 꺼내 볼까."
     "이번 선택은 앞으로 더 알아갈 상대를 정합니다. 교제는 이후 서로의 마음을 확인한 뒤 시작합니다."
     $ progression_enter("c08.choice01")
     $ progression_checkpoint("c08.choice01")
-    menu:
+    $ pc_peek = None
+    menu (pc=True):
         "강리아와 다음 약속 잡기 — 친구 같은 동갑, 장난 속에서 특별해지는 연애.":
             $ active_route = "ria"
         "백지현과 다음 약속 잡기 — 단정한 연상과 의견을 주고받으며 가까워지는 연애.":
@@ -738,20 +740,24 @@ label c08:
                     jump c08
     $ persistent.common_seen = True
     $ remember("c08_route",active_route)
+    if active_route in ("ria", "jihyun", "yujin", "seoyun"):
+        dn "회사 메신저 입력창에 문장을 반쯤 쳤다가 지웠다. 이건 회사 메신저로 할 말이 아니었다."
+        $ location = "퇴근 직후 · 퇴근길에서"
+        "퇴근 시간이 되자마자 회사를 나왔다. 횡단보도 앞에서 휴대폰을 꺼냈다."
     if active_route == "ria":
         if c07_person == "ria":
-            d "[ri('지난번엔 짧아서 아쉬웠어. 다음엔 좀 더 같이 있을래?', '지난번엔 짧아서 아쉬웠어요. 다음엔 좀 더 같이 있을래요?')]"
+            call phone_deliver("c08_invite_d", "dohyun", ri("지난번엔 짧아서 아쉬웠어. 다음엔 좀 더 같이 있을래?", "지난번엔 짧아서 아쉬웠어요. 다음엔 좀 더 같이 있을래요?"), contact="ria")
         else:
-            d "[ri('다음에 퇴근하고 따로 이야기할래?', '다음에 퇴근하고 따로 이야기할래요?')]"
-        r "[ri('좋아! 다음 코스는 ‘퇴근 후 2차 토크’로 예약~ 시간 맞춰 보자.', '좋아요! 다음 코스는 ‘퇴근 후 2차 토크’로 예약이에요~ 시간 맞춰 봐요.')]"
+            call phone_deliver("c08_invite_d", "dohyun", ri("다음에 퇴근하고 따로 이야기할래?", "다음에 퇴근하고 따로 이야기할래요?"), contact="ria")
+        call phone_deliver("c08_invite_r", "ria", ri("좋아! 다음 코스는 ‘퇴근 후 2차 토크’로 예약~ 시간 맞춰 보자.", "좋아요! 다음 코스는 ‘퇴근 후 2차 토크’로 예약이에요~ 시간 맞춰 봐요."), contact="ria")
     elif active_route == "jihyun":
-        d "다음엔 일 얘기 말고 따로 이야기할 시간 있으실까요?"
-        j "좋아. 내 빈 시간 보내 줄게. 도현 씨 시간도 올려. 결재는 빨리 할게."
+        call phone_deliver("c08_invite_d", "dohyun", "다음엔 일 얘기 말고 따로 이야기할 시간 있으실까요?", contact="jihyun")
+        call phone_deliver("c08_invite_r", "jihyun", "좋아. 내 빈 시간 보내 줄게. 도현 씨 시간도 올려. 결재는 빨리 할게.", contact="jihyun")
     elif active_route == "yujin":
-        d "다음에 유진 씨가 보고 싶은 곳을 같이 가 보고 싶어요."
-        y "좋아요! 후보 몇 개 골라 둘게요. ...도현 씨가 가고 싶은 데도 하나는 꼭 알려 주세요."
+        call phone_deliver("c08_invite_d", "dohyun", "다음에 유진 씨가 보고 싶은 곳을 같이 가 보고 싶어요.", contact="yujin")
+        call phone_deliver("c08_invite_r", "yujin", "좋아요! 후보 몇 개 골라 둘게요. ...도현 씨가 가고 싶은 데도 하나는 꼭 알려 주세요.", contact="yujin")
     elif active_route == "seoyun":
-        d "다음 질문은 퇴근하고 따로 해도 될까요?"
-        s "오, 이번엔 나도 질문 준비해 간다? 날짜부터 맞춰 보자."
+        call phone_deliver("c08_invite_d", "dohyun", "다음 질문은 퇴근하고 따로 해도 될까요?", contact="seoyun")
+        call phone_deliver("c08_invite_r", "seoyun", "오, 이번엔 나도 질문 준비해 간다? 날짜부터 맞춰 보자.", contact="seoyun")
     $ progression_note_ending()
     return

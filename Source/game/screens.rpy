@@ -262,9 +262,11 @@ screen office_choice_list(items):
         for i, item in enumerate(items):
             use silk_choice_item(item, i)
 
-screen choice(items):
+screen choice(items, pc=False):
     zorder 30
-    if len(items) <= 3:
+    if pc:
+        use pc_messenger_choice(items)
+    elif len(items) <= 3:
         if _history_list:
             use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
         if office_ui_long_choices(items):
@@ -410,7 +412,7 @@ screen silk_quick_item(label, icon, target, ring=False):
 
 screen quick_menu():
     zorder 100
-    if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
+    if not main_menu and not cream_menu_open() and not pc_choice_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         if not event_cut_active and not dialogue_cg_mode:
             hbox:
                 xanchor 1.0 xpos 1196 ypos 676 spacing 0
