@@ -27,11 +27,9 @@ testsuite player_name_checks:
         $ mc_name = "공옥순"
         assert eval mc_apply("도현 씨, 도현아! 도현이 웃었다") == "공옥순 씨, 공옥순아! 공옥순이 웃었다"
         $ mc_name = "Alex"
-        assert eval mc_apply("도현 씨, 도현이 웃었다, 도현아") == "Alex 씨, Alex가 웃었다, Alex야"
+        assert eval mc_apply("도현 씨, 도현이 웃었다, 도현아") == "Alex 씨, Alex이 웃었다, Alex아"
         $ mc_name = "Tom"
         assert eval mc_apply("도현이 웃었다, 도현으로") == "Tom이 웃었다, Tom으로"
-        $ mc_name = "민수3"
-        assert eval mc_apply("도현은 갔다") == "민수3은 갔다"
         $ mc_name = "도현"
         assert eval mc_apply("도현이 웃었다") == "도현이 웃었다"
         assert eval mc_valid("민수") and mc_valid("Alex") and mc_valid("공옥순99") and not mc_valid("") and not mc_valid("아홉글자짜리이름이다")

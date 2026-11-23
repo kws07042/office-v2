@@ -16,23 +16,10 @@ init -10 python:
     MC_MAX_LEN = 8
     _MC_PATTERN = _mc_re.compile(r"도현(이었|으로|이(?=[^가-힣]|$)|은(?=[^가-힣]|$)|을(?=[^가-힣]|$)|과(?=[^가-힣]|$)|아(?=[^가-힣]|$))?")
 
-    # 한글이 아닌 끝 글자는 읽는 소리로 받침을 짐작한다. 숫자는 한국어로 읽고(0 영, 1 일, 3 삼 ...),
-    # 영어는 l·m·n·ng로 끝나면 받침이 있는 것으로 본다(Tom이, Alex가, Mike가).
-    _MC_DIGIT = {"0": "영", "1": "일", "2": "이", "3": "삼", "4": "사", "5": "오", "6": "육", "7": "칠", "8": "팔", "9": "구"}
-
+    # 한글이 아닌 글자로 끝나면(영어·숫자 등) 받침이 있는 것으로 보고 이/은/을/아를 쓴다.
     def _mc_last_sound(word):
-        word = (word or MC_DEFAULT).rstrip()
-        ch = word[-1]
-        if "가" <= ch <= "힣":
-            return ch
-        if ch in _MC_DIGIT:
-            return _MC_DIGIT[ch]
-        low = word.lower()
-        if low.endswith("ng") or low[-1:] in ("m", "n"):
-            return "안"
-        if low[-1:] == "l":
-            return "알"
-        return "아"
+        ch = (word or MC_DEFAULT).rstrip()[-1]
+        return ch if "가" <= ch <= "힣" else "안"
 
     def mc_has_batchim(word):
         ch = _mc_last_sound(word)
