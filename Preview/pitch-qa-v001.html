@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>피칭 질의응답 시안</title>
+<link rel="stylesheet" href="local-fonts.css">
+<style>
+/* 레이아웃: 1280×720 게임 무대 하나. 위 = 질문, 아래 = 근거/팀원 패, 오른쪽 = 지현. 단일 톤으로 고정한 게임 화면. */
+:root{
+  --ink:#3d3345; --sub:#766b7e; --accent:#705080; --accent-d:#56396a; --line:#e4dce9;
+  --paper:#fffdfa; --soft:#f3eef7; --cream:#fff8ef; --good:#2f7a3b; --bad:#b3123f; --gold:#c98a2e;
+  --page:#eee9f0; --stage:#2b2233;
+  --display:"Gowun Dodum","Noto Sans KR",sans-serif; --body:"Pretendard","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--page)}
+body{margin:0;color:var(--ink);font-family:var(--body)}
+button{font:inherit;cursor:pointer;border:0;color:inherit;background:none}
+button:focus-visible{outline:3px solid #9672ae;outline-offset:2px}
+button:disabled{cursor:default}
+.preview{max-width:1440px;margin:auto;padding-block:18px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.bar strong{font-size:18px}.bar small{color:var(--sub);font-size:13px;margin-left:10px}
+.bar nav{display:flex;gap:4px;background:var(--paper);padding:4px;border-radius:12px}
+.bar nav button{padding:7px 13px;border-radius:8px;color:var(--sub);font-size:14px}
+.bar nav button:hover{background:#eee4f5;color:#5f3d70}
+.wrap{position:relative;width:100%;overflow:hidden;border-radius:16px;box-shadow:0 12px 40px #39234418;background:var(--stage)}
+.stage{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0;overflow:hidden;
+  background:url("../Source/game/images/bg/bg_client_hall.jpg") center/cover}
+.stage::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#2a1f33cc 0%,#2a1f3399 62%,#2a1f3330 100%)}
+.note{font-size:13px;color:var(--sub);margin:10px 2px 0;line-height:1.6}
+
+/* 위쪽 상태 */
+.place{position:absolute;left:32px;top:22px;display:flex;gap:10px;align-items:center}
+.pill{background:#ffffff1f;color:#f6eefb;border:1px solid #ffffff33;border-radius:999px;padding:6px 14px;font-size:14px}
+.pill b{font-weight:500;color:#fff}
+.meters{position:absolute;right:300px;top:20px;display:flex;gap:18px;align-items:center;color:#f6eefb;font-size:13px}
+.gauge{display:flex;align-items:center;gap:10px}
+.gauge .track{width:220px;height:12px;border-radius:7px;background:#ffffff26;overflow:hidden}
+.gauge .fill{height:100%;width:50%;border-radius:7px;background:linear-gradient(90deg,#c9a4dc,#f2c97a);transition:width .6s ease}
+.gauge output{font-variant-numeric:tabular-nums;min-width:28px;font-size:15px;color:#fff}
+.bond{letter-spacing:3px;color:#f7b8cb;font-size:16px}
+.delta{position:absolute;right:300px;top:46px;font-size:14px;font-weight:500;opacity:0;transition:opacity .2s}
+.delta.on{opacity:1}.delta.up{color:#bff0c5}.delta.down{color:#ffc2cf}
+
+/* 질문판 */
+.q{position:absolute;left:32px;top:62px;width:860px;height:250px;background:var(--paper);border-radius:22px;padding:20px 26px 22px;
+  box-shadow:0 10px 30px #1a102033}
+.who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--sub);margin-bottom:10px}
+.who i{width:34px;height:34px;border-radius:50%;background:#3d3345;color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px}
+.who i.jh{background:#7a2b3a}.who i.dh{background:var(--accent)}.who i.nr{background:#cfc4d6;color:var(--ink)}
+.who b{font-weight:500;color:var(--ink);font-size:16px}
+.q p{margin:0;font-size:22px;line-height:1.6;text-wrap:pretty}
+.q p.narr{font-size:19px;color:#5b5063}
+.q .next{position:absolute;right:20px;bottom:16px;background:var(--accent);color:#fff;border-radius:12px;padding:9px 18px;font-size:15px}
+.q .next:hover{background:var(--accent-d)}
+.stmt{display:flex;flex-direction:column;gap:3px;margin-top:0}
+.stmt button{text-align:left;font-size:18px;line-height:1.45;padding:4px 12px;border-radius:12px;border:1px dashed transparent;display:flex;gap:10px}
+.stmt button span{color:var(--sub);font-size:14px;margin-top:3px}
+.stmt button:hover{background:var(--soft);border-color:#c8b6d6}
+.stmt button.sel{background:#f6e6c8;border:1px solid var(--gold)}
+.stmt .tail{font-size:18px;padding:3px 12px;color:var(--ink)}
+.tip{margin-top:6px;font-size:13px;color:var(--accent);padding-left:12px}
+
+/* 아래 패 */
+.deck{position:absolute;left:32px;top:326px;width:860px;height:378px;background:#fffdfaf2;border-radius:22px;padding:14px 18px 16px;
+  box-shadow:0 10px 30px #1a102033;transition:opacity .2s}
+.deck.off{opacity:.45;pointer-events:none}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.tabs button{padding:8px 14px 10px;font-size:16px;color:var(--sub);border-bottom:3px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+.tabs .hint{margin-left:auto;align-self:center;font-size:13px;color:var(--sub)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ev{position:relative;text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 13px 10px;height:112px;
+  display:flex;flex-direction:column;gap:3px;transition:transform .12s,box-shadow .12s,border-color .12s}
+.ev:hover{transform:translateY(-2px);box-shadow:0 6px 14px #4b2a5f14}
+.ev.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.ev .k{font-size:12px;color:var(--sub);display:flex;gap:6px;align-items:center}
+.ev .k em{font-style:normal;padding:1px 7px;border-radius:7px;background:var(--soft);color:var(--accent)}
+.ev .k em.pv{background:#fbe3ea;color:#a3375a}
+.ev b{font-weight:500;font-size:16px}
+.ev small{font-size:13px;line-height:1.45;color:#5b5063}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mate{position:relative;text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;height:234px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:3px;transition:transform .12s,border-color .12s}
+.mate:hover{transform:translateY(-2px)}
+.mate.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.mate .face{position:absolute;left:50%;top:-6px;width:220px;transform:translateX(-50%);
+  -webkit-mask-image:linear-gradient(#000 55%,transparent 80%);mask-image:linear-gradient(#000 55%,transparent 80%)}
+.mate b{position:relative;font-weight:500;font-size:18px}
+.mate small{position:relative;font-size:13px;color:var(--sub)}
+.mate .sp{position:relative;align-self:flex-start;font-size:12px;padding:2px 8px;border-radius:8px;background:var(--soft);color:var(--accent)}
+.foot{position:absolute;left:18px;right:18px;bottom:14px;display:flex;align-items:center;gap:12px}
+.foot .pick{font-size:15px;color:var(--sub)}
+.foot .pick b{font-weight:500;color:var(--ink)}
+.go{margin-left:auto;background:var(--accent);color:#fff;border-radius:14px;padding:12px 26px;font-size:17px}
+.go:hover:not(:disabled){background:var(--accent-d)}
+.go:disabled{opacity:.4}
+
+/* 지현 */
+.host{position:absolute;right:-30px;top:44px;width:400px;height:700px;pointer-events:none}
+.host img{position:absolute;left:0;top:0;width:400px;transition:opacity .18s}
+.aside{position:absolute;right:24px;bottom:22px;width:250px;background:#fffdfaee;border-radius:16px;padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);
+  box-shadow:0 8px 22px #1a102033;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
+.aside.on{opacity:1;transform:none}
+.aside small{display:block;font-size:12px;color:#a3375a;margin-bottom:2px}
+
+/* 결과 */
+.modal{position:absolute;inset:0;background:#2a1f33d9;display:grid;place-items:center;z-index:20}
+.sheet{width:820px;background:var(--paper);border-radius:22px;overflow:hidden;display:flex;box-shadow:0 20px 50px #0005}
+.sheet .side{width:260px;flex:none;background:var(--soft);position:relative;overflow:hidden}
+.sheet .side img{position:absolute;left:-118px;top:-8px;width:500px}
+.sheet .body{padding:26px 28px;flex:1;display:flex;flex-direction:column;gap:12px}
+.stamp{align-self:flex-start;font-family:var(--display);font-size:15px;padding:4px 12px;border-radius:9px;color:#fff;background:var(--good)}
+.stamp.mid{background:var(--gold)}.stamp.low{background:var(--accent)}
+.sheet h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0;text-wrap:balance}
+.sheet p{margin:0;font-size:16px;line-height:1.65}
+.log{font-size:14px;color:var(--sub);line-height:1.8;padding:12px 14px;background:var(--soft);border-radius:12px}
+.log b{font-weight:500;color:var(--ink)}
+.after{font-size:14px;color:var(--accent);line-height:1.6}
+.row{display:flex;gap:10px}
+.btn{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-size:15px}
+.btn:hover{background:#eee4f5}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.main:hover{background:var(--accent-d)}
+.flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 40% 30%,#ffe9b066,transparent 60%);opacity:0}
+.flash.on{animation:fl .6s ease-out}
+@keyframes fl{0%{opacity:1}100%{opacity:0}}
+.q.shake{animation:sh .35s}
+@keyframes sh{20%{transform:translateX(-6px)}50%{transform:translateX(5px)}80%{transform:translateX(-3px)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="preview">
+  <div class="bar">
+    <div><strong>피칭 질의응답 · 업무 미니게임 시안 v001</strong><small>브라우저 시안 · 실제 게임 아님 · 지현 루트 피칭 당일 기준 · 대사 일부 임시</small></div>
+    <nav><button id="restart">처음부터</button><button id="skipIntro">도입 건너뛰기</button></nav>
+  </div>
+  <div class="wrap" id="wrap">
+    <div class="stage" id="stage">
+      <div class="place"><span class="pill">피칭 당일 · 클라이언트사 대회의실</span><span class="pill" id="qno">도입</span></div>
+      <div class="meters">
+        <div class="gauge"><span>심사석 분위기</span><div class="track"><div class="fill" id="fill"></div></div><output id="mood">50</output></div>
+        <div><span>지현과 호흡 </span><span class="bond" id="bond">♡♡♡</span></div>
+      </div>
+      <div class="delta" id="delta"></div>
+
+      <section class="q" id="q" aria-live="polite"></section>
+
+      <section class="deck off" id="deck" aria-label="답하는 방법">
+        <div class="tabs" role="tablist">
+          <button role="tab" id="tab-ev" aria-selected="true">근거 자료 <span id="evn"></span></button>
+          <button role="tab" id="tab-team" aria-selected="false">팀원에게 넘기기</button>
+          <span class="hint" id="deckHint">자료를 내밀거나, 그 질문을 가장 잘 아는 사람에게 넘기세요</span>
+        </div>
+        <div id="pane"></div>
+        <div class="foot"><span class="pick" id="pick">아직 고르지 않았어요</span><button class="go" id="go" disabled>제시하기</button></div>
+      </section>
+
+      <div class="host"><img id="jh" alt="지현"></div>
+      <div class="aside" id="aside"><small>지현 · 작게</small><span id="asideText"></span></div>
+      <div class="flash" id="flash"></div>
+      <div class="modal" id="modal" hidden></div>
+    </div>
+  </div>
+  <p class="note">조작: 질문을 읽고 아래에서 근거 자료 한 장을 고르거나, 팀원 탭에서 한 사람을 골라 「제시하기」를 누르세요. 세 번째 질문은 심사위원 말 중 사실과 다른 줄을 먼저 짚은 뒤 근거를 냅니다. 틀리면 다시 답할 수 있고, 세 번 막히면 지현이 대신 받습니다.<br>
+  게임 오버는 없습니다. 대본대로 피칭은 이기고, 어떻게 이겼는지(누가 답했는지)가 뒤 장면에 남습니다. 설치 시간 같은 구체 수치와 일부 대사는 시안용 임시 값입니다. Ren'Py 엔진에서 확인하지 않았습니다.</p>
+</div>
+
+<script>
+const IMG=(who,face)=>`../Source/game/images/characters/${who}/${who}_office_pose01_${face}.png`;
+const EV={
+  setup:{t:"설치 시간 확인표",b:"현장에서 직접 재 봄. 설치 반나절(4시간), 철수 2시간.",k:"R13 · 도현이 확인"},
+  staff:{t:"안내 인원 조건",b:"안내 인원 1명 추가 필요. 처음 견적의 운영 인원 줄에 이미 반영.",k:"R13 · 도현이 적음"},
+  stop:{t:"중단 조건",b:"한 곳에서 먼저 시험. 비용 한도를 넘거나 2주 안에 반응 기준 미달이면 멈춤.",k:"R14 · 지현이 정리"},
+  test:{t:"사내 시험 기록",b:"첫 줄 문구가 예상보다 느리게 읽힘. 그 한 요소만 고쳐 다시 시험.",k:"업무 사건 · 작게 먼저"},
+  cover:{t:"발표 첫 장 시안",b:"표지에 TF 전원의 이름. 팀장님 요청으로 유진이 다시 그림.",k:"R14 · 유진이 전달"},
+  memo:{t:"리허설 밤 메모",b:"“이 넷이 같이 일하는 걸 일 년 더 보고 싶습니다.”",k:"R10 · 사적인 말",pv:true},
+};
+const TEAM={
+  jihyun:{n:"지현",sp:"비용 · 조건",d:"팀장. 숫자와 중단 조건을 정리했다."},
+  ria:{n:"리아",sp:"현장",d:"현장 동선과 설치를 같이 봤다."},
+  seoyun:{n:"서윤",sp:"문구",d:"딱딱한 문장을 사람 말로 바꾼다."},
+  yujin:{n:"유진",sp:"시안",d:"아무도 안 보는 데까지 그린다."},
+};
+const J="지현", D="도현", JUDGE="심사위원 · 가운데 자리", JUDGE2="심사위원 · 오른쪽 자리", N="";
+// 응답: d=분위기 변화, b=호흡 변화, f=지현 표정, lines=[[화자,대사]], aside=지현 귓속말, alone=지현이 혼자 받음
+const Q=[
+ {no:"질문 1 / 3", who:JUDGE, lead:[N,"지현이 답하려다 말고 도현 쪽을 봤다. 현장 조건은 도현이 설명하기로 한 부분이었다."],
+  text:"안내 인원이 한 명 더 필요하다고 들었습니다. 그럼 처음 견적보다 비용이 늘어나는 것 아닙니까?",
+  ans:{
+   "ev:staff":{d:20,b:1,f:"smile",best:1,lines:[[D,"그 질문은 제가 답하겠습니다. 인원 한 명은 처음 견적에 이미 넣었습니다. 비용표 3쪽, 운영 인원 줄을 보시죠."],[JUDGE,"...아, 여기 있군요. 넘어가죠."]],aside:"(아주 짧게 고개를 끄덕였다)"},
+   "ev:setup":{d:-6,f:"serious",lines:[[D,"설치는 반나절이면 끝납니다."],[JUDGE,"설치 시간 말고, 인원 비용을 물었습니다."]]},
+   "ev:stop":{d:-6,f:"serious",lines:[[D,"비용이 한도를 넘으면 멈춥니다."],[JUDGE,"그건 다음 문제고요. 지금 견적이 맞느냐는 겁니다."]]},
+   "ev:test":{d:-8,f:"serious",lines:[[D,"사내 시험에서는..."],[JUDGE,"그게 비용이랑 무슨 상관이죠?"]]},
+   "ev:cover":{d:-8,f:"surprise",lines:[[D,"저희 표지를 보시면..."],[JUDGE,"표지는 아까 봤습니다. 숫자를 보여 주세요."]]},
+   "ev:memo":{d:-8,f:"blush",lines:[[N,"도현이 메모를 펼치려는 순간, 책상 아래에서 지현의 구두 끝이 도현의 발을 툭 쳤다."]],aside:"그거 보고 때 못 쓴다고 했지."},
+   "mate:jihyun":{d:6,b:-1,f:"neutral",alone:1,lines:[[N,"도현이 지현 쪽을 봤다. 지현은 잠깐 멈췄다가 혼자 답을 이어 갔다."],[J,"인원 비용은 견적에 포함돼 있습니다. 3쪽입니다."],[N,"답은 정확했다. 다만 지현은 끝까지 도현 쪽을 보지 않았다."]]},
+   "mate:ria":{d:0,f:"neutral",lines:[["리아","현장 인원은요, 어... 그 숫자는 도현 씨가 확인했어요!"],[JUDGE,"그럼 그분이 답해 주시죠."]]},
+   "mate:seoyun":{d:-6,f:"serious",lines:[["서윤","비용은 제 담당이 아니라서요~"],[JUDGE,"...담당자가 누굽니까?"]]},
+   "mate:yujin":{d:-6,f:"serious",lines:[["유진","저, 저는 시안 쪽이라서..."],[JUDGE,"그럼 비용은 누가 봅니까?"]]},
+  },
+  fallback:[[J,"인원 비용은 견적에 포함돼 있습니다. 3쪽입니다."],[N,"결국 지현이 받았다. 도현은 자료를 쥔 손에 힘을 줬다."]]},
+ {no:"질문 2 / 3", who:JUDGE, lead:[N,"심사위원이 비용표를 덮고 다음 장을 넘겼다."],
+  text:"한 곳에서 먼저 해 본다고요. 반응이 없으면요? 그래도 돈은 계속 나갑니까?",
+  ans:{
+   "mate:jihyun":{d:20,b:1,f:"smile",best:1,lines:[[D,"중단 조건은 팀장님이 정리하셨습니다."],[J,"네. 시험 비용이 한도를 넘거나 2주 안에 반응 기준에 못 미치면 바로 멈춥니다. 그 뒤로는 비용이 들지 않습니다."],[N,"도현이 넘긴 질문을 지현이 받아 마무리했다. 둘의 문장은 한 번도 겹치지 않았다."]],aside:"(넘겨받는 손이 조금 가벼웠다)"},
+   "ev:stop":{d:12,f:"neutral",lines:[[D,"한 곳에서 먼저 시험하고, 한도를 넘거나 2주 안에 기준에 못 미치면 멈춥니다."],[JUDGE,"기준은 누가 정했습니까?"],[J,"제가 정했습니다. 자세한 건 다음 장에 있습니다."]]},
+   "ev:test":{d:-6,f:"serious",lines:[[D,"사내 시험에서도 바로 고쳤습니다."],[JUDGE,"그건 안내문 얘기 아닌가요? 돈 얘기를 하고 있습니다."]]},
+   "ev:setup":{d:-6,f:"serious",lines:[[D,"철수는 두 시간이면 됩니다."],[JUDGE,"철수 시간 말고, 언제 멈추느냐를 물었습니다."]]},
+   "ev:staff":{d:-6,f:"serious",lines:[[D,"인원은 견적에 반영돼 있습니다."],[JUDGE,"그건 아까 들었습니다."]]},
+   "ev:cover":{d:-8,f:"surprise",lines:[[D,"저희 팀 전원이..."],[JUDGE,"팀 소개는 충분합니다. 멈추는 조건이 뭡니까?"]]},
+   "ev:memo":{d:-8,f:"pout",lines:[[N,"지현이 도현의 메모를 손바닥으로 조용히 덮었다."]],aside:"두 번째야. 끝나고 얘기해."},
+   "mate:ria":{d:0,f:"neutral",lines:[["리아","현장은 하루면 바로 철수할 수 있어요! ...비용 기준은 팀장님이요."],[JUDGE,"그럼 팀장님께 듣죠."]]},
+   "mate:seoyun":{d:-6,f:"serious",lines:[["서윤","음, 그 부분은 문구로 정리할 게 아니라서~"],[JUDGE,"그러니까 누가 답합니까?"]]},
+   "mate:yujin":{d:-6,f:"serious",lines:[["유진","그, 그건 제가 정한 게 아니라서요..."],[JUDGE,"정한 분이 답해 주시죠."]]},
+  },
+  fallback:[[J,"한도를 넘거나 2주 안에 기준에 못 미치면 멈춥니다."],[N,"지현이 혼자 정리했다. 질문이 끝날 때마다 지현의 어깨가 조금씩 올라갔다."]]},
+ {no:"질문 3 / 3", who:JUDGE2, press:true, lead:[N,"오른쪽 자리의 심사위원이 펜을 돌리며 몸을 앞으로 기울였다."],
+  stmt:["경쟁사 안은 세 곳을 동시에 엽니다.","귀사 안은 설치에만 이틀이 걸린다고 들었습니다.","게다가 안내 인원도 따로 둬야 하고요."],
+  tail:"그러면 귀사 안이 느리고 비싼 것 아닙니까?",
+  ans:{
+   "1:ev:setup":{d:26,b:1,f:"laugh",best:1,lines:[[D,"설치 이틀은 사실과 다릅니다. 제가 현장에서 직접 재 봤습니다. 반나절, 네 시간입니다."],[JUDGE2,"...이틀이라는 얘기는 어디서 들었더라."],[N,"맨 뒷줄의 본부장이 처음으로 메모를 했다."]],aside:"(입꼬리가 아주 조금 올라갔다)"},
+   "1:mate:ria":{d:16,f:"smile",lines:[["리아","설치요? 저랑 도현 씨가 같이 재 봤는데 반나절이었어요!"],[JUDGE2,"...그렇습니까. 확인해 보죠."]]},
+   "1:mate:jihyun":{d:8,b:-1,f:"neutral",alone:1,lines:[[J,"설치는 반나절입니다. 현장 확인은 도현 씨가 했습니다."],[N,"지현이 받으면서 도현의 이름을 붙였다. 그래도 받은 건 지현이었다."]]},
+   "2:ev:staff":{d:-2,f:"neutral",lines:[[D,"안내 인원은 맞습니다. 견적에 반영돼 있습니다."],[JUDGE2,"그럼 인정하시는 거군요."]],tip:"사실인 줄을 짚었어요. 틀린 말은 다른 줄에 있어요."},
+   "0:any":{d:-6,f:"serious",lines:[[D,"경쟁사 안은..."],[JUDGE2,"경쟁사 얘기를 하자는 게 아닙니다. 귀사 안을 말해 보세요."]],tip:"경쟁사 안은 우리가 반박할 부분이 아니에요."},
+   "1:other":{d:-6,f:"serious",lines:[[D,"그 부분은..."],[JUDGE2,"근거가 그게 맞습니까?"]],tip:"짚은 줄은 맞아요. 그 줄을 뒤집을 자료를 골라 보세요."},
+   "2:other":{d:-6,f:"serious",lines:[[D,"인원은..."],[JUDGE2,"그래서, 사람이 더 든다는 거죠?"]],tip:"그 줄은 사실이에요."},
+   "any:ev:memo":{d:-8,f:"blush",lines:[[N,"도현이 메모를 꺼내자, 지현이 정면을 본 채 아주 작게 헛기침을 했다."]],aside:"...세 번째. 오늘 저녁 네가 사."},
+  },
+  fallback:[[J,"설치는 반나절입니다. 확인한 자료가 있습니다."],[N,"지현이 도현의 자료를 넘겨받아 대신 읽었다."]]},
+];
+const INTRO=[
+ [N,"발표를 시작하려는 참에, 심사석 가운데 남자가 펜을 내려놓았다."],
+ [JUDGE,"하나만 묻겠습니다. 이 팀, 석 달 뒤에도 있습니까?"],
+ [N,"회의실이 조용해졌다. 책상 아래에서 누군가 도현의 손등을 한 번 눌렀다. 지현이었다."],
+ [J,"있을 겁니다. 그 이유는 저 혼자 말씀드리지 않겠습니다. 오늘 발표하는 사람 전원이 그 대답입니다."],
+ [N,"발표가 끝나자 질문이 쏟아졌다. 이번엔 혼자 받지 않기로 했다."],
+];
+
+let S;
+const $=id=>document.getElementById(id);
+function reset(){S={mood:50,bond:0,qi:-1,phase:"intro",step:0,tab:"ev",pick:null,line:null,tries:0,log:[],alone:0,feed:null,fi:0,face:"serious"};
+  $("modal").hidden=true; setFace("serious"); hideAside(); renderMeters(); renderQ(); renderDeck();}
+function setFace(f){const im=$("jh");im.onerror=()=>{im.onerror=null;im.src=IMG("jihyun","neutral")};im.src=IMG("jihyun",f);S&&(S.face=f)}
+function aside(t){if(!t)return;$("asideText").textContent=t;$("aside").classList.add("on");clearTimeout(aside.h);aside.h=setTimeout(hideAside,3200)}
+function hideAside(){$("aside").classList.remove("on")}
+function renderMeters(){
+  $("fill").style.width=S.mood+"%"; $("mood").textContent=S.mood;
+  $("bond").textContent="♥".repeat(Math.max(0,S.bond))+"♡".repeat(Math.max(0,3-Math.max(0,S.bond)));
+}
+function bump(d){
+  const el=$("delta"); if(!d){return}
+  el.textContent=(d>0?"+":"")+d; el.className="delta on "+(d>0?"up":"down");
+  clearTimeout(bump.h); bump.h=setTimeout(()=>el.className="delta",1300);
+  if(d>0){$("flash").classList.remove("on");void $("flash").offsetWidth;$("flash").classList.add("on")}
+  else{$("q").classList.remove("shake");void $("q").offsetWidth;$("q").classList.add("shake")}
+}
+const ICON=w=>w===J?'<i class="jh">지현</i>':w===D?'<i class="dh">도현</i>':w===N?'':(w.startsWith("심사")?'<i>심사</i>':`<i class="nr">${w}</i>`);
+function lineHTML([w,t],nextLabel){
+  return `<div class="who">${ICON(w)}${w?`<b>${w}</b>`:""}</div><p class="${w?'':'narr'}">${w?`“${t}”`:t}</p>`+
+   (nextLabel?`<button class="next" id="next">${nextLabel}</button>`:"");
+}
+function renderQ(){
+  const q=$("q");
+  if(S.phase==="intro"){ $("qno").textContent="도입"; q.innerHTML=lineHTML(INTRO[S.step],S.step<INTRO.length-1?"다음 ▸":"질문 받기 ▸"); return }
+  if(S.phase==="feed"){ const L=S.feed.lines, last=S.fi>=L.length-1;
+    q.innerHTML=lineHTML(L[S.fi], last?(S.feed.retry?"다시 답하기 ▸":(S.qi<Q.length-1?"다음 질문 ▸":"결과 보기 ▸")):"다음 ▸");
+    if(last&&S.feed.tip) q.insertAdjacentHTML("beforeend",`<div class="tip">${S.feed.tip}</div>`);
+    return }
+  const Qd=Q[S.qi]; $("qno").innerHTML=`<b>${Qd.no}</b>`;
+  if(S.phase==="lead"){ q.innerHTML=lineHTML(Qd.lead,"질문 듣기 ▸"); return }
+  if(Qd.press){
+    q.innerHTML=`<div class="who">${ICON(Qd.who)}<b>${Qd.who}</b></div><div class="stmt">`+
+      Qd.stmt.map((s,i)=>`<button data-line="${i}" class="${S.line===i?'sel':''}"><span>${"①②③"[i]}</span>${s}</button>`).join("")+
+      `<div class="tail">${Qd.tail}</div></div><div class="tip">${S.line==null?"사실과 다른 줄을 먼저 짚으세요.":"짚은 줄: "+"①②③"[S.line]+" · 이제 아래에서 근거를 고르세요."}</div>`;
+  } else {
+    q.innerHTML=`<div class="who">${ICON(Qd.who)}<b>${Qd.who}</b></div><p>“${Qd.text}”</p>`+(S.tries?`<div class="tip">다시 답할 기회 ${3-S.tries}번</div>`:"");
+  }
+}
+function renderDeck(){
+  const ask=S.phase==="ask", Qd=Q[S.qi]||{};
+  const need = ask && !(Qd.press && S.line==null);
+  $("deck").classList.toggle("off",!need);
+  $("tab-ev").setAttribute("aria-selected",S.tab==="ev"); $("tab-team").setAttribute("aria-selected",S.tab==="team");
+  $("evn").textContent=Object.keys(EV).length;
+  if(S.tab==="ev"){
+    $("pane").innerHTML=`<div class="grid">`+Object.entries(EV).map(([k,e])=>
+      `<button class="ev ${S.pick==="ev:"+k?'sel':''}" data-pick="ev:${k}"><span class="k"><em class="${e.pv?'pv':''}">${e.k}</em></span><b>${e.t}</b><small>${e.b}</small></button>`).join("")+`</div>`;
+  } else {
+    $("pane").innerHTML=`<div class="team">`+Object.entries(TEAM).map(([k,m])=>
+      `<button class="mate ${S.pick==="mate:"+k?'sel':''}" data-pick="mate:${k}"><img class="face" alt="" src="${IMG(k,k==="jihyun"?"neutral":"smile")}"><span class="sp">${m.sp}</span><b>${m.n}</b><small>${m.d}</small></button>`).join("")+`</div>`;
+  }
+  const p=S.pick; let label="아직 고르지 않았어요";
+  if(p){const [t,k]=p.split(":");label=t==="ev"?`근거 · <b>${EV[k].t}</b>`:`<b>${TEAM[k].n}</b>에게 넘기기`}
+  $("pick").innerHTML=label; $("go").disabled=!(need&&p);
+  $("go").textContent = p&&p.startsWith("mate")?"넘기기":"제시하기";
+}
+function resolve(){
+  const Qd=Q[S.qi], p=S.pick; let r;
+  if(Qd.press){
+    const L=S.line;
+    r=Qd.ans[`${L}:${p}`]||(p==="ev:memo"&&Qd.ans["any:ev:memo"])||(L===0&&Qd.ans["0:any"])||Qd.ans[`${L}:other`];
+  } else r=Qd.ans[p];
+  r=Object.assign({},r);
+  S.tries++;
+  const ok=r.d>0;
+  S.mood=Math.max(0,Math.min(100,S.mood+r.d)); S.bond+=r.b||0; if(r.alone)S.alone++;
+  bump(r.d); renderMeters(); setFace(r.f||"neutral"); aside(r.aside);
+  S.log.push({q:S.qi,pick:p,ok,best:!!r.best,alone:!!r.alone});
+  if(!ok && S.tries<3){r.retry=true}
+  else if(!ok){ r.lines=r.lines.concat(Qd.fallback); S.alone++; S.bond=Math.max(-1,S.bond-1); S.log[S.log.length-1].fallback=true; renderMeters() }
+  S.feed=r; S.fi=0; S.phase="feed"; S.pick=null; renderQ(); renderDeck();
+}
+function advance(){
+  if(S.phase==="intro"){ if(S.step<INTRO.length-1){S.step++; if(INTRO[S.step][0]===J)setFace("serious"); renderQ()} else nextQ(); return }
+  if(S.phase==="lead"){ S.phase="ask"; renderQ(); renderDeck(); return }
+  if(S.phase==="feed"){
+    if(S.fi<S.feed.lines.length-1){S.fi++;renderQ();return}
+    if(S.feed.retry){ S.phase="ask"; if(Q[S.qi].press)S.line=null; setFace("serious"); renderQ(); renderDeck(); return }
+    if(S.qi<Q.length-1) nextQ(); else result();
+  }
+}
+function nextQ(){S.qi++;S.tries=0;S.line=null;S.pick=null;S.tab="ev";S.phase="lead";setFace("serious");renderQ();renderDeck()}
+function result(){
+  const m=S.mood, firstTry=S.log.filter(l=>l.ok).length, best=S.log.filter(l=>l.best).length;
+  let stamp,cls,title,body,face;
+  if(m>=85){stamp="완벽한 방어";cls="";title="“질문은 여기까지 하죠.”";body="심사위원이 펜을 내려놓았다. 질문마다 맞는 사람이 답했고, 지현은 마지막까지 혼자 일어서지 않았다.";face="laugh"}
+  else if(m>=60){stamp="함께 버팀";cls="mid";title="몇 번 막혔지만, 끝까지 같이 답했다";body="질문 몇 개는 흔들렸다. 그래도 막힐 때마다 누군가 이어서 받았다.";face="smile"}
+  else {stamp="지현이 정리함";cls="low";title="흔들렸지만, 지현이 마지막을 정리했다";body="도현의 답이 몇 번 빗나갔다. 지현이 그때마다 혼자 일어서서 받아 냈다.";face="serious"}
+  const after = S.alone===0
+    ? "→ 비상계단 장면: 지현 “아까 그 질문, 나 혼자 받았으면 또 다 끌어안았을 거야.” (현행 대본 그대로)"
+    : S.alone>=2
+    ? "→ 비상계단 장면이 바뀜(대본 변경 제안): 지현이 “오늘도 결국 내가 다 받았네” 하고 먼저 털어놓는다."
+    : "→ 비상계단 장면에 한 줄 추가(대본 변경 제안): 지현 “한 번은 또 내가 받아 버렸어. 다음엔 기다릴게.”";
+  const name={setup:"설치 시간 확인표",staff:"안내 인원 조건",stop:"중단 조건",test:"사내 시험 기록",cover:"발표 첫 장 시안",memo:"리허설 밤 메모"};
+  const how=Q.map((q,i)=>{const L=S.log.filter(l=>l.q===i), last=L[L.length-1];
+    const p=last.fallback?"지현이 대신 받음":last.pick.startsWith("ev:")?name[last.pick.slice(3)]:TEAM[last.pick.slice(5)].n+"에게 넘김";
+    return `<b>${q.no.split(" ")[0]} ${q.no.split(" ")[1]}</b> · ${p}${L.length>1?` (${L.length}번째에)`:""}`}).join("<br>");
+  const md=$("modal"); md.hidden=false;
+  md.innerHTML=`<div class="sheet"><div class="side"><img id="rimg" alt=""></div><div class="body">
+    <span class="stamp ${cls}">${stamp} · 분위기 ${m}</span><h2>${title}</h2><p>${body}</p>
+    <div class="log">${how}<br><b>지현과 호흡</b> · ${"♥".repeat(Math.max(0,S.bond))||"없음"} · 지현이 혼자 받은 질문 ${S.alone}개</div>
+    <p style="font-size:15px;color:var(--sub)">결과는 저녁에 나왔다. TF가 이겼다.</p>
+    <div class="after">${after}</div>
+    <div class="row"><button class="btn main" id="again">다시 해 보기</button></div></div></div>`;
+  const ri=$("rimg"); ri.src=IMG("jihyun",face); setFace(face);
+  $("again").onclick=reset;
+}
+
+document.addEventListener("click",e=>{
+  if(e.target.closest("#next")){advance();return}
+  const ln=e.target.closest("[data-line]"); if(ln&&S.phase==="ask"){S.line=+ln.dataset.line;renderQ();renderDeck();return}
+  const pk=e.target.closest("[data-pick]"); if(pk&&S.phase==="ask"){S.pick=S.pick===pk.dataset.pick?null:pk.dataset.pick;renderDeck();return}
+});
+$("tab-ev").onclick=()=>{S.tab="ev";renderDeck()};
+$("tab-team").onclick=()=>{S.tab="team";renderDeck()};
+$("go").onclick=()=>{if(S.phase==="ask"&&S.pick)resolve()};
+$("restart").onclick=reset;
+$("skipIntro").onclick=()=>{reset();S.step=INTRO.length-1;nextQ()};
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&$("next")&&document.activeElement===document.body){e.preventDefault();advance()}});
+function fit(){const w=$("wrap").clientWidth,s=w/1280;$("stage").style.transform=`scale(${s})`;$("wrap").style.height=720*s+"px"}
+addEventListener("resize",fit);
+reset(); fit();
+</script>
+
+</body>
+</html>
