@@ -12,5 +12,5 @@
 | [yujin_lingerie_special.png](yujin_lingerie_special.png) | 차유진 | 특별한 날 | [yujin 마스터](../heroine-masters-v001/yujin_office_pose01_neutral_v001.png) | 0 | — |
 | [yujin_lingerie_home.png](yujin_lingerie_home.png) | 차유진 | 집 | [yujin 마스터](../heroine-masters-v001/yujin_office_pose01_neutral_v001.png) | 0 | — |
 | [seoyun_lingerie_everyday.png](seoyun_lingerie_everyday.png) | 한서윤 | 평소 | [seoyun 마스터](../heroine-masters-v001/seoyun_office_pose01_neutral_v001.png) | 0 | — |
-| [seoyun_lingerie_special.png](seoyun_lingerie_special.png) | 한서윤 | 특별한 날 | [seoyun 마스터](../heroine-masters-v001/seoyun_office_pose01_neutral_v001.png) | 0 | — |
+| [seoyun_lingerie_special.png](seoyun_lingerie_special.png) | 한서윤 | 특별한 날 | [seoyun 마스터](../heroine-masters-v001/seoyun_office_pose01_neutral_v001.png) | 1 | 하의 옆선·가터 연결·스타킹 발끝 수정 |
 | [seoyun_lingerie_home.png](seoyun_lingerie_home.png) | 한서윤 | 집 | [seoyun 마스터](../heroine-masters-v001/seoyun_office_pose01_neutral_v001.png) | 0 | — |
