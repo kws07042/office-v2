@@ -381,6 +381,7 @@ label yujin_r12:
     call phone_deliver("yujin_r12_confirm", "yujin", "네. 달력 말고 이제 도현 씨 얼굴 보러 갈게요~ 내일 만나요.", contact="yujin")
     $ location = memory["yujin_r12_appointment"]
     $ cream_focus = "yujin"
+    $ date_outfit_on("yujin")
     "약속한 곳에 유진이 와 있었다. 도현을 보자 들고 있던 가방을 양손으로 고쳐 잡았다."
     dn "가방을 양손으로 고쳐 잡는 건 유진 씨가 긴장했을 때 하는 버릇이다. 나도 주머니 속 손에 땀이 났다."
     y "메시지로는 할 말 많았는데. 지금은 인사부터 하고 싶어요. 보고 싶었어요."
@@ -460,6 +461,7 @@ label yujin_r12:
     $ remember("yujin_r12_reunion_kept", memory["yujin_r12_appointment"])
     $ remember("yujin_r12_complete")
     dn "현관 앞에서 돌아서는 길. 다음에 이 문이 어떻게 열릴지는 유진 씨가 정할 것이다. 그게 맞다."
+    $ date_outfit_off("yujin")
     $ award_once("yujin_R12", "yujin", 4)
     $ progression_note_ending()
     return

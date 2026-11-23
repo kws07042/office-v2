@@ -1,3 +1,4 @@
+default date_outfit = set()
 # 히로인 입상: 말하는 히로인을 무대 가운데에 세운다.
 # 의상은 장소 문구(location)로, 포즈는 장면마다 하나로, 표정은 대사 내용으로 고른다.
 # 대본에서 표정을 직접 정하려면:  $ face("ria", "sad")   (다음 장소가 바뀔 때까지 유지)
@@ -71,8 +72,20 @@ init -4 python:
     def _hs_place():
         return getattr(renpy.store, "location", "") or ""
 
+    def heroine_has_outfit(who, outfit):
+        return any(w == who and o == outfit for (w, o, p) in SPRITE_SET)
+
+    def date_outfit_on(who):
+        """R12 데이트: 그날을 위해 고른 옷(special) 입상을 보여 준다. 다음 날 아침이 되면 저절로 꺼진다."""
+        renpy.store.date_outfit = set(renpy.store.date_outfit) | {who}
+
+    def date_outfit_off(who):
+        renpy.store.date_outfit = set(renpy.store.date_outfit) - {who}
+
     def heroine_outfit(who, place=None):
         place = _hs_place() if place is None else place
+        if who in renpy.store.date_outfit and "아침" not in place and "다음 날" not in place and heroine_has_outfit(who, "special"):
+            return "special"
         if any(word in place for word in HEROINE_HOME.get(who, ())):
             return "home"
         own_studio = any(word in place for word in HEROINE_HOME_MORNING.get(who, ()))

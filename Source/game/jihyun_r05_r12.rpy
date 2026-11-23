@@ -799,6 +799,7 @@ label jihyun_r12:
     call phone_deliver("jihyun_r12_x3", "jihyun", "...그럼 금요일에 책임져. 일곱 시.", contact="jihyun")
     dn "책임지라는 말을 저렇게 쓰는 사람이다. 금요일까지 그 문장을 몇 번이나 다시 읽었다."
     $ location = "금요일 저녁 일곱 시 · 약속한 식당"
+    $ date_outfit_on("jihyun")
     "출장에서 돌아오고 이틀 뒤, 약속한 금요일에 둘이 마주 앉았다. 복도에서 못 한 말이 아직 남아 있었다."
     j "위에서 회의가 길어져서 미룰까 했어. ...별일 아니야. 그래도 오늘은 보고 싶었어."
     d "저도요. 일요일에 같이 놀던 거 가끔 생각났어요."
@@ -827,6 +828,7 @@ label jihyun_r12:
     j "...응. 오늘도 같이 있고 싶어."
     call jihyun_private_evening("r12", "special")
     dn "아까부터 소매만 만지던 사람. 팀장님이 저렇게 서툰 얼굴을 하는 건 나만 본다."
+    $ date_outfit_off("jihyun")
     $ award_once("jihyun_R12", "jihyun", 4)
     $ progression_note_ending()
     return
