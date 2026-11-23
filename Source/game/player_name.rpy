@@ -1,4 +1,4 @@
-# 주인공 이름: 새 게임을 시작하면 GY브랜딩 사원증에 이름을 써넣는다(한 칸, 한글 1~5자, 성을 넣어도 되고 이름만 써도 된다, ).
+# 주인공 이름: 새 게임을 시작하면 GY브랜딩 사원증에 이름을 써넣는다(한 칸, 최대 8자, 글자 종류 제한 없음, 성 포함 가능, 비우면 넘어가지 않음).
 # 쓴 그대로 사원증과 대사에 쓴다(예: "공옥순" → "공옥순 씨", "공옥순아").
 # 대본은 기본 이름 '도현'으로 쓰여 있고, 화면에 글자가 나가기 직전(config.replace_text)에
 # '도현'과 바로 뒤의 조사를 입력한 이름에 맞게 바꾼다. 받침에 따라 이/가, 은/는, 을/를, 아/야, 과/와, 으로/로, 이었/였을 고른다.
@@ -13,17 +13,34 @@ init -10 python:
     import re as _mc_re
 
     MC_DEFAULT = "도현"
+    MC_MAX_LEN = 8
     _MC_PATTERN = _mc_re.compile(r"도현(이었|으로|이(?=[^가-힣]|$)|은(?=[^가-힣]|$)|을(?=[^가-힣]|$)|과(?=[^가-힣]|$)|아(?=[^가-힣]|$))?")
 
+    # 한글이 아닌 끝 글자는 읽는 소리로 받침을 짐작한다. 숫자는 한국어로 읽고(0 영, 1 일, 3 삼 ...),
+    # 영어는 l·m·n·ng로 끝나면 받침이 있는 것으로 본다(Tom이, Alex가, Mike가).
+    _MC_DIGIT = {"0": "영", "1": "일", "2": "이", "3": "삼", "4": "사", "5": "오", "6": "육", "7": "칠", "8": "팔", "9": "구"}
+
+    def _mc_last_sound(word):
+        word = (word or MC_DEFAULT).rstrip()
+        ch = word[-1]
+        if "가" <= ch <= "힣":
+            return ch
+        if ch in _MC_DIGIT:
+            return _MC_DIGIT[ch]
+        low = word.lower()
+        if low.endswith("ng") or low[-1:] in ("m", "n"):
+            return "안"
+        if low[-1:] == "l":
+            return "알"
+        return "아"
+
     def mc_has_batchim(word):
-        ch = (word or MC_DEFAULT)[-1]
-        if not ("가" <= ch <= "힣"):
-            return True
+        ch = _mc_last_sound(word)
         return (ord(ch) - 0xAC00) % 28 != 0
 
     def mc_last_is_rieul(word):
-        ch = (word or MC_DEFAULT)[-1]
-        return "가" <= ch <= "힣" and (ord(ch) - 0xAC00) % 28 == 8
+        ch = _mc_last_sound(word)
+        return (ord(ch) - 0xAC00) % 28 == 8
 
     def mc_with_josa(name, josa):
         b = mc_has_batchim(name)
@@ -62,7 +79,8 @@ init -10 python:
         return "GY-%s-%s%s" % (y, m, d)
 
     def mc_valid(name):
-        return 1 <= len(name) <= 5 and all("가" <= ch <= "힣" for ch in name)
+        # 글자 종류는 가리지 않고 길이만 본다(한글·영어·숫자 모두 가능).
+        return 1 <= len(name) <= MC_MAX_LEN
 
     def mc_confirm():
         name = (renpy.store.mc_name_input or "").strip()
@@ -71,7 +89,7 @@ init -10 python:
             renpy.restart_interaction()
             return None
         if not mc_valid(name):
-            renpy.store.mc_card_message = "이름은 한글 1~5자로 써 주세요. (완성된 글자만)"
+            renpy.store.mc_card_message = "이름은 %d자까지 쓸 수 있어요." % MC_MAX_LEN
             renpy.restart_interaction()
             return None
         renpy.store.mc_name = name
@@ -95,6 +113,12 @@ init -9 python:
         return ('<defs><radialGradient id="g"><stop offset="0" stop-color="%s" stop-opacity="0.35"/>'
                 '<stop offset="1" stop-color="%s" stop-opacity="0"/></radialGradient></defs>'
                 '<ellipse cx="%d" cy="%d" rx="%d" ry="%d" fill="url(#g)"/>' % (color, color, w / 2, h / 2, w / 2, h / 2))
+
+    def silk_b_bust(w, h, color):
+        # 위는 둥글고 양옆은 바닥까지 곧게 내려오는 어깨 모양
+        r = min(w * 0.42, h)
+        return ('<path d="M0 %d V%s A%s %s 0 0 1 %s 0 H%s A%s %s 0 0 1 %d %s V%d Z" fill="%s"/>' %
+                (h, r, r, r, r, w - r, r, r, w, r, h, color))
 
     MC_BARCODE = [3, 1, 2, 1, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2, 1, 1, 3, 2, 1, 1, 2, 3, 1, 1, 2, 1, 3, 1, 2, 1, 1, 2]
 
@@ -129,7 +153,7 @@ screen employee_card():
             fixed:
                 add Solid("#DCE2EC")
                 add silk("flat", "#AEB8C8", 50) xysize (92, 92) xalign 0.5 ypos 38
-                add silk("flat", "#AEB8C8", 70) xysize (150, 84) xalign 0.5 ypos 142
+                add silk("bust", "#AEB8C8") xysize (150, 90) xalign 0.5 ypos 136
         # 이름
         text "NAME" style "mc_card_text" size 11 color "#A0969C" xalign 0.5 ypos 362
         frame:
@@ -139,11 +163,11 @@ screen employee_card():
             input:
                 id "mc_name_input_box"
                 value VariableInputValue("mc_name_input")
-                length 5
+                length MC_MAX_LEN
                 font "fonts/GowunDodum-Regular.ttf" size 38 color "#1E1820"
                 xalign 0.5 yalign 0.5
             if not mc_name_input:
-                text "이름 입력" font "fonts/GowunDodum-Regular.ttf" size 30 color "#CFC7CC" xalign 0.5 yalign 0.5 xoffset 16
+                text "이름 입력" font "fonts/GowunDodum-Regular.ttf" size 30 color "#CFC7CC" xalign 0.5 yalign 0.5
         add Solid(("#B3123F" if ready else "#D9D2D6")) xysize (240, 2) xalign 0.5 ypos 440
         text "기획팀  ·  연말 피칭 TF" style "mc_card_text" size 15 color "#6E6470" xalign 0.5 ypos 456
         # 아래 띠: 사번, 홀로그램, 바코드

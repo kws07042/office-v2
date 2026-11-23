@@ -26,9 +26,15 @@ testsuite player_name_checks:
         assert eval mc_apply("도현으로 정했다") == "한결로 정했다"
         $ mc_name = "공옥순"
         assert eval mc_apply("도현 씨, 도현아! 도현이 웃었다") == "공옥순 씨, 공옥순아! 공옥순이 웃었다"
+        $ mc_name = "Alex"
+        assert eval mc_apply("도현 씨, 도현이 웃었다, 도현아") == "Alex 씨, Alex가 웃었다, Alex야"
+        $ mc_name = "Tom"
+        assert eval mc_apply("도현이 웃었다, 도현으로") == "Tom이 웃었다, Tom으로"
+        $ mc_name = "민수3"
+        assert eval mc_apply("도현은 갔다") == "민수3은 갔다"
         $ mc_name = "도현"
         assert eval mc_apply("도현이 웃었다") == "도현이 웃었다"
-        assert eval mc_valid("민수") and not mc_valid("") and not mc_valid("abc") and not mc_valid("여섯글자이름")
+        assert eval mc_valid("민수") and mc_valid("Alex") and mc_valid("공옥순99") and not mc_valid("") and not mc_valid("아홉글자짜리이름이다")
 
     testcase card_input_and_screen:
         run Start("test_mc_card_entry")
@@ -39,10 +45,6 @@ testsuite player_name_checks:
         click id "mc_card_confirm"
         pause 0.3
         assert eval mc_card_message != "" and renpy.get_screen("employee_card") is not None
-        $ mc_name_input = "abc"
-        click id "mc_card_confirm"
-        pause 0.3
-        assert eval "한글" in mc_card_message and mc_name == "도현"
         $ mc_name_input = "공옥순"
         pause 0.3
         screenshot "player-name-1b-typed.png"
