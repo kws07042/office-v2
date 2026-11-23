@@ -10,14 +10,14 @@ R12 데이트에서 히로인이 "너 만나려고 고른 옷"을 입고 나온�
 
 ## 옷 디자인 (대본 근거)
 
-2026-11-23 사용자 요청으로 '현실적인 실제 데이트 룩'으로 바꿨다(시기: 피칭 직전 11월 말~12월 초). 네 명 모두 기존 업무복·사복·생활복·겨울옷과 겹치는 옷이 없게 했다. 입상에는 겉옷을 넣지 않고, 도입 CG에서 의자·옷걸이의 코트로만 보여 준다.
+2026-11-23 사용자 요청으로 '현실적인 실제 데이트 룩'으로 바꾸고, 사용자가 가져온 레퍼런스 5장 중 4장을 인물에 맞췄다(레퍼런스 2: 검정 롱코트+파란 목도리+카디건·셔츠는 리아 겨울옷과 유진 사복에 겹쳐 쓰지 않음)(시기: 피칭 직전 11월 말~12월 초). 네 명 모두 기존 업무복·사복·생활복·겨울옷과 겹치는 옷이 없게 했다. 입상은 코트를 앞을 연 채로 입는다(약속 장소·길 장면). 도입 CG에서는 코트를 의자·옷걸이에 걸어 둔다.
 
 | 인물 | 옷 | 대본 근거 |
 |---|---|---|
-| 리아 | 연하늘 면 퍼프소매 블라우스(스퀘어넥)를 베이지 스웨이드 미니스커트에 넣어 입음, 불투명 검정 타이츠, 갈색 롱부츠 | "한 번 더 갈아입을 뻔했거든~" 파란 포인트. 니트·데님(사복), 흰 블라우스+펜슬(업무복)과 겹치지 않음 |
-| 지현 | 짙은 포레스트그린 벨벳 긴소매 미디 원피스, 비치는 검정 스타킹, 검정 굽 앵클부츠, 머리는 내림 | 데이트 내내 소매를 만진다. 연말 저녁 약속다운 벨벳. 버건디 셔츠·터틀넥·긴 스커트(기존 옷)와 겹치지 않음 |
-| 유진 | 세이지그린 골지 긴소매 니트 미디 원피스에 가는 갈색 벨트(카라 없음), 비치는 스타킹, 갈색 낮은 굽 앵클부츠, 안경·금색 머리핀 | "오늘 옷도 좀 오래 골랐어요". 평소엔 크림 카디건+흰 블라우스만 입던 사람이 처음 입은 원피스 |
-| 서윤 | 검정 스퀘어넥 슬림 니트 톱을 짙은 자두색 새틴 미디스커트에 넣어 입음, 검정 롱부츠, 치마 속에 평소대로 가터와 레이스 니삭스 | "오늘 만나려고 꺼내 입었다는 옷의 소매를 정리했다". 성숙하고 세련된 차림 |
+| 리아 | 아이보리 테디 부클 스탠드카라 하프코트(앞 열림), 안에 연하늘 골지 니트 톱, 검정 플레어 미디스커트, 검정 롱부츠, 작은 검정 숄더백 | 사용자 레퍼런스 1. 밝고 귀여운 분위기, 파란 포인트. 크림 니트+데님 미니(사복), 베이지 코트+파란 목도리(겨울옷)와 겹치지 않음 |
+| 지현 | 차콜 롱 울코트(앞 열림), 안에 크림 꽈배기 터틀넥 니트 미니 원피스, 크림 술 목도리, 검정 스타킹, 검정 롱부츠, 작은 갈색 핸드백 | 사용자 레퍼런스 4. 단정하고 우아한 연상. 니트 소매를 만지는 대사와 맞음. 카멜 트렌치+버건디 터틀넥+긴 스커트(사복)와 겹치지 않음 |
+| 유진 | 아이보리 시어링 숏재킷(갈색 스웨이드 트림, 앞 열림), 안에 베이지 브이넥 니트, 갈색 글렌체크 A라인 미디스커트, 스타킹, 갈색 낮은 굽 앵클부츠, 안경·금색 머리핀 | 사용자 레퍼런스 3. 포근하고 수줍은 느낌. 원본의 주름 미니 대신 체크 미디로 바꿔 사복(갈색 주름 스커트)과 겹치지 않게 함 |
+| 서윤 | 검정 오버사이즈 롱 테일러드 코트(앞 열림), 회색 후드티, 검정 가죽 스트레이트 팬츠, 검정 앵클부츠, 머리 위에 걸친 선글라스 | 사용자 레퍼런스 5. 힘 뺀 시크, 32세의 여유. 이날만 바지라 가터는 안 함. 라벤더 블라우스·회색 니트 원피스와 겹치지 않음 |
 
 로퍼·교복풍 요소는 넣지 않는다(외형 기준: 어려 보이는 요소 금지).
 
@@ -49,28 +49,28 @@ Adult women 27–32, mature proportions, never childlike. No earrings, necklaces
 **ria_special_pose01_neutral.png**
 ```text
 Draw Kang Ria in the SAME standing pose, camera angle and proportions as ria_casual_pose01_neutral.png (one hand raised in a small wave), same face and hair (very long wavy blonde high ponytail, blue scrunchie, straight bangs, blue eyes).
-New outfit — her special date outfit: a baby-blue cotton puff-sleeve blouse with a square neckline tucked into a beige suede mini skirt, opaque black tights, brown knee-high boots. Neutral bright closed-mouth smile.
+New outfit — her special date outfit: a ivory teddy-bouclé stand-collar half coat worn open with dark buttons, a light-blue fitted ribbed knit top underneath, black flared midi skirt, black knee-high boots, a small black shoulder bag. Neutral bright closed-mouth smile.
 Full body from the top of the head to the shoes, centered, vertical 2:3 canvas.
 ```
 
 **jihyun_special_pose01_neutral.png**
 ```text
 Draw Baek Jihyun in the SAME standing pose, camera angle and proportions as jihyun_casual_pose01_neutral.png (one hand on her hip), same face and hair (very long straight crimson hair falling down her back, side-parted bangs, reddish-brown eyes, sharp eyeliner).
-New outfit — her special date outfit: a dark forest-green velvet long-sleeve midi dress, sheer black pantyhose, black heeled ankle boots. Composed, almost expressionless neutral face.
+New outfit — her special date outfit: a charcoal long wool coat worn open, a cream cable-knit turtleneck sweater dress (mini length) underneath, cream fringe scarf, sheer black pantyhose, black knee-high boots, a small brown structured handbag. Composed, almost expressionless neutral face.
 Full body from the top of the head to the shoes, centered, vertical 2:3 canvas.
 ```
 
 **yujin_special_pose01_neutral.png**
 ```text
 Draw Cha Yujin in the SAME standing pose, camera angle and proportions as yujin_casual_pose01_neutral.png, same face and hair (silver-white bob, one gold hairpin, thin round metal glasses, amber eyes, curvy adult figure).
-New outfit — her special date outfit: a sage-green ribbed long-sleeve knit midi dress with a thin brown belt, no collar, sheer pantyhose, brown low-heel ankle boots. No bag. Slightly tense neutral face.
+New outfit — her special date outfit: a ivory shearling short jacket with brown suede trim worn open, a beige V-neck knit sweater with a thin brown line at the neckline, brown glen-check A-line midi skirt, sheer pantyhose, brown low-heel ankle boots. No bag. Slightly tense neutral face.
 Full body from the top of the head to the shoes, centered, vertical 2:3 canvas.
 ```
 
 **seoyun_special_pose01_neutral.png**
 ```text
 Draw Han Seoyun in the SAME standing pose, camera angle and proportions as seoyun_casual_pose01_neutral.png (one finger near her lips), same face and hair (long wavy dark plum hair, half-lidded grey-lavender eyes, beauty mark under her LEFT eye).
-New outfit — her special date outfit: a black fitted square-neck long-sleeve knit top tucked into a deep plum satin midi skirt, black knee-high boots (her garter and lace thigh-highs hidden under the skirt). Relaxed half-lidded neutral face.
+New outfit — her special date outfit: a black oversized long tailored coat worn open, a grey hoodie, black leather straight-leg pants, black ankle boots, sunglasses pushed up on her head. Relaxed half-lidded neutral face.
 Full body from the top of the head to the shoes, centered, vertical 2:3 canvas.
 ```
 
@@ -139,7 +139,7 @@ EVERY SPRITE: full body from the top of the head to the shoes, centered, vertica
 EACH HEROINE: image 1 = base (same standing pose, camera angle and proportions as her casual sprite, same face and hair as her master, NEW outfit below, neutral face). Images 2–8 = use image 1 as the exact base and change ONLY the facial expression; keep pose, body, outfit, hair, head position and size, lines, colors and canvas pixel-identical.
 
 HEROINE 1 — KANG RIA (very long wavy blonde high ponytail, blue scrunchie, straight bangs, blue eyes). Pose: one hand raised in a small wave.
-Outfit: baby-blue cotton puff-sleeve blouse with a square neckline tucked into a beige suede mini skirt, opaque black tights, brown knee-high boots.
+Outfit: ivory teddy-bouclé stand-collar half coat worn open with dark buttons, a light-blue fitted ribbed knit top underneath, black flared midi skirt, black knee-high boots, a small black shoulder bag.
 ria_special_pose01_neutral.png — bright closed-mouth smile
 ria_special_pose01_smile.png — wide cheerful smile showing teeth
 ria_special_pose01_blush.png — cheeks flushed, looking away shyly
@@ -150,7 +150,7 @@ ria_special_pose01_serious.png — no smile, determined look
 ria_special_pose01_pout.png — puffed cheeks, sulking
 
 HEROINE 2 — BAEK JIHYUN (very long straight crimson hair falling down her back, side-parted bangs, reddish-brown eyes, sharp eyeliner). Pose: one hand on her hip.
-Outfit: dark forest-green velvet long-sleeve midi dress, sheer black pantyhose, black heeled ankle boots.
+Outfit: charcoal long wool coat worn open, a cream cable-knit turtleneck sweater dress (mini length) underneath, cream fringe scarf, sheer black pantyhose, black knee-high boots, a small brown structured handbag.
 jihyun_special_pose01_neutral.png — composed, almost expressionless
 jihyun_special_pose01_smile.png — only the corners of the mouth lifted slightly
 jihyun_special_pose01_blush.png — ears turning red, frozen and stiff
@@ -161,7 +161,7 @@ jihyun_special_pose01_serious.png — firm, steady look
 jihyun_special_pose01_pout.png — sideways look as if arms are crossed
 
 HEROINE 3 — CHA YUJIN (silver-white bob, one gold hairpin, thin round metal glasses always on, amber eyes, curvy adult figure). Pose: same as her casual sprite, no bag.
-Outfit: sage-green ribbed long-sleeve knit midi dress with a thin brown belt, no collar, sheer pantyhose, brown low-heel ankle boots.
+Outfit: ivory shearling short jacket with brown suede trim worn open, a beige V-neck knit sweater with a thin brown line at the neckline, brown glen-check A-line midi skirt, sheer pantyhose, brown low-heel ankle boots.
 yujin_special_pose01_neutral.png — slightly tense default look
 yujin_special_pose01_smile.png — shy small smile
 yujin_special_pose01_blush.png — eyes cast down, face bright red
@@ -172,7 +172,7 @@ yujin_special_pose01_serious.png — brave, direct gaze
 yujin_special_pose01_pout.png — lips pushed out a little
 
 HEROINE 4 — HAN SEOYUN (long wavy dark plum hair, half-lidded grey-lavender eyes, beauty mark under her LEFT eye). Pose: one finger near her lips.
-Outfit: black fitted square-neck long-sleeve knit top tucked into a deep plum satin midi skirt, black knee-high boots (her garter and lace thigh-highs hidden under the skirt).
+Outfit: black oversized long tailored coat worn open, a grey hoodie, black leather straight-leg pants, black ankle boots, sunglasses pushed up on her head.
 seoyun_special_pose01_neutral.png — relaxed, eyes half-lidded
 seoyun_special_pose01_smile.png — teasing playful smile
 seoyun_special_pose01_blush.png — the teasing stops, a serious quiet blush
