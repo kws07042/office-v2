@@ -12,6 +12,38 @@ R15 코스프레 버전은 지현 탐정 재킷과 서윤 마술사 재킷만 �
 
 결과는 후보다. 검수와 사용자 승인 전에는 게임에 연결하지 않는다.
 
+## 0단계: 그림체 맞추기 (새 대화에서는 반드시 맨 앞에 붙인다)
+
+새 ChatGPT 대화는 이전 그림을 기억하지 못해서 그림체가 무너진다. 아래 블록을 장면 프롬프트 **바로 앞에** 붙인다. 저장소는 공개라서 아래 주소는 로그인 없이 열린다(2026-11-23 확인). 그래도 ChatGPT가 그림을 열지 못한다고 하면, 마스터 그림 네 장을 직접 첨부하는 것이 가장 확실하다.
+
+```text
+STEP 0 — STYLE LOCK. Before drawing anything, open and look at these reference images (public GitHub, no login needed):
+MASTER STYLE + FACES (highest priority):
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/ria_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/jihyun_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/yujin_office_pose01_neutral_v001.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/CharacterArt/candidates/heroine-masters-v001/seoyun_office_pose01_neutral_v001.png
+OUTFITS (casual and home clothes):
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/ria/ria_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/ria/ria_home_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/jihyun/jihyun_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/jihyun/jihyun_home_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/yujin/yujin_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/yujin/yujin_home_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/seoyun/seoyun_casual_pose01_neutral.png
+https://raw.githubusercontent.com/kws07042/office-v2/main/Source/game/images/characters/seoyun/seoyun_home_pose01_neutral.png
+APPROVED SCENE EXAMPLES (room, lighting and rendering level to match):
+https://raw.githubusercontent.com/kws07042/office-v2/codex/intro-cgs-v001/CharacterArt/candidates/intro-cgs-v001/01_ria_rainy_night.png
+https://raw.githubusercontent.com/kws07042/office-v2/codex/intro-cgs-v001/CharacterArt/candidates/intro-cgs-v001/07_jihyun_bedside.png
+https://raw.githubusercontent.com/kws07042/office-v2/codex/intro-cgs-v001/CharacterArt/candidates/intro-cgs-v001/08_yujin_window.png
+
+Then, BEFORE the first image, reply in text only: (a) whether you could open each image, (b) a short description of the art style you see — line weight and line color, how the eyes are drawn (shape, iris gradient, highlight shapes), shading type, skin and hair rendering, color temperature, (c) each heroine's identifying features. Wait for my "ok".
+In every image afterwards: copy that exact style. Same face shape, same eye shape and highlights, same thin dark-brown line art, same soft two-tone cel shading with gentle gradients, same glossy hair strands, warm soft lighting. Do NOT switch to realistic, 3D, semi-real, thick-outline, flat-vector or a different anime style. Do not redesign faces. If I say "style check", compare your last image with the master images and redraw what differs.
+If you cannot open the links, tell me and I will attach the images.
+```
+
+## 1단계: 장면 프롬프트 (0단계 바로 뒤에 붙인다)
+
 ```text
 Draw intro CGs for an adult office-romance visual novel, ONE image per reply, in order. After each image wait for me to say "next". Reference repo: github.com/kws07042/office-v2
 
