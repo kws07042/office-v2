@@ -37,3 +37,13 @@
 | 결과 | afterwork_script_prototype-0.38.0-test4-win.zip, 167,605,858바이트, SHA-256 854f956059849ade1e9f41d5e4ab864ed4214d9f1f44cd0ab886f54d7ffc92ac |
 | 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음(.rpy는 엔진 renpy/common만). 인트로 CG 24장 + 모텔 CG, 데이트복 입상 32장 포함 |
 | 검사 | 인트로 CG 연결 뒤 five_asset·갤러리·리아 R16 통과. 지현·유진·서윤 최종 검사는 다시 돌리는 중. Windows 실제 실행은 못 함 |
+
+## test5 (성인 이벤트 본장면 대사 연결)
+
+| 항목 | 값 |
+|---|---|
+| 게임 버전 | 0.39.0-test5 (d994b95) |
+| 결과 | afterwork_script_prototype-0.39.0-test5-win.zip, 167,612,908바이트, SHA-256 87d45d04e366463b3c5f226f11a6dc9fb74de32dad0b87600b56e88dfae21f92 |
+| 내용 | event_main_text.json(25장면, Docs/adult/grok-adult-scenes-v003b.json 복사)을 본장면 CG1~3에 한 줄씩 표시. 리아 모텔은 대사창으로 재생 |
+| 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음(.rpy는 엔진 renpy/common만) |
+| 검사 | 8.6.2 lint 통과. 본장면 대사(데이터·한 줄 이동·이름 치환·모텔), 그림 연결, 도입 CG 검사 통과(Linux). Windows 실제 실행은 못 함 |
