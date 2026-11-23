@@ -28,3 +28,12 @@
 | 게임 버전 | 0.37.0-test3 |
 | 결과 | afterwork_script_prototype-0.37.0-test3-win.zip, 134,801,459바이트, SHA-256 e483b417f8fa2a8d398b8355cc242e0ce1df250a483664c26f9965f093d2651a |
 | 검사 | lint 통과. 이름·타이틀·사내 메신저·휴대폰·실크 UI·크림 UI·데이트복 화면·오프닝·리아 R16·통합 플레이·플레이 흐름 11개 통과(8.6.0 비공식 엔진, Linux). Windows 실제 실행은 못 함 |
+
+## test4 (R12 데이트복 입상·인트로 CG 25장 연결)
+
+| 항목 | 값 |
+|---|---|
+| 게임 버전 | 0.38.0-test4 (5af35a0) |
+| 결과 | afterwork_script_prototype-0.38.0-test4-win.zip, 167,605,858바이트, SHA-256 854f956059849ade1e9f41d5e4ab864ed4214d9f1f44cd0ab886f54d7ffc92ac |
+| 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음(.rpy는 엔진 renpy/common만). 인트로 CG 24장 + 모텔 CG, 데이트복 입상 32장 포함 |
+| 검사 | 인트로 CG 연결 뒤 five_asset·갤러리·리아 R16 통과. 지현·유진·서윤 최종 검사는 다시 돌리는 중. Windows 실제 실행은 못 함 |
