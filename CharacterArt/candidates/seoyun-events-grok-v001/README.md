@@ -20,3 +20,8 @@
 | r15_cosplay_bunny_after | 교체·통과(바니수트+셔츠). _alt는 속옷 세트판 |
 | r15_cosplay_police_after_pending | 보류: 하의 속옷이 그려지지 않음(수위 기준 밖), 무릎 위 경찰 모자 빠짐. 기존 police_after 유지 |
 | r07_casual_intro | 아직 다시 그리지 않음(구석 어깨 문제 남음) |
+
+## 최종 (2026-11-24)
+- r07_casual_intro, r15_cosplay_police_after를 사용자가 올린 두 장으로 교체(시점 수정, 하의 속옷·무릎 위 모자 확인). 보류 파일 삭제.
+- 18장 모두 통과. 사용자 요청 흐름(전부 모이면 게임 연결)에 따라 1280×720 PNG로 줄여 Source/game/images/events/seoyun/에 연결.
+  A=도입(`*_intro.png`), B=도입 표정(`*_intro_shy.png`), C=이후 대화(`*_after.png`, 새 연결).

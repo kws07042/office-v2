@@ -92,6 +92,9 @@ screen event_cut(event_id, variant, cursor):
     $ beat = event_story[event_id][variant][page["story_index"]] if page["story_index"] is not None else None
     $ expression = page["kind"] == "intro" and cursor == 2 and event_intro_expression_ready
     $ resolved = event_intro_asset(event_id, variant, expression) if beat else None
+    $ after_path = event_after_path(event_id, variant) if page["kind"] == "after" else None
+    if after_path:
+        $ resolved = dict(resolved or {}, path=after_path)
     $ has_art = bool(resolved and resolved["path"])
     $ part_name = {"intro": "도입", "main": "본장면", "after": "이후 대화"}[page["kind"]]
     $ outfit_name = {"casual": "익숙한 사복", "special": "특별한 날의 옷", "home": "편한 생활복", "cosplay": "선택한 특별 의상"}[variant]

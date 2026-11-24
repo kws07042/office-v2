@@ -33,6 +33,16 @@ init python:
             result.update(displayed_id=base_id, path=base["planned_path"], fallback=True)
         return result
 
+    def event_after_path(event_id, variant):
+        """이후 대화 그림: 도입 그림 경로의 _intro를 _after로 바꾼 파일(코스프레는 고른 의상). 없으면 None."""
+        planned = event_cg_sets[event_id + ":" + variant]["intro_cg"]["planned_path"].replace("_intro.", "_after.")
+        costume = renpy.store.memory.get(event_id.split("_")[0] + "_r15_costume") if variant == "cosplay" else None
+        if costume:
+            costume_path = planned.replace("_cosplay_", "_cosplay_%s_" % costume)
+            if renpy.loadable(costume_path):
+                return costume_path
+        return planned if renpy.loadable(planned) else None
+
     def event_intro_asset(event_id, variant, expression=False):
         group = event_cg_sets[event_id + ":" + variant]
         return event_resolve_cg(event_id, variant, group["intro_expression" if expression else "intro_cg"]["id"])
