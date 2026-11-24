@@ -64,3 +64,12 @@
 | 게임 버전 | 0.40.1-test7 (0239fbe) |
 | 결과 | afterwork_script_prototype-0.40.1-test7-win.zip, 204,111,686바이트, SHA-256 b0fd526bfd212a72edb92603792f7abb008f07f6c72ed83d56a561d28736e56f |
 | 검사 | 8.6.2 lint 통과, 사원증 이름 검사 통과(Linux). 배포 제외 확인. Windows 실제 실행은 못 함 |
+
+## test8 (대사 1,071줄 교정 · 본장면 흐린 배경 · 갤러리 · 입상 키 · WebP)
+
+| 항목 | 값 |
+|---|---|
+| 게임 버전 | 0.41.0-test8 (4c3afcd) |
+| 결과 | afterwork_script_prototype-0.41.0-test8-win.zip, 143,067,573바이트(test6 204MB에서 줄어듦), SHA-256 93a89949055d7169bd2788bc6682f51b8806c2b0f4eba3925282490953b420e3 |
+| 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음. 이벤트 그림 WebP 59장 포함 |
+| 검사 | 8.6.2 lint 통과. 통합 스토리·오프닝·플레이 흐름·리아 R16·서윤·지현 최종·유진 최종·문자 2종·이벤트 그림·이후 그림·본장면 대사·그림 연결·갤러리·입상·실크 UI·데이트복 통과(Linux). Windows 실제 실행은 못 함 |
