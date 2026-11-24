@@ -40,7 +40,10 @@ testsuite event_art_checks:
         $ memory["seoyun_r15_costume"] = "police"
         assert eval event_after_path("seoyun_r15", "cosplay") == "images/events/seoyun/r15_cosplay_police_after.png"
         assert eval event_intro_asset("seoyun_r15", "cosplay", True)["path"] == "images/events/seoyun/r15_cosplay_police_intro_shy.png"
-        assert eval event_after_path("ria_r07", "casual") is None
+        assert eval event_after_path("ria_r07", "casual") == "images/events/ria/r07_casual_after.png"
+        assert eval event_after_path("yujin_r07", "casual") is None
+        $ memory["ria_r15_costume"] = "cheer"
+        assert eval event_after_path("ria_r15", "cosplay") is None
 
     teardown:
         exit
