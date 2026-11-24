@@ -33,8 +33,8 @@ label yujin_r01:
     y "완성되면 드릴게요. 진짜로요."
     dn "완성되면 준다고 했다. 컵받침 하나를 기다리는 일이 이렇게 설렐 줄은 몰랐다."
     $ location = "목요일 퇴근 후 · 개인 메시지"
-    call phone_deliver("yujin_r01_info", "yujin", "도현 씨, 이번 주말에 작은 전시가 열려요. 그게... 같이 가고 싶어서요.", contact="yujin")
-    call phone_deliver("yujin_r01_title", "yujin", "제목은 ‘오후의 온도’예요. 설명을 세 줄 썼다가 다 지웠어요. 만나서 할게요.", contact="yujin")
+    call phone_deliver("yujin_r01_info", "yujin", "도현 씨 이번 주말에 작은 전시가 열려요\n그게... 같이 가고 싶어서요", contact="yujin")
+    call phone_deliver("yujin_r01_title", "yujin", "제목은 '오후의 온도'예요\n설명 세 줄 썼다가 다 지웠어요 ㅎㅎ 만나서 할게요", contact="yujin")
     $ phone_context = "yujin_r01_reply"
     $ progression_enter("yujin_r01.choice01")
     $ progression_checkpoint("yujin_r01.choice01")
@@ -42,21 +42,21 @@ label yujin_r01:
     $ remember("yujin_r01_reply", _return)
     $ phone_context = None
     if memory["yujin_r01_reply"] == "interest":
-        call phone_deliver("yujin_r01_reply", "dohyun", "좋아요. 유진 씨가 고른 거면 일단 가야죠. 뭐부터 봐요?", contact="yujin")
-        call phone_deliver("yujin_r01_answer", "yujin", "입구 쪽 그림이요! ...아, 아니에요. 제가 말하면 도현 씨 감상이 제 감상이 돼 버려요. 참을게요.", contact="yujin")
+        call phone_deliver("yujin_r01_reply", "dohyun", "좋아요. 유진 씨가 고른 거면 일단 가야죠\n뭐부터 봐요?", contact="yujin")
+        call phone_deliver("yujin_r01_answer", "yujin", "입구 쪽 그림이요!!\n...아 아니에요. 제가 말하면 도현 씨 감상이 제 감상이 돼요. 참을게요", contact="yujin")
     elif memory["yujin_r01_reply"] == "time":
-        call phone_deliver("yujin_r01_reply", "dohyun", "토요일 오후 두 시 어때요? 그 뒤는 비워 둘게요.", contact="yujin")
-        call phone_deliver("yujin_r01_answer", "yujin", "헉. 저 지금 시간을 어떻게 물어볼지 고민하던 중이었는데요. 한 문장 졌네요.", contact="yujin")
+        call phone_deliver("yujin_r01_reply", "dohyun", "토요일 오후 두 시 어때요? 그 뒤는 비워 둘게요", contact="yujin")
+        call phone_deliver("yujin_r01_answer", "yujin", "헉 저 지금 시간 어떻게 물어볼지 고민하던 중이었는데요\n한 문장 졌네요 ㅎㅎ", contact="yujin")
     else:
         call phone_deliver("yujin_r01_reply", "dohyun", "가고 싶어요. 근데 왜 이 전시예요?", contact="yujin")
         if c06_person == "yujin" and c06_topic == "weekend":
-            call phone_deliver("yujin_r01_answer", "yujin", "지난번에 제목 보고 서로 다른 쪽 고르셨잖아요. 같은 그림 앞에서는 얼마나 다를지... 궁금해서요.", contact="yujin")
+            call phone_deliver("yujin_r01_answer", "yujin", "지난번에 제목 보고 서로 다른 쪽 고르셨잖아요\n같은 그림 앞에서는 얼마나 다를지... 궁금해서요", contact="yujin")
         else:
-            call phone_deliver("yujin_r01_answer", "yujin", "도현 씨는 같은 걸 봐도 다른 데서 멈출 것 같아서요. 그 멈추는 데를 옆에서 보고 싶었어요.", contact="yujin")
+            call phone_deliver("yujin_r01_answer", "yujin", "도현 씨는 같은 걸 봐도 다른 데서 멈출 것 같아서요\n그 멈추는 데를 옆에서 보고 싶었어요", contact="yujin")
     if memory["yujin_r01_reply"] != "time":
-        call phone_deliver("yujin_r01_time", "yujin", "토요일 두 시, 입구 어때요? 사람 많아지기 전에요.", contact="yujin")
-        call phone_deliver("yujin_r01_time_reply", "dohyun", "좋아요. 두 시에 입구에서 봬요.", contact="yujin")
-    call phone_deliver("yujin_r01_close", "yujin", "그럼 토요일 두 시예요. ...설명하는 사람 말고, 같이 보는 사람으로 와 주세요 :)", contact="yujin", important=True)
+        call phone_deliver("yujin_r01_time", "yujin", "토요일 두 시, 입구 어때요? 사람 많아지기 전에요!", contact="yujin")
+        call phone_deliver("yujin_r01_time_reply", "dohyun", "좋아요. 두 시에 입구에서 봬요", contact="yujin")
+    call phone_deliver("yujin_r01_close", "yujin", "그럼 토요일 두 시예요\n...설명하는 사람 말고 같이 보는 사람으로 와 주세요 :)", contact="yujin", important=True)
     $ remember("yujin_r01_appointment", "토요일 오후 두 시, 작은 전시 공간 입구")
     $ remember("yujin_r01_first_contact")
     $ location = "목요일 저녁 · 도현의 집"
@@ -183,14 +183,14 @@ label yujin_r03:
     $ chapter = "유진 R03 · 질문을 기억한 시안"
     $ location = "다음 주 월요일 점심 · 개인 메시지"
     if memory.get("yujin_r02_touch") == "hand":
-        call phone_deliver("yujin_r03_memory", "yujin", "지난번 다음 방으로 가는 길이요. 손 놓을 때까지 노트 생각이 안 났어요. 그건 안 적어도 기억나네요.", contact="yujin")
+        call phone_deliver("yujin_r03_memory", "yujin", "지난번 다음 방으로 가는 길이요\n손 놓을 때까지 노트 생각이 안 났어요. 그건 안 적어도 기억나네요", contact="yujin")
     elif memory.get("yujin_r02_touch") == "later":
-        call phone_deliver("yujin_r03_memory", "yujin", "지난번에 나란히 걷다가 같이 멈췄던 그림이요. 오늘 노트 첫 줄에 적었어요. 다음에도 보여 드리고 싶어요.", contact="yujin")
+        call phone_deliver("yujin_r03_memory", "yujin", "지난번에 나란히 걷다가 같이 멈췄던 그림이요\n오늘 노트 첫 줄에 적었어요. 다음에도 보여 드리고 싶어요", contact="yujin")
     elif memory.get("yujin_r02_touch") == "talk":
-        call phone_deliver("yujin_r03_memory", "yujin", "지난번에 한 문장 더 듣고 싶다고 하셨잖아요. 오늘은 짧게 설명할 게 있어서요. 시안도... 같이 보실래요?", contact="yujin")
+        call phone_deliver("yujin_r03_memory", "yujin", "지난번에 한 문장 더 듣고 싶다고 하셨잖아요\n오늘은 짧게 설명할 게 있어서요. 시안도... 같이 보실래요?", contact="yujin")
     else:
-        call phone_deliver("yujin_r03_memory", "yujin", "오늘 다듬은 시안, 같이 보실래요? 설명 듣기 전 감상이 궁금해요.", contact="yujin")
-    call phone_deliver("yujin_r03_answer", "dohyun", "좋아요. 이번에도 처음 본 느낌부터 말할게요. 점심 끝나고 잠깐 들를게요.", contact="yujin")
+        call phone_deliver("yujin_r03_memory", "yujin", "오늘 다듬은 시안 같이 보실래요?\n설명 듣기 전 감상이 궁금해요", contact="yujin")
+    call phone_deliver("yujin_r03_answer", "dohyun", "좋아요. 이번에도 처음 본 느낌부터 말할게요\n점심 끝나고 잠깐 들를게요", contact="yujin")
     $ location = "같은 월요일 오후 · 디자인 작업 공간"
     "유진이 모니터를 도현 쪽으로 돌렸다. 책상 한쪽에는 전시 때 쓰던 노트가 놓여 있었다."
     dn "전시 때 내가 흘리듯 물었던 걸 시안에 넣어 왔다. 누가 내 말을 이렇게까지 들은 적이 있었나."

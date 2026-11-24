@@ -144,7 +144,7 @@ testsuite route_phone_checks:
         assert eval phone_active_contact == "ria"
         run Show("office_phone_archive")
         click id "phone_contact_seoyun"
-        assert "서윤 씨, 감사합니다. 오늘은 저녁만 같이 만들려고요."
+        assert "감사합니다 서윤 씨 ㅎㅎ 오늘은 저녁만 같이 만들려고요"
         screenshot "route-phone-seoyun-history.png"
         click id "phone_archive_close"
 

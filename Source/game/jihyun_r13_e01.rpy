@@ -78,11 +78,11 @@ label jihyun_r14:
     "목소리가 너무 작아서, 들은 건지 들었다고 믿고 싶은 건지 알 수 없었다."
     dn "반 뼘. 오늘 지현 씨가 내게 준 대답의 전부였다. 그래도 밀어내지는 않았다."
     $ location = "월요일 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("jihyun_r14_cold1", "jihyun", "검토 순서 수정본 올렸어. 확인해.", contact="jihyun")
+    call phone_deliver("jihyun_r14_cold1", "jihyun", "검토 순서 수정본 올렸어. 확인해", contact="jihyun")
     "업무 메신저와 똑같은 말투였다. 도현은 답장을 썼다 지웠다를 몇 번 반복했다."
-    call phone_deliver("jihyun_r14_cold2", "dohyun", "확인했어요. ...밥은 드셨어요?", contact="jihyun")
+    call phone_deliver("jihyun_r14_cold2", "dohyun", "확인했어요\n...밥은 드셨어요?", contact="jihyun")
     "‘읽음’ 표시가 뜨고 한참 동안 답이 없었다. 자정이 넘어서야 한 줄이 왔다."
-    call phone_deliver("jihyun_r14_cold3", "jihyun", "아직. 위에 올릴 자료가 남아서. 수요일에 보자. ...미안해.", contact="jihyun")
+    call phone_deliver("jihyun_r14_cold3", "jihyun", "아직. 위에 올릴 자료 남아서\n수요일에 보자. ...미안", contact="jihyun")
     dn "미안하다는 말이 이렇게 멀게 들릴 수도 있구나."
     $ location = "수요일 오전 · 비교 검토 직전"
     $ progression_enter("jihyun_r14.choice01")

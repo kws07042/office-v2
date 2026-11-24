@@ -400,8 +400,8 @@ label office_phone_preview:
 
 label ria_disclosure_phone:
     call phone_deliver("ria_disclosure_1", "ria_shared", "언니, 나 도현 씨랑 사귀어. 우리 둘이 같이 알려 주고 싶어서 보냈어! 다른 사람들한테는 아직 말하지 말아 줘~", contact="seoyun")
-    call phone_deliver("ria_disclosure_2", "seoyun", "어머, 둘이 드디어 말해 주네~ 축하해. 다른 사람들한텐 너희가 얘기할 때까지 비밀로 할게.", contact="seoyun", important=True)
-    call phone_deliver("ria_disclosure_3", "seoyun", "리아야, 데이트 일정까지 캠페인처럼 빡빡하게 짜진 말고. 도현 씨도 즐거운 저녁 보내요 :)", contact="seoyun")
-    call phone_deliver("ria_disclosure_4", "dohyun", "서윤 씨, 감사합니다. 오늘은 저녁만 같이 만들려고요.", contact="seoyun")
+    call phone_deliver("ria_disclosure_2", "seoyun", "어머 둘이 드디어 말해 주네~ 축하해!!\n다른 사람들한텐 너희가 얘기할 때까지 비밀로 할게", contact="seoyun", important=True)
+    call phone_deliver("ria_disclosure_3", "seoyun", "리아야 데이트 일정까지 캠페인처럼 빡빡하게 짜진 말고 ㅋㅋ\n도현 씨도 즐거운 저녁 보내요 :)", contact="seoyun")
+    call phone_deliver("ria_disclosure_4", "dohyun", "감사합니다 서윤 씨 ㅎㅎ 오늘은 저녁만 같이 만들려고요", contact="seoyun")
     $ phone_active_contact = "ria"
     return

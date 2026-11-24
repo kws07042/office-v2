@@ -22,9 +22,9 @@ label seoyun_r01:
     "서윤은 평소의 웃음으로 돌아가 손을 흔들고 나갔다. 도현은 그 웃음이 돌아오기 전의 반 초를 봤다."
     dn "농담처럼 넘기던 말을 붙잡았다. 다음 주가 갑자기 기다려졌다."
     $ location = "다음 주 수요일 오후 · 개인 메시지"
-    call phone_deliver("seoyun_r01_invite", "seoyun", "‘언제 한번 보자’ 있잖아. 그거 오늘로 해도 돼? 일곱 시, 회사 앞 작은 카페.", contact="seoyun", important=True)
-    call phone_deliver("seoyun_r01_accept", "dohyun", "좋아요. 일곱 시에 갈게요. 오늘은 제가 질문하는 날이죠?", contact="seoyun")
-    call phone_deliver("seoyun_r01_confirm", "seoyun", "흐음, 각오했어. 오늘은 연락 담당 말고 그냥 한서윤으로 갈게.", contact="seoyun")
+    call phone_deliver("seoyun_r01_invite", "seoyun", "'언제 한번 보자' 있잖아\n그거 오늘로 해도 돼? 일곱 시, 회사 앞 작은 카페", contact="seoyun", important=True)
+    call phone_deliver("seoyun_r01_accept", "dohyun", "좋아요! 일곱 시에 갈게요\n오늘은 제가 질문하는 날이죠?", contact="seoyun")
+    call phone_deliver("seoyun_r01_confirm", "seoyun", "흐음 각오했어 ㅋㅋ\n오늘은 연락 담당 말고 그냥 한서윤으로 갈게", contact="seoyun")
     $ remember("seoyun_r01_appointment", "수요일 저녁 일곱 시, 회사 앞 카페")
     $ location = "같은 수요일 저녁 일곱 시 · 회사 앞 카페"
     "커피 두 잔과 작은 쿠키 하나. 서윤은 마주 앉자마자 턱을 괴고 도현을 봤다."
@@ -347,9 +347,9 @@ label seoyun_r03:
     sn "가볍게 말하는 건 쉬운데. 이번엔 가볍게 들리지 않았으면 좋겠다."
     dn "내가 기억한 약속을 서윤 씨가 다시 기억했다. 기억이 두 번 겹치니 약속이 조금 무거워졌다. 좋은 쪽으로."
     $ location = "다음 날 아침 · 출근길, 개인 메시지"
-    call phone_deliver("seoyun_r03_m1", "seoyun", "금요일 일곱 시, 수첩에 적었어. 펜으로. 연필 아니고.", contact="seoyun")
-    call phone_deliver("seoyun_r03_m2", "dohyun", "그게 다른 거예요?", contact="seoyun")
-    call phone_deliver("seoyun_r03_m3", "seoyun", "연필은 지울 수 있잖아. 펜으로 약속 적은 거 오랜만이야. 그러니까 늦지 마~", contact="seoyun")
+    call phone_deliver("seoyun_r03_m1", "seoyun", "금요일 일곱 시 수첩에 적었어\n펜으로. 연필 아니고", contact="seoyun")
+    call phone_deliver("seoyun_r03_m2", "dohyun", "그게 달라요?", contact="seoyun")
+    call phone_deliver("seoyun_r03_m3", "seoyun", "연필은 지울 수 있잖아\n펜으로 약속 적은 거 오랜만이야. 그러니까 늦지 마~", contact="seoyun")
     $ award_once("seoyun_R03", "seoyun", 8)
     $ progression_note_ending()
     return

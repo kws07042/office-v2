@@ -115,9 +115,9 @@ label seoyun_r14:
     "서윤이 처음으로 웃었다. 금방 사라지는 웃음이었다. 도현은 그 뒷모습이 골목을 돌 때까지 서 있었다."
     dn "삼 년을 혼자 버틴 사람이, 지키려고 밀어내는 법밖에 모른다. 그걸 아는 것과 견디는 것은 다른 일이었다."
     $ location = "같은 날 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("seoyun_r13_m1", "seoyun", "아까 길에서 미안. 그 건물 앞에서 손이 먼저 움직이더라. 팔짱 낄 뻔한 거 봤지.", contact="seoyun")
-    call phone_deliver("seoyun_r13_m2", "dohyun", "봤어요. 반쯤 낀 거, 저는 좋았어요.", contact="seoyun")
-    call phone_deliver("seoyun_r13_m3", "seoyun", "...그렇게 말하지 마. 수요일까지 버티기로 한 거 흔들려.", contact="seoyun")
+    call phone_deliver("seoyun_r13_m1", "seoyun", "아까 길에서 미안\n그 건물 앞에서 손이 먼저 움직이더라. 팔짱 낄 뻔한 거 봤지", contact="seoyun")
+    call phone_deliver("seoyun_r13_m2", "dohyun", "봤어요. 반쯤 낀 거, 저는 좋았어요", contact="seoyun")
+    call phone_deliver("seoyun_r13_m3", "seoyun", "...그렇게 말하지 마\n수요일까지 버티기로 한 거 흔들려", contact="seoyun")
     $ location = "화요일 오후 · 클라이언트사 회의실"
     "클라이언트사 회의실. 정민재는 서윤보다 먼저 와서 서윤의 자리 앞에 커피를 놓아 두었다."
     "“예전처럼 시럽 두 번.” 그가 웃으며 말했다. 서윤은 커피를 옆으로 밀어 두고 자료부터 펼쳤다."
@@ -127,7 +127,7 @@ label seoyun_r14:
     call pc_chat("seoyun", [("seoyun", "표정 관리."), ("dohyun", "하고 있어요."), ("seoyun", "너 말고 나. ...나 하고 있는 거 맞지?"), ("dohyun", "네. 끝까지 잘하고 있어요.")])
     dn "회의 자료보다 그 호칭이 더 오래 귀에 남았다."
     $ location = "화요일 밤 · 개인 메시지"
-    call phone_deliver("seoyun_r14_tue", "seoyun", "오늘 네 표정 다 봤어. 미안. 내일 다 말할게. 커피는 안 마셨어. 그것도 말해 두고 싶었어.", contact="seoyun")
+    call phone_deliver("seoyun_r14_tue", "seoyun", "오늘 네 표정 다 봤어. 미안\n내일 다 말할게. 커피는 안 마셨어. 그것도 말해 두고 싶었어", contact="seoyun")
     $ location = "같은 화요일 밤 · 각자의 집, 전화"
     "메시지를 받고 한 시간쯤 지나서, 열한 시에 전화가 왔다. 수요일까지 하루가 남은 밤이었다."
     s "자?"

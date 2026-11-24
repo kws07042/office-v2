@@ -18,9 +18,9 @@ label jihyun_r01:
     "과장이 지현을 데리고 나갔다. 도현은 빈 회의실에 한참 서 있었다."
     dn "결론부터 말하는 사람이 결론을 말하지 못하고 나갔다. 퇴근 시간까지 휴대폰을 세 번 확인했다."
     $ location = "목요일 퇴근 후 · 개인 메시지"
-    call phone_deliver("jihyun_r01_invite", "jihyun", "오늘 저녁 일곱 시. 회사 앞 작은 식당. 업무 얘기 아니야.", contact="jihyun", important=True)
-    call phone_deliver("jihyun_r01_accept", "dohyun", "좋아요. 일곱 시에 갈게요. 저도 일 말고 여쭤볼 게 있어요.", contact="jihyun")
-    call phone_deliver("jihyun_r01_question", "jihyun", "뭔데. ...아니, 만나서 해. 지금 들으면 일곱 시까지 일 못 하니까.", contact="jihyun")
+    call phone_deliver("jihyun_r01_invite", "jihyun", "오늘 저녁 일곱 시. 회사 앞 작은 식당\n일 얘기 아님", contact="jihyun", important=True)
+    call phone_deliver("jihyun_r01_accept", "dohyun", "좋아요. 일곱 시에 갈게요\n저도 일 말고 여쭤볼 거 있어요", contact="jihyun")
+    call phone_deliver("jihyun_r01_question", "jihyun", "뭔데\n...아니 만나서 해. 지금 들으면 일곱 시까지 일 못 해", contact="jihyun")
     $ remember("jihyun_r01_appointment", "목요일 저녁 일곱 시, 회사 앞 작은 식당")
     $ location = "같은 목요일 저녁 일곱 시 · 약속한 식당"
     "식당 안쪽 자리. 지현은 메뉴판을 반쯤 펼쳐 놓고 손가락 하나로 한 칸을 꾹 누르고 있다."
@@ -252,14 +252,14 @@ label jihyun_r03:
     dn "업무 지시가 아니라고 굳이 덧붙이는 사람. 그 한마디에 퇴근길이 덜 추웠다."
     $ location = "같은 월요일 퇴근 후 · 개인 메시지"
     if memory.get("jihyun_r01_topic") == "why_me":
-        call phone_deliver("jihyun_r03_personal", "jihyun", "왜 따로 만나자고 했냐고 물었지. 일 얘기 빼고도 네 다음 말이 궁금했어. 그날 못 한 대답이야.", contact="jihyun", important=True)
+        call phone_deliver("jihyun_r03_personal", "jihyun", "왜 따로 보자 했냐고 물었지\n일 얘기 빼고도 네 다음 말이 궁금했어. 그날 못 한 대답", contact="jihyun", important=True)
         $ remember("jihyun_r01_reason_answered")
     elif memory.get("jihyun_r01_topic") == "hobby":
-        call phone_deliver("jihyun_r03_personal", "jihyun", "첫 구경꾼 자리 궁금하다며. 아직 완성은 아닌데, 보여 주고 싶어. 재촉 안 할 사람인 건 지난 토요일에 알았고.", contact="jihyun")
+        call phone_deliver("jihyun_r03_personal", "jihyun", "첫 구경꾼 자리 궁금하다며\n아직 완성은 아닌데 보여 주고 싶어. 재촉 안 할 사람인 건 지난 토요일에 알았고", contact="jihyun")
     else:
-        call phone_deliver("jihyun_r03_personal", "jihyun", "업무 얘기 말고 하나 더. 지난 토요일, 좋았어. 다음에도 회사 밖에서 보자.", contact="jihyun", important=True)
-    call phone_deliver("jihyun_r03_reply", "dohyun", "저도요. 금요일 저녁 일곱 시 괜찮으세요? 이번에는 제가 따로 말씀드리고 싶은 게 있어요.", contact="jihyun")
-    call phone_deliver("jihyun_r03_confirm", "jihyun", "좋아. 회사 앞 카페. 무슨 얘긴지는 금요일까지 안 물어볼게.", contact="jihyun")
+        call phone_deliver("jihyun_r03_personal", "jihyun", "업무 말고 하나 더\n지난 토요일 좋았어. 다음에도 회사 밖에서 보자", contact="jihyun", important=True)
+    call phone_deliver("jihyun_r03_reply", "dohyun", "저도요. 금요일 저녁 일곱 시 괜찮으세요?\n이번엔 제가 따로 드릴 말씀이 있어요", contact="jihyun")
+    call phone_deliver("jihyun_r03_confirm", "jihyun", "좋아. 회사 앞 카페\n무슨 얘긴지는 금요일까지 안 물어볼게", contact="jihyun")
     $ remember("jihyun_r04_appointment", "금요일 저녁 일곱 시, 회사 앞 카페")
     dn "기분 좋다는 말을 저렇게 어렵게 하는 사람은 처음 봤다. 그래서 더 오래 기억날 것 같다."
     $ award_once("jihyun_R03", "jihyun", 8)

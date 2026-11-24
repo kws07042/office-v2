@@ -751,13 +751,13 @@ label c08:
             call phone_deliver("c08_invite_d", "dohyun", ri("다음에 퇴근하고 따로 이야기할래?", "다음에 퇴근하고 따로 이야기할래요?"), contact="ria")
         call phone_deliver("c08_invite_r", "ria", ri("좋아! 다음 코스는 ‘퇴근 후 2차 토크’로 예약~ 시간 맞춰 보자.", "좋아요! 다음 코스는 ‘퇴근 후 2차 토크’로 예약이에요~ 시간 맞춰 봐요."), contact="ria")
     elif active_route == "jihyun":
-        call phone_deliver("c08_invite_d", "dohyun", "다음엔 일 얘기 말고 따로 이야기할 시간 있으실까요?", contact="jihyun")
-        call phone_deliver("c08_invite_r", "jihyun", "좋아. 내 빈 시간 보내 줄게. 도현 씨 시간도 올려. 결재는 빨리 할게.", contact="jihyun")
+        call phone_deliver("c08_invite_d", "dohyun", "혹시 다음엔 일 얘기 말고 따로 얘기할 시간 있으세요?", contact="jihyun")
+        call phone_deliver("c08_invite_r", "jihyun", "좋아. 내 빈 시간 보낼게\n도현 씨 것도 올려. 결재는 빨리 해 줄게", contact="jihyun")
     elif active_route == "yujin":
-        call phone_deliver("c08_invite_d", "dohyun", "다음에 유진 씨가 보고 싶은 곳을 같이 가 보고 싶어요.", contact="yujin")
-        call phone_deliver("c08_invite_r", "yujin", "좋아요! 후보 몇 개 골라 둘게요. ...도현 씨가 가고 싶은 데도 하나는 꼭 알려 주세요.", contact="yujin")
+        call phone_deliver("c08_invite_d", "dohyun", "다음엔 유진 씨 가고 싶은 데 같이 가요", contact="yujin")
+        call phone_deliver("c08_invite_r", "yujin", "좋아요!! 후보 몇 개 골라 둘게요\n...도현 씨 가고 싶은 데도 하나는 꼭 알려 주세요", contact="yujin")
     elif active_route == "seoyun":
-        call phone_deliver("c08_invite_d", "dohyun", "다음 질문은 퇴근하고 따로 해도 될까요?", contact="seoyun")
-        call phone_deliver("c08_invite_r", "seoyun", "오, 이번엔 나도 질문 준비해 간다? 날짜부터 맞춰 보자.", contact="seoyun")
+        call phone_deliver("c08_invite_d", "dohyun", "다음 질문은 퇴근하고 따로 해도 돼요?", contact="seoyun")
+        call phone_deliver("c08_invite_r", "seoyun", "오 이번엔 나도 질문 준비해 간다?ㅋㅋ 날짜부터 맞춰 보자", contact="seoyun")
     $ progression_note_ending()
     return

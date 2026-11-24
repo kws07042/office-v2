@@ -322,15 +322,15 @@ label yujin_r08:
         $ remember("yujin_r08_morning_shared")
     $ location = "같은 일요일 오후 · 각자의 집, 개인 메시지"
     if memory.get("yujin_r07_pace") == "shared":
-        call phone_deliver("yujin_r08_memory", "yujin", "어제 두 번째 사진, 그림 옆에 뒀어요. 오늘 아침에도 도현 씨가 저렇게 봤는데 그땐 사진이 없네요.", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "어제 두 번째 사진 그림 옆에 뒀어요\n오늘 아침에도 도현 씨가 저렇게 봤는데 그땐 사진이 없네요", contact="yujin")
     elif memory.get("yujin_r07_pace") == "talk":
-        call phone_deliver("yujin_r08_memory", "yujin", "사진 다시 보니까 도현 씨 손 망설인 거 첫 컷에 다 나왔어요. 그거 보고 제가 웃은 것도요~", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "사진 다시 보니까 도현 씨 손 망설인 거 첫 컷에 다 나왔어요 ㅎㅎ\n그거 보고 제가 웃은 것도요~", contact="yujin")
     else:
-        call phone_deliver("yujin_r08_memory", "yujin", "푹 쉬셨어요? 사진 정리하다 보니까 저희 둘 다 카메라 안 보는 게 제일 잘 나왔어요. 다음에도 그걸로 찍어요~", contact="yujin")
+        call phone_deliver("yujin_r08_memory", "yujin", "푹 쉬셨어요?\n사진 정리하다 보니까 저희 둘 다 카메라 안 보는 게 제일 잘 나왔어요. 다음에도 그걸로 찍어요~", contact="yujin")
     if memory.get("yujin_r06_expression") == "think_first":
-        call phone_deliver("yujin_r08_invite", "yujin", "다음 주 수요일에 잠깐 만날까요? 생각해 보시고 편한 시간 알려 주세요. 저는 목요일도 괜찮아요.", contact="yujin")
+        call phone_deliver("yujin_r08_invite", "yujin", "다음 주 수요일에 잠깐 만날까요?\n생각해 보시고 편한 시간 알려 주세요. 저는 목요일도 괜찮아요", contact="yujin")
     else:
-        call phone_deliver("yujin_r08_invite", "yujin", "이번에도 제가 부를게요~ 다음 주 수요일에 잠깐 만날까요? 저는 목요일도 괜찮아요.", contact="yujin")
+        call phone_deliver("yujin_r08_invite", "yujin", "이번에도 제가 부를게요~\n다음 주 수요일에 잠깐 만날까요? 저는 목요일도 괜찮아요", contact="yujin")
     $ phone_context = "yujin_r08_reply"
     $ progression_enter("yujin_r08.choice01")
     $ progression_checkpoint("yujin_r08.choice01")
@@ -339,19 +339,19 @@ label yujin_r08:
     $ phone_context = None
     if memory["yujin_r08_availability"] == "wed19":
         $ remember("yujin_r08_next_appointment", "수요일 저녁 일곱 시, 회사 근처 카페")
-        call phone_deliver("yujin_r08_reply", "dohyun", "수요일엔 일곱 시쯤 나올 수 있어요. 회사 근처 카페에서 볼까요?", contact="yujin")
+        call phone_deliver("yujin_r08_reply", "dohyun", "수요일엔 일곱 시쯤 나올 수 있어요\n회사 근처 카페에서 볼까요?", contact="yujin")
     elif memory["yujin_r08_availability"] == "thu19":
         $ remember("yujin_r08_next_appointment", "목요일 저녁 일곱 시, 회사 근처 카페")
-        call phone_deliver("yujin_r08_reply", "dohyun", "저는 목요일 일곱 시가 더 편해요. 회사 근처 카페는 어때요?", contact="yujin")
+        call phone_deliver("yujin_r08_reply", "dohyun", "저는 목요일 일곱 시가 더 편해요\n회사 근처 카페 어때요?", contact="yujin")
     else:
         $ remember("yujin_r08_next_appointment", "수요일 저녁 일곱 시 반, 회사 근처 카페")
-        call phone_deliver("yujin_r08_reply", "dohyun", "수요일 일곱 시 반이면 좋아요. 제 일 마무리하고 카페로 갈게요.", contact="yujin")
+        call phone_deliver("yujin_r08_reply", "dohyun", "수요일 일곱 시 반이면 좋아요\n제 일 마무리하고 카페로 갈게요", contact="yujin")
     if memory["yujin_r08_availability"] == "wed19":
-        call phone_deliver("yujin_r08_confirm", "yujin", "네, 거기 좋아요. 컵 받침 이번에도 해바라기라고 하시면 저 진짜 사진 찍어 둘 거예요~", contact="yujin", important=True)
+        call phone_deliver("yujin_r08_confirm", "yujin", "네 거기 좋아요!\n컵 받침 이번에도 해바라기라고 하시면 저 진짜 사진 찍어 둘 거예요~", contact="yujin", important=True)
     elif memory["yujin_r08_availability"] == "thu19":
-        call phone_deliver("yujin_r08_confirm", "yujin", "목요일 일곱 시에 봬요. 이번에도 제가 창가 자리부터 볼게요.", contact="yujin", important=True)
+        call phone_deliver("yujin_r08_confirm", "yujin", "목요일 일곱 시에 봬요\n이번에도 제가 창가 자리부터 볼게요", contact="yujin", important=True)
     else:
-        call phone_deliver("yujin_r08_confirm", "yujin", "일곱 시 반도 괜찮아요. 먼저 도착하면 자리 잡고 연락드릴게요.", contact="yujin", important=True)
+        call phone_deliver("yujin_r08_confirm", "yujin", "일곱 시 반도 괜찮아요\n먼저 도착하면 자리 잡고 연락드릴게요", contact="yujin", important=True)
     $ remember("yujin_r08_proposer", "yujin")
     $ location = "같은 일요일 오후 · 유진의 집 — 유진 시점"
     "유진은 정한 약속을 달력에 적었다. ‘그때까지 보고 싶으면 또 연락해도 되죠?’라고 쓰다가 보내지 않고 지웠다."

@@ -243,29 +243,29 @@ label sched_msg_ria_3:
     call phone_deliver("x_sched_m_ria_3", "ria", ri("오늘 빵집 앞 지나갔는데 너 없더라. 소금빵 하나 남았었는데~", "오늘 빵집 앞 지나갔는데 도현 씨 없더라고요. 소금빵 하나 남았었는데요~"), contact="ria")
     return
 label sched_msg_jihyun_1:
-    call phone_deliver("x_sched_m_jihyun_1", "jihyun", "점심 먹었어? 업무 확인 아니고. 오늘 내 자리 앞이 좀 조용했어서.", contact="jihyun")
+    call phone_deliver("x_sched_m_jihyun_1", "jihyun", "점심 먹었어? 업무 확인 아니고\n오늘 내 자리 앞이 좀 조용해서", contact="jihyun")
     return
 label sched_msg_jihyun_2:
-    call phone_deliver("x_sched_m_jihyun_2", "jihyun", "늦게까지 남은 거 봤어. 다음엔 나한테 먼저 말해. 일을 나눠 주든 집에 보내든 할 테니까.", contact="jihyun")
+    call phone_deliver("x_sched_m_jihyun_2", "jihyun", "늦게까지 남은 거 봤어\n다음엔 나한테 먼저 말해. 일을 나눠 주든 집에 보내든 할 테니까", contact="jihyun")
     return
 label sched_msg_jihyun_3:
-    call phone_deliver("x_sched_m_jihyun_3", "jihyun", "정류장에서 네 버스 번호 봤어. 같은 노선이더라. ...그냥 그렇다고.", contact="jihyun")
+    call phone_deliver("x_sched_m_jihyun_3", "jihyun", "정류장에서 네 버스 번호 봤어. 같은 노선이더라\n...그냥 그렇다고", contact="jihyun")
     return
 label sched_msg_yujin_1:
-    call phone_deliver("x_sched_m_yujin_1", "yujin", "오늘 계단참에 빛 엄청 좋았어요. ...그냥 알려 드리고 싶어서요.", contact="yujin")
+    call phone_deliver("x_sched_m_yujin_1", "yujin", "오늘 계단참에 빛 엄청 좋았어요!!\n...그냥 알려 드리고 싶어서요", contact="yujin")
     return
 label sched_msg_yujin_2:
-    call phone_deliver("x_sched_m_yujin_2", "yujin", "아이콘 스무 개 그렸는데 아무도 안 골라 줘서 그냥 다 저장했어요. 내일 하나만 골라 주실래요?", contact="yujin")
+    call phone_deliver("x_sched_m_yujin_2", "yujin", "아이콘 스무 개 그렸는데 아무도 안 골라 줘서 그냥 다 저장했어요 ㅠ\n내일 하나만 골라 주실래요?", contact="yujin")
     return
 label sched_msg_yujin_3:
-    call phone_deliver("x_sched_m_yujin_3", "yujin", "별표 골목 오늘도 지나왔어요. 고양이 그림자 나왔어요. 다음엔 같이 봐요.", contact="yujin")
+    call phone_deliver("x_sched_m_yujin_3", "yujin", "별표 골목 오늘도 지나왔어요. 고양이 그림자 나왔어요!\n다음엔 같이 봐요", contact="yujin")
     return
 label sched_msg_seoyun_1:
-    call phone_deliver("x_sched_m_seoyun_1", "seoyun", "오늘 제육 먹으러 갔는데 혼자라 반찬이 남았어. 다음엔 데려가야지~", contact="seoyun")
+    call phone_deliver("x_sched_m_seoyun_1", "seoyun", "오늘 제육 먹으러 갔는데 혼자라 반찬 남음 ㅋㅋ\n다음엔 데려가야지~", contact="seoyun")
     return
 label sched_msg_seoyun_2:
-    call phone_deliver("x_sched_m_seoyun_2", "seoyun", "오늘 영업용 목소리 네 시간 썼어. 차 사 줄 사람 구함. 농담 반.", contact="seoyun")
+    call phone_deliver("x_sched_m_seoyun_2", "seoyun", "오늘 영업용 목소리 네 시간 씀\n차 사 줄 사람 구함. 농담 반 ㅋㅋ", contact="seoyun")
     return
 label sched_msg_seoyun_3:
-    call phone_deliver("x_sched_m_seoyun_3", "seoyun", "지하철에서 책 읽는데 아무도 같이 안 읽어 주더라. 너무 빨리 넘겨 버렸어~", contact="seoyun")
+    call phone_deliver("x_sched_m_seoyun_3", "seoyun", "지하철에서 책 읽는데 아무도 같이 안 읽어 주더라\n너무 빨리 넘겨 버렸어~", contact="seoyun")
     return

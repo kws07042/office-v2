@@ -81,9 +81,9 @@ label jihyun_r05:
             $ remember("jihyun_r05_affection", "walk")
     dn "저 다리까지만. 지현 씨의 '까지만'이 조금씩 멀어지고 있다."
     $ location = "토요일 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("jihyun_r05_x1", "jihyun", "집 도착. 다리까지만이라더니 꽤 걸었네. 다리 아파. 근데 후회는 안 해.", contact="jihyun")
-    call phone_deliver("jihyun_r05_x2", "dohyun", "저도요. 다음엔 다리 하나 더 건너요.", contact="jihyun")
-    call phone_deliver("jihyun_r05_x3", "jihyun", "협상은 다음 주에. 잘 자.", contact="jihyun")
+    call phone_deliver("jihyun_r05_x1", "jihyun", "집 도착\n다리까지만이라더니 꽤 걸었네. 다리 아파. 근데 후회는 안 함", contact="jihyun")
+    call phone_deliver("jihyun_r05_x2", "dohyun", "저도요 ㅎㅎ 다음엔 다리 하나 더 건너요", contact="jihyun")
+    call phone_deliver("jihyun_r05_x3", "jihyun", "협상은 다음 주에. 잘 자", contact="jihyun")
     $ award_once("jihyun_R05", "jihyun", 4)
     $ progression_note_ending()
     return
@@ -194,9 +194,9 @@ label jihyun_r06:
     j "평소처럼. '도현 씨, 자료.' ...그 말 하면서 내가 웃으면, 그건 네가 알아서 못 본 척해."
     dn "회사 밖에서 부를 이름 하나가 생겼다. 내일 회의실에서 실수로 부르지 않을 자신이 없다."
     $ location = "월요일 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("jihyun_r06_x1", "jihyun", "아까 가게에서 '같이 왔어요'라고 한 거, 생각보다 입에 잘 붙더라.", contact="jihyun")
-    call phone_deliver("jihyun_r06_x2", "dohyun", "저는 그 말 듣고 부품 이름을 하나도 못 외웠어요.", contact="jihyun")
-    call phone_deliver("jihyun_r06_x3", "jihyun", "괜찮아. 부품은 내가 외워. 너는 같이 오기만 해.", contact="jihyun")
+    call phone_deliver("jihyun_r06_x1", "jihyun", "아까 가게에서 '같이 왔어요' 한 거\n생각보다 입에 잘 붙더라", contact="jihyun")
+    call phone_deliver("jihyun_r06_x2", "dohyun", "저는 그 말 듣고 부품 이름 하나도 못 외웠어요", contact="jihyun")
+    call phone_deliver("jihyun_r06_x3", "jihyun", "괜찮아. 부품은 내가 외워\n너는 같이 오기만 해", contact="jihyun")
     $ award_once("jihyun_R06", "jihyun", 6)
     $ progression_note_ending()
     return
@@ -401,12 +401,12 @@ label jihyun_r08:
     j "고마워. 오늘 이 층에서 숨 쉬기 편했던 데는 네 자리 쪽뿐이었어."
     $ location = "같은 월요일 퇴근 후 · 개인 메시지"
     if memory.get("jihyun_r07_pace") == "shared":
-        call phone_deliver("jihyun_r08_memory", "jihyun", "잼은 찬장에 넣었어. 네가 바른 만큼 따라 발랐다가 너무 달아서 빵 한 장 더 먹었네.", contact="jihyun")
+        call phone_deliver("jihyun_r08_memory", "jihyun", "잼 찬장에 넣었어\n네가 바른 만큼 따라 발랐다가 너무 달아서 빵 한 장 더 먹음", contact="jihyun")
     elif memory.get("jihyun_r07_pace") == "talk":
-        call phone_deliver("jihyun_r08_memory", "jihyun", "토요일에 내가 이름 불렀을 때 바로 돌아봤잖아. 그거 또 생각났어. 이번엔 물 달라는 거 아니고.", contact="jihyun")
+        call phone_deliver("jihyun_r08_memory", "jihyun", "토요일에 내가 이름 불렀을 때 바로 돌아봤잖아\n그거 또 생각났어. 이번엔 물 달라는 거 아니고", contact="jihyun")
     else:
-        call phone_deliver("jihyun_r08_memory", "jihyun", "창틀은 그대로 뒀어. 오늘 다시 봐도 반듯해 :) 집에선 잘 쉬었어?", contact="jihyun")
-    call phone_deliver("jihyun_r08_request", "jihyun", "수요일 저녁에 밥 먹자. 이번엔 일 얘기 빼고. 일곱 시 괜찮아?", contact="jihyun", important=True)
+        call phone_deliver("jihyun_r08_memory", "jihyun", "창틀 그대로 뒀어. 다시 봐도 반듯해 :)\n집에선 잘 쉬었어?", contact="jihyun")
+    call phone_deliver("jihyun_r08_request", "jihyun", "수요일 저녁에 밥 먹자. 이번엔 일 얘기 빼고\n일곱 시 괜찮아?", contact="jihyun", important=True)
     $ phone_context = "jihyun_r08_reply"
     $ progression_enter("jihyun_r08.choice01")
     $ progression_checkpoint("jihyun_r08.choice01")
@@ -414,14 +414,14 @@ label jihyun_r08:
     $ remember("jihyun_r08_reply", _return)
     $ phone_context = None
     if memory["jihyun_r08_reply"] == "restaurant":
-        call phone_deliver("jihyun_r08_reply", "dohyun", "좋아요. 조용한 식당 제가 찾아볼게요. 일곱 시에 봐요.", contact="jihyun")
-        call phone_deliver("jihyun_r08_confirm", "jihyun", "좋아. 이번엔 간판 큰 데로 부탁해. 네 냅킨 카페만큼 클 필요는 없고~ 수요일 일곱 시!", contact="jihyun")
+        call phone_deliver("jihyun_r08_reply", "dohyun", "좋아요! 조용한 식당 제가 찾아볼게요. 일곱 시에 봬요", contact="jihyun")
+        call phone_deliver("jihyun_r08_confirm", "jihyun", "좋아. 이번엔 간판 큰 데로 부탁해\n네 냅킨 카페만큼 클 필요는 없고~ 수요일 일곱 시", contact="jihyun")
     elif memory["jihyun_r08_reply"] == "menu":
         call phone_deliver("jihyun_r08_reply", "dohyun", "일곱 시 돼요. 오늘은 지현 씨가 고르실래요? 뭐 당기세요?", contact="jihyun")
-        call phone_deliver("jihyun_r08_confirm", "jihyun", "국수. 뜨거운 국물 있는 걸로. 수요일에 봐.", contact="jihyun")
+        call phone_deliver("jihyun_r08_confirm", "jihyun", "국수. 뜨거운 국물 있는 걸로\n수요일에 봐", contact="jihyun")
     else:
-        call phone_deliver("jihyun_r08_reply", "dohyun", "저도 보고 싶었어요. 일곱 시에 봬요. 이번에는 제가 먼저 손 내밀게요.", contact="jihyun")
-        call phone_deliver("jihyun_r08_confirm", "jihyun", "응. 그 말 읽으니까 수요일이 좀 멀게 느껴지네. 일곱 시에 기다릴게.", contact="jihyun", important=True)
+        call phone_deliver("jihyun_r08_reply", "dohyun", "저도 보고 싶었어요. 일곱 시에 봬요\n이번엔 제가 먼저 손 내밀게요", contact="jihyun")
+        call phone_deliver("jihyun_r08_confirm", "jihyun", "응\n그 말 읽으니까 수요일이 좀 멀다. 일곱 시에 기다릴게", contact="jihyun", important=True)
     $ remember("jihyun_r09_appointment", "수요일 저녁 일곱 시 식사")
     dn "회의실에서는 팀장과 팀원. 퇴근 후에는 그 반대쪽 얼굴. 두 얼굴을 다 아는 건 이 회사에서 나뿐이다."
     $ award_once("jihyun_R08", "jihyun", 4)
@@ -483,7 +483,7 @@ label jihyun_r09:
     j "네 앞에 있잖아."
     r "아, 그러네요. 제 앞에 있네요~"
     "리아는 웃으며 물수건을 집었지만, 그 뒤로도 몇 번이나 도현 쪽을 힐끔거렸다. 그 눈빛이 장난만은 아니라는 걸, 도현은 조금 늦게 알아챘다."
-    call phone_deliver("jihyun_r09_dinner", "jihyun", "물수건은 내 실수. 리아 눈치 빠른 거 깜빡했어. ...근데 옆에 앉아 줘서 좋았어.", contact="jihyun")
+    call phone_deliver("jihyun_r09_dinner", "jihyun", "물수건은 내 실수. 리아 눈치 빠른 거 깜빡했어\n...근데 옆에 앉아 줘서 좋았어", contact="jihyun")
     $ cream_focus = "jihyun"
     $ location = "수요일 오후 · 검토 회의 직전"
     "검토까지 이십 분. 현장팀에서 장비가 들어오는 시각을 확인해 줬다. 도현은 자기 안과 지현의 안을 다시 펼쳤다. 두 장 모두 같은 시간에 같은 사람을 다른 곳에 세우고 있었다."
@@ -654,7 +654,7 @@ label jihyun_r10_after:
     "도현이 돌아간 뒤, 지현은 조립품 옆에 노트를 두던 자리를 한 번 보았다."
     jn "노트는 조금 더 두라고 했지. 그냥 네가 조금 더 있었으면 좋겠다고 할걸."
     "지현은 다음 날 약속 메시지에 ‘노트 없어도 와’를 덧붙여 보냈다."
-    call phone_deliver("jihyun_r10_after", "jihyun", "내일은 노트 없어도 와. 같이 놀고 싶어서 부르는 거야~", contact="jihyun")
+    call phone_deliver("jihyun_r10_after", "jihyun", "내일은 노트 없어도 와\n같이 놀고 싶어서 부르는 거야~", contact="jihyun")
     $ remember("jihyun_r10_after_completed")
     $ progression_note_ending()
     return
@@ -747,9 +747,9 @@ label jihyun_r11:
     $ remember("jihyun_reunion_plan", "다음 금요일 저녁 일곱 시")
     dn "잼 카드를 맨 앞에 두는 걸 봤다. 다음엔 그 카드를 내가 뽑아 주고 싶다."
     $ location = "일요일 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("jihyun_r11_x1", "jihyun", "잼 카드 아직 책상 위에 있어. 치우기 싫어서.", contact="jihyun")
-    call phone_deliver("jihyun_r11_x2", "dohyun", "다음 판엔 제가 뺏을 건데요.", contact="jihyun")
-    call phone_deliver("jihyun_r11_x3", "jihyun", "뺏어 봐. 기다릴게.", contact="jihyun")
+    call phone_deliver("jihyun_r11_x1", "jihyun", "잼 카드 아직 책상 위에 있어. 치우기 싫어서", contact="jihyun")
+    call phone_deliver("jihyun_r11_x2", "dohyun", "다음 판엔 제가 뺏을 건데요 ㅎㅎ", contact="jihyun")
+    call phone_deliver("jihyun_r11_x3", "jihyun", "뺏어 봐. 기다릴게", contact="jihyun")
     $ award_once("jihyun_R11", "jihyun", 0)
     $ progression_note_ending()
     return
@@ -794,9 +794,9 @@ label jihyun_r12:
     d "방 번호는 안 물어볼게요."
     j "물어봐도 안 알려 줘. 금요일에 보자. 그땐 복도 말고."
     $ location = "목요일 밤 · 각자의 집, 개인 메시지"
-    call phone_deliver("jihyun_r12_x1", "jihyun", "집 도착. 복도에서 캔 건넬 때 내 손 떨린 거, 못 본 걸로 해.", contact="jihyun")
-    call phone_deliver("jihyun_r12_x2", "dohyun", "봤어요. 못 본 걸로는 못 하겠어요.", contact="jihyun")
-    call phone_deliver("jihyun_r12_x3", "jihyun", "...그럼 금요일에 책임져. 일곱 시.", contact="jihyun")
+    call phone_deliver("jihyun_r12_x1", "jihyun", "집 도착\n복도에서 캔 건넬 때 내 손 떨린 거, 못 본 걸로 해", contact="jihyun")
+    call phone_deliver("jihyun_r12_x2", "dohyun", "봤어요. 못 본 걸로는 못 하겠어요", contact="jihyun")
+    call phone_deliver("jihyun_r12_x3", "jihyun", "...그럼 금요일에 책임져. 일곱 시", contact="jihyun")
     dn "책임지라는 말을 저렇게 쓰는 사람이다. 금요일까지 그 문장을 몇 번이나 다시 읽었다."
     $ location = "금요일 저녁 일곱 시 · 약속한 식당"
     $ date_outfit_on("jihyun")
