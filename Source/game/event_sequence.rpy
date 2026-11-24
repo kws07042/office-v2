@@ -103,6 +103,10 @@ screen event_cut(event_id, variant, cursor):
     if page["kind"] == "intro" and cursor == 2 and not event_intro_expression_ready:
         timer 0.65 action Function(event_show_intro_expression, event_id, variant, cursor)
     add Solid("#292326")
+    if page["kind"] == "main" and not event_resolve_cg(event_id, variant, page["asset_id"])["path"]:
+        $ backdrop = event_after_path(event_id, variant) or event_intro_asset(event_id, variant)["path"]
+        if backdrop:
+            add Transform(backdrop, xysize=(1280, 720), blur=28, matrixcolor=BrightnessMatrix(-0.32) * SaturationMatrix(0.7))
     $ full_art = has_art and page["kind"] != "main"
     if full_art:
         # 도입·이후 대화: 그림을 화면 가득, 글은 아래에 반투명 판으로 얹는다.

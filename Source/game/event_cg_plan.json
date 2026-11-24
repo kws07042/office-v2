@@ -43,13 +43,13 @@
       ],
       "intro_cg": {
         "id": "ria_R07_casual_intro",
-        "planned_path": "images/events/ria/r07_casual_intro.png",
+        "planned_path": "images/events/ria/r07_casual_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "ria_R07_casual_intro_shy",
         "base_id": "ria_R07_casual_intro",
-        "planned_path": "images/events/ria/r07_casual_intro_shy.png",
+        "planned_path": "images/events/ria/r07_casual_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -92,13 +92,13 @@
       ],
       "intro_cg": {
         "id": "ria_R12_special_intro",
-        "planned_path": "images/events/ria/r12_special_intro.png",
+        "planned_path": "images/events/ria/r12_special_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "ria_R12_special_intro_shy",
         "base_id": "ria_R12_special_intro",
-        "planned_path": "images/events/ria/r12_special_intro_shy.png",
+        "planned_path": "images/events/ria/r12_special_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -141,13 +141,13 @@
       ],
       "intro_cg": {
         "id": "ria_R15_home_intro",
-        "planned_path": "images/events/ria/r15_home_intro.png",
+        "planned_path": "images/events/ria/r15_home_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "ria_R15_home_intro_shy",
         "base_id": "ria_R15_home_intro",
-        "planned_path": "images/events/ria/r15_home_intro_shy.png",
+        "planned_path": "images/events/ria/r15_home_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -190,13 +190,13 @@
       ],
       "intro_cg": {
         "id": "ria_R15_cosplay_intro",
-        "planned_path": "images/events/ria/r15_cosplay_intro.png",
+        "planned_path": "images/events/ria/r15_cosplay_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "ria_R15_cosplay_intro_shy",
         "base_id": "ria_R15_cosplay_intro",
-        "planned_path": "images/events/ria/r15_cosplay_intro_shy.png",
+        "planned_path": "images/events/ria/r15_cosplay_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -239,13 +239,13 @@
       ],
       "intro_cg": {
         "id": "jihyun_R07_casual_intro",
-        "planned_path": "images/events/jihyun/r07_casual_intro.png",
+        "planned_path": "images/events/jihyun/r07_casual_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "jihyun_R07_casual_intro_shy",
         "base_id": "jihyun_R07_casual_intro",
-        "planned_path": "images/events/jihyun/r07_casual_intro_shy.png",
+        "planned_path": "images/events/jihyun/r07_casual_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -288,13 +288,13 @@
       ],
       "intro_cg": {
         "id": "jihyun_R12_special_intro",
-        "planned_path": "images/events/jihyun/r12_special_intro.png",
+        "planned_path": "images/events/jihyun/r12_special_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "jihyun_R12_special_intro_shy",
         "base_id": "jihyun_R12_special_intro",
-        "planned_path": "images/events/jihyun/r12_special_intro_shy.png",
+        "planned_path": "images/events/jihyun/r12_special_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -337,13 +337,13 @@
       ],
       "intro_cg": {
         "id": "jihyun_R15_home_intro",
-        "planned_path": "images/events/jihyun/r15_home_intro.png",
+        "planned_path": "images/events/jihyun/r15_home_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "jihyun_R15_home_intro_shy",
         "base_id": "jihyun_R15_home_intro",
-        "planned_path": "images/events/jihyun/r15_home_intro_shy.png",
+        "planned_path": "images/events/jihyun/r15_home_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -386,13 +386,13 @@
       ],
       "intro_cg": {
         "id": "jihyun_R15_cosplay_intro",
-        "planned_path": "images/events/jihyun/r15_cosplay_intro.png",
+        "planned_path": "images/events/jihyun/r15_cosplay_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "jihyun_R15_cosplay_intro_shy",
         "base_id": "jihyun_R15_cosplay_intro",
-        "planned_path": "images/events/jihyun/r15_cosplay_intro_shy.png",
+        "planned_path": "images/events/jihyun/r15_cosplay_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -435,13 +435,13 @@
       ],
       "intro_cg": {
         "id": "yujin_R07_casual_intro",
-        "planned_path": "images/events/yujin/r07_casual_intro.png",
+        "planned_path": "images/events/yujin/r07_casual_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "yujin_R07_casual_intro_shy",
         "base_id": "yujin_R07_casual_intro",
-        "planned_path": "images/events/yujin/r07_casual_intro_shy.png",
+        "planned_path": "images/events/yujin/r07_casual_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -484,13 +484,13 @@
       ],
       "intro_cg": {
         "id": "yujin_R12_special_intro",
-        "planned_path": "images/events/yujin/r12_special_intro.png",
+        "planned_path": "images/events/yujin/r12_special_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "yujin_R12_special_intro_shy",
         "base_id": "yujin_R12_special_intro",
-        "planned_path": "images/events/yujin/r12_special_intro_shy.png",
+        "planned_path": "images/events/yujin/r12_special_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -533,13 +533,13 @@
       ],
       "intro_cg": {
         "id": "yujin_R15_home_intro",
-        "planned_path": "images/events/yujin/r15_home_intro.png",
+        "planned_path": "images/events/yujin/r15_home_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "yujin_R15_home_intro_shy",
         "base_id": "yujin_R15_home_intro",
-        "planned_path": "images/events/yujin/r15_home_intro_shy.png",
+        "planned_path": "images/events/yujin/r15_home_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -582,13 +582,13 @@
       ],
       "intro_cg": {
         "id": "yujin_R15_cosplay_intro",
-        "planned_path": "images/events/yujin/r15_cosplay_intro.png",
+        "planned_path": "images/events/yujin/r15_cosplay_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "yujin_R15_cosplay_intro_shy",
         "base_id": "yujin_R15_cosplay_intro",
-        "planned_path": "images/events/yujin/r15_cosplay_intro_shy.png",
+        "planned_path": "images/events/yujin/r15_cosplay_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -631,13 +631,13 @@
       ],
       "intro_cg": {
         "id": "seoyun_R07_casual_intro",
-        "planned_path": "images/events/seoyun/r07_casual_intro.png",
+        "planned_path": "images/events/seoyun/r07_casual_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "seoyun_R07_casual_intro_shy",
         "base_id": "seoyun_R07_casual_intro",
-        "planned_path": "images/events/seoyun/r07_casual_intro_shy.png",
+        "planned_path": "images/events/seoyun/r07_casual_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -680,13 +680,13 @@
       ],
       "intro_cg": {
         "id": "seoyun_R12_special_intro",
-        "planned_path": "images/events/seoyun/r12_special_intro.png",
+        "planned_path": "images/events/seoyun/r12_special_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "seoyun_R12_special_intro_shy",
         "base_id": "seoyun_R12_special_intro",
-        "planned_path": "images/events/seoyun/r12_special_intro_shy.png",
+        "planned_path": "images/events/seoyun/r12_special_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -729,13 +729,13 @@
       ],
       "intro_cg": {
         "id": "seoyun_R15_home_intro",
-        "planned_path": "images/events/seoyun/r15_home_intro.png",
+        "planned_path": "images/events/seoyun/r15_home_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "seoyun_R15_home_intro_shy",
         "base_id": "seoyun_R15_home_intro",
-        "planned_path": "images/events/seoyun/r15_home_intro_shy.png",
+        "planned_path": "images/events/seoyun/r15_home_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [
@@ -778,13 +778,13 @@
       ],
       "intro_cg": {
         "id": "seoyun_R15_cosplay_intro",
-        "planned_path": "images/events/seoyun/r15_cosplay_intro.png",
+        "planned_path": "images/events/seoyun/r15_cosplay_intro.webp",
         "status": "not_supplied"
       },
       "intro_expression": {
         "id": "seoyun_R15_cosplay_intro_shy",
         "base_id": "seoyun_R15_cosplay_intro",
-        "planned_path": "images/events/seoyun/r15_cosplay_intro_shy.png",
+        "planned_path": "images/events/seoyun/r15_cosplay_intro_shy.webp",
         "status": "not_supplied"
       },
       "event_asset_order": [

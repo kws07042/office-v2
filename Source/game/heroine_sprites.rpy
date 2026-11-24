@@ -226,10 +226,34 @@ init -4 python:
     SPRITE_ZOOM = 0.92
     SPRITE_YPOS = 2
 
+    # 입상 크기 맞추기: 그림마다 인물이 캔버스를 채우는 높이가 조금씩 달라(936~989px) 옷을 갈아입으면
+    # 눈높이가 바뀌고, 네 명의 키도 모두 같아 보였다. 그림마다 실제 머리끝·발끝(SPRITE_METRICS.json)을 재서
+    # 발끝을 같은 선에 두고, 키는 히로인별 비율과 신발(생활복 슬리퍼)로 정한다. 그림 파일은 그대로다.
+    import json as _sp_json
+    try:
+        with renpy.file("images/characters/SPRITE_METRICS.json") as _sp_file:
+            SPRITE_METRICS = _sp_json.load(_sp_file)
+    except Exception:
+        SPRITE_METRICS = {}
+    SPRITE_BASE_HEIGHT = 960 * SPRITE_ZOOM          # 기준 키(화면 px): 지금까지 평균 크기
+    SPRITE_FEET_Y = SPRITE_YPOS + (27 + 960) * SPRITE_ZOOM
+    HEROINE_HEIGHT = {"seoyun": 1.0, "jihyun": 0.985, "ria": 0.97, "yujin": 0.955}
+    OUTFIT_SHOE = {"home": 0.985}
+
+    def heroine_sprite_fit(path, who, outfit):
+        box = SPRITE_METRICS.get(path)
+        if not box:
+            return SPRITE_ZOOM, 0
+        top, bottom = box
+        zoom = SPRITE_BASE_HEIGHT * HEROINE_HEIGHT.get(who, 1.0) * OUTFIT_SHOE.get(outfit, 1.0) / float(bottom - top)
+        return zoom, int(round(SPRITE_FEET_Y - bottom * zoom - SPRITE_YPOS))
+
     def heroine_sprite_display(st, at):
         if not heroine_sprite_visible():
             return Null(), None
-        path = heroine_sprite_path(renpy.store.cream_focus)
-        return Transform(path, zoom=SPRITE_ZOOM), None
+        who = renpy.store.cream_focus
+        path = heroine_sprite_path(who)
+        zoom, dy = heroine_sprite_fit(path, who, path.split("/")[-1].split("_")[1])
+        return Transform(path, zoom=zoom, yoffset=dy), None
 
 image heroine stage sprite = DynamicDisplayable(heroine_sprite_display)

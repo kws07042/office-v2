@@ -64,6 +64,10 @@ init python:
         else:
             expression = page["kind"] == "intro" and cursor == 2 and renpy.store.event_intro_expression_ready
             resolved = event_intro_asset(event_id, variant, expression)
+        if page["kind"] == "after":
+            gallery_mark_event(event_after_path(event_id, variant) or resolved["path"])
+        elif page["kind"] == "intro":
+            gallery_mark_event(resolved["path"])
         if resolved["path"]:
             current["loaded_images"] = sorted(set(current["loaded_images"] + [cursor + 1]))
             current["loaded_asset_ids"] = sorted(set(current["loaded_asset_ids"] + [resolved["displayed_id"]]))
@@ -78,6 +82,7 @@ init python:
     def event_show_intro_expression(event_id, variant, cursor):
         renpy.retain_after_load()
         renpy.store.event_intro_expression_ready = True
+        gallery_mark_event(event_intro_asset(event_id, variant, True)["path"])
         event_record_current(event_id, variant, cursor)
 
 screen event_main_panel(event_id, variant, page):
@@ -90,11 +95,7 @@ screen event_main_panel(event_id, variant, page):
             xpos 60 ypos 174 padding (15, 10) background Solid("#211a29e8")
             text cg_caption size 22
     else:
+        # 본장면 그림이 아직 없으면: 같은 장면의 전후 그림을 흐리게 깔고(event_cut), 작은 표시만 남긴다.
         frame:
-            xpos 60 ypos 174 xsize 1160 ysize 405 padding (30, 25) background Solid("#382e34")
-            vbox:
-                spacing 22
-                text cg_caption size 34 color "#e6cdb9"
-                text "이미지 준비 중" size 28
-                text "그림이 등록되면 이 자리에 표시됩니다." size 24 color "#e4cfc9"
-                text "현재는 화면 이동을 확인하는 개발용 자리입니다." size 21 color "#e4cfc9"
+            xpos 60 ypos 174 padding (15, 10) background Solid("#211a29c8")
+            text cg_caption size 20 color "#e6cdb9"

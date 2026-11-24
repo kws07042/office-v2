@@ -31,16 +31,16 @@ testsuite event_art_checks:
 
     testcase costume_paths:
         $ memory["seoyun_r15_costume"] = "police"
-        assert eval event_intro_asset("seoyun_r15", "cosplay")["path"] == "images/events/seoyun/r15_cosplay_police_intro.png"
+        assert eval event_intro_asset("seoyun_r15", "cosplay")["path"] == "images/events/seoyun/r15_cosplay_police_intro.webp"
         $ memory["seoyun_r15_costume"] = "bunny"
-        assert eval event_intro_asset("seoyun_r15", "cosplay")["path"] == "images/events/seoyun/r15_cosplay_bunny_intro.png"
-        assert eval event_intro_asset("ria_r07", "casual")["path"] == "images/events/ria/r07_casual_intro.png"
+        assert eval event_intro_asset("seoyun_r15", "cosplay")["path"] == "images/events/seoyun/r15_cosplay_bunny_intro.webp"
+        assert eval event_intro_asset("ria_r07", "casual")["path"] == "images/events/ria/r07_casual_intro.webp"
         assert eval renpy.loadable("images/cg/ria_o04.jpg")
-        assert eval event_after_path("seoyun_r07", "casual") == "images/events/seoyun/r07_casual_after.png"
+        assert eval event_after_path("seoyun_r07", "casual") == "images/events/seoyun/r07_casual_after.webp"
         $ memory["seoyun_r15_costume"] = "police"
-        assert eval event_after_path("seoyun_r15", "cosplay") == "images/events/seoyun/r15_cosplay_police_after.png"
-        assert eval event_intro_asset("seoyun_r15", "cosplay", True)["path"] == "images/events/seoyun/r15_cosplay_police_intro_shy.png"
-        assert eval event_after_path("ria_r07", "casual") == "images/events/ria/r07_casual_after.png"
+        assert eval event_after_path("seoyun_r15", "cosplay") == "images/events/seoyun/r15_cosplay_police_after.webp"
+        assert eval event_intro_asset("seoyun_r15", "cosplay", True)["path"] == "images/events/seoyun/r15_cosplay_police_intro_shy.webp"
+        assert eval event_after_path("ria_r07", "casual") == "images/events/ria/r07_casual_after.webp"
         assert eval event_after_path("yujin_r07", "casual") is None
         $ memory["ria_r15_costume"] = "cheer"
         assert eval event_after_path("ria_r15", "cosplay") is None
@@ -60,7 +60,7 @@ testsuite event_after_art_checks:
         click id "cut_next" until eval event_cut_cursor == 6
         pause 0.4
         assert eval renpy.get_screen("event_cut").scope["full_art"]
-        assert eval renpy.get_screen("event_cut").scope["resolved"]["path"] == "images/events/seoyun/r07_casual_after.png"
+        assert eval renpy.get_screen("event_cut").scope["resolved"]["path"] == "images/events/seoyun/r07_casual_after.webp"
         screenshot "event-art-seoyun-after.png"
         click id "cut_next"
 

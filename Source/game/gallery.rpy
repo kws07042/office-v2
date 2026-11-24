@@ -21,19 +21,54 @@ init -1 python:
     GALLERY_CHAPTER = {"o04": "포차 뒤 모텔", "x01": "크리스마스", "x01b": "크리스마스 아침", "x02": "1월", "sp1": "특별 장면 1", "sp2": "특별 장면 2",
                        "e01": "결말", "o02": "작은 이야기"}
 
+    # 성인 이벤트 전후 그림(도입·도입 표정·이후 대화)도 본 것부터 갤러리에 넣는다. 이름은 "evt/<히로인>/<파일>".
+    EVENT_GALLERY_SLOTS = [("r07_casual", "R07"), ("r12_special", "R12"), ("r15_home", "R15 생활복")]
+    EVENT_GALLERY_COSTUMES = {"ria": ("bunny", "nurse", "cheer"), "jihyun": ("bunny", "nurse", "qipao"),
+                              "yujin": ("bunny", "nurse", "maid"), "seoyun": ("bunny", "nurse", "police")}
+    EVENT_GALLERY_KINDS = [("intro", "도입"), ("intro_shy", "도입 표정"), ("after", "이후")]
+
+    def event_gallery_names(who):
+        slots = list(EVENT_GALLERY_SLOTS) + [("r15_cosplay_" + c, "R15 " + COSTUME_NAMES.get(c, c)) for c in EVENT_GALLERY_COSTUMES[who]]
+        return ["evt/%s/%s_%s.webp" % (who, s, k) for s, _ in slots for k, _ in EVENT_GALLERY_KINDS]
+
+    def event_gallery_label(name):
+        who, f = name[4:].split("/", 1)
+        for s, slabel in list(EVENT_GALLERY_SLOTS) + [("r15_cosplay_" + c, "R15 " + COSTUME_NAMES.get(c, c)) for c in EVENT_GALLERY_COSTUMES[who]]:
+            for k, klabel in EVENT_GALLERY_KINDS:
+                if f == "%s_%s.webp" % (s, k):
+                    return slabel + " · " + klabel
+        return f
+
+    def gallery_path(name):
+        return "images/events/" + name[4:] if name.startswith("evt/") else CG_DIR + name + ".jpg"
+
+    def gallery_mark_event(path):
+        if path and path.startswith("images/events/"):
+            persistent.cg_seen.add("evt/" + path[len("images/events/"):])
+
     def gallery_owner(name):
+        if name.startswith("evt/"):
+            return name[4:].split("/", 1)[0]
         for who in ("ria", "jihyun", "yujin", "seoyun"):
             if name.startswith(who + "_"):
                 return who
         return "common"
 
+    def gallery_all():
+        names = list(GALLERY_ORDER)
+        for who in ("ria", "jihyun", "yujin", "seoyun"):
+            names += event_gallery_names(who)
+        return names
+
     def gallery_items(tab):
-        return [n for n in GALLERY_ORDER if gallery_owner(n) == tab and renpy.loadable(CG_DIR + n + ".jpg")]
+        return [n for n in gallery_all() if gallery_owner(n) == tab and renpy.loadable(gallery_path(n))]
 
     def gallery_seen(name):
         return name in (persistent.cg_seen or set())
 
     def gallery_label(name):
+        if name.startswith("evt/"):
+            return event_gallery_label(name)
         tail = name.split("_", 1)[1] if gallery_owner(name) != "common" else name
         special = {"prologue_hands": "프롤로그", "common_c05": "넷이 함께한 점심", "common_colleague_ending": "동료 결말",
                    "spring_rooftop": "이듬해 봄 · 옥상", "spring_pitch": "이듬해 봄 · 피칭"}
@@ -48,7 +83,7 @@ init -1 python:
         return sum(1 for n in items if gallery_seen(n)), len(items)
 
     def gallery_total():
-        items = [n for n in GALLERY_ORDER if renpy.loadable(CG_DIR + n + ".jpg")]
+        items = [n for n in gallery_all() if renpy.loadable(gallery_path(n))]
         return sum(1 for n in items if gallery_seen(n)), len(items)
 
 screen gallery():
@@ -118,7 +153,7 @@ screen gallery():
                                                 vbox:
                                                     spacing 4
                                                     if seen:
-                                                        add Transform(CG_DIR + name + ".jpg", xysize=(272, 153))
+                                                        add Transform(gallery_path(name), xysize=(272, 153))
                                                     else:
                                                         fixed:
                                                             xysize (272, 153)
@@ -135,7 +170,7 @@ screen gallery_view(kind, items, index=0):
     $ i = max(0, min(i, len(items) - 1))
     add Solid("#1E1418")
     if kind == "cg":
-        add Transform(CG_DIR + items[i] + ".jpg", xysize=(1280, 720))
+        add Transform(gallery_path(items[i]), xysize=(1280, 720))
     else:
         $ ph = items[i]
         add Transform(photo_crop(ph["spot"], tuple(ph["cell"])), xysize=(1280, 720))
