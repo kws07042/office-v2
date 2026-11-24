@@ -65,6 +65,14 @@ def convert(fname):
             body=m.group(2); mm=RI.search(body)
             txt=mm.group(2) if mm else re.sub(r'^"|"$','',body.strip())
             emit(ind+"📱 **%s**: %s"%(PN.get(m.group(1),m.group(1)),clean(txt))); continue
+        m=re.match(r'call ria_r12_contact_line\("[^"]+",\s*"(\w+)",\s*(.+)\)\s*$',s)
+        if m:
+            mm=RI.search(m.group(2)); txt=mm.group(2) if mm else m.group(2)
+            emit(ind+"📱 **%s**: %s  *(약속을 미룬 경우엔 문자, 아니면 대사로)*"%(PN.get(m.group(1),m.group(1)),clean(txt))); continue
+        m=re.match(r'\s*(?:return \[)?\("(\w+)",\s*(ri\(.+?\)|"(?:[^"\\]|\\.)*"),\s*"(오[전후] \d+:\d+)"\)',s)
+        if m:
+            mm=RI.search(m.group(2)); txt=mm.group(2) if mm else m.group(2).strip('"')
+            emit(ind+"💻 **%s**: %s  (%s)"%(PN.get(m.group(1),m.group(1)),clean(txt),m.group(3))); continue
         m=re.match(r'call pc_chat\("(\w+)",\s*\[(.*)\]\)',s)
         if m:
             for who,txt in re.findall(r'\("(\w+)",\s*"((?:[^"\\]|\\.)*)"\)',m.group(2)):
@@ -93,8 +101,9 @@ def convert(fname):
                     emit(ind+"> "+{"narration":"*"+v+"*","heroine":"**리아**: "+v,"dohyun":"**도현**: "+v}[k])
             emit(ind+"> ━━ 끝 ━━"); continue
     return out,src
-GROUPS=[("00_공통",["prologue.rpy","common.rpy","schedule_pick.rpy"]),
-("01_강리아",["ria_r01.rpy","ria_r02_r04.rpy","ria_r05_r08.rpy","ria_o04.rpy","ria_r09_r12.rpy","ria_r13_e01.rpy"]),
+GROUPS=[("00_공통",["prologue.rpy","common.rpy","schedule_pick.rpy","core.rpy","pc_messenger.rpy"]),
+("06_업무 미니·미니게임",["work_minis.rpy","minigames.rpy"]),
+("01_강리아",["ria_r01.rpy","ria_r02_r04.rpy","ria_r05_r08.rpy","ria_o04.rpy","ria_r09_r12.rpy","ria_r13_e01.rpy","office_phone.rpy"]),
 ("02_백지현",["jihyun_r01_r04.rpy","jihyun_r05_r12.rpy","jihyun_optional.rpy","jihyun_r13_e01.rpy"]),
 ("03_차유진",["yujin_r01_r04.rpy","yujin_r05_r08.rpy","yujin_optional.rpy","yujin_r09_r12.rpy","yujin_r13_e01.rpy"]),
 ("04_한서윤",["seoyun_r01_r04.rpy","seoyun_r05_r12.rpy","seoyun_optional.rpy","seoyun_r13_e01.rpy"]),
