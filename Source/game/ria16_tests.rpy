@@ -31,8 +31,8 @@ init python:
                 if caption in new_options:
                     return caption
         if route == "deferred":
-            if chapter.startswith("C01") and "조금 익숙해지면 놓을게요." in captions:
-                return "조금 익숙해지면 놓을게요."
+            if chapter.startswith("C01") and "응, 놓자. 근데 나 진짜 어색하다?" in captions:
+                return "응, 놓자. 근데 나 진짜 어색하다?"
             if chapter.startswith("C08"):
                 return captions[0]
             if any("친밀한 장면" in c or "입맞춤" in c for c in captions):

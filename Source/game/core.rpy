@@ -12,7 +12,7 @@ define rn = Character("강리아", what_prefix="『", what_suffix="』", callbac
 define msgd = Character("도현 · 보낸 메시지", callback=renpy.curry(cream_note_speaker)("message"))
 define msgr = Character("리아 · 답장", callback=renpy.curry(cream_note_speaker)("message"))
 
-default speech_informal = False
+default speech_informal = True  # 리아와는 반말로 고정
 default first_approach = "observe"
 default afterwork_preference = None
 default active_route = None

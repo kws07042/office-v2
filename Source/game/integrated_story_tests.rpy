@@ -2251,7 +2251,7 @@ testsuite integrated_story_checks:
         assert eval (c07_person == active_route) == (case % 2 == 0)
         assert eval all(sum(1 for r in phone_threads[k] if r["id"] == row["id"]) == 1 for k in phone_threads for row in phone_threads[k])
         if eval active_route == "ria":
-            assert eval speech_informal == (case % 2 == 0)
+            assert eval speech_informal
             assert eval all(memory.get(k) != "shared" for k in ("ria_r07_intimacy", "ria_r12_intimacy", "ria_r15_intimacy")) == bool(case % 2)
         else:
             assert eval all(memory.get(active_route + "_" + slot + "_pace", memory.get(active_route + "_" + slot + "_intimacy")) != "shared" for slot in ("r07", "r12", "r15")) == bool(case % 2)

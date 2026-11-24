@@ -9,7 +9,7 @@ testsuite windows_smoke:
         screenshot "windows-c01-choice.png"
         click "표지를 조금 옮기고, 사람들이 어떻게 움직이는지 볼까요?" until not screen "choice"
         advance until screen "choice"
-        click "조금 익숙해지면 놓을게요." until not screen "choice"
+        click "응, 놓자. 근데 나 진짜 어색하다?" until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("C02")
         assert eval speech_informal is False
@@ -142,7 +142,7 @@ testsuite common_romance:
         advance until screen "choice"
         click "표지를 조금 옮기고, 사람들이 어떻게 움직이는지 볼까요?" until not screen "choice"
         advance until screen "choice"
-        click "조금 익숙해지면 놓을게요." until not screen "choice"
+        click "응, 놓자. 근데 나 진짜 어색하다?" until not screen "choice"
         advance until screen "choice"
         click "확인할 시간을 하루 달라고 한다." until not screen "choice"
         advance until screen "choice"
