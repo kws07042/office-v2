@@ -587,7 +587,8 @@ transform silk_slot_in(i=0):
 style silk_slot_button is button:
     background silk_surface("card")
     hover_background silk_surface("card_on")
-    insensitive_background silk_surface("quiet")
+    # 빈 칸도 저장된 칸과 같은 네모 카드 모양(테두리만 옅게).
+    insensitive_background silk_surface("card_empty")
     padding (11, 11, 13, 15)
     xysize (292, 230)
 style silk_page_button is silk_small_button:

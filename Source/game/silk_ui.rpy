@@ -179,6 +179,7 @@ init -9 python:
             "quiet": (paper, SILK["silk_c"], None, None),
             "card": (paper, ink, ink, 4),
             "card_on": (paper, ink, wine, 4),
+            "card_empty": (paper, SILK["silk_c"], None, 4),
             "night": (SILK["night"], SILK["night"], wine, None),
         }
         fill, edge, shadow, radius = table[kind]
