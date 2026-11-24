@@ -48,7 +48,7 @@ TASK 2 — yujin_r07_casual_intro_shy.jpg
 She has moved closer and holds the viewer's hand (at the bottom edge). Her cardigan has slipped to her elbows and her white blouse is unbuttoned and open in front — opaque cotton — showing a pale peach cotton bra with a small embroidered ribbon in the opening. Shy, earnest eyes behind her glasses. Closer shot, chest up. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 3 — yujin_r07_casual_after.jpg
-Same room as task 1, late night, lights off. A thin line of streetlight comes through the curtain gap and catches the lenses of her glasses on the nightstand. She lies in bed under the white sheet, bare shoulders, without glasses, looking at the window with a quiet smile. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
+Late night, lights off. A thin line of streetlight comes through the curtain gap and catches the lenses of her glasses on the nightstand. She lies in bed under the white sheet, bare shoulders, without glasses, looking at the window with a quiet smile. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 4 — yujin_r12_special_intro.jpg
 Night after a date, her shearling jacket on the desk chair, her bag set down. She sits on the sofa turned toward the viewer, adjusting her sleeve, smiling and waiting for his reaction. Beige V-neck knit, brown check midi skirt, glasses on. Camera from the seat right beside her on the sofa, the viewer's own knee and hand on the cushion at the bottom edge. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
@@ -57,7 +57,7 @@ TASK 5 — yujin_r12_special_intro_shy.jpg
 She sits pressed close beside the viewer, the beige V-neck knit pulled down below one shoulder showing a sage-green lace bra strap, glasses slightly crooked, happy shy smile. Closer shot, chest up. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 6 — yujin_r12_special_after.jpg
-Same room as task 4, late night. She lies in bed under the sheet, bare shoulders, listening to the quiet room with the viewer. Her phone lies on the floor beside the bed, its screen lighting up once. Neither of them looks at it. Wide medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
+Late night. She lies in bed under the sheet, bare shoulders, listening to the quiet room with the viewer. Her phone lies on the floor beside the bed, its screen lighting up once. Neither of them looks at it. Wide medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 7 — yujin_r15_home_intro.jpg
 Weekend night. She sits beside the viewer on the sofa in an oversized white shirt and grey leggings, glasses on, looking at his face first with a small smile. Camera from the seat right beside her on the sofa, the viewer's own knee and hand on the cushion at the bottom edge. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
@@ -66,7 +66,7 @@ TASK 8 — yujin_r15_home_intro_shy.jpg
 The oversized white shirt is unbuttoned halfway, showing a heather-grey cotton bra; her leggings are folded on the sofa arm, bare legs. She leans in close, quiet and content. Closer shot, chest up. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 9 — yujin_r15_home_after.jpg
-Same room as task 7, later. She sits in bed wrapped in the white sheet, bare shoulders, picking up a small white shirt button from the blanket and holding it tight in her palm, smiling at the viewer. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
+Later. She sits in bed wrapped in the white sheet, bare shoulders, picking up a small white shirt button from the blanket and holding it tight in her palm, smiling at the viewer. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 10 — yujin_r15_cosplay_bunny_intro.jpg
 She stands shyly by the sofa in a cream-white satin bunny leotard with gold trim, sweetheart neckline, high-cut legs, white bunny ears, sheer pantyhose, glasses on, fiddling with a cuff and asking with her eyes to hear 'it suits you' again. Full body. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
@@ -75,7 +75,7 @@ TASK 11 — yujin_r15_cosplay_bunny_intro_shy.jpg
 She sits close beside the viewer in the bunny leotard, quiet, shoulder almost touching his. Faint blush behind her glasses. Closer shot, waist up. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 12 — yujin_r15_cosplay_bunny_after.jpg
-Same room as task 7, later, lamp light. The cream bunny ears lie side by side with her glasses on the nightstand. She lies in bed under the sheet, bare shoulders, without glasses, smiling at the viewer. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
+Later, lamp light. The cream bunny ears lie side by side with her glasses on the nightstand. She lies in bed under the sheet, bare shoulders, without glasses, smiling at the viewer. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 13 — yujin_r15_cosplay_nurse_intro.jpg
 She stands hugging a clipboard in a pastel pink nurse mini dress with the front buttons open to show a peach lace bra edge, short hem, white thigh-highs, nurse cap, glasses on, blushing. Full body. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
@@ -84,7 +84,7 @@ TASK 14 — yujin_r15_cosplay_nurse_intro_shy.jpg
 She sits close beside the viewer in the nurse dress, clipboard set aside, quiet. Faint blush. Closer shot, waist up. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 15 — yujin_r15_cosplay_nurse_after.jpg
-Same room as task 7, later. The pastel pink nurse dress hangs half off a chair, her folded glasses resting on it. She sits in bed wrapped in the sheet, bare shoulders, without glasses, smiling. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
+Later. The pastel pink nurse dress hangs half off a chair, her folded glasses resting on it. She sits in bed wrapped in the sheet, bare shoulders, without glasses, smiling. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 16 — yujin_r15_cosplay_maid_intro.jpg
 She curtsies in a black-and-white maid dress with an off-shoulder neckline and a cleavage window, short flared skirt with petticoat, frilled apron, black thigh-highs with garter straps, frilled headband, glasses on, flustered smile. Full body. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
@@ -93,7 +93,7 @@ TASK 17 — yujin_r15_cosplay_maid_intro_shy.jpg
 She sits close beside the viewer in the maid dress, quiet, hands in her lap. Faint blush behind her glasses. Closer shot, waist up. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 TASK 18 — yujin_r15_cosplay_maid_after.jpg
-Same room as task 7, later. She lies in bed under the sheet, bare shoulders, laughing as her black-and-white lace headband slips off the viewer's wrist (his hand at the bottom edge) and falls onto the pillow. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
+Later. She lies in bed under the sheet, bare shoulders, laughing as her black-and-white lace headband slips off the viewer's wrist (his hand at the bottom edge) and falls onto the pillow. Medium shot. Draw the full room from the ROOM LAYOUT LOCK behind her. Full scene, not a standalone sprite.
 
 After all 18, list the tasks you completed and any you could not.
 ```
