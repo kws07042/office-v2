@@ -153,6 +153,8 @@ screen employee_card():
                 length MC_MAX_LEN
                 font "fonts/GowunDodum-Regular.ttf" size 38 color "#1E1820"
                 xalign 0.5 yalign 0.5
+                # 기본 커서는 글꼴의 줄 높이 맨 위에서 시작해 글자보다 높게 보인다. 글자 높이에 맞춘 커서를 쓴다.
+                caret Transform(Solid("#B3123F"), xysize=(2, 32), yoffset=10)
             if not mc_name_input:
                 text "이름 입력" font "fonts/GowunDodum-Regular.ttf" size 30 color "#CFC7CC" xalign 0.5 yalign 0.5
         add Solid(("#B3123F" if ready else "#D9D2D6")) xysize (240, 2) xalign 0.5 ypos 440
