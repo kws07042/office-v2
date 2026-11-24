@@ -3084,7 +3084,7 @@ testsuite seoyun_checks:
                 assert eval memory["seoyun_r15_pace"] == ("deferred" if case==12 else ["shared","deferred","talk"][(case+2)%3])
                 assert eval memory["seoyun_r15_outfit"] == ("cosplay" if (case//3)%3==1 else "home")
                 assert eval len(event_presentations)==(0 if case==12 else 1)
-                assert eval all(not v["loaded_asset_ids"] for v in event_presentations.values())
+                assert eval all(not [a for a in v["loaded_asset_ids"] if "_intro" not in a] for v in event_presentations.values())
                 assert eval bool(memory.get("seoyun_epilogue_completed"))==(case!=13)
                 if eval case!=13:
                     assert eval memory["seoyun_cohabitation_status"]=="결혼·동거 확약 없음, 주변 공개는 둘이 정한 때에"

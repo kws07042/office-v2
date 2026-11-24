@@ -39,9 +39,11 @@ label ria_breakup:
 
 label jihyun_breakup:
     $ chapter = "지현 · 결론부터 말할게"
-    $ location = "발표 다음 날 저녁 · 빈 회의실"
+    $ location = "발표 다음 날 저녁 · 사무실 자리"
     $ cream_focus = "jihyun"
     "발표가 끝난 다음 날 저녁. 지현이 메신저로 회의실 번호만 보냈다. 업무 메시지와 똑같은 말투였다."
+    call pc_chat("jihyun", [("jihyun", "702호.")])
+    $ location = "발표 다음 날 저녁 · 빈 회의실"
     "지현은 창가에 서 있었다. 테이블 위에는 아무 서류도 없었다. 그게 오히려 낯설었다."
     $ face("jihyun", "teary")
     j "결론부터 말할게. 우리 그만 만나자."

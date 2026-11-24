@@ -9,7 +9,7 @@ init -1 python:
     GALLERY_ORDER = [
         "prologue_hands",
         "ria_r02", "ria_r04", "ria_r07", "ria_r08", "ria_r10", "ria_r11", "ria_r15", "ria_r16", "ria_e01",
-        "ria_x01", "ria_x01b", "ria_x02", "ria_sp1", "ria_sp2",
+        "ria_x01", "ria_x01b", "ria_x02", "ria_sp1", "ria_sp2", "ria_o04",
         "jihyun_r04", "jihyun_r05", "jihyun_r08", "jihyun_r10", "jihyun_r11", "jihyun_r14", "jihyun_r16", "jihyun_r16b", "jihyun_e01",
         "jihyun_x01", "jihyun_x01b", "jihyun_x02", "jihyun_sp1", "jihyun_sp2",
         "yujin_r02", "yujin_r04", "yujin_r07", "yujin_r08", "yujin_r10", "yujin_o02", "yujin_r11", "yujin_r16", "yujin_e01",
@@ -18,7 +18,7 @@ init -1 python:
         "seoyun_x01", "seoyun_x01b", "seoyun_x02", "seoyun_sp1", "seoyun_sp2",
         "common_c05", "common_colleague_ending", "spring_rooftop", "spring_pitch",
     ]
-    GALLERY_CHAPTER = {"x01": "크리스마스", "x01b": "크리스마스 아침", "x02": "1월", "sp1": "특별 장면 1", "sp2": "특별 장면 2",
+    GALLERY_CHAPTER = {"o04": "포차 뒤 모텔", "x01": "크리스마스", "x01b": "크리스마스 아침", "x02": "1월", "sp1": "특별 장면 1", "sp2": "특별 장면 2",
                        "e01": "결말", "o02": "작은 이야기"}
 
     def gallery_owner(name):

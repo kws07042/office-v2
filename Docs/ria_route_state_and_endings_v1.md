@@ -24,7 +24,7 @@
 | 구간 | 현재 상태 | 다음 상태와 조건 |
 |---|---|---|
 | R12 | next_appointment_status=scheduled | R13에서 실제 늦은 연락을 보여주고 changed_late_notice |
-| R13 | conflict=open | 상대 반응과 도현의 honest/ask/cover 뒤 discussing. 사건당 신뢰 -1 한 번 |
+| R13 | conflict=open | 상대 반응과 주인공의 honest/ask/cover 뒤 discussing. 사건당 신뢰 -1 한 번 |
 | R14 추가 확인 | cover에만 clarification=feelings/notice | 다른 대응에는 추가 시험 없이 understanding_confirmed |
 | R14 계속 | relationship_choice=continue | 합의 후 agreed. 위임·금요일 확인·토요일 정시 만남 후 resolved |
 | R14 종료 | relationship_choice=end | dating=False, closed_without_repair, ending=ria_relationship_closed. 미래·O03·R16·E01 미진입 |
@@ -36,7 +36,7 @@
 
 회차의 route_completed·epilogue_completed·경험·완료 사건과 영구 local_ria_ending은 구분한다. 이미 정상 완주해 얻은 영구 로컬 기록은 과거 저장을 불러왔다고 없애지 않는다. 반대로 영구 기록이 있다고 현재 회차에 경험·연애·후일담을 덧씌우지 않는다. Steam 업적·갤러리·흐름도 기능을 이번에 구현한 것은 아니다.
 
-신뢰 0은 게임오버 조건이 아니다. 약속 변경을 리아가 일으켰다는 책임과 도현의 표현을 구분한다. 중요한 대응의 결과는 확인 대화·행동·실제 기억으로 다르게 남으며, 취향 선택을 숨은 오답으로 만들지 않는다. 모든 친밀한 전환·선택 일상을 미뤄도 좋은 결말·후일담을 볼 수 있다.
+신뢰 0은 게임오버 조건이 아니다. 약속 변경을 리아가 일으켰다는 책임과 주인공의 표현을 구분한다. 중요한 대응의 결과는 확인 대화·행동·실제 기억으로 다르게 남으며, 취향 선택을 숨은 오답으로 만들지 않는다. 모든 친밀한 전환·선택 일상을 미뤄도 좋은 결말·후일담을 볼 수 있다.
 
 참고 점수 경로는 R12 이후 63→R14 71→R15 76→R16 80→E01 88이다. O03 완료는 +2이고 앞선 공통·선택 일상에 따라 실제 값이 다르다. 100을 완벽 엔딩 조건으로 사용하지 않는다.
 

@@ -650,6 +650,7 @@ label seoyun_r12:
     call phone_deliver("seoyun_r12_thursday", "seoyun", "외근 끝났어. 내일 일곱 시 서점 앞 약속 그대로야. 내일은 얼굴 보고 보고 싶었다고 말할래.", contact="seoyun", important=True)
     call phone_deliver("seoyun_r12_reply", "dohyun", "저도요. 내일 일곱 시 서점 앞에서 봬요. 오늘은 푹 쉬세요.", contact="seoyun")
     $ location = "금요일 저녁 일곱 시 · 서점 앞"
+    $ date_outfit_on("seoyun")
     "출장 내내 클라이언트 쪽 저녁 자리가 이어졌다고 했다. 서윤은 휴대폰을 가방 깊숙이 넣고 약속 장소로 왔다."
     dn "휴대폰을 가방 깊숙이 넣는 손이 평소보다 급했다. 무슨 연락을 피하는지는 묻지 못했다."
     "금요일 약속한 시간에 서윤이 걸어왔다. 메시지 화면 대신 서로의 얼굴을 보고 인사했다."
@@ -675,6 +676,7 @@ label seoyun_r12:
     s "오늘 다시 만나서 좋아. 그건 지금 분명히 말할 수 있어. 오늘은 여기서 같이 밤을 보내고 싶어. 너도 괜찮으면."
     call seoyun_private_evening("r12", "special")
     dn "날짜까지 말하겠다던 사람이 요즘은 가끔 먼 데를 본다. 내가 모르는 무언가가 서윤 씨 쪽으로 오고 있다."
+    $ date_outfit_off("seoyun")
     $ award_once("seoyun_R12", "seoyun", 4)
     $ progression_note_ending()
     return

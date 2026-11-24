@@ -25,7 +25,7 @@ label ria_r09:
     "회식이 끝나고 다들 택시를 잡으러 흩어졌을 때 휴대폰이 울렸다."
     call phone_deliver("ria_r09_dinner", "ria", ri("걷기 ㅋㅋㅋ 다음엔 핑계 같이 짜자. 나 하마터면 집게 떨어뜨릴 뻔했어", "걷기요? ㅋㅋㅋ 다음엔 핑계 같이 짜요. 저 하마터면 집게 떨어뜨릴 뻔했어요"), contact="ria")
     $ cream_focus = "ria"
-    $ location = "다음 주 화요일 오후 · 온빛브랜딩"
+    $ location = "다음 주 화요일 오후 · GY브랜딩"
     "현장 사진 속 안내판 앞에 사람들이 바글바글했다. 리아가 화면을 돌려 두 장을 나란히 놓았다."
     r "[ri('여기는 줄이 아니라 길을 묻는 사람들이야. 입구에서 안내를 못 찾은 거지.', '여기는 줄이 아니라 길을 묻는 사람들이에요. 입구에서 안내를 못 찾은 거죠.')]"
     d "[ri('그래서 입구 사진도 따로 찍어 둔 거구나.', '그래서 입구 사진도 따로 찍어 두신 거군요.')]"
@@ -375,6 +375,7 @@ label ria_r12:
     $ remember("ria_r12_gap_messages_received")
     $ remember("ria_r12_appointment", "토요일 오후 일곱 시 역 앞")
     $ location = "토요일 저녁 일곱 시 · 역 앞"
+    $ date_outfit_on("ria")
     "현장을 마친 리아는 집에 들러 옷을 갈아입고, 금요일에 정한 시각에 도착했다. 도현을 찾던 시선이 마주치자 리아는 가방을 고쳐 메고 빠르게 다가왔다."
     r "[ri('아... 얼굴 보니까 이번 주 끝난 것 같아.', '아... 얼굴 보니까 이번 주 끝난 것 같아요.')]"
     d "[ri('오늘 옷, 잘 어울려. 나 만나려고 고른 거야?', '오늘 옷, 잘 어울려요. 저 만나려고 고르신 거예요?')]"
@@ -448,6 +449,7 @@ label ria_r12:
     $ remember("ria_r12_expectation_discussed")
     $ remember("ria_r12_next_appointment_status", "scheduled")
     $ remember("ria_r12_reunion_kept")
+    $ date_outfit_off("ria")
     $ location = "일요일 오전 · 도현의 집"
     "리아는 마무리 확인을 하러 가고 도현은 집에서 노트를 펼쳤다. 오후에 만날 때 보여줄 페이지를 골라 봤다."
     if memory.get("ria_r12_expectation") == "fixed":

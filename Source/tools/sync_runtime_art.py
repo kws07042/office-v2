@@ -24,7 +24,7 @@ def resize_premul(im,size):
     return Image.fromarray((np.clip(np.concatenate([rgb,al],-1),0,1)*255).astype(np.uint8))
 man=json.load(open("Source/game/images/characters/SPRITES.json")); files=man["files"]; done=[]
 for k,f in sorted(latest(["chatgpt-v001","chatgpt-v002"]).items()):
-    if k in REJECT or not re.match(r"^(ria|jihyun|yujin|seoyun)_(office|casual|home|winter)_pose0\d_[a-z]+$",k): continue
+    if k in REJECT or not re.match(r"^(ria|jihyun|yujin|seoyun)_(office|casual|home|winter|special)_pose0\d_[a-z]+$",k): continue
     rel=f"images/characters/{k.split('_')[0]}/{k}.png"; out="Source/game/"+rel; s=sha(f)
     if os.path.exists(out) and files.get(rel,{}).get("source_sha256")==s: continue
     resize_premul(Image.open(f),(676,1014)).save(out,optimize=True)

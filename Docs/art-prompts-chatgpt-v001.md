@@ -81,7 +81,7 @@ If anything conflicts, the reference images win.
 ## 4. 배경 목록 (우선순위·대본 사용처)
 | ID | 장소 | 시간대 | 대본 사용 | 우선 |
 |---|---|---|---|---|
-| bg_office | 온빛브랜딩 오픈 오피스(공용 작업 공간·협업 테이블·디자인 작업 공간·창가) | 낮 / 저녁 | 15회+ | P0 |
+| bg_office | GY브랜딩 오픈 오피스(공용 작업 공간·협업 테이블·디자인 작업 공간·창가) | 낮 / 저녁 | 15회+ | P0 |
 | bg_meeting | 회사 회의실 | 낮 | 10회 | P0 |
 | bg_cafe | 동네 카페(회사 근처·역 근처 공용) | 낮 / 밤 / 비 | 30회+ | P0 |
 | bg_bookcafe | 서점 안쪽 북카페(서윤 단골) | 낮 | 10회 | P0 |
@@ -90,7 +90,7 @@ If anything conflicts, the reference images win.
 | bg_jihyun_home | 지현의 집 거실(조립 모형 선반·찻잔) | 밤 | 8회 | P0 |
 | bg_yujin_home | 유진의 집(창가 작업 책상·음악 기기) | 낮 / 밤 | 9회 | P0 |
 | bg_seoyun_studio | 서윤의 개인 작업실(책장·소파·작은 주방) | 밤 | 5회 | P0 |
-| bg_dohyun_home | 도현의 원룸 | 밤 | 5회 | P0 |
+| bg_dohyun_home | 주인공의 원룸 | 밤 | 5회 | P0 |
 | bg_office_front | 회사 앞 거리·횡단보도·벤치 | 저녁 | 8회 | P0 |
 | bg_alley | 동네 골목·산책길 | 낮 / 저녁(가로등) | 8회 | P0 |
 | bg_client_hall | 클라이언트사 대회의실(피칭) | 낮 | 5회 | P1 |

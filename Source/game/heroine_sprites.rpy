@@ -1,3 +1,4 @@
+default date_outfit = set()
 # 히로인 입상: 말하는 히로인을 무대 가운데에 세운다.
 # 의상은 장소 문구(location)로, 포즈는 장면마다 하나로, 표정은 대사 내용으로 고른다.
 # 대본에서 표정을 직접 정하려면:  $ face("ria", "sad")   (다음 장소가 바뀔 때까지 유지)
@@ -26,7 +27,7 @@ init -4 python:
     def _hs_scan_sprites():
         found = {}
         for path in renpy.list_files():
-            m = _hs_re.match(r"images/characters/(ria|jihyun|yujin|seoyun)/(?:ria|jihyun|yujin|seoyun)_(office|casual|home|winter)_(pose\d\d)_([a-z]+)\.png$", path)
+            m = _hs_re.match(r"images/characters/(ria|jihyun|yujin|seoyun)/(?:ria|jihyun|yujin|seoyun)_(office|casual|home|winter|special)_(pose\d\d)_([a-z]+)\.png$", path)
             if m:
                 found.setdefault((m.group(1), m.group(2), m.group(3)), set()).add(m.group(4))
         return found
@@ -48,7 +49,7 @@ init -4 python:
 
     WEEKEND_WORDS = ("토요일", "일요일", "휴일", "쉬는 날", "주말")
     WINTER_WORDS = ("12월", "1월", "2월", "크리스마스", "겨울")
-    WORKPLACE_WORDS = ("회사", "사무실", "회의", "탕비실", "온빛브랜딩", "클라이언트사", "작업 공간", "공용",
+    WORKPLACE_WORDS = ("회사", "사무실", "회의", "탕비실", "GY브랜딩", "클라이언트사", "작업 공간", "공용",
         "협업", "옥상", "비상계단", "복도", "엘리베이터", "현장", "행사장", "출장", "피칭", "검토", "출근",
         "퇴근", "회식", "리허설", "야근", "안내 공간", "숙소", "점심")
     INDOOR_WORK_WORDS = ("사무실", "회의", "탕비실", "작업 공간", "공용", "복도", "협업", "안내 공간")
@@ -73,8 +74,18 @@ init -4 python:
     def _hs_place():
         return getattr(renpy.store, "location", "") or ""
 
+    def heroine_has_outfit(who, outfit):
+        return any(w == who and o == outfit for (w, o, p) in SPRITE_SET)
+
+    def date_outfit_on(who):
+        """R12 데이트: 그날을 위해 고른 옷(special) 입상을 보여 준다. 다음 날 아침이 되면 저절로 꺼진다."""
+        renpy.store.date_outfit = set(renpy.store.date_outfit) | {who}
+
+    def date_outfit_off(who):
+        renpy.store.date_outfit = set(renpy.store.date_outfit) - {who}
+
     # 날짜·때를 말하는 낱말. 장소 문구에 이런 말이 없거나 "같은"으로 시작하면 앞 장면에서 이어진다고 본다.
-    TIME_MARKERS = _hs_re.compile(r"(요일|아침|오전|오후|점심|저녁|밤|새벽|다음 날|다음날|주말|당일|전날|평일|휴일|[0-9]+월|[0-9]+일)")
+    TIME_MARKERS = _hs_re.compile(r"(다음 |요일|아침|오전|오후|점심|저녁|밤|새벽|다음 날|다음날|주말|당일|전날|평일|휴일|[0-9]+월|[0-9]+일)")
 
     def heroine_scene_continues(place):
         place = (place or "").strip()
@@ -82,6 +93,9 @@ init -4 python:
 
     def heroine_outfit(who, place=None):
         place = _hs_place() if place is None else place
+        # R12 데이트 옷이 켜져 있으면 장면이 이어져도 데이트 옷을 먼저 쓴다.
+        if who in renpy.store.date_outfit and "아침" not in place and "다음 날" not in place and heroine_has_outfit(who, "special"):
+            return "special"
         # 같은 장면이 이어지면(예: "회사 앞" 다음 "둘이 앉은 자리", "같은 날 저녁 · 카페 밖 골목") 입던 옷을 그대로 둔다.
         memory = getattr(renpy.store, "heroine_outfit_memory", {}).get(who)
         if memory and (memory[1] == place or heroine_scene_continues(place)):

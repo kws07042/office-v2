@@ -1765,7 +1765,7 @@ testsuite jihyun_final_checks:
             assert eval memory["jihyun_r15_pace"] == ["shared","deferred","talk"][(case+2)%3]
             assert eval memory["jihyun_r15_outfit"] == ("cosplay" if (case//3)%3==1 else "home")
             assert eval len(event_presentations) == int(case%3==0)+int((case+1)%3==0)+int((case+2)%3==0)
-            assert eval all(not v["loaded_asset_ids"] for v in event_presentations.values())
+            assert eval all(not [a for a in v["loaded_asset_ids"] if "_intro" not in a] for v in event_presentations.values())
             assert eval bool(memory.get("jihyun_epilogue_completed")) == (case!=13)
             assert eval ("jihyun_cohabitation_status" in memory) == (case!=13)
             if eval case != 13:

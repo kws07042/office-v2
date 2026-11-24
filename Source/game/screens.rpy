@@ -126,7 +126,7 @@ screen story_header():
             use cream_preview_controls
 
 init python:
-    DOC_OFFICE_WORDS = ("회사", "사무", "회의", "피칭", "클라이언트", "탕비", "옥상", "복도", "계단", "온빛", "팝업", "현장", "작업 공간", "공용")
+    DOC_OFFICE_WORDS = ("회사", "사무", "회의", "피칭", "클라이언트", "탕비", "옥상", "복도", "계단", "GY", "팝업", "현장", "작업 공간", "공용")
 
     def dialogue_doc_stamp():
         place = getattr(renpy.store, "location", "") or ""
@@ -227,7 +227,7 @@ screen cream_dialogue_panel(who, what, use_substitution=True, advance=True):
                 substitute use_substitution
         # 아래 금색 줄과 회사 표기
         add "gui/window/name_line.png" xpos 150 ypos 688 xysize (720, 1) matrixcolor TintMatrix("#E9C98E") alpha 0.65
-        text "온빛브랜딩 · 연말 피칭 TF" xpos 150 ypos 697 size 12 color "#FFF8F273" kerning 1.4 outlines []
+        text "GY브랜딩 · 연말 피칭 TF" xpos 150 ypos 697 size 12 color "#FFF8F273" kerning 1.4 outlines []
         if advance:
             add silk("next", "#E9C98E", size=(14, 9)) xpos 1140 ypos 664 at (silk_next_bob if silk_motion_on() else silk_still)
 
@@ -267,11 +267,14 @@ screen office_choice_list(items):
         for i, item in enumerate(items):
             use silk_choice_item(item, i)
 
-screen choice(items):
+screen choice(items, pc=False):
     zorder 30
-    # 선택지가 뜨면 무대를 살짝 어둡게 해 줄이 인물 그림과 겹쳐도 또렷하게 읽히게 한다.
-    add Solid("#180A12") alpha 0.42
-    if len(items) <= 3:
+    # 선택지가 뜨면 무대를 살짝 어둡게 해 줄이 인물 그림과 겹쳐도 또렷하게 읽히게 한다(PC 메신저는 자체 어둡게).
+    if not pc:
+        add Solid("#180A12") alpha 0.42
+    if pc:
+        use pc_messenger_choice(items)
+    elif len(items) <= 3:
         if _history_list:
             use cream_dialogue_panel(_history_list[-1].who, _history_list[-1].what, False, False)
         if office_ui_long_choices(items):
@@ -319,8 +322,8 @@ screen silk_title_item(label, caption, target, item_id=None, focus_first=False, 
             text label style "silk_title_text" yalign 1.0
             text caption style "silk_title_caption" yalign 0.8
 
-screen main_menu():
-    tag menu
+# 키 비주얼이 없을 때 쓰는 예전 타이틀(상업용 디자인판). 기본 타이틀은 desktop_title.rpy의 회사 PC 바탕화면.
+screen main_menu_silk():
     add "silk ground"
     $ title_art = renpy.loadable("images/cg/title_keyvisual.jpg")
     if title_art:
@@ -388,7 +391,7 @@ screen silk_quick_item(label, icon, target, ring=False):
 
 screen quick_menu():
     zorder 100
-    if not main_menu and not cream_menu_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
+    if not main_menu and not cream_menu_open() and not pc_choice_open() and not renpy.get_screen("office_phone") and not renpy.get_screen("office_phone_archive"):
         if not event_cut_active and not dialogue_cg_mode:
             hbox:
                 xanchor 1.0 xpos 1244 ypos 688 spacing 2
