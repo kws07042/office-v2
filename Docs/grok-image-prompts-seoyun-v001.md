@@ -13,7 +13,7 @@
 ## 설정법
 
 1. Grok 새 대화창에 마스터 입상 `CharacterArt/candidates/heroine-masters-v001/seoyun_office_pose01_neutral_v001.png` **한 장만** 올린다.
-2. 비율은 **16:9 가로**로 고른다. 게임 CG는 1280×720이다.
+2. 비율은 **16:9 가로**로 고른다. 게임 CG는 1280×720이다. Grok 화면에 비율 선택이 있으면 꼭 16:9를 누른다. 지난번처럼 세로로 나오면 같은 창에 `Redraw as 16:9 wide horizontal landscape, keep everything else.`라고 보낸다.
 3. 아래 **[공통]** 문단을 먼저 붙이고, 그 밑에 장면 문단 하나를 붙여서 보낸다.
 4. 같은 장면 안에서는 방이 같아야 한다.
    - A가 나오면, B와 C를 뽑을 때 A 그림도 함께 올린다.
@@ -26,7 +26,7 @@
 ## [공통] (매번 맨 앞에)
 
 ```text
-Use the attached master sprite as the ONLY style and character reference. Copy its art style exactly: same line weight, soft cel shading, coloring, highlights and anime face proportions. Same character, Han Seoyun, adult woman (32): slim oval face, long wavy dark plum / deep violet hair, half-lidded grey-blue lavender eyes, small beauty mark under her LEFT eye, same body proportions. Korean visual-novel CG, 16:9 landscape, full scene, no text, no watermark. The viewer is the man she is with: show only his hand, sleeve or shoulder at the frame edge when needed, never his face.
+Use the attached master sprite as the ONLY style and character reference. Copy its art style exactly: same line weight, soft cel shading, coloring, highlights and anime face proportions. Same character, Han Seoyun, adult woman (32): slim oval face, long wavy dark plum / deep violet hair, half-lidded grey-blue lavender eyes, small beauty mark under her LEFT eye, same body proportions. ASPECT RATIO: 16:9 WIDE HORIZONTAL LANDSCAPE (like 1920x1080). NOT vertical, NOT portrait, NOT square. Korean visual-novel CG, full scene, no text, no watermark. The viewer is the man she is with: show only his hand, sleeve or shoulder at the frame edge when needed, never his face.
 CONTENT: adult woman. Lingerie, cleavage, bare shoulders and a sheet covering the body are fine. No nudity, no nipples, no genitals, no sexual act. Every garment must be wearable in real life; fabric is opaque.
 ```
 
