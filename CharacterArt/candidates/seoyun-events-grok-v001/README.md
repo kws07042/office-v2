@@ -11,3 +11,12 @@
 | 시점 수정 | R07 A, R12 A, R15 생활복 A, 간호사 A: 화면 아래 구석에 남자의 어깨·등이 뒤에서 본 모습으로 걸려 있어, 주인공 시점이 아니라 제3자가 보는 화면처럼 보인다 |
 | 노출 추가(사용자 요청) | 간호사 A, 여경찰 A, 코스프레 C 세 장 |
 | 소품 | 여경찰 C의 알록달록한 패치워크 담요가 작업실 톤과 맞지 않는다 |
+
+## 추가본 반영 (2026-11-24, zip SHA-256 앞자리 a11f194af5a1786c)
+| 파일 | 상태 |
+|---|---|
+| r15_cosplay_nurse_intro, r15_cosplay_police_intro, r15_cosplay_nurse_after | 교체·통과(노출 추가, 주인공 손만 보임) |
+| r12_special_intro, r15_home_intro | 교체·통과(시점 수정). r15_home_intro_alt는 다른 안 |
+| r15_cosplay_bunny_after | 교체·통과(바니수트+셔츠). _alt는 속옷 세트판 |
+| r15_cosplay_police_after_pending | 보류: 하의 속옷이 그려지지 않음(수위 기준 밖), 무릎 위 경찰 모자 빠짐. 기존 police_after 유지 |
+| r07_casual_intro | 아직 다시 그리지 않음(구석 어깨 문제 남음) |
