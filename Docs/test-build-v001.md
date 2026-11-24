@@ -56,3 +56,11 @@
 | 결과 | afterwork_script_prototype-0.40.0-test6-win.zip, 204,130,423바이트, SHA-256 e3025f65691bfa1ba6cab7524a2267e2b3c7beb0da8f5bb07d93f18c03b29cb1 |
 | 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음 |
 | 검사 | 8.6.2 lint 통과. 이벤트 그림, 이후 대화 그림, 본장면 대사, 그림 연결, 서윤 전체, 지현 최종, 리아 R16 통과(Linux). Windows 실제 실행은 못 함 |
+
+## test7 (사원증 이름 입력 커서 위치)
+
+| 항목 | 값 |
+|---|---|
+| 게임 버전 | 0.40.1-test7 (0239fbe) |
+| 결과 | afterwork_script_prototype-0.40.1-test7-win.zip, 204,111,686바이트, SHA-256 b0fd526bfd212a72edb92603792f7abb008f07f6c72ed83d56a561d28736e56f |
+| 검사 | 8.6.2 lint 통과, 사원증 이름 검사 통과(Linux). 배포 제외 확인. Windows 실제 실행은 못 함 |
