@@ -27,8 +27,8 @@ label yujin_r09:
     y "저, 저는 이렇게 못 그려요! 그, 그리고 저는 계정 같은 거..."
     d "[ri('나도 그 계정 알아. 근데 시안이랑은 다르던데. 회사 건 문구가 먼저 보이고, 그 계정은 빛이 먼저 보여.', '저도 그 계정 알아요. 근데 시안이랑은 다르던데요. 회사 건 문구가 먼저 보이고, 그 계정은 빛이 먼저 보여요.')]"
     r "[ri('오, 너 은근 그림 보는 눈 있네~', '오, 도현 씨 은근 그림 보는 눈 있네~')]"
-    "유진이 테이블 아래에서 도현의 소매를 꼭 쥐었다. 손끝이 떨리고 있었다."
-    call phone_deliver("yujin_r09_dinner", "yujin", "아까 진짜 심장 떨어지는 줄 알았어요...\n대신 말해 주셔서 고마워요. 그리고 빛이 먼저 보인다는 거, 그거 제가 제일 듣고 싶던 말이에요", contact="yujin")
+    "유진이 테이블 아래에서 도현 소매를 꼭 쥐었다. 손끝이 떨리고 있었다."
+    call phone_deliver("yujin_r09_dinner", "yujin", "아까 원고 떨어뜨렸을 때 진짜 앞이 캄캄했어요...\n대신 말해 주셔서 고마워요. 빛부터 보인다는 말, 그게 제일 듣고 싶었어요", contact="yujin")
     $ cream_focus = "yujin"
     if memory.get("yujin_r08_availability") == "thu19":
         $ location = "일요일에 약속한 목요일 오후 · 회사 회의실"
@@ -82,7 +82,7 @@ label yujin_r09:
         $ location = "같은 저녁 · 회사 근처 카페"
         $ remember("yujin_r09_kept_appointment", "이날 새로 제안하고 동의한 카페 만남")
     if memory.get("yujin_support_overstep"):
-        y "아까 설명 이어가게 해 주신 건 고마워요. 그런데... 처음부터 제가 하고 싶었어요. 그 회의실에서 제 목소리가 사라지는 것 같았거든요."
+        y "설명 이어 가게 해 주셔서 고마웠어요. 근데 첫마디부터 제 입으로 하고 싶었어요. 거기 서 있는데 제 목소리가 안 들리더라고요."
         $ progression_enter("yujin_r09.choice02")
         $ progression_checkpoint("yujin_r09.choice02")
         menu:
@@ -122,7 +122,7 @@ label yujin_r09:
                 d "설명 끝나고 이쪽 한번 보셨잖아요. 그때 저 꽤 뿌듯했는데요."
                 y "저는 끝났으니까 이제 웃어 주셔도 된다는 뜻이었어요. ...지금도요."
                 $ remember("yujin_r09_evening", "look")
-    "유진이 가방 지퍼를 닫았다. 도현도 회사 메모를 접어 넣었다."
+    "유진이 가방 지퍼를 닫았다. 도현은 회사 메모를 접어 넣었다."
     y "오늘 회사 얘기는 여기까지요. 이제는 그냥... 도현 씨 보고 싶어서 나온 사람으로 있을래요."
     d "그럼 저도 질문 바꿀게요. 이번 토요일, 저랑 좀 오래 있어 줄래요?"
     y "네. 이번에는 제가 보여 드릴 페이지도 가져갈게요~"
@@ -143,7 +143,7 @@ label yujin_r10:
     $ location = "목요일 퇴근길 · 골목 안 화방"
     "목요일 퇴근길. 유진이 '잠깐만 들러도 돼요?'라며 들어간 곳은 골목 안쪽의 오래된 화방이었다."
     "문을 열자마자 유진의 걸음이 달라졌다. 회사에서는 벽에 붙어 걷던 사람이 진열대 사이를 거침없이 지나갔다."
-    y "이건 면이 많이 섞여서 물을 오래 머금어요. 이건 결이 거칠어서 빛이 번질 때 좋고요. 이건 비싼데 그만큼 정직해요. 실수가 다 보여서요."
+    y "면이 많은 건 물을 오래 머금어요. 빛이 번지는 데는 이 거친 게 좋고요. ...비싼 건요, 틀린 데까지 다 보여 줘요."
     d "말이 엄청 빨라졌어요."
     "유진이 종이를 든 채 굳었다."
     y "...제가요?"
@@ -179,7 +179,7 @@ label yujin_r10:
     elif memory.get("yujin_r05_layout") == "spread":
         y "같이 놓고 보니까 빈 공간도 그림 같았어요. 다음 장은 조금 달라도 재밌겠어요."
     d "네. 아직 후보예요. 오늘은 다음 페이지 같이 봐 주실래요? 혼자 보니까 자꾸 첫 장으로 돌아가네요."
-    "유진이 노트 두 권을 겹치려다가 도현의 것을 다시 가운데 놓았다."
+    "유진이 노트 두 권을 포개려다 도현이 쓰던 노트를 다시 가운데 놓았다."
     y "또 첫 장으로 가시면 제가 여기 잡고 있을게요. 오늘은 다음 장도 보고 싶어요."
     $ progression_enter("yujin_r10.choice01")
     $ progression_checkpoint("yujin_r10.choice01")
@@ -195,7 +195,7 @@ label yujin_r10:
             $ remember("yujin_r10_impression", "도현은 함께 앉은 날짜, 유진은 옆자리에서 고르던 다음 말")
         "사진 없이 그 한 문장만 놓는다.":
             d "저는 방금 티켓 옆에 적은 말이요. 사진 없는 장도 하나 두고 싶어요."
-            "유진이 티켓 옆에 방금 적은 말을 읽었다가 도현의 빈 페이지를 봤다."
+            "유진이 티켓 옆에 방금 적은 말을 읽었다가 도현 빈 페이지를 봤다."
             y "제 노트에 제가 먼저 적었는데, 벌써 가져가세요?"
             d "원래 제가 한 말인데요?"
             y "알아요~ 그런데 이쪽에도 남겨 주세요. 그 말 듣고 오늘 여기서 적은 거니까요."
@@ -222,7 +222,7 @@ label yujin_r10:
     $ remember("yujin_r11_appointment", "다음 날 일요일 저녁, 유진 집에서 음악 추천을 나눔")
     y "그리고 저희 사귀는 거요. 지현 팀장님한테는 말씀드리고 싶어요. 회사 전체 말고 그분 한 명한테요."
     d "축하받고 싶으세요?"
-    y "네. ...도현 씨 여자친구라고 말해 보고 싶은 것도 있어요. 제가 혼자만 알고 있는 것 같아질 때가 있어서요."
+    y "저도 한 번쯤은 도현 씨 여자친구라고 말해 보고 싶어요. 가끔은 저만 아는 얘기 같아서요."
     $ progression_enter("yujin_r10.choice02")
     $ progression_checkpoint("yujin_r10.choice02")
     menu:
@@ -274,7 +274,7 @@ label yujin_r11:
         "어제 정한 대로, 지현에게 같이 메시지를 보냈다."
         $ location = "같은 일요일 저녁 · 지현에게 함께 보낸 개인 메시지"
         call phone_deliver("yujin_disclosure_1", "dohyun", "팀장님, 저희 둘이 사귀게 됐어요. 유진 씨랑 같이 보내는 거예요. 다른 분들께는 아직 말하지 말아 주세요.", contact="jihyun")
-        call phone_deliver("yujin_disclosure_2", "jihyun", "축하해요, 두 사람. 두 분이 직접 말하기 전까지는 저도 다른 사람에게 말하지 않을게요.", contact="jihyun", important=True)
+        call phone_deliver("yujin_disclosure_2", "jihyun", "두 사람 축하해요.\n직접 얘기할 때까지 나도 말 안 할게요", contact="jihyun", important=True)
         call phone_deliver("yujin_disclosure_3", "jihyun", "유진 씨가 정한 문장이죠? 오늘은 수정 의견 안 달게요. 좋은 저녁 보내요 :)", contact="jihyun")
         $ remember("yujin_disclosed_to", "jihyun")
         $ phone_active_contact = "yujin"
@@ -290,7 +290,7 @@ label yujin_r11:
     $ progression_checkpoint("yujin_r11.choice01")
     menu:
         "유진의 잔잔한 곡부터 듣는다.":
-            "유진이 고른 곡을 들었다. 유진은 컵을 쥔 채 도현의 반응을 기다렸다."
+            "유진이 고른 곡을 들었다. 유진은 컵을 쥔 채 도현이 뭐라고 할지 기다렸다."
             d "저는 마지막 음이 남는 게 좋네요. 끝나기 전에 좀 더 앉아 있고 싶어져요."
             "곡이 끝났는데 유진의 손은 재생 버튼 옆에 남아 있었다."
             y "한 번 더 들어도 돼요? 이번엔 마지막 음에서 도현 씨 표정도 보려고요."
@@ -308,7 +308,7 @@ label yujin_r11:
             $ remember("yujin_r11_heard", ["한 정거장 더"])
             $ remember("yujin_r11_music_impression", "도현은 더 걷고 싶은 길, 유진은 누군가를 만나러 가는 걸음")
         "한 곡씩 번갈아 듣는다.":
-            "유진의 곡을 들은 뒤 도현의 곡으로 바꿨다. 곡 이름 옆에 듣고 싶은 순간을 하나씩 적었다."
+            "유진의 곡을 들은 뒤 도현이 고른 곡으로 바꿨다. 곡 이름 옆에 듣고 싶은 순간을 하나씩 적었다."
             d "저는 만남 전에 걸을 땐 제 곡, 돌아와서 조금 더 있을 땐 유진 씨 곡이요."
             y "저는 기다릴 땐 조용한 쪽이요. 만나러 나갈 때는 도현 씨 곡 틀어 보고 싶어요."
             d "그럼 오늘 제 곡 차례는 이미 지났네요."
@@ -350,7 +350,7 @@ label yujin_r12:
     "답은 바로 왔다. '그렇게 부르지 마세요... 한 번만 더 불러 주세요.'"
     $ location = "다음 주 월요일 저녁 · 각자의 일정, 개인 메시지"
     call phone_deliver("yujin_r12_mon", "dohyun", "외근 끝나고 정리 중이에요\n아까 지나간 길에 유진 씨 생각나는 창문이 있었어요. 다음에 얘기해 드릴게요", contact="yujin")
-    call phone_deliver("yujin_r12_mon_y", "yujin", "저는 아직 작업실이에요\n무슨 창문인지 궁금해졌어요. 제 생각났다는 부분은 두 번 읽었어요\n...오늘 좀 듣고 싶었거든요 :)", contact="yujin")
+    call phone_deliver("yujin_r12_mon_y", "yujin", "아직 작업실이에요. 무슨 창문이었어요?\n제 생각났다는 데서 두 번 읽었어요. 오늘 좀 듣고 싶었거든요", contact="yujin")
     $ location = "화요일 밤 · 각자의 집, 개인 메시지"
     if memory.get("yujin_r11_music") == "yujin_calm":
         call phone_deliver("yujin_r12_tue", "yujin", "지난번 같이 들은 '창가에 남은 오후'요\n마지막 음 들을 때 옆자리 생각이 나네요. 오늘은 곡 끝나면 쉬려고요", contact="yujin")
@@ -362,7 +362,7 @@ label yujin_r12:
         call phone_deliver("yujin_r12_tue", "yujin", "오늘은 해 지기 전에 집에 왔어요. 창가에 빛이 아직 남아 있더라고요\n다음에 만나면 도현 씨 외근 얘기부터 듣고 싶어요", contact="yujin")
     call phone_deliver("yujin_r12_tue_d", "dohyun", "저도 오늘은 여기까지만 할게요. 만나서 얘기할 건 남겨 두고요\n잘 자요 유진 씨", contact="yujin")
     $ location = "수요일 저녁 · 각자의 집, 개인 메시지"
-    call phone_deliver("yujin_r12_invite", "yujin", "납품 끝났어요!!\n내일 저녁에 만날까요? 저는 여섯 시 반부터 괜찮아요. 그냥 보고 싶어서요", contact="yujin", important=True)
+    call phone_deliver("yujin_r12_invite", "yujin", "납품 끝났어요!!\n내일 저녁에 만나요. 전 여섯 시 반부터 돼요. ...보고 싶어요", contact="yujin", important=True)
     $ phone_context = "yujin_r12_reunion_reply"
     $ progression_enter("yujin_r12.choice01")
     $ progression_checkpoint("yujin_r12.choice01")
@@ -384,7 +384,7 @@ label yujin_r12:
     $ date_outfit_on("yujin")
     "약속한 곳에 유진이 와 있었다. 도현을 보자 들고 있던 가방을 양손으로 고쳐 잡았다."
     dn "가방을 양손으로 고쳐 잡는 건 유진 씨가 긴장했을 때 하는 버릇이다. 나도 주머니 속 손에 땀이 났다."
-    y "메시지로는 할 말 많았는데. 지금은 인사부터 하고 싶어요. 보고 싶었어요."
+    y "문자로는 할 말 많았는데... 일단 인사부터요. 보고 싶었어요."
     d "저도요. 말 고르다 또 늦어지기 전에 말할게요."
     if memory.get("yujin_r11_music") == "yujin_calm":
         y "혼자 그 곡 들을 땐 옆자리가 비어 있었는데, 오늘은 도현 씨가 있네요. 좀 더 같이 있고 싶어요."
@@ -401,9 +401,9 @@ label yujin_r12:
     elif memory.get("yujin_support_action") == "agreed_summary":
         y "지난번 그 한 문장, 좋았어요. 근데 내일은 시간이 반이라... 또 떨릴 것 같아요."
     elif memory.get("yujin_support_action") == "materials":
-        y "지난번처럼 제가 설명하고 싶어요. 근데 내일은 시간이 반으로 줄어서, 솔직히 무서워요."
+        y "내일도 제가 설명할래요. 근데 시간이 지난번의 반이래요. ...그건 좀 무서워요."
     else:
-        y "내일 짧은 검토가 하나 있어요. 이번엔... 제가 어떻게 해 달라고 할지 미리 말하고 싶어요."
+        y "내일 검토 하나 있거든요. 짧아요. 이번엔 제가 먼저 부탁해도 돼요?"
     $ progression_enter("yujin_r12.choice02")
     $ progression_checkpoint("yujin_r12.choice02")
     menu:
@@ -429,7 +429,7 @@ label yujin_r12:
     "그날 얘기를 나누고 저녁을 먹었다. 유진은 평소와 다른 옷소매를 한번 내려다봤다."
     y "오늘 옷도 좀 오래 골랐어요. 알아봐 달라고 말하려니까... 지금이 더 부끄럽네요."
     d "알아봤어요. 예쁘다는 말부터 하고 싶었는데 인사가 튀어나와 버렸네요."
-    "유진은 소매를 만지던 손을 내려놓고 도현의 눈을 마주 봤다."
+    "유진은 소매를 만지던 손을 내려놓고 도현 눈을 마주 봤다."
     y "그 말은 지금 들어도 좋아요. ...이번엔 제가 안 피했네요. 도현 씨가 먼저 보셨는데~"
     d "졌네요. 그런데 다시 봐도 돼요?"
     y "네. 오늘은 저도 더 보고 싶어요. ...집에 들르실래요?"

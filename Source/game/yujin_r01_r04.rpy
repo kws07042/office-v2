@@ -46,24 +46,24 @@ label yujin_r01:
         call phone_deliver("yujin_r01_answer", "yujin", "입구 쪽 그림이요!!\n...아 아니에요. 제가 말하면 도현 씨 감상이 제 감상이 돼요. 참을게요", contact="yujin")
     elif memory["yujin_r01_reply"] == "time":
         call phone_deliver("yujin_r01_reply", "dohyun", "토요일 오후 두 시 어때요? 그 뒤는 비워 둘게요", contact="yujin")
-        call phone_deliver("yujin_r01_answer", "yujin", "헉 저 지금 시간 어떻게 물어볼지 고민하던 중이었는데요\n한 문장 졌네요 ㅎㅎ", contact="yujin")
+        call phone_deliver("yujin_r01_answer", "yujin", "저 지금 몇 시가 좋으시냐고 쓰고 있었는데 ㅎㅎ\n한 문장 늦었네요", contact="yujin")
     else:
         call phone_deliver("yujin_r01_reply", "dohyun", "가고 싶어요. 근데 왜 이 전시예요?", contact="yujin")
         if c06_person == "yujin" and c06_topic == "weekend":
             call phone_deliver("yujin_r01_answer", "yujin", "지난번에 제목 보고 서로 다른 쪽 고르셨잖아요\n같은 그림 앞에서는 얼마나 다를지... 궁금해서요", contact="yujin")
         else:
-            call phone_deliver("yujin_r01_answer", "yujin", "도현 씨는 같은 걸 봐도 다른 데서 멈출 것 같아서요\n그 멈추는 데를 옆에서 보고 싶었어요", contact="yujin")
+            call phone_deliver("yujin_r01_answer", "yujin", "같은 그림인데 도현 씨는 어디쯤에서 멈추실까요\n그걸 옆에서 보고 싶어서요", contact="yujin")
     if memory["yujin_r01_reply"] != "time":
         call phone_deliver("yujin_r01_time", "yujin", "토요일 두 시, 입구 어때요? 사람 많아지기 전에요!", contact="yujin")
         call phone_deliver("yujin_r01_time_reply", "dohyun", "좋아요. 두 시에 입구에서 봬요", contact="yujin")
-    call phone_deliver("yujin_r01_close", "yujin", "그럼 토요일 두 시예요\n...설명하는 사람 말고 같이 보는 사람으로 와 주세요 :)", contact="yujin", important=True)
+    call phone_deliver("yujin_r01_close", "yujin", "토요일 두 시에 봬요\n설명 준비해 오시면 안 돼요 ㅎㅎ 같이 보러 가는 거예요", contact="yujin", important=True)
     $ remember("yujin_r01_appointment", "토요일 오후 두 시, 작은 전시 공간 입구")
     $ remember("yujin_r01_first_contact")
     $ location = "목요일 저녁 · 도현의 집"
     dn "같이 보는 사람. 일정에 적기엔 긴 말이라 전시 제목 옆에 작게 적어 뒀다."
     $ location = "같은 목요일 저녁 · 유진의 집 — 유진 시점"
     "유진은 보낸 문장을 세 번 다시 읽었다. 달력의 토요일 칸에 작은 별을 그리고, 전시 노트 첫 장은 비워 뒀다."
-    yn "설명은 가서 해도 돼. 첫 감상은 그분 입으로 듣고 싶으니까."
+    yn "설명은 가서 하자. 처음에 뭐가 보였는지는 내가 먼저 말하면 안 되니까."
     $ location = "같은 목요일 저녁 · 도현의 집"
     dn "수줍음이 많은 사람이 먼저 전시를 골랐다. 그게 어떤 용기였을지, 가는 내내 생각했다."
     $ award_once("yujin_R01", "yujin", 4)
@@ -97,15 +97,15 @@ label yujin_r02:
         "유진이 짠 순서대로 따라간다.":
             $ remember("yujin_r02_plan", "follow")
             d "다음은 유진 씨 순서대로 볼까요? 이 그림 보니까 궁금한 게 생겼어요."
-            y "아, 그럼 바로 옆이요! 같은 방인데 빛이 완전 달라요. 보시면 깜짝... 아, 너무 기대하게 만들었나."
-            "유진이 두 그림 사이에 서서 밝은 면과 비어 있는 면을 번갈아 가리켰다. 도현도 한 걸음 물러나 비교했다."
+            y "그 옆방이요! 벽 하나 사이인데 빛이 완전히 달라요. ...제가 먼저 다 말해 버리겠네요."
+            "유진이 두 그림 사이에 서서 밝은 면과 비어 있는 면을 번갈아 가리켰다. 도현은 한 걸음 물러나 비교했다."
             $ remember("yujin_r02_seen", "같은 방의 다른 빛")
             d "이번엔 유진 씨가 처음 본 쪽에 좀 가까워졌네요."
             "도현이 한 걸음 더 물러나다 유진 옆에 나란히 섰다."
             y "어때요? 같은 방인데 창문 자리만 바꾼 것 같죠?"
             d "저는 아까보다 덜 외로워 보이네요."
             y "그 대답, 제가 짠 순서보다 좋네요."
-            "유진이 두 그림 사이에서 반걸음 옮기더니 도현도 같은 자리로 불렀다."
+            "유진이 두 그림 사이에서 반걸음 옮기더니 도현을 같은 자리로 불렀다."
             y "여기서 보세요. 저는 아직 왼쪽이 더 좋아요. 따뜻한데 텅 빈 거요."
             d "같이 보고도 의견은 안 바뀌네요?"
             y "네. 도현 씨랑 같이 보고 싶었던 거지, 제 편 만들려던 건 아니니까요~"
@@ -216,7 +216,7 @@ label yujin_r03:
         "꼭 지키고 싶던 게 뭔지 묻는다.":
             $ remember("yujin_r03_response", "intent")
             d "바꾸면서도 꼭 지키고 싶었던 건 뭐예요?"
-            y "보는 사람이 어디 서 있는지요. 제가 보기 좋은 자리만 생각하고 싶진 않았어요."
+            y "보는 분이 어디 서 계실지요. 제 자리에서만 잘 보이면 곤란하잖아요."
             d "그럼 저는 지금 서 있는 데서 한 번 더 볼게요."
             "도현이 한 걸음 옮기자 유진도 모니터 각도를 바꿔 줬다."
         "내가 읽은 의도가 맞는지 묻는다.":
@@ -278,7 +278,7 @@ label yujin_r04:
         $ progression_checkpoint("yujin_r04.choice01")
         menu:
             "나도 좋아한다고 답한다.":
-                d "저도 좋아해요. 그날 헤어지고 또 불러 주셨으면 했어요. 다음엔 제가 만나자고 해야겠다고 생각했고요."
+                d "저도 좋아해요. 그날 헤어지고 또 불러 주셨으면 했어요. 다음엔 제가 먼저 만나자고 하고 싶었고요."
                 y "그럼... 우리 사귀는 거 맞죠? 제가 고백해 놓고 또 확인하네요."
                 d "네. 저랑 사귀어요, 유진 씨."
                 $ dating = True
@@ -286,21 +286,21 @@ label yujin_r04:
                 dn "사귀자는 말은 내가 했지만, 여기까지 끌고 온 건 유진 씨였다. 떨리는 목소리로, 한 문장씩."
                 $ award_once("yujin_R04", "yujin", 5)
             "마음은 있지만 더 얘기하고 싶다고 한다." if not yujin_prepared:
-                d "저도 마음 있어요. 그런데 연애는 처음이라, 잘하려다가 혼자 짐작하고 말을 늦게 할까 봐요."
+                d "저도 좋아해요. 근데 연애는 처음이라... 혼자 넘겨짚다가 말이 늦을까 봐요."
                 y "저도 처음이에요. 오늘 말할 순서도 적어 왔어요. ...거의 못 지켰지만요."
                 d "그 노트 보고 시험 치는 줄 알았으면 긴장했겠네요."
                 y "시험이면 제가 질문을 더 잘했겠죠~ 저는 도현 씨가 뭘 원하는지도 듣고 싶어요."
-                d "좋아하면 표현하고 싶어요. 서툴러도요. 오늘도 좋다고 바로 말하고 싶었고요."
+                d "서툴러도 그날 말하고 싶어요. 오늘도 좋았다고요."
                 y "저도요. 다음에 보고 싶으면 전시부터 안 찾을게요. 도현 씨 이름부터 누를래요."
                 $ yujin_prepared = True
                 $ remember("yujin_prepared_conversation")
             "이번 회차는 연애를 시작하지 않고 동료로 지낸다 — 동료 결말로 이어짐.":
-                d "유진 씨 마음을 들었지만, 저는 동료로 지내고 싶어요. 연애를 시작하겠다는 답은 드릴 수 없어요."
+                d "저는 동료로 지내고 싶어요. 사귀자고는 못 하겠어요, 유진 씨."
                 $ progression_enter("yujin_r04.choice02")
                 $ progression_checkpoint("yujin_r04.choice02")
                 menu:
                     "동료로 지내겠다는 뜻을 확인한다.":
-                        y "알겠어요. 솔직하게 말해 주셔서... 괜찮아요. 오늘 제 얘기는 다른 사람한텐 하지 말아 주세요."
+                        y "네. 말해 주셔서... 괜찮아요. 오늘 제가 한 말은 여기 두고 가 주세요."
                         d "네. 오늘 들은 건 저만 알고 있을게요."
                         $ remember("yujin_relationship_declined")
                         call end_common

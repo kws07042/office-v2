@@ -12,8 +12,8 @@ label jihyun_o01_offer:
         "본편 계속 — 다음 수요일의 만남으로":
             $ remember("jihyun_o01_status", "skipped")
         "다음에도 빈 시간을 남겨 두자고 짧게 말하고 본편 계속":
-            d "다음엔 계획 없는 시간도 같이 보내 봐요."
-            j "알겠어. 계획 없이 갈게. ...말은 이렇게 해도 메모 한 줄은 들고 갈지도 몰라."
+            d "다음엔 뭐 할지 비워 두고 만나요."
+            j "알았어. 일정표는 안 짤게. ...메모 한 줄 정도는 봐줘."
             $ remember("jihyun_o01_status", "brief")
     $ progression_note_ending()
     return
@@ -28,7 +28,7 @@ label jihyun_o01:
     $ location = "같은 토요일 늦은 오후 · 강변 가게 앞"
     "걷다가 들르려던 작은 가게가 닫혀 있었다. 빗방울까지 떨어지자 지현이 휴대폰을 꺼내려다 멈췄다."
     dn "계획이 틀어졌는데 지현 씨는 화를 내지 않았다. 그게 오히려 낯설었다."
-    j "다른 데 세 군데쯤 검색할 뻔했네. 너 지금 뭐 하고 싶어?"
+    j "하마터면 세 군데 더 찾을 뻔했네. 넌 지금 뭐 하고 싶어?"
     $ progression_enter("jihyun_o01.choice01")
     $ progression_checkpoint("jihyun_o01.choice01")
     menu:
@@ -86,7 +86,7 @@ label jihyun_o02:
         return
     $ chapter = "지현 O02 · 완성하지 않아도 되는 취미"
     $ location = "같은 토요일 오후 · 조립품 앞"
-    j "설명서대로면 지붕 붙일 순서인데. 오늘은 좀 더 보고 싶어."
+    j "다음 순서가 지붕이야. 근데 오늘은 이대로 좀 보자."
     dn "설명서를 덮은 지현 씨는 회사에서 본 적 없는 얼굴을 하고 있었다."
     $ progression_enter("jihyun_o02.choice01")
     $ progression_checkpoint("jihyun_o02.choice01")
@@ -126,7 +126,7 @@ label jihyun_o03_offer:
         "본편 계속 — 일요일 저녁 약속으로":
             $ remember("jihyun_o03_status", "skipped")
         "저녁에 내가 원하는 것도 먼저 말하겠다고 하고 본편 계속":
-            d "저녁엔 제가 하고 싶은 것도 제 입으로 말해 볼게요."
+            d "저녁엔 저도 뭐 하고 싶은지 먼저 말해 볼게요."
             j "좋아. 이번엔 내가 묻기 전에 먼저 보고해."
             $ remember("jihyun_o03_status", "brief")
     $ progression_note_ending()
@@ -169,7 +169,7 @@ label jihyun_o03:
             "삼십 분을 함께 쉬고 헤어졌다. 저녁 약속은 그대로 남겨 뒀다."
             $ remember("jihyun_o03_request", "삼십 분 휴식 후 각자 귀가, 저녁 재회")
         "기록집 한 줄만 읽어 달라고 조른다.":
-            d "쉬는 동안 이 한 줄 읽어 주실래요? 고칠 곳보다 어떤 장면인지 듣고 싶어요."
+            d "쉬는 김에 이 한 줄만 봐 주실래요? 어떤 장면이 떠오르세요?"
             j "응. 나는 비 오기 직전 골목이 생각나. 네가 쓴 날이랑은 다를 수도 있겠지만."
             "도현은 지현이 떠올린 날씨를 메모했다. 부탁한 한 줄만 보고 노트를 덮었다."
             $ remember("jihyun_o03_request", "기록집 한 줄의 첫 감상 부탁")
