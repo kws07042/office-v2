@@ -47,3 +47,12 @@
 | 내용 | event_main_text.json(25장면, Docs/adult/grok-adult-scenes-v003b.json 복사)을 본장면 CG1~3에 한 줄씩 표시. 리아 모텔은 대사창으로 재생 |
 | 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음(.rpy는 엔진 renpy/common만) |
 | 검사 | 8.6.2 lint 통과. 본장면 대사(데이터·한 줄 이동·이름 치환·모텔), 그림 연결, 도입 CG 검사 통과(Linux). Windows 실제 실행은 못 함 |
+
+## test6 (main 병합 후 · 서윤·지현·리아 전후 CG)
+
+| 항목 | 값 |
+|---|---|
+| 게임 버전 | 0.40.0-test6 (main 06ff7d7 + 버전 표기 1c606cb) |
+| 결과 | afterwork_script_prototype-0.40.0-test6-win.zip, 204,130,423바이트, SHA-256 e3025f65691bfa1ba6cab7524a2267e2b3c7beb0da8f5bb07d93f18c03b29cb1 |
+| 제외 확인 | 게임 .rpy 원본, *_tests.rpyc, tools, saves 없음 |
+| 검사 | 8.6.2 lint 통과. 이벤트 그림, 이후 대화 그림, 본장면 대사, 그림 연결, 서윤 전체, 지현 최종, 리아 R16 통과(Linux). Windows 실제 실행은 못 함 |
