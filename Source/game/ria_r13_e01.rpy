@@ -13,13 +13,13 @@ label ria_r13:
     "요즘 리아는 답장이 조금씩 늦었다. 점심시간에 자리를 비우는 날도 있었다. 피칭 전이라 다들 그렇겠거니 했다."
     "집을 나와 역을 지날 무렵 메시지가 왔다."
     call phone_deliver("ria_r13_01", "ria", ri('도현아, 미안. 아직 정리 중이야.\n네 시에는 못 갈 것 같아. 오늘 조금 미루면 안 될까?', '도현 씨, 미안해요. 아직 정리 중이에요.\n네 시에는 못 갈 것 같아요. 오늘 조금 미루면 안 될까요?'))
-    call phone_deliver("ria_r13_02", "dohyun", ri('지금 나가는 길이에요. 언제쯤 끝날 것 같아요?', '지금 나가는 길이에요. 언제쯤 끝날 것 같아요?'))
+    call phone_deliver("ria_r13_02", "dohyun", ri('지금 나가는 길이야. 언제쯤 끝날 것 같아?', '지금 나가는 길이에요. 언제쯤 끝날 것 같아요?'))
     call phone_deliver("ria_r13_03", "ria", ri('아직 확실하지 않아. 늦어질 건 두 시쯤 알았는데, 어떻게든 맞춰 보려고 했어.', '아직 확실하지 않아요. 늦어질 건 두 시쯤 알았는데, 어떻게든 맞춰 보려고 했어요.'))
     if memory.get("ria_r12_expectation") == "hope_early":
         dn "오전에 보잔 건 아니었다. 그래도 네 시엔 마주 앉을 줄 알았는데."
     else:
         dn "네 시에 맞추려고 일을 정리하고 나온 길이었다. 조금만 일찍 알았어도 집에서 마저 하고 나왔을 텐데."
-    call phone_deliver("ria_r13_04", "dohyun", ri('끝나는 시각이 정해지면 알려 주세요. 일단 역 근처 카페에 있을게요.', '끝나는 시각이 정해지면 알려 주세요. 일단 역 근처 카페에 있을게요.'))
+    call phone_deliver("ria_r13_04", "dohyun", ri('끝나는 시각이 정해지면 알려 줘. 일단 역 근처 카페에 있을게.', '끝나는 시각이 정해지면 알려 주세요. 일단 역 근처 카페에 있을게요.'))
     $ remember("ria_r12_next_appointment_status", "changed_late_notice")
     $ remember("ria_r13_breach", "리아가 두 시에 지연을 알았지만 세 시 사십오 분에 연락")
     $ remember("ria_conflict", "open")
@@ -184,7 +184,7 @@ label ria_r14:
     $ location = "그 일요일 밤 · 개인 메시지"
     call phone_deliver("ria_r14_night", "ria", ri("카페에서 나오고 나서도 계속 생각나. 내일 회사에서 너 얼굴 어떻게 보지. ...염치없어서.", "카페에서 나오고 나서도 계속 생각나요. 내일 회사에서 얼굴 어떻게 보죠. ...염치없어서요."), contact="ria")
     "도현은 메시지를 열어 둔 채 한참 답을 쓰지 못했다. 다음 날 아침에야 답장을 보냈다."
-    call phone_deliver("ria_r14_reply", "dohyun", ri("도망치시면 티 엄청 날걸요. 토요일엔 도망 금지예요.", "도망치시면 티 엄청 날걸요. 토요일엔 도망 금지예요."), contact="ria")
+    call phone_deliver("ria_r14_reply", "dohyun", ri("도망치면 티 엄청 날걸. 토요일엔 도망 금지야.", "도망치시면 티 엄청 날걸요. 토요일엔 도망 금지예요."), contact="ria")
     call phone_deliver("ria_r14_answer", "ria", ri("...응. 토요일엔 내가 먼저 손 잡을게.", "...네. 토요일엔 제가 먼저 손 잡을게요."), contact="ria")
     $ cream_focus = "ria"
     $ location = "다음 주 평일 · GY브랜딩"
@@ -194,11 +194,11 @@ label ria_r14:
     $ location = "금요일 오후 · 개인 메시지"
     if memory.get("ria_r14_plan") == "fixed":
         call phone_deliver("ria_r14_01", "ria", ri('내일 오전 정리는 담당자가 맡았어. 오후 확인도 오늘 끝냈고. 네 시 약속 그대로 보자!', '내일 오전 정리는 담당자가 맡았어요. 오후 확인도 오늘 끝냈고요. 네 시 약속 그대로 봐요!'), important=True)
-        call phone_deliver("ria_r14_02", "dohyun", ri('좋아요. 네 시예요. 저는 노트 들고 갈게요~', '좋아요. 네 시예요. 저는 노트 들고 갈게요~'))
+        call phone_deliver("ria_r14_02", "dohyun", ri('좋아. 네 시에. 나는 노트 들고 갈게~', '좋아요. 네 시에요. 저는 노트 들고 갈게요~'))
         $ location = "토요일 오후 세 시 오십 분 · 약속한 카페"
     else:
         call phone_deliver("ria_r14_03", "ria", ri('내일 정리 확인은 담당자가 맡았고, 나는 네 시 전에 마칠 수 있어. 네 시 반은 어때?', '내일 정리 확인은 담당자가 맡았고, 저는 네 시 전에 마칠 수 있어요. 네 시 반은 어때요?'), important=True)
-        call phone_deliver("ria_r14_04", "dohyun", ri('좋아요. 네 시 반으로 정해요. 그전에는 제 일 보고 갈게요.', '좋아요. 네 시 반으로 정해요. 그전에는 제 일 보고 갈게요.'))
+        call phone_deliver("ria_r14_04", "dohyun", ri('좋아. 네 시 반으로 정하자. 그전에는 내 일 보고 갈게.', '좋아요. 네 시 반으로 정해요. 그전에는 제 일 보고 갈게요.'))
         $ remember("ria_r14_appointment", "토요일 오후 네 시 반, 금요일에 상호 확정")
         $ location = "토요일 오후 네 시 이십 분 · 약속한 카페"
     "약속 시각보다 조금 일찍 도착했는데, 창가에서 리아가 벌써 손을 흔들고 있었다."
@@ -398,7 +398,7 @@ label ria_o03_offer:
         "방문 대신 안부만 짧게 전하고 본편 계속":
             $ remember("choice_third_o03_offer")
             $ location = "그다음 화요일 저녁 · 각자의 집, 메시지"
-            call phone_deliver("ria_o03_offer_01", "dohyun", ri('오늘은 집에서 노트 좀 정리할게요. 쉬는 중이시면 답장은 나중에 하셔도 돼요~', '오늘은 집에서 노트 좀 정리할게요. 쉬는 중이시면 답장은 나중에 하셔도 돼요~'))
+            call phone_deliver("ria_o03_offer_01", "dohyun", ri('오늘은 집에서 노트 좀 정리할게. 쉬는 중이면 답장은 나중에 해도 돼~', '오늘은 집에서 노트 좀 정리할게요. 쉬는 중이시면 답장은 나중에 하셔도 돼요~'))
             call phone_deliver("ria_o03_offer_02", "ria", ri('응! 나도 지도 보다가 일찍 잘래. 다음에 정리한 거 보여 줘.', '네! 저도 지도 보다가 일찍 잘래요. 다음에 정리하신 거 보여 주세요.'))
             $ remember("ria_o03_status", "brief")
     $ progression_note_ending()

@@ -180,7 +180,7 @@ label ria_r03:
     $ progression_checkpoint("ria_r03")
     $ chapter = "리아 R03 · 네가 말했던 자리"
     $ location = "다음 날 · 약속 연락"
-    call phone_deliver("ria_r03_01", "dohyun", ri('내일 퇴근하고 시간 괜찮아요? 일곱 시쯤요. 메모도 가져가 보려고요.', '내일 퇴근하고 시간 괜찮아요? 일곱 시쯤요. 메모도 가져가 보려고요.'))
+    call phone_deliver("ria_r03_01", "dohyun", ri('내일 퇴근하고 시간 괜찮아? 일곱 시쯤. 메모도 가져가 보려고.', '내일 퇴근하고 시간 괜찮아요? 일곱 시쯤요. 메모도 가져가 보려고요.'))
     if memory.get("ria_cafe_visited"):
         call phone_deliver("ria_r03_02", "ria", ri('응, 괜찮아! 내일은 내가 먼저 자리 잡을게~ 그 카페 앞에서 보자 :)', '네, 괜찮아요! 내일은 제가 먼저 자리 잡을게요~ 그 카페 앞에서 봐요 :)'), important=True)
     else:

@@ -357,9 +357,9 @@ label ria_r12:
     $ location = "화요일 밤 · 각자의 집, 메시지"
     "현장 운영이 시작됐다. 퇴근 시간이 엇갈리는 날들이 이어졌다."
     call phone_deliver("ria_r12_01", "ria", ri('오늘 안내 위치 바꾸고 첫 운영 끝! 발은 좀 아픈데 길 묻는 분들은 줄었어~', '오늘 안내 위치 바꾸고 첫 운영 끝! 발은 좀 아픈데 길 묻는 분들은 줄었어요~'))
-    call phone_deliver("ria_r12_02", "dohyun", ri('첫날 고생하셨어요. 저는 기록집 사진 고르는 중이에요. 오늘은 답장보다 쉬는 것부터 :)', '첫날 고생하셨어요. 저는 기록집 사진 고르는 중이에요. 오늘은 답장보다 쉬는 것부터 :)'))
+    call phone_deliver("ria_r12_02", "dohyun", ri('첫날 고생했어. 난 기록집 사진 고르는 중. 오늘은 답장보다 쉬는 것부터 :)', '첫날 고생하셨어요. 저는 기록집 사진 고르는 중이에요. 오늘은 답장보다 쉬는 것부터 :)'))
     $ location = "수요일 밤 · 각자의 집, 메시지"
-    call phone_deliver("ria_r12_03", "dohyun", ri('오늘 골목 메모는 이거예요. 창문에 불 하나 켜지면 낮에 그냥 지나친 가게도 다시 보이네요.', '오늘 골목 메모는 이거예요. 창문에 불 하나 켜지면 낮에 그냥 지나친 가게도 다시 보이네요.'))
+    call phone_deliver("ria_r12_03", "dohyun", ri('오늘 골목 메모는 이거. 창문에 불 하나 켜지면 낮에 그냥 지나친 가게도 다시 보인다.', '오늘 골목 메모는 이거예요. 창문에 불 하나 켜지면 낮에 그냥 지나친 가게도 다시 보이네요.'))
     if memory.get("ria_o02_status") == "completed" and memory.get("ria_o02_name"):
         $ phone_place_memory = memory["ria_o02_name"]
         call phone_deliver("ria_r12_place_memory", "dohyun", ri("우리끼리 붙인 이름, ‘" + phone_place_memory + "’도 메모 옆에 적어 뒀어. 이름을 보니까 그날 생각나더라.", "우리끼리 붙인 이름, ‘" + phone_place_memory + "’도 메모 옆에 적어 뒀어요. 이름을 보니까 그날 생각나더라고요."))
@@ -368,10 +368,10 @@ label ria_r12:
         call phone_deliver("ria_r12_place_memory", "dohyun", ri("우리 지도에서 고른 " + phone_place_memory + "도 적어 뒀어. 다음에 같이 가면 어떤 사진이 될지 궁금해~", "우리 지도에서 고른 " + phone_place_memory + "도 적어 뒀어요. 다음에 같이 가면 어떤 사진이 될지 궁금하네요~"))
     $ location = "목요일 밤 · 각자의 집, 메시지"
     call phone_deliver("ria_r12_04", "ria", ri('어제 보내 준 골목 메모 이제 봤어. 오늘은 나도 퇴근길 창문 한번 봐야겠다! 만나서 노트도 보고 싶다.', '어제 보내 주신 골목 메모 이제 봤어요. 오늘은 저도 퇴근길 창문 한번 봐야겠어요! 만나서 노트도 보고 싶네요.'))
-    call phone_deliver("ria_r12_05", "dohyun", ri('저도 보여 드리고 싶어요. 사진 얘기하다 보면 리아 씨도 같이 보고 있고 싶고요.', '저도 보여 드리고 싶어요. 사진 얘기하다 보면 리아 씨도 같이 보고 있고 싶고요.'))
+    call phone_deliver("ria_r12_05", "dohyun", ri('나도 보여 주고 싶어. 사진 얘기하다 보면 너도 같이 보고 있고 싶고.', '저도 보여 드리고 싶어요. 사진 얘기하다 보면 리아 씨도 같이 보고 있고 싶고요.'))
     $ location = "금요일 저녁 · 각자의 집, 메시지"
     call phone_deliver("ria_r12_06", "ria", ri('내일 현장은 다섯 시쯤 정리될 것 같아. 일곱 시에 역 앞에서 볼래? 마무리 상황 바뀌면 바로 연락할게.', '내일 현장은 다섯 시쯤 정리될 것 같아요. 일곱 시에 역 앞에서 볼래요? 마무리 상황 바뀌면 바로 연락할게요.'))
-    call phone_deliver("ria_r12_07", "dohyun", ri('좋아요. 일곱 시 역 앞이요. 저녁은 만나서 정해요.', '좋아요. 일곱 시 역 앞이요. 저녁은 만나서 정해요.'))
+    call phone_deliver("ria_r12_07", "dohyun", ri('좋아. 일곱 시 역 앞. 저녁은 만나서 정하자.', '좋아요. 일곱 시 역 앞이요. 저녁은 만나서 정해요.'))
     $ remember("ria_r12_gap_messages_received")
     $ remember("ria_r12_appointment", "토요일 오후 일곱 시 역 앞")
     $ location = "토요일 저녁 일곱 시 · 역 앞"

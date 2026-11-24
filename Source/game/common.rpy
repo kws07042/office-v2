@@ -746,9 +746,9 @@ label c08:
         "퇴근 시간이 되자마자 회사를 나왔다. 횡단보도 앞에서 휴대폰을 꺼냈다."
     if active_route == "ria":
         if c07_person == "ria":
-            call phone_deliver("c08_invite_d", "dohyun", ri("지난번엔 짧아서 아쉬웠어요. 다음엔 좀 더 같이 있을래요?", "지난번엔 짧아서 아쉬웠어요. 다음엔 좀 더 같이 있을래요?"), contact="ria")
+            call phone_deliver("c08_invite_d", "dohyun", ri("지난번엔 짧아서 아쉬웠어. 다음엔 좀 더 같이 있을래?", "지난번엔 짧아서 아쉬웠어요. 다음엔 좀 더 같이 있을래요?"), contact="ria")
         else:
-            call phone_deliver("c08_invite_d", "dohyun", ri("다음에 퇴근하고 따로 이야기할래요?", "다음에 퇴근하고 따로 이야기할래요?"), contact="ria")
+            call phone_deliver("c08_invite_d", "dohyun", ri("다음에 퇴근하고 따로 이야기할래?", "다음에 퇴근하고 따로 이야기할래요?"), contact="ria")
         call phone_deliver("c08_invite_r", "ria", ri("좋아! 다음 코스는 ‘퇴근 후 2차 토크’로 예약~ 시간 맞춰 보자.", "좋아요! 다음 코스는 ‘퇴근 후 2차 토크’로 예약이에요~ 시간 맞춰 봐요."), contact="ria")
     elif active_route == "jihyun":
         call phone_deliver("c08_invite_d", "dohyun", "다음에 퇴근하고 시간 있으세요?\n일 얘기 말고요", contact="jihyun")
