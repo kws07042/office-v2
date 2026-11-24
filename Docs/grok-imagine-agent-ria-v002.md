@@ -1,6 +1,6 @@
 # Grok Imagine 에이전트 · 강리아 전후 CG v002 (마스터 복사 방지판)
 
-v001에서는 가끔 마스터 입상에 옷만 바꾼 그림(흰 배경에 서 있는 입상)이 나왔다. v002는 이걸 막도록 다시 짰다.
+v001에서는 가끔 마스터 입상에 옷만 바꾼 그림(흰 배경에 서 있는 입상)이 나왔다. v002는 이걸 막도록 다시 짰다. 마스터 그림체를 절대 유지하라는 규칙도 맨 앞에 넣었고, 치어리더 장면에서는 손에 아무것도 들지 않게 했다.
 - 맨 앞에 '마스터를 그대로 따라 그리지 말라'는 규칙을 넣었다.
 - 모든 작업에 방 배경, 구도, 카메라 거리를 적었다.
 - 각 작업 끝에 '입상이 아니라 장면'이라는 조건을 붙였다.
@@ -20,7 +20,7 @@ ANTI-COPY RULE (most important):
 - If an output looks like the reference sprite with different clothes, discard it and draw the scene again.
 
 GLOBAL RULES (every task):
-- Copy the master sprite's art style exactly: same line weight, soft cel shading, coloring, highlights and anime face proportions. Same character, Kang Ria, adult woman (28): slim face, very long wavy blonde hair in a high ponytail with a blue scrunchie, straight blunt bangs, bright blue eyes, cheerful mouth, same body proportions. In R15 home scenes and in bed her hair is down, loose and wavy.
+- ART STYLE LOCK (absolute, overrides everything else): draw in EXACTLY the master sprite's art style — same clean line weight, same flat cel shading with soft gradients, same coloring and skin tone, same eye shape, iris highlights and face proportions, same hair rendering. No semi-realistic, 3D, painterly, thick-paint or different anime style. Only her pose, outfit, camera and background change; the drawing style never changes. Same character, Kang Ria, adult woman (28): slim face, very long wavy blonde hair in a high ponytail with a blue scrunchie, straight blunt bangs, bright blue eyes, cheerful mouth, same body proportions. In R15 home scenes and in bed her hair is down, loose and wavy.
 - ASPECT RATIO: 16:9 WIDE HORIZONTAL LANDSCAPE (like 1920x1080). NOT vertical, NOT square. Korean visual-novel event CG, full scene, no text, no watermark.
 - POV RULE: first-person view of the man she is with. NEVER show the back of his head, his shoulders or his back. Only his own hand, forearm, knee or shirt sleeve may appear at the bottom edge, as he would see them himself.
 - CONTENT: adult woman. Lingerie, deep cleavage, open garments over lingerie, bare shoulders, thighs and garters are fine. She always wears matching lingerie top AND bottom when undressed. No nudity, no nipples, no genitals, no sexual act. Clothing must be wearable in real life.
@@ -73,13 +73,13 @@ TASK 15 — ria_r15_cosplay_nurse_after.jpg
 Same room as task 7, later. She sits in bed wrapped in the sheet, bare shoulders, about to put the pink-trimmed nurse cap on the viewer's head, then stopping with a grin. Medium shot. Full room scene with background, not a standalone sprite.
 
 TASK 16 — ria_r15_cosplay_cheer_intro.jpg
-Same room as task 7. She poses in the doorway in a blue-and-white cheer crop top cut short under the bust, low-rise pleated micro skirt, bare midriff, sheer pantyhose, blue pom-poms, laughing mid-pose. Full body. Full room scene with background, not a standalone sprite.
+Same room as task 7. She poses in the doorway in a blue-and-white cheer crop top cut short under the bust, low-rise pleated micro skirt, bare midriff, sheer pantyhose, both hands empty (no pom-poms, nothing in her hands), laughing mid-pose with one hand on her hip and the other making a small wave. Full body. Full room scene with background, not a standalone sprite.
 
 TASK 17 — ria_r15_cosplay_cheer_intro_shy.jpg
-Same room as task 7. She sits beside the viewer in the cheer outfit, pom-poms dropped on the floor, looking at him seriously and reaching for his hand. Faint blush. Closer shot, waist up. Full room scene with background, not a standalone sprite.
+Same room as task 7. She sits beside the viewer in the cheer outfit, nothing in her hands and no pom-poms anywhere near her, looking at him seriously and reaching for his hand. Faint blush. Closer shot, waist up. Full room scene with background, not a standalone sprite.
 
 TASK 18 — ria_r15_cosplay_cheer_after.jpg
-Same room as task 7, later. She lies in bed under the sheet, bare shoulders, stretching one bare foot out from the sheet toward a blue pom-pom that rolled under the bed, giving up with a laugh. Medium wide shot. Full room scene with background, not a standalone sprite.
+Same room as task 7, later. She lies in bed under the sheet, bare shoulders, stretching one bare foot out from the sheet toward a single blue pom-pom lying on the floor under the bed (not in anyone's hand), giving up with a laugh. Medium wide shot. Full room scene with background, not a standalone sprite.
 
 After all 18, list the tasks you completed and any you could not.
 ```
