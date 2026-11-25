@@ -480,6 +480,71 @@
    "from": "minigame-v001/spot_pair2_edit_v001.png",
    "source_sha256": "7842e6f6b1ebdd2292cacda9038d9bba19af5552911e5930f7d2655a290184b4",
    "sha256": "5fbf5c5704b2841142898256ba2d76e76d2505a48e9292ad60ef3a7ff7b04fa4"
+  },
+  "images/cg/ria_sd_c01.jpg": {
+   "from": "sd-comic-masterlook-v001/01_comic_c01_sign.png",
+   "source_sha256": "0f6aec1f1c8c3f014cd173bb14c13bb03cc9fdba13fe1699bb4e6029be9b4e37",
+   "sha256": "5fa91def5999be50b56192e3c352608cfabd78a0454a9c195dd6e5f094561dc7"
+  },
+  "images/cg/ria_sd_r02.jpg": {
+   "from": "sd-comic-masterlook-v001/02_comic_ria_r02_closed.png",
+   "source_sha256": "494d42cfdfd65edcd43977aafe532ccff7abd99a6ce487e728f86bc3f59ed40d",
+   "sha256": "2fdc49514a24fc9e0034cbc1dff5b3f5b784096cd35da87c5596ba696321f590"
+  },
+  "images/cg/ria_sd_r06.jpg": {
+   "from": "sd-comic-masterlook-v001/03_comic_ria_r06_taxi.png",
+   "source_sha256": "856d6db34b70176a0fc773874bfb607a1dce3d6d07d64e00c3dcd7d5a7f55f86",
+   "sha256": "5873939a4d5b3164453563eae0b582830b3cc831acc8a8e08588f50906e19885"
+  },
+  "images/cg/ria_sd_r09.jpg": {
+   "from": "sd-comic-masterlook-v001/04_comic_ria_r09_bbq.png",
+   "source_sha256": "a839018e2e69703118bf8b316fc0adf2385d67787c784c62a6a4a8ddc73c0d49",
+   "sha256": "e6b90b08adc9b371fb68f1702120f83f869729103645ac36ee77de1799f5d0b3"
+  },
+  "images/cg/jihyun_sd_r06.jpg": {
+   "from": "sd-comic-masterlook-v001/05_comic_jihyun_r06_shop.png",
+   "source_sha256": "a3236f41e8cabb25a7f4f5cdcfb1608f1748a6d467bb44e297880c40a6d1132a",
+   "sha256": "5b1976634a8e06c8039e6a6cbc92b5668d8a26dc284a241e3ade711e1a345c85"
+  },
+  "images/cg/jihyun_sd_r12.jpg": {
+   "from": "sd-comic-masterlook-v001/06_comic_jihyun_r12_elevator.png",
+   "source_sha256": "0b1b47ad7dd3f20431dd7c8c16bac3e5c0aba53a78cbfdf407442e3d34bace10",
+   "sha256": "255b52f3278499429988107bd6348bb259c19a70da775418045be2fbdc241386"
+  },
+  "images/cg/yujin_sd_r02.jpg": {
+   "from": "sd-comic-masterlook-v001/07_comic_yujin_r02_title.png",
+   "source_sha256": "ad1abc0e6b0a81b480be1ba4f3536031148d6a04990efcc978864f096ac2fbc3",
+   "sha256": "99fcb3264e692dbb8f6fa6dcf9b776eb20f5987f70438e9febc154f20ad40373"
+  },
+  "images/cg/yujin_sd_r05.jpg": {
+   "from": "sd-comic-masterlook-v001/08_comic_yujin_r05_bell.png",
+   "source_sha256": "2c1157c25e2a119ce1bab7fed3859e2348c80f9054856dc33709f06760d9b1cc",
+   "sha256": "b1cf9d660f127c8d9e1bf9b4e14c6b4b2b25cbbf360247892d61adba541f1c35"
+  },
+  "images/cg/yujin_sd_r07.jpg": {
+   "from": "sd-comic-masterlook-v001/09_comic_yujin_r07_fan.png",
+   "source_sha256": "aac079c5e4883aec954ec374264685e3778a4807d2267f0240622b3689299701",
+   "sha256": "09bba5c731c42811e88195240684b1695520dfde8bb2c7f066481f394565620c"
+  },
+  "images/cg/seoyun_sd_c04.jpg": {
+   "from": "sd-comic-masterlook-v001/10_comic_seoyun_c04_caught.png",
+   "source_sha256": "5cccb0c14e614400ec76039a9ae6cc8db628b70d708f66a16db0d2a50f92342c",
+   "sha256": "95716edf539701ea6393befe6fe28f7f054af07fd12737ef3b39a968ccbeb2e3"
+  },
+  "images/cg/seoyun_sd_r02.jpg": {
+   "from": "sd-comic-masterlook-v001/11_comic_seoyun_r02_reverse.png",
+   "source_sha256": "c67b2321f3ccb583c1b84f713aa661cb689df8173a33656e3c91797aefe7dc93",
+   "sha256": "9e8763c32156dbc604050f5f98bb6a069023fa9d060eef4fcf44424d2498dfeb"
+  },
+  "images/cg/seoyun_sd_r09.jpg": {
+   "from": "sd-comic-masterlook-v001/12_comic_seoyun_r09_towel.png",
+   "source_sha256": "45460920a42465fd49925563d5e8039c2c8074aef133d53c11bd4ea36e13e50c",
+   "sha256": "30d885f5a557e10a891445315cf5284dd819a32ba201438ae0ed082f24b6aac9"
+  },
+  "images/cg/common_sd_c05.jpg": {
+   "from": "sd-comic-masterlook-v001/13_comic_c05_title.png",
+   "source_sha256": "0f6602cd3bfd20e1f40c12a1f5fb676ddfc2f95bd4b5c8ef506e7c75a79aa62c",
+   "sha256": "cad6fb201d3d05d42a8dc3a1eb9399c42fa1a15fc4168bee2c1c5c0d4898eb72"
   }
  }
 }

@@ -10,13 +10,17 @@ init -1 python:
         "prologue_hands",
         "ria_r02", "ria_r04", "ria_r07", "ria_r08", "ria_r10", "ria_r11", "ria_r15", "ria_r16", "ria_e01",
         "ria_x01", "ria_x01b", "ria_x02", "ria_sp1", "ria_sp2", "ria_o04",
+        "ria_sd_c01", "ria_sd_r02", "ria_sd_r06", "ria_sd_r09",
         "jihyun_r04", "jihyun_r05", "jihyun_r08", "jihyun_r10", "jihyun_r11", "jihyun_r14", "jihyun_r16", "jihyun_r16b", "jihyun_e01",
         "jihyun_x01", "jihyun_x01b", "jihyun_x02", "jihyun_sp1", "jihyun_sp2",
+        "jihyun_sd_r06", "jihyun_sd_r12",
         "yujin_r02", "yujin_r04", "yujin_r07", "yujin_r08", "yujin_r10", "yujin_o02", "yujin_r11", "yujin_r16", "yujin_e01",
         "yujin_x01", "yujin_x01b", "yujin_x02", "yujin_sp1", "yujin_sp2",
+        "yujin_sd_r02", "yujin_sd_r05", "yujin_sd_r07",
         "seoyun_r02", "seoyun_r04", "seoyun_r05", "seoyun_r08", "seoyun_r10", "seoyun_r11", "seoyun_r13", "seoyun_r16", "seoyun_e01",
         "seoyun_x01", "seoyun_x01b", "seoyun_x02", "seoyun_sp1", "seoyun_sp2",
-        "common_c05", "common_colleague_ending", "spring_rooftop", "spring_pitch",
+        "seoyun_sd_c04", "seoyun_sd_r02", "seoyun_sd_r09",
+        "common_c05", "common_colleague_ending", "spring_rooftop", "spring_pitch", "common_sd_c05",
     ]
     GALLERY_CHAPTER = {"o04": "포차 뒤 모텔", "x01": "크리스마스", "x01b": "크리스마스 아침", "x02": "1월", "sp1": "특별 장면 1", "sp2": "특별 장면 2",
                        "e01": "결말", "o02": "작은 이야기"}
@@ -74,6 +78,10 @@ init -1 python:
                    "spring_rooftop": "이듬해 봄 · 옥상", "spring_pitch": "이듬해 봄 · 피칭"}
         if name in special:
             return special[name]
+        if name == "common_sd_c05":
+            return "SD · 넷이 함께한 점심"
+        if tail.startswith("sd_"):
+            return "SD · " + tail[3:].upper()
         return GALLERY_CHAPTER.get(tail, tail.upper())
 
     def gallery_count(tab):

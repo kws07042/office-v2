@@ -19,5 +19,19 @@ testsuite gallery_checks:
         click id "gallery_back"
         assert screen "main_menu"
 
+    testcase sd_cut_restore:
+        $ location = "며칠 뒤 · 회사 근처 카페"
+        $ cg("common_c05")
+        $ sd_cut("common_sd_c05")
+        assert eval art_cg_path() == "images/cg/common_sd_c05.jpg" and "common_sd_c05" in persistent.cg_seen
+        $ sd_cut_end()
+        assert eval art_cg_path() == "images/cg/common_c05.jpg"
+        $ cg()
+        $ sd_cut("ria_sd_r02")
+        $ sd_cut_end()
+        assert eval art_cg_path() is None
+        assert eval all(renpy.loadable(gallery_path(n)) for n in GALLERY_ORDER if "_sd_" in n) and len([n for n in GALLERY_ORDER if "_sd_" in n]) == 13
+        assert eval gallery_label("ria_sd_r02") == "SD · R02" and gallery_owner("common_sd_c05") == "common"
+
     teardown:
         exit

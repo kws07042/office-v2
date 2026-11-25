@@ -5,6 +5,7 @@
 
 default scene_cg = None
 default scene_cg_location = None
+default sd_cut_prev = None
 default persistent.cg_seen = set()
 
 init -3 python:
@@ -83,6 +84,18 @@ init -3 python:
             persistent.cg_seen.add(name)
         else:
             st.scene_cg = None
+
+    # SD 코믹 컷: 장면 CG 위에 잠깐 띄웠다가, 끝나면 원래 장면 CG로 돌아간다.
+    def sd_cut(name):
+        st = renpy.store
+        st.sd_cut_prev = st.scene_cg if art_cg_path() else None
+        cg(name)
+
+    def sd_cut_end():
+        st = renpy.store
+        prev = getattr(st, "sd_cut_prev", None)
+        st.sd_cut_prev = None
+        cg(prev)
 
     def art_cg_path():
         st = renpy.store
