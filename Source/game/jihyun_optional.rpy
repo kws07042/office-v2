@@ -38,7 +38,7 @@ label jihyun_o01:
             "처마 끝에서 빗방울이 튀자 지현이 구두 앞코를 한 발 물렸다."
             j "저 선까지만 비 안 오는 줄 알았는데."
             d "좀 더 안으로 들어오세요. 여긴 제가 미리 봤어요."
-            j "네가 봤으면 통과. 믿고 간다."
+            j "그래. 한 발만 더 안쪽으로 갈게."
             $ remember("jihyun_o01_activity", "처마 아래 비 구경")
         "근처 카페로 피한다.":
             "가까운 카페에서 젖은 소매를 털고 차를 주문했다."
@@ -53,7 +53,7 @@ label jihyun_o01:
             j "그럼 다음 차까지는 여기 같이 있자."
             $ remember("jihyun_o01_activity", "우산 쓰고 정류장까지 걷기")
     $ remember("jihyun_o01_status", "completed")
-    dn "다음 버스까지 십이 분. 일정표에 없는 십이 분인데, 안 줄었으면 좋겠다."
+    dn "가게 문이 닫혀 있었는데도 서둘러 헤어지지 않았다. 오늘 비는 좀 더 와도 괜찮겠다."
     $ award_once("jihyun_O01", "jihyun", 2)
     $ progression_note_ending()
     return
@@ -73,7 +73,7 @@ label jihyun_o02_offer:
             $ remember("jihyun_o02_status", "skipped")
         "다음에도 만들던 중간 모습을 보여 달라고 하고 본편 계속":
             d "다음에도 완성 전부터 보여 주세요. 뭐가 바뀌었나 찾는 것도 재밌어요."
-            j "알겠어. 중간보고 자주 할게. 다 만들 때까지 안 기다리게."
+            j "그래. 다음엔 어디까지 했는지 내가 먼저 사진 보낼게."
             $ remember("jihyun_o02_status", "brief")
     $ progression_note_ending()
     return
@@ -127,7 +127,7 @@ label jihyun_o03_offer:
             $ remember("jihyun_o03_status", "skipped")
         "저녁에 내가 원하는 것도 먼저 말하겠다고 하고 본편 계속":
             d "저녁엔 저도 뭐 하고 싶은지 먼저 말해 볼게요."
-            j "좋아. 이번엔 내가 묻기 전에 먼저 보고해."
+            j "좋아. 오늘 저녁엔 네 얘기부터 듣고 싶어."
             $ remember("jihyun_o03_status", "brief")
     $ progression_note_ending()
     return
@@ -146,7 +146,7 @@ label jihyun_o03:
     $ progression_enter("jihyun_o03.choice01")
     $ progression_checkpoint("jihyun_o03.choice01")
     menu:
-        "내가 찾은 빵집으로 끌고 간다.":
+        "내가 찾은 빵집에 같이 가자고 한다.":
             d "좋아요. 좀 쉬고 저 빵집 같이 가실래요? 한번 들어가 보고 싶었어요."
             "그늘에서 쉬고 빵집에 들렀다. 도현은 크림빵을, 지현은 소금빵을 집었다."
             j "들어올 때부터 그거 보고 있었지?"
@@ -168,7 +168,7 @@ label jihyun_o03:
             j "내가 깨워 준댔는데 네가 먼저 일어나네. ...저녁엔 나도 좀 기대고 싶어."
             "삼십 분을 함께 쉬고 헤어졌다. 저녁 약속은 그대로 남겨 뒀다."
             $ remember("jihyun_o03_request", "삼십 분 휴식 후 각자 귀가, 저녁 재회")
-        "기록집 한 줄만 읽어 달라고 조른다.":
+        "기록집 한 줄만 읽어 달라고 부탁한다.":
             d "쉬는 김에 이 한 줄만 봐 주실래요? 어떤 장면이 떠오르세요?"
             j "응. 난 비 오기 직전 골목이 생각나. 네가 쓴 날이랑은 다를 수도 있겠지만."
             "도현은 지현이 떠올린 날씨를 메모했다. 부탁한 한 줄만 보고 노트를 덮었다."

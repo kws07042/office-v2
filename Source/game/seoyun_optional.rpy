@@ -82,7 +82,7 @@ label seoyun_o02:
         return
     $ chapter = "서윤 O02 · 서로 실패한 농담"
     $ location = "같은 토요일 늦은 오후 · 북카페"
-    s "이쯤이면 단골 포인트로 나도 한 번 무료 초대 가능한가?"
+    s "이쯤 되면 나도 한 번쯤 네 쪽에서 불러 줘야 되는 거 아냐? 단골 우대 같은 거 없어?"
     dn "아까 그 말도 반쯤 농담이겠지. 근데 어느 쪽 절반이지."
     "도현이 주문서를 들었다가 내려놓았다. 서윤도 그 종이를 봤다가 다시 도현을 봤다."
     $ progression_enter("seoyun_o02.choice01")
@@ -102,7 +102,7 @@ label seoyun_o02:
             $ remember("seoyun_o02_boundary", "못 알아들은 농담은 뜻을 다시 묻고 말하기")
         "받아치려다 실패하고 그냥 초대한다.":
             d "저도 재밌게 받으려 했는데 말이 안 나오네요. 다음엔 제가 고른 데 가요."
-            s "답은 틀렸고 초대는 접수. 날짜는 네 일정 보고 알려 줘."
+            s "그래. 그 말이 듣고 싶었어. 언제 되는지 알려 줘~"
             $ remember("seoyun_o02_boundary", "장난이 막히면 원하는 말을 직접 꺼내기")
     "무슨 뜻이었는지 알고 나서 같이 웃었다. 날짜는 다음 일정을 보고 정하기로 했다."
     $ remember("seoyun_o02_status", "completed")
@@ -140,7 +140,7 @@ label seoyun_o03:
     $ chapter = "서윤 O03 · 우리도 단골인가"
     $ location = "일요일 늦은 오후 · 다시 찾은 북카페"
     "각자 오전을 보내고 저녁 약속보다 조금 일찍 만났다. 도현은 지난번과 다른 자리의 작은 조명을 봤다."
-    dn "같은 가게인데 지난번 앉은 자리랑은 보이는 게 다르네. 서윤 씨가 저 자릴 고른 이유가 있구나."
+    dn "저번엔 조명이 저기 있는 줄도 몰랐다. 오늘은 그 밑에 한 번 앉아 보고 싶다."
     s "항상 같은 자리여야 단골인가 했는데. 오늘은 어디 앉아 볼래?"
     $ progression_enter("seoyun_o03.choice01")
     $ progression_checkpoint("seoyun_o03.choice01")
@@ -183,7 +183,7 @@ label seoyun_o03:
             s "...다 맞췄는데, 좀만 더 볼래?"
             $ remember("seoyun_o03_detail", "처음 고른 창가의 식물 그림자")
     $ remember("seoyun_o03_status", "completed")
-    dn "다 맞췄는데 더 보자고 한다. 시간은 안 봐도 되겠다."
+    dn "가게 안에서 자리를 이렇게 오래 고른 건 처음이다. 저녁은 조금 늦어져도 되겠다."
     $ award_once("seoyun_O03", "seoyun", 2)
     $ progression_note_ending()
     return

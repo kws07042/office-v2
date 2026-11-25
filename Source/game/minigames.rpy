@@ -825,7 +825,7 @@ label minigame_reaction(game):
     if game == "sign":
         if mg_result >= 7:
             $ award_once("mg_sign", "ria", 1)
-            r "[ri('와, 첫날부터 안내 감각 장난 아닌데? 합격 도장 꾹!', '와, 첫날부터 안내 감각 장난 아닌데요? 합격 도장 꾹!')]"
+            r "[ri('와, 제대로 찾았네! 다음 표지도 같이 봐 줄래?', '와, 첫날부터 안내 감각 장난 아닌데요? 합격 도장 꾹!')]"
         else:
             r "[ri('괜찮아, 나도 첫날엔 화살표 거꾸로 붙였어. 진짜로!', '괜찮아요, 저도 첫날엔 화살표 거꾸로 붙였어요. 진짜로요!')]"
     elif game == "cards":
@@ -834,13 +834,13 @@ label minigame_reaction(game):
             $ award_once("mg_cards", "jihyun", 1)
             j "...졌네. 한 판 더. 이번 건 연습이었어."
         elif me == rival:
-            j "동점. 이런 결과는 결재가 안 나는데. 다음에 결론 내자."
+            j "동점이네. 다음 판엔 그 차 카드부터 내가 집을 거야."
         else:
             j "내가 이겼네. 한 점 차이도 아니고. ...봐주진 않았어."
     elif game == "photo":
         if mg_result == 3:
             $ award_once("mg_photo_" + (chapter or ""), cream_focus if cream_focus in ("ria", "jihyun", "yujin", "seoyun") else "ria", 1)
-        dn "기록집에 한 장이 늘었다. 이 사진을 볼 때마다 오늘 옆에 누가 있었는지 떠오를 것이다."
+        dn "이건 기록집 후보에 넣자. 다음에 같은 자리에서 한 장 더 찍어 보고."
     elif game == "trim":
         if mg_result >= 3:
             $ award_once("mg_trim", "seoyun", 1)
@@ -850,7 +850,7 @@ label minigame_reaction(game):
     elif game == "spot":
         if mg_result >= (5 if spot_art_ready() else 3):
             $ award_once("mg_spot", "yujin", 1)
-            y "다, 다 찾으셨어요? ...저 이거 회의 때 써먹어도 돼요?"
+            y "다 찾으셨어요? 전 마지막 하나에서 막혔는데, 어디부터 보셨어요?"
         else:
             y "괜찮아요. 저도 어제 찾는 데 한참 걸렸어요. 다른 데를 먼저 보셨네요."
     return
