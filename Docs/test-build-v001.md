@@ -89,3 +89,12 @@
 | 게임 버전 | 0.43.0-test10 (4d8cdf0) |
 | 결과 | afterwork_script_prototype-0.43.0-test10-win.zip, 143,094,288바이트, SHA-256 c67a92467bf9fd35197288b492178f13165a7c34b034015ec3f79d66e8ef2367 |
 | 검사 | 8.6.2 lint 통과. 통합 스토리·오프닝·플레이 흐름·리아 R16/R08/R12·서윤·지현 최종/R04·유진 최종/R08/R12·문자 2종·PC 메신저·본장면 대사·업무 미니게임 통과(Linux). three_choice 10건 실패는 main(06ff7d7)에서도 똑같아서 원래 있던 문제. 배포 제외 확인. Windows 실제 실행은 못 함 |
+
+## test11 (SD 코믹 컷 13장 · 리아 첫날 책상 대사 삭제 · 부를 때 성 빼기)
+
+| 항목 | 값 |
+|---|---|
+| 게임 버전 | 0.44.0-test11 (2a6a5bb) |
+| 결과 | afterwork_script_prototype-0.44.0-test11-win.zip, 146,895,206바이트, SHA-256 222b885534113d77f0cea5e2b2cd24fe032e599e4a3ce38824ea23d41bb84b97 |
+| 그림 | main의 sd-comic-masterlook-v001 13장을 1280x720 JPEG로 바꿔 images/cg/*_sd_*.jpg로 넣음(사용자 지시). 출처·해시는 ART_RUNTIME.json |
+| 검사 | 8.6.2 lint 통과. 갤러리(SD 컷 복귀 포함)·그림·통합 스토리·오프닝·리아 R16·이름 호칭·본장면 대사 통과(Linux). 배포 제외 확인. Windows 실제 실행은 못 함 |
