@@ -66,7 +66,7 @@ testsuite player_flow_checks:
             assert eval memory.get("yujin_r14_complete") and memory.get("yujin_r14_relationship_talk_completed")
             assert eval memory["yujin_r14_readiness"] == ("reassured" if case % 3 == 1 else "talk_after")
             assert eval bool(memory.get("yujin_support_repair_action_verified")) == (case >= 3)
-            assert eval ("전에 제가 먼저 설명했던 일" in polish_history()) == (case == 5)
+            assert eval ("전에 내가 먼저 설명했던 일" in polish_history()) == (case == 5)
             assert eval ("보여 드릴 게 있어야 만나자고" in polish_history()) == (case == 2)
             assert eval "끝이라고 했다가 바꾸시면" not in polish_history()
         if eval case == 1:
