@@ -63,7 +63,7 @@ testsuite jihyun04_checks:
         assert eval "네 시 귀가" in memory["jihyun_r02_delegated_scope"]
         if eval case // 3 == 2:
             assert eval memory.get("jihyun_intro") == "check_later" and not memory.get("jihyun_followup_delivered")
-            assert eval any("결과는 아직 못 봤으니까" in h.what for h in _history_list)
+            assert eval any("결과는 아직이니까" in h.what for h in _history_list)
             assert eval not any("다음 날 준 메모 봤어" in h.what for h in _history_list)
         if eval case // 3 == 4:
             assert eval not any("점심에 다시 와도 되냐는 질문, 다시 봤어" in h.what for h in _history_list)
