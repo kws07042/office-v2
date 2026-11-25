@@ -1,5 +1,5 @@
 # 주인공 이름: 새 게임을 시작하면 GY브랜딩 사원증에 이름을 써넣는다(한 칸, 최대 8자, 글자 종류 제한 없음, 성 포함 가능, 비우면 넘어가지 않음).
-# 쓴 그대로 사원증과 대사에 쓴다(예: "공옥순" → "공옥순 씨", "공옥순아").
+# 쓴 그대로 사원증과 대사에 쓴다(예: "공옥순" → "공옥순 씨"). 부를 때(아/야)만 성을 뗀다(예: "옥순아").
 # 대본은 기본 이름 '도현'으로 쓰여 있고, 화면에 글자가 나가기 직전(config.replace_text)에
 # '도현'과 바로 뒤의 조사를 입력한 이름에 맞게 바꾼다. 받침에 따라 이/가, 은/는, 을/를, 아/야, 과/와, 으로/로, 이었/였을 고른다.
 # 이름이 '도현'이면 아무것도 바꾸지 않는다(기존 저장 파일과 검사는 그대로).
@@ -41,11 +41,23 @@ init -10 python:
         a, c = pairs[josa]
         return name + (a if b else c)
 
+    # 부르는 말(아/야)에 쓸 이름: 한글 세 글자면 첫 글자를 성으로 보고 뗀다. 두 글자 성(남궁·제갈 등)은 네 글자일 때 뗀다.
+    _MC_SURNAME2 = ("남궁", "황보", "제갈", "선우", "독고", "사공", "서문", "동방", "어금", "망절")
+    def mc_given_name(name):
+        if not all("가" <= ch <= "힣" for ch in name):
+            return name
+        if len(name) == 3:
+            return name[1:]
+        if len(name) == 4 and name[:2] in _MC_SURNAME2:
+            return name[2:]
+        return name
+
     def mc_apply(text):
         name = getattr(renpy.store, "mc_name", MC_DEFAULT) or MC_DEFAULT
         if name == MC_DEFAULT or "도현" not in text:
             return text
-        return _MC_PATTERN.sub(lambda m: mc_with_josa(name, m.group(1)), text)
+        given = mc_given_name(name)
+        return _MC_PATTERN.sub(lambda m: mc_with_josa(given if m.group(1) == "아" else name, m.group(1)), text)
 
     _mc_prev_replace = config.replace_text
     def _mc_replace_text(text):
