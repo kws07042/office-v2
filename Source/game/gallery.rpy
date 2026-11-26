@@ -70,7 +70,25 @@ init -1 python:
     def gallery_seen(name):
         return name in (persistent.cg_seen or set())
 
+    SD_TITLES = {
+        "ria_sd_c01": "같은 표지를 가리킨 두 사람",
+        "ria_sd_r02": "세 번 읽은 임시 휴무",
+        "ria_sd_r06": "택시 불빛이 지나간 뒤",
+        "ria_sd_r09": "테이블 아래 운동화",
+        "jihyun_sd_r06": "처음 데려오신 분",
+        "jihyun_sd_r12": "엘리베이터가 열리는 순간",
+        "yujin_sd_r02": "제목은 잠깐 가리고",
+        "yujin_sd_r05": "자전거 벨이 지나가면",
+        "yujin_sd_r07": "내 배경화면을 그린 사람",
+        "seoyun_sd_c04": "첫날에 그걸 들켰네",
+        "seoyun_sd_r02": "책으로도 못 가린 표정",
+        "seoyun_sd_r09": "수건한테 뺏긴 창가",
+        "common_sd_c05": "퇴근하고도 기획해야 해?",
+    }
+
     def gallery_label(name):
+        if name in SD_TITLES:
+            return SD_TITLES[name]
         if name.startswith("evt/"):
             return event_gallery_label(name)
         tail = name.split("_", 1)[1] if gallery_owner(name) != "common" else name
@@ -78,10 +96,6 @@ init -1 python:
                    "spring_rooftop": "이듬해 봄 · 옥상", "spring_pitch": "이듬해 봄 · 피칭"}
         if name in special:
             return special[name]
-        if name == "common_sd_c05":
-            return "SD · 넷이 함께한 점심"
-        if tail.startswith("sd_"):
-            return "SD · " + tail[3:].upper()
         return GALLERY_CHAPTER.get(tail, tail.upper())
 
     def gallery_count(tab):
@@ -167,7 +181,12 @@ screen gallery():
                                                             xysize (272, 153)
                                                             add Solid("#D9CDC6")
                                                             text "?" style "mg_title" size 56 color "#FFFDFB" align (0.5, 0.5)
-                                                    text (gallery_label(name) if seen else "아직 보지 않은 장면") style "mg_small" size 14
+                                                    hbox:
+                                                        spacing 6
+                                                        text (gallery_label(name) if seen else "아직 보지 않은 장면") style "mg_small" size 14
+                                                        if seen and name in SD_TITLES:
+                                                            $ code = name.rsplit("_", 1)[1]
+                                                            text (("공통 " if code.startswith("c") else "루트 ") + str(int(code[1:])) + "장 · SD") style "mg_small" size 11 yalign 0.5
         textbutton "돌아가기" id "gallery_back" style "mg_button" xpos 40 ypos 640 action Return()
         key "game_menu" action Return()
 

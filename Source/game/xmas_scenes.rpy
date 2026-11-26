@@ -7,6 +7,7 @@
 #  - 선택 데이트(O01~O03): 끝까지 함께 2점, 짧게 1점, 건너뜀 0점
 #  - 각 루트의 핵심 선택(그 사람의 상처를 이해한 답일수록 높음)
 #  - 헤어지자고 했다가 거둔 경우 -2점
+default persistent.xmas_evening_hints = {}
 define XMAS_TRUE_HEART = 8
 
 init python:
@@ -24,9 +25,18 @@ init python:
     def xmas_true(who):
         return xmas_heart(who) >= XMAS_TRUE_HEART
 
+    def xmas_evening_hint(who):
+        if sched_count(who) < 2:
+            return "점심이나 퇴근길에 둘이 보낸 날이 더 있었다면 어땠을까?"
+        if any(renpy.store.memory.get(who + "_" + part + "_status") != "completed" for part in ("o01", "o02", "o03")):
+            return "다음 약속 때는 조금 더 오래 같이 있어 볼까?"
+        return "마음이 엇갈렸을 때 그 사람이 부탁한 게 뭐였는지 떠올려 보자."
+
     def xmas_finish(who, night):
         remember(who + "_x01", "night" if night else "evening")
         remember(who + "_x01_done")
+        if not night:
+            persistent.xmas_evening_hints[who] = xmas_evening_hint(who)
         if night:
             setattr(renpy.store.persistent, "true_" + who, True)
 
@@ -84,7 +94,6 @@ label ria_x01:
         $ xmas_finish("ria", False)
         call ria_n02
         "— 일반 엔딩 —"
-        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 그 크리스마스 밤은 조금 달랐을지도 모릅니다.)"
     return
 
 # ── 백지현 ─────────────────────────────────────────────────────
@@ -146,7 +155,6 @@ label jihyun_x01:
         $ xmas_finish("jihyun", False)
         call jihyun_n02
         "— 일반 엔딩 —"
-        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 그 크리스마스 밤은 조금 달랐을지도 모릅니다.)"
     return
 
 # ── 차유진 ─────────────────────────────────────────────────────
@@ -202,7 +210,6 @@ label yujin_x01:
         $ xmas_finish("yujin", False)
         call yujin_n02
         "— 일반 엔딩 —"
-        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 그 크리스마스 밤은 조금 달랐을지도 모릅니다.)"
     return
 
 # ── 한서윤 ─────────────────────────────────────────────────────
@@ -259,5 +266,4 @@ label seoyun_x01:
         $ xmas_finish("seoyun", False)
         call seoyun_n02
         "— 일반 엔딩 —"
-        "(약속한 데이트를 끝까지 함께하고, 다툼 앞에서 그 사람의 마음을 먼저 들었다면… 그 크리스마스 밤은 조금 달랐을지도 모릅니다.)"
     return

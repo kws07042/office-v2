@@ -31,6 +31,11 @@ init python:
         row={"chapter": chapter,"caption":caps[idx]}
         if not opening_fixture["decisions"] or opening_fixture["decisions"][-1] != row:
             opening_fixture["decisions"].append(row)
+        if renpy.get_screen("choice").scope.get("pc"):
+            name = PC_CONTACTS[idx][1]
+            if renpy.get_widget("choice", "pc_pick_" + route) is not None:
+                return name + "에게 휴대폰으로 연락하기"
+            return name + " 대화 보기"
         return caps[idx]
     def opening_dump():
         import os,json

@@ -31,7 +31,7 @@ testsuite gallery_checks:
         $ sd_cut_end()
         assert eval art_cg_path() is None
         assert eval all(renpy.loadable(gallery_path(n)) for n in GALLERY_ORDER if "_sd_" in n) and len([n for n in GALLERY_ORDER if "_sd_" in n]) == 13
-        assert eval gallery_label("ria_sd_r02") == "SD · R02" and gallery_owner("common_sd_c05") == "common"
+        assert eval gallery_label("ria_sd_r02") == "세 번 읽은 임시 휴무" and gallery_owner("common_sd_c05") == "common"
 
     teardown:
         exit

@@ -189,7 +189,7 @@ label seoyun_r14:
     if memory.get("seoyun_r14_choice") == "wait_action":
         $ remember("seoyun_continuation_reconfirmed")
     s "금요일 일곱 시, 같이 저녁 먹을래? 그날 시간은 맞춰 뒀어. 장소는 네가 골라 주면 좋겠어."
-    d "좋아요. 이번엔 메뉴부터 궁금해지는 데로요."
+    d "좋아요. 저 먹고 싶은 데 하나 있어요."
     $ remember("seoyun_r15_appointment", "금요일 저녁 일곱 시 함께 식사")
     dn "이젠 정민재 이름을 입에 올린다. 그럴 때면 서윤 씨 손이 내 손을 찾는다."
     $ award_once("seoyun_R14", "seoyun", 8)
@@ -370,7 +370,7 @@ label seoyun_r16:
     $ remember("seoyun_route_completed")
     $ persistent.local_seoyun_ending = True
     $ ending = "seoyun_good"
-    dn "내민 손을 서윤 씨가 잡았다. 길 건너 건물에 불이 켜져 있었는데, 이번엔 주머니에 넣지 않았다."
+    dn "내민 손을 서윤 씨가 잡았다. 길 건너 건물에 불이 켜졌다. 나는 서윤 씨 손을 잡은 채로 걸었다."
     $ award_once("seoyun_R16", "seoyun", 4)
     "서윤 본편 결말 · 함께 고르는 다음"
     $ progression_note_ending()

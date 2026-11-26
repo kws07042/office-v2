@@ -5,7 +5,7 @@
 #
 # 선택지로 쓰기:  menu (pc=True):  → choice 화면이 이 메신저 모양으로 그려진다.
 #   앞의 네 항목은 PC_CONTACTS 순서(리아·지현·유진·서윤)의 사람, 다섯 번째가 있으면 창 아래의 작은 글자 버튼.
-#   항목 글자(caption)는 버튼의 alt로 남겨 두어 자동 검사가 예전처럼 글자로 누를 수 있다.
+#   이름을 누르면 대화를 열고, 오른쪽 연락 버튼에서 그 사람을 선택한다.
 
 default pc_peek = None
 
@@ -113,9 +113,8 @@ screen pc_messenger_choice(items):
                         id "pc_contact_" + key
                         style "pc_contact_button"
                         selected (shown == key)
-                        hovered SetVariable("pc_peek", key)
-                        action item.action
-                        alt renpy.substitute(item.caption)
+                        action SetVariable("pc_peek", key)
+                        alt name + " 대화 보기"
                         hbox:
                             spacing 12
                             fixed:
@@ -170,7 +169,7 @@ screen pc_messenger_choice(items):
                     spacing 8
                     if shown_item is not None:
                         text pc_caption_note(renpy.substitute(shown_item.caption)) style "pc_text" size 17 color "#2B2B33"
-                    text "회사 메신저로 할 말은 아니다. 이름을 누르면 이 사람에게 휴대폰으로 따로 연락한다." style "pc_small" size 14
+                    text "이름을 눌러 대화를 읽어 보세요. 연락할 사람은 아래 버튼으로 정해요." style "pc_small" size 14
                     if shown_item is not None:
                         textbutton (info[1] + "에게 휴대폰으로 연락하기"):
                             id "pc_pick_" + shown

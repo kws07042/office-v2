@@ -177,8 +177,8 @@ label yujin_o03:
         $ location = "일요일 오후 · 동네 카페"
         y "오늘은 도현 씨가 남기고 싶은 거부터 하면 좋겠어요. 이 자리 괜찮으세요?"
         $ remember("yujin_o03_prepared", "현재 취향을 직접 묻는 짧은 카페 만남")
-    d "내 얘기로 자리 잡아 줬네. 오늘은 내가 천천히 봐도 되겠다."
-    dn "여기서 내가 뭘 하는지 기억했다는 게 좋았다. 가방에서 노트를 꺼낼지 한참 고민했다."
+    d "내가 좋아할 만한 자리네. 여기 앉자."
+    dn "가방 속 노트 모서리를 손끝으로 만지작거렸다."
     $ progression_enter("yujin_o03.choice01")
     $ progression_checkpoint("yujin_o03.choice01")
     menu:

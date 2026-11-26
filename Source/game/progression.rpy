@@ -163,6 +163,7 @@ screen progression_hub(initial_tab="relations"):
     default tab = initial_tab
     default person = "ria"
     default category = "all"
+    default hint_for = None
     use badge_shell("progression_hub", "우리의 기록")
     hbox:
         xpos 400 ypos 137 spacing 9
@@ -191,7 +192,7 @@ screen progression_hub(initial_tab="relations"):
                     text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
                 $ current_count, total_count, route_count = progression_route_progress(person)
                 text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18
-                text "함께 나눈 말과 실제 행동을 바탕으로 한 관계 기록이에요." size 18 color badge_muted
+                text "하트는 호감도를 보여 줘요. 크리스마스에는 서로 쌓은 신뢰와 둘이 보낸 시간도 중요해요." size 18 color badge_muted
                 text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
                 if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
                     text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
@@ -277,7 +278,12 @@ screen progression_hub(initial_tab="relations"):
                             text_size 14
                             action Replay("progression_replay_event", scope=progression_replay_scope(eid, outfit), locked=not progression_replay_ready(eid, outfit))
         else:
-            text "확인한 결말 · 기존 시나리오 기준" size 24 color badge_ink
+            $ hint = (persistent.xmas_evening_hints or {}).get(person) if main_menu else (xmas_evening_hint(person) if memory.get(person + "_x01") == "evening" else None)
+            if hint:
+                textbutton ("크리스마스 힌트 닫기" if hint_for == person else "크리스마스 힌트 보기") action SetScreenVariable("hint_for", None if hint_for == person else person)
+                if hint_for == person:
+                    text hint size 18 color badge_muted
+            text "확인한 결말" size 24 color badge_ink
             text (str(len(progression_ending_ids())) + " / " + str(len(pm.ENDINGS))) size 20
             for ending_id, info in pm.ENDINGS.items():
                 if info[0] in ("common", person):
