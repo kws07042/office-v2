@@ -1,0 +1,132 @@
+{
+  "source": "codex/intro-cgs-v002 (CharacterArt/candidates/intro-cgs-v002)",
+  "approved_by_user": "2026-11-23 '일단 뽑아 놓은걸로 연결' (05·08·11·19는 다시 그리기 요청 중인 임시 연결)",
+  "runtime_size": "1280x720",
+  "files": {
+    "images/events/ria/r07_casual_intro.webp": {
+      "from": "01_ria_r07_casual_intro.png",
+      "sha256": "bdde8e5102acfeada1a15c9345b5622a5e63d373aa4230f83e3eb1b39114a5de",
+      "source_sha256": "ad0011bc697e11a3fd26313d3db5d3de2d7c5219356946e90789b1b1e239c09a"
+    },
+    "images/events/ria/r12_special_intro.webp": {
+      "from": "02_ria_r12_special_intro.png",
+      "sha256": "4e7b396507dff9f25ed8a2bef188efbd69d629d2acb17ccb636188e5cf396597",
+      "source_sha256": "c2f9b34c8bf788ffea8eae9e526442050ef3a1ec399123a09e4c04fe64ddc558"
+    },
+    "images/events/ria/r15_home_intro.webp": {
+      "from": "03_ria_r15_home_intro.png",
+      "sha256": "929e84e4a5e1c5507681f777f60c1f1f9753a0c262caf1e26cd54527a5de2532",
+      "source_sha256": "e8783e67d89715dc00cd8143da75fe38209fa5d999335a9f6181143bf654d1a4"
+    },
+    "images/cg/ria_o04.jpg": {
+      "from": "04_ria_o04_motel_intro.png",
+      "sha256": "9cc3dece3f49c3685cc348b2d9ec2a6246781df565e35472d7b0d04a518c6d3a",
+      "source_sha256": "56fa74e49071075635145256ac57c05fb9e931f0af9e616659950119e77e0c19"
+    },
+    "images/events/jihyun/r07_casual_intro.webp": {
+      "from": "05_jihyun_r07_casual_intro.png",
+      "sha256": "db7779774e0b9c7fec82762094dbcf2e907f63de427f243a74bfda4c521cc743",
+      "source_sha256": "32efad1f96c9a806545e97c19e4abda0a350acd1f53ad65a7cfadd3e7e5256f6"
+    },
+    "images/events/jihyun/r12_special_intro.webp": {
+      "from": "06_jihyun_r12_special_intro.png",
+      "sha256": "4ec2fa30bac6e1d97915cde7dee7065a6e3fbd173d48ecfd175f6b281b0f4257",
+      "source_sha256": "9b9b2ef08cca8f9ca4cd1672b7309d94303801b509b42936ba4bd680674adc66"
+    },
+    "images/events/jihyun/r15_home_intro.webp": {
+      "from": "07_jihyun_r15_home_intro.png",
+      "sha256": "79ab2081752f383f6ef62e78681641fdbabec8e0779537d52c5ff9691a25f9a8",
+      "source_sha256": "b0bf3eb6d9eb3aabfe4acb412a6acbdff20ae139aa5b7787b167481d8602ed70"
+    },
+    "images/events/yujin/r07_casual_intro.webp": {
+      "from": "08_yujin_r07_casual_intro.png",
+      "sha256": "5496966ce478b3b3a148bc8fd7919e1cec6c567a8289abc3122d2dd7e1f8a580",
+      "source_sha256": "bef2786706283b2653564f130b64153bad57c8c2c2f596d41665703f77e052bf"
+    },
+    "images/events/yujin/r12_special_intro.webp": {
+      "from": "09_yujin_r12_special_intro.png",
+      "sha256": "aeba1a46a42979feef8c958380b4544d94bc5bc68bc751bb8c62f0c024d2deaa",
+      "source_sha256": "b7c359a4451415c06b59c88c2d22f677236e0cdefaafa9413446c7cdbc9761b5"
+    },
+    "images/events/yujin/r15_home_intro.webp": {
+      "from": "10_yujin_r15_home_intro.png",
+      "sha256": "997b45a61e35b6d01aa7d72d4a5de1d0efea14c08d4c8e2743ffccaaf65ac542",
+      "source_sha256": "062e55fd56627bf3d01536af0c3471d0029dfbf221fe4ae7a85852539c2f8806"
+    },
+    "images/events/seoyun/r07_casual_intro.webp": {
+      "from": "11_seoyun_r07_casual_intro.png",
+      "sha256": "a6795dfbbe58264e4019d6946031c859584dead234436db03d8fd828b3040767",
+      "source_sha256": "1017ff2cbb6381132ec3b2c98f3d7ae876a0d44edbb917bbee6701419a3eaa38"
+    },
+    "images/events/seoyun/r12_special_intro.webp": {
+      "from": "12_seoyun_r12_special_intro.png",
+      "sha256": "4113a28826c8602b3582a41abe03b6a0ae26deba76b1f2307489b54b62a8b3ba",
+      "source_sha256": "a06863878da596e93b5641ecac227970c9e61c0e818af9d1ff729c90795303a1"
+    },
+    "images/events/seoyun/r15_home_intro.webp": {
+      "from": "13_seoyun_r15_home_intro.png",
+      "sha256": "742ef7b61eeffd029ddaa07b7c9e6d0bc87f71a7e1ecae54d6d6b5f18c361135",
+      "source_sha256": "915cb8132e76701cd318b6e94b6a73612dbc8ed8fca73cb34e40e56fcd937e99"
+    },
+    "images/events/ria/r15_cosplay_bunny_intro.webp": {
+      "from": "14_ria_r15_bunny_intro.png",
+      "sha256": "aee6b11040245ef56f5d27df61952a4f9613f5c05130eff2dff17b85826ab8fa",
+      "source_sha256": "3f66a2c4259b05e88b11fc0ba11abdcc705cd3c682746de13a40a5484f139d0c"
+    },
+    "images/events/ria/r15_cosplay_nurse_intro.webp": {
+      "from": "15_ria_r15_nurse_intro.png",
+      "sha256": "865fa673d9a4fd3848abec7d1c7eeca3c007c1e08d48ac5f88f301ca16b6e4b2",
+      "source_sha256": "ab191130df2183d3e9679626b111732e22cf53008f4656dad9e62ec4d86fe336"
+    },
+    "images/events/ria/r15_cosplay_cheer_intro.webp": {
+      "from": "16_ria_r15_cheer_intro.png",
+      "sha256": "44c38a9bebe0a14c9bbcbbcff1ea2e220a304dec473ff352b54a8d34db752a29",
+      "source_sha256": "988365b8f4e526671f3116e295a21c797b2da916088a7dfd07e8b4eb9a3eda24"
+    },
+    "images/events/jihyun/r15_cosplay_bunny_intro.webp": {
+      "from": "17_jihyun_r15_bunny_intro.png",
+      "sha256": "35f64431997ce9849c2ff5f3a2307088308308553eb1e450d155655a5d777c11",
+      "source_sha256": "d600d77a243ccdf5134361f4a42ebb0aff527bf2077298296f7d50898b31fbda"
+    },
+    "images/events/jihyun/r15_cosplay_nurse_intro.webp": {
+      "from": "18_jihyun_r15_nurse_intro.png",
+      "sha256": "f5c41662d2d7b7a5a5cfc85e6818da5fa9ab2c3d1c25ba53d534560b87e19c5d",
+      "source_sha256": "fcadeb65a5355af654bda337c7e6ff6ceb77a11bcb71f6a82f4892ee44076b39"
+    },
+    "images/events/jihyun/r15_cosplay_qipao_intro.webp": {
+      "from": "19_jihyun_r15_qipao_intro.png",
+      "sha256": "ab56fa77f0baa255cf1be385848304b3402a3955004bdee58fbeaeb1f4a62d9b",
+      "source_sha256": "c439c268c842d677d71e7828ac43da10287c0b4acb985d392d39f46318b7bb1a"
+    },
+    "images/events/yujin/r15_cosplay_bunny_intro.webp": {
+      "from": "20_yujin_r15_bunny_intro.png",
+      "sha256": "95049b9dea5d08b19e14bd9b4f4741d9b75c4d7660d2cf82a7c5beba48c6a2c2",
+      "source_sha256": "7f91bc872490f90d3449baf83f9043bfa54abc993f5a1157b294dae8ddb287b3"
+    },
+    "images/events/yujin/r15_cosplay_nurse_intro.webp": {
+      "from": "21_yujin_r15_nurse_intro.png",
+      "sha256": "9387ab918d35f7fe65e21107e7eb2c6cdc3d23ed95f4052af4b86295b2496266",
+      "source_sha256": "b4add213936ede854c2b9358212d4809d041ca762b314c9186be5f55f3924466"
+    },
+    "images/events/yujin/r15_cosplay_maid_intro.webp": {
+      "from": "22_yujin_r15_maid_intro.png",
+      "sha256": "236f8a1f343c728902ff9c0f9d756dee394accf78575027c9e3a79105410e4ab",
+      "source_sha256": "ab5991fc3abb94198400a5a38c13436598cf9e06ee4ddb40560de0dbe4db5d03"
+    },
+    "images/events/seoyun/r15_cosplay_bunny_intro.webp": {
+      "from": "23_seoyun_r15_bunny_intro.png",
+      "sha256": "a53c1c3658c90e56673e44a6feab72ab85ff7e8aeef36dcab2f8ded0e8a5a426",
+      "source_sha256": "c8be4cf97f8b01ca51b7a24a82a6339470c7ce519921b90543385809c33f38e1"
+    },
+    "images/events/seoyun/r15_cosplay_nurse_intro.webp": {
+      "from": "24_seoyun_r15_nurse_intro.png",
+      "sha256": "afa71ebf800683799dd2d3724fc5c2c967ba89c4e5f5d0c4141b1ab019734e45",
+      "source_sha256": "6c70604c13c06f5a7445fb2aebd218c2c9d2b3294cad95bd171b4b80d3b4360d"
+    },
+    "images/events/seoyun/r15_cosplay_police_intro.webp": {
+      "from": "25_seoyun_r15_police_intro.png",
+      "sha256": "df37254c4c6ee9b61afaa1c294f63a1c4d4e1e12f925d7982cbbcd55fa571f44",
+      "source_sha256": "dea39c3682e375fc0bdde420900918e17ff2d7cdff87684efb25ae344a1562f4"
+    }
+  }
+}
