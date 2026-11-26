@@ -158,136 +158,139 @@ label progression_replay_event:
     $ renpy.end_replay()
     return
 
-screen progression_hub(initial_tab="relations"):
+screen progression_hub(initial_tab="relations", initial_person=None):
     tag menu
     default tab = initial_tab
-    default person = "ria"
+    default person = initial_person if initial_person in pm.HEROES else (active_route if not main_menu and active_route in pm.HEROES else "ria")
     default category = "all"
     default hint_for = None
-    use badge_shell("progression_hub", "우리의 기록")
-    hbox:
-        xpos 400 ypos 137 spacing 9
-        textbutton "관계" action SetScreenVariable("tab", "relations") selected tab == "relations" style "badge_tab_button"
-        textbutton "이야기" action SetScreenVariable("tab", "story") selected tab == "story" style "badge_tab_button"
-        textbutton "CG · 회상" action SetScreenVariable("tab", "gallery") selected tab == "gallery" style "badge_tab_button"
-        textbutton "결말" action SetScreenVariable("tab", "endings") selected tab == "endings" style "badge_tab_button"
-    add Solid(badge_rule) xpos 400 ypos 188 xysize (786, 1)
-    vbox:
-        xpos 400 ypos 197 xsize 786 spacing 8
-        style_prefix "badge"
+    if tab == "relations":
+        use diary_record(person)
+    else:
+        use badge_shell("progression_hub", "우리의 기록")
         hbox:
-            spacing 8
-            for who in pm.HEROES:
-                textbutton phone_names(who) action SetScreenVariable("person", who) selected person == who style "badge_tab_button"
-        if tab == "relations":
-            text (phone_names(person) + " · " + pm.STAT_NAMES[person]) size 27 color badge_ink
-            if main_menu:
-                text "관계 상태는 게임을 진행하거나 저장을 불러온 뒤 확인할 수 있어요." size 22
-            else:
-                if persistent.progression_show_numbers:
-                    text ("마음 " + str(bond_mind(person)) + " / 100  ·  신뢰 " + str(bond_trust(person))) size 25
-                    text (pm.STAT_NAMES[person] + " " + str(progression_relation(person)) + " / 100") size 25
-                else:
-                    text relation_stage(person) size 25
-                    text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
-                $ current_count, total_count, route_count = progression_route_progress(person)
-                text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18
-                text "하트는 호감도를 보여 줘요. 크리스마스에는 서로 쌓은 신뢰와 둘이 보낸 시간도 중요해요." size 18 color badge_muted
-                text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
-                if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
-                    text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
-            for special_n in (1, 2):
-                text (("특별 장면 · " + SPECIAL_TITLES[person][special_n - 1]) if getattr(persistent, "special_%s_%d" % (person, special_n), False) else "특별 장면 · 잠김 — 마음이 더 가까워지면 열려요") size 18 color badge_muted
-            textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
-            textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
-            text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color badge_muted
-        elif tab == "story":
-            text "공통 이야기 → 개인 루트 · 선택 이전 기록으로 돌아가기" size 23 color badge_ink
-            text "미발견 제목은 숨겨져요. 돌아가면 그 시점의 상태 전체를 불러와요." size 17
-            fixed:
-                xsize 786 ysize 337
-                viewport:
-                    id "window_story"
-                    xsize 763 ysize 337
-                    mousewheel True draggable True
-                    vbox:
-                        spacing 6
-                        for node in PROGRESSION_NODES:
-                            if node["heroine"] in ("common", person) and node["kind"] in ("event", "choice"):
-                                $ discovered = node["id"] in persistent.progression_seen_nodes
-                                $ restorable = discovered and progression_loadable(node["id"])
-                                textbutton (("    └ " if node["kind"] == "choice" else "→ ") + node["title"] if discovered else "잠김 · 아직 만나지 않은 이야기"):
-                                    xsize 750 text_size 18
-                                    action FileLoad("flow-" + node["id"], confirm=True, slot=True)
-                                    sensitive restorable
-                                if discovered and not restorable:
-                                    text "방문 기록만 있어요 · 이 버전의 재진입 저장 없음" size 14 color badge_muted
-                vbar value YScrollValue("window_story") style "badge_scroll" xpos 779 ysize 337
-        elif tab == "gallery":
-            hbox:
-                spacing 9
-                textbutton "전체" action SetScreenVariable("category", "all") selected category == "all"
-                textbutton "일반" action SetScreenVariable("category", "general") selected category == "general"
-                textbutton "연애" action SetScreenVariable("category", "romance") selected category == "romance"
-                textbutton "성인" action SetScreenVariable("category", "adult") selected category == "adult"
-                textbutton "특별" action SetScreenVariable("category", "special") selected category == "special"
-                textbutton "엔딩" action SetScreenVariable("category", "ending") selected category == "ending"
-            textbutton "장면 CG · 기록집 사진 회상 갤러리 열기" action ShowMenu("gallery") style "badge_primary_button"
-            $ summary = progression_collection(person, category)
-            text ("감상 " + str(summary["seen"]) + " / 등록 " + str(summary["available"]) + " · 계획 " + str(summary["planned"])) size 20
-            if not summary["available"]:
-                add Solid(badge_rule) xysize (750, 1)
-                text "이 분류에 등록된 이미지가 아직 없어요." size 21 color badge_ink
-                text "등록된 장면을 감상하면 여기에서 다시 볼 수 있어요." size 17 color badge_muted
-            else:
-                text ("수집률 " + str(summary["percent"]) + "%") size 18 color badge_muted
-                fixed:
-                    xsize 786 ysize 234
-                    vpgrid:
-                        id "window_gallery"
-                        xsize 763 ysize 234
-                        mousewheel True draggable True
-                        cols 4 spacing 10
-                        for tile_index, row in enumerate(progression_gallery_rows(person, category)):
-                            if progression_asset_ready(row):
-                                button:
-                                    at (silk_tile_in(tile_index) if silk_motion_on() else silk_still)
-                                    xsize 178 ysize 99 padding (8, 6)
-                                    background Solid(badge_rail)
-                                    hover_background Solid(badge_focus)
-                                    action Show("progression_cg_view", asset_id=row["id"])
-                                    sensitive progression_asset_unlocked(row)
-                                    vbox:
-                                        spacing 5
-                                        if progression_asset_unlocked(row):
-                                            fixed:
-                                                xysize (160, 62)
-                                                add row["path"] xysize (160, 62) fit "contain"
-                                                if silk_motion_on():
-                                                    add silk("heart", True, size=(14, 14)) xalign 1.0 yalign 0.0 at silk_tile_spark(tile_index)
-                                            text (row["event_id"].upper() + " · " + row["outfit"]) size 14
-                                        else:
-                                            text "아직 미감상" size 18
-                    vbar value YScrollValue("window_gallery") style "badge_scroll" xpos 779 ysize 234
+            xpos 400 ypos 137 spacing 9
+            textbutton "관계" action SetScreenVariable("tab", "relations") selected tab == "relations" style "badge_tab_button"
+            textbutton "이야기" action SetScreenVariable("tab", "story") selected tab == "story" style "badge_tab_button"
+            textbutton "CG · 회상" action SetScreenVariable("tab", "gallery") selected tab == "gallery" style "badge_tab_button"
+            textbutton "결말" action SetScreenVariable("tab", "endings") selected tab == "endings" style "badge_tab_button"
+        add Solid(badge_rule) xpos 400 ypos 188 xysize (786, 1)
+        vbox:
+            xpos 400 ypos 197 xsize 786 spacing 8
+            style_prefix "badge"
             hbox:
                 spacing 8
-                for key in persistent.progression_replays:
-                    if key.split(":")[0].startswith(person + "_"):
-                        $ eid, outfit = key.split(":")
-                        textbutton (eid.upper() + " · " + outfit):
-                            text_size 14
-                            action Replay("progression_replay_event", scope=progression_replay_scope(eid, outfit), locked=not progression_replay_ready(eid, outfit))
-        else:
-            $ hint = (persistent.xmas_evening_hints or {}).get(person) if main_menu else (xmas_evening_hint(person) if memory.get(person + "_x01") == "evening" else None)
-            if hint:
-                textbutton ("크리스마스 힌트 닫기" if hint_for == person else "크리스마스 힌트 보기") action SetScreenVariable("hint_for", None if hint_for == person else person)
-                if hint_for == person:
-                    text hint size 18 color badge_muted
-            text "확인한 결말" size 24 color badge_ink
-            text (str(len(progression_ending_ids())) + " / " + str(len(pm.ENDINGS))) size 20
-            for ending_id, info in pm.ENDINGS.items():
-                if info[0] in ("common", person):
-                    text (info[1] if ending_id in progression_ending_ids() else "잠김 · 아직 확인하지 않은 결말") size 23
+                for who in pm.HEROES:
+                    textbutton phone_names(who) action SetScreenVariable("person", who) selected person == who style "badge_tab_button"
+            if tab == "details":
+                text (phone_names(person) + " · " + pm.STAT_NAMES[person]) size 27 color badge_ink
+                if main_menu:
+                    text "관계 상태는 게임을 진행하거나 저장을 불러온 뒤 확인할 수 있어요." size 22
+                else:
+                    if persistent.progression_show_numbers:
+                        text ("마음 " + str(bond_mind(person)) + " / 100  ·  신뢰 " + str(bond_trust(person))) size 25
+                        text (pm.STAT_NAMES[person] + " " + str(progression_relation(person)) + " / 100") size 25
+                    else:
+                        text relation_stage(person) size 25
+                        text (pm.STAT_NAMES[person] + " · " + pm.relation_phase(progression_relation(person))) size 22
+                    $ current_count, total_count, route_count = progression_route_progress(person)
+                    text ("이 회차 " + str(current_count) + " / " + str(route_count) + "장면 · 전체 방문 " + str(total_count)) size 18
+                    text "하트는 호감도를 보여 줘요. 크리스마스에는 서로 쌓은 신뢰와 둘이 보낸 시간도 중요해요." size 18 color badge_muted
+                    text "취향·의상·공개 여부·친밀한 장면을 미루는 선택에는 정답이 없어요." size 18 color badge_muted
+                    if person == "seoyun" and memory.get("seoyun_marriage_revealed"):
+                        text "알게 된 사실과 지금의 선택을 기록해요. 신뢰 회복이나 미래 약속을 뜻하지 않아요." size 19 xmaximum 765
+                for special_n in (1, 2):
+                    text (("특별 장면 · " + SPECIAL_TITLES[person][special_n - 1]) if getattr(persistent, "special_%s_%d" % (person, special_n), False) else "특별 장면 · 잠김 — 마음이 더 가까워지면 열려요") size 18 color badge_muted
+                textbutton "정확한 관계 수치 표시" action ToggleField(persistent, "progression_show_numbers") selected persistent.progression_show_numbers
+                textbutton "이야기 재진입용 자동 기록" action ToggleField(persistent, "progression_checkpoint_enabled") selected persistent.progression_checkpoint_enabled
+                text "자동 기록은 노드마다 최근 한 개를 보관해요. 수동 저장 슬롯과 별개예요." size 17 color badge_muted
+            elif tab == "story":
+                text "공통 이야기 → 개인 루트 · 선택 이전 기록으로 돌아가기" size 23 color badge_ink
+                text "미발견 제목은 숨겨져요. 돌아가면 그 시점의 상태 전체를 불러와요." size 17
+                fixed:
+                    xsize 786 ysize 337
+                    viewport:
+                        id "window_story"
+                        xsize 763 ysize 337
+                        mousewheel True draggable True
+                        vbox:
+                            spacing 6
+                            for node in PROGRESSION_NODES:
+                                if node["heroine"] in ("common", person) and node["kind"] in ("event", "choice"):
+                                    $ discovered = node["id"] in persistent.progression_seen_nodes
+                                    $ restorable = discovered and progression_loadable(node["id"])
+                                    textbutton (("    └ " if node["kind"] == "choice" else "→ ") + node["title"] if discovered else "잠김 · 아직 만나지 않은 이야기"):
+                                        xsize 750 text_size 18
+                                        action FileLoad("flow-" + node["id"], confirm=True, slot=True)
+                                        sensitive restorable
+                                    if discovered and not restorable:
+                                        text "방문 기록만 있어요 · 이 버전의 재진입 저장 없음" size 14 color badge_muted
+                    vbar value YScrollValue("window_story") style "badge_scroll" xpos 779 ysize 337
+            elif tab == "gallery":
+                hbox:
+                    spacing 9
+                    textbutton "전체" action SetScreenVariable("category", "all") selected category == "all"
+                    textbutton "일반" action SetScreenVariable("category", "general") selected category == "general"
+                    textbutton "연애" action SetScreenVariable("category", "romance") selected category == "romance"
+                    textbutton "성인" action SetScreenVariable("category", "adult") selected category == "adult"
+                    textbutton "특별" action SetScreenVariable("category", "special") selected category == "special"
+                    textbutton "엔딩" action SetScreenVariable("category", "ending") selected category == "ending"
+                textbutton "장면 CG · 기록집 사진 회상 갤러리 열기" action ShowMenu("gallery", initial_tab=person) style "badge_primary_button"
+                $ summary = progression_collection(person, category)
+                text ("감상 " + str(summary["seen"]) + " / 등록 " + str(summary["available"]) + " · 계획 " + str(summary["planned"])) size 20
+                if not summary["available"]:
+                    add Solid(badge_rule) xysize (750, 1)
+                    text "이 분류에 등록된 이미지가 아직 없어요." size 21 color badge_ink
+                    text "등록된 장면을 감상하면 여기에서 다시 볼 수 있어요." size 17 color badge_muted
+                else:
+                    text ("수집률 " + str(summary["percent"]) + "%") size 18 color badge_muted
+                    fixed:
+                        xsize 786 ysize 234
+                        vpgrid:
+                            id "window_gallery"
+                            xsize 763 ysize 234
+                            mousewheel True draggable True
+                            cols 4 spacing 10
+                            for tile_index, row in enumerate(progression_gallery_rows(person, category)):
+                                if progression_asset_ready(row):
+                                    button:
+                                        at (silk_tile_in(tile_index) if silk_motion_on() else silk_still)
+                                        xsize 178 ysize 99 padding (8, 6)
+                                        background Solid(badge_rail)
+                                        hover_background Solid(badge_focus)
+                                        action Show("progression_cg_view", asset_id=row["id"])
+                                        sensitive progression_asset_unlocked(row)
+                                        vbox:
+                                            spacing 5
+                                            if progression_asset_unlocked(row):
+                                                fixed:
+                                                    xysize (160, 62)
+                                                    add row["path"] xysize (160, 62) fit "contain"
+                                                    if silk_motion_on():
+                                                        add silk("heart", True, size=(14, 14)) xalign 1.0 yalign 0.0 at silk_tile_spark(tile_index)
+                                                text (row["event_id"].upper() + " · " + row["outfit"]) size 14
+                                            else:
+                                                text "아직 미감상" size 18
+                        vbar value YScrollValue("window_gallery") style "badge_scroll" xpos 779 ysize 234
+                hbox:
+                    spacing 8
+                    for key in persistent.progression_replays:
+                        if key.split(":")[0].startswith(person + "_"):
+                            $ eid, outfit = key.split(":")
+                            textbutton (eid.upper() + " · " + outfit):
+                                text_size 14
+                                action Replay("progression_replay_event", scope=progression_replay_scope(eid, outfit), locked=not progression_replay_ready(eid, outfit))
+            else:
+                $ hint = (persistent.xmas_evening_hints or {}).get(person) if main_menu else (xmas_evening_hint(person) if memory.get(person + "_x01") == "evening" else None)
+                if hint:
+                    textbutton ("크리스마스 힌트 닫기" if hint_for == person else "크리스마스 힌트 보기") action SetScreenVariable("hint_for", None if hint_for == person else person)
+                    if hint_for == person:
+                        text hint size 18 color badge_muted
+                text "확인한 결말" size 24 color badge_ink
+                text (str(len(progression_ending_ids())) + " / " + str(len(pm.ENDINGS))) size 20
+                for ending_id, info in pm.ENDINGS.items():
+                    if info[0] in ("common", person):
+                        text (info[1] if ending_id in progression_ending_ids() else "잠김 · 아직 확인하지 않은 결말") size 23
 
 screen progression_cg_view(asset_id):
     modal True

@@ -72,7 +72,7 @@ init -3 python:
         path = BG_DIR + name + ".jpg"
         return path if renpy.loadable(path) else None
 
-    def cg(name=None):
+    def cg(name=None, record=True):
         st = renpy.store
         if name:
             path = CG_DIR + name + ".jpg"
@@ -82,6 +82,8 @@ init -3 python:
             st.scene_cg = name
             st.scene_cg_location = st.location
             persistent.cg_seen.add(name)
+            if record:
+                diary_mark(name, st.location)
         else:
             st.scene_cg = None
 
@@ -95,7 +97,7 @@ init -3 python:
         st = renpy.store
         prev = getattr(st, "sd_cut_prev", None)
         st.sd_cut_prev = None
-        cg(prev)
+        cg(prev, record=False)
 
     def art_cg_path():
         st = renpy.store
