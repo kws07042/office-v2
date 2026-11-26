@@ -60,6 +60,7 @@ label event_sequence(event_id, variant):
     $ dialogue_cg_begin()
     $ event_cut_cursor = 0
     $ event_cut_active = True
+    $ event_line = 0
     $ event_intro_expression_ready = False
     $ event_main_reached = False
     $ renpy.config.skipping = None
@@ -67,7 +68,6 @@ label event_sequence(event_id, variant):
         $ event_record_current(event_id, variant, event_cut_cursor)
         if event_pages(event_id, variant)[event_cut_cursor]["kind"] == "main":
             $ event_main_reached = True
-        $ event_line = 0
         call screen event_cut(event_id, variant, event_cut_cursor)
         $ progression_observe_cut(event_id, variant, event_cut_cursor)
         if _return == "skip":
@@ -75,8 +75,10 @@ label event_sequence(event_id, variant):
             $ event_cut_cursor = len(event_pages(event_id, variant))
         elif _return == "previous":
             $ event_cut_cursor = max(0, event_cut_cursor - 1)
+            $ event_line = max(0, len(event_main_lines(event_id, variant, event_pages(event_id, variant)[event_cut_cursor])) - 1)
         else:
             $ event_cut_cursor += 1
+            $ event_line = 0
             if event_cut_cursor == len(event_pages(event_id, variant)):
                 $ event_finish(event_id, variant, "completed")
     $ event_cut_active = False
@@ -157,7 +159,7 @@ screen event_cut(event_id, variant, cursor):
                     text ("표정 변화 자리 · 그림 준비 중" if expression else "장면 대본 미리보기 · 그림 준비 중") size 18 color "#cdb7b9"
     hbox:
         xpos 60 ypos 610 spacing 20
-        textbutton "이전 컷" id "cut_previous" action prev_action sensitive (cursor > 0 or line_i > 0) text_size 23
+        textbutton ("이전 대사" if line_i > 0 else "이전 컷") id "cut_previous" action prev_action sensitive (cursor > 0 or line_i > 0) text_size 23
         textbutton ("다음 대사" if mlines and line_i < len(mlines) - 1 else ("다음 컷" if cursor < len(pages) - 1 else "장면 마치기")):
             id "cut_next"
             action next_action

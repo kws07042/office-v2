@@ -114,7 +114,7 @@ testsuite common_romance:
         assert eval affinity[second] == (4 if person == second else 2)
         assert eval dating is False
         assert eval set(completed) == {"C06", "C07"}
-        click "강리아와 다음 약속 잡기 — 친구 같은 동갑, 장난 속에서 특별해지는 연애." until not screen "choice"
+        click id "pc_pick_ria" until not screen "choice"
         advance until screen "choice"
         assert eval active_route == "ria"
         assert eval memory["c08_route"] == "ria"
@@ -178,7 +178,7 @@ testsuite common_romance:
         screenshot "romance-c07-history.png"
         click "돌아가기" until not screen "history"
         run FileSave("3", confirm=False)
-        click "강리아와 다음 약속 잡기 — 친구 같은 동갑, 장난 속에서 특별해지는 연애." until not screen "choice"
+        click id "pc_pick_ria" until not screen "choice"
         advance until screen "choice"
         assert eval chapter.startswith("W_COORD01")
         assert eval work_style == "coordinate"

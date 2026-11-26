@@ -163,7 +163,6 @@ label seoyun_r06:
     $ remember("seoyun_public_boundary", "교제 공개는 나중에 두 사람이 합의, 사적인 내용은 공유하지 않음")
     d "좋아요. 다음 토요일 저녁은 제가 만나자고 할게요."
     s "응. 그럼 이번엔 내가 기다렸다는 말부터 할 수 있겠네."
-    dn "기다렸다는 말부터 하겠다고 했다. 다음 약속이 벌써 기다려졌다."
     $ location = "같은 날 밤 · 각자의 집, 개인 메시지"
     call phone_deliver("seoyun_r06_m1", "seoyun", "오늘 소감\n회사 메신저 프사 바꾸려다 참았어. 티 날까 봐 ㅋㅋ", contact="seoyun")
     call phone_deliver("seoyun_r06_m2", "dohyun", "무슨 사진으로 바꾸려고 하셨는데요?", contact="seoyun")
@@ -322,7 +321,7 @@ label seoyun_r08:
     call phone_deliver("seoyun_r08_x1", "seoyun", "통화 끝. 한 시간 걸렸어\n그 회사 담당자는 여전히 말이 길더라", contact="seoyun")
     call phone_deliver("seoyun_r08_x2", "dohyun", "'여전히'요?", contact="seoyun")
     call phone_deliver("seoyun_r08_x3", "seoyun", "...아 업계가 좁아서\n수요일에 맛있는 거 먹자~", contact="seoyun")
-    dn "‘여전히.’ 수요일까지 그 말이 남았다. 서윤 씨가 말을 다 안 한 건 드문 일이니까."
+    dn "휴대폰을 내려놓고도 ‘여전히’라는 말이 걸렸다."
     $ location = "다음 날 월요일 점심 · 회사 옥상"
     "월요일 점심. 옥상 벤치에서 서윤이 샌드위치 포장을 뜯다 말고 도현을 봤다."
     s "어제 '여전히'에 물음표 붙인 거, 밤새 신경 쓰였지?"
@@ -333,7 +332,7 @@ label seoyun_r08:
     d "웃을 데가 없는 얘기면요?"
     s "그럼 웃지 말고 해야지. 오늘 점심 다 먹기 전엔 좀 어렵겠다."
     "서윤이 샌드위치 반쪽을 내밀었다. 도현이 받아 드는데도 손끝이 잠깐 더 머물렀다."
-    dn "어디부터 말할지 고르는 중인가 보다. 오늘 내 몫은 여기 앉아 있는 거고."
+    dn "샌드위치를 한 입 베어 물었다. 점심시간은 아직 남았다."
     $ award_once("seoyun_R08", "seoyun", 4)
     $ progression_note_ending()
     return

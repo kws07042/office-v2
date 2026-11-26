@@ -16,8 +16,8 @@ label prologue:
     if not persistent.seen_prologue:
         dn "일정표도 숫자도 다 외웠는데, 저 질문은 연습한 적이 없었다."
     $ cg("prologue_hands")
-    "그때 책상 아래에서, 누군가 내 손등을 한 번 눌렀다."
-    "손끝이 잠깐 머물렀다. 괜찮다는 듯이."
+    "그때 누군가 책상 아래로 내 손등을 눌렀다."
+    "내가 숨을 내쉴 때까지 그 손은 그대로였다."
     dn "그 팀에 처음 온 건 두 달 전이었다."
     if not persistent.seen_prologue:
         dn "첫 출근 안내에는 편한 신발을 신고 오라고 쓰여 있었다."

@@ -48,7 +48,9 @@ init -1 python:
 
     def gallery_mark_event(path):
         if path and path.startswith("images/events/"):
-            persistent.cg_seen.add("evt/" + path[len("images/events/"):])
+            name = "evt/" + path[len("images/events/"):]
+            persistent.cg_seen.add(name)
+            diary_mark(name, renpy.store.location)
 
     def gallery_owner(name):
         if name.startswith("evt/"):
@@ -70,7 +72,25 @@ init -1 python:
     def gallery_seen(name):
         return name in (persistent.cg_seen or set())
 
+    SD_TITLES = {
+        "ria_sd_c01": "같은 표지를 가리킨 두 사람",
+        "ria_sd_r02": "세 번 읽은 임시 휴무",
+        "ria_sd_r06": "택시 불빛이 지나간 뒤",
+        "ria_sd_r09": "테이블 아래 운동화",
+        "jihyun_sd_r06": "처음 데려오신 분",
+        "jihyun_sd_r12": "엘리베이터가 열리는 순간",
+        "yujin_sd_r02": "제목은 잠깐 가리고",
+        "yujin_sd_r05": "자전거 벨이 지나가면",
+        "yujin_sd_r07": "내 배경화면을 그린 사람",
+        "seoyun_sd_c04": "첫날에 그걸 들켰네",
+        "seoyun_sd_r02": "책으로도 못 가린 표정",
+        "seoyun_sd_r09": "수건한테 뺏긴 창가",
+        "common_sd_c05": "퇴근하고도 기획해야 해?",
+    }
+
     def gallery_label(name):
+        if name in SD_TITLES:
+            return SD_TITLES[name]
         if name.startswith("evt/"):
             return event_gallery_label(name)
         tail = name.split("_", 1)[1] if gallery_owner(name) != "common" else name
@@ -78,10 +98,6 @@ init -1 python:
                    "spring_rooftop": "이듬해 봄 · 옥상", "spring_pitch": "이듬해 봄 · 피칭"}
         if name in special:
             return special[name]
-        if name == "common_sd_c05":
-            return "SD · 넷이 함께한 점심"
-        if tail.startswith("sd_"):
-            return "SD · " + tail[3:].upper()
         return GALLERY_CHAPTER.get(tail, tail.upper())
 
     def gallery_count(tab):
@@ -94,82 +110,98 @@ init -1 python:
         items = [n for n in gallery_all() if renpy.loadable(gallery_path(n))]
         return sum(1 for n in items if gallery_seen(n)), len(items)
 
-screen gallery():
+screen gallery(initial_tab="ria", initial_item=None):
     tag menu
-    default tab = "ria"
-    use mg_frame("회상 갤러리", "본 장면은 다시 볼 수 있어요 · 전체 %d / %d" % gallery_total()):
-        hbox:
-            xpos 40 ypos 104 spacing 8
-            for key, name in GALLERY_TABS:
-                $ seen, total = gallery_count(key)
-                textbutton (name + ("  %d/%d" % (seen, total) if total is not None else "  %d장" % seen)):
-                    id "gallery_tab_" + key
-                    style "mg_button"
-                    selected (tab == key)
-                    selected_background Solid("#B3123F")
-                    selected_foreground None
-                    text_selected_color "#FFFDFB"
-                    action SetScreenVariable("tab", key)
-        if tab == "album":
-            $ photos = list(reversed(persistent.album or []))
-            if not photos:
-                text "데이트에서 '기록집 사진'을 찍으면 여기에 모입니다." style "mg_text" xpos 40 ypos 170
+    default tab = initial_tab
+    default chosen = initial_item
+    default photo_index = 0
+    $ photos = [ph for ph in reversed(persistent.album or []) if ph.get("spot") in PHOTO_SPOTS and len(ph.get("cell") or []) == 2] if tab == "album" else []
+    $ available = gallery_items(tab) if tab != "album" else []
+    $ seen = [n for n in available if gallery_seen(n)]
+    $ current = chosen if chosen in seen else diary_recent_item(tab, seen)
+    $ is_photo = tab == "album"
+    $ count = len(photos) if is_photo else len(seen)
+    $ idx = min(photo_index, len(photos)-1) if is_photo else (seen.index(current) if current else -1)
+    use diary_header
+    hbox:
+        xpos 877 ypos 22 spacing 6
+        textbutton "관계 기록" style "diary_button" action ShowMenu("progression_hub", initial_person=tab if tab in pm.HEROES else "ria")
+        textbutton "회상 앨범" style "diary_primary" action NullAction()
+        textbutton "돌아가기" id "gallery_back" style "diary_button" action Return()
+    hbox:
+        xpos 54 ypos 87 spacing 6
+        for key, name in GALLERY_TABS:
+            textbutton name:
+                style "diary_button" id "gallery_tab_" + key
+                selected (tab == key)
+                action [SetScreenVariable("tab", key), SetScreenVariable("chosen", None), SetScreenVariable("photo_index", 0)]
+    fixed:
+        xpos 53 ypos 140 xysize (1174, 418)
+        add Solid("#322A32")
+        if count:
+            if is_photo:
+                $ ph = photos[idx]
+                $ caption = PHOTO_SPOTS[ph["spot"]][2]
+                $ image_path = photo_crop(ph["spot"], tuple(ph["cell"]))
+                $ scene_info = "기록집 사진　" + "★" * ph.get("score", 1)
             else:
-                frame:
-                    xpos 40 ypos 160 xysize (1220, 460) padding (0, 0) background None
-                    viewport:
-                        mousewheel True draggable True scrollbars "vertical"
-                        vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
-                        vbox:
-                            spacing 14
-                            for row in range(0, len(photos), 4):
-                                hbox:
-                                    spacing 14
-                                    for i, ph in [(k, photos[k]) for k in range(row, min(row + 4, len(photos)))]:
-                                                if ph.get("spot") in PHOTO_SPOTS:
-                                                    button:
-                                                        id "gallery_photo_%d" % i
-                                                        xysize (284, 182) padding (6, 6)
-                                                        background Solid("#FFFDFB")
-                                                        hover_background Solid("#F6D9DF")
-                                                        action Show("gallery_view", kind="photo", items=photos, index=i)
-                                                        vbox:
-                                                            add Transform(photo_crop(ph["spot"], tuple(ph["cell"])), xysize=(272, 153))
-                                                            text ("★" * ph.get("score", 1)) style "mg_small" size 12 font "fonts/Pretendard-Regular.otf"
+                $ image_path = gallery_path(current)
+                $ caption = diary_title(current)
+                $ scene_info = (persistent.diary_places or {}).get(current) or diary_caption(current)
+            viewport:
+                xysize (1174, 418)
+                yinitial 0.4
+                add Transform(image_path, xysize=(1174, 418), fit="cover")
+            add "gui/diary/shade.svg"
+            vbox:
+                xpos 40 ypos 68 xsize 420 spacing 17
+                text DIARY_NAMES[tab] style "diary_small" color "#F4DCCA"
+                text caption style "diary_title" size 38 color "#FFFCF4"
+                text scene_info style "diary_text" size 18 color "#FCF1E9"
+                textbutton "그림만 보기" id "gallery_expand" style "diary_primary" action ([Show("gallery_view", kind="photo", items=photos, index=idx)] if is_photo else [SetScreenVariable("chosen", None), Function(diary_mark, current), Show("gallery_view", kind="cg", items=seen, index=idx)])
         else:
-            $ items = gallery_items(tab)
-            frame:
-                xpos 40 ypos 160 xysize (1220, 460) padding (0, 0) background None
-                viewport:
-                    mousewheel True draggable True scrollbars "vertical"
-                    vscrollbar_xsize 6 vscrollbar_base_bar Solid("#E1D7CF") vscrollbar_thumb Solid("#B3123F") vscrollbar_unscrollable "hide"
-                    vbox:
-                        spacing 14
-                        for row in range(0, len(items), 4):
-                            hbox:
-                                spacing 14
-                                for i, name in [(k, items[k]) for k in range(row, min(row + 4, len(items)))]:
-                                            $ seen = gallery_seen(name)
-                                            button:
-                                                id "gallery_cg_" + name
-                                                xysize (284, 190) padding (6, 6)
-                                                background Solid("#FFFDFB")
-                                                hover_background Solid("#F6D9DF")
-                                                insensitive_background Solid("#EDE6E1")
-                                                sensitive seen
-                                                action Show("gallery_view", kind="cg", items=[n for n in items if gallery_seen(n)], index=[n for n in items if gallery_seen(n)].index(name) if seen else 0)
-                                                vbox:
-                                                    spacing 4
-                                                    if seen:
-                                                        add Transform(gallery_path(name), xysize=(272, 153))
-                                                    else:
-                                                        fixed:
-                                                            xysize (272, 153)
-                                                            add Solid("#D9CDC6")
-                                                            text "?" style "mg_title" size 56 color "#FFFDFB" align (0.5, 0.5)
-                                                    text (gallery_label(name) if seen else "아직 보지 않은 장면") style "mg_small" size 14
-        textbutton "돌아가기" id "gallery_back" style "mg_button" xpos 40 ypos 640 action Return()
-        key "game_menu" action Return()
+            text ("데이트에서 촬영한 사진이 여기에 모여요." if is_photo else "이야기에서 장면을 만나면 앨범에 담겨요.") style "diary_text" color "#F9EEE6" align (0.5, 0.5)
+    add Solid("#FBF2E6") xpos 53 ypos 558 xysize (1174, 106)
+    if count:
+        $ start = idx // 4 * 4
+        hbox:
+            xpos 80 ypos 572 spacing 14
+            for j in range(start, min(start+4, count)):
+                if is_photo:
+                    $ thumb = photo_crop(photos[j]["spot"], tuple(photos[j]["cell"]))
+                    $ name = PHOTO_SPOTS[photos[j]["spot"]][2]
+                    $ select_item = SetScreenVariable("photo_index", j)
+                else:
+                    $ thumb = gallery_path(seen[j])
+                    $ name = diary_title(seen[j])
+                    $ select_item = [SetScreenVariable("chosen", seen[j]), Function(diary_mark, seen[j])]
+                button:
+                    id ("gallery_photo_%d" % j if is_photo else "gallery_cg_" + seen[j])
+                    alt name
+                    xysize (211, 76) padding (4, 4)
+                    background Solid("#FFF9EF") selected_background Solid("#E5C6CB") hover_background Solid("#EBD6D7")
+                    selected (idx == j)
+                    action select_item
+                    hbox:
+                        spacing 7
+                        add Transform(thumb, xysize=(81, 58), fit="cover") yalign 0.5
+                        text name style "diary_text" size 15 xmaximum 112 yalign 0.5
+        $ back_idx = max(0, idx-1)
+        $ next_idx = min(count-1, idx+1)
+        $ prev = SetScreenVariable("photo_index", back_idx) if is_photo else [SetScreenVariable("chosen", seen[back_idx]), Function(diary_mark, seen[back_idx])]
+        $ nxt = SetScreenVariable("photo_index", next_idx) if is_photo else [SetScreenVariable("chosen", seen[next_idx]), Function(diary_mark, seen[next_idx])]
+        hbox:
+            xpos 989 ypos 589 spacing 3
+            textbutton "‹" alt "이전 장면" id "album_previous" style "diary_button" sensitive (idx > 0) action prev
+            text ("%d / %d" % (idx+1, count)) style "diary_small" yalign 0.5
+            textbutton "›" alt "다음 장면" id "album_next" style "diary_button" sensitive (idx+1 < count) action nxt
+        if idx > 0:
+            key "K_LEFT" action prev
+        if idx+1 < count:
+            key "K_RIGHT" action nxt
+    if not is_photo:
+        text ("감상한 장면 %d / %d" % (count, len(available))) style "diary_small" color "#F5E9E1" xpos 56 ypos 681
+    key "game_menu" action Return()
 
 screen gallery_view(kind, items, index=0):
     modal True
@@ -182,17 +214,27 @@ screen gallery_view(kind, items, index=0):
     else:
         $ ph = items[i]
         add Transform(photo_crop(ph["spot"], tuple(ph["cell"])), xysize=(1280, 720))
+    default show_controls = False
+    $ previous = max(0, i - 1)
+    $ following = min(len(items) - 1, i + 1)
+    $ go_prev = [SetScreenVariable("i", previous), Function(diary_mark, items[previous])] if kind == "cg" else SetScreenVariable("i", previous)
+    $ go_next = [SetScreenVariable("i", following), Function(diary_mark, items[following])] if kind == "cg" else SetScreenVariable("i", following)
     button:
         xysize (1280, 720)
         background None
         id "gallery_view_close_area"
         action Hide("gallery_view")
+    mousearea:
+        ypos 621 xysize (1280, 99)
+        hovered SetScreenVariable("show_controls", True)
+        unhovered SetScreenVariable("show_controls", False)
     hbox:
+        at diary_view_controls(show_controls)
         xalign 0.5 ypos 664 spacing 12
-        textbutton "이전" id "gallery_prev" style "mg_button" sensitive (i > 0) action SetScreenVariable("i", i - 1)
+        textbutton "이전" id "gallery_prev" style "mg_button" sensitive (i > 0) action go_prev
         text "%d / %d" % (i + 1, len(items)) style "mg_text" color "#FFFDFB" yalign 0.5
-        textbutton "다음" id "gallery_next" style "mg_button" sensitive (i < len(items) - 1) action SetScreenVariable("i", i + 1)
+        textbutton "다음" id "gallery_next" style "mg_button" sensitive (i < len(items) - 1) action go_next
         textbutton "닫기" id "gallery_close" style "mg_button" action Hide("gallery_view")
-    key "K_LEFT" action SetScreenVariable("i", max(0, i - 1))
-    key "K_RIGHT" action SetScreenVariable("i", min(len(items) - 1, i + 1))
+    key "K_LEFT" action go_prev
+    key "K_RIGHT" action go_next
     key "game_menu" action Hide("gallery_view")

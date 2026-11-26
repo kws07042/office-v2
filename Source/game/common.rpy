@@ -77,7 +77,6 @@ label c02:
     j "백지현이야. TF 팀장. 연말 피칭에 이 팀이 걸렸어. 첫날부터 이런 얘기라 미안해."
     dn "이번에도 팀이 걸렸다고."
     "지현은 일어나지 않고 눈으로만 인사했다. 차콜 재킷의 소매가 단정했고, 책상에는 색깔별로 나뉜 서류철이 줄 맞춰 놓여 있었다. 모니터 옆 달력에는 12월의 한 칸에만 빨간 동그라미가 쳐져 있었다."
-    dn "첫날부터 팀 얘기를 꺼내더니, 미안하다는 말도 바로 했다."
     d "안녕하세요. 기획팀 도현입니다. 현장에서 본 건 여기 정리했습니다."
     j "고마워. 앉아. 현장에서 본 것부터 좀 듣자."
     "지현이 자료를 탁자 가운데로 밀고, 종이를 도현 쪽으로 돌렸다."
@@ -753,7 +752,7 @@ label c08:
             call phone_deliver("c08_invite_d", "dohyun", ri("지난번엔 짧아서 아쉬웠어. 다음엔 좀 더 같이 있을래?", "지난번엔 짧아서 아쉬웠어요. 다음엔 좀 더 같이 있을래요?"), contact="ria")
         else:
             call phone_deliver("c08_invite_d", "dohyun", ri("다음에 퇴근하고 따로 이야기할래?", "다음에 퇴근하고 따로 이야기할래요?"), contact="ria")
-        call phone_deliver("c08_invite_r", "ria", ri("좋아! 다음엔 앉아서 얘기하자~ 언제 비어?", "좋아요! 다음 코스는 ‘퇴근 후 2차 토크’로 예약이에요~ 시간 맞춰 봐요."), contact="ria")
+        call phone_deliver("c08_invite_r", "ria", ri("좋아! 다음엔 앉아서 얘기하자~ 언제 비어?", "좋아요! 다음엔 좀 앉아서 얘기해요. 언제 비세요?"), contact="ria")
     elif active_route == "jihyun":
         call phone_deliver("c08_invite_d", "dohyun", "다음에 퇴근하고 시간 있으세요?\n일 얘기 말고요", contact="jihyun")
         call phone_deliver("c08_invite_r", "jihyun", "좋아. 이번 주 저녁 가능한 날 보내 줘\n일 얘기는 나도 안 할게", contact="jihyun")

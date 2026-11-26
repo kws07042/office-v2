@@ -18,7 +18,7 @@ testsuite pc_messenger_checks:
         if not screen "main_menu":
             run MainMenu(confirm=False)
 
-    testcase pc_c08_pick_jihyun:
+    testcase pc_c08_pick_ria:
         run Start("test_pc_c08_entry")
         advance until screen "choice" timeout 30.0
         assert eval renpy.get_widget("choice", "pc_contact_ria") is not None
@@ -31,10 +31,14 @@ testsuite pc_messenger_checks:
         assert eval all(not phone_threads[k] for k in ("jihyun", "yujin", "seoyun"))
         screenshot "pc-messenger-2-phone.png"
 
-    testcase pc_c08_caption_click_still_works:
+    testcase pc_c08_preview_then_confirm:
         run Start("test_pc_c08_entry")
         advance until screen "choice" timeout 30.0
-        click "백지현과 다음 약속 잡기 — 단정한 연상과 의견을 주고받으며 가까워지는 연애."
+        click id "pc_contact_seoyun"
+        assert screen "choice"
+        click id "pc_contact_jihyun"
+        assert eval renpy.get_widget("choice", "pc_pick_jihyun") is not None
+        click id "pc_pick_jihyun"
         advance until screen "office_phone" timeout 20.0
         assert eval active_route == "jihyun"
 

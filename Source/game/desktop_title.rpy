@@ -143,7 +143,8 @@ screen main_menu():
             vbox:
                 xpos 18 ypos 16 spacing 2
                 text "오늘 할 일" font "fonts/Jua-Regular.ttf" size 21 color "#4A3A10"
-                text "{s}· 행사장 안내판 고치기{/s}" font "fonts/GowunDodum-Regular.ttf" size 15 color "#4A3A1088"
+                $ sign_done = "c02" in (persistent.progression_seen_nodes or [])
+                text ("{s}· 행사장 안내판 고치기{/s}" if sign_done else "· 행사장 안내판 고치기") font "fonts/GowunDodum-Regular.ttf" size 15 color ("#4A3A1088" if sign_done else "#4A3A10")
                 text "· 피칭 자료 3장까지" font "fonts/GowunDodum-Regular.ttf" size 15 color "#4A3A10"
                 text "· 6시 정시 퇴근!!" font "fonts/GowunDodum-Regular.ttf" size 15 color "#4A3A10"
 

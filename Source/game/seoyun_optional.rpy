@@ -45,7 +45,7 @@ label seoyun_o01:
             $ remember("seoyun_o01_impression", "다시 보기 전 지나쳤던 다른 날들")
         "서로 다른 데서 멈춘 게 좋았다고 한다.":
             d "같이 읽으면 서윤 씨는 어디서 멈추실까 궁금해요. 제 예상이 자주 빗나가거든요."
-            s "그 말 들으니까 다음 장도 네 대답 기다려 보고 싶네."
+            s "그럼 다음 장도 찍어 봐. 내가 어디서 멈출지."
             $ remember("seoyun_o01_impression", "같은 대목을 다르게 읽고 답을 기다린 시간")
     $ remember("seoyun_o01_read", "느린 모퉁이의 같은 창문을 다시 보는 대목, 전권 완독 아님")
     $ remember("seoyun_o01_status", "completed")

@@ -37,6 +37,11 @@ init python:
         row = {"chapter": chapter, "caption": caps[i]}
         if not integrated_fixture["choices"] or integrated_fixture["choices"][-1] != row:
             integrated_fixture["choices"].append(row)
+        if renpy.get_screen("choice").scope.get("pc"):
+            name = PC_CONTACTS[i][1]
+            if renpy.get_widget("choice", "pc_pick_" + route) is not None:
+                return name + "에게 휴대폰으로 연락하기"
+            return name + " 대화 보기"
         return caps[i]
     def integrated_dump():
         import os, json

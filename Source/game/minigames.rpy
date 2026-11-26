@@ -38,13 +38,13 @@ init -2 python:
     # 6x4 칸. E 입구, B 부스, P 기둥, 숫자 = 안내판을 놓을 수 있는 자리.
     SIGN_ROUNDS = [
         dict(rows=["E..1.B", "..P...", "2.....", "...3.."], answer=("1", "→"),
-             hints={"2": "거긴 입구 바로 옆이라 줄 서는 사람한테 가려.", "3": "거기선 반대쪽 줄에서도 보여. 아까 그 문제야!", "1": "자리는 맞아! 방향만 다시 보자."},
+             hints={"2": "거기는 줄 선 손님들한테 가려져요.", "3": "반대쪽 줄에서도 보여요. 아까처럼 또 갈라지겠는데요?", "1": "자리는 맞아요! 화살표만 돌려 볼까요?"},
              goal="입구로 들어온 손님이 처음 보는 곳에, 부스 쪽을 가리키게."),
         dict(rows=["......", "E.P1.B", "..2...", "3....."], answer=("2", "↗\uFE0E"),
-             hints={"1": "기둥 바로 뒤라 입구에선 안 보여.", "3": "거긴 출구 쪽이야. 들어오는 사람은 못 봐.", "2": "자리는 좋아. 부스가 어느 쪽인지 다시 봐 봐."},
+             hints={"1": "입구에 서면 기둥에 가려져요.", "3": "거긴 출구 쪽이에요. 들어오는 손님은 못 봐요.", "2": "자리는 좋아요. 여기서 부스가 어느 쪽이죠?"},
              goal="기둥에 가리지 않게. 부스는 오른쪽 위."),
         dict(rows=["B....E", "..P...", ".1..2.", "....3."], answer=("2", "←"),
-             hints={"1": "너무 안쪽이라 손님이 이미 헤매고 난 뒤야.", "3": "거긴 바닥 짐 옆이라 사람들이 안 지나가.", "2": "자리 정답! 입구가 오른쪽이니까 방향은..."},
+             hints={"1": "거기까지 가면 이미 갈림길을 지났어요.", "3": "짐이 쌓여 있어서 그쪽으론 안 다녀요.", "2": "자리는 맞아요. 이번엔 입구가 오른쪽이죠?"},
              goal="이번엔 입구가 오른쪽. 처음 갈림길에서 바로 보이게."),
     ]
     SIGN_DIRS = ["←", "↑", "→", "↓", "↗\uFE0E", "↖\uFE0E"]
@@ -246,7 +246,7 @@ init -2 python:
     }
     MG_NAME = {"ria": "리아", "jihyun": "지현", "yujin": "유진", "seoyun": "서윤"}
     MG_HELLO = {
-        "sign": "입구로 들어온 손님 눈으로 봐 줘! 처음 보이는 데가 어디일까?",
+        "sign": "입구에 막 들어왔다고 생각해 봐요. 어디가 제일 먼저 보여요?",
         "cards": "손님이니까 먼저 골라. ...봐주진 않을 거야.",
         "trim": "꼭 남길 말만 남기는 게 요령이야~ 나머진 과감하게!",
         "spot": "저, 저도 처음엔 한참 찾았어요. 천천히 보세요.",
@@ -395,7 +395,7 @@ screen mg_offer(game):
 screen mg_result_card(game, score, top=None, verdict="", face="smile", detail="", line=""):
     $ stars = (3 if verdict == "win" else (2 if verdict == "draw" else 1)) if top is None else mg_stars(score, top)
     $ lines = {3: "완벽해요!", 2: "잘했어요!", 1: "다음엔 더 잘할 수 있어요."}
-    use mg_frame(MG_INFO[game][0], "결과", game, line, face):
+    use mg_frame(MG_INFO[game][0], "결과", game, line, face, host=(game != "sign")):
         frame:
             at mg_pop
             xpos 40 ypos 130 xsize 820 padding (44, 36)
@@ -480,21 +480,21 @@ label mg_sign_game:
             if (slot, d) == R["answer"]:
                 $ solved = True
                 $ sign_score += 3 - tries
-                $ msg = ["좋아, 바로 거기! 손님들이 줄 서서 들어오겠다.", "딱 맞아! 이제 안내판 감 잡았네?", "역시! 다음 것도 부탁해~"][tries]
+                $ msg = ["거기요! 이제 입구에서 바로 보이겠어요.", "딱 맞아요! 이쪽에서 한번 보세요.", "맞아요. 같이 보길 잘했네요."][tries]
                 $ face_now = "smile" if tries else "laugh"
                 $ stamp_now = "good"
             else:
                 $ tries += 1
-                $ msg = R["hints"].get(slot, "음... 다른 데 놔 볼까?")
+                $ msg = R["hints"].get(slot, "음, 다른 자리는 어때요?")
                 $ face_now = "serious" if R["hints"].get(slot, "").startswith("자리") else "pout"
                 $ stamp_now = "bad"
         if not solved:
-            $ msg = "괜찮아, 정답은 자리 %s에 %s 방향이었어. 다음 거 가 보자!" % (R["answer"][0], {"←": "왼쪽", "↑": "위", "→": "오른쪽", "↓": "아래", "↗︎": "오른쪽 위", "↖︎": "왼쪽 위"}[R["answer"][1]])
+            $ msg = "여기서는 %s번 자리에 놓고 방향을 %s 쪽으로 맞추면 돼요." % (R["answer"][0], {"←": "왼쪽", "↑": "위", "→": "오른쪽", "↓": "아래", "↗︎": "오른쪽 위", "↖︎": "왼쪽 위"}[R["answer"][1]])
             $ face_now = "sad"
         $ rnd += 1
     $ mg_record("sign", sign_score)
     $ mg_result = sign_score
-    $ renpy.call_screen("mg_result_card", game="sign", score=sign_score, top=3 * len(SIGN_ROUNDS), face=("laugh" if sign_score >= 7 else "smile"), line=("첫날부터 안내 감각 최고! 합격 도장 꾹!" if sign_score >= 7 else "괜찮아, 나도 첫날엔 화살표 거꾸로 붙였어."))
+    $ renpy.call_screen("mg_result_card", game="sign", score=sign_score, top=3 * len(SIGN_ROUNDS), face=("laugh" if sign_score >= 7 else "smile"))
     return
 
 # ---------------- 2. 카드 ----------------

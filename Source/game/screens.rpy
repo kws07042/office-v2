@@ -621,6 +621,8 @@ screen file_slots(mode):
                 if mode == "load":
                     textbutton "자동" action FilePage("auto") selected (page == "auto") style "silk_page_button" id "file_page_auto"
                     textbutton "퀵" action FilePage("quick") selected (page == "quick") style "silk_page_button" id "file_page_quick"
+                null width 16
+                textbutton "돌아가기" action Return() style "silk_small_button" id "file_back"
             grid SILK_FILE_COLS SILK_FILE_ROWS:
                 spacing 14
                 for i in range(1, SILK_FILE_COLS * SILK_FILE_ROWS + 1):
@@ -649,9 +651,6 @@ screen file_slots(mode):
                                 text FileTime(slot, page=pg, format="%m월 %d일 %H:%M", empty="") size 14 color "#6E4553" yalign 0.8
                             $ save_line = FileSaveName(slot, empty="", page=pg)
                             text (save_line if len(save_line) <= 24 else save_line[:23] + "…") size 14 color "#3B0B22" xmaximum 270
-        hbox:
-            yalign 1.0 xalign 1.0 spacing 10
-            textbutton "돌아가기" action Return() style "silk_small_button"
 
 screen save():
     tag menu

@@ -105,7 +105,7 @@ label jihyun_r02:
     "지현은 가벼운 가방 하나를 들고 서 있었다. 도현을 보자 휴대폰의 일정표를 닫았다."
     dn "내가 아직 시간도 안 물었는데 바로 화면부터 껐다."
     j "네 시엔 집에 갈 거야. 그 전까진 좀 쉬자. 어디부터 갈지는 네가 골라 줘."
-    d "두 시간이면 충분하겠네요. 시끄러운 데는 저도 빼고요. 음료는 차가운 거 괜찮으세요?"
+    d "두 시간이면 되겠네요. 저도 조용한 데가 좋아요. 차가운 거 드세요?"
     j "따뜻한 거. 그거 말곤 다 맡길게."
     $ progression_enter("jihyun_r02.choice01")
     $ progression_checkpoint("jihyun_r02.choice01")
@@ -212,7 +212,7 @@ label jihyun_r03:
     $ location = "다음 주 월요일 오후 · 협업 자료 검토 자리"
     $ cream_focus = "jihyun"
     "지현은 ‘출근길 중심’이라 적은 가정을 다시 열었다. 검토할 곳에 표시하고 도현 쪽으로 화면을 돌렸다."
-    dn "팀장님이 먼저 자기 가정을 다시 보자고 했다. 그런 회의는 드문데."
+    dn "자기 예상부터 다시 보자고 하는 팀장은 처음 봤다."
     if memory.get("jihyun_intro") == "evidence":
         j "점심에 다시 와도 되냐는 질문, 다시 봤어. 몇 분 얘기라도 출근길만 보긴 어렵겠네."
     elif memory.get("jihyun_intro") == "check_later" and memory.get("jihyun_followup_delivered"):

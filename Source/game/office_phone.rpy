@@ -347,7 +347,7 @@ label ria_r08_phone_conversation:
     if memory.get("ria_r07_intimacy") != "shared":
         call phone_deliver("r08_morning_1", "ria", ri("일어났어? 나는 빵 먹는 중~ 오늘 추천 코스는 식탁!", "일어나셨어요? 저는 빵 먹는 중이에요~ 오늘 추천 코스는 식탁!"))
         call phone_deliver("r08_morning_2", "dohyun", ri("나도 이제 아침 먹으려고. 어제 차 잘 마셨어.", "저도 이제 아침 먹으려고요. 어제 차 잘 마셨어요."))
-        call phone_deliver("r08_morning_3", "ria", ri("응! 아침 먹다 네 생각 나서. 오늘도 별일은 없어~", "네! 별일은 없는데 그냥 도현 씨 생각 나서요. 오늘은 제가 선빵~"))
+        call phone_deliver("r08_morning_3", "ria", ri("응! 아침 먹다 네 생각 나서. 오늘도 별일은 없어~", "네! 별일은 없는데 그냥 도현 씨 생각 나서요. 오늘은 제가 먼저 톡했네요~"))
     if memory.get("ria_r07_intimacy") == "shared":
         call phone_deliver("r08_photo", "ria", ri("아침 사진 이제야 보내네~ 잘 구운 쪽 줬으니까 다음엔 네가 골라 줘!", "아침 사진 이제야 보내네요~ 잘 구운 쪽 드렸으니까 다음엔 도현 씨가 골라 주세요!"), media="ria_r08_breakfast")
     else:
